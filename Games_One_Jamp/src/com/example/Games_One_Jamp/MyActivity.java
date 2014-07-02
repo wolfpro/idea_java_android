@@ -17,8 +17,5 @@ public class MyActivity extends Activity {
        field= new int[3][4];
         for(int i=0; i<4; i++)
             field[2][i]=1;
-
-
-
     }
 }
