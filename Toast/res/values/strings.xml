@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Toast</string>
+    <string name="toast_vi">Покакзать Тост</string>
+    <string name="dialog_vi">Показать диалог</string>
+</resources>

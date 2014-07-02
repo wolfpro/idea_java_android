@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@color/red" android:id="@+id/rl">
+    <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/red"
+            android:onClick="onClick"
+            android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:layout_marginTop="5dp"
+            android:id="@+id/butRed"/>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Yellow"
+            android:onClick="onClick"
+            android:id="@+id/butYellow" android:layout_below="@+id/butRed" android:layout_centerHorizontal="true"/>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/green"
+            android:onClick="onClick"
+            android:id="@+id/butGreen" android:layout_below="@+id/butYellow" android:layout_centerHorizontal="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/red"
+            android:id="@+id/textView" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+            style="@style/CodeFont"
+            />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_title"
+            android:id="@+id/butAbout" android:layout_alignParentBottom="true" android:layout_alignParentRight="true"
+            android:background="@color/red" android:onClick="onClick_About"/>
+
+</RelativeLayout>

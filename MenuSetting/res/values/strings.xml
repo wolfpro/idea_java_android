@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MenuSetting</string>
+
+    <string name="action_settings">Setting</string>
+    <string name="action_cat_male">Кот</string>
+    <string name="action_cat_female">Кошка</string>
+    <string name="action_cat_kitten">Котёнок</string>
+
+</resources>

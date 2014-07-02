@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">sixButton</string>
+    <string name="btn1">Превая кнопка</string>
+    <string name="btn2">Вторая кнопка</string>
+    <string name="btn3">Третья кнопка</string>
+    <string name="btn4">Четвертая кнопка</string>
+    <string name="btn5">Пятаяая кнопка</string>
+    <string name="btn6">Шестая кнопка</string>
+</resources>
