@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ind">com.codapp.CalcApp2_3_3</string>
+    <string name="app_name">CalcApp</string>
+    <string name="b1">1</string>
+    <string name="b2">2</string>
+    <string name="b3">3</string>
+    <string name="b4">4</string>
+    <string name="b5">5</string>
+    <string name="b6">6</string>
+    <string name="b7">7</string>
+    <string name="b8">8</string>
+    <string name="b9">9</string>
+    <string name="b0">0</string>
+    <string name="Min">-</string>
+    <string name="Pls">+</string>
+    <string name="His">M</string>
+    <string name="Dot">.</string>
+    <string name="Equ">=</string>
+    <string name="Mul">x</string>
+    <string name="Dec">/</string>
+    <string name="Mc">CE</string>
+    <string name="Del">←</string>
+    <string name="On">(</string>
+    <string name="Off">)</string>
+    <string name="notScb">Не хватает скобки</string>
+
+    <string name="inDeg">  Градус</string>
+    <string name="inRad">  Радиан</string>
+
+    <string name="FUN_pow">^</string>
+    <string name="FUN_sqr">sqr</string>
+    <string name="FUN_sin">sin</string>
+    <string name="FUN_asin">asin</string>
+    <string name="FUN_cos">cos</string>
+    <string name="FUN_acos">acos</string>
+    <string name="FUN_atan">atan</string>
+    <string name="FUN_tan">tan</string>
+
+</resources>
