@@ -27,15 +27,19 @@ public class MyActivity extends Activity {
         et = (EditText) findViewById(R.id.eT);
     }
 
-    private String ds(String s) {
-        if (s.length() > 0) {
-            StringBuilder sb = new StringBuilder(s);
-            /*for (int i = 0; i < s.length() - 1; i++)
-                sb.append(s.charAt(i));*/
-            sb.setLength(sb.length() - 1);
-            return sb.toString();
-        } else
-            return s;
+    private void ds() {
+        String s = et.getText().toString();
+        if (et.getSelectionStart() > 0) {
+            int end = et.getSelectionEnd();
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < s.length(); i++) {
+                if (i != end - 1)
+                    sb.append(s.charAt(i));
+            }
+
+            et.setText(sb.toString());
+            et.setSelection(end - 1);
+        }
     }
 
     private boolean isem() {
@@ -49,7 +53,7 @@ public class MyActivity extends Activity {
         if (et.length() == 0)
             return -1;
         char c = et.getText().charAt(et.length() - 1);
-        if (c <= '9' && c >= '0'||c==')')
+        if (c <= '9' && c >= '0' || c == ')')
             return -1;
         return 0;
     }
@@ -124,8 +128,7 @@ public class MyActivity extends Activity {
                 et.setText("");
                 break;
             case R.id.butDel:
-                et.setText(ds(et.getText().toString()));
-                et.setSelection(et.length());
+                ds();
                 break;
             case R.id.butEqu:
                 // core.setWidth(et.getMaxEms());
@@ -148,28 +151,48 @@ public class MyActivity extends Activity {
         // et.append(ans);
     }
 
-    void inCurs(String s) {
+    void inCursF(String s) {
         int pos = et.getSelectionEnd();
         int len = et.length();
+
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < len; i++) {
-            if (i == pos) {
+            if (i == pos)
                 sb.append(s);
-            }
             sb.append(et.getText().charAt(i));
         }
         et.setText(sb.toString());
+
         if (len == pos)
             et.append(s);
 
-        if (et.length() >= 2 && et.getText().charAt(et.length() - 1) == ')' && et.getText().charAt(et.length() - 2) == '(') {
+        if(!s.equals("^")){
+            et.setSelection(pos+s.length()-1);
+        }
+
+        /*if (et.length() >= 2 && et.getText().charAt(et.length() - 1) == ')' && et.getText().charAt(et.length() - 2) == '(') {
             if (pos > 0)
                 et.setSelection(pos + s.length() - 2);
             else
                 et.setSelection(pos + s.length() - 1);
         } else
-            et.setSelection(pos + s.length());
+            et.setSelection(pos + s.length());*/
 
+    }
+    void inCurs(String s) {
+        int pos = et.getSelectionEnd();
+        int len = et.length();
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < len; i++) {
+            if (i == pos)
+                sb.append(s);
+            sb.append(et.getText().charAt(i));
+        }
+        et.setText(sb.toString());
+        if (len == pos)
+            et.append(s);
+        et.setSelection(pos+s.length());
     }
 
     @Override
@@ -178,7 +201,7 @@ public class MyActivity extends Activity {
 
         if (requestCode == 0 && resultCode == RESULT_OK) {
             stAns = data.getStringExtra(getResources().getString(R.string.ind) + "Ans");
-            inCurs(stAns);
+            inCursF(stAns);
         }
     }
 }

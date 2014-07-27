@@ -31,6 +31,17 @@ public class MyListActivity extends ListActivity {
                 getResources().getString(R.string.FUN_acos) + " " + getResources().getString(R.string.inDeg),
                 getResources().getString(R.string.FUN_tan) + " " + getResources().getString(R.string.inDeg),
                 getResources().getString(R.string.FUN_atan) + " " + getResources().getString(R.string.inDeg),
+
+                getResources().getString(R.string.FUN_sin) + " " + getResources().getString(R.string.inRad),
+                getResources().getString(R.string.FUN_asin) + " " + getResources().getString(R.string.inRad),
+                getResources().getString(R.string.FUN_cos) + " " + getResources().getString(R.string.inRad),
+                getResources().getString(R.string.FUN_acos) + " " + getResources().getString(R.string.inRad),
+                getResources().getString(R.string.FUN_tan) + " " + getResources().getString(R.string.inRad),
+                getResources().getString(R.string.FUN_atan) + " " + getResources().getString(R.string.inRad),
+
+                getResources().getString(R.string.FUN_lg),
+                getResources().getString(R.string.FUN_ln),
+
         };
         val = "";
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, catnames);
@@ -44,7 +55,7 @@ public class MyListActivity extends ListActivity {
         @Override
         public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
             val = parent.getItemAtPosition(position).toString();
-            if (position == 2)
+            if (position >= 2 && position <= 7)
                 val = "sin";
 
             if (position > 0)

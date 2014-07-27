@@ -37,4 +37,7 @@
     <string name="FUN_atan">atan</string>
     <string name="FUN_tan">tan</string>
 
+    <string name="FUN_log">log</string>
+    <string name="FUN_lg">lg</string>
+    <string name="FUN_ln">ln</string>
 </resources>

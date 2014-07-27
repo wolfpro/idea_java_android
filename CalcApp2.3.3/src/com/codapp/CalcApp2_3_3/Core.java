@@ -280,6 +280,13 @@ public class Core implements Rel {
             ba = new BigDecimal(Math.atan(ba.doubleValue()));
         }
 
+        if (fu.equals("ln")) {
+            ba = new BigDecimal(Math.log(ba.doubleValue()));
+        }
+
+        if (fu.equals("lg")) {
+            ba = new BigDecimal(Math.log10(ba.doubleValue()));
+        }
 
         return ba.toString();
     }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">38 попугаев</string>
+    <string name="radioButton_meters">В метрах</string>
+    <string name="radioButton_parrots">В попугаях</string>
+    <string name="buttonConvert_text">Конвертировать</string>
+    <string name="buttonConvertHandler">buttonConvert_Click</string>
+    <color name="activity_color">#3399cc</color>
+
+</resources>
