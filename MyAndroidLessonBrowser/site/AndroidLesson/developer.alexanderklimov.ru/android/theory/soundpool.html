@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/soundpool.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:52:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Класс SoundPool</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+                        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Класс SoundPool</h1>
+
+<p>Основное отличие класса <b>SoundPool</b> от класса <b>MediaPlayer</b> - поддержка одновременного проигрывания нескольких аудиопотоков, что широко используется в играх.</p>
+
+<p>Обычно <b>SoundPool</b> используют для проигрывания маленьких аудиоклипов. <b>SoundPool</b> может играть несколько звуков одновременно. Звуки также можно повторять (зациклить). В этом случае для остановки проигрывания нужно явно вызывать метод остановки. Размер файла, который может проиграть <b>SoundPool</b> не должен превышать 1 мегабайт.<p>
+
+<p>Поддерживаются файлы практически всех популярных форматов: mp3, ogg, wav, aac, 3gp, flac. После загрузки файлы перекодируются (в 16-bit PCM моно или стерео) для упрощения воспроизведения.</p>
+
+<p>Можно управлять скоростью воспроизведения аудио файла. Скорость 1,0 означает воспроизведение звука в исходном виде, 2,0 - воспроизведение в два раза быстрее, а 0,5 в два раза медленнее. Диапазон скорости воспроизведения составляет от 0,5 до 2,0.</p>
+
+<p>Можно программно задать количество аудио потоков, проигрываемых одновременно. Если максимальное число потоков будет превышено, автоматически остановится поток с самым низкий приоритетом. При наличии нескольких потоков с тем же низким приоритетом, будет выбран старейший из них. В случае, если приоритет нового потока ниже, чем все активные потоки, новый звук не будет проигран. Ограничение максимального числа потоков помогает снизить загрузку процессора.</p>
+
+<h3 class="text-warning">Конструктор класса SoundPool</h3>
+
+<pre>
+SoundPool (int maxStreams, int streamType, int srcQuality)
+</pre>
+
+<ul>
+<li><b>maxStreams</b> - максимальное количество потоков, который могут воспроизводится одновременно</li>
+<li><b>streamType</b> - тип аудиопотока, это константа из класса <b>AudioManager</b>. Здесь чаще всего используется AudioManager.STREAM_MUSIC.</li>
+<li><b>srcQuality</b> - качество кодирования. Сейчас этот параметр не используется, поэтому всегда будем передавать 0.</li>
+</ul>
+
+<h3 class="text-warning">Методы</h3>
+
+<p>Загрузить аудио файлы в SoundPool можно с помощью четырёх методов:</p>
+
+<pre>int load(AssetFileDescriptor afd, int priority)</pre>
+
+<p>Загрузка из папки <b>assets</b>. Нужно знать путь к файлу. <b>AssetManager</b> - класс, предоставляющий доступ к файлам в директории <b>assets</b>. Получить экземпляр класса для данного приложения можно методом <b>getAssets()</b>. <b>AssetFileDescriptor</b> - файловый дескриптор для файла из директории <b>assets</b>.</p>
+
+<pre>int load(Context context, int resId, int priority)</pre>
+
+<p>Загрузка файла по идентификатору ресурса. Звуковые файлы могут находиться в каталоге <b>res/raw</b>, и соответственно идентификатор будет <b>R.raw.sound</b>.</p>
+
+<pre>int load(String path, int priority)</pre>
+
+<p>Загрузка файла из указанного пути.</p>
+
+<pre>int load(FileDescriptor fd, long offset, long length, int priority)</pre>
+
+<p>Загрузка файла из файловой системы устройства. Этот вариант полезен, если вы храните несколько звуков в одном двоичном файле. Параметр <b>offset</b> определяет смещение от начала файла, а <b>length</b> определяет длину звука.</p>
+
+<p>В каждом методе мы передаем <b>priority</b> - приоритет файла. Методы возвращают идентификатор загруженного звука, который позже используется для воспроизведения.</p>
+
+<p>Загрузка файлов происходит асинхронно, то есть после вызова метода <b>load()</b> файл не сразу будет доступен для воспроизведения, так как необходимо время для его загрузки и перекодирования. Для того чтобы отследить окончание загрузки нужно обработать событие <b>OnLoadCompleteListener</b>. Для этого устанавливаем обработчик события с помощью метода <b>void setOnLoadCompleteListener(SoundPool.OnLoadCompleteListener listener)</b>, где <b>SoundPool.OnLoadCompleteListener</b> - это интерфейс с единственным методом 
+<b>void onLoadComplete(SoundPool soundPool, int sampleId, int status)</b>, который вызывается когда файл загружен. Здесь <b>sampleId</b> - идентификатор загруженного файла (то есть то, что вернул метод <b>load()</b>), а <b>status</b> - статус загрузки (значение 0 обозначает успешную загрузку).
+
+<p>Метод для проигрования звука</p>
+<pre>int play(int soundID, float leftVolume, float rightVolume, int priority, int loop, float rate)</pre>
+
+<ul>
+<li><b>soundID</b> - идентификатор звука (который вернул load())</li>
+<li><b>leftVolume</b> - уровень громкости для левого канала (от 0.0 до 1.0)</li>
+<li><b>rightVolume</b> - уровень громкости для правого канала (от 0.0 до 1.0)</li>
+<li><b>priority</b> - приоритет потока (0 - самый низкий)</li>
+<li><b>loop</b> - количество повторов (0 - без повторов, (-1) - зациклен)</li>
+<li><b>rate</b> - скорость воспроизведения (от 0.5 до 2.0)</li>
+</ul>
+
+<p>Остановка воспроизведения</p>
+<pre>void stop(int streamID)</pre>
+<ul>
+<li><b>void pause(int streamID)</b> Приостановить воспроизведение</li>
+<li><b>void resume(int streamID)</b> Возобновить приостановленный поток (если поток был не на паузе, то метод не даст никакого результата)</li>
+</ul>
+
+<p>Установка количество повторов для потока</p>
+<pre>void setLoop(int streamID, int loop)</pre>
+
+<p>Установка приоритета для потока</p>
+<pre>void setPriority(int streamID, int priority)</pre>
+
+<p>Установка скорости для потока</p>
+<pre>void setRate(int streamID, float rate)</pre>
+
+<p>Установка громкости для потока</p>
+<pre>void setVolume(int streamID, float leftVolume, float rightVolume)</pre>
+
+<p>Приостановить все активные потоки</p>
+<pre>void autoPause()</pre>
+ 
+<p>Возобновить все потоки</p>
+<pre>void autoResume()</pre>
+
+<p>Удаляет звук из SoundPool. Метод возвращает true если операция прошла успешно и false если такого SoundID не существует</p>
+<pre>boolean unload(int soundID)</pre>
+ 
+<p>Удаляет все загруженные звуки из SoundPool и освобождает память. После вызова этого метода экземпляр класса SoundPool уже нельзя использовать. (Метод используется при выходе из программы, чтобы освободить ресурсы)</p>
+<pre>void release()</pre>
+
+<h2 class="text-warning">Пример</h2>
+
+<p>Добавим на форму две кнопки, а также звуковой файл в папку ресурсов <b>res/raw</b>. Образцы бесплатных звуков можно взять в разделе <a href="../links.html#sound">Звуки</a>.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.SoundPoolDemo;
+
+import ...
+
+public class AudioPlayer extends Activity {
+
+    SoundPool soundPool;
+    HashMap&lt;Integer, Integer&gt; soundPoolMap;
+    int soundID = 1;
+
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+      
+        soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 100);
+        soundPoolMap = new HashMap&lt;Integer, Integer&gt;();
+        soundPoolMap.put(soundID, soundPool.load(this, R.raw.fallbackring, 1));
+      
+        Button buttonPlay = (Button)findViewById(R.id.play);
+        Button buttonPause = (Button)findViewById(R.id.pause);
+        buttonPlay.setOnClickListener(buttonPlayOnClickListener);
+        buttonPause.setOnClickListener(buttonPauseOnClickListener);
+    }
+
+    Button.OnClickListener buttonPlayOnClickListener
+            = new Button.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            // TODO Auto-generated method stub
+            AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+            float curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+            float maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+            float leftVolume = curVolume/maxVolume;
+            float rightVolume = curVolume/maxVolume;
+            int priority = 1;
+            int no_loop = 0;
+            float normal_playback_rate = 1f;
+            soundPool.play(soundID, leftVolume, rightVolume, priority, no_loop, normal_playback_rate);
+            
+            Toast.makeText(AudioPlayer.this,
+                    "soundPool.play()",
+                    Toast.LENGTH_LONG).show();
+        }
+    };
+
+    Button.OnClickListener buttonPauseOnClickListener
+            = new Button.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            // TODO Auto-generated method stub
+            soundPool.pause(soundID);
+            Toast.makeText(AudioPlayer.this,
+            "soundPool.pause()",
+            Toast.LENGTH_LONG).show();
+        }
+    };
+}
+</code></pre>
+
+<p>Кнопку управления громкостью телефона можно настроить для управления громкости музыки:</p>
+
+<pre><code class="java">
+context.setVolumeControlStream(AudioManager.STREAM_MUSIC);
+</code></pre>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+				
+				
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/soundpool.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:52:08 GMT -->
+</html>

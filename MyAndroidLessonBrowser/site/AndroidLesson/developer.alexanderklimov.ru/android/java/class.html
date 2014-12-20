@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/class.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Экспресс-курс: Классы и объекты</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->    
+<div class="clearfix"></div>
+    
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+    <div class="row-fluid">
+        <!--левое меню -->
+        <div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+        <div class="row-fluid">
+            <div class="span12">
+            
+                        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Классы и объекты</h1>
+
+<p>
+<a href="#objects">Объекты</a><br>
+<a href="#methods">Методы</a><br>
+<a href="#overload">Перегрузка методов</a><br>
+<a href="#visibility">Видимость. Спецификаторы доступа</a><br>
+<a href="#static">static</a><br>
+<a href="#instanceof">Ключевое слово instanceof - Проверка принадлежности к классу</a><br>
+<a href="#import">import - Импорт класса</a><br>
+<a href="#getname">Программно получить имя класса</a><br>
+<a href="#object">Класс Object</a><br>
+<a href="#tostring">Метод toString()</a><br>
+<a href="#fewreturn">Как вернуть из метода больше одного значения?</a><br>
+</p>
+
+<p>Java - это объектно-ориентированный язык, поэтому код в ваших программах будет состоять из объектов и классов. 
+
+<h2 class="text-warning">Классы</h2>
+
+<p>Java позволяет создавать классы, которые представляют объекты из реального мира. Например, можно создать класс Car (автомобиль) или Animal (животное) и задать им различные свойства. Для класса Car логично создать такие свойства как двери, колёса, лобовое стекло и т.д. Имея класс Car, можно создать новые классы Легковушки, Грузовики, Автобусы, которые будут иметь все свойства класса Car, а также свои собственные свойства. У класса Animal соответственно можно задать свойства Лапы, Хвост, а затем создать наш любимый класс Cat, у которого будет ещё дополнительное свойство Усы. Иными словами, классы могут наследовать свойства от других классов. Родительский класс называется суперклассом. Внутри классов могут быть объявлены поля и методы.</p>
+
+<p>Для объявления класса служит ключевое слово <b>class</b>. Вспомним стандартную строчку кода из Android-проекта:</p>
+
+<pre><code class="java">
+public class MainActivity extends Activity {
+    // код внутри класса
+}
+</code></pre>
+
+<p>Упрощённая общая форма для класса может иметь следующий вид:</p>
+
+<pre><code class="java">
+class ИмяКласса {
+    тип переменная_экземпляра1;
+    
+    тип имяМетода(список параметров){
+        // тело метода
+    }
+}
+</code></pre>
+
+<p>В классе могут быть несколько переменных и методов. Переменные, определённые внутри класса (не метода), называются переменными экземпляра. Код пишется внутри методов. Методы и переменные внутри класса являются членами класса.</p>
+
+<h2 class="text-warning" id="objects">Объекты</h2>
+
+<p>Новый объект (или экземпляр) создаётся из существующего класса при помощи ключевого слова <b>new</b>:</p>
+
+<pre><code class="java">
+Cat barsik = new Cat(); // создали кота из класса Cat
+</code></pre>
+
+<p>Слева от оператора присваивания = определяется имя переменной. Переменная имеет тип Cat. В правой части выражения происходит выделение памяти для нового экземпляра класса Cat и инициализируется экземпляр. Оператор присваивания присваивает переменной ссылку на только что созданный объект.</p>
+
+<p>Теперь подробнее.</p>
+
+<p>Простой пример создания класса Box (коробка для кота):</p>
+
+<pre><code class="java">
+class Box {
+    int width; // ширина коробки
+    int height; // высота коробки
+    int depth; // глубина коробки
+}
+</code></pre>
+
+<p>Вам нужно создать отдельный файл Box.java, в который следует вставить код, описанный выше. О том, как создавать новый файл для класса я не буду здесь расписывать.</p>
+
+<p>Сам класс - это просто шаблон, заготовка. Чтобы ваше приложение могло использовать данный шаблон, нужно создать на его основе объект при помощи ключевого слова <b>new</b>:</p>
+
+<pre><code class="java">
+Box catbox = new Box; // создали реальный объект с именем catbox на основе шаблона Box
+</code></pre>
+
+<p>Красивая получилась коробочка.</p>
+
+<p><img src="../../../ic.pics.livejournal.com/bflayer/11753295/258132/258132_original.gif"></p>
+
+<p>Объект <b>catbox</b>, объявленный в коде вашей программы, сразу займёт часть памяти на устройстве. При этом объект будет содержать собственные копии переменных экземпляра <b>width, height, depth</b>. Для доступа к этим переменным используется точка (.). Если мы хотим присвоить значение переменной <b>width</b>, то после создания объекта класса можете написать код:</p>
+
+<pre><code class="java">
+catbox.width = 400; // ширина коробки для кота 400 миллиметров
+</code></pre>
+
+<p>Если мы хотим вычислить объём коробки, то нужно перемножить все значения размеров коробки:</p>
+
+<pre><code class="java">
+Box catbox = new Box();
+
+catbox.width = 400;
+catbox.height = 200;
+catbox.depth = 250;
+
+int volume = catbox.width * catbox.height * catbox.depth;
+
+tvInfo.setText("Объём коробки: " + volume);
+</code></pre>
+
+<p>Каждый объект содержит собственные копии переменных экземпляра. Вы можете создать несколько объектов на основе класса Box и присваивать разные значения для размеров коробки. При этом изменения переменных экземпляра одного объекта никак не влияют на переменные экземпляра другого объекта. Давайте объявим два объекта класса Box:</p>
+
+<pre><code class="java">
+Box bigbox = new Box(); // большая коробка
+Box smallbox = new Box(); // маленькая коробка
+
+int volume;
+
+// присвоим значения переменным для большой коробки
+bigbox.width = 400;
+bigbox.height = 200;
+bigbox.depth = 250;
+
+// присвоим значения переменным для маленькой коробки
+smallbox.width = 200;
+smallbox.height = 100;
+smallbox.depth = 150;
+
+// вычисляем объём первой коробки
+volume = bigbox.width * bigbox.height * bigbox.depth;
+tvInfo.setText("Объём большой коробки: " + volume + "\n");
+
+// вычисляем объём маленькой коробки
+volume = smallbox.width * smallbox.height * smallbox.depth;
+tvInfo.append("Объём маленькой коробки: " + volume);
+</code></pre>
+
+<p>Когда мы используем конструкцию типа <b>Box bigbox = new Box();</b>, то в одной строке выполняем сразу два действия - объявляем переменную типа класса и резервируем память под объект. Можно разбить конструкцию на отдельные части:</p>
+
+<pre><code class="java">
+Box bigbox; // объявляем ссылку на объект
+bigbox = new Box(); // резервируем память для объекта Box
+</code></pre>
+
+<p>Обычно такую конструкцию из двух строк кода не используют на практике.</p>
+
+<p>Когда мы используем ключевое слово <b>new</b> и указываем имя класса, то после имени ставим круглые скобки, которые указывают на конструктор класса. О них поговорим ниже.</p>
+
+<h2 class="text-warning" id="methods">Методы</h2>
+
+<p>Класс может содержать методы - один, два, три и больше в зависимости от сложности класса. Название метода всегда завершается двумя круглыми скобками, после которых идет блок кода, обрамлённый фигурными скобками. Например, метод <b>sayMeow()</b> класса Cat выводит мяуканье кошки. Внутри метода могут быть параметры, например, sayMeow(3) - кошка мяукает три раза. Параметров может быть несколько, тогда они разделяются запятыми.</p>
+
+<p>Общая форма объявления метода выглядит следующим образом:</p>
+
+<pre><code class="java">
+тип имяМетода(список_параметров) {
+    // тело метода
+}
+</code></pre>
+
+<p>Метод может не иметь параметров, в этом случае используются пустые скобки.</p>
+
+<p>Методы могут вызывать другие методы.</p>
+
+<p>Каждый метод начинается со строки объявления, которую называют сигнатурой метода:</p>
+
+<pre>
+public static void sayMeow(int count) {
+    // здесь ваш код
+}
+</pre>
+
+<p>Если рассмотреть данный метод, то можно сказать следующее. Ключевое слово <b>public</b> означает, что метод доступен для любого класса. Ключевое слово <b>static</b> означает, что нам не нужно создавать экземпляр (копию) объекта Cat в памяти. Ключевое слово <b>void</b> означает, что метод не возвращает никаких данных. Именем метода является слово перед круглыми скобками.</p>
+
+<p>Если метод возвращает какие-то данные, то в теле метода используется оператор <b>return значение</b>, где <b>значение</b> - это возвращаемое значение.</p>
+
+<p>Вспомним наш класс <b>Box</b>, в котором определены высота, ширина и глубина ящика. Зная эти величины, мы вычисляли объём коробки самостоятельно. Но мы можем расширить возможности класса, чтобы он сам мог вычислить объём внутри класса и предоставить нам готовые данные. Давайте добавим в класс новый метод:</p>
+
+<pre><code class="java">
+class Box {
+    int width; // ширина коробки
+    int height; // высота коробки
+    int depth; // глубина коробки
+
+    // вычисляем объём коробки
+    String getVolume() {
+        return "Объём коробки: " + (width * height * depth);
+    }
+}
+</code></pre>
+
+<p>Теперь пробуем вычислить объём коробки с помощью готового метода, который есть в классе:</p>
+
+<pre><code class="java">
+Box catbox = new Box();
+
+catbox.width = 400;
+catbox.height = 200;
+catbox.depth = 250;
+
+tvInfo.setText(catbox.getVolume());
+</code></pre>
+
+<p>Мы уже не вычисляем объём вручную, за нас это сделает класс <b>Box</b>, у которого есть готовый метод для вычисления объёмов.</p>
+
+<p>Обращение к методу осуществляется как и к переменной через точку. Наличие круглых скобок позволяет различать метод от имени переменной. То есть, если вы увидите запись:</p>
+
+<pre><code class="java">
+cat.getVolume; // это переменная
+cat.getVolume(); // это метод
+</code></pre>
+
+<p>Выше приведён немного искусственный пример, так как опытный программист никогда не назовёт переменную именем <b>geVolume</b>. Существует рекомендация, что для методов в начале имени нужно использовать глагол и начинаться имя должно с маленькой буквы - переменные так называть не следует.</p>
+
+<h3 class="text-warning">Использование параметров</h3>
+
+<p>Параметры позволяют работать с различными данными. Допустим, мы хотим вычислить площадь прямоугольника со сторонами 3 и 5 см.</p>
+
+<pre><code class="java">
+int getSquare() {
+    return 3 * 5;
+}
+</code></pre>
+
+<p>Метод работает, но область его применения слишком ограничена. Мы сможем вычислять площадь только одного прямоугольника с жёстко заданными размерами. Но прямоугольники бывают разными и нам нужен универсальный метод. Добиться решения задачи можно с помощью параметров. Перепишем метод следующим образом:</p>
+
+<pre><code class="java">
+int getSquare(int a, int b) {
+    return a * b;
+}
+</code></pre>
+
+<p>Теперь мы можем вычислять площадь любого прямоугольника, зная его размеры. Возьмём тот же прямоугольник со сторонами 3 и 5 см и вычислим его площадь:</p>
+
+<pre><code class="java">
+tvInfo.setText("Площадь прямоугольника: " + getSquare(3, 5));
+</code></pre>
+
+<p>В правильно написанных классах стараются избегать доступа к переменным класса напрямую. Следует использовать методы, которые позволяют избежать ошибок. В нашем классе <b>Box</b> использовались отдельные переменные <b>width, height, depth</b>. Код с использованием этих переменных слишком громоздкий, кроме того вы можете забыть про какую-нибудь переменную. Добавим в класс новый метод, который упростит наш код для вычисления объёма ящика:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+class Box {
+    int width; // ширина коробки
+    int height; // высота коробки
+    int depth; // глубина коробки
+
+    // вычисляем объём коробки
+    int getVolume() {
+        return width * height * depth;
+    }
+    
+    // устанавливаем размеры коробки
+    void setDim(int w, int h, int d) {
+        width = w;
+        height = h;
+        depth = d;
+    }
+}
+</code></pre>
+
+<p>Пробуем класс в действии:</p>
+
+<pre><code class="java">
+Box catbox = new Box();
+catbox.setDim(400, 200, 250);
+int vol = catbox.getVolume();
+
+tvInfo.setText("Объём ящика: " + vol);
+</code></pre>
+
+<p>Как видите, мы теперь не обращаемся к отдельным переменным класса, а вызываем метод <b>setDim()</b> для установки размеров ящика, после чего можно вызвать метод <b>getVolume()</b> для вычисления объёма. Естественно, вы можете реализовать свою логику в классе. Например, вы можете создать метод <b>getVolume()</b> с параметрами, которые отвечают за размеры ящика и возвращать сразу готовый результат.</p>
+
+<h3 class="text-warning" id="overload">Перегрузка методов</h3>
+
+<p>Метод - имя для действия: прыгнуть, мяукнуть, отформатировать диск. Использование имён при написании кода упрощает её понимание и модификацию. Работа разработчика схожа с работой писателя - в обоих случаях требуется донести свою мысль до читателя/приложения.</p>
+
+<p>Часто одно и то же слово имеет несколько разных значений - оно <i>перегружено</i>. Например, мы говорим "вымыть посуду" и "вымыть кота". Было бы глупо говорить "посудовымыть посуду" или "котовымыть кота", чтобы подчеркнуть разницу. Также и с методами. Можно создавать методы с одинаковыми именами, но с разным набором аргументов.</p>
+
+<div class="alert">
+Перегрузку (overloading) следует отличать от замещения (overriding) - иной реализации метода в подклассе первоначально определившего метод класса.
+</div>
+
+<p>Java, как и многие языки программирования, разрешает создавать внутри одно класса несколько методов с одним именем. Главное, чтобы у них различались параметры. Параметры могут различаться типами или количеством аргументов. Будьте внимательны, если вы зададите различные типы для возвращаемого значения, то этого будет недостаточно для создания перегруженной версии метода. Когда Java встречает вызов перегруженного метода, то выбирает ту версию, параметры которой соответствуют аргументам, использованным в вызове.</p>
+
+<p>Создадим класс <b>Cat</b> с набором перегруженных методов:</p>
+
+<pre><code class="java">
+class Cat {
+    void meow() {
+        // параметры отсутствуют
+    }
+    
+    void meow(int count) {
+        // используется один параметр типа int
+    }
+    
+    void meow(int count, int pause) {
+        // используются два параметра типа int
+    }
+    
+    long meow(long time) {
+        // используется один параметр типа double
+        return time;
+    }
+}
+</code></pre>
+
+<p>Вы можете вызвать любой метод из класса:</p>
+
+<pre><code class="java">
+Cat kitty = new Cat();
+kitty.meow();
+kitty.meow(3);
+kitty.meow(3, 2);
+kitty.meow(4500.25);
+</code></pre>
+
+<p>Если присмотреться, то можно догадаться, какая именно версия метода вызывается в каждом конкретном случае.</p>
+
+<p>Аналогично, перегрузка используется и для <a href="constructor.html">конструкторов</a>.</p>
+
+<h2 class="text-warning" id="visibility">Видимость. Спецификаторы доступа</h2>
+
+<p>Существует возможность управлять тем, какие части программы могут получать доступ к членам класса. Управление доступом позволяет предотвращать злоупотребления. Не всегда желательно, чтобы имелся доступ к отдельной переменной или методу класса, которые должны работать только внутри самого класса.</p>
+
+<p>Способ доступа определяется <i>модификатором доступа</i>, который добавляется при объявлении. Всего их три:</p>
+
+<ul>
+<li>private</li>
+<li>public</li>
+<li>protected</li>
+</ul>
+
+<p>Примеры объявление модификаторов (он всегда должен быть первым):</p>
+
+<pre>
+public int i;
+private double j, k;
+private int createMethod(int a) {...};
+</pre>
+
+<h3 class="text-warning">public</h3>
+
+<p>При использовании ключевого слова <b>public</b> вы сообщаете, что следующее за ним объявление члена класса доступно для всех.</p>
+
+<p>Предположим, что класс объявлен как <b>public</b>, и в нём имеются два метода. Один <b>private</b>, второй - <b>public</b>. У вас будет доступ к классу и ко <b>второму</b> методу, но не к первому, несмотря на то, что сам класс открыт.</p>
+
+<h3 class="text-warning">private</h3>
+
+<p>Ключевое слово <b>private</b> означает, что доступ к члену класса не предоставляется никому, кроме методов этого класса. Другие классы того же пакета также не могут обращаться к private-членам.</p>
+
+<p>Все вспомогательные методы классов стоит объявить как <b>private</b>, чтобы предотвратить их случайные вызовы в пакете. Тоже относится и к private-полям внутри класса.</p>
+
+<h3 class="text-warning">protected</h3>
+
+<p>Ключевое слово <b>protected</b> связано с понятием наследования, при котором к уже существующему классу (базовому) добавляются новые члены, причем исходная реализация остается неизменной. Также можно изменять поведение уже существующих членов класса. Для создания нового класса на базе существующего используется ключевое слово <b>extends</b>.</p>
+
+<p>Если при создании нового пакета используется наследование от класса, находящемся в другом пакете, новый класс получает доступ только к открытым (public) членам из исходного пакета. Иногда создателю базового класса необходимо предоставить доступ к конкретному методу производным классам, но закрыть его от всех остальных. В этих случаях используется ключевое слово <b>protected</b>. Спецификатор <b>protected</b> также предоставляет доступ в пределах пакета, т.е. члены с этим спецификатором доступны для других классов из того же пакета.</p>
+
+<p>По умолчанию при отсутствии модификатора члена класса считается открытым внутри своего собственного пакета, но не доступен для кода, расположенного вне этого пакета.</p>
+
+<p>Рассмотрим вымышленный класс SillySensor</p>
+
+<pre><code class="java">
+public class SillySensor
+{
+    private int sensorData;
+
+    public SillySensor()
+    {
+        sensorData = 0;
+    }
+
+    private void calibrate(int iSeed)
+    {
+        // код для калибровки
+    }
+
+    protected void seedCalibration(int iSeed)
+    {
+        calibrate(iSeed);
+    }
+
+    public int getSensorData()
+    {
+        // Check sensor here
+
+        return sensorData;
+    }
+}
+</code></pre>
+
+<p>Класс объявлен как <b>public</b> и доступен в других классах. У класса есть переменная <b>sensorData</b>, которая доступна только в своём классе (private). Конструктор доступен в других классах (<b>public</b>). Метод <b>calibrate()</b> работает только внутри класса (<b>private</b>). Метод <b>seedCalibration()</b> доступен в своем классе или в подклассе (<b>protected</b>). Метод <b>getSensorData()</b> доступен в других классах (<b>public</b>).</p>
+
+<h2 class="text-warning" id="static">static</h2>
+
+<p>Иногда требуется определить член класса, который будет использоваться независимо от любого объекта этого класса. И его можно использовать самостоятельно без ссылки на конкретный экземпляр. Для создания подобного члена класса, нужно в начало его объявления поместить ключевое слово <b>static</b>. В этом случае он становится доступен до создания каких-либо объектов его класса и без ссылки на какой-либо объект. Статическими могут быть и переменные и методы.</p>
+
+<p>По существу переменные экземпляров, объявленные как <b>static</b>, являются глобальными переменными. При объявлении объектов их класса программа не создаёт никаких копий статической переменной. Вместо этого все экземпляры класса совместно используют одну и ту же статическую переменную.</p>
+
+<p>У статических методов есть ряд ограничений:</p>
+
+<ul>
+<li>они могут вызывать только другие статические методы</li>
+<li>они могут непосредственно осуществлять доступ только к статическим переменным</li>
+<li>они не могут ссылаться на члены типа this или super</li>
+</ul>
+
+<p>За пределами класса, в котором они определены, статические методы и переменные могут использоваться независимо от какого-либо объекта. Для этого достаточно указать имя класса:</p>
+
+<pre>имя_класса.метод()</pre>
+
+<h2 class="text-warning" id="final">Ключевое слово final</h2>
+
+<p>Поле может быть объявлено как <b>final</b> (финальное). Это позволяет предотвратить изменение содержимого переменной, по сути, это становится константой. Финальное поле должно быть инициализировано во время его первого объявления.</p>
+
+<pre>
+final int FILE_OPEN = 1;
+</pre>
+
+<p>Теперь можно пользоваться переменной <b>FILE_OPEN</b> так, как если бы она была константой, без риска изменения их значений. Принято записывать имена заглавными буквами.</p>
+
+<p>Кроме полей, <b>final</b> можно использовать для параметров метода (препятствует изменению в пределах метода) и у локальных переменных (препятствует присвоению ей значения более одного раза).</p>
+
+<p>Также слово <b>final</b> можно применять к методам, чтобы предотвратить его переопределение.</p>
+
+<pre><code class="java">
+class Cat {
+    final void meow() {
+        System.out.println("Мяу");
+    }
+}
+
+class Kittent extends Cat {
+    // Этот метод создать не получится
+    void meow() {
+        System.out.println("Да хоть гав-гав, всё равно не заведётся");
+    }
+}
+</code></pre>
+
+<p>Ещё один вариант использования ключевого слова <b>final</b> - предотвращение наследования класса. При этом неявно всего методы класса также становятся финальными. Поэтому нельзя одновременно объявить класс абстрактным и финальным, поскольку абстрактный класс является лишь шаблоном и только его подклассы реализуют методы.</p>
+
+<pre><code class="java">
+final class Tail {
+    // ...
+}
+
+// Следующий класс недопустим
+class BigTail extends Tail {
+    // Ошибка! Класс Хвост нельзя переопределять.
+}
+</code></pre>
+
+<h2 class="text-warning" id="instanceof">Ключевое слово instanceof - Проверка принадлежности к классу</h2>
+
+<p>Иногда требуется проверить, к какому классу принадлежит объект. Это можно сделать при помощи ключевого слова <b>instanceof</b>. Это булев оператор, и выражение <b>foo instanceof Foo</b> истинно, если объект <b>foo</b> принадлежит классу <b>Foo</b> или его наследнику, или реализует интерфейс <b>Foo</b> (или, в общем виде, наследует класс, который реализует интерфейс, который наследует <b>Foo</b>).</p>
+
+<p>Возьмём пример с рыбками, которые знакомы котам не понаслышке. Пусть у нас есть родительский класс <b>Fish</b> и у него есть унаследованные подклассы <b>SaltwaterFish</b> и <b>FreshwaterFish</b>. Мы можем протестировать, относится ли заданный объект к классу или подклассу по имени</p>
+
+<pre><code class="java">
+SaltwaterFish nemo = new SaltwaterFish();
+if(nemo instanceof Fish) {
+    // рыбка Немо относится к классу Fish
+    // это может быть класс Fish (родительский класс) или подкласс типа
+    // SaltwaterFish или FreshwaterFish. 
+
+    if(nemo instanceof SaltwaterFish) {
+        // Немо  - это морская рыбка!
+    }
+}
+</code></pre>
+
+<p>Данная проверка удобна во многих случаях. В Android очень много классов, которые происходят от класса <b>View</b> - TextView, CheckBox, Button, которые имеют свои собственные наборы свойств. И если имеется метод с параметром View, то при помощи <b>instanceof</b> можно разделить логику кода:</p>
+
+<pre><code class="java">
+void checkforTextView(View v)
+{
+     if(v instanceof TextView)
+    {
+        // Код для элемента TextView
+    } else {
+        // Для других элементов View
+    }
+}
+</code></pre>
+
+<h2 class="text-warning" id="import">import - Импорт класса</h2>
+
+<p>Оператор <b>import</b> сообщает компилятору Java, где найти классы, на которые ссылается код. Любой сложный объект использует другие объекты для выполнения тех или иных функций, и оператор импорта позволяет сообщить о них компилятору Java. Оператор импорта обычно выглядит так:</p>
+
+<pre>
+import  ClassNameToImport;
+</pre>
+
+<p>За ключевым словом <b>import</b> следуют класс, который нужно импортировать, и точка с запятой. Имя класса должно быть полным, то есть включать свой пакет.
+Чтобы импортировать все классы из пакета, после имени пакета можно поместить .*.</p>
+
+<p>Eclipse упрощает импорт. При написании кода в редакторе Eclipse можно ввести имя класса, а затем нажать Ctrl+Shift+O. Eclipse определяет, какие классы нужно импортировать, и добавляет их автоматически. Если Eclipse находит два класса с одним и тем же именем, он выводит диалоговое окно с запросом, какой именно класс вы хотите добавить.</p>
+
+<h3 class="text-warning">Статический импорт</h3>
+
+<p>Существует ещё статический импорт, применяемый для импорта статических членов класса или интерфейса. Это позволяет сократить количество кода. Например, есть статические методы <b>Math.pow()</b>, <b>Math.sqrt()</b>. Для вычислений сложных формул с использованием математических методов, код становится перегружен. К примеру, вычислим гипотенузу.</p>
+
+<pre><code class="java">
+hypot = Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
+</code></pre>
+
+<p>В данном случае без указания класса не обойтись, так как методы статические. Чтобы не набирать имена классов, их можно импортировать следующим образом:</p>
+
+<pre><code class="java">
+import static java.lang.Math.sqrt;
+import static java.lang.Math.pow;
+
+...
+hypot = sqrt(pow(side1, 2) + pow(side2, 2));
+</code></pre>
+
+<p>После импорта уже нет необходимости указывать имя класса.</p>
+
+<p>Второй допустимый вариант, позволяющий сделать видимыми все статические методы класса:</p>
+
+<pre><code class="java">
+import static java.lang.Math.*;
+</code></pre>
+
+<p>В этом случае вам не нужно импортировать отдельные методы. Но такой подход в Android не рекомендуется, так как требует больше памяти.</p>
+
+<h2 class="text-warning" id="getname">Программно получить имя класса</h2>
+
+<p>Иногда из программы нужно получить имя класса. Для этого есть специальные методы <b>getClass().getName()</b> и другие родственные методы. Допустим, нам нужно узнать имя класса кнопки, на которую мы нажимаем в программе.</p>
+
+<pre><code class="java">
+public void onClick(View v) {
+    String className = v.getClass().getName();
+    String simpleName = v.getClass().getSimpleName();
+    String canonicalName = v.getClass().getCanonicalName();
+
+    if (canonicalName == null) {
+        canonicalName = "null";
+    }
+
+    String s = "Имя класса: " + className + "\n" + "SimpleName: " + simpleName
+            + "\n" + "CanonicalName: " + canonicalName + "\n";
+    
+    TextView tvInfo = (TextView)findViewById(R.id.textView1);
+    tvInfo.setText(s);
+}
+</code></pre>
+
+<p>Если нужно узнать имя класса активности, то достаточно кода:</p>
+
+<pre><code class="java">
+// подставьте имя вашей активности
+String className = TestActivity.class.getName();
+</code></pre>
+
+<p>Если вам известно имя клаccа, то можете получить сам класс:</p>
+
+<pre><code class="java">
+try {
+    // получим объект Class
+	Class&lt;?&gt; myClass = Class.forName("ru.alexanderklimov.test.TestActivity");
+	tvInfo.setText(myClass.getName()); // выводим в TextView
+    
+    Intent intent = new Intent(this, myClass);
+    startActivity(intent);
+} catch (ClassNotFoundException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+</code></pre>
+
+<h2 class="text-warning" id="object">Класс Object</h2>
+
+<p>В Java есть специальный суперкласс <b>Object</b> и все классы являются его подклассами. Поэтому ссылочная переменная класса <b>Object</b> может ссылаться на объект любого другого класса. Так как массивы являются тоже классами, то переменная класса <b>Object</b> может ссылаться и на любой массив.</p>
+
+<p>У класса есть несколько важных методов.</p>
+
+<ul>
+<li>Object clone() - создаёт новый объект, не отличающий от клонируемого.</li>
+<li>boolean equals(Object object) - определяет, равен ли один объект другому.</li>
+<li>void finalize() - вызывается перед удалением неиспользуемого объекта.</li>
+<li>Class&lt;?&gt; getClass() - получает класс объекта во время выполнения.</li>
+<li>int hashCode() - возвращает хэш-код, связанный с вызывающим объектом.</li>
+<li>void notify() - возобновляет выполнение потока, который ожидает вызывающего объекта</li>
+<li>void notifyAll() - возобновляет выполнение всех потоков, которые ожидают вызывающего объекта</li>
+<li>String toString() - возвращает строку, описывающий объект</li>
+<li>void wait() - ожидает другого потока выполнения</li>
+<li>void wait(long ms) - ожидает другого потока выполнения</li>
+<li>void wait(long ms, int nano) - ожидает другого потока выполнения</li>
+</ul>
+
+<p>Методы <b>getClass()</b>, <b>notify()</b>, <b>notifyAll()</b>, <b>wait()</b> являются финальными и их нельзя переопределять.</p>
+
+<h2 class="text-warning" id="tostring">Метод toString()</h2>
+
+<p>Каждый класс реализует метод <b>toString()</b>, так как он определён в классе <b>Object</b>. Но использовать метод по умолчанию не слишком удобно, так как не содержит полезной информации. Разработчики предпочитают переопределять данный метод под свои нужды. Сам метод имеет форму:</p>
+
+<pre><code class="java">
+String toString()
+</code></pre>
+
+<p>Вам остаётся возвратить объект класса <b>String</b>, который будет содержать полезную информацию о вашем классе. Давайте возьмём для примера класс <b>Box</b>, созданный выше:</p>
+
+<pre><code class="java">
+class Box {
+    int width; // ширина коробки
+    int height; // высота коробки
+    int depth; // глубина коробки
+    
+    Box(int width, int height, int depth){
+    	this.width = width;
+    	this.height = height;
+    	this.depth = depth;
+    }
+
+    // вычисляем объём коробки
+    String getVolume() {
+        return "Объём коробки: " + (width * height * depth);
+    }
+    
+    public String toString() {
+        return "Коробочка для кота размером " + width + "x" + height + "x" + depth;
+    }
+}
+</code></pre>
+
+<p>Теперь можете узнать о классе <b>Box</b>:</p>
+
+<pre><code class="java">
+TextView tvInfo = (TextView)findViewById(R.id.textView1);
+Box box = new Box(4, 5, 6);
+tvInfo.setText(box.toString());
+</code></pre>
+
+<p>Метод очень часто используется при создании собственных классов и вам тоже придётся прибегать к этому способу.</p>
+
+<h2 class="text-warning" id="fewreturn">Как вернуть из метода больше одного значения?</h2>
+
+<p>Методы в Java возвращают одно значение. А если хочется сразу вернуть сразу два и более значений? Например, у нас имеется массив чисел и мы хотим написать метод, который сразу возвращает минимальное и максимальное значение из него.</p>
+
+<p>Одно из решений заключается в том, что нужно "запаковать" два значения полученные в одном методе с помощью конструктора специального класса, а затем "распаковать" их в другом методе, при обращении к конструктору.</p>
+
+<p>Реализация такого решения имеется в <a href="array-exercise.html#getmax">ответе на задачу на нахождение минимального и максимального значений в массиве</a>.</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->    
+          
+        </div><!--/span-->
+        
+        <div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+        
+      </div><!--/row-->
+      
+    
+      <hr>
+      
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/class.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:01 GMT -->
+</html>

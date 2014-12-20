@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/games/hangman.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:08:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Игры на Android: Виселица (Hangman)</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class="active"><a href="index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Виселица (Hangman)</h1>
+
+<p>Когда деревья были большими, я играл в "Виселицу" на листочках из тетради. Новое поколение может поиграть в эту игру на своих устройствах.</p>
+
+<p>Цель игры проста - угадать слово, используя буквы. За каждую неправильную попытку рисуется фрагмент виселицы и человечка. Это очень жестокая игра, куда смотрят депутаты?</p>
+
+<p>Создадим стандартный проект.</p>
+
+<p>В папке <b>res/drawable</b> создадим новый файл <b>letter_bg.xml</b>.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shape=&quot;line&quot; &gt;
+
+    &lt;stroke
+        android:width=&quot;2dp&quot;
+        android:color=&quot;#FF333333&quot; /&gt;
+
+    &lt;solid android:color=&quot;#00000000&quot; /&gt;
+
+    &lt;padding android:bottom=&quot;20dp&quot; /&gt;
+
+    &lt;size
+        android:height=&quot;20dp&quot;
+        android:width=&quot;20dp&quot; /&gt;
+
+&lt;/shape&gt;
+</code></pre>
+
+<p>В этой же папке создайте новый файл <b>letter_up.xml</b>.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:padding=&quot;5dp&quot;
+    android:shape=&quot;rectangle&quot; &gt;
+
+    &lt;solid android:color=&quot;#FF333333&quot; /&gt;
+
+    &lt;corners
+        android:bottomLeftRadius=&quot;15dp&quot;
+        android:bottomRightRadius=&quot;15dp&quot;
+        android:topLeftRadius=&quot;15dp&quot;
+        android:topRightRadius=&quot;15dp&quot; /&gt;
+
+    &lt;stroke
+        android:width=&quot;2dp&quot;
+        android:color=&quot;#FFCCCCCC&quot; /&gt;
+&lt;/shape&gt;
+</code></pre>
+
+<p>Теперь файл <b>letter_down.xml</b>:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:padding=&quot;5dp&quot;
+    android:shape=&quot;rectangle&quot; &gt;
+
+    &lt;solid android:color=&quot;#FF000000&quot; /&gt;
+
+    &lt;corners
+        android:bottomLeftRadius=&quot;15dp&quot;
+        android:bottomRightRadius=&quot;15dp&quot;
+        android:topLeftRadius=&quot;15dp&quot;
+        android:topRightRadius=&quot;15dp&quot; /&gt;
+&lt;/shape&gt;
+</code></pre>
+
+<p>Разметка для основной активности:</p>
+
+<pre><code class="xml">
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:background=&quot;#FF000000&quot;
+    android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;
+    android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingTop=&quot;@dimen/activity_vertical_margin&quot;
+    tools:context=&quot;.MainActivity&quot; &gt;
+
+    &lt;ImageView
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_centerInParent=&quot;true&quot;
+        android:src=&quot;@drawable/android_hangman_bg&quot; /&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/playBtn&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_centerInParent=&quot;true&quot;
+        android:text=&quot;Play&quot;
+        android:textColor=&quot;#FFFF0000&quot; /&gt;
+
+&lt;/RelativeLayout&gt;
+</code></pre>
+
+<p>Создадим вторую активность <b>GameActivity</b> с разметкой</p>
+
+<pre><code class="xml">
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:background=&quot;#FF000000&quot;
+    android:orientation=&quot;vertical&quot;
+    android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;
+    android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingTop=&quot;@dimen/activity_vertical_margin&quot; &gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>В манифесте установим для активности портретную ориентацию и укажем родителя.</p>
+
+<pre><code class="xml">
+&lt;activity
+    android:name=&quot;ru.alexanderklimov.hangman.GameActivity&quot;
+    android:label=&quot;@string/title_activity_game&quot;
+    android:parentActivityName=&quot;.MainActivity&quot;
+    android:screenOrientation=&quot;portrait&quot;&gt;
+&lt;/activity&gt;
+</code></pre>
+
+<p>Подготовительные работы закончены. Напишем код для запуска второй активности по щелчку кнопки</p>
+
+<pre><code class="java">
+public class MainActivity extends Activity implements View.OnClickListener {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    
+        Button playBtn = (Button)findViewById(R.id.playBtn);
+        playBtn.setOnClickListener(this);
+    }
+    
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.playBtn) {
+            Intent playIntent = new Intent(this, GameActivity.class);
+            this.startActivity(playIntent);
+        }
+    }
+}    
+</code></pre>
+
+<p>Настроим внешний вид второй активности.</p>
+
+<pre><code class="xml">
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:background=&quot;#FF000000&quot;
+    android:orientation=&quot;vertical&quot;
+    android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;
+    android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingTop=&quot;@dimen/activity_vertical_margin&quot; &gt;
+
+    &lt;RelativeLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:background=&quot;#FFFFFFFF&quot;
+        android:gravity=&quot;center&quot;
+        android:paddingTop=&quot;15dp&quot; &gt;
+        &lt;ImageView
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:contentDescription=&quot;@string/gallows&quot;
+            android:paddingLeft=&quot;0dp&quot;
+            android:paddingTop=&quot;0dp&quot;
+            android:src=&quot;@drawable/android_hangman_gallows&quot; /&gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/head&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:contentDescription=&quot;@string/head&quot;
+            android:paddingLeft=&quot;108dp&quot;
+            android:paddingTop=&quot;23dp&quot;
+            android:src=&quot;@drawable/android_hangman_head&quot; /&gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/body&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:contentDescription=&quot;@string/body&quot;
+            android:paddingLeft=&quot;120dp&quot;
+            android:paddingTop=&quot;53dp&quot;
+            android:src=&quot;@drawable/android_hangman_body&quot; /&gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/arm1&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:contentDescription=&quot;@string/arm&quot;
+            android:paddingLeft=&quot;100dp&quot;
+            android:paddingTop=&quot;60dp&quot;
+            android:src=&quot;@drawable/android_hangman_arm1&quot; /&gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/arm2&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:contentDescription=&quot;@string/arm&quot;
+            android:paddingLeft=&quot;120dp&quot;
+            android:paddingTop=&quot;60dp&quot;
+            android:src=&quot;@drawable/android_hangman_arm2&quot; /&gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/leg1&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:contentDescription=&quot;@string/leg&quot;
+            android:paddingLeft=&quot;101dp&quot;
+            android:paddingTop=&quot;90dp&quot;
+            android:src=&quot;@drawable/android_hangman_leg1&quot; /&gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/leg2&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:contentDescription=&quot;@string/leg&quot;
+            android:paddingLeft=&quot;121dp&quot;
+            android:paddingTop=&quot;90dp&quot;
+            android:src=&quot;@drawable/android_hangman_leg2&quot; /&gt;
+    &lt;/RelativeLayout&gt;
+
+    &lt;LinearLayout
+        android:id=&quot;@+id/word&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginBottom=&quot;5dp&quot;
+        android:background=&quot;#FFFFFFFF&quot;
+        android:gravity=&quot;center&quot;
+        android:orientation=&quot;horizontal&quot;
+        android:padding=&quot;10dp&quot; &gt;
+    &lt;/LinearLayout&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>В разметке имеется семь компонентов <b>ImageView</b>, каждый из которых отвечает за отдельную часть человечка - голова, туловище, руки, ноги. Наша задача заключается в правильном позиционировании каждых элементов, чтобы они все образовали цельную фигуру. При новой игре все элементы тела должны быть невидимы и появляться при неудачной попытке.</p>
+
+<p>Слова будут храниться в отдельном файле. Создайте в папке <b>res/values</b> файл <b>arrays.xml</b>.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;string-array name=&quot;words&quot;&gt;
+        &lt;item&gt;KITTEN&lt;/item&gt;
+        &lt;item&gt;COMPUTER&lt;/item&gt;
+        &lt;item&gt;TABLET&lt;/item&gt;
+        &lt;item&gt;SYSTEM&lt;/item&gt;
+        &lt;item&gt;APPLICATION&lt;/item&gt;
+        &lt;item&gt;INTERNET&lt;/item&gt;
+        &lt;item&gt;STYLUS&lt;/item&gt;
+        &lt;item&gt;ANDROID&lt;/item&gt;
+        &lt;item&gt;KEYBOARD&lt;/item&gt;
+        &lt;item&gt;SMARTPHONE&lt;/item&gt;
+    &lt;/string-array&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>Вы можете расширить указанный список.</p>
+
+<p>Объявим переменные:</p>
+
+<pre><code class="java">
+private String[] words;
+private Random rand;
+private String currWord;
+private LinearLayout wordLayout;
+private TextView[] charViews;
+</code></pre>
+
+<p>Слова для отгадывания хранятся в ресурсах в виде массива строк. В случайном порядке (класс <b>Random</b>) мы выберем слово из этого массива для нового раунда игры. Также мы создадим переменную для текущего слова и для разметки, которая будет содержать ответ. Ещё нам понадобится массив текстовых меток для отдельных символов.</p>
+
+<p>Для запуска новой игры создадим вспомогательный метод <b>playGame()</b>. В нём случайным образом выбирается слово и проверяется на сходство с текущим словом в цикле <b>while</b>. Это сделано для того, чтобы одно и то же слово не пришлось отгадывать два раза подряд. В успешном случае значение переменной, отвечающей за текущее слово, заменяется на новый вариант.</p>
+
+<p>Далее вычисляем длину слова и программно создаём массив из <b>TextView</b>, который будет содержать по одному символу. Цвет символов будет белым и будет невидим на белом фоне.</p>
+
+<p>Все буквы алфавита будут находиться в сетке <b>GridView</b> сразу после изображения виселицы. В каждом ряду будет по семь символов (атрибут <b>android:numColumns</b>)</p>
+
+<pre><code class="xml">
+&lt;GridView
+    android:id=&quot;@+id/letters&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_gravity=&quot;center&quot;
+    android:layout_marginBottom=&quot;5dp&quot;
+    android:background=&quot;#FF000000&quot;
+    android:horizontalSpacing=&quot;5dp&quot;
+    android:numColumns=&quot;7&quot;
+    android:padding=&quot;5dp&quot;
+    android:stretchMode=&quot;columnWidth&quot;
+    android:verticalSpacing=&quot;5dp&quot; /&gt;
+</code></pre>
+
+<p>Мы создадим отдельный адаптер, чтобы связать символы с кнопками, которые программно появятся в <b>GridView</b>.</p>
+
+<p>Создайте файл <b>letter.xml</b> в папке <b>res/layout</b>:</p>
+
+<pre><code class="xml">
+&lt;Button xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;35dp&quot;
+    android:background=&quot;@drawable/letter_up&quot;
+    android:onClick=&quot;letterPressed&quot; /&gt;
+</code></pre>
+
+<p>Это отдельная разметка для единственной кнопки. Таких кнопок у нас будет 26 по числу символов в английском языке. Также мы задали имя метода для щелчка - <b>letterPressed()</b>.</p>
+
+<p>Добавим новый класс для адаптера <b>LetterAdapter</b> на основе стандартного <b>BaseAdapter</b>.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.hangman;
+
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.widget.Button;
+
+public class LetterAdapter extends BaseAdapter {
+    private String[] letters;
+    private LayoutInflater letterInf;
+
+    public LetterAdapter(Context c) {
+        //setup adapter
+        letters = new String[26];
+        for (int a = 0; a &lt; letters.length; a++) {
+            letters[a] = "" + (char) (a + 'A');
+        }
+        letterInf = LayoutInflater.from(c);
+    }
+
+    @Override
+    public int getCount() {
+        return letters.length;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        //create a button for the letter at this position in the alphabet
+        Button letterBtn;
+        if (convertView == null) {
+            //inflate the button layout
+            letterBtn = (Button) letterInf.inflate(R.layout.letter, parent, false);
+        } else {
+            letterBtn = (Button) convertView;
+        }
+        //set the text to this letter
+        letterBtn.setText(letters[position]);
+        return letterBtn;
+    }
+
+    @Override
+    public Object getItem(int arg0) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int arg0) {
+        return 0;
+    }
+}
+</code></pre>
+
+<p>В конструкторе адаптера инициализируем массив из 26 символов и присвоим им значения по порядку - каждому по буковке в верхнем регистре.</p>
+
+<p>В методе <b>getCount()</b> мы возвращаем длину созданного массива.</p>
+
+<p>В методе <b>getView()</b> программно создаём кнопку для каждого элемента в составе <b>GridView</b>, указывая разметку <b>letter.xml</b>, и сразу указываем для него нужный текст. Остальные обязательные методы адаптера оставляем без изменений.</p>
+
+<p>Теперь, имя адаптер, мы можем связать его с <b>GridView</b>.</p>
+
+<pre><code class="java">
+ltrAdapt = new LetterAdapter(this);
+letters.setAdapter(ltrAdapt);
+</code></pre>
+
+<p>Запустив проект, вы можете увидеть внешний вид будущей игры. Но пока кнопки не будут реагировать на нажатия, так как мы не написали для них код.</p>
+
+<p>Перейдём непосредственно к логике игры. Перед началом нам не нужно показывать человечка, висящего на виселице. И появляться отдельная часть тела будет при неудачной попытке угадать букву. Создадим необходимые переменные:</p>
+
+<pre><code class="java">
+// ImageView для частей тела
+private ImageView[] bodyParts;
+// сколько всего частей тела
+private int numParts = 6;
+// счетчик попыток
+private int currPart;
+// число символов в текущем слове
+private int numChars;
+// число угаданных вариантов
+private int numCorr;
+</code></pre>
+
+<p>Проинициализируем все <b>ImageView</b>, которые содержат части тела и в методе <b>playGame()</b> программно сделаем их невидимыми.</p>
+
+<pre><code class="java">
+for (int p = 0; p &lt; numParts; p++) {
+    bodyParts[p].setVisibility(View.INVISIBLE);
+}
+</code></pre>
+
+<p>Осталось написать код, обрабатывающий щелчки на кнопках с символами. При нажатии получаем текст с кнопки:</p>
+
+<pre><code class="java">
+String ltr = ((Button) view).getText().toString();
+</code></pre>
+
+<div class="alert">В оригинальной статье почему-то использовался <b>TextView</b> вместо кнопки.</div>
+
+<p>Из строки извлекаем символ, а также делаем кнопку недоступной и меняем цвет, чтобы пользователь не пытался использовать уже использованные буквы.</p>
+
+<pre><code class="java">
+char letterChar = ltr.charAt(0);
+view.setEnabled(false);
+view.setBackgroundResource(R.drawable.letter_down);
+</code></pre>
+
+<p>В цикле проверяем, имеется ли выбранный символ в слове. Если имеется, то выводим его на экран, меняя цвет символа на чёрный.</p>
+
+<pre><code class="java">
+for (int k = 0; k &lt; currWord.length(); k++) {
+    if (currWord.charAt(k) == letterChar) {
+        correct = true;
+        numCorr++;
+        charViews[k].setTextColor(Color.BLACK);
+    }
+}
+</code></pre>
+
+<p>В ходе игры ведём подсчёт попыток. Если число угаданных символов сравнялось с длиной слова, то пользователь выиграл.</p>
+
+<pre><code class="java">
+if (correct) {
+    // удачная попытка
+    if (numCorr == numChars) {
+</code></pre>
+
+<p>Когда пользователь выиграл или проиграл, мы блокируем все кнопки с помощью вспомогательного метода <b>disableBtns()</b> и выводим диалоговое окно с предложением продолжить игру или выйти из неё.</p>
+
+<pre><code class="java">
+public void disableBtns() {
+    int numLetters = letters.getChildCount();
+    for (int l = 0; l &lt; numLetters; l++) {
+        letters.getChildAt(l).setEnabled(false);
+    }
+}
+</code></pre>
+
+<p>Во время неудачных ходов мы постепенно делаем видимыми элементы тела:</p>
+
+<pre><code class="java">
+else if (currPart &lt; numParts) {
+    //some guesses left
+    bodyParts[currPart].setVisibility(View.VISIBLE);
+    currPart++;
+}
+</code></pre>
+
+<p>Игра готова. Осталось добавить различные возможности, например, показать справку через пункт меню и т.п.</p>
+
+<p><img src="hangman1.png" alt="Hangman" width="250" height="394"></p>
+
+<p>Полностью код класса будет следующим.</p>
+
+<details>
+<summary>Ткните лапкой, чтобы развернуть код</summary>
+<pre><code class="java">
+package ru.alexanderklimov.hangman;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.view.Gravity;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+//import android.support.v4.app.NavUtils;
+import android.view.View;
+import android.widget.ImageView;
+
+import java.util.Random;
+
+
+public class GameActivity extends Activity {
+
+    private String[] words;
+    private Random rand;
+    private String currWord;
+    private LinearLayout wordLayout;
+    private TextView[] charViews;
+    private GridView letters;
+    private LetterAdapter ltrAdapt;
+
+    // ImageView для частей тела
+    private ImageView[] bodyParts;
+    // сколько всего частей тела
+    private int numParts = 6;
+    // счетчик попыток
+    private int currPart;
+    // число символов в текущем слове
+    private int numChars;
+    // число угаданных вариантов
+    private int numCorr;
+
+    private AlertDialog helpAlert;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game);
+
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Resources res = getResources();
+        words = res.getStringArray(R.array.words);
+        rand = new Random();
+        currWord = "";
+        wordLayout = (LinearLayout) findViewById(R.id.word);
+        letters = (GridView) findViewById(R.id.letters);
+
+        bodyParts = new ImageView[numParts];
+        bodyParts[0] = (ImageView) findViewById(R.id.head);
+        bodyParts[1] = (ImageView) findViewById(R.id.body);
+        bodyParts[2] = (ImageView) findViewById(R.id.arm1);
+        bodyParts[3] = (ImageView) findViewById(R.id.arm2);
+        bodyParts[4] = (ImageView) findViewById(R.id.leg1);
+        bodyParts[5] = (ImageView) findViewById(R.id.leg2);
+
+        playGame();
+    }
+
+    private void playGame() {
+        //play a new game
+        // Выбираем случайным образом новое слово
+        String newWord = words[rand.nextInt(words.length)];
+        // Если слово совпадает с текущим, то повторяем еще раз, пока не выберем новое слово
+        while (newWord.equals(currWord)) newWord = words[rand.nextInt(words.length)];
+        currWord = newWord; // выбрали
+        // программно создадим столько TextView, сколько символов в слове
+        charViews = new TextView[currWord.length()];
+        // но сначала удалим все элементы от прошлой игры
+        wordLayout.removeAllViews();
+
+        // создаём массив новых TextView
+        for (int c = 0; c &lt; currWord.length(); c++) {
+            charViews[c] = new TextView(this);
+            charViews[c].setText("" + currWord.charAt(c));
+
+            charViews[c].setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+            charViews[c].setGravity(Gravity.CENTER);
+            charViews[c].setTextColor(Color.WHITE);
+            charViews[c].setBackgroundResource(R.drawable.letter_bg);
+            // добавляем в разметку
+            wordLayout.addView(charViews[c]);
+        }
+
+        ltrAdapt = new LetterAdapter(this);
+        letters.setAdapter(ltrAdapt);
+        currPart = 0;
+        numChars = currWord.length();
+        numCorr = 0;
+
+        for (int p = 0; p &lt; numParts; p++) {
+            bodyParts[p].setVisibility(View.INVISIBLE);
+        }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.game, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //NavUtils.navigateUpFromSameTask(this);
+                return true;
+            case R.id.action_help:
+                showHelp();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void letterPressed(View view) {
+        //user has pressed a letter to guess
+        String ltr = ((Button) view).getText().toString();
+        char letterChar = ltr.charAt(0);
+        view.setEnabled(false);
+        view.setBackgroundResource(R.drawable.letter_down);
+        boolean correct = false;
+
+        for (int k = 0; k &lt; currWord.length(); k++) {
+            if (currWord.charAt(k) == letterChar) {
+                correct = true;
+                numCorr++;
+                charViews[k].setTextColor(Color.BLACK);
+            }
+        }
+
+        if (correct) {
+            // удачная попытка
+            if (numCorr == numChars) {
+                // блокируем кнопки
+                disableBtns();
+
+                // выводим диалоговое окно
+                AlertDialog.Builder winBuild = new AlertDialog.Builder(this);
+                winBuild.setTitle("Поздравляем");
+                winBuild.setMessage("Вы победили!\n\nОтвет:\n\n" + currWord);
+                winBuild.setPositiveButton("Сыграем ещё?",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                GameActivity.this.playGame();
+                            }
+                        }
+                );
+
+                winBuild.setNegativeButton("Выход",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                GameActivity.this.finish();
+                            }
+                        }
+                );
+
+                winBuild.show();
+            }
+        } else if (currPart &lt; numParts) {
+            //some guesses left
+            bodyParts[currPart].setVisibility(View.VISIBLE);
+            currPart++;
+        }else{
+            //user has lost
+            disableBtns();
+
+            // Display Alert Dialog
+            AlertDialog.Builder loseBuild = new AlertDialog.Builder(this);
+            loseBuild.setTitle("Увы");
+            loseBuild.setMessage("Вы проиграли!\n\nБыло загадано:\n\n"+currWord);
+            loseBuild.setPositiveButton("Сыграем ещё?",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            GameActivity.this.playGame();
+                        }});
+
+            loseBuild.setNegativeButton("Выход",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            GameActivity.this.finish();
+                        }});
+
+            loseBuild.show();
+        }
+    }
+
+    public void disableBtns() {
+        int numLetters = letters.getChildCount();
+        for (int l = 0; l &lt; numLetters; l++) {
+            letters.getChildAt(l).setEnabled(false);
+        }
+    }
+
+    public void showHelp() {
+        AlertDialog.Builder helpBuild = new AlertDialog.Builder(this);
+
+        helpBuild.setTitle("Help");
+        helpBuild.setMessage("Guess the word by selecting the letters.\n\n"
+                + "You only have 6 wrong selections then it's game over!");
+        helpBuild.setPositiveButton("OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        helpAlert.dismiss();
+                    }});
+        helpAlert = helpBuild.create();
+
+        helpBuild.show();
+    }
+}
+</code></pre>
+</details>
+
+<p>Перевод цикла статей (там же можно скачать исходники):<br>
+<a href="http://code.tutsplus.com/tutorials/create-a-hangman-game-project-setup--mobile-21797" >Create a Hangman Game: Project Setup</a><br>
+<a href="http://code.tutsplus.com/tutorials/create-a-hangman-game-user-interface--mobile-21853" >Create a Hangman Game: User Interface</a><br>
+<a href="http://code.tutsplus.com/tutorials/create-a-hangman-game-user-interaction--mobile-21893" >Create a Hangman Game: User Interaction</a>
+</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/games/hangman.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:08:38 GMT -->
+</html>

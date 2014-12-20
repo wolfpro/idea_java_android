@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/date.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Экспресс-курс: Классы Date, Calendar, DateFormat</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Классы Date, Calendar, DateFormat</h1>
+
+<h2 class="text-warning">Date</h2>
+
+<p>Класс <b>Date</b> предназначен для работы с текущими датой и временем и позволяет отталкиваться от них для решения своих задач. При выходе новых версий Java часть методов класса была перемещена в классы <b>Calendar</b> и <b>DateFormat</b>.</p>
+
+<p>При импорте выбирайте <b>java.util.Date</b>, а не <b>java.sql.Date</b>.</p>
+
+<p>У класса есть два конструктора:</p>
+
+<pre>
+Date()
+Date(long milliseconds)
+</pre>
+
+<p>Первый конструктор без параметров инициализирует объект текущей датой и временем. Во втором конструкторе вы можете указать количество миллисекунд, прошедших с полуночи 1 января 1970 года.</p>
+
+<p>Методы:</p>
+
+<ul>
+<li><b>boolean after(Date date)</b> - если объект класса <b>Date</b> содержит более позднюю дату, чем указано в параметре, то возвращается <i>true</i></li>
+<li><b>boolean before(Date date)</b> - если объект класса <b>Date</b> содержит более раннюю дату, чем указано в параметре, то возвращается <i>true</i></li>
+<li><b>int compareTo(Date date)</b> - сравнивает даты. Возвращает 0, если совпадают, отрицательное значение - если вызывающая дата более ранняя, положительное значение - если вызывающая дата более поздняя, чем в параметре</li>
+<li><b>boolean equals(Object object)</b> - если даты совпадают, то возвращается <i>true</i></li>
+<li><b>long getTime()</b> - возвращает количество миллисекунд, прошедших с полуночи 1 января 1970 года</li>
+<li><b>void setTime(long milliseconds)</b> - устанавливает время и дату в виде числа миллисекунд, прошедших с полночи 1 января 1970 года.</li>
+</ul>
+
+<p>Если вы посмотрите документацию, то увидите, что существует множество методов для получения или установки отдельных компонентов времени и даты, например, <b>getMinutes()/setMinutes()</b> и др. Все они являются устаревшими и вместо них следует использовать класс <b>Calendar</b>.</p>
+
+<p>Простой пример вывода даты на экран.</p>
+
+<pre><code class="java">
+// Создадим объект Date
+Date date = new Date();
+
+textViewInfo.setText(date.toString());
+</code></pre>
+
+<p>С помощью метода <b>getTime()</b> можно отобразить количество миллисекунд, прошедших с 1 января 1970 года. Обновим пример</p>
+
+<pre><code class="java">
+// Создадим объект Date
+Date date = new Date();
+
+long millis = date.getTime();
+
+textViewInfo.setText(String.valueOf(millis));
+</code></pre>
+
+<h2 class="text-warning">Calendar</h2>
+
+<p>Абстрактный класс <b>Calendar</b> позволяет преобразовать время в миллисекундах в более удобном виде - год, месяц, день, часы, минуты, секунды. Существуют также подклассы, например, <b>GregorianCalendar</b>.</p>
+
+<p>Переменная типа <b>boolean</b> под именем <b>areFieldsSet</b> указывает, были установлены компоненты времени. Переменная <b>fields</b> - это массив целочисленных значений, содержащий компоненты времени. Переменная <b>isSet</b> - массив типа <b>boolean</b>, указывающий, был ли установлен специфический компонент времени. Переменная <b>time</b> (тип <b>long</b>) содержит текущее время объекта. Переменная <b>isTimeSet</b> (тип <b>boolean</b>) указывает, что было установлено текущее время.</p>
+
+<p>У класса много методов. Вкратце опишем часть из них:</p>
+
+<ul>
+<li>abstract void add(int field, int value) - добавляет <b>value</b> к компоненту времени или даты, указанному в параметре <b>field</b> (например, <b>Calendar.HOUR</b>). Чтобы отнять, используйте отрицательное значение.</li>
+<li>boolean	after(Object calendar) - возвращает значение <b>true</b>, если вызывающий объект класса <b>Calendar</b> содержит более позднюю дату, чем <b>calendar</b>.</li>
+<li>boolean	before(Object calendar) - возвращает значение <b>true</b>, если вызывающий объект класса <b>Calendar</b> содержит более раннюю дату, чем <b>calendar</b>.</li>
+<li>final void clear() - обнуляет все компоненты времени в вызывающем объекте.</li>
+<li>final void clear(int field) - обнуляет компонент, указанный в параметре <b>field</b></li>
+<li>int get(int field) - возвращает значение одного компонента, например, <b>Calendar.MINUTE</b></li>
+<li>synchronized static Locale[] getAvailableLocales() - возвращает массив объектов класса <b>Locale</b>, содержащий региональные данные</li>
+<li>synchronized static Calendar getInstance() - возвращает объект класса <b>Calendar</b> для региональных данных и часового пояса по умолчанию. Есть и другие перегруженные версии.</li>
+<li>final Date getTime() - возвращает объекта класса <b>Date</b>, содержащий время, эквивалентное вызывающему объекту</li>
+<li>TimeZone getTimeZone() - возвращает часовой пояс</li>
+<li>final boolean isSet(int field) - возвращает значение <b>true</b>, если указанный компонент времени указан.</li>
+<li>void set(int field, int value) - устанавливает компоненты даты или времени. Есть перегруженные версии</li>
+<li>final void setTime(Date date) - устанавливает различные компоненты даты и времени через объект класса <b>Date</b></li>
+<li>void setTimeZone(TimeZone timezone) - устанавливает часовой пояс через объект класса <b>TimeZone</b></li>
+</ul>
+
+<p>Также в календаре определены много различных констант: <b>AUGUST</b> и другие месяцы, <b>SATURDAY</b> и другие дни недели, <b>HOUR</b> и т.д.</p>
+
+<h2 class="text-warning">GregorianCalendar</h2>
+
+<p>Класс <b>GregorianCalendar</b> является подклассом <b>Calendar</b>, который представляет обычный Григорианский календарь. Метод <b>getInstance()</b> класса <b>Calendar</b> обычно возвращает объект класса <b>GregorianCalendar</b>, инициированный текущей датой и временем согласно региональным настройкам.</p>
+
+<p>У класса есть два поля <b>AD</b> и <b>BC</b> - до нашей эры и наша эра.</p>
+
+<p>Кроме стандартных методов, которые есть в классе <b>Calendar</b>, у <b>GregorianCalendar</b> есть метод <b>isLeapYear()</b> для проверки високосного года.</p>
+
+<pre><code class="java">
+boolean isLeapYear(int year)
+</code></pre>
+
+<p>Если год високосный, то возвращается <i>true</i>.</p>
+
+<p>Отсчёт месяцев идёт от нуля, поэтому декабрь будет одиннадцатым месяцем. Чтобы не путаться с такими случаями, проще использовать понятные константы:</p>
+
+<pre><code class="java">
+GregorianCalendar calendar = new GregorianCalendar(1975,
+		Calendar.DECEMBER, 31);
+</code></pre>
+
+<p>А получать нужные отрезки времени можно через метод <b>get()</b>. Например, узнать, какой месяц содержится в созданной нами дате можно так:</p>
+
+<pre><code class="java">
+int month = calendar.get(Calendar.MONTH);
+System.out.println(month); // вернёт 11
+</code></pre>
+
+<p>Изменить состояние объекта можно через метод <b>set()</b>. Например, установим новую дату у нашего объекта.</p>
+
+<pre><code class="java">
+GregorianCalendar calendar = new GregorianCalendar(1975,
+		Calendar.DECEMBER, 31);
+calendar.set(1976, Calendar.FEBRUARY, 23);
+// Убедимся, что возвращает 1 - февраль
+System.out.println(calendar.get(Calendar.MONTH));
+</code></pre>
+
+<p>Можно сдвинуть дату на определённый период с помощью метода <b>add()</b>. Отодвинем дату на два месяца.</p>
+
+<pre><code class="java">
+GregorianCalendar calendar = new GregorianCalendar(1975,
+		Calendar.DECEMBER, 31);
+calendar.add(Calendar.MONTH, 2);
+System.out.println(calendar.get(Calendar.MONTH));
+</code></pre>
+
+<p>Методы <b>getTime()</b> и <b>setTime()</b> работают с объектами <b>Date</b> и полезны для преобразования.</p>
+
+<pre><code class="java">
+GregorianCalendar calendar = new GregorianCalendar(year, month, day);
+Date hireDay = calendar.getTime();
+</code></pre>
+
+<h2 class="text-warning">TimeZone</h2>
+
+<p>Класс <b>TimeZone</b> позволяет работать с часовыми поясами, смещёнными относительно Гринвича, также известного универсальное глобальное время (UTC). Класс также учитывает летнее время.</p>
+
+<h2 class="text-warning">SimpleTimeZone</h2>
+
+<p>Класс <b>SimpleTimeZone</b> - подкласс класса <b>TimeZone</b> и позволяет работать с часовыми поясами в Григорианском календаре.</p>
+
+<h2 class="text-warning">Класс DateFormat</h2>
+
+<p>Класс <b>DateFormat</b> является абстрактным классом, с помощью которого можно форматировать и анализировать показания даты и времени. метод <b>getDateInstance()</b> возвращает экземпляр класса <b>DateFormat</b>, который может форматировать информацию о дате.</p>
+
+<p>Чаще всего используется метод <b>format()</b>, позволяющий вывести дату в нужном формате.</p>
+
+<h2 class="text-warning">Класс SimpleDateFormat</h2>
+
+<p>Класс <b>SimpleDateFormat</b> является подклассом класса <b>DateFormat</b> и позволяет определять собственные шаблоны форматирования для отображения даты и времени.</p>
+
+<p>Символы форматирования строки</p>
+
+<ul>
+<li>A - AM или PM</li>
+<li>d - день месяца (1-31)</li>
+<li>D - день в году (1-366)</li>
+<li>H - часы в формате AM/PM (1-12)</li>
+<li>K - часы в формате суток (1-24)</li>
+<li>M - минуты (0-59)</li>
+<li>S - секунды (0-59)</li>
+<li>W - неделя в году (1-53)</li>
+<li>y - год</li>
+<li>z - часовой пояс</li>
+</ul> 
+
+<p>и так далее.</p>
+
+<p>Количество повторений символа определяет способ представления даты. Например, можно указать <b>hh:mm:ss</b>, а можно <b>h:m:s</b>. В первом случае будет отображаться ноль перед цифрой.</p>
+
+<p>Примеры работы с датами и временем можно найти в <a href="../times.html">статье на эту тему</a>.</p>
+
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/date.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:02 GMT -->
+</html>

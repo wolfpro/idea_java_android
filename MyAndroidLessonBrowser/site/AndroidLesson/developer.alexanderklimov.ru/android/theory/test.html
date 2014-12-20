@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/test.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Тестирование приложения</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Тестирование приложения</h1>
+
+<p>В компаниях при серьёзном подходе к разработке приложений обязательно используется тестирование при помощи специальных инструментов. В данной статье мы чуть затронем эту тему для первого знакомства.</p>
+
+<p>Несколько уроков на заданную тему можно изучить в документации Гугла - <a href="http://developer.android.com/intl/ru/training/activity-testing/index.html" >Testing Your Android Activity</a>.</p>
+
+<p>На Хабре есть <a href="http://habrahabr.ru/post/113584/">упрощённый вариант</a>, который я скопирую сюда на всякий случай в сокращённом варианте и небольшими исправлениями ошибок.</p>
+
+<p>Приложение будет переводить «километры в час» в «метры в секунду» и наоборот, а также выдавать сообщение Error!, если нужное значение не удается вычислить. Пользователь будет вводить данные о скорости в любой EditText и в другом получать результат.</p>
+
+<p><img src="../../../img-fotki.yandex.ru/get/4425/11245482.2/0_63ac1_3d781a12_orig.png"></p>
+
+<pre><code class="xml">
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;
+    android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingTop=&quot;@dimen/activity_vertical_margin&quot;
+    tools:context=&quot;.MainActivity&quot; &gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/textKmPerHour&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;км/ч&quot; /&gt;
+
+    &lt;EditText
+        android:id=&quot;@+id/editKmPerHour&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:inputType=&quot;numberDecimal&quot;
+        android:numeric=&quot;decimal&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/textMetersPerSec&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:paddingTop=&quot;4dp&quot;
+        android:text=&quot;м/с&quot; /&gt;
+
+    &lt;EditText
+        android:id=&quot;@+id/editMetersPerSec&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:inputType=&quot;numberDecimal&quot;
+        android:numeric=&quot;decimal&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Далее устанавливаем слушателей для текстовых полей и при вводе текста вычисляем скорость в других единицах. Нюанс, что onKey() не наступает при активной software клавиатуре мы учтем позже в тестах.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.speed;
+
+import ...
+
+public class MainActivity extends Activity {
+
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.activity_main);
+
+		final EditText editKmPerHour = (EditText) findViewById(R.id.editKmPerHour);
+		final EditText editMeterPerSec = (EditText) findViewById(R.id.editMetersPerSec);
+
+		// setup listener for Kilometers per hour EditText
+		editKmPerHour.setOnKeyListener(new OnKeyListener() {
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_UP) {
+					try {
+						double kmPerHour = Double.parseDouble(editKmPerHour
+								.getText().toString());
+						double meterPerSec = kmPerHour * 0.2777777777777778;
+						editMeterPerSec.setText(Double.valueOf(meterPerSec)
+								.toString());
+					} catch (NumberFormatException e) {
+						editMeterPerSec.setText(R.string.errorMsg);
+						Log.d("Test", "e:" + e);
+					}
+					return true;
+				}
+				return false;
+			}
+		});
+
+		// setup listener for Meters per second EditText
+		editMeterPerSec.setOnKeyListener(new OnKeyListener() {
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_UP) {
+					try {
+						double meterPerSec = Double.parseDouble(editMeterPerSec
+								.getText().toString());
+						double kmPerHour = meterPerSec * 3.6;
+						editKmPerHour.setText(Double.valueOf(kmPerHour)
+								.toString());
+					} catch (NumberFormatException e) {
+						editKmPerHour.setText(R.string.errorMsg);
+						Log.d("Test", "e:" + e);
+					}
+					return true;
+				}
+				return false;
+			}
+		});
+
+	}
+}
+</code></pre>
+
+<p>Само приложение готово. Теперь необходимо создать тест для созданного приложения. Наверняка, при создании обычных проектов вы обращали внимание на пункт меню <b>File | New | Project... | Android Test Project</b>. Воспользуйтесь им. Появится окно мастера создания проекта. Трудностей быть не должно. Обычно для имени нового проекта используют связку из названия вашего подопытного проекта и слова <b>Test</b>, например, ваш проект носит название HelloKitty и тогда для теста нужен проект HelloKittyTest. Мастер предложит выбрать существующий проект из списка, далее нажимаем кнопку <b>Finish</b> и у вас появится новый проект без классов.</p>
+
+<p>Для теста нужно создать новый класс, который наследуется от класса <b>ActivityInstrumentationTestCase2</b>.</p>
+
+<p>Данный класс спроектирован для тестирования активностей в приложении. Он может создавать активность (используя InstrumentationTestCase.launchActivity()), запускать тесты в UI-потоке и позволяет посылать нам различные намерения в нашу активность.</p>
+
+<p>Добавим конструктор, который будет использоваться тестирующим фреймворком. В качестве параметров мы покажем какое приложение будет тестироваться. В статье на Хабре используется устаревший способ. Для конструктора используйте следующий код:</p>
+
+<pre><code class="java">
+public MainActivityTest() {
+    super(MainActivity.class);
+}
+</code></pre>
+
+<p>Кстати, Eclipse предлагает сгенерировать конструктор с параметрами, но при их использовании тесты на эмуляторе не запускаются, хотя отрабатывают, но на экране ничего не происходит.</p>
+
+<p>Далее в классе прописывается метод <b>setUp()</b>, который вызывается перед запуском тестов, будем инициализировать в нем переменные.</p>
+
+<p>После этого можно добавлять тесты, они будут простыми дабы показать как взаимодействовать с UI, первый (testControlsCreated()) будет проверять — создалась и запустилась ли наша активность, а также имеем ли мы доступ к нашим компонентам. </p>
+
+<p>testControlsVisible() - Используя метод assertOnScreen() из ViewAsserts проверяем видны ли наши компоненты.</p>
+
+<p>testStartingEmpty() - Запускается ли приложение с пустыми EditText.</p>
+
+<p>Добавим тест, проверяющий правильность перевода км/с в м/с. В нем мы используем TouchUtils.tapView(..) который симулирует касание по нужному нам компоненту а KeyEvent.KEYCODE_BACK убирает software клавиатуру. Метод testConvertMsToKmh() выглядит аналогично.</p>
+
+<p>Последний тест проверяет (testGetError()) — получаем ли мы сообщение об ошибке.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test.test;
+
+import ru.alexanderklimov.test.MainActivity;
+import android.test.ActivityInstrumentationTestCase2;
+import android.test.TouchUtils;
+import android.test.ViewAsserts;
+import android.view.KeyEvent;
+import android.widget.EditText;
+
+public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
+
+	public MainActivityTest() {
+        super(MainActivity.class);
+    }
+	
+	private EditText editKmPerHour;
+	private EditText editMeterPerSec;
+	
+	private MainActivity activity;
+
+
+	@Override
+	protected void setUp() throws Exception {
+		// TODO Auto-generated method stub
+		super.setUp();
+		activity = getActivity();
+		editKmPerHour = (EditText) activity
+				.findViewById(ru.alexanderklimov.test.R.id.editKmPerHour);
+		editMeterPerSec = (EditText) activity
+				.findViewById(ru.alexanderklimov.test.R.id.editMetersPerSec);	
+	}
+
+	public void testControlsCreated() {
+		assertNotNull(activity);
+		assertNotNull(editKmPerHour);
+		assertNotNull(editMeterPerSec);
+	}
+
+	public void testControlsVisible() {
+		ViewAsserts
+				.assertOnScreen(editKmPerHour.getRootView(), editMeterPerSec);
+		ViewAsserts
+				.assertOnScreen(editMeterPerSec.getRootView(), editKmPerHour);
+	}
+
+	public void testStartingEmpty() {
+		assertEquals("editKmPerHour is not empty", "", editKmPerHour.getText()
+				.toString());
+		assertEquals("editMeterPerSec is not empty", "", editMeterPerSec
+				.getText().toString());
+	}
+
+	public void testConvertKmhToMs() {
+		TouchUtils.tapView(this, editKmPerHour);
+		sendKeys(KeyEvent.KEYCODE_BACK, KeyEvent.KEYCODE_1, KeyEvent.KEYCODE_0,
+				KeyEvent.KEYCODE_0);
+
+		double meterPerSec;
+		try {
+			meterPerSec = Double.parseDouble(editMeterPerSec.getText()
+					.toString());
+		} catch (Exception e) {
+			meterPerSec = -1;
+		}
+
+		assertTrue("100 km/h is not 27.778 m/s", meterPerSec > 27.7
+				&& meterPerSec &lt; 27.8);
+	}
+
+	public void testConvertMsToKmh() {
+		TouchUtils.tapView(this, editMeterPerSec);
+		sendKeys(KeyEvent.KEYCODE_BACK, KeyEvent.KEYCODE_1, KeyEvent.KEYCODE_5);
+
+		double meterPerSec;
+		try {
+			meterPerSec = Double
+					.parseDouble(editKmPerHour.getText().toString());
+		} catch (Exception e) {
+			meterPerSec = -1;
+		}
+
+		assertTrue("15 m/s is not 54 km/h", meterPerSec == 54);
+	}
+
+	public void testGetError() {
+		TouchUtils.tapView(this, editKmPerHour);
+		sendKeys(KeyEvent.KEYCODE_1, KeyEvent.KEYCODE_DEL);
+
+		assertEquals("Must be Error!", "Error", editMeterPerSec.getText()
+				.toString());
+	}
+}
+</code></pre>
+
+<p>Несколько пояснений к статье. Объекты, представляющие активность, поля для ввода текста и кнопку и прочие компоненты следует сделать закрытыми полями (private). Далее активность нужно инициализировать через метод <b>getActivity()</b>, а уже через него получить доступ к компонентам.</p>
+
+<p>Метод <b>assertNotNull()</b> проверяет, создались ли элементы интерфейса. А также проверяются другие ситуации.</p>
+
+<p>Запустим наше тестовое приложение: <b>Run As | Android JUnit Test</b>. В статье из хабре есть видеоролик, как это выглядит. Кратко, запустится ваше приложение и начнутся обрабатываться по очереди все методы, которые вы прописали в тестах, в автоматическом режиме. Далее вы можете проанализировать сообщения.</p>
+
+<p>Возможности фреймворка android.test намного шире. Например, класс ActivityUnitTestCase в отличие от ActivityInstrumentationTestCase2 позволяет тестировать активность изолированно, используя Context или Application.</p>
+
+<p>Существует также специальное расширение для <b>ActivityInstrumentationTestCase2</b> в виде библиотеки <a href="https://code.google.com/p/robotium/">Robotium</a>. Небольшой пример использования можно найти на <a href="http://www.vogella.com/articles/Robotium/article.html">этой странице</a>.</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/test.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:56 GMT -->
+</html>

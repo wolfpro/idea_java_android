@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/sqlite/android-sqlite.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:01:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>SQLite на Android</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class="active"><a href="index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>                
+<h1 class="text-warning">SQLite на Android</h1>
+
+<p>
+<a href="#emulator">Запускаем SQLite на эмуляторе</a><br>
+<a href="#SQLiteOpenHelper">Класс SQLiteOpenHelper: Создание базы данных</a><br>
+<a href="#SQLiteDatabase">Класс SQLiteDatabase: Управление базой данных</a><br>
+<a href="#imagedb">Вставляем картинки в базу</a><br>
+</p>
+
+<p>SQLite доступен на любом Android-устройстве, его не нужно устанавливать отдельно.</p>
+
+<p>SQLite поддерживает типы TEXT (аналог String в Java), INTEGER (аналог long в Java) и REAL (аналог double в Java). Остальные типы следует конвертировать, прежде чем сохранять в базе данных. SQLite сама по себе не проверяет типы данных, поэтому вы можете записать целое число в колонку, предназначенную для строк и наоборот.</p>
+
+<table class="table">
+<tr>
+<th>Тип</th><th>Описание</th></tr>
+<tr>
+<td>NULL</td><td>пустое значение</td></tr>
+<tr>
+<td>INTEGER</td><td>целочисленное значение</td></tr>
+<tr>
+<td>REAL</td><td>значение с плавающей точкой</td></tr>
+<tr>
+<td>TEXT</td><td>строки или символы в кодировке UTF-8, UTF-16BE или UTF-16LE</td></tr>
+<tr>
+<td>BLOB</td><td>бинарные данные</td></tr>
+</table>
+
+<p>Вы не найдёте здесь тип, работающий с датами. Можно использовать строковые значения, например, как <i>2013-03-28</i> (28 марта 2013 года). Для даты со временем рекомендуется использовать формат <i>2013-03-27T07:58</i>. В таких случаях можно использовать некоторые функции SQLite для добавления дней, установки начала месяца и т.д. Учтите, что SQLite не поддерживает часовые пояса.</p>
+
+<p>Также не поддерживается тип <b>boolean</b>. Используйте числа 0 для <b>false</b> и 1 для <b>true</b>.</p>
+
+<p>Не используйте тип <b>BLOB</b> для хранения данных (картинки) в Android. Лучше хранить в базе путь к изображениям, а сами изображения хранить в файловой системе.</p>
+
+<p>Обратите внимание, что здесь не используется популярный в MySQL тип <b>varchar(n)</b>, ограничивающий длину строки.</p>
+
+<p>Всё, что вам нужно для начала работы с базой данных - задать необходимые настройки для создания или обновления базы данных.</p>
+
+<p>Так как сама база данных SQLite представляет собой файл, то по сути при работе с базой данных, вы взаимодействуете с файлом. Поэтому операции чтения и записи могут быть довольно медленными. Настоятельно рекомендуется использовать асинхронные операции, например, при помощи класса AsyncTask.</p>
+
+<p>Когда ваше приложение создаёт базу данных, она сохраняется в каталоге <b>DATA/data/имя_пакета/databases/имя_базы.db</b>.</p>
+
+<p>Метод <b>Environment.getDataDirectory()</b> возвращает путь к каталогу <b>DATA</b>.</p>
+
+<p>Основными пакетами для работы с базой данных являются <b>android.database</b> и <b>android.database.sqlite</b>.</p>
+
+<p>База данных SQLite доступна только приложению, которое создаёт её. Если вы хотите дать доступ к данным другим приложениям, вы можете использовать контент-провайдеры (ContentProvider).</p>
+
+<h2 class="text-warning" id="emulator">Запускаем SQLite на эмуляторе</h2>
+
+<p>С помощью утилиты <a href="../theory/adb.html">ADB</a> можно запустить SQLite на эмуляторе и работать с базами данных напрямую.</p>
+
+<p>Напомню, что можно активировать команду sqlitе3 для одной из перечисленных баз данных, введя следующую команду:</p>
+
+<pre><code> 
+#sqlite3  /data/data/com.android.providers.contacts/databases/contacts.db
+</code></pre>
+
+<p>Для завершения работы с sqlite3 напишите:</p>
+
+<pre><code>
+sqlite> .exit
+</code></pre>
+
+<p>Обратите внимание: приглашение для adb - это #, а приглашение для sqlitе3 - это <b>sqlite&gt;</b>.</p>
+
+<p>Описание доступных команды sqlite3 есть на сайте: http://www.sqlite.org/sqlite.html. Перечислим некоторые важные команды.</p>
+
+<p>Чтобы просмотреть список таблиц:</p>
+
+<pre><code>
+sqlite&gt;  .tables
+</code></pre>
+
+<p>Быстрый доступ к главной таблице:</p>
+
+<pre><code> 
+SELECT name FROM sqlite_master
+WHERE type IN ('table', 'view') AND name NOT LIKE 'sqlite %' 
+UNION  ALL
+SELECT name FROM sqlite_temp_master
+WHERE type IN  ('tаblе', 'view')
+ORDER ВY  1
+</code></pre>
+
+<p>Таблица sqlite_master - это главная таблица (master table), в которой отслеживаются таблицы и виды, содержащиеся в базе данных. Следующая команда распечатывает инструкцию create для таблицы people и находящейся в базе данных contacts.db:</p>
+
+<pre><code>
+.schema  people
+</code></pre>
+
+<p>Это один из способов, позволяющих узнать названия всех столбцов, которые содержатся в таблице базы данных. Можно скопировать базу данных на локальный компьютер и изучать её в более комфортных условиях. Чтобы переместить файл <b>contacts.db</b>, можно дать следующую команду:</p>  
+
+<pre><code>
+adb  pull /data/data/com.android.providers.contacts/databases/contacts.db d:/somelocaldir/contacts.db
+</code></pre>
+
+<h2 class="text-warning">Классы для работы с SQLite</h2>
+
+<p>Работа с базой данных сводится к следующим задачам:</p>
+
+<ul>
+<li>Создание и открытие базы данных</li>
+<li>Создание таблицы</li>
+<li>Создание интерфейса для вставки данных (insert)</li>
+<li>Создание интерфейса для выполнения запросов (выборка данных)</li>
+<li>Закрытие базы данных</li>
+</ul>
+
+<h3 class="text-warning">Класс ContentValues</h3>
+
+<p>Класс ContentValues используется для добавления новых строк в таблицу. Каждый объект этого класса представляет собой одну строку таблицы 
+и выглядит как ассоциативный массив с именами столбцов и значениями, которые им соответствуют.</p>
+
+<h3 class="text-warning">Курсоры</h3>
+
+<p>В Android запросы к базе данных возвращают объекты класса <a href="../theory/cursor.html">Cursor</a>. Вместо того чтобы извлекать данные и возвращать копию значений, курсоры ссылаются на результирующий набор исходных данных. Курсоры позволяют управлять текущей позицией (строкой) в результирующем наборе данных, возвращаемом при запросе.</p>
+
+<h2 class="text-warning" id="SQLiteOpenHelper">Класс SQLiteOpenHelper: Создание базы данных</h2>
+
+<p>Библиотека Android содержит абстрактный класс <b>SQLiteOpenHelper</b>, с помощью которого можно создавать, открывать и обновлять базы данных. Это основной класс, с которым вам придётся работать в своих проектах. При реализации этого вспомогательного класса от вас скрывается логика, на основе которой принимается решение о создании или обновлении базы данных перед ее открытием. Класс <b>SQLiteOpenHelper</b> содержит два абстрактных метода:</p>
+
+<ul>
+<li><b>onCreate()</b> — вызывается при первом создании базы данных</li>
+<li><b>onUpgrade()</b> — вызывается при модификации базы данных</li>
+</ul>
+
+<p>В приложении необходимо создать собственный класс, наследуемый от <b>SQLiteOpenHelper</b>. В этом классе необходимо реализовать указанные методы, описав в них логику создания и модификации вашей базы.</p> 
+
+<p>В этом же классе принято объявлять открытые строковые константы для названия таблиц и полей создаваемой базы данных, которые клиенты могут использовать для определения столбцов при выполнении запросов к базе данных. Например, так можно объявить константы для таблицы Contact:</p>
+
+<pre> 
+public static final String TABLE_NAME = "contact"; 
+public static final String NAME = "first_name"; 
+public static final String PHONE = "phone"; 
+</pre>
+
+<p>Лучше, если вы будете давать сразу понятные имена, указывающие на работу с таблицей. Если имя переменной <b>TABLE_NAME</b> ещё можно оставить, то для других лучше использовать более говорящие имена, например, <b>KEY_NAME</b> и <b>KEY_PHONE</b> или <b>COLUMN_NAME</b>, <b>COLUMN_PHONE</b>.</p>
+
+<p>Ваш класс, расширяющий <b>SQLiteOpenHelper</b>, также неявно наследует интерфейс <b>BaseColumns</b>, в котором определена строковая константа <b>_ID</b>,  представляющая имя поля для идентификаторов записей. В создаваемых таблицах базы данных поле <b>_ID</b> должно иметь тип <b>INTEGER PRIMARY KEY AUTOINCREMENT</b>. Описатель <b>AUTOINCREMENT</b> является необязательным. Часто в других примерах идентификатор создаётся вручную, смотрите как вам удобнее.</p>
+
+<p>В методе <b>onCreate()</b> необходимо реализовать логику создания таблиц и при необходимости заполнить их начальными данными, например:</p>
+
+<pre><code class="java">
+@Override 
+public void onCreate(SQLiteDatabase db) 
+{ 
+    db.execSQL("CREATE TABLE + TABLE_NAME 
+        + (_id INTEGER PRIMARY KEY AUTOINCREMENT, 
+        + COL_NAME + TEXT, + COL_PHONE + TEXT);"); 
+}
+</code></pre>
+
+<p>В методе <b>onUpgrade()</b> можно, например, реализовать запрос в базу данных на уничтожение таблицы (DROP TABLE), после чего вновь вызвать метод <b>onCreate()</b> для создания версии таблицы с обновленной структурой, например, так:</p>
+
+<pre><code class="java">
+@Override 
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) 
+{ 
+    db.execSQL("DROP TABLE IF EXISTS + TABLE_NAME); 
+    onCreate(db); 
+}
+</code></pre>
+
+<p>Чтобы использовать реализацию вспомогательного класса, создайте новый экземпляр, передайте его конструктору контекст, имя базы данных, текущую версию и объект класса <b>CursorFactory</b> (если вы его используете). Вызовите метод <b>getReadableDatabase()</b> или <b>getWritableDatabase()</b>, чтобы открыть и вернуть экземпляр базы данных, с которой мы имеем дело (он будет доступен как для чтения, так и для записи). Вызов метода <b>getWritableDatabase()</b> может завершиться неудачно из-за проблем с полномочиями или нехваткой места на диске, поэтому лучше предусмотреть откат к методу <b>getReadableDatabase()</b>.</p>
+
+<pre><code class="java">
+dbHelper = new myDbHelper(context, DATABASE_NAME, null, DATABASE_VERSION);
+SQLiteDatabase db;
+try {
+    db = dbHelper.getWritableDatabase();
+}
+catch (SQLiteException ex){
+    db = dbHelper.getReadableDatabase();
+}
+</code></pre>
+
+<p>Если база данных не существует, вспомогательный класс вызывает свой обработчик <b>onCreate()</b>; если версия базы данных изменилась, вызовется обработчик <b>onUpgrade()</b>. В любом случае вызов методов getWritableDatabase/getReadableDatabase, в зависимости от ситуации, вернет существующую, только что созданную или обновленную базу данных.</p>
+
+<p>Если вы планируете использовать несколько таблиц, то рекомендуется создавать для каждой таблицы отдельный класс.</p>
+
+<h2 class="text-warning">SQLiteDatabase</h2>
+
+<p>Класс <b>SQLiteDatabase</b> работает с базой данных SQLite напрямую и имеет свои методы для открытия, запроса, обновления данных и закрытия базы, такие как <b>insert()</b>, <b>update()</b>, <b>delete()</b>.</p>
+
+<p>Для выполнения запросов используется метод <b>execSQL()</b>.</p>
+
+<p>Для составления запроса используются два метода: <b>rawQuery()</b> и <b>query()</b>, а также через класс <b>SQLiteQueryBuilder</b>.</p>
+
+<p>Метод <b>rawQuery()</b> - это сырой запрос, как есть, т.е. пишется строка запроса, как это обычно делается в SQL. Пример выглядит следующим образом:</p>
+
+<pre><code class="java">
+Cursor cursor = getReadableDatabase().
+    rawQuery("select * from todo where _id = ?", new String[] { id }); 
+</code></pre>
+
+<p>Метод <b>query()</b> имеет свой интерфейс построения запроса.</p>
+
+<pre><code class="java">
+return database.query(DATABASE_TABLE, 
+    new String[] { KEY_ROWID, KEY_CATEGORY, KEY_SUMMARY, KEY_DESCRIPTION }, 
+    null, null, null, null, null); 
+</code></pre>
+
+<p>Как видите, метод имеет много параметров. Если какой-то параметр для запроса вас не интересует, то оставляете <i>null</i>.</p>
+
+<p>Список параметров:</p>
+
+<ul>
+<li>String dbName - имя таблицы</li>
+<li>String[] columnNames - список нужных колонок из таблицы. Значение <i>null</i> возвращает все колонки</li>
+<li>String whereClause	- фильтр Where без самого слова WHERE. Используйте <i>null</i>, чтобы выбрать все данные</li>
+<li>String[] selectionArgs - вы можете включить ? в "whereClause"". Подставляется в запрос из заданного массива</li>
+<li>String[] groupBy - фильтр для группировки. Если не требуется, то используйте <i>null</i></li>
+<li>String[] having	- фильтр для группировки. Если не нужно, то используйте <i>null</i></li>
+<li>String[] orderBy - еще один параметр для сортировки. Используйте <i>null</i>, если она не требуется</li>
+</ul>
+
+<p>Класс <b>SQLiteQueryBuilder</b> - удобный способ для построения запросов. Выбор за вами!</p>
+
+<h3 class="text-warning">Метод openOrCreateDatabase: Открытие и создание баз данных без использования SQLiteOpenHelper</h3>
+
+<p>Вы можете открывать и создавать базы данных без помощи класса <b>SQLiteOpenHelper</b>, используя метод <b>openOrCreateDatabase()</b>, принадлежащий объекту <b>Context</b> вашего приложения. Получите доступ к базе данных в два шага. Сначала вызовите метод <b>openOrCreateDatabase()</b>, чтобы создать новую базу данных. Затем из полученного экземпляра базы данных вызовите <b>execSQL()</b>, чтобы выполнять команды на языке SQL, с помощью которых будут созданы таблицы и установлены отношения между ними.</p>
+
+<pre><code class="java">
+private static final String DATABASE_NAME = "myDatabase.db";
+private static final String DATABASE_TABLE = "mainTable";
+private static final String DATABASE_CREATE =
+    "create table " + DATABASE_TABLE + " ( _id integer primary key autoincrement," +
+    "column_one text not null);";
+SQLiteDatabase myDatabase;
+private void createDatabase() {
+    myDatabase = openOrCreateDatabase(DATABASE_NAME, Context.MODE_PRIVATE, 
+        null);
+    myDatabase.execSQL(DATABASE_CREATE);
+}
+</code></pre>
+
+<h2 class="text-warning">Запросы к базе данных</h2>
+
+<p>Каждый запрос к базе данных возвращает объект <b>Cursor</b>. Это позволяет Android управлять ресурсами более эффективно, получая и освобождая значения строк и столбцов по запросу. Чтобы выполнить запрос к базе данных, используйте метод <b>query()</b>, передавая ему:</p>
+
+<ul>
+<li>необязательное значение типа Boolean, которое определяет, должен ли результирующий набор данных содержать исключительно уникальные значения;</li>
+<li>имя базы данных, к которой нужно получить доступ;</li>
+<li>проекцию в виде массива строк, содержащего список столбцов, которые нужно включить в результирующий набор;</li>
+<li>оператор WHERE, определяющий те строки, что должны быть возвращены (можно использовать маски «?», которые заменятся переданными значениями для оператора SELECT);</li>
+<li>массив строк, выступающих в роли аргументов для оператора SELECT, которые заменят маски «?» в операторе WHERE;</li>
+<li>оператор GROUP BY, который определяет, каким образом будут сгруппированы результирующие строки;</li>
+<li>фильтр HAVING, который определяет, какие группы строк включать в результат, если использовался оператор GROUP BY;</li>
+<li>строку, описывающую порядок возвращения результирующих строк;</li>
+<li>необязательный строковой параметр, определяющий максимальное количество возвращаемых строк.</li>
+</ul>
+
+<h2 class="text-warning" id="SQLiteDatabase">Класс SQLiteDatabase: Управление базой данных</h2>
+
+<p>Для управления базой данных SQLite существует класс <b>SQLiteDatabase</b>. В классе SQLiteDatabase определены методы query(), insert(), delete() и update() для чтения, добавления, удаления, изменения данных. Кроме того, метод <b>execSQL()</b> позволяет выполнять любой допустимый код на языке SQL применимо к таблицам базы данных, если вы хотите провести эти (или любые другие) операции вручную.</p>
+
+<p>Каждый раз, когда вы редактируете очередное значение из базы данных, нужно вызывать метод refreshQuery() для всех курсоров, которые имеют отношение к редактируемой таблице.</p>
+
+<h3 class="text-warning">Метод query()</h3>
+
+<p>Для чтения данных используют вызов метода <b>query()</b>:</p>
+
+<pre><code class="java">
+Cursor query (String table, String[] columns, 
+    String selection, String[] selectionArgs, 
+    String groupBy, String having, String sortOrder) 
+</code></pre>
+
+<p>В метод <b>query()</b> передают семь параметров:</p>
+<ul>
+<li><b>table</b> — имя таблицы, к которой передается запрос;</li>
+<li><b>columns</b> — список имен возвращаемых полей. При передаче null возвращаются все столбцы;</li>
+<li><b>selection</b> — параметр, формирующий выражение WHERE (исключая сам оператор WHERE). Значение null возвращает все строки. Например: <i>_id = 19 and summary = ?</i></li>
+<li><b>selectionArgs</b> — значения аргументов фильтра;</li>
+<li><b>groupBy</b> - параметр, формирующий выражение GROUP BY (исключая сам оператор GROUP BY). Если GROUP BY не нужен, передается null;</li>
+<li><b>having</b> — параметр, формирующий выражение HAVING (исключая сам оператор HAVING). Если не нужен, передается null;</li>
+<li><b>sortOrder</b> — параметр, форматирующий выражение ORDER BY (исключая сам оператор ORDER BY). При сортировке по умолчанию передается null.</li>
+</ul>
+
+<p>Объект <b>Cursor</b>, возвращаемый методом <b>query()</b>, обеспечивает доступ к набору записей результирующей выборки. Для обработки возвращаемых данных объект <b>Cursor</b> имеет набор методов для чтения каждого типа данных — <b>getString()</b>, <b>getInt()</b> и <b>getFloat()</b>.</p>
+
+<p>Также существует метод <b>rawQuery()</b>, принимающий сырой SQL-запрос.</p>
+
+<h3 class="text-warning">Метод insert()</h3>
+
+<p>Для вставки новой записи в базу данных SQLite используется метод <b>insert()</b>:</p>
+
+<pre>
+long insert (String table, String nullColumnHack, ContentValues values);
+</pre>
+
+<p>В метод <b>insert()</b> необходимо передать три параметра:</p>
+
+<ul>
+<li><b>table</b> — имя таблицы, в которую будет вставлена запись;</li>
+<li><b>nullColumnHack</b> — в базе данных SQLite не разрешается вставлять полностью пустую строку, и если строка, полученная от клиента контент-провайдера, будет пустой, то только этому столбцу явно будет назначено значение null;</li>
+<li><b>values</b> — карта отображений (класс Map и его наследники), передаваемая клиентом контент-провайдера, которая содержит пары ключ-значение. Ключи в карте должны быть названиями столбцов таблицы, значения — вставляемыми данными.</li>
+</ul>
+
+<p>Метод <b>insert()</b> возвращает идентификатор _iD вставленной строки или -l в случае ошибки.</p>
+
+<p>Для создания новой строки понадобится объект ContentValues, точнее, его метод put(), чтобы обеспечить данными каждый столбец. Вставьте новую строку, передавая в метод insert(), вызванный в контексте нужной нам базы данных, имя таблицы и объект ContentValues</p>
+
+<pre><code class="java">
+// Создайте новую строку со значениями для вставки.
+ContentValues newValues = new ContentValues();
+// Задайте значения для каждой строки.
+newValues.put(COLUMN_NAME, newValue);
+[ ... Повторите для каждого столбца ... ]
+// Вставьте строку в вашу базу данных.
+myDatabase.insert(DATABASE_TABLE, null, newValues);
+</code></pre>
+
+<h3 class="text-warning">Методы update() и delete()</h3>
+
+<p>Для обновления и удаления записей в базе данных используют соответственно методы <b>update()</b> и <b>delete()</b>:</p>
+
+<pre>
+int update (String table, ContentValues values, String whereClause, String[] whereArgs) 
+int delete (String table, String whereClause, String[] whereArgs) 
+</pre>
+
+<p>В этих методах два последних параметра формируют SQL-выражение WHERE аналогично рассмотренному методу query() для чтения данных. Эти методы 
+возвращают число модифицированных или удаленных строк.</p>
+
+<p>Обновление строк также происходит с помощью класса ContentValues. Создайте новый объект ContentValues, используя метод put для вставки значений в каждый столбец, который вы хотите обновить. Вызовите метод update в контексте базы данных, передайте ему имя таблицы, обновленный объект ContentValues и оператор WHERE, указывающий на строку (строки), которую нужно обновить.</p>
+
+<pre><code class="java">
+// Определите содержимое обновленной строки.
+ContentValues updatedValues = new ContentValues();
+
+// Назначьте значения для каждой строки.
+newValues.put(COLUMN_NAME, newValue);
+[ ... Повторите для каждого столбца ... ]
+String where = KEY_ID + "=" + rowId;
+
+// Обновите строку с указанным индексом, используя новые значения.
+myDatabase.update(DATABASE_TABLE, newValues, where, null);
+</code></pre>
+
+<p>Чтобы удалить строку, просто вызовите метод delete в контексте базы данных, указав имя таблицы и оператор WHERE. В результате вы получите 
+строки, которые хотите удалить:</p>
+
+<pre><code class="java">
+myDatabase.delete(DATABASE_TABLE, KEY_ID + "=" + rowId, null);
+</code></pre>
+
+<p>Кроме вышеперечисленных методов, в этом классе также определены различные методы для выполнения других общих задач управления базой данных.</p>
+
+<h2 class="text-warning">Контент-провайдеры</h2>
+
+<p>Контент-провайдеры поддерживают стандартный синтаксис запросов для чтения, изменения, вставки и удаления данных. Если необходимо предоставить доступ к своим данных для других приложений, существует два варианта:</p>
+
+<ul>
+<li>создать собственный контент-провайдер, как подкласс класса ContentProvider;</li>
+<li>добавить данные к существующему провайдеру — если уже есть провайдер, который управляет теми же данными и вы имеете разрешение для работы с этими данными.</li>
+</ul>
+
+<h2 class="text-warning">Плагин SQLiteManager для Eclipse</h2>
+
+<p>Существует плагин <b>SQLiteManager</b> для Eclipse, позволяющий видеть данные в базе. Скачайте библиотеку <a href="http://www.coderzheaven.com/android1/com.questoid.sqlitemanager_1.0.0.jar">com.questoid.sqlitemanager_1.0.0.jar</a> и скопируйте её в папку Eclipse/dropins. Перезагрузите Eclipse и откройте перспективу DDMS. Плагин будет находиться во вкладке File Explorer:</p>
+
+<p><img src="../../../coderzheaven.com/wp-content/uploads/2011/04/22.png" alt="SQLiteManager"></p>
+
+<p>Щёлкнув по значку, мы увидим таблицы:</p>
+
+<p><img src="../../../coderzheaven.com/wp-content/uploads/2011/04/32.jpg" alt=""></p>
+
+<p>Вкладка Browse Data позволяет смотреть данные:</p>
+
+<p><img src="../../../coderzheaven.com/wp-content/uploads/2011/04/51.jpg" alt=""></p>
+
+<h2 class="text-warning" id="imagedb">Вставляем картинки в базу</h2>
+
+<p>Вставлять картинки в базу данных не самая лучшая идея. Оставлю только для ознакомления. Так как SQLite не работает с изображениями напрямую, то нужно сконвертировать картинку в байтовый массив. А при извлечении нужно проделать обратную задачу - из байтового массива воссоздать изображение. Создадим вспомогательный класс.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+ 
+import java.io.ByteArrayOutputStream;
+ 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Bitmap.CompressFormat;
+ 
+public class Utilities {
+ 
+    // convert from bitmap to byte array
+    public static byte[] getBytes(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(CompressFormat.PNG, 0, stream);
+        return stream.toByteArray();
+    }
+ 
+    // convert from byte array to bitmap
+    public static Bitmap getImage(byte[] image) {
+        return BitmapFactory.decodeByteArray(image, 0, image.length);
+    }
+}
+</code></pre>
+
+<p>Создадим таблицу следующим образом. Переменная <b>DATABASE_TABLE</b> - строковая константа.</p>
+
+<pre><code class="java">
+CREATE TABLE DATABASE_TABLE (
+    _id INTEGER PRIMARY KEY AUTOINCREMENT,
+    image_data BLOB
+);
+</code></pre>
+
+<p>Метод вставки в вашем классе-адаптере:</p>
+
+<pre><code class="java">
+public long insert(byte[] image) {
+    return mDb.insert(DATABASE_TABLE, null, createContentValues(image));
+}
+ 
+private ContentValues createContentValues(byte[] image) {
+    ContentValues cv = new ContentValues();
+    cv.put(COLUMN_DATA, image);
+    return cv;
+}
+</code></pre>
+
+<h2 class="text-warning">Дополнительное чтение</h2>
+
+<p><a href="http://udinic.wordpress.com/2012/05/09/sqlite-drop-column-support/" >SQLite DROP COLUMN support</a> - метод для редактирования схемы таблицы.</p>
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/sqlite/android-sqlite.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:02:00 GMT -->
+</html>

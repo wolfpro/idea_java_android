@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/tips-android.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:38:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Советы</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="index-2.html">Главная</a></li>
+<li class=""><a href="theory/index.html">Теория</a></li>
+<li class=""><a href="views.html">Palette</a></li>
+<li class=""><a href="listview/index.html">ListView</a></li>
+<li class=""><a href="catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="animation.html">Анимация</a></li>
+<li class=""><a href="sqlite/index.html">SQLite</a></li>
+<li class=""><a href="opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="library/index.html">Библиотеки</a></li>
+<li class=""><a href="games/index.html">Игры</a></li>
+<li class=""><a href="emulator.html">Эмулятор</a></li>
+<li class="active"><a href="tips-android.html">Советы</a></li>
+<li class=""><a href="articles-android.html">Статьи</a></li>
+<li class=""><a href="books.html">Книги</a></li>
+<li class=""><a href="java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="design/index.html">Дизайн</a></li>
+<li class=""><a href="opensource.html">Open Source</a></li>
+<li class=""><a href="links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Советы</h1>
+
+<img src="images/cat-tips.jpg" alt="Кот учёный">
+
+<p>
+<a href="#notrespond">Имитация тяжёлых задач</a><br>
+<a href="#resuri">Доступ к ресурсам через URI</a><br>
+<a href="#expired">Ошибка Debug Certificate expired</a><br>
+<a href="#hardcoded">Убрать предупреждающие значки при использовании строк в атрибутах</a><br>
+<a href="action_send.html##validatemail">Проверка правильности электронного адреса (Регулярное выражение)</a><br>
+<a href="#firstvisit">Проверка на первый запуск приложения</a><br>
+<a href="#timeout">Ошибка при загрузке apk-файла на эмулятор/устройство</a><br>
+<a href="#screenshotapp">Сделать скриншот экрана своего приложения</a><br>
+<a href="#htmlencode">Раскодирование HTML-символов</a><br>
+<a href="#uriencode">Кодирование строк по схеме UTF-8</a><br>
+<a href="#md5">Пишем собственную функцию md5() для вычисления хэша строки</a><br>
+<a href="java/types.html#parseint">Как сконвертировать строку или CharSequence в int?</a><br>
+<a href="theory/vibrator.html">Как включить вибрацию?</a><br>
+<a href="locale.html#locale">Определить системную локаль на устройстве</a><br>
+<a href="#keyguardlock">Как заблокировать экран в приложении?</a><br>
+<a href="#screensize">Узнать размеры экрана</a><br>
+<a href="#fillmatch">В чем разница между fill_parent и match_parent</a><br>
+<a href="#notitle">Как убрать заголовок у Activity?</a><br>
+<a href="#myicon">Как использовать собственный значок для программы</a><br>
+<a href="#version">Получить номер версии программы</a><br>
+<a href="#killapp">Убить приложение</a><br>
+<a href="#memory">Сколько используется памяти</a><br>
+<a href="#memoryclass">Разрешённый объём памяти для приложения</a><br>
+<a href="#screenshotemulator">Как сделать скриншот на эмуляторе</a><br>
+<a href="#norotate">Запретить автоматическую смену ориентации при повороте устройства</a><br>
+<a href="broadcast.html#boot">Определить момент окончания перезагрузки устройства</a><br>
+<a href="tips-eclipse.html">Советы для Eclipse</a><br>
+<a href="tips-studio.html">Советы для Android Studio</a><br>
+</p>
+
+<h2 class="text-warning" id="notrespond">Имитация тяжёлых задач</h2>
+
+<p>В Android нельзя выполнять сложные задачи в основном потоке. Для создания быстрой заглушки, которая будет имитировать тяжёлую задачу, можно написать следующий код:</p>
+
+<pre><code class="java">
+try {
+	Thread.sleep(15000);
+} catch (Exception e) {
+}
+</code></pre>
+
+<p>Например, поместите код в обработчик нажатия кнопки и после нажатия нажмите на кнопку Back. Программа зависнет и вы увидите сообщение об этом.</p>
+
+<h2 class="text-warning" id="resuri">Доступ к ресурсам через URI</h2>
+
+<p>Обычно мы обращаемся к ресурсам через идентификатор. Существует альтернативный способ через Uri. Например, такой подход может пригодиться для загрузки изображения в WebView при помощи метода <b>loadUrl()</b>. Формат доступа будет следующим: <b>android.resource://[package-name]/res-id</b>. Например:</p>
+
+<pre><code class="java">
+Uri.parse("android.resource://ru.alexanderklimov.sample/" + R.raw.cat_image);
+</code></pre>
+
+<h2 class="text-warning" id="expired">Ошибка Debug Certificate expired</h2>
+
+<p>По умолчанию вашей программе выдается отладочный сертификат на один год. Если у вас есть старый проект, то можете получить сообщение об ошибке: <b>Error generating final archive: Debug Certificate expired</b>.</p>
+
+<p>Вам следует удалить старый сертификат, и Eclipse создаст новый ещё на один год. Путь к сертификату можно посмотреть в настройках: Preferences | Android | Build | Default debug keystore. Обычно это папка <b>C:\Users\ИмяПользователя\.android</b>.</p>
+
+<h2 class="text-warning" id="hardcoded">Убрать предупреждающие значки при использовании строк в атрибутах</h2>
+
+<p>Если в некоторых атрибутах компонентов использовать строки, то появляются предупреждающие значки с всплывающей надписью <i>[I18N] Hardcoded string "Котики рулят", should use @string resource</i>. Надпись призывает использовать строковые ресурсы, а не писать текст прямо в атрибутах. На самом деле это всего лишь предупреждение, а не ошибка. Программа будет прекрасно запускаться, но новичков такие надписи пугают. Можете убрать данное предупреждение, если добавите дополнительный атрибут <b>tools:ignore</b>.</p>
+
+<pre><code class="xml">
+&lt;TextView
+    ... другие атрибуты
+    android:text=&quot;Котики рулят&quot;
+    tools:ignore=&quot;HardcodedText&quot; /&gt;
+</code></pre>
+
+<h2 class="text-warning" id="firstvisit">Проверка на первый запуск приложения</h2>
+
+<p>Для проверки первого запуска приложения можно использовать настройки SharedPreferences. <a href="preference.html#firstvisit">Смотрите пример</a>.</p>
+
+<h2 class="text-warning" id="timeout">Ошибка при загрузке apk-файла на эмулятор/устройство</h2>
+
+<p>Если при загрузке apk-файла вашего приложения на эмулятор или устройство вы получаете сообщение об ошибке:</p>
+<p><i>Failed to upload xxxxxxxx.apk on device 'emulator-5554'<br>
+java.io.IOException: Unable to upload file: timeout</i></p>
+
+<p>То зайдите в Eclipse в меню <b>Window | Preferences | Android | DDMS</b> и в текстовом поле <b>ADB connection time-out (ms)</b> вместо значения по умолчанию 5000 введите большее значение.</p>
+
+<h2 class="text-warning" id="screenshotapp">Сделать скриншот экрана своего приложения</h2>
+
+<p>Один из примеров снятия скриншота своего экрана - через методы рисования получить графический отпечаток корневой разметки, а затем сохранить его как картинку, которую можно вывести в ImageView. Выберите любой ваш экран для опытов и добавьте на неё кнопку для снятия скриншотов и ImageView для вывода сохранённого изображения. В моём случае корневым элементом была компоновка TableLayout.</p>
+
+<pre><code class="java">
+TableLayout view;
+ImageView view2;
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_main);
+
+	view = (TableLayout) findViewById(R.id.tableLayout);
+
+}
+
+// щелчок кнопки
+public void onClick(View v) {
+	View v1 = view.getRootView();
+	v1.setDrawingCacheEnabled(true);
+
+	Bitmap bm = v1.getDrawingCache();
+	BitmapDrawable bitmapDrawable = new BitmapDrawable(getResources(), bm);
+	
+	view2 = (ImageView) findViewById(R.id.imageView1);
+	view2.setBackgroundDrawable(bitmapDrawable); // для старых версий
+	//view2.setBackground(bitmapDrawable); // для API 16
+}
+</code></pre>
+
+<p>Результат до и после снятия скриншота. Сам скриншот помещается в ImageView, поэтому растягивается до его размеров. Попробуйте доработать пример.</p>
+
+<p><img src="images/screenshotapp1.png" alt=""> <img src="images/screenshotapp2.png" alt=""></p>
+
+<p>Изменённый пример, когда скриншот сохраняется на SD-карту:</p>
+
+<pre><code class="java">
+// set your location
+private static final String SCREEN_SHOTS_LOCATION = "/media/screenshots"; 
+
+public static void takeScreenShot(View view, String name) throws Exception {
+    view.setDrawingCacheEnabled(true);
+    view.buildDrawingCache();
+    Bitmap b = view.getDrawingCache();
+    FileOutputStream fos = null;
+    
+	try {
+        File sddir = new File(SCREEN_SHOTS_LOCATION);
+        if (!sddir.exists()) {
+            sddir.mkdirs();
+        }
+        fos = new FileOutputStream(SCREEN_SHOTS_LOCATION + name + "_"
+                + System.currentTimeMillis() + ".jpg");
+    
+	    if (fos != null) {
+            b.compress(Bitmap.CompressFormat.JPEG, 90, fos);
+            fos.close();
+        }
+    } catch (Exception e) {
+    }
+}
+</code></pre>
+
+<p>Не забываем про разрешения.</p>
+
+<h2 class="text-warning" id="htmlencode">Раскодирование HTML-символов</h2>
+
+<p>Если вам нужно раскодировать HTML-символы (угловые скобки &lt;&gt;, знак амперсанда &amp;, кавычки &quot;&quot;), то воспользуйтесь методом <b>TextUtils.htmlEncode()</b>. Добавим на форму две текстовые метки. И небольшой код для примера:</p>
+
+<pre><code class="java">
+setContentView(R.layout.main);
+
+TextView textSrc = (TextView) findViewById(R.id.tvSource);
+TextView textResult = (TextView) findViewById(R.id.tvResult);
+
+String src = &quot;&lt;p&gt;Не тяни &lt;b&gt;кота&lt;/b&gt; за хвост!&lt;/p&gt;&quot;;
+String result = TextUtils.htmlEncode(src);
+
+textSrc.setText(src); // фраза в html до обработки
+textResult.setText(result); // обработанный результат
+</code></pre>
+
+<p><img src="images/htmlencode.png" alt="htmlEncode"></p>
+
+<p>Примечание: Если вы пользуетесь Notepad++, то там есть такая же возможность: TextFX | TextFX Convert | Encode HTML.</p>
+
+<h2 class="text-warning" id="uriencode">Кодирование строк по схеме UTF-8</h2>
+
+<p>Вероятно, вы не раз замечали, что в адресной строке некоторые символы заменяются на последовательность других символов. Самый простой пример - символ пробела заменяется на <i>%20</i>. Немного изменим <a href="#htmlencode">предыдущий пример</a>:</p>
+
+<pre><code class="java">
+String src = "One Two хвост";
+String result = Uri.encode(src);
+
+textSrc.setText(src); // фраза в html до обработки
+textResult.setText(result); // обработанный результат
+</code></pre>
+
+<p><img src="images/uriencode.png" alt="Uri.encode"></p>
+
+<p>В нашем примере были преобразованы символы пробела и русские символы.</p>
+
+<h2 class="text-warning" id="md5">Пишем собственную функцию md5() для вычисления хэша строки</h2>
+
+<p>У PHP-программистов есть готовая функция md5(), которая вычисляет MD5 хэш строки с использованием алгоритма MD5 RSA Data Security и возвращает этот хэш. Хэш представляет собой 32-значное шестнадцатеричное число. Напишем собственную функцию на Java:</p>
+
+<pre><code class="java">
+private String md5(String in) {
+	MessageDigest digest;
+	try {
+		digest = MessageDigest.getInstance("MD5");
+		digest.reset();
+		digest.update(in.getBytes());
+		byte[] a = digest.digest();
+		int len = a.length;
+		StringBuilder sb = new StringBuilder(len &lt;&lt; 1);
+		for (int i = 0; i &lt; len; i++) {
+			sb.append(Character.forDigit((a[i] &amp; 0xf0) &gt;&gt; 4, 16));
+			sb.append(Character.forDigit(a[i] &amp; 0x0f, 16));
+		}
+		return sb.toString();
+	} catch (NoSuchAlgorithmException e) {
+		e.printStackTrace();
+	}
+	return null;
+}
+</code></pre>
+
+<p>Осталось применить её где-нибудь:</p>
+
+<pre><code class="java">
+public void onClick(View v) {
+	String mypassword = "cat";
+	String securepassword = md5(mypassword); // теперь содержит хэш
+	tvInfo.setText(securepassword); // выводим результат в TextView
+}
+</code></pre>
+
+<h2 class="text-warning" id="keyguardlock">Как заблокировать экран в приложении?</h2>
+
+<pre><code class="java">
+KeyguardManager keyguardManager = (KeyguardManager) getSystemService(Activity.KEYGUARD_SERVICE); 
+KeyguardLock lock = keyguardManager.newKeyguardLock(KEYGUARD_SERVICE); 
+lock.disableKeyguard(); 
+</code></pre>
+
+<p>Также нужно установить разрешение <b>android.permission.DISABLE_KEYGUARD</b>.</p>
+
+<p>Если стоит обратная задача - запретить блокировку экрана при долгом бездействии, то используйте метод setKeepScreenOn() или используйте XML-атрибут <b>android:keepScreenOn="true"</b>.</p>
+
+<h2 class="text-warning" id="screensize">Узнать размеры экрана</h2>
+
+<p>Для вычисления размеров экрана можно воспользоваться двумя способами. Второй способ более правильный.</p>
+
+<pre><code class="java">
+TextView tvResult = (TextView)findViewById(R.id.textView1);
+
+// Узнаем размеры экрана из ресурсов
+DisplayMetrics displaymetrics = getResources().getDisplayMetrics();
+
+// узнаем размеры экрана из класса Display
+Display display = getWindowManager().getDefaultDisplay();
+DisplayMetrics metricsB = new DisplayMetrics();
+display.getMetrics(metricsB);
+
+tvResult.setText(
+		"[Используя ресурсы] \n" +
+    	"Ширина: " + displaymetrics.widthPixels + "\n" +
+    	"Высота: " + displaymetrics.heightPixels + "\n"
+    	+ "\n" +
+    	"[Используя Display] \n" +
+    	"Ширина: " + metricsB.widthPixels + "\n" +
+    	"Высота: " + metricsB.heightPixels + "\n"
+    );
+</code></pre>
+
+<h2 class="text-warning" id="fillmatch">В чем разница между fill_parent и match_parent</h2>
+
+<p><b>match_parent = fill_parent</b>. Первое свойство нужно использовать в новых проектах, второе свойство считается устаревшим и пока оставлено в целях совместимости.</p>
+
+<h2 class="text-warning" id="notitle">Как убрать заголовок у Activity?</h2>
+
+<p>В некоторых случаях хочется спрятать заголовок (Title) у программы. Есть несколько способов. Например, применить специальную тему (прописать в манифесте файла):</p>
+
+<pre><code class="xml">
+&lt;activity 
+    android:name=&quot;.MainActivity&quot; 
+    android:label=&quot;My App&quot;
+    <b>android:theme=&quot;@android:style/Theme.Black.NoTitleBar&quot;</b>
+    android:screenOrientation=&quot;portrait&quot;&gt;
+</code></pre>
+
+<p>Также попробуйте <b>android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"</b> (убирает не только заголовок, но и панель уведомлений). Названия тем могут быть и другими, смотрите документацию. <a href="theme.html#systemthemes">Несколько примеров</a></p>
+
+<p>Если у вас используется своя тема, то используйте в ней параметр:</p>
+
+<pre>
+&lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;
+</pre>
+
+<p>Также существует программный способ (перед вызовом setContentView):</p>
+
+<pre><code class="java">
+// Убираем заголовок
+this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+// Убираем панель уведомлений
+this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+</code></pre>
+
+<h2 class="text-warning" id="myicon">Как использовать собственный значок для программы</h2>
+
+<p>Когда вы создаете учебные примеры, то у всех программ используется стандартный значок с изображением андроида. Как же использовать свой значок? Ответ прост. В папке проекта <b>/res</b> вы можете видеть подпапки <b>drawable-ldpi</b>, <b>drawable-mdpi</b>, <b>drawable-hdpi</b> и др., в которых и содержатся готовые значки в формате PNG под разные размеры экранов.</p>
+
+<p>Вы можете просто открыть png-файл в графическом редакторе и нарисовать что-то свое и сохранить изменения.</p>
+
+<p>Вы можете сохранить значки под своим именем, например, cat.png. В этом случае вам надо открыть файл манифеста, найти там строчку:</p>
+
+<pre>
+&lt;application 
+   android:icon="@drawable/icon" 
+   ...
+</pre>
+
+<p>И отредактировать её, например, <b>android:icon="@drawable/cat"</b> (без расширения). Как вариант, вы можете сохранить один значок в папке <b>drawable</b> в нужном размере, если пишете программу под определенные типы телефонов.</p>
+
+<p>Размеры значков в папках:</p>
+<ul>
+<li>Low density – ldpi = 36×36 px</li>
+<li>Medium density – mdpi = 48×48 px</li>
+<li>High density – hdpi = 72×72 px</li>
+<li>Extra-high density screen - xhdpi (320 dpi) = 96 × 96 px</li>
+</ul>
+
+<p>Также вы можете вызвать мастер создания значков уже после создания проекта (помните, во время создания нового проекта вы выбирали значок?). Для этого выберите в меню File | New | Other... и найдите мастер <b>Android Icon Set</b>. Запустите его и поменяйте значок для программы. Дополнительно вы можете настроить значки для Action Bar и Tab, Notification, Menu.</p>
+
+
+<h2 class="text-warning" id="version">Получить номер версии программы</h2>
+
+<p>Смотри <a href="package.html#version">пример</a></p>
+
+<h2 class="text-warning" id="killapp">Убить приложение</h2>
+
+<p>Смотри <a href="apps.html#killapp">пример</a></p>
+
+<h2 class="text-warning" id="memory">Сколько используется памяти</h2>
+
+<p>Нужно от общей памяти отнять свободную память</p>
+
+<pre><code class="java">
+// Get the Java runtime
+Runtime runtime = Runtime.getRuntime();
+// Run the garbage collector
+runtime.gc();
+// Calculate the used memory
+long memoryUsed = runtime.totalMemory() - runtime.freeMemory();
+textView1.setText(String.valueOf(memoryUsed));
+</code></pre>
+
+<p>Более общий пример:</p>
+
+<pre><code class="java">
+TextView memInfo = (TextView)findViewById(R.id.meminfo);
+        
+String info = "";
+
+info += "Total memory: " + Runtime.getRuntime().totalMemory() + "\n";
+info += "Free memory: " + Runtime.getRuntime().freeMemory() + "\n";
+info += "Max memory: " + Runtime.getRuntime().maxMemory() + "\n";
+
+memInfo.setText(info);
+</code></pre>
+
+<h2 class="text-warning" id="memoryclass">Разрешённый объём памяти для приложения</h2>
+
+<p>Система выделяет каждому приложению определённый лимит памяти. На разных устройствах размер выделяемой памяти отличается. Чтобы узнать размер выделяемой памяти для вашего приложения, используйте код:</p>
+
+<pre><code class="java">
+// Возвращаем лимит памяти в мегабайтах
+int memoryClass = ((ActivityManager) getSystemService(Context.ACTIVITY_SERVICE))
+		.getMemoryClass();
+Toast.makeText(this, String.valueOf(memoryClass), Toast.LENGTH_LONG)
+		.show();
+</code></pre>
+
+<p>Особенно это касается приложений, которые активно используют графику. Следите за размерами изображений, вызывайте метод <b>recycle()</b> для освобождения памяти при работе с классом <b>BitmapFactory</b>.</p>
+
+<p>Начиная с Android 3.0 можно попросить у системы выделять чуть больше памяти, прописав в манифесте просьбу:</p>
+
+<pre><code class="xml">
+&lt;application
+    ....
+    largerHeap = &quot;true&quot;&gt; 
+</code></pre>
+
+<h2 class="text-warning" id="screenshotemulator">Как сделать скриншот на эмуляторе</h2>
+
+<p>Если вам нужно сделать скриншот вашего приложения в эмуляторе, совсем не обязательно использовать PrintScreen и всякие программы, делающие снимки экрана. В Eclipse откройте меню <b>Window | Show View | Other</b> и в диалоговом окне выберите <b>Devices</b> (категория Android). У вас на экране появится новая панель Devices, на которой есть значок фотоаппарта. Щелкните на нем и получите снимок вашего приложения.</p>
+
+<h2 class="text-warning" id="norotate">Запретить автоматическую смену ориентации при повороте устройства</h2>
+
+<p>Если вы хотите запретить автоматическую смену ориентацию при повороте устройства, то можно ее отключить для нужного экрана. Например, если экран с настройками должен отображаться только в портретном режиме, то добавьте одну строчку с атрибутом <b>screenOrientation</b> в манифест файла для соответствующей активности</p>
+
+<pre><code class="xml">
+&lt;activity android:name=&quot;.MyActivity&quot;
+    android:label=&quot;@string/app_name&quot;
+    android:screenOrientation=&quot;portrait&quot;&gt;
+</code></pre>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+<p>
+ <a href="http://all-hit.tv/5693-tor-2-carstvo-tmy.html" target="_blank">смотреть тор 2</a> , если нравится - ставь лойс.; <a href="http://otelvitino.com.ua/" target="_blank">дешевый отдых в крыму</a> 
+</p> 
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/tips-android.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:38:54 GMT -->
+</html>

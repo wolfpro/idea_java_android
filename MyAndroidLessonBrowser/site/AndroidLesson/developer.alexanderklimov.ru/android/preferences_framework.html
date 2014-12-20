@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/preferences_framework.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:47:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Preferences Framework</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class="active"><a href="index-2.html">Главная</a></li>
+<li class=""><a href="theory/index.html">Теория</a></li>
+<li class=""><a href="views.html">Palette</a></li>
+<li class=""><a href="listview/index.html">ListView</a></li>
+<li class=""><a href="catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="animation.html">Анимация</a></li>
+<li class=""><a href="sqlite/index.html">SQLite</a></li>
+<li class=""><a href="opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="library/index.html">Библиотеки</a></li>
+<li class=""><a href="games/index.html">Игры</a></li>
+<li class=""><a href="emulator.html">Эмулятор</a></li>
+<li class=""><a href="tips-android.html">Советы</a></li>
+<li class=""><a href="articles-android.html">Статьи</a></li>
+<li class=""><a href="books.html">Книги</a></li>
+<li class=""><a href="java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="design/index.html">Дизайн</a></li>
+<li class=""><a href="opensource.html">Open Source</a></li>
+<li class=""><a href="links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Preferences Framework</h1>
+
+<p>
+<a href="#checkboxpreference">CheckBoxPreference</a><br>
+<a href="#edittextpreference">EditTextPreference</a><br>
+<a href="#listpreference">ListPreference</a><br>
+<a href="#switcherpreference">SwitchPreference</a><br>
+<a href="#ringtonepreference">RingtonePreference</a><br>
+<a href="#preferencecategory">PreferenceCategory</a><br>
+<a href="#preferencescreen">PreferenceScreen</a><br>
+<a href="#import">Импорт системных настроек</a><br>
+<a href="#dependency">Настройки с зависимостями</a><br>
+<a href="#onsharedpreferencechangelistener">Отслеживание изменений в Общих настройках</a><br>
+</p>
+
+<p>Настройки могут быть скрытыми или открытыми. Например, мы можем подсчитывать, сколько раз пользователь запускал нашу программу и при сотом запуске подарить ему бонус. Счётчик запуска приложения мы храним в файле настроек, но пользователь ничего не знает об этом. Но бывает так, что нам необходимо дать пользователю настроить функциональность приложения под свои вкусы. Например, сделать настройку "Напоминать о дне рождения котика". Если пользователь установит флажок у этой настройки (пусть только попробует не установить), то программа напомнит ему в нужный день о необходимости купить тортик.</p>
+
+<p>Часто для этих целей в приложениях используют отдельный экран с настройками. Безусловно вы можете создать собственный xml-файл разметки и разместить там нужные элементы управления. Но Android для этих целей предоставляет собственный <b>Preferences Framework</b>, с помощью которого можно создавать индивидуальный набор предпочтений и встраивать их в приложения. Главное преимущество использования фреймворка состоит в том, что экран настроек выглядит стандартно во всех приложениях и позволяет пользователю быстрее разобраться в работе.</p>
+
+<p>Кроме того фреймворк настроек позволяет прослушивать изменения в Общих настройках через реализацию метода <b>onSharedPreferenceChangeListener()</b>.</p>
+
+<p>Использование фреймворка позволяет быстро создать окно настроек практически без написания кода. Предпочтения — это отдельная активность в приложении, вызываемая из активности. Сама активность расширяется от класса <b>PreferenceActivity</b>, а не от стандартного класса Activity. Предпочтения определяются в отдельном XML-файле, где корневым элементом является элемент &lt;PreferenceScreen&gt;, который представляет собой контейнер для предпочтений и может содержать дочерние элементы &lt;PreferenceScreen&gt;. Элемент &lt;PreferenceCategory&gt; также является контейнерным элементом и предназначен для объединения предпочтений в группы.</p>
+
+<p>Сама настройка внешнего вида разметки создаётся не в папке <b>res/layout</b>,  а в папке <b>res/xml</b>. Если такой папки нет, то создайте её самостоятельно. Для начала необходимо создать в папке <b>res/xml</b> XML-файл ресурсов, например, <b>settings.xml</b>. При создании файла в диалоговом окне установите переключатель на <b>Preference</b> и убедитесь, что корневым элементом файла установлен <b>PreferenceScreen</b>:</p>
+
+<p><img src="images/preference4.png" width="702" height="658" title="" alt="" /></p>
+
+<p>Для сохранения предпочтений используется различные классы:</p>
+<ul>
+<li><a href="#checkboxpreference">CheckBoxPreference</a></li>
+<li><a href="#edittextpreference">EditTextPreference</a></li>
+<li><a href="#listpreference">ListPreference</a></li>
+<li><a href="#ringtonepreference">RingtonePreference</a> и др.</li>
+</ul>
+
+<p>У элементов кроме своих собственных атрибутов есть обязательные атрибуты:</p>
+
+<ul>
+<li>android:key - ключ, по которому можно определять значение</li>
+<li>android:title - краткий текст настройки</li>
+<li>android:summary - длинное описание настройки. Отражается под кратким текстом более мелким шрифтом</li>
+<li>android:defaultValue - значение по умолчанию, которое будет использовано, если ничего не было выбрано</li>
+</ul>
+
+<h2 class="text-warning" id="checkboxpreference">CheckBoxPreference</h2>
+
+<p>В созданном файле устанавливаем настройки. Начнём с <b>CheckBoxPreference</b>.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;PreferenceScreen xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;CheckBoxPreference
+        android:key=&quot;wifi&quot;
+        android:title=&quot;@string/wifi_title&quot;
+        android:summary=&quot;@string/wifi_summary&quot;
+        android:defaultValue=&quot;true&quot; /&gt;
+  &lt;CheckBoxPreference
+        android:key=&quot;hints&quot;
+        android:title=&quot;@string/hints_title&quot;
+        android:summary=&quot;@string/hints_summary&quot;
+        android:defaultValue=&quot;true&quot; /&gt;
+&lt;/PreferenceScreen&gt;
+</code></pre>
+
+<p>Мы определили две настройки для программы: включение и выключение Wi-Fi и показ подсказок. В нашем случае мы выводим флажки (элемент <b>CheckBoxPreference</b>), которые по умолчанию будут отмечены (атрибут <b>android:defaultValue</b>).</p>
+
+<p>Не забываем добавить новые строковые ресурсы в файл strings.xml:</p>
+
+<pre><code class="xml">
+&lt;string name=&quot;wifi_title&quot;&gt;Wi-Fi&lt;/string&gt;
+&lt;string name=&quot;wifi_summary&quot;&gt;Вкл. или выкл. сеть WiFi&lt;/string&gt;
+&lt;string name=&quot;hints_title&quot;&gt;Подсказки&lt;/string&gt;
+&lt;string name=&quot;hints_summary&quot;&gt;Показывать подсказки&lt;/string&gt;
+</code></pre>
+
+<p>Далее создаем новый класс <b>Prefs</b>, который будет наследоваться от класса <b>PreferenceActivity</b>:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.preferencedemo
+
+import android.os.Bundle;
+import android.preference.PreferenceActivity;
+
+public class Prefs extends PreferenceActivity 
+{
+	@Override
+	protected void onCreate(Bundle savedInstanceState) 
+	{
+	    super.onCreate(savedInstanceState);
+	    addPreferencesFromResource(R.xml.settings);
+	}
+}
+</code></pre>
+
+<p>Метод <b>addPreferencesFromResource()</b> считывает установленные настройки из XML-файла, где хранятся наши ресурсы, и делает их доступными для программы. В результате мы должны увидеть настройки на экране. Не забываем зарегистрировать новую активность в манифесте AndroidManifest.xml:</p>
+
+<pre><code class="xml">
+&lt;activity 
+    android:name=&quot;.Prefs&quot;
+    android:label=&quot;@string/settings_title&quot;&gt;
+&lt;/activity&gt;
+</code></pre>
+
+<p>Напишем метод для вывода окна настроек, который можно повесить на щелчок мыши или пункта меню:</p>
+
+<pre><code class="java">
+public void showSettings()
+{
+	Intent i = new Intent(this, Prefs.class);
+	startActivity(i);
+}
+</code></pre>
+
+<p>Запустите программу и вызовите окно настроек. Попробуйте снять или установить флажки в разных сочетаниях. Затем закройте приложение и снова запустите его. Если вы откроете окно настроек, то увидите, что сделанные вами изменения сохранены. Система сама делает за нас всю работу и запоминает установленные настройки.</p>
+
+<p><img src="images/preference5.png" alt="CheckBoxPreference"/></p>
+
+<p>Наверное, вы обратили внимание, что метод <b>addPreferencesFromResource()</b> был зачёркнут и помечен, как устаревший (если вы создавали проект для Android 3 и выше). В новых версиях Android следует использовать фрагмент <b>PreferenceFragment</b>, о котором поговорим в другой раз.</p>
+
+<h2 class="text-warning" id="edittextpreference">EditTextPreference</h2>
+
+<p>Мы научились сохранять настройки при помощи флажков. Существует также возможность сохранения настроек в текстовом виде при помощи <b>EditTextPreference</b>. Подобный способ настройки позволяет сохранять текст, вводимый пользователем. Давайте реализуем эту возможность в нашем текстовом редакторе - добавим возможность устанавливать размер шрифта для текста. Откроем снова файл <b>settings.xml</b> и добавим новый элемент <b>EditTextPreference</b>:</p>
+
+<pre><code class="xml">
+&lt;EditTextPreference
+    android:key=&quot;@string/pref_size&quot;
+    android:title=&quot;Размер шрифта&quot;
+    android:summary=&quot;Устанавливает новый размер шрифта&quot;
+    android:defaultValue=&quot;14&quot;
+    android:dialogTitle=&quot;Введите размер шрифта (от 10 до 32)&quot; /&gt;
+</code></pre>
+
+<p>Запустите проект и вызовите окно настроек. Теперь у нас появилась опция установки размера шрифта с треугольником (для старых версий Android). Если щёлкнуть на треугольнике, то откроется новое диалоговое окно с текстовым полем ввода.</p>
+
+<p><img src="../../rusproject.narod.ru/android/texteditor3.png" alt="Настройки" width="240" height="400"></p>
+
+<p><img src="../../rusproject.narod.ru/android/texteditor4.png" alt="Настройки" width="240" height="400"></p>
+
+<p>В Android 4 я не увидел никаких треугольников и догадаться, что можно коснуться экрана для вызова другого экрана, практически невозможно. Кто придумал такой интерфейс?</p>
+
+<p><img src="images/preference6.png" alt=""> <img src="images/preference7.png" alt=""></p>
+
+<p>В <a href="texteditor.html">следующем уроке</a> мы разберём, как считывать установленные значения размера шрифта.</p>
+
+<h2 class="text-warning" id="listpreference">ListPreference</h2>
+
+<p>Также можно использовать списки для хранения настроек. Для этой цели используется диалоговое окно <b>ListPreference</b>. Необходимо заранее подготовить строковый ресурс для заголовка и массив строк для самого списка значений. Индекс выбранной строки списка будет задавать нужное значение для сохранения в <b>SharedPreferences</b>.</p>
+
+<p>Продолжим работу с текстовым редактором и добавим в него список для выбора стиля текста. В списке будет четыре опции: Обычный, Полужирный, Курсив, Полужирный+Курсив.</p>
+
+<p>Подготовим массив строк и сохраним его в файле <b>arrays.xml</b>, который необходимо поместить в каталог <b>res/values/</b>.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+	&lt;string-array name=&quot;text_style&quot;&gt;
+		&lt;item&gt;Обычный&lt;/item&gt;
+		&lt;item&gt;Полужирный&lt;/item&gt;
+		&lt;item&gt;Курсив&lt;/item&gt;
+		&lt;item&gt;Полужирный+Курсив&lt;/item&gt;
+	&lt;/string-array&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>В файл настроек (settings.xml) добавим дополнительный элемент &lt;ListPreference&gt;, в котором определим атрибуты заголовка окна, привязку к массиву значений и значение по умолчанию:</p>
+
+<pre><code class="xml">
+&lt;ListPreference
+	android:key=&quot;@string/pref_style&quot;
+	android:title=&quot;Стиль для шрифта&quot;
+	android:summary=&quot;Устанавливает стиль для шрифта&quot;
+	android:defaultValue=&quot;1&quot;
+	android:entries=&quot;@array/text_style&quot;
+	android:entryValues=&quot;@array/text_style&quot;
+	android:dialogTitle=&quot;Выберите стиль для шрифта&quot; /&gt;
+</code></pre>
+
+<p>Код для чтения настроек из списка рассматривается в  <a href="texteditor.html">следующем уроке</a>.</p>
+
+<p>Запустив проект, вы теперь увидите новую настройку <b>Стиль для шрифта</b>, которая открывает диалоговое окно для выбора стиля из списка. Обратите внимание, что в диалоговом окне нет кнопки сохранения, только <b>Отмена</b>. Изменения сохраняются сразу при выборе опции списка.</p>
+
+<p>Для сравнения я оставил скриншоты от старой версии Android 2.3 и Android 4.0</p>
+
+<p><img src="../../rusproject.narod.ru/android/texteditor5.png" alt="Настройки" width="240" height="400">
+
+<img src="../../rusproject.narod.ru/android/texteditor6.png" alt="Настройки" width="240" height="400"></p>
+
+<p><img src="images/preference8.png" alt="Настройки"> <img src="images/preference9.png" alt="Настройки"></p>
+
+<h2 class="text-warning" id="switchpreference">SwitchPreference</h2>
+
+<p>Поняв общий принцип, вы можете сами разобраться с другими элементами настроек. Рассмотрим ещё один элемент - <b>SwitchPreference</b>, который является заменой для <b>CheckBoxPreference</b> и позволяет включать или выключать настройку.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;PreferenceScreen xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:custom=&quot;http://schemas.android.com/apk/res-auto&quot; &gt;
+
+    &lt;CheckBoxPreference
+        android:defaultValue=&quot;true&quot;
+        android:key=&quot;wifi&quot;
+        android:summary=&quot;@string/wifi_summary&quot;
+        android:title=&quot;@string/wifi_title&quot; /&gt;
+    &lt;CheckBoxPreference
+        android:defaultValue=&quot;true&quot;
+        android:key=&quot;hints&quot;
+        android:summary=&quot;@string/hints_summary&quot;
+        android:title=&quot;@string/hints_title&quot; /&gt;
+
+    &lt;SwitchPreference
+        android:key=&quot;glad&quot;
+        android:summaryOff=&quot;Вы уверены, что не будете гладить кота?&quot;
+        android:summaryOn=&quot;Гладить кота?&quot;
+        android:switchTextOff=&quot;Нет&quot;
+        android:switchTextOn=&quot;Да&quot; /&gt;
+
+&lt;/PreferenceScreen&gt;
+</code></pre>
+
+<p>Обратите внимание, что редактировать данные удобнее через вкладку <b>Structure</b>, где вы можете добавлять новые элементы и присваивать им нужные свойства.</p>
+
+<p><a href="http://fotki.yandex.ru/users/netsources/view/571112/"><img src="../../img-fotki.yandex.ru/get/9155/27875755.10/0_8b6e8_22de6d7d_L.png" width="500" height="310" title="" alt="" border="0"/></a></p>
+
+<p>В результате получим:</p>
+
+<p><img src="images/preference14.png" alt="SwitchPreference"></p>
+
+<h2 class="text-warning" id="ringtonepreference">RingtonePreference</h2>
+
+<p>Рассмотрим работу с настройкой, связанной с установкой мелодии для звонка. Предпочтение <b>&lt;RingtonePreference&gt;</b> предоставляет диалоговое окно выбора мелодии звонка со списком опций. Список в диалоговом окне отображает мелодии для звонка, уведомлений, тонового набора, доступные на мобильном устройстве. Также предусмотрена возможность добавления дополнительной опции Silent (Тихий режим) - добавьте атрибут <b>android:showSilent=&quot;true&quot;</b>.</p>
+
+<p>Создадим файл настроек preferences.xml:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;PreferenceScreen
+	xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+
+	&lt;RingtonePreference
+		android:key=&quot;@string/setting_ringtone&quot;
+		android:title=&quot;@string/setting_ringtone&quot;
+		android:showDefault=&quot;true&quot;
+		android:showSilent=&quot;true&quot;
+		android:summary=&quot;Устанавливает мелодию для звонка (вкл. или выкл.)&quot; /&gt; 	
+&lt;/PreferenceScreen&gt;
+</code></pre>
+
+<p>Код для запуска окна настроек</p>
+
+<pre><code class="java">
+Intent intent = new Intent(); 
+intent.setClass(this, Prefs.class); 
+startActivity(intent); 
+</code></pre>
+
+<p><img src="../../rusproject.narod.ru/android/ringtone1.png" alt="Настройки">
+
+<img src="../../rusproject.narod.ru/android/ringtone2.png" alt="Настройки"></p>
+
+<h2 class="text-warning" id="preferencecategory">PreferenceCategory</h2>
+
+<p>Если в приложении используется слишком много настроек разного типа, то можно сгруппировать их по категориям, чтобы улучшить внешний вид окна настроек. Для этого в Preferences Framework есть специальный элемент <b>PreferenceCategory</b>.</p>
+
+<p>Еще раз вернёмся к статье <a href="texteditor.html">Создание простого текстового редактора</a>, где использовались настройки для открытия файла и для работы с текстом (Размер шрифта и стиль шрифта). Почему бы нам не разбить настройки на две категории: к первой категории мы отнесем настройку открытия файла, а ко второй две настройки, связанные с шрифтами.</p>
+
+<p>Категории добавляются через элемент <b>&lt;PreferenceCategory&gt;</b>  под корневым элементом &lt;PreferenceScreen&gt;, и в него уже помещаются нужные настройки:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;PreferenceScreen
+	xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+	&lt;PreferenceCategory
+		android:title=&quot;Работа с файлами&quot;&gt;
+		&lt;CheckBoxPreference
+			android:key=&quot;@string/pref_openmode&quot;
+			android:title=&quot;Открыть файл&quot;
+			android:summary=&quot;Открывать файл при запуске приложения&quot; /&gt;
+	&lt;/PreferenceCategory&gt;
+
+	&lt;PreferenceCategory
+		android:title=&quot;Настройки шрифта&quot;&gt;
+		&lt;EditTextPreference
+			android:key=&quot;@string/pref_size&quot;
+			android:title=&quot;Размер шрифта&quot;
+			android:summary=&quot;Устанавливает новый размер шрифта&quot;
+			android:defaultValue=&quot;14&quot;
+			android:dialogTitle=&quot;Введите размер шрифта (от 10 до 32)&quot; /&gt;
+
+		&lt;ListPreference
+			android:key=&quot;@string/pref_style&quot;
+			android:title=&quot;Стиль для шрифта&quot;
+			android:summary=&quot;Устанавливает стиль для шрифта&quot;
+			android:defaultValue=&quot;1&quot;
+			android:entries=&quot;@array/text_style&quot;
+			android:entryValues=&quot;@array/text_style&quot;
+			android:dialogTitle=&quot;Выберите стиль для шрифта&quot; /&gt;
+	&lt;/PreferenceCategory&gt;
+&lt;/PreferenceScreen&gt;
+</code></pre>
+
+<p>Если вы запустите приложение для текстового редактора с добавленными категориями, то увидите дополнительную полоску с текстом. Сравните два рисунка до и после добавления элемента PreferenceCategory:</p>
+
+<p>
+<img src="../../rusproject.narod.ru/android/texteditor5.png" alt=""> <img src="../../rusproject.narod.ru/android/preferencecategory.png">
+</p>
+
+<h2 class="text-warning" id="preferencescreen">PreferenceScreen</h2>
+
+<p>Кроме корневого элемента &lt;PreferenceScreen&gt; в файле настроек можно использовать вложенные дочерние элементы &lt;PreferenceScreen&gt;, которые будут отображаться в отдельном окне. Родительский экран &lt;PreferenceScreen&gt; в этом случае будет отображать вход для запуска дочернего экрана настроек. Продолжим опыты над текстовым редактором и добавим еще одну настройку, управляющую цветом (выделено жирным).</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;PreferenceScreen
+	xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+	&lt;PreferenceCategory
+		android:title=&quot;Работа с файлами&quot;&gt;
+		&lt;CheckBoxPreference
+			android:key=&quot;@string/pref_openmode&quot;
+			android:title=&quot;Открыть файл&quot;
+			android:summary=&quot;Открывать файл при запуске приложения&quot; /&gt;
+	&lt;/PreferenceCategory&gt;
+
+	&lt;PreferenceCategory
+		android:title=&quot;Настройки шрифта&quot;&gt;
+
+		&lt;EditTextPreference
+			android:key=&quot;@string/pref_size&quot;
+			android:title=&quot;Размер шрифта&quot;
+			android:summary=&quot;Устанавливает новый размер шрифта&quot;
+			android:defaultValue=&quot;14&quot;
+			android:dialogTitle=&quot;Введите размер шрифта (от 10 до 32)&quot; /&gt;
+
+		&lt;ListPreference
+			android:key=&quot;@string/pref_style&quot;
+			android:title=&quot;Стиль для шрифта&quot;
+			android:summary=&quot;Устанавливает стиль для шрифта&quot;
+			android:defaultValue=&quot;1&quot;
+			android:entries=&quot;@array/text_style&quot;
+			android:entryValues=&quot;@array/text_style&quot;
+			android:dialogTitle=&quot;Выберите стиль для шрифта&quot; /&gt;
+		<b>	
+		&lt;PreferenceScreen
+			android:key=&quot;@string/pref_color&quot;
+			android:title=&quot;Цвет текста&quot;
+			android:summary=&quot;Устанавливает цвет для текста&quot;&gt;
+
+			&lt;CheckBoxPreference
+				android:key=&quot;@string/pref_color_black&quot;
+				android:title=&quot;Черный&quot;
+				android:defaultValue=&quot;true&quot;
+				android:summary=&quot;Устанавливает черный цвет&quot; /&gt;
+			&lt;CheckBoxPreference
+				android:key=&quot;@string/pref_color_red&quot;
+				android:title=&quot;Красный&quot;
+				android:summary=&quot;Устанавливает красный цвет&quot; /&gt;
+			&lt;CheckBoxPreference
+				android:key=&quot;@string/pref_color_green&quot;
+				android:title=&quot;Зеленый&quot;
+				android:summary=&quot;Устанавливает зеленый цвет&quot; /&gt;
+			&lt;CheckBoxPreference
+				android:key=&quot;@string/pref_color_blue&quot;
+				android:title=&quot;Синий&quot;
+				android:summary=&quot;Устанавливает синий цвет&quot; /&gt;
+		&lt;/PreferenceScreen&gt;
+		</b>
+	&lt;/PreferenceCategory&gt;
+&lt;/PreferenceScreen&gt;
+</code></pre> 
+
+<p>Запустив приложение, вы увидите новую настройку <b>Цвет текста</b>, которая открывает новое окно для выбора цвета текста.</p>
+
+<p>
+<img src="../../rusproject.narod.ru/android/preference1.png" alt=""> <img src="../../rusproject.narod.ru/android/preference2.png" alt="">
+</p>
+
+<p>Вам остается только написать код для обработки выбора пользователя, чтобы вывести текст в текстовом редакторе в нужном цвете. Обратите внимание, что в нашем примере используются флажки, которые позволяют создавать комбинации различных цветов. Например, сочетание красного и синего цвета дают красивый цвет, который понравится известному дизайнеру Артемию Лебедеву.</p>
+
+<p><img src="../../rusproject.narod.ru/android/preference3.png" alt=""></p>
+
+<p>Исходный код для текстового редактора смотрите <a href="http://rusproject.narod.ru/android/texteditor.htm">здесь</a>
+
+<h2 class="text-warning" id="import">Импорт системных настроек</h2>
+
+<p>У фреймворка настроек есть интересная особенность - можно внедрить в экран настроек вашего приложения вызов системных настроек. Делается это следующим образом. В файл настроек добавляем новых блок, например, такой:</p>
+
+<pre><code class="xml">
+&lt;PreferenceScreen
+    android:summary=&quot;Импортированная системная настройка&quot;
+    android:title=&quot;Настройка через намерение&quot; &gt;
+    &lt;intent android:action=&quot;android.settings.AIRPLANE_MODE_SETTINGS&quot; /&gt;
+&lt;/PreferenceScreen&gt;
+</code></pre>
+
+<p>Класс <b>android.provider.Settings</b> включает множество констант типа <b>android.settings.*</b>, которые можно использовать для вызова экранов системных настроек. Я выбрал настройку Автономного режима, также можно было вызвать настройку Экрана (<b>android.settings.DISPLAY_SETTINGS</b>). Далее нужно добавить фильтр намерений в запись манифеста:</p>
+
+<pre><code class="xml">
+&lt;activity android:name=&quot;Prefs&quot; &gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name=&quot;ru.alexanderklimov.preferences.ACTION_USER_PREFERENCE&quot; /&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;
+</code></pre>
+
+<p>При использовании данного способа система интерпретирует это как запрос на вызов метода <b>startActivity()</b> с указанным действием. Это очень удобно, когда из вашего экрана настроек нужно вызвать стандартную системную настройку.</p>
+
+<h2 class="text-warning" id="dependency">Настройки с зависимостями</h2>
+
+<p>Иногда требуется, чтобы часть настроек была связана с определённой родительской настройкой. И если родительская настройки заблокирована, то есть смысл автоматически заблокировать и дочерние настройки. Для этой цели применяется атрибут <b>android:dependency</b>.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;PreferenceScreen xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;CheckBoxPreference
+        android:key=&quot;cat_key&quot;
+        android:title=&quot;У вас есть кот?&quot;
+        android:summary=&quot;Доступно для владельцев котов&quot;
+        android:defaultValue=&quot;true&quot; /&gt;
+  &lt;EditTextPreference
+        android:key=&quot;catfood&quot;
+        android:title=&quot;Подарки для кота&quot;
+        android:summary=&quot;Угости кота&quot;
+        android:dependency=&quot;cat_key&quot; /&gt;
+&lt;/PreferenceScreen&gt;
+</code></pre>
+
+<p>Мы указали, что текстовое поле зависит от родительского флажка. Запустим и сравним поведение в двух разных случаях.</p>
+
+<p><img src="images/preference10.png" alt="Зависимости в настройках"> <img src="images/preference11.png" alt="Зависимости в настройках"></p>
+
+<h2 class="text-warning" id="onsharedpreferencechangelistener">Отслеживание изменений в Общих настройках</h2>
+
+<p>Как уже упоминалось, класс <b>onSharedPreferenceChangeListener</b> позволяет вызвать callback-метод в момент добавления, удаления или изменения конкретной Общей настройки. Используя этот обработчик, компоненты вашего приложения могут следить за изменениями в настройках, установленных пользователем, и обновлять пользовательский интерфейс или корректировать поведение программы.</p>
+
+<p>Зарегистрируйте обработчик onSharedPreferenceChangeListener, применив Общие настройки, за которыми вы хотите следить. Реализация onSharedPreferenceChanged показана ниже (каркас):</p>
+
+<pre><code class="java">
+public class MyActivity extends Activity implements OnSharedPreferenceChangeListener {
+    @Override
+    public void onCreate(Bundle SavedInstanceState) {
+        // Регистрируем этот OnSharedPreferenceChangeListener
+        Context context = getApplicationContext();
+        SharedPreferences prefs =
+            PreferenceManager.getDefaultSharedPreferences(context);
+        prefs.registerOnSharedPreferenceChangeListener(this);
+    }
+    
+	public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        // TODO Проверять общие настройки, ключевые параметры и изменять UI 
+        // или поведение приложения, если потребуется.
+    }
+}
+</code></pre>
+
+
+
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+ </div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/preferences_framework.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:47:38 GMT -->
+</html>

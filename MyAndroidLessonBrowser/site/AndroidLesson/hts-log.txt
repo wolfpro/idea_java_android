@@ -1,0 +1,230 @@
+HTTrack3.48-17 launched on Wed, 16 Jul 2014 18:31:25 at http://developer.alexanderklimov.ru/android/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/*
+(webhttrack -q -%i -w http://developer.alexanderklimov.ru/android/ -O "/home/wolfpro/websites/AndroidLesson" -n -%P -N0 -s2 -p7 -D -a -K0 -c4 -%k -A25000 -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -%s -%u )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+18:45:59	Warning: 	file not stored in cache due to bogus state (broken size, expected 1057767 got 544448): rusproject.narod.ru/android/podstava.gif
+18:47:52	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/fragment.php (from developer.alexanderklimov.ru/android/)
+18:49:10	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/application.php (from developer.alexanderklimov.ru/android/)
+18:49:24	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/asciiarteditor.php (from developer.alexanderklimov.ru/android/)
+18:49:36	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/youtubeandroidplayerapi.php (from developer.alexanderklimov.ru/android/)
+18:50:24	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/theory/scales.php (from developer.alexanderklimov.ru/android/theory/)
+18:52:08	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/theory/xmlparsers.php (from developer.alexanderklimov.ru/android/theory/)
+18:52:12	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/theory/audiomanager.php (from developer.alexanderklimov.ru/android/theory/)
+18:52:57	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/views/progressbar.php (from developer.alexanderklimov.ru/android/views.php)
+18:53:16	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/layout/gridlayout.php (from developer.alexanderklimov.ru/android/views.php)
+18:53:48	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/views/listview.php (from developer.alexanderklimov.ru/android/views.php)
+18:55:46	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/views/addview.php (from developer.alexanderklimov.ru/android/views.php)
+18:55:55	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/listview/stripe_items.php (from developer.alexanderklimov.ru/android/listview/)
+19:08:52	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/tools.php (from developer.alexanderklimov.ru/android/emulator.php)
+19:09:10	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/broadcast.php (from developer.alexanderklimov.ru/android/tips-android.php)
+19:09:37	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/theory/apk-whatitis.php (from developer.alexanderklimov.ru/android/articles-android.php)
+19:12:25	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/android2_clipse.php (from developer.alexanderklimov.ru/android/android2.php)
+19:12:25	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/edittextpreference (from developer.alexanderklimov.ru/android/texteditor.php)
+19:12:30	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/provider (from developer.alexanderklimov.ru/android/geolocation.php)
+19:12:31	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/views/viewflipper2.php (from developer.alexanderklimov.ru/android/gesturedetector.php)
+19:13:01	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/ownlibrary.php (from developer.alexanderklimov.ru/android/5.php)
+19:13:03	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/todo.php (from developer.alexanderklimov.ru/android/5.php)
+19:13:04	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/play_services.php (from developer.alexanderklimov.ru/android/5.php)
+19:13:31	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/openlibrary.php (from developer.alexanderklimov.ru/android/5.php)
+19:16:25	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/theory/xmldoc.php (from developer.alexanderklimov.ru/android/theory/resources.php)
+19:16:25	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/theory/structure_app.php (from developer.alexanderklimov.ru/android/theory/resources.php)
+19:16:40	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/theory/theory/airplanemode.php (from developer.alexanderklimov.ru/android/theory/intent.php)
+19:16:44	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/theory/register.php (from developer.alexanderklimov.ru/android/theory/textwatcher.php)
+19:17:06	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/views/filter_search3.php (from developer.alexanderklimov.ru/android/views/expandablelistview.php)
+19:17:06	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/views/copydrawable (from developer.alexanderklimov.ru/android/views/imageview.php)
+19:17:07	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/views/register.php (from developer.alexanderklimov.ru/android/views/stackview.php)
+19:17:15	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/catshop/register.php (from developer.alexanderklimov.ru/android/catshop/drawarcs.php)
+19:17:15	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/activity-theory.php (from developer.alexanderklimov.ru/android/animation/frameanimation.php)
+19:17:15	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/animation/animation.php (from developer.alexanderklimov.ru/android/animation/splashanimation.php)
+19:17:15	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/animation/register.php (from developer.alexanderklimov.ru/android/animation/animdialog.php)
+19:17:15	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/opengles/register.php (from developer.alexanderklimov.ru/android/opengles/opengles1.php)
+19:17:15	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/createanimation.php (from developer.alexanderklimov.ru/android/games/game-basic.php)
+19:17:15	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/resources.php (from developer.alexanderklimov.ru/android/system-drawables.php)
+19:17:18	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/theory.php (from developer.alexanderklimov.ru/android/scheduleservice.php)
+19:17:18	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/theory/adapter.php (from developer.alexanderklimov.ru/android/theory/arrayadapter.php)
+19:17:27	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/listview/register.php (from developer.alexanderklimov.ru/android/listview/stripe_items.php)
+19:17:27	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/library/register.php (from developer.alexanderklimov.ru/android/library/jsoup2.php)
+19:17:27	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/games/andengine/register.php (from developer.alexanderklimov.ru/android/games/andengine/setup.php)
+19:18:24	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): pagead2.googlesyndication.com/pagead/show_ads.js
+19:18:24	Warning: 	HTML file (36526 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/index.php
+19:18:27	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): ssl.gstatic.com/images/icons/gplus-16.png
+19:18:28	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://apis.google.com/js/plusone.js
+19:18:30	Warning: 	HTML file (25092 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/super.php
+19:18:35	Error: 	"Not Found" (404) at link https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif (from developer.alexanderklimov.ru/android/)
+19:18:36	Warning: 	HTML file (13966 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory/kitkat.php
+19:18:39	Warning: 	HTML file (28451 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/graphics.php
+19:18:43	Warning: 	HTML file (44833 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/tweenanimation.php
+19:18:45	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): dashclock.googlecode.com/git/art/teaser.png
+19:18:46	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://lh3.googleusercontent.com/-RzpEyLl-1xM/UOMyztql1gI/AAAAAAAAATs/UKBuqZZtaZw//HoloColorPickerFramed1.png
+19:18:48	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): i.stack.imgur.com/AopqX.png
+19:18:48	Warning: 	HTML file (13808 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/sqlite/azbuka-sqlite.php
+19:18:51	Warning: 	HTML file (23690 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/games/game-basic.php
+19:18:51	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://www.paypalobjects.com/ru_RU/i/btn/btn_paynow_LG.gif
+19:18:53	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/4130/27875755.c/0_81a2f_fb1e478b_L.gif.jpg
+19:18:53	Warning: 	HTML file (16146 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/emulator-callnow.php
+19:18:55	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): lights-out-android.googlecode.com/svn/trunk/LightsOut/screenshots/level1.png
+19:18:55	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): 2.bp.blogspot.com/_6ZWsj8oW5ek/TUHMwrEYkAI/AAAAAAAADPw/9W9X-HocKts/s1600/android-wheel-slot-machine.png
+19:18:56	Warning: 	HTML file (41808 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/java/types.php
+19:18:56	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): tiltmazes.googlecode.com/files/tiltmazes-screenshot2.png
+19:18:57	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): i.imgur.com/H3xqq.png
+19:18:57	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img0.joyreactor.cc/pics/post/%d0%ba%d0%be%d1%82%d1%8d-%d0%b3%d0%b8%d1%84%d0%ba%d0%b8-%d0%b8%d0%b3%d1%80%d1%83%d1%88%d0%ba%d0%b0-%d1%80%d0%b0%d0%b4%d0%be%d1%81%d1%82%d1%8c-822593.gif
+19:18:58	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/6711/27875755.e/0_8799f_b5f53777_L.jpg
+19:18:58	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/6720/27875755.e/0_8799e_4afe048e_L.jpg
+19:18:58	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9165/27875755.e/0_8799d_44aa7b55_L.jpg
+19:18:59	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9064/27875755.e/0_8799c_fd861531_L.jpg
+19:18:59	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9351/27875755.e/0_8799b_54322fe2_L.jpg
+19:18:59	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9262/27875755.13/0_95e02_75a84592_L.png
+19:18:59	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9827/27875755.13/0_95e2a_2490f4b5_L.png
+19:19:00	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9252/27875755.13/0_95e2b_c91a1076_L.png
+19:19:00	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9751/27875755.11/0_92196_b05ee27e_L.jpg
+19:19:00	Warning: 	HTML file (17671 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/package.php
+19:19:00	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9809/27875755.11/0_8c979_56315ae5_orig
+19:19:00	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9828/27875755.13/0_95e26_f9a6d969_L.png
+19:19:01	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9067/27875755.13/0_95e27_59a79680_L.png
+19:19:01	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9324/27875755.13/0_95e28_3e2281bd_L.png
+19:19:01	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9811/27875755.13/0_95e29_1965d6aa_L.png
+19:19:01	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9326/27875755.11/0_8e0d8_990917e7_L.png
+19:19:01	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9648/27875755.11/0_921c1_778e5cb1_L.jpg
+19:19:02	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/6728/27875755.11/0_921c4_bb02db56_L.jpg
+19:19:02	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9329/27875755.11/0_921cc_d102b275_L.jpg
+19:19:02	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9800/27875755.11/0_921cd_587f239c_L.jpg
+19:19:02	Warning: 	HTML file (20189 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/system-drawables.php
+19:19:04	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9802/27875755.13/0_95e53_459bc0bf_L.jpg
+19:19:04	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9758/27875755.13/0_95e54_24bac6f2_orig
+19:19:05	Warning: 	HTML file (18549 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/java/sampleapp.php
+19:19:06	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9169/27875755.e/0_86e25_90458d27_L.jpg
+19:19:06	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9557/27875755.e/0_86e26_abe910f4_L.jpg
+19:19:07	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/6712/27875755.e/0_86e27_c4295bb_L.jpg
+19:19:07	Warning: 	HTML file (225 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/android2_clipse.php
+19:19:08	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/android2_clipse.php (from developer.alexanderklimov.ru/android/android2.php)
+19:19:08	Warning: 	Retry after error -4 (No data (connection closed)) at link developer.alexanderklimov.ru/android/images/privet.jpg (from developer.alexanderklimov.ru/android/activity.php)
+19:19:08	Warning: 	Retry after error -4 (Incorrect length (544448 Bytes, 1057767 expected)) at link rusproject.narod.ru/android/podstava.gif (from developer.alexanderklimov.ru/android/activity.php)
+19:19:09	Error: 	"" (404) at link developer.alexanderklimov.ru/android/edittextpreference (from developer.alexanderklimov.ru/android/texteditor.php)
+19:19:09	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/fragment.php
+19:19:11	Warning: 	HTML file (2688 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/register.php
+19:19:12	Warning: 	HTML file (214 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/provider
+19:19:12	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/provider (from developer.alexanderklimov.ru/android/geolocation.php)
+19:19:13	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.android.com/images/ui/clipboard/copy_paste_framework.png
+19:19:13	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/application.php
+19:19:14	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/asciiarteditor.php
+19:19:16	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/youtubeandroidplayerapi.php
+19:19:18	Warning: 	HTML file (20601 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory/immersive_mode.php
+19:19:18	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-developer.samsung.com/contents/sd2/images/develop/android/sep8_tips_and_tricks02.jpg
+19:19:21	Warning: 	HTML file (10875 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/secret/enter.php
+19:19:21	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/6732/27875755.13/0_964f3_c487a56f_orig
+19:19:22	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/4512/netsources.b/0_507e6_41c0c402_XL.jpg
+19:19:22	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/4512/netsources.b/0_507e8_e0dd34a1_XL.jpg
+19:19:23	Warning: 	HTML file (56405 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory/shape.php
+19:19:23	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/5804/netsources.b/0_507e9_cfef007e_XL.jpg
+19:19:23	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/4512/netsources.b/0_507eb_4a1fb6f8_XL.jpg
+19:19:26	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): beta.hstor.org/storage2/ec9/629/23c/ec962923c25960bee367e960ec19bc41.png
+19:19:27	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): beta.hstor.org/storage2/fd3/3f3/782/fd33f37829382a7028cb4c884fa9449f.png
+19:19:27	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): beta.hstor.org/storage2/9bb/339/a54/9bb339a54cba80142184ac7a526bb8ff.png
+19:19:30	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/theory/scales.php
+19:19:31	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/4425/11245482.2/0_63ac1_3d781a12_orig
+19:19:32	Warning: 	HTML file (24158 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory/arrayadapter.php
+19:19:35	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9766/27875755.13/0_94d44_7ac37409_orig
+19:19:35	Warning: 	HTML file (18627 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory/progressdialog.php
+19:19:37	Warning: 	HTML file (15613 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory/fragment_contextmenu.php
+19:19:38	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9505/27875755.10/0_8b4cc_3017152e_L.gif
+19:19:40	Warning: 	HTML file (22332 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory/fragment-add.php
+19:19:42	Warning: 	HTML file (23017 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory/fragment-lifecycle.php
+19:19:45	Warning: 	HTML file (33397 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory/simpleadapter.php
+19:19:49	Error: 	"" (404) at link developer.alexanderklimov.ru/android/theory/register.php (from developer.alexanderklimov.ru/android/theory/textwatcher.php)
+19:19:49	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/theory/xmlparsers.php
+19:19:51	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/theory/audiomanager.php
+19:19:53	Warning: 	HTML file (15979 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/textview-advanced.php
+19:19:56	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://lh5.ggpht.com/ok9UjL8h5hmm6UXJ-deD_hPrBRke_6m-TmQSuncaiNo43CEAft7bk-_4gtSEWx_27XNo=w705
+19:19:56	Warning: 	HTML file (14866 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/checkbox-advanced.php
+19:19:58	Warning: 	HTML file (14822 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/radiobutton-advanced.php
+19:19:59	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): 3.bp.blogspot.com/-WhammPIkZHo/UaT8SF3aRtI/AAAAAAAATCA/V5p33p-A2aM/s640/image12.png
+19:20:00	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): 1.bp.blogspot.com/-mEiuRumbbGs/UaUEvCMPhHI/AAAAAAAATCw/SABQQ8w0nQ0/s640/image15.png
+19:20:01	Warning: 	HTML file (15262 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/spinner-advanced.php
+19:20:04	Warning: 	HTML file (14770 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/seekbar-advanced.php
+19:20:07	Warning: 	HTML file (15386 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/edittext-advanced.php
+19:20:10	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/layout/gridlayout.php
+19:20:13	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/views/listview.php
+19:20:14	Warning: 	HTML file (230 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/filter_search3.php
+19:20:15	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/views/filter_search3.php (from developer.alexanderklimov.ru/android/views/expandablelistview.php)
+19:20:15	Warning: 	HTML file (15016 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/gridview_advanced.php
+19:20:16	Error: 	"" (404) at link developer.alexanderklimov.ru/android/views/copydrawable (from developer.alexanderklimov.ru/android/views/imageview.php)
+19:20:16	Warning: 	HTML file (15863 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/imageview-advanced.php
+19:20:17	Warning: 	HTML file (25969 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/gallery-advanced.php
+19:20:19	Warning: 	HTML file (224 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/register.php
+19:20:19	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/views/register.php (from developer.alexanderklimov.ru/android/views/stackview.php)
+19:20:19	Warning: 	HTML file (14606 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/viewflipper3.php
+19:20:21	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/views/addview.php
+19:20:22	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/listview/stripe_items.php
+19:20:23	Warning: 	HTML file (18390 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/catshop/setalpha.php
+19:20:24	Warning: 	HTML file (19347 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/catshop/setshadowlayer.php
+19:20:25	Error: 	"" (404) at link developer.alexanderklimov.ru/android/catshop/register.php (from developer.alexanderklimov.ru/android/catshop/drawarcs.php)
+19:20:25	Warning: 	HTML file (225 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/activity-theory.php
+19:20:25	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/activity-theory.php (from developer.alexanderklimov.ru/android/animation/frameanimation.php)
+19:20:25	Warning: 	HTML file (229 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/animation/animation.php
+19:20:25	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/animation/animation.php (from developer.alexanderklimov.ru/android/animation/splashanimation.php)
+19:20:25	Warning: 	HTML file (228 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/animation/register.php
+19:20:26	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/animation/register.php (from developer.alexanderklimov.ru/android/animation/animdialog.php)
+19:20:26	Warning: 	HTML file (16110 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/sqlite/practic1.php
+19:20:27	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9255/27875755.11/0_8c987_4241bf9d_L.png
+19:20:27	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/6703/27875755.11/0_8c988_1a5e65c5_L.png
+19:20:28	Warning: 	HTML file (227 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/opengles/register.php
+19:20:28	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/opengles/register.php (from developer.alexanderklimov.ru/android/opengles/opengles1.php)
+19:20:28	Warning: 	HTML file (16099 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/library/jsoup2.php
+19:20:29	Warning: 	HTML file (225 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/createanimation.php
+19:20:29	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/createanimation.php (from developer.alexanderklimov.ru/android/games/game-basic.php)
+19:20:29	Warning: 	File not parsed, looks like binary: cdn.tutsplus.com/mobile/authors/jessica-thornsby/android-UI-ImageButtons-2.png
+19:20:30	Warning: 	File not parsed, looks like binary: cdn.tutsplus.com/mobile/authors/jessica-thornsby/android-UI-ImageButtons-3.png
+19:20:30	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://raw.githubusercontent.com/nostra13/Android-Universal-Image-Loader/master/UniversalImageLoader.png
+19:20:30	Warning: 	File not parsed, looks like binary: cdn.tutsplus.com/mobile/authors/jessica-thornsby/android-UI-TextView.png
+19:20:30	Warning: 	File not parsed, looks like binary: cdn.tutsplus.com/mobile/authors/jessica-thornsby/android-UI-Toast-2.png
+19:20:30	Warning: 	File not parsed, looks like binary: cdn.tutsplus.com/mobile/uploads/2013/07/arithmetic_main.png
+19:20:31	Warning: 	File not parsed, looks like binary: cdn.tutsplus.com/mobile/uploads/2013/07/arithmetic_gameplay.png
+19:20:31	Warning: 	File not parsed, looks like binary: cdn.tutsplus.com/mobile/uploads/2013/07/arithmetic_how.png
+19:20:31	Warning: 	File not parsed, looks like binary: https://cdn.tutsplus.com/mobile/uploads/2013/07/arithmetic_final.png
+19:20:31	Warning: 	File not parsed, looks like binary: https://cdn.tutsplus.com/mobile/uploads/2013/07/arithmetic_high_scores.png
+19:20:31	Warning: 	HTML file (30089 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/games/andengine/setup.php
+19:20:44	Warning: 	HTML file (219 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/resources.php
+19:20:44	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/resources.php (from developer.alexanderklimov.ru/android/system-drawables.php)
+19:20:44	Warning: 	HTML file (14586 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory/appinventor.php
+19:20:45	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): beta.hstor.org/storage2/324/07c/484/32407c484790946ab21248f4dfbde235.png
+19:20:46	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): beta.hstor.org/storage2/b05/ff9/783/b05ff9783e5ec38813664cdc240e8481.png
+19:20:46	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): beta.hstor.org/storage2/42a/134/ed4/42a134ed4abf39edacf528dbdad0f44d.png
+19:20:46	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/6703/27875755.d/0_83cad_9626b39a_L.jpg
+19:20:46	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): beta.hstor.org/storage2/48d/970/25c/48d97025c3538427bcb151730aa13dcb.png
+19:20:46	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/4703/27875755.13/0_95406_433bf1b3_orig.png
+19:20:46	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9316/27875755.13/0_95407_29ba0519_orig.png
+19:20:47	Warning: 	HTML file (12738 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/java/if-exercise.php
+19:20:53	Warning: 	HTML file (12781 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/java/array-exercise.php
+19:20:53	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): img-fotki.yandex.ru/get/9304/27875755.e/0_8807f_94e5a3e5_orig
+19:20:54	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/java/arraylist3.png (from developer.alexanderklimov.ru/android/java/arraylist.php)
+19:20:54	Warning: 	HTML file (13356 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/java/sparsearray.php
+19:20:55	Error: 	"Not Found" (404) at link 4.bp.blogspot.com/-VjORQbP9RUs/TaXcTZo3yxI/AAAAAAAAAU8/u8setg3cDd0/s400/I1.png (from developer.alexanderklimov.ru/android/design/actionbar_custom.php)
+19:20:55	Error: 	"Not Found" (404) at link 1.bp.blogspot.com/-iq8YXQBQjTo/TaXccBS9wZI/AAAAAAAAAVE/3NdspdF2eB4/s400/I2.png (from developer.alexanderklimov.ru/android/design/actionbar_custom.php)
+19:20:55	Error: 	"Not Found" (404) at link 2.bp.blogspot.com/-VTV2MmoW1Ig/TaXckPVWEzI/AAAAAAAAAVM/hJ0FFVCNUTs/s400/I3.png (from developer.alexanderklimov.ru/android/design/actionbar_custom.php)
+19:20:56	Error: 	"Not Found" (404) at link 4.bp.blogspot.com/-pSrGmu1ZGaI/TaXdUL8MXXI/AAAAAAAAAVk/hbe_m-1QIf8/s400/I4.png (from developer.alexanderklimov.ru/android/design/actionbar_custom.php)
+19:20:56	Error: 	"Not Found" (404) at link 2.bp.blogspot.com/-X_Zw69Umrko/TaXdcr8smYI/AAAAAAAAAVs/dvXhHeOK6wg/s400/I5.png (from developer.alexanderklimov.ru/android/design/actionbar_custom.php)
+19:20:56	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/views/viewflipper2.php
+19:20:56	Warning: 	HTML file (216 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/theory.php
+19:20:57	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/theory.php (from developer.alexanderklimov.ru/android/scheduleservice.php)
+19:20:57	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/ownlibrary.php
+19:20:58	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): developer.alexanderklimov.ru/android/openlibrary.php
+19:20:59	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/theory/images/newxml.png (from developer.alexanderklimov.ru/android/theory/shape.php)
+19:20:59	Error: 	"" (404) at link developer.alexanderklimov.ru/android/theory/adapter.php (from developer.alexanderklimov.ru/android/theory/arrayadapter.php)
+19:20:59	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/theory/theory/masterdetailflow4.png (from developer.alexanderklimov.ru/android/theory/masterdetailflow.php)
+19:20:59	Warning: 	HTML file (23396 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/xmlpullparser.php
+19:21:00	Warning: 	HTML file (15428 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/views/listview-advanced.php
+19:21:02	Warning: 	HTML file (227 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/listview/register.php
+19:21:02	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/listview/register.php (from developer.alexanderklimov.ru/android/listview/stripe_items.php)
+19:21:02	Warning: 	HTML file (226 bytes) retransferred due to lack of cache: developer.alexanderklimov.ru/android/library/register.php
+19:21:03	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/android/library/register.php (from developer.alexanderklimov.ru/android/library/jsoup2.php)
+19:21:03	Error: 	"Not Found" (404) at link img12.imageshost.ru/img/2011/06/23/image_4e035064e8c96.png (from developer.alexanderklimov.ru/android/appinventor/read_xml.php)
+19:21:03	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/assets/img/glyphicons-halflings.png (from developer.alexanderklimov.ru/assets/css/bootstrap.css)
+19:21:03	Error: 	"Not Found" (404) at link developer.alexanderklimov.ru/assets/img/glyphicons-halflings-white.png (from developer.alexanderklimov.ru/assets/css/bootstrap.css)
+19:21:25	Warning: 	Warning: store text/css without scan: /home/wolfpro/websites/AndroidLesson/rsdn.ru/css/article.css
+
+HTTrack Website Copier/3.48-17 mirror complete in 50 minutes 0 seconds : 1598 links scanned, 1688 files written (94555394 bytes overall) [77477905 bytes received at 25825 bytes/sec], 142542 bytes transferred using HTTP compression in 18 files, ratio 40%, 2.8 requests per connection
+(55 errors, 164 warnings, 0 messages)

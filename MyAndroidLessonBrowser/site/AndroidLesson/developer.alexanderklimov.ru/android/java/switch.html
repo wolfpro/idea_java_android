@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/switch.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:11:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Экспресс-курс: Оператор switch</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Оператор switch</h1>
+
+<p>В отличие от операторов <b>if-then</b> и <b>if-then-else</b>, оператор <b>switch</b> применим к известному числу возможных ситуаций. Можно использовать простые типы <b>byte</b>, <b>short</b>, <b>char</b>, <b>int</b>. Также можно использовать <b>Enum</b> и <b>String</b> (начиная с JDK7), а также специальные классы, которые являются обёрткой для примитивных типов: Character, Byte, Short, Integer.</p>
+
+<p>Дублирование значений <b>case</b> не допускается. Тип каждого значения должен быть совместим с типом выражения.</p>
+
+<p>Команду <b>switch</b> часто называют командой выбора. Выбор осуществляется в зависимости от целочисленного выражения. Форма команды выглядит так:</p>
+
+<pre>
+switch(целочисленноеВыражение) {
+    case целоеЗначение1: 
+	    команда;
+		break;
+	case целоеЗначение2: 
+	    команда;
+		break;
+	case целоеЗначение3: 
+	    команда;
+		break;
+	default: 
+	    оператор;
+	    break;
+}
+</pre>
+
+<p>Параметр <i>целочисленноеВыражение</i> - выражение, в результате вычисления которого получается целое число. Команда <b>switch</b> сравнивает результат <i>целочисленноеВыражения</i> с каждым последующим <i>целымЗначением</i>. Если обнаруживается совпадение, то исполняется команда или набор команд, которые прописаны за данным оператором. Если совпадений не будет, то исполняется команда после ключевого слова <b>default</b>. Однако оператор <b>default</b> не является обязательным. В этом случае при отсутствии совпадений программа не выполняет никаких действий.</p>
+
+<p>Каждая секция <b>case</b> обычно заканчивается командой <b>break</b>, которая передаёт управление к концу команды <b>switch</b>.</p>
+
+<p>Рассмотрим простейший пример с месяцами. Запустим наш учебный проект и добавим код в обработчик нажатия кнопки:</p>
+
+<pre><code class="java">
+int month = 3;
+String monthString;
+switch (month) {
+    case 1:  monthString = "Январь";
+             break;
+    case 2:  monthString = "Февраль";
+             break;
+    case 3:  monthString = "Март";
+             break;
+    case 4:  monthString = "Апрель";
+             break;
+    case 5:  monthString = "Май";
+             break;
+    case 6:  monthString = "Июнь";
+             break;
+    case 7:  monthString = "Июль";
+             break;
+    case 8:  monthString = "Август";
+             break;
+    case 9:  monthString = "Сентябрь";
+             break;
+    case 10: monthString = "Октябрь";
+             break;
+    case 11: monthString = "Ноябрь";
+             break;
+    case 12: monthString = "Декабрь";
+             break;
+    default: monthString = "Не знаем такого";
+             break;
+}
+editResult.setText(monthString);
+</code></pre>
+
+<p>Запустите проект и нажмите кнопку - в текстовом поле появится слово <i>Март</i> (любимый месяц котов).</p>
+
+<p>При желании, можно переписать пример с использованием <b>if-then-else</b>:</p>
+
+<pre><code class="java">
+int month = 3;
+if (month == 1) {
+    editResult.setText("Январь");
+} else if (month == 2) {
+	editResult.setText("Февраль");
+}
+...  // и так далее
+</code></pre>
+
+<p>В каждом блоке <b>case</b> имеется оператор <b>break</b>, который прерывает свой блок кода. Его нужно использовать обязательно, иначе выполнение кода продолжится. Хотя иногда это и используется.</p> 
+
+<pre><code class="java">
+java.util.ArrayList&lt;String&gt; futureMonths = new java.util.ArrayList&lt;String&gt;();
+
+int month = 8;
+
+switch (month) {
+case 1:
+	futureMonths.add("January");
+case 2:
+	futureMonths.add("February");
+case 3:
+	futureMonths.add("March");
+case 4:
+	futureMonths.add("April");
+case 5:
+	futureMonths.add("May");
+case 6:
+	futureMonths.add("June");
+case 7:
+	futureMonths.add("July");
+case 8:
+	futureMonths.add("August");
+case 9:
+	futureMonths.add("September");
+case 10:
+	futureMonths.add("October");
+case 11:
+	futureMonths.add("November");
+case 12:
+	futureMonths.add("December");
+	break;
+default:
+	break;
+}
+
+if (futureMonths.isEmpty()) {
+	editResult.setText("Invalid month number");
+} else {
+	for (String monthName : futureMonths) {
+		editResult.setText(monthName);
+	}
+}
+</code></pre>
+
+<p>Если код в блоках <b>case совпадают</b>, то блоки можно объединить. Например, код для подсчёта дней в месяце:</p>
+
+<pre><code class="java">
+int month = 2;
+int year = 2012;
+int numDays = 0;
+
+switch (month) {
+case 1:
+case 3:
+case 5:
+case 7:
+case 8:
+case 10:
+case 12:
+	numDays = 31;
+	break;
+case 4:
+case 6:
+case 9:
+case 11:
+	numDays = 30;
+	break;
+case 2:
+	if (((year % 4 == 0) && !(year % 100 == 0)) || (year % 400 == 0))
+		numDays = 29;
+	else
+		numDays = 28;
+	break;
+default:
+	editResult.setText("Несуществующий месяц");
+	break;
+}
+editResult.setText("Число дней = " + numDays);
+</code></pre>
+
+<p>При изучении оператора <a href="if.html">if</a> мы рассматривали пример с временами года. Перепишем его с использованием оператора <b>switch</b>:</p>
+
+<pre><code class="java">
+int month = 3;
+String season;
+
+switch (month) {
+case 12:
+case 1:
+case 2:
+	season = "Зимушка-зима";
+	break;
+case 3:
+case 4:
+case 5:
+	season = "Весна";
+	break;
+case 6:
+case 7:
+case 8:
+	season = "Лето";
+	break;
+case 9:
+case 10:
+case 11:
+	season = "Осень";
+	break;
+default:
+	season = "Вы с какой планеты?";
+}
+
+textViewInfo.setText("Мартовские песни коты поют, когда на дворе "
+		+ season);
+</code></pre>
+
+<p>Следующий пример случайным образом генерирует английские буквы. Программа определяет, гласные они или согласные:</p>
+
+<pre><code class="java">
+Random random = new Random();
+
+for (int i = 0; i &lt; 100; i++) {
+	int c = random.nextInt(26) + 'a';
+	textViewInfo.setText((char)c + ", " + c + ": ");
+	switch (c) {
+	case 'a':
+	case 'e':
+	case 'i':
+	case 'o':
+	case 'u':
+		editResult.setText("Гласная");
+		break;
+	case 'y':
+	case 'w':
+		editResult.setText("Условная гласная");
+		break;
+
+	default:
+		editResult.setText("Согласная");
+		break;
+	}
+}
+</code></pre>
+
+<p>Так как метод <b>Random.nextInt(26)</b> генерирует значение между 0 и 26, для получения символа нижнего регистра остаётся прибавить смещение 'a', при этом символ a автоматически преобразуется к типу int. Символы в секциях case также представляют собой целочисленные значения, используемые для сравнения.</p>
+
+<p>Чтобы вывести переменную <b>c</b> в символьном виде, её необходимо преобразовать к типу <b>char</b>, иначе значение будет выведено в числовом виде.</p>
+
+<p>В Java SE 7 появилась возможность использовать объект <b>String</b> в операторе <b>switch</b>. Возможно, это будет работать и на Android в будущем:</p>
+
+<pre><code class="java">
+public class StringSwitchDemo {
+
+    public static int getMonthNumber(String month) {
+
+        int monthNumber = 0;
+
+        if (month == null) {
+            return monthNumber;
+        }
+
+        switch (month.toLowerCase()) {
+            case "january":
+                monthNumber = 1;
+                break;
+            case "february":
+                monthNumber = 2;
+                break;
+            case "march":
+                monthNumber = 3;
+                break;
+            case "april":
+                monthNumber = 4;
+                break;
+            case "may":
+                monthNumber = 5;
+                break;
+            case "june":
+                monthNumber = 6;
+                break;
+            case "july":
+                monthNumber = 7;
+                break;
+            case "august":
+                monthNumber = 8;
+                break;
+            case "september":
+                monthNumber = 9;
+                break;
+            case "october":
+                monthNumber = 10;
+                break;
+            case "november":
+                monthNumber = 11;
+                break;
+            case "december":
+                monthNumber = 12;
+                break;
+            default: 
+                monthNumber = 0;
+                break;
+        }
+
+        return monthNumber;
+    }
+
+    public static void main(String[] args) {
+
+        String month = "August";
+
+        int returnedMonthNumber =
+            StringSwitchDemo.getMonthNumber(month);
+
+        if (returnedMonthNumber == 0) {
+            System.out.println("Invalid month");
+        } else {
+            System.out.println(returnedMonthNumber);
+        }
+    }
+}
+</code></pre>
+
+<p>Также допустимы вложенные операторы <b>switch</b>, но на практике я не сталкивался с таким кодом.</p>
+
+<p>Запомните важные свойства оператора <b>switch</b>:</p>
+
+<ul>
+	<li>Оператор <b>switch</b> отличается от оператора <b>if</b> тем, что может выполнять проверку только равенства, а оператор <b>if</b> может вычислять результат булева выражения любого типа.</li>
+	<li>Две константы <b>case</b> в одном и том же операторе <b>switch</b> не могут иметь одинаковые значения</li>
+	<li>Оператор <b>switch</b> эффективнее набора вложенных операторов <b>if</b></li>
+</ul>
+
+<p>Страница документации: http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/switch.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:11:59 GMT -->
+</html>

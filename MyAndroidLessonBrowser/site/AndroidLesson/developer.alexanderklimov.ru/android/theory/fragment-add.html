@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/fragment-add.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:19:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Программное добавление фрагментов</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Программное добавление фрагментов</h1>
+
+<p>Рассмотрим программное добавление фрагмента в активность. Суть состоит в следующем. В разметке активности нельзя прописывать тег <b>fragment</b>, так как в этом случае Android не сможет менять фрагменты динамически. Воспользуемся <b>LinearLayout</b> как контейнером и будем его заменять программно на нужный фрагмент.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:orientation=&quot;horizontal&quot; &gt;
+
+    &lt;TextView
+        android:layout_width=&quot;0px&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:layout_weight=&quot;1&quot;
+        android:background=&quot;#555555&quot;
+        android:text=&quot;TextView в главной Activity&quot; /&gt;
+
+    &lt;LinearLayout
+        android:orientation=&quot;vertical&quot;
+        android:id=&quot;@+id/container&quot;
+        android:layout_width=&quot;0px&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:layout_weight=&quot;4&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p><b>LinearLayout</b> с идентификатором <b>@+id/container</b> является нашим контейнером. Подготовим класс фрагмента. Разметку для фрагмента использовать не будем, всё сделаем программно.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import android.app.Fragment;
+import android.content.Context;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+public class MyFragment extends Fragment {
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		Context context = getActivity().getApplicationContext();
+		LinearLayout layout = new LinearLayout(context);
+		layout.setBackgroundColor(Color.BLUE);
+		TextView text = new TextView(context);
+		text.setText("Это область фрагмента");
+		layout.addView(text);
+
+		return layout;
+	}
+}
+</code></pre>
+
+<p>Мы закрасили фрагмент синим цветом, добавили текстовую метку и вывели текст.</p>
+
+<p>Осталось добавить код в метод <b>onCreate()</b> основной активности. Нам нужно получить экземпляр класса <b>FragmentTransaction</b> и добавить фрагмент в контейнерный <b>LinearLayout</b>.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.fragment;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.os.Bundle;
+
+public class FragmentDemoActivity extends Activity {
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+
+		// получаем экземпляр FragmentTransaction
+		FragmentManager fragmentManager = getFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager
+				.beginTransaction();
+
+		// добавляем фрагмент
+		MyFragment myFragment = new MyFragment();
+		fragmentTransaction.add(R.id.myfragment, myFragment);
+		fragmentTransaction.commit();
+	}
+}
+</code></pre>
+
+<p>В примере мы добавляли фрагмент в контейнер. Если у вас фрагментов несколько и их нужно выводить в одном месте, то их нужно не добавлять в контейнер, а замещать. Подробнее в статье <a href="fragment-replace.html">Замещение фрагментов</a>.</p>
+
+<p>Также следует обращать внимание на поведение фрагмента при поворотах экрана. Для статичных фрагментов это не является проблемой, так как активность сама позаботится о восстановлении своих элементов разметки.</p>
+
+<p>Для динамических фрагментов возможно ситуация, что при восстановлении активности будет создаваться второй экземпляр фрагмента. Если вы ещё не закрыли предыдущий пример, то поверните экран в другую ориентацию. При повороте будет создана новая активность, которая создаст новый фрагмент. Верните устройство в обратное положение и снова активность создаст новый фрагмент.</p>
+
+<p>После шести поворотов приложение будет выглядеть следующим образом:</p>
+
+<p><img src="fragment2.png" alt="Добавление фрагментов"></p>
+
+<p>Тут нам пригодится параметр <b>Bundle</b> в методе активности <b>onCreate()</b>. Если его значение равно <b>null</b>, значит мы впервые запускаем активность и можем спокойно создавать новый экземпляр фрагмента. Помещаем наш код в блок <b>if</b>:</p>
+
+<pre><code class="java">
+public void onCreate(Bundle savedInstanceState) {
+    // ...
+    if (savedInstanceState == null) {
+        FragmentManager fragmentManager = getFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager
+				.beginTransaction();
+
+		// добавляем фрагмент
+		MyFragment myFragment = new MyFragment();
+		fragmentTransaction.add(R.id.container, myFragment);
+		fragmentTransaction.commit();
+    }
+}
+</code></pre>
+
+<p>В нашем примере фрагмент не использует разметку и метод <b>onCreateView()</b> для него необязателен. Вы можете добавить фрагмент в активность также через метод <b>FragmentTransaction.add(Fragment, String)</b>, передав методу уникальную строку для идентификации нужного фрагмента.</p>
+
+<pre><code class="java">
+FragmentManager fragmentManager = getFragmentManager()
+FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+BackgroundFragment fragment = new BackgroundFragment();
+fragmentTransaction.add(fragment, "thread_manager");
+fragmentTransaction.commit();
+</code></pre>
+
+<p>В первом примере создание новых фрагментов носило неуправляемый характер. Рассмотрим пример, когда мы сознательно хотим добавлять фрагменты в активность.</p>
+
+<p>Изменим немного разметку, добавив две кнопки:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;LinearLayout
+        android:id=&quot;@+id/linearlayout&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot; &gt;
+
+        &lt;Button
+            android:id=&quot;@+id/button1&quot;
+            android:layout_width=&quot;0dp&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;
+            android:onClick=&quot;onClick&quot;
+            android:text=&quot;Добавить синий фрагмент&quot; /&gt;
+
+        &lt;Button
+            android:id=&quot;@+id/button2&quot;
+            android:layout_width=&quot;0dp&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;
+            android:onClick=&quot;onClick&quot;
+            android:text=&quot;Добавить красный фрагмент&quot; /&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;LinearLayout
+        android:id=&quot;@+id/container&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:orientation=&quot;vertical&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Мы будем динамически добавлять два разных фрагмента. Переименуйте класс <b>MyFragment</b> в <b>BlueFragment</b> и создайте его копию под именем <b>RedFragment</b>. Измените код во втором фрагменте, чтобы область заливалась красным цветом.</p>
+
+<p>Логика приложения теперь будет сосредоточена в методе <b>onClick()</b>, который отвечает за нажатия кнопок:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import ...
+
+public class TestActivity extends Activity {
+	
+	private FragmentManager mFragmentManager;
+	private FragmentTransaction mFragmentTransaction;
+	
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.activity_test);
+		
+		mFragmentManager = getFragmentManager();
+	}
+
+	public void onClick(View v) {
+		mFragmentTransaction = mFragmentManager.beginTransaction();
+		switch (v.getId()) {
+		case R.id.button1:
+			BlueFragment bluefragment = new BlueFragment();
+			mFragmentTransaction.add(R.id.container, bluefragment);
+			break;
+		case R.id.button2:
+			RedFragment redfragment = new RedFragment();
+			mFragmentTransaction.add(R.id.container, redfragment);
+			break;
+		}
+		mFragmentTransaction.commit();
+
+	}
+}
+</code></pre>
+
+<p>Запускаем проект и щёлкаем по кнопкам в произвольном порядке.</p>
+
+<p><img src="fragment3.png" alt="Добавляем фрагменты"></p>
+
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+ </div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/fragment-add.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:19:42 GMT -->
+</html>

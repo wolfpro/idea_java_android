@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">ConnectForm</string>
-    <string name="addres">Кому:</string>
-    <string name="about">Описание:</string>
-    <string name="send">Передать</string>
-    <string name="author">Подпись:</string>
-
-</resources>

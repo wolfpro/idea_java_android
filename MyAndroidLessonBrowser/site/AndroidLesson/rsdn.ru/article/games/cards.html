@@ -1,0 +1,291 @@
+﻿<html>
+<!-- Mirrored from rsdn.ru/article/games/cards.xml by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:20:32 GMT -->
+<head><title>Тройка, семерка, туз</title><meta name="description" content="Нет, мы не будем разбирать произведение А.С.Пушкина Пиковая дама. В данной статье я расскажу вам, как написать свою карточную игру на Visual Basic .NET с использованием библиотеки CARDS.DLL, входящей в состав Windows. " /><meta name="keywords" content="Cards.dll, cards, Visual Basic .NET" /><meta name="robots" content="index,follow" /><link rel="stylesheet" href="../../css/article.css" type="text/css" /><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script><script type="text/javascript" src="http://rsdn.ru/Script/rsdn.v1.js"></script><script type="text/javascript" src="http://rsdn.ru/Forum/Forum.v3.js" charset="utf-8"></script><link rel="canonical" href="#" /></head><body marginwidth="20" marginheight="20"><table width="100%" border="0" cellspacing="0" celpadding="2" style="font-family:verdana;font-weight:bold;padding: 0px 5px; BORDER: #9daabd 1px 	solid; 	COLOR: #646464; BACKGROUND-COLOR: #e6e6e6;"><tr><td nowrap="nowrap"><font size="1" style="font-weight:normal"><script src="http://rsdn.ru/script/shMenu.v1.js" type="text/javascript" charset="utf-8"></script></font></td><td nowrap="nowrap" align="right" width="100%"><font size="2"> <A href="http://rsdn.ru/article/games/cards.xml?print" target="_blank" title="Версия для печати"><IMG align="absmiddle" width="16" height="14" src="../../images/printer2.gif" border="0" /></A>  <a href="http://rsdn.ru/forum/game/1570365" target="_self" title="Перейти к обсуждению статьи"><font size="1" color="#646464"> Сообщений </font><font color="black">2</font></a>  <a href="http://rsdn.ru/forum/game/1570365" target="_self" title="Перейти к обсуждению статьи"><img src="../../forum/images/showfr.gif" align="absmiddle" border="0" width="18px" height="14px" /></a> <a href="http://rsdn.ru/Forum/RateList.aspx?mid=1570365"><font color="#646464"><font size="1"> Оценка </font><font color="black">207</font>
+									[<font style="font-weight: normal;"><span style="color:green;">+1</span>/<span style="color:blue;">-0</span></font>]
+								</font></a>   <a target="_blank" rel="nofollow" href="http://rsdn.ru/Users/Private/AddFav.aspx?mid=1570365" onclick="return AddFav(this.href);" title="Добавить в избранное"><img align="absmiddle" src="../../images/fav.gif" border="0" height="14px" /></a>  <a href="http://rsdn.ru/Forum/Private/Subscr.aspx?tid=1570365" onclick="return SubMsg(this.href)" title="Подписка на сообщения" rel="nofollow"><img class="i" align="absmiddle" src="../../forum/images/sub.gif" border="0" width="18px" height="14px" /></a>   <font size="1">Оценить </font><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=-3" onclick="return RateMsg(this.href);" title="+1"><img align="absmiddle" src="../../forum/images/n11.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=1" onclick="return RateMsg(this.href);" title="Интересно"><img align="absmiddle" src="../../forum/images/n1.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=2" onclick="return RateMsg(this.href);" title="Спасибо"><img align="absmiddle" src="../../forum/images/n2.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=3" onclick="return RateMsg(this.href);" title="Супер"><img align="absmiddle" src="../../forum/images/n3.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=-1" onclick="return RateMsg(this.href);" title="Удалить оценку"><img align="absmiddle" src="../../forum/images/nx.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=-4" onclick="return RateMsg(this.href);" title="Согласен"><img align="absmiddle" src="../../forum/images/np.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=0" onclick="return RateMsg(this.href);" title="Не согласен"><img align="absmiddle" src="../../forum/images/nm.gif" border="0" width="18px" eight="14px" /></a> 
+					</font></td></tr></table><script type="text/javascript" src="http://rsdn.ru/Script/orphus.js"></script><a href="http://orphus.ru/" id="orphus"><img alt="Система Orphus" src="../../Script/orphus.gif" border="0" width="100" height="25" /></a><H1>Тройка, семерка, туз</H1><H5><SPAN class="title">Автор: </SPAN><SPAN class="value"><a target="_blank" href="http://rsdn.ru/Users/Profile.aspx?uid=23209">Александр Климов</a></SPAN><br /><SPAN class="title">Источник: </SPAN><SPAN class="value"><a target="_blank" href="http://rsdn.ru/mag/main.htm">RSDN Magazine #4-2005</a></SPAN></H5><H6><SPAN class="title">Опубликовано: </SPAN><SPAN class="value">10.03.2006</SPAN><BR /><SPAN class="title">Версия текста: </SPAN><SPAN class="value">1.0</SPAN></H6><TABLE width="98%"><TR><TD valign="top" class="contents"><A href="#EEB"><B>Предисловие</B></A><BR /><A href="#EPB"><B>Знакомство с карточной библиотекой CARDS.DLL</B></A><BR /><A href="#E1B"><B>Интерфейс CARDS.DLL</B></A><BR /><DIV style="margin-left:2em"><A href="#ELG">Функция cdtInit</A><BR /><A href="#EWG">Функция cdtTerm</A><BR /><A href="#E6G">Функция cdtDraw</A><BR /><A href="#ENAAC">Функция cdtDrawExt</A><BR /><A href="#ETAAC">Картинки</A><BR /><A href="#ESCAC">Волшебная формула</A><BR /><A href="#EADAC">Рубашки</A><BR /><A href="#EFFAC">Рисование карты</A><BR /><A href="#E2HAC">Рисование рубашки карт</A><BR /><A href="#EOKAC">Рисование инвертированной, пустой и большой карты</A><BR /><A href="#EUKAC">Вращение карт</A><BR /></DIV><A href="#EFNAC"><B>Вместо заключения</B></A><BR /></TD><TD valign="top" align="center" class="contents"><IMG src="../../mag/cover/mag0405.jpg"></IMG></TD></TR></TABLE><SCRIPT LANGUAGE="javascript">
+			function ToggleCode(id)
+			{
+				el=document.getElementById(id);
+				img=document.getElementById("img"+id);
+				if(el.style.display=="none")
+				{
+					img.src="../../images/ls2.gif";
+					el.style.display="";
+				}
+				else
+				{
+					img.src="../../images/ls1.gif";
+					el.style.display="none";
+				}
+				return false;
+			}
+		</SCRIPT><H2><A name="E4"></A></H2><P><A href="http://rsdn.ru/article/games/cards/cards.zip" class="link-file">Демонстрационный проект</A></P>
+<H2>Предисловие<A name="EEB"></A></H2>
+<P>Нет, мы не будем разбирать произведение А.С.Пушкина “Пиковая дама”. В данной статье я расскажу вам, как написать свою карточную игру на Visual Basic .NET с использованием библиотеки CARDS.DLL, входящей в состав Windows. Лично я впервые узнал о возможности использовании готовой библиотеки в своих программах из книги Брюса Мак-Кинни "Крепкий орешек Visual Basic". Я очень обрадовался, когда узнал, что нет необходимости самостоятельно рисовать колоду карт. Всю работу за нас сделали программисты из Microsoft (за что им отдельное спасибо!). Тех, кто по-прежнему программирует на Visual Basic 6.0, я отсылаю на свой сайт <A href="http://rusproject.narod.ru/games.htm" class="link-ext" target="_blank">http://rusproject.narod.ru/games.htm</A>, где вы можете найти подборку игр с использованием этой библиотеки. Но на дворе уже 2005 год и программисты вовсю изучают новую платформу .NET Framework. Давайте рассмотрим процесс создания карточной игры с учетом реалий сегодняшнего дня.</P>
+<H2>Знакомство с карточной библиотекой CARDS.DLL<A name="EPB"></A></H2>
+<P>Прежде чему приступить к программированию игры, надо сначала выяснить, о чем собственно, идет речь. Итак, в состав Windows, начиная с Windows 95 (А может и раньше), традиционно входит набор карточных игр. Если внимательно приглядеться, можно заметить, что все игры имеют одинаковый интерфейс. Объясняется это очень просто – игры обращаются к одной и той же библиотеке. В Windows XP данная библиотека находится в файле CARDS.DLL. Впрочем, надо заметить, что название файла тоже менялось в разных версиях Windows, пройдя путь от 16-битной версии к 32-битной. Я думаю, самое время запустить какую-нибудь карточную игру, чтобы посмотреть, как вообще выглядят карты. Для наших целей лучше всего подойдет игры Косынка, которая имеет в своих настройках пункт Рубашка (меню Игры | Рубашка…).</P>
+<P style="text-align: center;"><IMG src="cards/card1.png"></IMG><BR /><I style="font-face: verdana; font-size:x-small;"></I></P>
+<P>Используя эту опцию, можно посмотреть не только на рабочую сторону карты, но и на обратную. Если ваше знакомство с Windows состоялось достаточно давно, то вы можете обратить внимание, что внешний вид карт (точнее, обратной их стороны) в Windows XP немного отличается от рубашек в играх на Windows 9x. Для особо любознательных сообщу, что в старых Windows некоторые виды рубашек даже содержали анимационные эффекты в виде летающих летучих мышей или мигающих приборов у робота. </P>
+<H2>Интерфейс CARDS.DLL<A name="E1B"></A></H2>
+<P>Итак, библиотека CARDS.DLL содержит пять функций для работы с картами. Вот как выглядят объявления четырех функций:</P>
+<DIV id="E6B"><TABLE class="code" width="98%"><TR><TD><PRE>
+<SPAN class="KEYWORD">Declare</SPAN> <SPAN class="KEYWORD">Function</SPAN> cdtInit <SPAN class="KEYWORD">Lib</SPAN> <SPAN class="STRING">"cards.dll"</SPAN> (_
+  <SPAN class="KEYWORD">ByRef</SPAN> width <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, _
+  <SPAN class="KEYWORD">ByRef</SPAN> height <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>) <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Boolean</SPAN>
+
+<SPAN class="KEYWORD">Declare</SPAN> <SPAN class="KEYWORD">Function</SPAN> cdtDraw <SPAN class="KEYWORD">Lib</SPAN> <SPAN class="STRING">"cards.dll"</SPAN> ( _
+  <SPAN class="KEYWORD">ByVal</SPAN> hdc <SPAN class="KEYWORD">As</SPAN> IntPtr, _
+  <SPAN class="KEYWORD">ByVal</SPAN> x <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> y <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, _
+  <SPAN class="KEYWORD">ByVal</SPAN> card <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, _
+  <SPAN class="KEYWORD">ByVal</SPAN> mode <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>) <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Boolean</SPAN>
+
+<SPAN class="KEYWORD">Declare</SPAN> <SPAN class="KEYWORD">Function</SPAN> cdtDrawExt <SPAN class="KEYWORD">Lib</SPAN> <SPAN class="STRING">"cards.dll"</SPAN> (<SPAN class="KEYWORD">ByVal</SPAN> hdc <SPAN class="KEYWORD">As</SPAN> IntPtr, _
+  <SPAN class="KEYWORD">ByVal</SPAN> x <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> y <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> dx <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, _
+  <SPAN class="KEYWORD">ByVal</SPAN> dy <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> card <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, _
+  <SPAN class="KEYWORD">ByVal</SPAN> suit <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> color <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Long</SPAN>) <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Boolean</SPAN>
+
+<SPAN class="KEYWORD">Declare</SPAN> <SPAN class="KEYWORD">Sub</SPAN> cdtTerm <SPAN class="KEYWORD">Lib</SPAN> <SPAN class="STRING">"cards.dll"</SPAN> ()
+</PRE></TD></TR></TABLE></DIV>
+<P>Объявление пятой функции <B>cdtAnimate()</B> я приводить не буду, так как в Windows XP она работать не будет. Если вам все-таки хочется поработать и с этой функцией, то обратить к поисковым службам. Да поможет вам Goggle! </P>
+<P>Разберем объявленные функции поподробнее. </P>
+<H3>Функция cdtInit<A name="ELG"></A></H3>
+<P>Функция <B>cdtInit</B> инициализирует библиотеку <I>Cards.dll</I>. Как видите, функция имеет два аргумента, в которых содержится информация о ширине и высоте карты в пикселях. Размер стандартной карты по умолчанию – 71 на 97 пикселей. Впрочем, можно не обращать внимания на эти величины при вызове функции, так как они не влияют на выводимый размер. При успешной инициализации возвращается TRUE, в противном случае возвращается FALSE. </P>
+
+<H3>Функция cdtTerm<A name="EWG"></A></H3>
+<P>Функция <B>cdtTerm</B> выполняет обратную задачу и очищает ресурсы. Данную функцию удобнее всего вызывать при закрытии программы. </P>
+
+<H3>Функция cdtDraw<A name="E6G"></A></H3>
+<P>Функция <B>cdtDraw</B> выводит на экран заданную карту. Функция имеет следующие параметры:</P>
+<UL style="LIST-STYLE:square"><LI>hdc – контекст устройства, который можно получить от Graphics.GetHdc().</LI>
+<LI>x, y – координаты левого верхнего угла карты.</LI>
+<LI>card – карта для рисования на экране. Данный параметр зависит от выбранного режима, о чем будет сказано позже.</LI>
+<LI>mode - Режимы вывода карты (смотри ниже).</LI>
+<LI>color – Фон игрового поля (необходим только для режимов mdGhost и mdRemove) или при выводе рубашки в стиле cross hatch.</LI>
+</UL>
+<H4>Режимы вывода карты</H4>
+<P>Карты можно рисовать на экране различными способами. Вот перечень доступных режимов.</P>
+<UL style="LIST-STYLE:square"><LI>mdFaceUp – выводит карту.</LI>
+<LI>mdFaceDown – выводит рубашку карты.</LI>
+<LI>mdInvert – выводит инвертированное изображение открытой карты.</LI>
+<LI>mdGhost – выводит невидимую карту, параметр card игнорируется.</LI>
+<LI>mdColorEmpty – выводит цветной прямоугольник в позици x, y.</LI>
+<LI>mdDeckX – выводит картинку со знаком X.</LI>
+<LI>mdDeckO – выводит картинку со знаком O.</LI>
+</UL>
+<P>Обратите внимание, что нельзя получить доступ к изображениям карт напрямую, сначала вам необходимо получить доступ к графическому контексту устройства.</P>
+
+
+<H3>Функция cdtDrawExt<A name="ENAAC"></A></H3>
+<P>Функция cdtDrawExt аналогична предыдущей функции cdtDraw, но имеет два дополнительных параметра, dx и dy, позволяющих определять размер выводимой карты.</P>
+
+<H3>Картинки<A name="ETAAC"></A></H3>
+<P>В библиотеке содержится 68 картинок. Из них 52 выводят игровую картинку карты и 16 выводят обратную сторону (рубашку). Все карты хранятся в библиотеке в определенном порядке. Названия масти и ее перевод на русском дан в листинге ниже. Первой картой по порядку является (индекс = 0) туз треф (Ace of Clubs), далее туз бубен (Ace of Diamonds) и так далее. Так и идут все 52 карты от Clubs, Diamonds, Hearts до Spades и обратно к Clubs, начиная с туза и заканчивая королем. Эти карты можно представить с помощью двух перечислений для масти и номинала карты.</P>
+<DIV id="EYAAC"><TABLE class="code" width="98%"><TR><TD><PRE>
+<SPAN class="COMMENT">'Масти карт</SPAN>
+<SPAN class="KEYWORD">Public</SPAN> <SPAN class="KEYWORD">Enum</SPAN> eSUIT
+  CLUBS = 0    <SPAN class="COMMENT">' трефы</SPAN>
+  DIAMOND = 1  <SPAN class="COMMENT">' бубны</SPAN>
+  HEARTS = 2   <SPAN class="COMMENT">' черви</SPAN>
+  SPADES = 3   <SPAN class="COMMENT">' пики</SPAN>
+<SPAN class="KEYWORD">End</SPAN> <SPAN class="KEYWORD">Enum</SPAN>
+
+<SPAN class="COMMENT">'Номинал карты</SPAN>
+<SPAN class="KEYWORD">Public</SPAN> <SPAN class="KEYWORD">Enum</SPAN> eFace
+  Ace = 0     <SPAN class="COMMENT">'туз</SPAN>
+  Two = 1     <SPAN class="COMMENT">' двойка</SPAN>
+  Three = 2   <SPAN class="COMMENT">' тройка</SPAN>
+  Four = 3    <SPAN class="COMMENT">' четверка</SPAN>
+  Five = 4    <SPAN class="COMMENT">' пятерка</SPAN>
+  Six = 5     <SPAN class="COMMENT">' шестерка</SPAN>
+  Seven = 6   <SPAN class="COMMENT">' семерка</SPAN>
+  Eight = 7   <SPAN class="COMMENT">' восьмерка</SPAN>
+  Nine  = 8   <SPAN class="COMMENT">' девятка</SPAN>
+  Ten  = 9    <SPAN class="COMMENT">' десятка</SPAN>
+  Jack  = 10  <SPAN class="COMMENT">' валет</SPAN>
+  Queen = 11  <SPAN class="COMMENT">' дама</SPAN>
+  King = 12   <SPAN class="COMMENT">' король</SPAN>
+<SPAN class="KEYWORD">End</SPAN> <SPAN class="KEYWORD">Enum</SPAN>
+</PRE></TD></TR></TABLE></DIV>
+
+<H3>Волшебная формула<A name="ESCAC"></A></H3>
+<P>Чтобы получить номер нужной карты, надо знать волшебную формулу:</P>
+<DIV id="EXCAC"><TABLE class="code" width="98%"><TR><TD><PRE>
+card = eFace * 4 + eSuit
+</PRE></TD></TR></TABLE></DIV>
+<P>Например, нужно получить номер пиковой дамы. Подставляем в формулу нужные значения:</P>
+<DIV id="E2CAC"><TABLE class="code" width="98%"><TR><TD><PRE>
+card = eFace.Queen * 4 + eSUIT.DIAMOND
+</PRE></TD></TR></TABLE></DIV>
+<P>Например, пиковой даме соответствует номер 47 (11 * 4 + 3).</P>
+
+<H3>Рубашки<A name="EADAC"></A></H3>
+<P>Шестнадцать рисунков рубашек карт находятся в промежутке от 53 до 68. Опять используем перечисление для удобства:</P>
+<DIV id="EFDAC"><TABLE class="code" width="98%"><TR><TD><PRE>
+<SPAN class="COMMENT">' Картинки для рубашки</SPAN>
+<SPAN class="KEYWORD">Public</SPAN> <SPAN class="KEYWORD">Enum</SPAN> eBACK
+  CROSSHATCH = 53 <SPAN class="COMMENT">' Сетка</SPAN>
+  SKY = 54        <SPAN class="COMMENT">' Небо</SPAN>
+  MINERAL = 55    <SPAN class="COMMENT">' Минерал</SPAN>
+  FISH = 56       <SPAN class="COMMENT">' Рыба</SPAN>
+  FROG = 57       <SPAN class="COMMENT">' Лягушка</SPAN>
+  FLOWER = 58     <SPAN class="COMMENT">' Цветок</SPAN>
+  ISLAND = 59     <SPAN class="COMMENT">' Остров с пальмами</SPAN>
+  SQUARES = 60    <SPAN class="COMMENT">' Квадраты</SPAN>
+  MAGENTA = 61    <SPAN class="COMMENT">' Фиолетовый узор</SPAN>
+  SANDDUNES = 62  <SPAN class="COMMENT">' Песчаные дюны</SPAN>
+  SPACE = 63      <SPAN class="COMMENT">' Астронавт</SPAN>
+  LINES = 64      <SPAN class="COMMENT">' Линии</SPAN>
+  CARS = 65       <SPAN class="COMMENT">' Машинки</SPAN>
+  UNUSED = 66     <SPAN class="COMMENT">' Неиспользуемая карта</SPAN>
+  THE_X = 67      <SPAN class="COMMENT">' Символ X</SPAN>
+  THE_O = 68      <SPAN class="COMMENT">' Символ 0</SPAN>
+<SPAN class="KEYWORD">End</SPAN> <SPAN class="KEYWORD">Enum</SPAN>
+</PRE></TD></TR></TABLE></DIV>
+<P>Теперь можно приступить к написанию программы Для удобства расположим код рисования карт в отдельном классе <I>cards</I>, который будет базовым классом для примера. В этом классе разместим все функции, константы и перечисления. Так как при работе с карточной библиотекой необходима ее инициализация, то сделаем это в конструкторе класса:</P>
+<DIV id="EXEAC"><TABLE class="code" width="98%"><TR><TD><PRE>
+<SPAN class="KEYWORD">Public</SPAN> <SPAN class="KEYWORD">Sub</SPAN> <SPAN class="KEYWORD">New</SPAN>()
+  cdtInit(width, height)
+<SPAN class="KEYWORD">End</SPAN> <SPAN class="KEYWORD">Sub</SPAN>
+</PRE></TD></TR></TABLE></DIV>
+
+<H3>Рисование карты<A name="EFFAC"></A></H3>
+<P>Наконец-то мы можем приступать к выводу карты на экран. Давайте оформим этот код в виде функции <I>DrawCard</I>:</P>
+<DIV id="ENFAC"><TABLE class="code" width="98%"><TR><TD><PRE>
+<SPAN class="KEYWORD">Public</SPAN> <SPAN class="KEYWORD">Function</SPAN> DrawCard(<SPAN class="KEYWORD">ByVal</SPAN> hdc <SPAN class="KEYWORD">As</SPAN> IntPtr, <SPAN class="KEYWORD">ByVal</SPAN> x <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, _
+  <SPAN class="KEYWORD">ByVal</SPAN> y <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> card <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> mode <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>) <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Boolean</SPAN>
+  <SPAN class="KEYWORD">Return</SPAN> cdtDraw(hdc, x, y, card, mode, &amp;HFFFFFF)
+<SPAN class="KEYWORD">End</SPAN> <SPAN class="KEYWORD">Function</SPAN>
+</PRE></TD></TR></TABLE></DIV>
+<P>При вызове данной функции понадобятся дескриптор контекста устройства, координаты выводимой карты, номер карты и режим вывода. Предположим, что нужно вывести пиковую даму. Вычисляем ее номер и вызываем функцию:</P>
+<DIV id="E3GAC"><TABLE class="code" width="98%"><TR><TD><PRE>
+<SPAN class="KEYWORD">Private</SPAN> <SPAN class="KEYWORD">Sub</SPAN> Form1_Paint(<SPAN class="KEYWORD">ByVal</SPAN> sender <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Object</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> e _
+  <SPAN class="KEYWORD">As</SPAN> System.Windows.Forms.PaintEventArgs) <SPAN class="KEYWORD">Handles</SPAN> <SPAN class="KEYWORD">MyBase</SPAN>.Paint
+
+  hdc = e.Graphics.GetHdc()
+  Try
+    mycard.DrawCard(hdc, 35, 10, 47, 0)
+  Finally
+    If Not hdc Is Nothing Then e.Graphics.ReleaseHdc(hdc)
+  End Try
+<SPAN class="KEYWORD">End</SPAN> <SPAN class="KEYWORD">Sub</SPAN>
+</PRE></TD></TR></TABLE></DIV>
+<P>Таким образом, с помощью данной функции можно вывести любую карту из колоды. Процесс подключения созданного класса к основной форме приложения я опущу в целях экономии места. Вы можете все сами посмотреть в исходном примере.</P>
+<P style="text-align: center;"><IMG src="cards/card2.png"></IMG><BR /><I style="font-face: verdana; font-size:x-small;"></I></P>
+
+<H3>Рисование рубашки карт<A name="E2HAC"></A></H3>
+<P>Теперь, когда мы разобрались с открытыми картами, перейдем к выводу рубашек карт. Опять пишем функцию-обертку <I>DrawBackCard</I>:</P>
+<DIV id="EDIAC"><TABLE class="code" width="98%"><TR><TD><PRE>
+<SPAN class="KEYWORD">Public</SPAN> <SPAN class="KEYWORD">Function</SPAN> DrawBackCard(<SPAN class="KEYWORD">ByVal</SPAN> hdc <SPAN class="KEYWORD">As</SPAN> IntPtr, <SPAN class="KEYWORD">ByVal</SPAN> x <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, _
+  <SPAN class="KEYWORD">ByVal</SPAN> y <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> back <SPAN class="KEYWORD">As</SPAN> eBACK) <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Boolean</SPAN>
+
+  <SPAN class="KEYWORD">Return</SPAN> cdtDraw(hdc, x, y, back, mdFaceDown, &amp;HFFFFFF)
+<SPAN class="KEYWORD">End</SPAN> <SPAN class="KEYWORD">Function</SPAN>
+</PRE></TD></TR></TABLE></DIV>
+<P>Эта функция почти аналогична предыдущей, только вместо картинки и режима вывода карты используется одно из значений перечисления <I>eBack</I>. Вот как выглядит вывод двух разных рубашек с изображением машинок и лягушки (хотя, конечно, в настоящей карточной игре используется рубашка одного вида)</P>
+<DIV id="ENJAC"><TABLE class="code" width="98%"><TR><TD><PRE>
+<SPAN class="KEYWORD">Public</SPAN> <SPAN class="KEYWORD">Sub</SPAN> Button1_Click(<SPAN class="KEYWORD">ByVal</SPAN> sender <SPAN class="KEYWORD">As</SPAN> System.<SPAN class="KEYWORD">Object</SPAN>, _
+  <SPAN class="KEYWORD">ByVal</SPAN> e <SPAN class="KEYWORD">As</SPAN> System.EventArgs) <SPAN class="KEYWORD">Handles</SPAN> Button1.Click
+
+  <SPAN class="KEYWORD">Dim</SPAN> g <SPAN class="KEYWORD">As</SPAN> Graphics = CreateGraphics()
+  hdc = g.GetHdc()
+  <SPAN class="COMMENT">' Выводим рубашки с изображением машинок и лягушки</SPAN>
+  mycard.DrawBackCard(hdc, 120, 10, cards.eBACK.CARS)
+  mycard.DrawBackCard(hdc, 200, 10, cards.eBACK.FROG)
+  g.ReleaseHdc(hdc)
+
+<SPAN class="KEYWORD">End</SPAN> <SPAN class="KEYWORD">Sub</SPAN>
+</PRE></TD></TR></TABLE></DIV>
+<P style="text-align: center;"><IMG src="cards/card3.png"></IMG><BR /><I style="font-face: verdana; font-size:x-small;"></I></P>
+
+<H3>Рисование инвертированной, пустой и большой карты<A name="EOKAC"></A></H3>
+<P>Останавливаться на функциях DrawInvertedCard, DrawEmptyCard и DrawBigCard нет смысла, так как они весьма похожи на две предыдущие. Хочу только заметить, что функция DrawBigCard на самом деле может рисовать не только большие, но и маленькие карты, и она использует карточную функцию cdtDrawExt.</P>
+
+<H3>Вращение карт<A name="EUKAC"></A></H3>
+<P>Можно выводить карты не только в стандартном виде, но и развернуть их на любой градус. Вот как будет выглядеть функция для вращения карты на 90 градусов</P>
+<DIV id="EZKAC"><TABLE class="code" width="98%"><TR><TD><PRE>
+<SPAN class="KEYWORD">Public</SPAN> <SPAN class="KEYWORD">Sub</SPAN> DrawRotatedCard(<SPAN class="KEYWORD">ByVal</SPAN> g <SPAN class="KEYWORD">As</SPAN> Graphics, <SPAN class="KEYWORD">ByVal</SPAN> x <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, _
+  <SPAN class="KEYWORD">ByVal</SPAN> y <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> card <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>, <SPAN class="KEYWORD">ByVal</SPAN> mode <SPAN class="KEYWORD">As</SPAN> <SPAN class="KEYWORD">Integer</SPAN>)
+
+  <SPAN class="KEYWORD">Dim</SPAN> offScreenBitmap <SPAN class="KEYWORD">As</SPAN> Bitmap = <SPAN class="KEYWORD">New</SPAN> Bitmap(71, 97)
+  <SPAN class="KEYWORD">Dim</SPAN> offScreenGraphics <SPAN class="KEYWORD">As</SPAN> Graphics = g.FromImage(offScreenBitmap)
+
+  <SPAN class="COMMENT">'  Получим дескриптор контекста устройства</SPAN>
+  <SPAN class="KEYWORD">Dim</SPAN> hdc <SPAN class="KEYWORD">As</SPAN> IntPtr = offScreenGraphics.GetHdc()
+
+  cdtDraw(hdc, 0, 0, card, mode, &amp;HFFFFFF)
+
+  <SPAN class="COMMENT">'  Освобождаем ресурсы</SPAN>
+  offScreenGraphics.ReleaseHdc(hdc)
+
+  <SPAN class="COMMENT">' Массив из вершин (верхний левый угол, верхний правый угол, нижний левый угол)</SPAN>
+  <SPAN class="KEYWORD">Dim</SPAN> aPoints() <SPAN class="KEYWORD">As</SPAN> Point = {<SPAN class="KEYWORD">New</SPAN> Point(x, y + 71), _
+                            <SPAN class="KEYWORD">New</SPAN> Point(x, y), _
+                            <SPAN class="KEYWORD">New</SPAN> Point(x + 97, y + 71)}
+
+  g.DrawImage(offScreenBitmap, aPoints)
+<SPAN class="KEYWORD">End</SPAN> <SPAN class="KEYWORD">Sub</SPAN>
+</PRE></TD></TR></TABLE></DIV>
+<P>Прежде всего создается новый графический объект, на котором будем рисовать. Затем создаем на его основе новый объект Graphics и получаем дескриптор контекста устройства, на котором рисуем карту как обычно, затем удаляем дескриптор контекста устройства для освобождения ресурсов. Теперь приступаем к вращению карты. Массив aPoints содержит три вершины прямоугольника. Три структуры Point содержат верхнюю левую, верхнюю правую и нижнюю левую углы прямоугольника. Массив передается массиву DrawImage(), где картинка, представленная параметрами (offScreenBitmap), деформируется и сдвигается, чтобы соответствовать параллелограмму, заданному параметром aPoints. Таким образом можно нарисовать любой поворот карты, просто надо вычислить нужное значение координат вершин карты.</P>
+<P style="text-align: center;"><IMG src="cards/card4.png"></IMG><BR /><I style="font-face: verdana; font-size:x-small;"></I></P>
+
+<H2>Вместо заключения<A name="EFNAC"></A></H2>
+<P>Вот и подошел к концу рассказ о том, как использовать карточную библиотеку в своих программах. На самом деле, созданный проект выглядит немного неуклюже. Многие методы используют одни и те параметры, не очень удобен вызов конкретной карты и так далее. Улучшение кода (или основательная его переделка) будет вашим домашним заданием. Потрудитесь написать игру сами, чтоб получить удовольствие от собственной работы. Удачного вам программирования! </P>
+<DIV align="right"><FONT style="font-family:arial;font-size:9pt;color:#8088a0"><I><HR color="#8088a0" width="100%" size="1" /><div align="justify"><font size="2">
+                     Эта статья опубликована в журнале 
+                     RSDN Magazine
+                                         
+                        #4-2005. Информацию о журнале можно найти <a href="http://rsdn.ru/mag/main.htm">здесь</a></font></div></I></FONT></DIV>	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-1276305-1', 'rsdn.ru');
+		ga('send', 'pageview');
+	</script>
+	<script type="text/javascript">
+		(function(d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter49003 = new Ya.Metrika({
+						id: 49003,
+						webvisor: true,
+						clickmap: true,
+						trackLinks: true,
+						accurateTrackBounce: true,
+						trackHash: true,
+						type: 1
+					});
+				} catch (e) {
+				}
+			});
+
+			var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function() { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else {
+				f();
+			}
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="http://mc.yandex.ru/watch/49003/1?cnt-class=1" style="position: absolute; left: -9999px;" alt="" /></div></noscript>
+<table width="100%" border="0" cellspacing="0" celpadding="2" style="font-family:verdana;font-weight:bold;padding: 0px 5px; BORDER: #9daabd 1px 	solid; 	COLOR: #646464; BACKGROUND-COLOR: #e6e6e6;"><tr><td nowrap="nowrap"><font size="1" style="font-weight:normal"><script src="http://rsdn.ru/script/shMenu.v1.js" type="text/javascript" charset="utf-8"></script></font></td><td nowrap="nowrap" align="right" width="100%"><font size="2"> <A href="http://rsdn.ru/article/games/cards.xml?print" target="_blank" title="Версия для печати"><IMG align="absmiddle" width="16" height="14" src="../../images/printer2.gif" border="0" /></A>  <a href="http://rsdn.ru/forum/game/1570365" target="_self" title="Перейти к обсуждению статьи"><font size="1" color="#646464"> Сообщений </font><font color="black">2</font></a>  <a href="http://rsdn.ru/forum/game/1570365" target="_self" title="Перейти к обсуждению статьи"><img src="../../forum/images/showfr.gif" align="absmiddle" border="0" width="18px" height="14px" /></a> <a href="http://rsdn.ru/Forum/RateList.aspx?mid=1570365"><font color="#646464"><font size="1"> Оценка </font><font color="black">207</font>
+									[<font style="font-weight: normal;"><span style="color:green;">+1</span>/<span style="color:blue;">-0</span></font>]
+								</font></a>   <a target="_blank" rel="nofollow" href="http://rsdn.ru/Users/Private/AddFav.aspx?mid=1570365" onclick="return AddFav(this.href);" title="Добавить в избранное"><img align="absmiddle" src="../../images/fav.gif" border="0" height="14px" /></a>  <a href="http://rsdn.ru/Forum/Private/Subscr.aspx?tid=1570365" onclick="return SubMsg(this.href)" title="Подписка на сообщения" rel="nofollow"><img class="i" align="absmiddle" src="../../forum/images/sub.gif" border="0" width="18px" height="14px" /></a>   <font size="1">Оценить </font><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=-3" onclick="return RateMsg(this.href);" title="+1"><img align="absmiddle" src="../../forum/images/n11.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=1" onclick="return RateMsg(this.href);" title="Интересно"><img align="absmiddle" src="../../forum/images/n1.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=2" onclick="return RateMsg(this.href);" title="Спасибо"><img align="absmiddle" src="../../forum/images/n2.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=3" onclick="return RateMsg(this.href);" title="Супер"><img align="absmiddle" src="../../forum/images/n3.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=-1" onclick="return RateMsg(this.href);" title="Удалить оценку"><img align="absmiddle" src="../../forum/images/nx.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=-4" onclick="return RateMsg(this.href);" title="Согласен"><img align="absmiddle" src="../../forum/images/np.gif" border="0" width="18px" height="14px" /></a><a target="_blank" rel="nofollow" href="http://rsdn.ru/forum/Private/Rate.aspx?mid=1570365&amp;rate=0" onclick="return RateMsg(this.href);" title="Не согласен"><img align="absmiddle" src="../../forum/images/nm.gif" border="0" width="18px" eight="14px" /></a> 
+					</font></td></tr></table></body>
+<!-- Mirrored from rsdn.ru/article/games/cards.xml by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:20:44 GMT -->
+</html>

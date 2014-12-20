@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/tweenanimation.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:18:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Анимация преобразований</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="index-2.html">Главная</a></li>
+<li class=""><a href="theory/index.html">Теория</a></li>
+<li class=""><a href="views.html">Palette</a></li>
+<li class=""><a href="listview/index.html">ListView</a></li>
+<li class=""><a href="catshop/catshop.html">Котошоп</a></li>
+<li class="active"><a href="animation.html">Анимация</a></li>
+<li class=""><a href="sqlite/index.html">SQLite</a></li>
+<li class=""><a href="opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="library/index.html">Библиотеки</a></li>
+<li class=""><a href="games/index.html">Игры</a></li>
+<li class=""><a href="emulator.html">Эмулятор</a></li>
+<li class=""><a href="tips-android.html">Советы</a></li>
+<li class=""><a href="articles-android.html">Статьи</a></li>
+<li class=""><a href="books.html">Книги</a></li>
+<li class=""><a href="java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="design/index.html">Дизайн</a></li>
+<li class=""><a href="opensource.html">Open Source</a></li>
+<li class=""><a href="links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>      
+<h1 class="text-warning">Анимация преобразований</h1>
+
+<p>
+<a href="#alphpa">alpha</a><br>
+<a href="#scale">scale</a><br>
+<a href="#translate">translate</a><br>
+<a href="#rotate">rotate</a><br>
+<a href="#animationlistener">AnimationListener</a><br>
+<a href="#samples">Примеры анимаций</a><br>
+</p>
+
+<p>Анимация может выполняться в виде ряда простых преобразований —  изменение позиции, размера, угла вращения и уровня прозрачности на поверхности объекта View. Например, у объекта TextView можно перемещать, вращать, уменьшать или увеличивать текст. Если объект TextView имеет фоновое изображение, 
+оно будет преобразовано наряду с текстом. Пакет <b>android.view.animation</b> содержит необходимые классы для анимации с промежуточными кадрами.</p>
+
+<p>Основные классы анимации и их соответствия в XML:</p>
+
+<ul>
+<li><b>AnimationSet</b> (элемент &lt;set&gt;) — класс, представляющий группу анимаций, которые должны запускаться вместе. Если класс AnimationSet устанавливает какие-либо свойства, эти свойства наследуют и объекты, входящие в группу;</li>
+<li><b>AlphaAnimation</b> (элемент &lt;alpha&gt;) — управляет прозрачностью объекта;</li>
+<li><b>RotateAnimation</b> (элемент &lt;rotate&gt;) — управляет вращением объекта;</li>
+<li><b>ScaleAnimation</b> (элемент &lt;scale&gt;) — управляет масштабированием объекта, т.е. изменениями размеров;</li>
+<li><b>TranslateAnimation</b> (элемент &lt;translate&gt;) — управляет позиционированием объекта (перемещение)</li>
+</ul>
+
+<p>Команды анимации определяют преобразования, которые необходимо произвести над объектом. Преобразования могут быть последовательными или одновременными. Каждое преобразование принимает набор параметров, определённых для этого преобразования (начальный размер, конечный размер при изменении размера, стартовый угол и конечный угол при вращении объекта и т. д.), а также набор общих параметров (например, начального времени и продолжительности). Если требуется сделать несколько преобразований одновременно, им задают одинаковое начальное время. Если требуется сделать последовательные преобразования, задается их время старта плюс продолжительность предыдущего преобразования.</p>
+
+<p>Последовательность команд анимации определяется в XML-файле (предпочтительно) или в программном коде.</p>
+
+<h2 class="text-warning">Создание анимации в XML-файле</h2>
+
+<p>XML-файл анимации располагают в каталоге <b>res/anim/</b> вашего проекта. Файл должен иметь единственный корневой элемент: это будет любой из элементов 
+&lt;alpha&gt;, &lt;scale&gt;, &lt;translate&gt;, &lt;rotate&gt; или элемент &lt;set&gt;, который является контейнером для этих четырех компонентов (и может включать в себя другой контейнер &lt;set&gt;).</p>
+
+<p>По умолчанию все элементы применяются одновременно. Чтобы запускать элементы последовательно, необходимо определить атрибут <b>startOffset</b> и указать значение в миллисекундах, например:</p>
+
+<pre> 
+android:startOffset="3000"
+</pre>
+
+<h3 class="text-warning">Атрибуты анимации</h3>
+
+<p>У элементов &lt;alpha&gt;, &lt;scale&gt;, &lt;translate&gt;, &lt;rotate&gt; и &lt;set&gt; поддерживаются общие атрибуты, унаследованные от базового класса Animation:</p>
+
+<ul>
+<li><b>duration</b> — продолжительность эффекта в миллисекундах;</li>
+<li><b>startOffset</b> — начальное время смещения для этого эффекта, в миллисекундах;</li>
+<li><b>fillBefore</b> — когда установлен в <i>true</i>, то преобразование анимации применяется перед началом анимации;</li>
+<li><b>fillAfter</b> — когда установлен в <i>true</i>, то преобразование применяется после конца анимации;</li>
+<li><b>repeatCount</b> — определяет число повторений анимации, можно использовать значение <b>infinity</b> (бесконечность);</li>
+<li><b>repeatMode</b> — определяет поведение анимации при ее окончании. Возможные варианты: restart (перезапустить без изменений) или reverse (изменить 
+анимацию в обратном направлении);</li>
+<li><b>zAdjustment</b> — определяет режим упорядочения оси Z, чтобы использовать при выполнении анимации (нормаль, вершина или основание);</li>
+<li><b>interpolator</b> — определяет постоянную скорости, которая описывает динамику визуальной деятельности в зависимости от времени или, говоря 
+простым языком, определяет скорость изменения анимации. Можно использовать любой из элементов подкласса интерполятора, определенных 
+в R.styleable, например: <code>android:interpolator="@android:anim/decelerate_interpolator"</code></li>
+</ul>
+
+<h2 class="text-warning">Элемент &lt;set&gt;</h2>
+
+<p>Элемент &lt;set&gt; — контейнер, который может содержать другие элементы. Представляет класс <b>AnimationSet</b>. Поддерживает атрибут <b>shareInterpolator</b>, который при значении <i>true</i> указывает на возможность совместного использования этого интерполятора для всех дочерних элементов.</p>
+
+<h2 class="text-warning" id="alpha">Элемент &lt;alpha&gt;</h2>
+
+<p>Постепенно изменяющаяся анимация прозрачности при помощи AlphaAnimation. Поддерживает следующие атрибуты:</p>
+<ul>
+<li><b>fromAlpha</b> — начальное значение прозрачности объекта;</li>
+<li><b>toAlpha</b> — конечное значение прозрачности объекта;</li>
+</ul>
+
+<p>Атрибуты содержат значение прозрачности от 0 до 1 типа Float, где 0 означает полную прозрачность объекта.</p>
+
+<p><a href="animation/alpha.html">Пример использования alpha</a></p>
+
+<h2 class="text-warning" id="scale">Элемент &lt;scale&gt;</h2>
+
+<p>Элемент &lt;scale&gt; управляет анимацией изменения размеров объекта и представляет класс <b>ScaleAnimation</b>. Вы можете определить центральную точку изображения (закрепить центр анимации изображения), относительно которой будет изменяться масштабирование объекта. Элемент &lt;scale&gt; поддерживает следующие атрибуты:</p>
+<ul>
+<li><b>fromxScale</b> — начальный масштаб по X. Допустимы значения от 0 до 1 типа Float;</li>
+<li><b>toxScale</b> — конечный масштаб по X. Допустимы значения от 0 до 1 типа Float;</li>
+<li><b>fromYScale</b> — начальный масштаб по Y. Допустимы значения от 0 до 1 типа Float;</li>
+<li><b>toYScale</b> — конечный масштаб по Y. Допустимы значения от 0 до 1 типа Float;</li>
+<li><b>pivotX</b> — Х-координата закрепленного центра. Описывает центральную точку масштабирования в процентах от ширины от 0% до 100%;</li>
+<li><b>pivotY</b> — Y-координата закрепленного центра. Описывает центральную точку масштабирования в процентах от высоты от 0% до 100%;</li>
+</ul>
+
+<p><a href="animation/scale.html">Пример использования scale</a></p>
+
+<h2 class="text-warning" id="translate">Элемент &lt;translate&gt;</h2>
+
+<p>Элемент &lt;translate&gt; создает вертикальную или горизонтальную анимацию движения. Представляет класс TranslateAnimation и поддерживает  
+следующие атрибуты:</p>
+<ul>
+<li><b>fromXDelta</b> — начальное положение по X;</li>
+<li><b>toXDelta</b> — конечное положение по X;</li>
+<li><b>fromYDelta</b> — начальное положение по Y;</li>
+<li><b>toYDelta</b> — конечное положение по Y</li>
+</ul>
+
+<p>Атрибуты должны быть в любом из следующих трёх форматов:</p>
+<ul>
+<li>Абсолютное значение</li>
+<li>Значения в процентах от -100% до 100%</li>
+<li>Значения в процентах от -100%p до 100%p, где p указывает процент относительно его родителя.</li>
+</ul>
+
+<p><a href="animation/translate.html">Пример использования translate</a></p>
+
+<h3 class="text-warning">Слайд-шоу</h3>
+
+<p>Например, для эффекта слайд-шоу, когда один элемент выталкивает полностью другой элемент, реализуется двумя анимациями <a href="animation/slideshow.html">справо-налево или слева-направо</a></p>
+
+<h2 class="text-warning" id="rotate">Элемент &lt;rotate&gt;</h2>
+
+<p>Элемент &lt;rotate&gt; предназначен для анимации вращения и представляет класс <b>RotateAnimation</b>. Поддерживает следующие атрибуты:</p>
+<ul>
+<li><b>fromDegrees</b> — начальный угол вращения в градусах;</li>
+<li><b>toDegrees</b> — конечный угол вращения в градусах;</li>
+<li><b>pivotX</b> — координата X центра вращения в пикселах;</li>
+<li><b>pivotY</b> — координата Y центра вращения в пикселах;</li>
+</ul>
+
+<p><a href="animation/rotate.html">Пример использования rotate</a></p>
+
+<h2 class="text-warning" id="samples">Примеры с анимацией преобразований</h2>
+
+<p>Можно создать несколько файлов анимации и применять их для одного объекта. Рассмотрим работу анимации на примере прямоугольника. К сожалению, у меня не заработал пример с изменением прозрачности (alpha), может вам повезет больше. (Как рассказал один из читателей, пример работает на эмуляторе 2.1, а на эмуляторе 2.3.3 уже нет).</p>
+
+<p>Создайте новый проект и в каталоге <b>res/anim/</b> проекта создайте пять файлов с XML-анимацией: alpha.xml, rotate.xml, scale.xml, translate.xml и файл combination.xml, в котором мы будем использовать комбинацию различных объектов для создания смешанной анимации.</p>
+
+<h3 class="text-warning">alpha.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shareInterpolator=&quot;false&quot; &gt;
+
+    &lt;alpha
+        android:duration=&quot;5000&quot;
+        android:fromAlpha=&quot;0.0&quot;
+        android:startOffset=&quot;0&quot;
+        android:toAlpha=&quot;1.0&quot; &gt;
+    &lt;/alpha&gt;
+
+&lt;/set&gt;
+</code></pre>
+
+<h3 class="text-warning">rotate.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shareInterpolator=&quot;false&quot; &gt;
+
+    &lt;rotate
+        android:duration=&quot;5000&quot;
+        android:fromDegrees=&quot;0&quot;
+        android:pivotX=&quot;50%&quot;
+        android:pivotY=&quot;50%&quot;
+        android:toDegrees=&quot;360&quot; /&gt;
+
+&lt;/set&gt;
+</code></pre>
+
+<h3 class="text-warning">scale.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shareInterpolator=&quot;false&quot; &gt;
+
+    &lt;scale
+        android:duration=&quot;2500&quot;
+        android:fromXScale=&quot;1.0&quot;
+        android:fromYScale=&quot;1.0&quot;
+        android:pivotX=&quot;50%&quot;
+        android:pivotY=&quot;50%&quot;
+        android:toXScale=&quot;2.0&quot;
+        android:toYScale=&quot;2.0&quot; /&gt;
+
+    &lt;scale
+        android:duration=&quot;2500&quot;
+        android:fromXScale=&quot;1.0&quot;
+        android:fromYScale=&quot;1.0&quot;
+        android:pivotX=&quot;50%&quot;
+        android:pivotY=&quot;50%&quot;
+        android:startOffset=&quot;2500&quot;
+        android:toXScale=&quot;0.5&quot;
+        android:toYScale=&quot;0.5&quot; /&gt;
+
+&lt;/set&gt;
+</code></pre>
+
+<h3 class="text-warning">translate.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shareInterpolator=&quot;false&quot; &gt;
+
+    &lt;translate
+        android:duration=&quot;2500&quot;
+        android:fillAfter=&quot;true&quot;
+        android:toYDelta=&quot;-100&quot; /&gt;
+
+    &lt;translate
+        android:duration=&quot;2500&quot;
+        android:fillAfter=&quot;true&quot;
+        android:startOffset=&quot;2500&quot;
+        android:toYDelta=&quot;100&quot; /&gt;
+
+&lt;/set&gt;
+</code></pre>
+
+<h3 class="text-warning">combination.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shareInterpolator=&quot;false&quot; &gt;
+
+    &lt;scale
+        android:duration=&quot;2500&quot;
+        android:fromXScale=&quot;1.0&quot;
+        android:fromYScale=&quot;1.0&quot;
+        android:pivotX=&quot;50%&quot;
+        android:pivotY=&quot;50%&quot;
+        android:toXScale=&quot;2.0&quot;
+        android:toYScale=&quot;2.0&quot; /&gt;
+
+    &lt;rotate
+        android:duration=&quot;5000&quot;
+        android:fromDegrees=&quot;0&quot;
+        android:pivotX=&quot;50%&quot;
+        android:pivotY=&quot;50%&quot;
+        android:toDegrees=&quot;360&quot; /&gt;
+
+    &lt;translate
+        android:duration=&quot;2500&quot;
+        android:fillAfter=&quot;false&quot;
+        android:toYDelta=&quot;-100&quot; /&gt;
+
+    &lt;scale
+        android:duration=&quot;2500&quot;
+        android:fromXScale=&quot;1.0&quot;
+        android:fromYScale=&quot;1.0&quot;
+        android:pivotX=&quot;50%&quot;
+        android:pivotY=&quot;50%&quot;
+        android:startOffset=&quot;2500&quot;
+        android:toXScale=&quot;0.5&quot;
+        android:toYScale=&quot;0.5&quot; /&gt;
+
+    &lt;translate
+        android:duration=&quot;2500&quot;
+        android:fillAfter=&quot;false&quot;
+        android:startOffset=&quot;2500&quot;
+        android:toYDelta=&quot;100&quot; /&gt;
+
+&lt;/set&gt;
+</code></pre>
+
+<h3 class="text-warning">shape.xml</h3>
+
+<p>Фигуру прямоугольника для анимации определим в файле shape.xml, который будет находиться в каталоге <b>res/drawable/</b>.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shape=&quot;rectangle&quot; &gt;
+
+    &lt;solid android:color=&quot;#F00&quot; /&gt;
+
+&lt;/shape&gt;
+</code></pre>
+
+<h3 class="text-warning">Разметка</h3>
+
+<p>Перейдем к разметке основной формы приложения (main.xml). Поместим элемент ImageView:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:layout_gravity=&quot;center_vertical|center_horizontal&quot;
+    android:orientation=&quot;horizontal&quot; &gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/image&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_margin=&quot;115px&quot;
+        android:minHeight=&quot;90px&quot;
+        android:minWidth=&quot;90px&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<h3 class="text-warning">Анимация</h3>
+
+<p>Анимация запускается в коде следующим образом: надо создать объект <b>Animation</b> через вызов метода <b>AnimationUtils.loadAnimation()</b> и передать ему в качестве параметра контекст активности и ссылку на XML-файл анимации. Затем запускается анимация через метод View.startAnimation(), передавая в него объект Animation:</p>
+
+<pre><code class="java">
+ImageView image = (ImageView) findViewById(R.id.image); 
+Animation animation = AnimationUtils.loadAnimation(this, R.anim.alpha); 
+image.startAnimation(animation); 
+</code></pre>
+
+<h2 class="text-warning" id="animationlistener">AnimationListener</h2>
+
+<p>В классе Animation есть вложенный интерфейс <b>AnimationListener</b>. Интерфейс AnimationListener позволяет создать обработчик событий, 
+который срабатывает в начале или при завершении анимации. Используя его, вы можете совершать какие-либо операции, прежде чем (или после того как) анимация закончит работу. Это может быть изменение содержимого представления или последовательный показ нескольких анимаций.</p>
+
+<p>У интерфейса AnimationListener есть три метода обратного вызова:</p>
+
+<ul>
+<li>onAnimationEnd()</li>
+<li>onAnimationRepeat()</li>
+<li>onAnimationStart()</li>
+</ul>
+
+<p>В этих методах можно реализовать код обработки события запуска, окончания и перезапуска анимации. Например, при окончании анимации можно 
+сделать объект анимации невидимым, а при запуске снова отобразить на экране:</p>
+
+<p>Вызовите метод <b>setAnimationListener()</b> из объекта Animation и передайте ему в качестве параметра реализацию интерфейса AnimationListener, при 
+необходимости переопределив методы onAnimationEnd(), onAnimationStart() и onAnimationRepeat().</p>
+
+<pre><code class="java">
+@Override
+public void onAnimationStart(Animation animation) {
+	mImage.setVisibility(View.VISIBLE);
+}
+
+@Override
+public void onAnimationEnd(Animation animation) {
+	mImage.setVisibility(View.INVISIBLE);
+}
+
+@Override
+public void onAnimationRepeat(Animation animation) {
+	mImage.setVisibility(View.VISIBLE);
+}
+</code></pre>
+
+<p>В основном классе создадим меню из пяти пунктов, соответствующих каждому типу запускаемой анимации: Alpha, Scale, Translate, Rotate и 
+Комбинация. В качестве идентификаторов пунктов меню используем идентификаторы ресурсов XML-файлов анимации, упростив тем самым структуру метода 
+onOptionsitemSeiected(), вызываемого при выборе пункта меню.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.tweenanimation;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+
+public class TweenAnimationActivity extends Activity implements AnimationListener{
+	
+	private ImageView mImage;
+    Animation animation = null;
+	
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        mImage = (ImageView)findViewById(R.id.image);
+        mImage.setImageResource(R.drawable.shape);
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(Menu.NONE, R.anim.alpha, Menu.NONE, "Alpha")
+            .setAlphabeticShortcut('a');
+        menu.add(Menu.NONE, R.anim.scale, Menu.NONE, "Scale")
+            .setAlphabeticShortcut('s');
+        menu.add(Menu.NONE, R.anim.translate, Menu.NONE, "Translate")
+            .setAlphabeticShortcut('t');
+        menu.add(Menu.NONE, R.anim.rotate, Menu.NONE, "Rotate")
+            .setAlphabeticShortcut('r');
+        menu.add(Menu.NONE, R.anim.combination, Menu.NONE, "Комбинация")
+            .setAlphabeticShortcut('o');
+
+        return(super.onCreateOptionsMenu(menu));
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {             
+        animation = AnimationUtils.loadAnimation(
+        		this, item.getItemId());
+        animation.setAnimationListener(this);
+        
+        mImage.startAnimation(animation); 
+        return true;
+    }
+    
+	@Override
+	public void onAnimationEnd(Animation animation) {
+		mImage.setVisibility(View.VISIBLE);
+	}
+
+	@Override
+	public void onAnimationRepeat(Animation animation) {
+		mImage.setVisibility(View.VISIBLE);
+	}
+
+	@Override
+	public void onAnimationStart(Animation animation) {
+		mImage.setVisibility(View.VISIBLE);
+	}
+}
+</code></pre>
+
+<h2 class="text-warning">Анимация графических файлов</h2>
+
+<p>Анимация для графических файлов ничем особым не отличается от анимации для графических фигур. Рассмотрим на примере анимацию графического объекта, отображаемого в ImageView. Создайте новый проект и найдите какой-нибудь графический файл с изображением кота (но не собаки, иначе работать не будет!).</p>
+
+<p>В XML-файле анимации создадим следующую структуру: используем элемент &lt;scale&gt; для растягивания изображения и вложенный контейнер &lt;set&gt;, в котором определим два дочерних элемента &lt;scale&gt; и &lt;rotate&gt; для одновременного вращения и изменения размеров объекта. Данный файл необходимо сохраним в каталоге <b>res/anim/</b> под любым именем, например, crazycat.xml</p>
+
+<h3 class="text-warning">crazycat.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shareInterpolator=&quot;false&quot; &gt;
+
+    &lt;scale
+        android:duration=&quot;3000&quot;
+        android:fillAfter=&quot;false&quot;
+        android:fromXScale=&quot;1.0&quot;
+        android:fromYScale=&quot;1.0&quot;
+        android:interpolator=&quot;@android:anim/accelerate_decelerate_interpolator&quot;
+        android:pivotX=&quot;50%&quot;
+        android:pivotY=&quot;50%&quot;
+        android:toXScale=&quot;1.4&quot;
+        android:toYScale=&quot;0.6&quot; /&gt;
+
+    &lt;set android:interpolator=&quot;@android:anim/decelerate_interpolator&quot; &gt;
+
+        &lt;scale
+            android:duration=&quot;2000&quot;
+            android:fillBefore=&quot;false&quot;
+            android:fromXScale=&quot;1.4&quot;
+            android:fromYScale=&quot;0.6&quot;
+            android:pivotX=&quot;50%&quot;
+            android:pivotY=&quot;50%&quot;
+            android:startOffset=&quot;3000&quot;
+            android:toXScale=&quot;0.0&quot;
+            android:toYScale=&quot;0.0&quot; /&gt;
+
+        &lt;rotate
+            android:duration=&quot;2000&quot;
+            android:fromDegrees=&quot;0&quot;
+            android:pivotX=&quot;50%&quot;
+            android:pivotY=&quot;50%&quot;
+            android:startOffset=&quot;3000&quot;
+            android:toDegrees=&quot;-45&quot;
+            android:toYScale=&quot;0.0&quot; /&gt;
+    &lt;/set&gt;
+
+&lt;/set&gt;
+</code></pre>
+
+<p>В файле разметки поместим кнопку для запуска анимации и один элемент ImageView для нашего изображения.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout
+	xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+	android:orientation=&quot;vertical&quot;
+	android:layout_width=&quot;fill_parent&quot;
+	android:layout_height=&quot;fill_parent&quot;&gt;
+	
+	&lt;LinearLayout
+		android:layout_height=&quot;wrap_content&quot;
+		android:orientation=&quot;horizontal&quot; 
+		android:layout_width=&quot;fill_parent&quot;&gt;
+		
+		&lt;Button
+			android:id=&quot;@+id/btn_start&quot;
+			android:layout_height=&quot;wrap_content&quot;
+			android:text=&quot;Поехали!&quot; 
+			android:layout_width=&quot;fill_parent&quot; 
+			android:layout_weight=&quot;1&quot;/&gt;
+	&lt;/LinearLayout&gt;
+	
+	&lt;LinearLayout
+		android:id=&quot;@+id/layout_anim&quot;
+		android:layout_height=&quot;fill_parent&quot;
+		android:gravity=&quot;center&quot; 
+		android:layout_width=&quot;fill_parent&quot;&gt;
+		
+	    &lt;ImageView
+	        android:id=&quot;@+id/image&quot;
+		    android:layout_width=&quot;wrap_content&quot;
+		    android:layout_height=&quot;wrap_content&quot;
+		    android:minHeight=&quot;100px&quot; 
+		    android:minWidth=&quot;100px&quot; 
+		    android:layout_margin=&quot;100px&quot;
+		    android:src=&quot;@drawable/android3d&quot;/&gt;
+	&lt;/LinearLayout&gt;
+&lt;/LinearLayout&gt;
+</code></pre> 
+
+<p>Осталось написать программный код:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.crazycat;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
+
+public class CrazyCatActivity extends Activity {
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        final ImageView image = (ImageView) findViewById(R.id.image);
+        final Button btnStart = (Button) findViewById(R.id.btn_start);
+       
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	Animation anim = AnimationUtils.loadAnimation(
+            			getApplicationContext(), R.anim.crazycat);
+            	image.startAnimation(anim);
+            }
+        });
+    }
+}
+</code></pre>
+
+<p>При нажатии кнопки изображение кота сначала плавно растянется по горизонтали, затем одновременно повернется и уменьшится в размерах, после чего вернется в исходное состояние.</p>
+
+<p><img src="images/crazycat.png" alt="Котэ"></p>
+
+<p>Независимо оттого, как анимация изменяет размеры объекта или перемещает его на плоскости, границы элемента View, в который загружено изображение, 
+останутся неизменными: ваша анимация не будет автоматически корректировать размеры представления для размещения объекта. Если анимация выйдет 
+за границы родительского представления, произойдет отсечение объекта анимации.</p>
+
+<h2 class="text-warning">Анимация группы представлений</h2>
+
+<p>Анимацию можно сделать и для нескольких представлений, объединив их в группу. Например, поместив представления в контейнер LinearLayout,  
+причем можно использовать не только графические, но и текстовые представления.</p>
+
+<p>Принцип анимаци останется тем же. В файле разметки приложения разместите дочерний контейнер LinearLayout, в котором разместите виджет ImageView с изображением и текстовое поле TextView с надписью. Для дочернего контейнера обязательно присвойте идентификатор, по которому вы сможете загрузить его в код программы и использовать для анимации.</p>
+
+<pre><code class="xml">
+&lt;LinearLayout
+	android:id=&quot;@+id/layout_anim&quot;
+	android:layout_height=&quot;fill_parent&quot;
+	android:gravity=&quot;center&quot; 
+	android:layout_width=&quot;fill_parent&quot;&gt;
+
+	&lt;ImageView 
+		android:id=&quot;@+id/image&quot; 
+		android:layout_width=&quot;wrap_content&quot; 
+		android:layout_height=&quot;wrap_content&quot; 
+		android:src=&quot;@drawable/crazycat&quot;/&gt;
+	&lt;TextView  
+		android:id=&quot;@+id/text&quot;
+		android:text=&quot;@string/hello&quot; 
+		android:layout_width=&quot;wrap_content&quot; 
+		android:layout_height=&quot;wrap_content&quot;/&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Код класса практически не будет отличаться от предыдущего примера, за исключением того, что мы работаем с анимацией не отдельного  
+представления, а с анимацией группы представлений:</p>
+
+<pre><code class="java">
+layout (LinearLayout)findViewById(R.id.layout_anim); 
+animation AnimationUtils.loadAnimation(this, R.anim.combination); 
+</code></pre>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+		    </div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/tweenanimation.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:18:48 GMT -->
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/sqlite/todo.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:02:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Список дел. Устаревший способ</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class="active"><a href="index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Список дел. Устаревший способ</h1>
+
+<p><img src="todo_cat.jpg" alt="ToDo"></p>
+
+<p>Напишем приложение «Список дел», при помощи которого пользователь можете заносить  в список важные дела, которые нельзя забыть - купить батон хлеба, накормить кота, поздравить жену. Данные события будем сохранять в базе данных.</p>
+
+<p>Логика программы проста - на основном экране приложения выводится список дел, а на втором происходит добавление нового события.</p>
+
+<p>Создадим новый проект и сначала займемся классом, работающим с базой данных. В базе будет одна таблица с четырьмя колонками. А также добавим методы для управления данными - добавление, удаление, редактирование.</p>
+
+<h3 class="text-warning">ToDoDatabase.java</h3>
+
+<pre><code class="java">
+package ru.alexanderklimov.todoold;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+public class ToDoDatabase extends SQLiteOpenHelper {
+
+	private static final String DATABASE_NAME = "todo_app.db";
+	private static final int DATABASE_VERSION = 1;
+	private static final String DATABASE_TABLE = "todos";
+
+	// поля таблицы
+	public static final String COLUMN_ID = "_id";
+	public static final String COLUMN_CATEGORY = "category";
+	public static final String COLUMN_SUMMARY = "summary";
+	public static final String COLUMN_DESCRIPTION = "description";
+
+	// запрос на создание базы данных
+	private static final String DATABASE_CREATE = "create table "
+			+ DATABASE_TABLE + "(" + COLUMN_ID
+			+ " integer primary key autoincrement, " + COLUMN_CATEGORY
+			+ " text not null, " + COLUMN_SUMMARY + " text not null,"
+			+ COLUMN_DESCRIPTION + " text not null" + ");";
+
+	public ToDoDatabase(Context context) {
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		// TODO Auto-generated method stub
+		db.execSQL(DATABASE_CREATE);
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		// TODO Auto-generated method stub
+		Log.w(ToDoDatabase.class.getName(), "Upgrading database from version "
+				+ oldVersion + " to " + newVersion
+				+ ", which will destroy all old data");
+		db.execSQL("DROP TABLE IF EXISTS todos");
+		onCreate(db);
+	}
+	
+	/**
+	 * Создаёт новый элемент списка дел. Если создан успешно - возвращается
+	 * номер строки rowId, иначе -1
+	 */
+	public long createNewTodo(String category, String summary,
+			String description) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues initialValues = createContentValues(category, summary,
+				description);
+		
+		long row = db.insert(DATABASE_TABLE, null, initialValues);
+		db.close();
+
+		return row;
+	}
+	
+	/**
+	 * Обновляет список
+	 */
+	public boolean updateTodo(long rowId, String category, String summary,
+			String description) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues updateValues = createContentValues(category, summary,
+				description);
+
+		return db.update(DATABASE_TABLE, updateValues, COLUMN_ID + "=" + rowId,
+				null) > 0;
+	}
+
+	/**
+	 * Удаляет элемент списка
+	 */
+	public void deleteTodo(long rowId) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		db.delete(DATABASE_TABLE, COLUMN_ID + "=" + rowId, null);
+		db.close();
+	}
+
+	/**
+	 * Возвращает курсор со всеми элементами списка дел
+	 * 
+	 * @return курсор с результатами всех записей
+	 */
+	public Cursor getAllTodos() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		return db.query(DATABASE_TABLE, new String[] { COLUMN_ID,
+				COLUMN_CATEGORY, COLUMN_SUMMARY, COLUMN_DESCRIPTION }, null,
+				null, null, null, null);
+	}
+
+	/**
+	 * Возвращает курсор с указанной записи
+	 */
+	public Cursor getTodo(long rowId) throws SQLException {
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor mCursor = db.query(true, DATABASE_TABLE,
+				new String[] { COLUMN_ID, COLUMN_CATEGORY, COLUMN_SUMMARY,
+						COLUMN_DESCRIPTION }, COLUMN_ID + "=" + rowId, null,
+				null, null, null, null);
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		return mCursor;
+	}
+	
+	/*
+	 * Создаёт пару ключ-значение и записывает в базу
+	 */
+	private ContentValues createContentValues(String category, String summary,
+			String description) {
+		ContentValues values = new ContentValues();
+		values.put(COLUMN_CATEGORY, category);
+		values.put(COLUMN_SUMMARY, summary);
+		values.put(COLUMN_DESCRIPTION, description);
+		return values;
+	}
+}
+</code></pre>
+
+<p>Займёмся основной активностью. Добавим элемент меню в <b>res/menu/main.xml</b> с текстом <b>Добавить</b>. Через этот пункт мы будем переходить на вторую активность, в которой можно будет добавить новую задачу:</p>
+
+<pre><code class="xml">
+&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+
+    &lt;item
+        android:id=&quot;@+id/action_settings&quot;
+        android:orderInCategory=&quot;100&quot;
+        android:showAsAction=&quot;never&quot;
+        android:title=&quot;@string/action_settings&quot;/&gt;
+    &lt;item
+        android:id=&quot;@+id/insert&quot;
+        android:title=&quot;Добавить&quot;&gt;
+    &lt;/item&gt;
+
+&lt;/menu&gt;
+</code></pre>
+
+<p>Добавим несколько строковых ресурсов в <b>res/values/strings.xml</b>:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+
+    &lt;string name=&quot;app_name&quot;&gt;ToDoDB&lt;/string&gt;
+    &lt;string name=&quot;action_settings&quot;&gt;Settings&lt;/string&gt;
+    &lt;string name=&quot;hello_world&quot;&gt;Hello world!&lt;/string&gt;
+
+    &lt;string-array name=&quot;priorities&quot;&gt;
+        &lt;item&gt;Срочные&lt;/item&gt;
+        &lt;item&gt;Напомнить&lt;/item&gt;
+    &lt;/string-array&gt;
+
+    &lt;string name=&quot;no_todos&quot;&gt;Нет текущих задач&lt;/string&gt;
+    &lt;string name=&quot;menu_insert&quot;&gt;Добавить&lt;/string&gt;
+    &lt;string name=&quot;menu_delete&quot;&gt;Удалить&lt;/string&gt;
+    &lt;string name=&quot;todo_summary&quot;&gt;Кратко&lt;/string&gt;
+    &lt;string name=&quot;todo_description&quot;&gt;Описание&lt;/string&gt;
+    &lt;string name=&quot;todo_confirm&quot;&gt;Применить&lt;/string&gt;
+
+    &lt;color name=&quot;listcolor&quot;&gt;#FFE87C&lt;/color&gt;
+    &lt;color name=&quot;black&quot;&gt;#000000&lt;/color&gt;
+
+&lt;/resources&gt;
+</code></pre>
+
+<p>Разметка для основной активности (список и текстовая метка, когда список пуст):</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:background=&quot;@color/listcolor&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;ListView
+        android:id=&quot;@android:id/list&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot; &gt;
+    &lt;/ListView&gt;
+
+    &lt;TextView
+        android:id=&quot;@android:id/empty&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;@string/no_todos&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Создадим разметку для отдельного элемента списка (list_row.xml):</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;wrap_content&quot; &gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/icon&quot;
+        android:layout_width=&quot;30dp&quot;
+        android:layout_height=&quot;40dp&quot;
+        android:layout_marginLeft=&quot;4dp&quot;
+        android:layout_marginRight=&quot;8dp&quot;
+        android:layout_marginTop=&quot;8dp&quot;
+        android:src=&quot;@drawable/ic_launcher&quot; &gt;
+    &lt;/ImageView&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/label&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginTop=&quot;6dp&quot;
+        android:text=&quot;&quot;
+        android:textColor=&quot;@color/black&quot;
+        android:textSize=&quot;30sp&quot; &gt;
+    &lt;/TextView&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Создадим вторую активность <b>EditActivity</b>, в которой будет происходить добавление новой задачи. Разметка для этой активности
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:background=&quot;@color/listcolor&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;Spinner
+        android:id=&quot;@+id/category&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:entries=&quot;@array/priorities&quot; &gt;
+    &lt;/Spinner&gt;
+
+    &lt;LinearLayout
+        android:id=&quot;@+id/LinearLayout01&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot; &gt;
+
+        &lt;EditText
+            android:id=&quot;@+id/todo_edit_summary&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;
+            android:hint=&quot;Кратко&quot; &gt;
+        &lt;/EditText&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;EditText
+        android:id=&quot;@+id/todo_edit_description&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;fill_parent&quot;
+        android:layout_weight=&quot;1&quot;
+        android:gravity=&quot;top&quot;
+        android:hint=&quot;Описание&quot; &gt;
+    &lt;/EditText&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/todo_edit_button&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;@string/todo_confirm&quot; &gt;
+    &lt;/Button&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Переходим к написанию кода. Сначала код для основной активности.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.todoold;
+
+import android.os.Bundle;
+import android.app.ListActivity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
+
+public class MainActivity extends ListActivity {
+
+	private ToDoDatabase dbHelper;
+	private static final int ACTIVITY_CREATE = 0;
+	private static final int ACTIVITY_EDIT = 1;
+	private static final int DELETE_ID = Menu.FIRST + 1;
+	private Cursor cursor;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		// setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main);
+		this.getListView().setDividerHeight(2);
+		dbHelper = new ToDoDatabase(this);
+
+		fillData();
+		registerForContextMenu(getListView());
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	// Реакция на выбор меню
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.insert:
+			createNewTask();
+			return true;
+		}
+		return super.onMenuItemSelected(featureId, item);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.insert:
+			createNewTask();
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case DELETE_ID:
+			AdapterContextMenuInfo info = (AdapterContextMenuInfo) item
+					.getMenuInfo();
+			dbHelper.deleteTodo(info.id);
+			fillData();
+			return true;
+		}
+		return super.onContextItemSelected(item);
+	}
+
+	private void createNewTask() {
+		Intent intent = new Intent(this, EditActivity.class);
+		startActivityForResult(intent, ACTIVITY_CREATE);
+	}
+
+	private void fillData() {
+		cursor = dbHelper.getAllTodos();
+		startManagingCursor(cursor);
+
+		String[] from = new String[] { ToDoDatabase.COLUMN_SUMMARY };
+		int[] to = new int[] { R.id.label };
+
+		// Теперь создадим адаптер массива и установим его для отображения наших
+		// данных
+		SimpleCursorAdapter notes = new SimpleCursorAdapter(this,
+				R.layout.list_row, cursor, from, to);
+		setListAdapter(notes);
+
+	}
+
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		Intent intent = new Intent(this, EditActivity.class);
+		intent.putExtra(ToDoDatabase.COLUMN_ID, id);
+		// активити вернет результат если будет вызвано с помощью этого метода
+		startActivityForResult(intent, ACTIVITY_EDIT);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode,
+			Intent intent) {
+		super.onActivityResult(requestCode, resultCode, intent);
+
+		if (resultCode == RESULT_OK) {
+			fillData();
+		}
+
+	}
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+		menu.add(0, DELETE_ID, 0, R.string.menu_delete);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		if (dbHelper != null) {
+			dbHelper.close();
+		}
+	}
+}
+</code></pre>
+
+<p>Осталось написать код для второй активности:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.todoold;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.database.Cursor;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+public class EditActivity extends Activity {
+
+	private EditText mTitleText;
+	private EditText mBodyText;
+	private Long mRowId;
+	private ToDoDatabase mDbHelper;
+	private Spinner mCategory;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		mDbHelper = new ToDoDatabase(this);
+
+		setContentView(R.layout.activity_edit);
+
+		mCategory = (Spinner) findViewById(R.id.category);
+		mTitleText = (EditText) findViewById(R.id.todo_edit_summary);
+		mBodyText = (EditText) findViewById(R.id.todo_edit_description);
+
+		Button confirmButton = (Button) findViewById(R.id.todo_edit_button);
+		mRowId = null;
+		Bundle extras = getIntent().getExtras();
+		
+		mRowId = (savedInstanceState == null) ? null
+				: (Long) savedInstanceState
+						.getSerializable(ToDoDatabase.COLUMN_ID);
+		if (extras != null) {
+			mRowId = extras.getLong(ToDoDatabase.COLUMN_ID);
+		}
+
+		populateFields();
+
+		confirmButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				if (TextUtils.isEmpty(mTitleText.getText().toString())) {
+					Toast.makeText(EditActivity.this, "Данные не введены",
+							Toast.LENGTH_LONG).show();
+				} else {
+					saveState();
+					setResult(RESULT_OK);
+					finish();
+				}
+			}
+		});
+	}
+
+	private void populateFields() {
+		if (mRowId != null) {
+			Cursor todo = mDbHelper.getTodo(mRowId);
+			startManagingCursor(todo);
+			String category = todo.getString(todo
+					.getColumnIndexOrThrow(ToDoDatabase.COLUMN_CATEGORY));
+
+			for (int i = 0; i &lt; mCategory.getCount(); i++) {
+
+				String s = (String) mCategory.getItemAtPosition(i);
+				Log.e(null, s + " " + category);
+				if (s.equalsIgnoreCase(category)) {
+					mCategory.setSelection(i);
+				}
+			}
+
+			mTitleText.setText(todo.getString(todo
+					.getColumnIndexOrThrow(ToDoDatabase.COLUMN_SUMMARY)));
+			mBodyText.setText(todo.getString(todo
+					.getColumnIndexOrThrow(ToDoDatabase.COLUMN_DESCRIPTION)));
+			todo.close();
+		}
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		//saveState();
+		//outState.putSerializable(ToDoDatabase.COLUMN_ID, mRowId);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		//saveState();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		populateFields();
+	}
+
+	private void saveState() {
+		String category = (String) mCategory.getSelectedItem();
+		String summary = mTitleText.getText().toString();
+		String description = mBodyText.getText().toString();
+
+		if (description.length() == 0 && summary.length() == 0) {
+			return;
+		}
+
+		if (mRowId == null) {
+			long id = mDbHelper.createNewTodo(category, summary, description);
+			if (id > 0) {
+				mRowId = id;
+			}
+		} else {
+			mDbHelper.updateTodo(mRowId, category, summary, description);
+		}
+	}
+}
+</code></pre>
+
+<p>Запускаем проект и тестируем.</p>
+
+<p><img src="todo1.png" alt="ToDo" width="240" height="400"> <img src="todo2.png" alt="ToDo" width="240" height="400"></p>
+
+<p>Если нужно удалить задачу из списка, то вызовите контекстное меню долгим нажатием и выберите пункт <b>Удалить</b>.</p>
+
+<p>Вы заметили, что в проекте появились зачёркнутые строчки кода у метода <b>startManagingCursor()</b> и конструктора <b>SimpleCursorAdapter</b>, которые говорят, что эти конструкции устарели.</p>
+
+<p>Примечание: В своё время я изучал этот пример, который попался на каком-то сайте. Позже я обнаружил, что на самом деле существует <a href="http://www.vogella.com/articles/AndroidSQLite/article.html">оригинал примера</a> на известном ресурсе. Кстати, сейчас у автора примера проект переделан под новую платформу Android 4 с использованием контент-провайдера. Позже мы дважды переделаем пример. Сначала избавимся от устаревших конструкций, а потом задействуем контент-провайдер.</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/sqlite/todo.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:02:37 GMT -->
+</html>

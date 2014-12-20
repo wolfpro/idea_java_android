@@ -1,0 +1,560 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/games/andengine/setup.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:20:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>AndEngine: Настройка</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+		  
+		  
+          
+		  <ul class="nav pull-right">
+                    <li id="fat-menu" class="dropdown">
+                      <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Вход <b class="caret"></b></a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                        
+                        <li><form action="http://developer.alexanderklimov.ru/blocks/testreg.php" method="post">
+						    	<fieldset id="inputs">
+		                        <input class="span2" id="username" type="email" name="login" placeholder="Ваш email адрес" required>   
+		                        <input class="span1" id="password" type="password" name="password" placeholder="Пароль" required>
+	                            </fieldset>
+	                            <fieldset id="actions">
+		                        <input type="submit" class="btn" id="submit" name="submit" value="Войти">
+		                        
+	                            </fieldset>
+                            </form></li>
+                      </ul>
+                    </li>
+                  </ul>
+
+
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->
+	
+<div class="clearfix"></div><noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../../index-2.html">Главная</a></li>
+<li class=""><a href="../../theory/index.html">Теория</a></li>
+<li class=""><a href="../../views.html">Palette</a></li>
+<li class=""><a href="../../listview/index.html">ListView</a></li>
+<li class=""><a href="../../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../../animation.html">Анимация</a></li>
+<li class=""><a href="../../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../../library/index.html">Библиотеки</a></li>
+<li class="active"><a href="../index.html">Игры</a></li>
+<li class=""><a href="../../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../../tips-android.html">Советы</a></li>
+<li class=""><a href="../../articles-android.html">Статьи</a></li>
+<li class=""><a href="../../books.html">Книги</a></li>
+<li class=""><a href="../../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../../design/index.html">Дизайн</a></li>
+<li class=""><a href="../../opensource.html">Open Source</a></li>
+<li class=""><a href="../../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Регистрация</h3>
+            </div>
+            <div class="modal-body">
+            
+<p>Полный текст статьи и исходники программы доступны только зарегистрированным участникам сайта.</p>
+
+<p>Стоимость регистрации - символические 210 рублей.</p>
+
+<p>Для регистрации сначала необходимо пополнить Яндекс.Кошелек - 410011383280263 на указанную сумму (или Webmoney-кошелек R390884954122 или QIWI - 9055113963 (кошелек, не на счёт телефона!)), а затем прислать письмо на адрес rusproject@mail.ru или alexander.klimoff@gmail.com с указанием, на какой кошелек вы делали оплату и реквизиты, по которым можно вас определить.</p>
+
+<p>Не присылайте в письме мои номера кошельков - поверьте, я их знаю и без вас.</p>
+
+<p>В ответном письме вы получите учётные данные для чтения статей из закрытой зоны за второй месяц.</p>
+
+<p>Доступ к третьему месяцу обучения доступен только после оплаты второго месяца и составляет 210 руб.</p>
+
+<p>Доступ к чётвертому месяцу обучения доступен после оплаты третьего месяца и составляет 210 руб. и т.д.</p>
+
+<p>При оплате сразу четырех месяцев (2-5) - стоимость 800 руб, пяти месяцев (2-6) - 1000 руб.</p>
+
+<p>Также возможен приём на PayPal. Обратите внимание, что в этом случае стоимость одного месяца составляет 8$.</p>
+
+<p>Доступ даётся как минимум на один год. Для тех, кто оплатил третий и другие месяцы, сроки доступа увеличиваются.</p>
+
+<p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="VRED2NRVE927N">
+<input type="image" src="../../../../www.paypalobjects.com/ru_RU/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal — более безопасный и легкий способ оплаты через Интернет!">
+<img alt="" border="0" src="../../../../www.paypalobjects.com/ru_RU/i/scr/pixel.html" width="1" height="1">
+</form>
+</p>			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">AndEngine: Настройка</h1>
+
+<p>Вы вошли на сайт, как гость.<br><a href='register.html'>Необходимо зарегистрироваться</a>, чтобы прочитать статью</p>
+
+<p>Приступим к первоначальной настройке, чтобы начать пользоваться движком AndEngine.</p>
+
+
+
+
+
+
+: This is in place to handle the order of execution of the next three 
+callbacks in the AndEngine life cycle.
+  f onCreateResources: This method allows us to declare and defne our application's 
+initial resources needed during the launch of our activity. These resources include, 
+but are not limited to, textures, sounds and music, and fonts.
+onCreateScene: Here, we handle the initialization of our activity's Scene 
+object. It is possible to attach entities to the Scene within this method, but for 
+the sake of keeping things organized, it's usually best to attach entities within 
+onPopulateScene().
+  f onPopulateScene: In the onPopuplateScene() method of the life cycle we are 
+just about fnished setting up the scene, though there are still a few life cycle calls 
+which will be handled automatically by the Engine. This method should be used to 
+defne the visual result of the Scene when our application frst starts up. Note that 
+the Scene is already created and applied to the Engine at this point. It is possible 
+in some cases to see the entities being attached to the Scene if there is no loading 
+screen or splash screen in place and if there are a large number of entities to attach.
+  f onGameCreated: It signals that the onCreateGame() sequence has fnished, 
+reloading resources if necessary, otherwise doing nothing. Reloading resources 
+depends on the Boolean variable briefy mentioned in the onSurfaceCreated 
+method fve life cycle calls back.
+  f onSurfaceChanged: This method is called every time our application's orientation 
+changes from landscape to portrait mode or vice versa.
+  f onResumeGame: Here we have the fnal method call which takes place during an 
+activity's startup cycle. If our activity reaches this point without any problems, the 
+engine's start() method is called, bringing the game's update thread to life.
+
+The life cycle calls during minimization/termination are as follows: 
+  f onPause: The frst method call when an activity is minimized or terminated. 
+This is the native android pause method which calls the pause method for the 
+RenderSurfaceView objects and reverts the wake lock settings applied by the 
+game engine.
+onPauseGame:  Next, AndEngine's implementation of onPause() which simply calls 
+the stop() method on the Engine, causing all of the Engine's update handlers to 
+halt along with the update thread.
+  f onDestroy: In the onDestroy() method, AndEngine clears all graphical resources 
+contained within ArrayList objects held by the Engine's manager classes. These 
+managers include the VertexBufferObjectManager class, the FontManager 
+class, the ShaderProgramManager class, and fnally the TextureManager class.
+  f onDestroyResources: This method name may be a little misleading since  
+we've already unloaded the majority of resources in onDestroy(). What this 
+method really does is release all of the sound and music objects stored within  
+the respective managers by calling their releaseAll() methods.
+  f onGameDestroyed: Finally, we reach the last method call required during a full 
+AndEngine life cycle. Not a whole lot of action takes place in this method. AndEngine 
+simply sets an mGameCreated Boolean variable used in the Engine to false, which 
+states that the activity is no longer running. 
+
+In the previous section of this recipe, we covered the main BaseGameActivity class.  
+The following classes can be used as alternatives to the BaseGameActivity class,  
+each providing their own slight differences
+
+The LayoutGameActivity class
+The LayoutGameActivity class is a useful activity class that allows us to incorporate the 
+AndEngine scene-graph view into an ordinary Android application. On the other hand, with 
+this class we are also able to include native Android SDK views, such as buttons, seek bars, 
+spinners, additional layouts, or any other view into our game. However, the most popular 
+reason for using this sort of activity is to allow easy implementation of advertisements into 
+games for a means to gain revenue. 
+There are a few additional steps for setting up a LayoutGameActivity class.
+
+Add the following line to the project's default layout XML fle. This fle is usually called 
+main.xml. The following code snippet adds the AndEngine RenderSurfaceView 
+class to our layout fle. This is the view that will display our game on the device: 
+<org.andengine.opengl.view.RenderSurfaceView
+android:id="@+id/gameSurfaceView"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"/>
+
+The second and fnal additional step for this activity type is to reference the layout 
+XML fle and RenderSurfaceView in step one, in the LayoutGameActivity 
+overridden methods. The following code is assuming the layout fle is called main.
+xml in the res/layout/ folder; in which case they can be copied/pasted into our 
+LayoutGameActivity class after step one has been completed:
+@Override
+protected int getLayoutID() {
+  return R.layout.main;
+}
+@Override
+protected int getRenderSurfaceViewID() {
+  return R.id.gameSurfaceView;
+}
+
+The SimpleBaseGameActivity and SimpleLayoutGameActivity 
+classes
+The SimpleBaseGameActivity and the SimpleLayoutGameActivity classes, as 
+suggested, make the overridden life cycle methods somewhat easier to deal with. They do 
+not require us to override the onPopulateScene() method and on top of that, we are not 
+required to make calls to the method callbacks when we are fnished defning the overridden 
+methods. With these activity types, we can simply add the unimplemented life cycle methods 
+and AndEngine will handle the callbacks for us
+
+The SimpleAsyncGameActivity class
+The fnal game activity class we will talk about is the SimpleAsyncGameActivity class. 
+This class includes three alternative life cycle methods called onCreateResourcesAsync(), 
+onCreateSceneAsync(), and onPopulateSceneAsync() along with the usual 
+onCreateEngineOptions() method. The main difference between this activity and others 
+is that it provides us with loading bars for each of the "Async" methods. The following snippet 
+shows how we can increment the loading bar in the event of a texture being loaded:
+@Override
+public void onCreateResourcesAsync(IProgressListener 
+pProgressListener)
+    throws Exception {
+  // Load texture number one
+  pProgressListener.onProgressChanged(10);
+  // Load texture number two
+  pProgressListener.onProgressChanged(20);
+  // Load texture number three
+  pProgressListener.onProgressChanged(30);
+  // We can continue to set progress to whichever value we'd like
+  // for each additional step through onCreateResourcesAsync...
+}
+
+Choosing our engine type
+Before we start programming our game, it is a good idea to come up with the performance needs 
+of the game. AndEngine includes a few different types of engines we can choose to use, each 
+with their own benefts. The benefts, of course, depend on the type of game we plan to create.
+
+In order for us to properly defne a specifc Engine object for our game to use, we must 
+override the onCreateEngine() method, which is part of AndEngine's startup process.  
+Add the following code to any base AndEngine activity in order to handle the Engine's  
+creation manually:
+/* The onCreateEngine method allows us to return a 'customized' Engine 
+object
+* to the Activity which for the most part affects the way frame 
+updates are 
+* handled. Depending on the Engine object used, the overall feel of 
+the 
+* gameplay can alter drastically. 
+*/
+@Override
+public Engine onCreateEngine(EngineOptions pEngineOptions) {
+  return super.onCreateEngine(pEngineOptions);
+  /* The returned super method above simply calls:
+      return new Engine(pEngineOptions);
+  */
+}
+
+The following is an overview of the various Engine objects available in AndEngine, as well as 
+a brief code snippet displaying how to set up each of the Engine objects:
+  f Engine: First and foremost, we have the ordinary Engine object. The Engine  
+object is not ideal for most game development as it has absolutely no limitations 
+in regards to frames per second. On two separate devices, it is very likely that you 
+will notice differences in the speed of the game. One way to think of this is if two 
+separate devices are watching a video which was started at the same time, the  
+faster device is likely to fnish the video frst rather than both fnishing at the same 
+time. For this reason, noticeable issues can arise in devices which might not run as 
+fast, especially when physics are a big part of the game. There are no extra steps 
+involved in incorporating this type of engine into our game.
+
+FixedStepEngine: The second type of engine we have at our disposal is the 
+FixedStepEngine. This is the ideal engine used in game development as it forces 
+the game loop to update at a constant speed regardless of the device. This is done 
+by updating the game based on the time passed rather than the device's ability to 
+execute code faster. FixedStepEngine requires us to pass the EngineOptions 
+object, as well as an int value, in that order. The int value defnes the number of 
+steps per second that the engine will be forced to run at. The following code creates 
+an engine that will run at a constant 60 steps per second:
+@Override
+public Engine onCreateEngine(EngineOptions pEngineOptions) {
+  // Create a fixed step engine updating at 60 steps per second
+    return new FixedStepEngine(pEngineOptions, 60);
+  }
+  
+LimitedFPSEngine: The LimitedFPSEngine engine allows us to set a limit on 
+the frames per second that the Engine will run at. This will cause the Engine to do 
+some internal calculations, and if the difference between the preferred FPS is greater 
+than the current FPS that the Engine is achieving, the Engine will wait a fraction of a 
+second before proceeding with the next update. LimitedFPSEngine requires two 
+parameters in the constructor, including the EngineOptions object and an int 
+value specifying the maximum frames per second. The following code creates an 
+engine that will run at a maximum of 60 frames per second:
+@Override
+public Engine onCreateEngine(EngineOptions pEngineOptions) {
+  // Create a limited FPS engine, which will run at a maximum of 
+60 FPS
+  return new LimitedFPSEngine(pEngineOptions, 60);
+}
+
+SingleSceneSplitScreenEngine and DoubleSceneSplitScreenEngine: 
+The SingleSceneSplitScreenEngine engine and 
+DoubleSceneSplitScreenEngine engine allow us to create a game with two 
+separate cameras, either with a single scene, most generally used for single player 
+games, or two scenes for multiplayer games on a single device. These are just 
+examples, however, but these two engine's can have a wide range of uses, including 
+mini-maps, multiple perspectives, menu systems, and much more. See Chapter 4, 
+Creating a Split-screen Game, for more specifc details on setting up these types of 
+Engine objects. 
+
+Selecting a resolution policy
+Choosing a resolution policy can be a sensitive topic, especially since we're dealing with a 
+platform which currently runs on devices ranging from 3-inch displays up to 10.1-inch for the 
+most part. Generally developers and users alike prefer that a game takes up the full width and 
+height of the device's display, but in some cases our resolution policy may need to be carefully 
+selected in order to properly display our scenes as we—the developer—see ft. In this recipe, 
+we're going to discuss the various resolution policies included in AndEngine, which will help  
+us decide which policy might best ft our application's needs.
+How to do it…
+The resolution policy that we choose to adhere to must be included as a parameter in the 
+EngineOptions constructor which is created in the onCreateEngineOptions() method 
+of AndEngine's life cycle. The following code creates our EngineOptions object using the 
+FillResolutionPolicy class, which will be explained later in the chapter:
+EngineOptions engineOptions = new EngineOptions(true,
+    ScreenOrientation.LANDSCAPE_FIXED, new FillResolutionPolicy(),
+    mCamera); 
+We can select a different resolution policy by simply passing another variation of the 
+resolution policy classes to this constructor.
+
+The following is an overview of AndEngine's BaseResolutionPolicy subtypes. These 
+policies are used to specify how AndEngine will handle our application's display width and 
+height based on various factors:
+  f FillResolutionPolicy: The FillResolutionPolicy class is the typical 
+resolution policy if we simply want our application to take up the full width and height 
+of the display. While this policy allows our application to run in true full screen mode, 
+it may cause some noticeable stretching in order for our scene to take up the full 
+available dimensions of the display. We can select this resolution policy by simply 
+including new FillResolutionPolicy() as our resolution policy parameter in 
+the EngineOptions constructor.
+
+FixedResolutionPolicy: The FixedResolutionPolicy class allows us to 
+apply a fxed display size for our application, regardless of the size of the device's 
+display or Camera object dimensions. This policy can be passed to EngineOptions 
+via new FixedResolutionPolicy(pWidth, pHeight), where pWidth defnes 
+the fnal width that the application's view will cover, and pHeight defnes the fnal 
+height that the application's view will cover. For example, if we pass a width of 800 
+and a height of 480 to this policy-types constructor, on a tablet with a resolution  
+of 1280 x 752, we'd be left with an empty black area since there will be  
+no compensation between the resolution policy and the actual display size.
+  f RatioResolutionPolicy: The RatioResolutionPolicy class is the best 
+choice for resolution policies if we need to obtain the maximum display size without 
+causing any distortion of sprites. On the other hand, due to the wide range of 
+Android devices spanning many display sizes, it is possible that some devices may 
+see "black bars" either on the top and bottom, or left and right sides of the display. 
+This resolution policy's constructor can be passed either a float value, which 
+defnes a preferred ratio value for the display dimensions, or a width and a height 
+parameter from which a ratio value will be extracted by dividing the width by the 
+height. For example, new RatioResolutionPolicy(1.6f) to defne a ratio, or 
+new RatioResolutionPolicy(mCameraWidth, mCameraHeight), assuming 
+mCameraWidth and mCameraHeight are the defned Camera object dimensions.
+
+RelativeResolutionPolicy: This is the fnal resolution policy. This policy allows 
+us to apply scaling, either larger or smaller, to the overall application view based 
+on a scaling factor with 1f being the default value. We can apply general scaling 
+to the view with the constructor—new RelativeResolutionPolicy(1.5f)—
+which will increase the scale of both the width and height by 1.5 times, 
+or we can specify individual width and height scales, for example, new 
+RelativeResolutionPolicy(1.5f, 0.5f). One thing to note with this policy 
+is that we must be careful with the scaling factors, as scaling too large will cause an 
+application to close without warning. Try to keep the scaling factor to less than 1.8f; 
+otherwise make sure to do extensive testing on various devices
+
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../../assets/js/jquery.js"></script>
+    <script src="../../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../../assets/js/bootstrap-button.js"></script>
+    <script src="../../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/games/andengine/setup.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:20:32 GMT -->
+</html>

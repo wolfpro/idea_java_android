@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/sqlite/simplydatabase.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:02:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Простейшая база данных. Часть первая</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class="active"><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Простейшая база данных. Часть первая</h1>
+
+<p>Основная проблема для новичков при изучении базы данных SQLite - обильное количество кода, от которого разбегаются глаза. Поэтому создаётся впечатление, что это очень сложно и не доступно простым смертным. Попробуем написать самое простое приложение с использованием базы данных, отсекая лишние детали. Рассмотрим процесс поэтапно, шаг за шагом.</p>
+
+<p>Наша цель - создать базу данных, внести в неё данные и прочитать эти данные путём вывода результатов чтения на экран.</p>
+
+<p>Для взаимодействия с базой данных нам будет достаточно кнопки и текстового поля TextView, в которой будем выводить результат считывания данных.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;Button
+        android:id=&quot;@+id/button1&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:onClick=&quot;onClick&quot;
+        android:text=&quot;Запрос к базе данных&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/textView1&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:textAppearance=&quot;?android:attr/textAppearanceLarge&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Пока ничего страшного. Разметка как разметка. Можно ещё добавить ImageView с изображением симпатичного котика, чтобы окончательно успокоиться.</p>
+
+<h2 class="text-warning">Вспомогательный класс для работы с базой данных</h2>
+
+<p>Теперь чуть напрягитесь. При работе с базой данной принято создавать отдельный класс. Обычно, в проекте у нас уже есть один класс <b>MainActivity</b>, который относится к активности. А теперь будет два класса. Только второй класс будет наследоваться не от класса <b>Activity</b> (помните строчку <b>extends Activity</b>?), а от класса <b>SQLiteOpenHelper</b>.</p>
+
+<p>Выбираем в меню <b>File</b> | <b>New</b> | <b>Class</b> и в диалоговом окне выбираем имя для нового класса, например, <b>DatabaseHelper</b>. Слово <b>Helper</b> обычно используют, чтобы показать, что класс является обёрткой (вспомогательным классом) какого-то абстрактного класса. Впрочем, вы можете придумать более замысловатое название, например, <b>ILoveNewYork</b> или <b>CatsForever</b>. Спустя год, когда вы вернётесь к своему примеру, это будет так увлекательно вспоминать, для чего был создан класс с таким красивым именем.</p>
+
+<p>В том же диалоговом окне в поле <b>Superclass</b> нужно указать имя суперкласса <b>SQLiteOpenHelper</b>. Нажимаем кнопку <b>Browse</b> и ищем нужный класс.</p>
+
+<p><a href="http://fotki.yandex.ru/users/netsources/view/575879/"><img src="../../../img-fotki.yandex.ru/get/9255/27875755.11/0_8c987_4241bf9d_L.png" width="425" height="500" title="" alt="" border="0"/></a></p>
+
+<p>У нас появится заготовка. Причём имя класса будет подчёркнуто красной чертой, сообщая о необходимости добавления конструкторов. Опять идём в меню <b>Source</b> | <b>Generate Constructors from Superclass...</b> и добавляем два конструктора в заготовку. Получится такой код.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import android.content.Context;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class DatabaseHelper extends SQLiteOpenHelper {
+
+	public DatabaseHelper(Context context, String name, CursorFactory factory,
+			int version, DatabaseErrorHandler errorHandler) {
+		super(context, name, factory, version, errorHandler);
+		// TODO Auto-generated constructor stub
+	}
+
+	public DatabaseHelper(Context context, String name, CursorFactory factory,
+			int version) {
+		super(context, name, factory, version);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase arg0, int arg1, int arg2) {
+		// TODO Auto-generated method stub
+
+	}
+}
+</code></pre>
+
+<p>Внесём косметические изменения. По умолчанию Eclipse формирует для методов аргументы в виде имён arg0, arg1, arg2. Не слишком информативно. Так исторически сложилось, что программисты сразу меняют имена на более говорящие.</p>
+
+<pre><code class="java">
+@Override
+public void onCreate(SQLiteDatabase db) {
+	// TODO Auto-generated method stub
+
+}
+
+@Override
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+	// TODO Auto-generated method stub
+
+}
+</code></pre>
+
+<p>Советую вам поступать также, нужно запомнить всего три слова <b>db</b>, <b>oldVersion</b> и <b>newVersion</b>, это несложно.</p>
+
+<p>Во многих примерах в сети я видел также, что в класс добавляется ещё один конструктор с двумя константами, который является упрощённым вариантом второго конструктора. Позже я покажу его удобство.</p>
+
+<pre><code class="java">
+private static final String DATABASE_NAME = "mydatabase.db";
+private static final int DATABASE_VERSION = 1;
+
+DatabaseHelper(Context context) {
+    super(context, DATABASE_NAME, null, DATABASE_VERSION);
+}
+</code></pre>
+
+<p>Дальше идёт наполнение класса данными. В первую очередь нам нужно определиться с именем таблицы в этой базе данных. Это обычные строки. Поэтому создаём строковую константу для этой переменной на уровне класса.<p>
+
+<pre><code class="java">
+private static final String DATABASE_TABLE = "cats";
+</code></pre>
+
+<p>Когда ваше приложение будет готово, то в папке <b>data/data/имя_пакета/databases</b> появится файл <b>mydatabase.db</b> (позже я вам покажу). Этот файл и будет вашей базой данных, в которой будет находиться таблица <b>cats</b>. Таблицы можно просматривать с помощью специальных утилит и плагинов Eclipse.</p>
+
+<p>Таблица состоит из колонок. Приложение будет обращаться к колонкам для извлечения данных, поэтому создадим публичные константы для колонок с понятными именами. Наша таблица будет состоять из трёх колонок: имя кота, его телефон и возраст.</p>
+
+<pre><code class="java">
+public static final String CAT_NAME_COLUMN = "cat_name";
+public static final String PHONE_COLUMN = "phone";
+public static final String AGE_COLUMN = "age";
+</code></pre>
+
+<p>Следующим приёмом редко пользуются, но я вам его покажу. Добавим реализацию класса <b>BaseColumn</b>:</p>
+
+<pre><code class="java">
+public class DatabaseHelper extends SQLiteOpenHelper <b>implements BaseColumns</b> {
+</code></pre>
+
+<p>Что это нам даёт? В большинстве случаев работа с базой данных происходит через специальные объекты <b>Cursor</b>, которые требуют наличия в таблице колонки с именем <b>_id</b> (четвёртая колонка в нашем примере). Вы можете создать колонку вручную в коде, а можно положиться на <b>BaseColumn</b>, который создаст колонку автоматически. Дело ваше. Если вы не будете работать с курсорами, то можете использовать и стандартное наименование <b>id</b> или вообще не использовать данную колонку, но не советую так поступать, чтобы не вырабатывать вредных привычек.</p>
+
+<p>Теперь перейдём к методам и начнём с метода <b>onCreate()</b>, который вызывается, если в устройстве нет базы данных и наш класс должен создать его. Как мы помним, у метода есть параметр <b>db</b>, который относится к классу <b>SQLiteDatabase</b>. У класса есть специальный метод <b>execSQL()</b>, которому нужно передать строку (SQL-скрипт) для создания таблицы. Так как строка очень длинная и состоит из множества строковых переменных, которые нужно соединить в одну цепочку, то поступают следующим образом. Создадим ещё одну строковую константу для формирования скрипта и её передадим в метод.</p>
+
+<pre><code class="java">
+private static final String DATABASE_CREATE_SCRIPT = "create table "
+		+ DATABASE_TABLE + " (" + BaseColumns._ID
+		+ " integer primary key autoincrement, " + CAT_NAME_COLUMN
+		+ " text not null, " + PHONE_COLUMN + " integer, " + AGE_COLUMN
+		+ " integer);";
+        
+@Override
+public void onCreate(SQLiteDatabase db) {
+	// TODO Auto-generated method stub
+	db.execSQL(DATABASE_CREATE_SCRIPT);
+}
+</code></pre>
+
+<p>Основная сложность - не пропустить пробелы. Очень часто пропущенный пробел становится источником проблем и ваше приложение не может создать таблицу. Рекомендую после создания переменной подвести курсор к её имени и дождаться появления подсказки.</p>
+
+<p><a href="http://fotki.yandex.ru/users/netsources/view/575880/"><img src="../../../img-fotki.yandex.ru/get/6703/27875755.11/0_8c988_1a5e65c5_L.png" width="500" height="171" title="" alt="" border="0"/></a></p>
+
+<p>Второй вариант - сначала написать сам скрипт создания таблицы, а уже потом заменять отдельные слова константами. Идентификатор <b>_id</b> всегда должен использовать <i>integer primary key autoincrement</i>, остальные колонки на ваше усмотрение. В примере я специально использовал два разных варианта - <b>text</b> и <b>integer</b>.</p>
+
+<p>Второй метод <b>onUpgrade()</b> вызывается при несовпадении версий. Часто в этом методе просто удаляют существующую таблицу и заменяют её на новую. Это самое простое и практичное решение. Впрочем, на первых порах, вам вряд ли придётся заниматься подобными делами, поэтому метод можно оставить даже пустым.</p>
+
+<pre><code class="java">
+@Override
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+	// TODO Auto-generated method stub
+	// Запишем в журнал
+	Log.w("SQLite", "Обновляемся с версии " + oldVersion + " на версию " + newVersion);
+	
+	// Удаляем старую таблицу и создаём новую
+	db.execSQL("DROP TABLE IF IT EXIST " + DATABASE_TABLE);
+	// Создаём новую таблицу
+	onCreate(db);
+}
+</code></pre>
+
+<p>Полностью код будет следующим:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import android.content.Context;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.BaseColumns;
+import android.util.Log;
+
+public class DatabaseHelper extends SQLiteOpenHelper implements BaseColumns {
+
+	private static final String DATABASE_NAME = "mydatabase.db";
+	private static final String DATABASE_TABLE = "cats";
+
+	public static final String CAT_NAME_COLUMN = "cat_name";
+	public static final String PHONE_COLUMN = "phone";
+	public static final String AGE_COLUMN = "age";
+
+	private static final String DATABASE_CREATE_SCRIPT = "create table "
+			+ DATABASE_TABLE + " (" + BaseColumns._ID
+			+ " integer primary key autoincrement, " + CAT_NAME_COLUMN
+			+ " text not null, " + PHONE_COLUMN + " integer, " + AGE_COLUMN
+			+ " integer);";
+
+	public DatabaseHelper(Context context, String name, CursorFactory factory,
+			int version, DatabaseErrorHandler errorHandler) {
+		super(context, name, factory, version, errorHandler);
+		// TODO Auto-generated constructor stub
+	}
+
+	public DatabaseHelper(Context context, String name, CursorFactory factory,
+			int version) {
+		super(context, name, factory, version);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		// TODO Auto-generated method stub
+		db.execSQL(DATABASE_CREATE_SCRIPT);
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		// TODO Auto-generated method stub
+		// Запишем в журнал
+		Log.w("SQLite", "Обновляемся с версии " + oldVersion + " на версию " + newVersion);
+		
+		// Удаляем старую таблицу и создаём новую
+		db.execSQL("DROP TABLE IF IT EXIST " + DATABASE_TABLE);
+		// Создаём новую таблицу
+		onCreate(db);
+	}
+}
+</code></pre>
+
+<p>Переходим к главной активности и напишем код для кнопки</p>
+
+<pre><code class="java">
+DatabaseHelper dbHelper;
+
+public void onClick(View v) {
+	dbHelper = new DatabaseHelper(this, "mydatabase.db", null, 1);
+	SQLiteDatabase sdb;
+	sdb = dbHelper.getReadableDatabase();
+}
+</code></pre>
+
+<p>Мы использовали второй конструктор из примера, но можно было написать и <b>new DatabaseHelper(this)</b> с использованием упрощённого конструктора, о котором я вам говорил выше. Таким образом, вы можете перенести логику создания базы в отдельный класс.</p>
+
+<p>Нажав на кнопку, вы создадите на устройстве базу данных. Убедиться в этом можно, если откроете перспективу DDMS и в File Explorer найдёте своё приложение. Вы увидите, что появилась папка <b>data/data/имя_пакета/databases</b> с файлом <b>mydatabase.db</b>. Метод <b>getReadableDatabase</b> создаёт или открывает базу данных.</p>
+
+<p>Сейчас база данных пуста. Поступим следующим образом. Перенесём код для открытия базы данных в метод <b>onCreate()</b> и там же добавим новую запись. А при нажатии кнопки получим добавленную запись и выведем её в текстовом блоке.</p>
+
+<pre><code class="java">
+DatabaseHelper dbHelper;
+SQLiteDatabase sdb;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+
+	setContentView(R.layout.activity_main);
+
+	dbHelper = new DatabaseHelper(this, "mydatabase.db", null, 1);
+
+	sdb = dbHelper.getWritableDatabase();
+
+	ContentValues newValues = new ContentValues();
+	// Задайте значения для каждой строки.
+	newValues.put(dbHelper.CAT_NAME_COLUMN, "Рыжик");
+	newValues.put(dbHelper.PHONE_COLUMN, "4954553443");
+	newValues.put(dbHelper.AGE_COLUMN, "5");
+	// Вставляем данные в базу
+	sdb.insert("cats", null, newValues);
+
+}
+
+public void onClick(View v) {
+	Cursor cursor = sdb.query("cats", new String[] {dbHelper.CAT_NAME_COLUMN, dbHelper.PHONE_COLUMN, dbHelper.AGE_COLUMN}, 
+		    null, null, 
+		    null, null, null) ;
+	
+	cursor.moveToFirst();
+	
+	String catname = cursor.getString(cursor.getColumnIndex(dbHelper.CAT_NAME_COLUMN));
+	int phonenumber = cursor.getInt(cursor.getColumnIndex(dbHelper.PHONE_COLUMN));
+	int age = cursor.getInt(cursor.getColumnIndex(dbHelper.AGE_COLUMN));
+	
+	TextView tvInfo = (TextView)findViewById(R.id.textView1);
+	tvInfo.setText("Кот " + catname + " имеет телефон " + phonenumber + " и ему " + age + " лет");
+}
+</code></pre>
+
+<p>Для вставки сначала подготавливаются данные с помощью <b>ContentValues</b>. Вы указываете колонку таблицы и сами данные. Когда подготовите все данные во все колонки, то вызываете метод <b>insert()</b>, который сразу раскидает данные по колонкам.</p>
+
+<p>Существует также другой способ вставки через метод <b>execSQL()</b>, когда подготавливается нужная строка и запускается скрипт. Этот способ возможно понравится PHP-кодерам, которые привыкли к такому синтаксису.</p>
+
+<pre><code class="java">
+// Абстрактный пример
+db = new DatabaseHelper(this);
+SQLiteDatabase sqdb = db.getWritableDatabase();
+
+String insertQuery = "INSERT INTO " + 
+        DatabaseHelper.DATABASE_TABLE + 
+        " (" + DatabaseHelper.NAME + ") VALUES ('Васька')";
+sqdb.execSQL(insertQuery);
+</code></pre>
+
+<p>А извлечение данных происходит через метод <b>query()</b>. Данные хранятся в наборе строк, которые можно представить в виде таблицы. Из этой таблицы вы уже можете извлечь конкретное значение.</p>
+
+<p><img src="simplydatabase3.png" alt="Запрос к базе данных"></p>
+
+<p>Разобравшись с базовым примером, вам будет проще понять другие примеры, связанные с базой данных. Существуют различные приёмы и техники, упрощающие работу с базой данных - вспомогательные классы-обёртки в качестве адаптеров, обёртки для методов вставки и извлечения данных и т.д. Но основа будет такая же, как у нашего примера.</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/sqlite/simplydatabase.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:02:29 GMT -->
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/contentprovider.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Content provider (Контент-провайдер)</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Content provider (Контент-провайдер)</h1>
+
+<p>
+<a href="#intro">Что такое контент-провайдер</a><br>
+<a href="#inbuild">Встроенные поставщики</a><br>
+<a href="#architech">Создание собственного контент-провайдера</a><br>
+<a href="#structure">Структура унифицированных идентификаторов содержимого (Content URI)</a><br>
+<a href="#mime">Структурирование МIМЕ-типов в Android</a><br>
+</p>
+
+<h2 class="text-warning" id="intro">Что такое контент-провайдер</h2>
+
+<p>Контент-провайдер или Поставщик содержимого  (content provider) - это оболочка (wrapper), в которую заключены данные. Если ваше приложение использует базу данных SQLite, то только ваше приложение имеет к ней доступ. Но бывают ситуации, когда данные желательно сделать общими. Простой пример - ваши контакты из телефонной книги тоже содержатся в базе данных, но вы хотите иметь доступ к данным, чтобы ваше приложение тоже могло выводить список контактов. Так как вы не имеете доступа к базе данных чужого приложения, был придуман специальный механизм, позволяющий делиться своими данными всем желающим.</p>
+
+<p>Поставщик содержимого применяется лишь в тех  случаях, когда вы хотите использовать данные совместно с другими приложениями, работающих в устройстве. Но даже если вы не планируете сейчас делиться данными, то всё-равно можно подумать об реализации этого способа на всякий случай.</p>
+
+<p><img src="contentprovider.png" alt="Content provider"></p>
+
+<p>В Android существует возможность выражения источников данных (или поставщиков данных) при помощи передачи состояния представления - REST, в  виде абстракций, называемых поставщиками содержимого. Базу данных SQLite можно заключить в поставщик содержимого. Чтобы получить данные из поставщика содержимого или сохранить в нём новую информацию, нужно использовать набор REST-подобных идентификаторов URI. Например, если бы вам было нужно получить набор книг из поставщика содержимого, в котором заключена электронная библиотека, вам понадобился бы такой URI:</p>
+
+<pre>
+content://com.android.book.BookProvider/books
+</pre>
+
+<p>Чтобы получить из библиотеки конкретную книгу (например, книгу №23), будет использоваться следующий URI:</p>
+<pre>
+content://com.android.book.BookProvider/books/23
+</pre>
+
+<p>Любая программа, работающая в устройстве, может использовать такие URI для доступа к данным и осуществления с ними определенных операций. Следовательно, поставщики содержимого играют важную роль при совместном использовании данных несколькими приложениями.</p>
+
+<h2 class="text-warning" id="inbuild">Встроенные поставщики</h2>
+
+<p>В Android используются встроенные поставщики содержимого (пакет <b>android.provider</b>). Вот неполный список поставщиков содержимого:</p>
+
+<ul>
+<li>Browser</li>
+<li>CallLog</li>
+<li>Contacts</li>
+    <ul>
+	<li>People</li>
+	<li>Phones</li>
+	<li>Photos</li>
+	<li>Groups</li>
+	</ul>
+<li>MediaStore</li>
+    <ul>
+	<li>Audio</li>
+	    <ul>
+	    <li>Albums</li>
+	    <li>Artists</li>
+	    <li>Genres</li>
+	    <li>Playlists</li>
+		</ul>
+	<li>Images</li>
+        <ul>
+	    <li>Thumbnails</li>
+		</ul>
+	<li>Video</li>
+	</ul>
+<li>Settings</li>
+</ul>
+
+<p>На верхних уровнях иерархии располагаются базы данных, на нижних - таблицы. Так, Browser, СаllLog, Contacts, MediaStore и Settings - это отдельные базы данных SQLite, инкапсулированные в форме поставщиков. Обычно такие базы данных SQLite имеют расширение DB и доступ к ним открыт только из специальных пакетов реализации (implerentation package). Любой доступ к базе данных из-за пределов этого пакета осуществляется через интерфейс поставщика содержимого.</p>
+
+<h2 class="text-warning" id="architech">Создание собственного контент-провайдера</h2>
+
+<p>Для создания собственного контент-провайдера нужно унаследоваться от абстрактного класса <b>ContentProvider</b>:</p>
+
+<pre><code class="java">
+public class MyContentProvider extends ContentProvider {
+}
+</code></pre>
+
+<p>В классе необходимо реализовать абстрактные методы <b>query()</b>, <b>insert()</b>, <b>update()</b>, <b>delete()</b>, <b>getType()</b>, <b>onCreate()</b>. Прослеживается некоторое сходство с созданием обычной базы данных.</p>
+
+<p>А также его следует зарегистрировать, как и активность, в манифесте с помощью тега <b>provider</b> с атрибутами <b>name</b> и <b>authorities</b>. Тег <b>authorities</b> служит для описания базового пути URI, по которому <b>ContentResolver</b> может найти базу данных для взаимодействия. Данный тег должен быть уникальным, поэтому рекомендуется использовать имя вашего пакета, чтобы не произошло путаницы с другими приложениями, например:</p>
+
+<pre><code class="xml">
+&lt;provider 
+    android:name:&quot;.MyContentProvider&quot;
+    android:authorities=&quot;ru.alexanderklimov.provider.Notepad&quot; /&gt;
+</code></pre>
+
+<p>Источник поставщика содержимого аналогичен доменному имени сайта. Если источник уже зарегистрирован, эти поставщики содержимого будут представлены 
+гиперссылками, начинающимися с соответствующего префикса источника:</p>
+
+<pre> 
+content://ru.alexanderklimov.provider.Notepad/
+</pre>
+
+<p>Итак, поставщики содержимого, как и веб-сайты, имеют базовое доменное имя, действующее как стартовая URL-страница.</p>
+
+<p>Необходимо отметить, что поставщики содержимого, используемые в Android, могут иметь неполное  имя источника. Полное имя источника рекомендуется  использовать только со сторонними поставщиками содержимого.  Поэтому вам иногда могут встретиться  поставщики содержимого, состоящие из одного слова, например contacts, в то время как полное имя такого поставщика содержимого - com.google.android.contacts.</p>
+
+<p>В поставщиках содержимого также встречаются REST-подобные гиперссылки, предназначенные для поиска данных и работы с ними. В случае описанной выше
+регистрации унифицированный идентификатор ресурса, предназначенный для обозначения каталога или коллекции записей в базе данных NotePadProvider, будет 
+иметь имя:</p>
+
+<pre><code>
+content://ru.alexanderklimov.provider.Notepad/Notes
+</code></pre>
+
+<p>URI для идентификации отдельно взятой записи будет иметь вид:</p>
+
+<pre><code>
+content://ru.alexanderklimov.provider.Notepad/Notes/#
+</code></pre>
+
+<p>где # соответствует конкретной записи. Ниже приведено еще несколько примеров URI, которые могут присутствовать в поставщиках содержимого:</p>
+
+<pre><code> 
+content://media/internal/images 
+content://media/external/images 
+content://contacts/people/ 
+content://contacts/people/23
+</code></pre>
+
+<p>Обратите внимание - здесь поставщики содержимого content://media и content://contacts имеют неполную структуру. Это обусловлено тем, что данные поставщики содержимого не являются сторонними и контролируются Android.</p>
+
+<p>Поставщики содержимого также обладают некоторыми характеристиками сетевых служб. Через свои URI поставщик содержимого предоставляет внутренние данные 
+в виде служб. Однако конечной информацией, получаемой по URL поставщика содержимого, являются нетипизированные данные (not typed data), которые предоставляются при вызове веб-службы, основанной на простом протоколе доступа к объектам (SOAP). Такой вывод больше похож на результат запроса, возвращаемый оператором JDВС. Сходство с JDBC является концептуальным. Но между поставщиком содержимого и ResultSet нельзя поставить знак равенства.</p>
+
+<h2 class="text-warning" id="structure">Структура унифицированных идентификаторов содержимого (Content URI)</h2>
+
+<p>Для получения данных из поставщика содержимого нужно просто активировать URI. Однако при работе с поставщиком содержимого найденные таким образом данные представлены как набор строк и столбцов и образуют объект Android <b>cursor</b>. Рассмотрим структуру URI, которую можно использовать для получения данных.</p>
+
+<p>Унифицированные идентификаторы содержимого  (Content URI) в Android напоминают HTTP URI, но начинаются с <b>content</b> и строятся по следующему образцу:</p>
+
+<pre>
+content://*/*/*
+</pre>
+
+<p>или</p>
+
+<pre> 
+content://authority-name/path-segment1/path-segment2/etc...
+</pre>
+
+<p>Вот пример URI, при помощи которого в базе данных идентифицируется запись, имеющая номер 23:</p>
+
+<pre><code>
+content://ru.alexanderklimov.provider.Notepad/notes/23
+</code></pre>
+
+<p>После <b>content:</b> в URI содержится унифицированный идентификатор источника, который используется для  нахождения поставщика содержимого в соответствующем реестре. Часть URI <b>ru.alexanderklimov.provider.Notepad</b> представляет собой источник.</p>
+
+<p><b>/notes/23</b> - это раздел пути (path section), специфичный для каждого отдельного поставщика содержимого. Фрагменты  notes и 23 раздела пути называются сегментами пути  (path segments). Одной из функций поставщика содержимого является документирование и интерпретация раздела и сегментов пути, содержащихся в URI.</p>
+
+<p>Обычно разработчик поставщика содержимого внедряет эти функции путем объявления констант в классе или интерфейсе Java в пакете реализации данного поставщика содержимого. В дальнейшем первый раздел пути может указывать на коллекцию объектов. Например, /notes указывает на коллекцию записей (или каталог с записями), а /23 - на определенную запись.</p>
+
+<p>Если URI имеет такой вид, это означает, что поставщик содержимого должен находить строки, определяемые данным URI. Кроме того, поставщик содержимого 
+должен модифицировать содержимое URI, применяя один из методов изменения состояния: вставку (insert), обновление (update) и удаление (delete).</p>
+
+<h2 class="text-warning" id="mime">Структурирование МIМЕ-типов в Android</h2>
+
+<p>Как веб-сайт возвращает тип MIME для заданной гиперссылки (это позволяет браузеру активировать программу, предназначенную для просмотра того или иного типа контента), так и в поставщике содержимого предусмотрена возможность возвращения типа MIME  для заданного URI. Благодаря этому достигается определенная гибкость при просмотре данных. Если мы знаем, данные какого именно типа получим, то можем выбрать одну или несколько программ, предназначенных для 
+представления таких данных. Например, если на жестком диске компьютера есть текстовый файл, мы можем выбрать несколько редакторов, которые способны его 
+отобразить.</p>
+
+<p>Типы MIME работают в Android почти так же, как и в НТТР. Вы запрашиваете у контент-провайдера тип MIME определенного подерживаемого им URI, и поставщик содержимого возвращает двухчастную последовательность символов, идентифицирующую тип MIME в соответствии с принятыми стандартами.</p>
+
+<p>Обозначение MIME состоит из двух частей: типа и подтипа. Ниже приведены примеры некоторых известных пар типов и подтипов MIME:</p>
+<p>
+text/html<br>
+text/css<br>
+text/xml<br>
+image/jpeg<br>
+audio/mp3<br>
+video/mp4<br>
+application/pdf<br>
+application/msword<br>
+</p>
+
+<p>Основные зарегистрированные типы содержимого:</p>
+
+<p>
+application<br>
+audio<br>
+image<br>
+message<br>
+model<br>
+multipart<br>
+text<br>
+video
+</p>
+
+<p>В Android применяется схожий принцип для определения типов MIME. Обозначение vnd в типах MIME в Android означает, что данные типы и подтипы являются нестандартными, зависящими от производителя. Для обеспечения уникальности в Android типы и подтипы разграничиваются при помощи нескольких 
+компонентов, как и доменные имена. Кроме того, типы MIME в Android, соответствующие каждому типу содержимого, существуют в двух формах: для одиночной записи и для нескольких записей.</p>
+
+<p>Типы MIME широко используются в Android, в частности при работе с намерениями, когда система определяет по МIМЕ-типу данных, какое именно явление 
+следует активировать. Типы MIME всегда воспроизводятся контент-провайдерами на основании соответствующих URI. Работая с типами MIME, необходимо не упускать из виду три аспекта.</ul>
+
+<ol>
+<li>Тип и подтип должны быть уникальными для того типа содержимого, который они представляют. Обычно это каталог с элементами или отдельный элемент. В контексте Android разница между каталогом и элементом может быть не такой очевидной, как кажется на первый взгляд.</li>
+<li>Если тип или подтип не являются стандартными, им должен предшествовать префикс vnd (обычно это касается конкретных видов записи).</li>
+<li>Обычно типы и подтипы относятся к определенному пространству имен в соответствии с вашими нуждами. </li>
+</ol>
+
+<p>Необходимо еще раз подчеркнуть этот момент: основной тип MIME для  коллекции элементов, возвращаемый командой cursor в Android, всегда должен иметь вид  <b>vnd.android.cursor.dir</b>, а основной тип MIME для одиночного элемента, находимый командой cursor в Android, - вид <b>vnd.android.cursor.item</b>. Если речь идет 
+о подтипе, то поле для маневра расширяется, как в случае с <b>vnd.googlе.note</b>; после компонента <b>vnd.</b> вы можете свободно выбирать любой устраивающий вас подтип.</p>
+
+<h2 class="text-warning">Дополнительное чтение</h2>
+
+<p><a href="../calllog.html" >CallLog: Журнал о входящих, исходящих и пропущенных звонках</a></p>
+<p><a href="../provider_sms.html" >Контент-провайдер SMS</a></p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/contentprovider.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:32 GMT -->
+</html>

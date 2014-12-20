@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/break.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Экспресс-курс: Операторы перехода break, continue, return</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Операторы перехода break, continue, return</h1>
+
+<p>
+<a href="#break">Оператор break</a><br>
+<a href="#continue">Оператор continue</a><br>
+</p>
+
+<p>В Java есть три оператора перехода: <b>break, continue, return</b>. Операторы перехода передают управление другой части программы.</p>
+
+<h2 class="text-warning" id="break">Оператор break</h2>
+
+<p>Оператор <b>break</b> завершает последовательность операторов в операторе <a href="switch.html">switch</a>, позволяет выйти из цикла и в качестве оператора безусловного перехода (goto).</p>
+
+<p>Рассмотрим пример выхода из цикла. Используя оператор <b>break</b>, можно вызвать немедленное завершение цикла, пропуская условное выражение и другой код в теле цикла. Когда приложение встречает оператор <b>break</b> внутри цикла, оно прекращает выполнение цикла и передаёт управление оператору, следующему за циклом.</p>
+
+<pre><code class="java">
+TextView textInfo = (TextView)findViewById(R.id.textView1);
+for(int i = 0; i &lt; 100; i++) {
+    if(i == 5) break; // выходим из цикла, если i равно 5
+	textInfo.append("i: " + i + "\n");
+}
+textInfo.append("Цикл завершён");
+</code></pre>
+
+<p>Получим следующий результат:</p>
+
+<pre>
+i: 0
+i: 1
+i: 2
+i: 3
+i: 4
+Цикл завершён
+</pre>
+
+<p>Вроде хотели, чтобы цикл <b>for</b> выполнялся от 0 до 100, а сами коварно вышли из него, когда значение переменной <b>i</b> стало равным 4.</p>
+
+<p>Код можно переписать с использованием цикла <b>while</b>:</p>
+
+<pre><code class="java">
+int i = 0;
+
+while(i &lt; 100) {
+    if(i == 5) break; // выходим из цикла, если i равно 5
+	textInfo.append("i: " + i + "\n");
+	i++;
+}
+textInfo.append("Цикл завершён");
+</code></pre>
+
+<p>Результат будет такой же.</p>
+
+<p>При использовании вложенных циклов оператор <b>break</b> осуществляет выход только из самого внутреннего цикла, не оказывая влияния на внешний цикл. Создадим пример с использованием вложенных циклов:</p>
+
+<pre><code class="java">
+		TextView textInfo = (TextView) findViewById(R.id.textView1);
+		for (int i = 1; i &lt; 4; i++) {
+			textInfo.append("Проход " + i + ": ");
+			for (int j = 0; j &lt; 100; j++) {
+				if (j == 5)
+					break; // выходим из цикла, если j равно 5
+				textInfo.append(j + " ");
+			}
+			textInfo.append("\n");
+		}
+		textInfo.append("Циклы завершёны");
+</code></pre>
+
+<p>Получим следующий результат:</p>
+
+<pre>
+Проход 1: 0 1 2 3 4
+Проход 2: 0 1 2 3 4
+Проход 3: 0 1 2 3 4
+Циклы завершёны
+</pre>
+
+<p>В примере оператор <b>break</b> прервал выполнение второго цикла, но первый цикл продолжал работать.</p>
+
+<p>В цикле можно использовать несколько операторов <b>break</b>, но увлекаться не стоит. Лучше переделайте код.</p>
+
+<h3 class="text-warning">break как замена goto</h3>
+
+<p>В Java нет оператора безусловного перехода <b>goto</b>. Если вы не знаете, что это такое, то можете смело пропустить данный абзац. У оператора <b>break</b> есть особая форма записи:</p>
+
+<pre>
+break метка;
+</pre>
+
+<p>Обычно <i>метка</i> - это имя метки, идентифицирующей блок кода. Я ни разу не встречал в реальных примерах данный способ, поэтому не буду приводить пример использования, чтобы вас не запутать.</p>
+
+<h2 class="text-warning" id="continue">Оператор continue</h2>
+
+<p>Иногда требуется, чтобы повторение цикла начиналось с более раннего оператора его тела. В циклах <b>while</b> и <b>do-while</b> оператор <b>continue</b> вызывает передачу управления непосредственно управляющему условному выражению цикла. В цикле <b>for</b> управление передаётся вначале итерационной части цикла <b>for</b>, а потом условному выражению. При этом во всех циклах промежуточный код пропускается.</p>
+
+<p>В следующем примере выводим два числа в каждой строке:</p>
+
+<pre><code class="java">
+for (int i = 0; i &lt; 10; i++) {
+	textInfo.append(i + " ");
+	if (i % 2 == 0)
+		continue;
+	textInfo.append("\n");
+}
+</code></pre>
+
+<p>В этом коде оператор % служит для проверки чётности значения переменной <i>i</i>. Если значение чётное, выполнение цикла продолжится дальше, а если нечётное, то произойдёт переход на новую строку. В результатем мы получим следующий текст:</p>
+
+<pre>
+0 1
+2 3
+4 5
+6 7
+8 9
+</pre>
+
+<p>Как и оператор <b>break</b>, оператор <b>continue</b> может содержать метку содержащего его цикла, который нужно продолжить. Создадим пример вывода треугольной таблицы умножения чисел от 0 до 9ЖБ.зЮ
+
+<pre><code class="java">
+outer: for (int i = 0; i &lt; 10; i++) {
+	for (int j = 0; j &lt; 10; j++) {
+		if (j &gt; i) {
+			textInfo.append("\n");
+			continue outer;
+		}
+		textInfo.append(" " + (i * j));
+	}
+}
+textInfo.append("\n");
+</code></pre>
+
+<p>В этом примере оператор <b>continue</b> прерывает цикл подсчёта значений переменной <i>j</i> и продолжает его со следующей итерации цикла подсчёта переменной <i>i</i>. На экране увидим текст в таком виде:</p>
+
+<pre>
+0
+0 1
+0 2 4
+0 3 6 9
+0 4 8 12 16
+и т.д.
+</pre>
+
+<p>Данный оператор в практике встречается достаточно редко. Но на всякий случай помните о нём. Иногда он может пригодиться.</p>
+
+<h2 class="text-warning">Оператор return</h2>
+
+<p>Оператор <b>return</b> используют для выполения явного выхода из метода. Оператор можно использовать в любом месте метода для возврата управления тому объекту, который вызвал данный метод. Таким образом, <b>return</b> прекращает выполнение метода, в котором он находится.</p>
+
+
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/break.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:00 GMT -->
+</html>

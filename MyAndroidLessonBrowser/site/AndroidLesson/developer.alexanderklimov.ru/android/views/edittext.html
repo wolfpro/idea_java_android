@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/views/edittext.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:53:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: EditText</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class="active"><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">EditText</h1>
+
+<p>
+<a href="#edittext">EditText</a><br>
+<a href="#hint">Текст-подсказка</a><br>
+<a href="#keyboard">Вызов нужной клавиатуры</a><br>
+<a href="#blocktext">Заблокировать текстовое поле</a><br>
+<a href="#other">Другие свойства</a><br>
+<a href="#methods">Методы</a><br>
+<a href="#select">Выделение текста</a><br>
+<a href="#keys">Обработка нажатий клавиш</a><br>
+<a href="#empty">Пустой ли EditText</a><br>
+<a href="#totextview">Превращаем EditText в TextView</a><br>
+
+</p>
+
+<h2 class="text-warning" id="edittext">EditText</h2>
+
+<p>Виджет <b>EditText</b> — это текстовое поле для пользовательского ввода, которое используется, если необходимо редактирование текста. Следует заметить, что <b>EditText</b> является наследником <b>TextView</b>.</p>
+
+<p><img src="object.png"></p>
+
+<p>В Eclipse на панели инструментов текстовые поля можно найти в папке <b>Text Fields</b> под разными именами.</p>
+
+<p><img src="edittext-tool.png" alt="EditText"></p>
+
+<p>Для быстрой разработки в Eclipse текстовые поля снабдили различными свойствами и дали разные имена: Plain Text, Person Name, Password, Password (Numeric), E-mail, Phone, Postal Address, Multiline Text, Time, Date, Number, Number (Signed), NumberDecimal, AutoCompleteTextView, AutoCompleteTextView.</p>
+
+<h3 class="text-warning">Plain Text</h3>
+
+<p><b>Plain Text</b> - самый простой вариант текстового поля без наворотов. При добавлении в разметку его XML-представление будет следующим:</p>
+
+<pre><code class="xml">
+&lt;EditText
+    android:id=&quot;@+id/editText1&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:ems=&quot;10&quot; /&gt;
+</code></pre>
+
+<h3  class="text-warning">Person Name</h3>
+
+<p>При использовании элемента <b>Person Name</b> в XML добавляется атрибут <b>inputType</b>, который отвечает за вид клавиатуры (только буквы) при вводе текста.</p>
+
+<pre><code class="xml">
+&lt;EditText
+    android:id=&quot;@+id/editText2&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:ems=&quot;10&quot;
+    android:inputType=&quot;textPersonName&quot; /&gt;
+</code></pre>
+
+<h3  class="text-warning">Password и Password (Numeric)</h3>
+
+<p>При использовании <b>Password</b> в <b>inputType</b> используется значение <b>textPassword</b>. При вводе текста сначала показывается символ, который заменяется на звёздочку. Если используется элемент <b>Password (Numeric)</b>, то у атрибута <b>inputType</b> используется значение <b>numberPassword</b>. В этом случае на клавиатуре будут только цифры вместо букв. Вот и вся разница.</p>
+
+<pre><code class="xml">
+&lt;EditText
+    android:id=&quot;@+id/editText2&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:ems=&quot;10&quot;
+    android:inputType=&quot;textPassword&quot; /&gt;
+</code></pre>
+
+<h3 class="text-warning">E-mail</h3>
+
+<p>У элемента <b>E-mail</b> используется атрибут <b>android:inputType="textEmailAddress"</b>. В этом случае на клавиатуре появляется дополнительная клавиша с символом <b>@</b>, который обязательно используется в любом электронном адресе.</p>
+
+<div class="alert alert-info">
+Кстати, финны называют символ @ кошачьим хвостом (взято из Википедии). А в России символ называют собакой. Где справедливость?
+</div>
+
+<h3 class="text-warning">Phone</h3>
+
+<p>У элемента <b>Phone</b> используется атрибут <b>android:inputType="phone"</b>. Клавиатура похожа на клавиатуру из старого кнопочного сотового телефона с цифрами, а также с кнопками звёздочки и решётки.</p>
+
+<h3 class="text-warning">Postal Address</h3>
+
+<p>Атрибут <b>android:inputType="textPostalAddress"</b>.</p>
+
+<h3 class="text-warning">Multiline Text</h3>
+
+<p>У <b>Multiline Text</b> используется атрибут <b>android:inputType="textMultiLine"</b> позволяющий сделать текстовое поле многострочным. Дополнительно можете установить свойство <b>Lines</b> (атрибут <b>android:lines</b>), чтобы указать количество видимых строк на экране.</p>
+
+<pre><code class="xml">
+&lt;EditText
+    android:id=&quot;@+id/editText1&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:inputType=&quot;textMultiLine&quot;
+    android:lines=&quot;5&quot; &gt;
+</code></pre>
+
+<h3 class="text-warning">Time и Date</h3>
+
+<p>Атрибут <b>android:inputType="time"</b> или <b>android:inputType="date"</b>. На клавиатуре цифры, точка, запятая, тире.</p>
+
+<h3 class="text-warning">Number, Number (Signed), Number (Decimal)</h3>
+
+<p>Атрибут <b>android:inputType="number"</b> или <b>numberSigned</b> или <b>numberDecimal</b>. На клавиатуре только цифры и некоторые другие символы.</p>
+
+<h2 class="text-warning" id="hint">Текст-подсказка</h2>
+
+<p>Веб-мастера знают о таком атрибуте HTML5 как placeholder, когда в текстовом поле выводится строчка-подсказка приглушенным (обычно серым цветом). Живой пример приведен ниже.</p>
+
+<input type="text" placeholder="Введите имя кота">
+
+<p>Подсказка видна, если текстовый элемент не содержит пользовательского текста. Как только пользователь начинает вводить текст, то подсказка исчезает. Соответственно, если удалить пользовательский текст, то подсказка появляется снова. Это очень удобное решение во многих случаях, когда на экране мало места для элементов.</p>
+
+<p>В Android у многих элементов есть свойство <b>Hint</b> (атрибут <b>hint</b>), который работает аналогичным образом. Установите у данного свойства нужный текст и у вас появится текстовое поле с подсказкой.</p>
+
+<p><img src="hint.png" alt="Подсказка"><p>
+
+<p>Запускаем приложение и видим подсказку, которая исчезает при попытке ввести текст.</p>
+
+<h2 class="text-warning" id="keyboard">Вызов нужной клавиатуры</h2>
+
+<p>Не во всех случаях нужна стандартная клавиатура с буковками и цифрами. Если вы пишете калькулятор, то проще показать пользователю цифровую клавиатуру. А если нужно ввести электронный адрес, то удобнее показать клавиатуру, где уже есть символ @. Ну а если ваше приложение пишется для котов, то достаточно вывести только те буквы, из которых можно составить слова <b>Мяу</b> и <b>Жрать давай</b> (к сожалению, такой клавиатуры еще нет, но Google работает в этом направлении).</p>
+
+<p>У элемента <b>EditText</b> на этот случай есть атрибут <b>inputType</b>:</p>
+
+<pre><code class="xml">
+&lt;EditText android:id=&quot;@+id/etWidth1&quot;
+    android:hint=&quot;@string/catname&quot;
+    <b>android:inputType=&quot;textCapWords&quot;</b>
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_width=&quot;wrap_content&quot;&gt;
+&lt;/EditText&gt;
+</code></pre>
+
+<p>В данном случае с атрибутом <b>inputType=&quot;textCapWords&quot</b> каждый первый символ предложения автоматически будет преобразовываться в прописную. Удобно, не так ли?</p>
+
+<p>Если вам нужен режим CapsLock, то используйте значение <b>textCapCharacters</b> и все буквы сразу будут большими при наборе.</p>
+
+<p>Для набора телефонного номера используйте <b>phone</b>, и тогда вам будут доступны только цифры, звездочка (*), решетка (#).</p>
+
+<p>Для ввода веб-адресов удобно использовать значение <b>textUri</b>. В этом случае у вас появится дополнительная кнопочка <b>.com</b> (при долгом нажатии на нее появятся альтернативные варианты .net, .org и др.).</p>
+
+<p>Вот вам целый список доступных значений (иногда различия очень трудно различимы)</p>
+
+<pre>
+text
+textCapCharacters (клавиатура с символами в верхнем регистре)
+textCapWords
+textCapSentences
+textAutoCorrect
+textAutoComplete
+textMultiLine
+textImeMultiLine
+textNoSuggestions (без подсказок при вводе текста)
+textUri
+textEmailAddress
+textEmailSubject
+textShortMessage
+textLongMessage
+textPersonName
+textPostalAddress
+textPassword
+textVisiblePassword (без автокоррекции)
+textWebEditText
+textFilter
+textPhonetic
+number
+numberSigned
+numberDecimal
+phone
+datetime
+date
+time
+</pre>
+
+<h2 class="text-warning" id="blocktext">Заблокировать текстовое поле</h2>
+
+<p>Для блокировки текстового поля присвойте значения <i>false</i> свойствам Focusable, Long clickable и Cursor visible.</p>
+
+<h2 class="text-warning" id="other">Другие свойства</h2>
+
+<dl>
+<dt><b>minLines</b> и <b>maxLines</b></dt><dd>Позволяют ограничить количество строк текста, которое можно ввести в текстовом поле</dd>
+<dt><b>maxLength</b></dt><dd>Позволяет задать максимальное количество символов для ввода</dd>
+</dl>
+
+<h2 class="text-warning" id="methods">Методы</h2>
+
+<p>Основной метод класса EditText — <b>getText()</b>, который возвращает текст, содержащийся в окне элемента EditText. Возвращаемое значение имеет специальный тип Editable, а не String.</p>
+
+<pre><code class="java">
+String strCatName = nickNameEditText.getText().toString(); // приводим к типу String
+</code></pre>
+
+<p>Соответственно, для установки текста используется метод <b>setText()</b>.</p>
+
+<p>Большинство методов для работы с текстом унаследованы от базового класса TextView: <b>setTypeface(null, Typeface)</b>, <b>setTextSize(int textSize)</b>, <b>SetTextColor(int Color)</b>.</p>
+
+<h2 class="text-warning" id="select">Выделение текста</h2>
+
+<p>У <b>EditText</b> есть специальные методы для выделения текста:</p>
+
+<ul>
+<li><b>selectAll()</b> — выделяет весь текст;</li>
+<li><b>setSelection(int start, int stop)</b> — выделяет участок текста с позиции start до позиции stop;</dd>
+<li><b>setSelection(int index)</b> — перемещает курсор на позицию index;</li>
+</ul>
+
+<p>Предположим, нам нужно выделить популярное слово из трёх букв в большом слове (это слово "кот", а вы что подумали?).</p>
+
+<pre><code class="java">
+// выделяем 4, 5, 6 символы
+edit.setSelection(3, 6);
+</code></pre>
+
+<p><img src="edittext1.png" alt="Выделение текста"></p>
+
+<h2 class="text-warning" id="keys">Обработка нажатий клавиш</h2>
+
+<p>Для обработки нажатий клавиш необходимо зарегистрировать обработчик <b>View.OnKeyListener</b>, используя метод <b>setOnKeyListener()</b> элемента EditText. Например, для прослушивания события нажатия клавиши Enter во время ввода текста пользователем (или котом), используйте следующий код:</p>
+
+<pre><code class="java">
+final EditText myText = (EditText)findViewById(R.id.EditText1);
+myText.setOnKeyListener(new View.OnKeyListener()
+{
+    public boolean onKey(View v, int keyCode, KeyEvent event)
+	{
+	    if(event.getAction() == KeyEvent.ACTION_DOWN && 
+		    (keyCode == KeyEvent.KEYCODE_ENTER))
+			{
+			    // сохраняем текст, введенный до нажатия Enter в переменную
+			    String strCatName = myText.getText.getText().toString();
+				return true;
+			}
+		return false;
+	}
+}
+);
+</code></pre>
+
+<h2 class="text-warning" id="empty">Пустой ли EditText</h2>
+
+<p>Чтобы проверить, пустой ли EditText, можно воспользоваться кодом:</p>
+
+<pre><code class="java">
+if (editText.getText().toString().equals(""))
+{
+// Здесь код, если EditText пуст
+}
+else
+{
+// если есть текст, то здесь другой код
+}
+</code></pre>
+
+<p>Также можно проверять длину текста, если она равно 0, значит текст пуст.</p>
+
+<pre><code class="java">
+if (editText.getText().length() == 0)
+</code></pre>
+
+<h2 class="text-warning" id="totextview">Превращаем EditText в TextView</h2>
+
+<p>Практического смысла тут нет, но для общего развития превратим текстовое поле в текстовую метку. Для этого нужно сделать компонент недоступным, убрать курсор, установить прозрачный фон и отключить слушатель нажатий клавиш.</p>
+
+<pre><code class="java">
+EditText editText = (EditText)findViewById(R.id.editText);
+editText.setEnabled(false);
+editText.setCursorVisible(false);
+editText.setBackgroundColor(Color.TRANSPARENT);
+editText.setKeyListener(null);
+</code></pre>
+
+<p>Также можно установить эти свойства через XML, кроме последнего пункта.</p>
+
+<pre><code class="xml">
+&lt;EditText
+    android:id=&quot;@+id/editText&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:background=&quot;@android:color/transparent&quot;
+    android:cursorVisible=&quot;false&quot;
+    android:editable=&quot;false&quot;
+    android:ems=&quot;10&quot;
+    android:text=&quot;Text&quot; /&gt;
+</code></pre>
+
+<h2 class="text-warning">Дополнительное чтение</h2>
+
+<p><a href="../keyboard.html#enter">Переопределяем кнопку Enter</a></p>
+<p><a href="quickclearedittext.html">Собственный компонент - быстрая очистка текста</a></p>
+
+<p><a href="edittext-advanced.html">Продвинутые примеры для текстовых полей</a> (закрытая зона/второй месяц)</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/views/edittext.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:53:16 GMT -->
+</html>

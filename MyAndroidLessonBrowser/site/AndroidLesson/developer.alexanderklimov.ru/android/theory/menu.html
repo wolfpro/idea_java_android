@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/menu.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:50:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Меню</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Меню</h1>
+
+<p>
+<a href="#xml">Создание меню при помощи ресурсов</a><br>
+<a href="#choosemenu">Выбор пунктов меню</a><br>
+<a href="#code">Программное создание меню</a><br>
+<a href="#openclose">Программное открытие или закрытие меню</a><br>
+<a href="#removemenu">Программное удаление пункта меню</a><br>
+<a href="#hardmenu">Определить наличие кнопки Menu</a><br>
+<a href="#layout">Разметка для меню</a><br>
+</p>
+
+<p>Вы уже работали с <a href="../menu.html">меню в одном из первых уроков</a> первого месяца обучения. Рассмотрим работу с меню глубже. Будут рассмотрены как старые устройства под Android 2.3, так и новые телефоны на Android 4.0.</p>
+
+<h2 class="text-warning">Меню выбора опций (Options Menu)</h2>
+
+<p>За меню отвечает класс <b>android.view.Menu</b>. Каждая активность связана с одним объектом меню. Само меню содержит пункты меню (класс <b>android.view.MenuItem</b>) и подменю (класс <b>android.view.SubMenu</b>).</p>
+
+<p>При нажатии кнопки <b>Menu</b> на старых телефонах появляется набор пунктов меню, прикрепляемый к активности. Меню может содержать значки. Такое меню может содержать шесть пунктов (как правило). При наличии более шести пунктов используется расширенное меню - в этом случае вместо шестого пункта появляется пункт <b>Опции</b> (More). При нажатии данного пункта показывается расширенное меню со списком пунктов, которые не поместились в основной части меню выбора опций.</p>
+
+<p>Когда меню открывается впервые, Android вызывает метод <b>onCreateOptionsMenu()</b>, передавая в качестве параметра объект <b>Menu</b>. Меню можно создавать в виде ресурсов в XML-файле или использовать метод <b>add()</b>.</p>
+
+<p>В стандартном проекте при выборе обычного шаблона уже есть заготовка для меню из одного пункта <b>Settings</b> и вызов метода для меню (вы об этом уже знаете).</p>
+
+<h2 class="text-warning" id="xml">Создание меню при помощи ресурсов</h2>
+
+<p>Рассмотрим работу с меню через ресурсы. Для создания меню используются ресурсы, которые должны храниться в XML-файле. Сам файл должен находиться в папке <b>res/menu/</b> вашего проекта. Меню состоит из следующих элементов:</p>
+
+<dl>
+<dt>&lt;menu&gt;</dt><dd>Определяет меню, которое будет содержать пункты меню. Элемент &lt;menu&gt; должен быть корневым элементом в XML-структуре файла и может содержать один или несколько элементов &lt;item&gt; и &lt;group&gt;</dd>
+<dt>&lt;item&gt;</dt><dd>Создает непосредственно пункты меню. Данный элемент может иметь вложенный элемент &lt;menu&gt; для создания подменю</dd>
+<dt>&lt;group&gt;</dt><dd>При желании можете также использовать невидимый контейнер для элементов &lt;item&gt;. Это позволяет достичь некоторых эффектов</dd>
+</dl>
+
+<p>Предположим, мы решили использовать меню для какой-нибудь игры. Создадим новый файл <i>game_menu.xml</i>:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item android:id=&quot;@+id/new_game&quot;
+          android:title=&quot;@string/new_game&quot; /&gt;
+    &lt;item android:id=&quot;@+id/help&quot;
+          android:title=&quot;@string/help&quot; /&gt;
+&lt;/menu&gt;
+</code></pre>
+
+<p>Мы создали меню с двумя пунктами. Каждый пункт включает в себя следующие атрибуты:</p>
+
+<dl>
+<dt>android:id</dt><dd>Идентификатор пункта меню, по которому приложение может распознать при выделении пункта меню пользователем</dd>
+<dt>android:title</dt><dd>Текст, который будет выводиться в меню</dd>
+</dl>
+
+<p>Существуют и другие атрибуты для элемента <b>item</b>, например <i>android:icon="@drawable/home"</i> позволит также вывести значок для пункта меню, а <i>android:enabled="false"</i> позволяет сделать пункт меню недоступным.</p>
+
+<p>Атрибут <b>android:titleCondensed</b> применяется в том случае, если обычный заголовок слишком широкий и не «помещается» в выбранном элементе меню.</p>
+
+<p>Атрибут <b>android:orderInCategory</b> определяет порядок, в котором отображаются элементы меню MenuItems.</p>
+
+<p>Кстати, вы можете использовать встроенные системные значки Android. Например, <b>android:icon="@android:drawable/ic_menu_help"</b> позволит вам вывести значок помощи, который зашит в систему. Подробнее о системных значках почитайте в статье <a href="../system-drawables.html" >Системные графические ресурсы</a></p>
+
+<p>При создании меню мы указали на строковые ресурсы <b>@string/new_game</b> и <b>@string/help</b>. Необходимо добавить новые строки в файле <b>strings.xml</b>:</p>
+
+<pre><code class="xml">
+&lt;string name=&quot;new_game&quot;&gt;Новая игра&lt;/string&gt;
+&lt;string name=&quot;help&quot;&gt;Справка&lt;/string&gt;
+</code></pre>
+
+<p>Теперь нужно внести изменения в классе активности, в котором будет выводиться меню. Программа должна сконвертировать созданный нами ресурс меню в программный объект. Для этой цели существует специальный метод <b>MenuInflater.inflate()</b>, который вызывается в специальном методе обратного вызова <b>onCreateOptionsMenu()</b>. Данный метод и предназначен для вывода меню при нажатии кнопки <b>MENU</b> на устройстве:</p>
+
+<pre><code class="java">
+@Override
+public boolean onCreateOptionsMenu(Menu menu) 
+{
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.game_menu, menu);
+    return true;
+}
+</code></pre>
+
+<p>После вставки кода среда разработки попросит импортировать недостающие пространства имен.</p>
+
+<pre><code class="java">
+import android.view.Menu;
+import android.view.MenuInflater;
+</code></pre>
+
+<p>Метод <b>onCreateOptionsMenu()</b> метод инициирует первое появление меню на экране и принимает в качестве параметра объект Menu (для старых устройств). Вы можете сохранить ссылку на меню и использовать ее в любом месте кода, пока метод <b>onCreateOptionsMenu()</b> опять не будет вызван. Вам необходимо всегда использовать реализацию этого обработчика из родительского класса, потому как она при необходимости автоматически включает в меню дополнительные системные пункты. В новых устройствах метод вызывается при создании активности. Метод должен возвращать значение <b>true</b>, чтобы меню было видимым на экране.</p>
+
+<p>Запустив программу, нажмите кнопку <b>MENU</b> на эмуляторе, чтобы увидеть созданное меню.</p>
+
+<p><img src="../../../img-fotki.yandex.ru/get/4512/netsources.b/0_507e6_41c0c402_XL.png" width="800" height="743" title="" alt="Создание меню для Android" border="0"/></p>
+
+<p>Метод <b>getMenuInflater()</b> возвращает экземпляр класса <b>MenuInflater</b>, который мы используем для чтения данных меню из XML.</p>
+
+<p>Как видите, меню появляется в нижней части экрана. Всего можно одновременно вывести на экран шесть пунктов меню. Если пунктов больше, то будет выведено пять пунктов плюс шестой пункт <b>More</b>, который позволит увидеть остальные пункты. Давайте проверим и добавим новые пункты меню.</p>
+
+<p>Сначала добавим шесть пунктов.</p>
+<p><img src="../../../img-fotki.yandex.ru/get/4512/netsources.b/0_507e8_e0dd34a1_XL.png" width="800" height="743" title="" alt="" border="0"/></p>
+
+<p>Добавим еще один пункт к меню, чтобы их стало семь.</p>
+
+<p><img src="../../../img-fotki.yandex.ru/get/5804/netsources.b/0_507e9_cfef007e_XL.png" width="800" height="743" title="" alt="" border="0"/></p>
+
+<h2 class="text-warning" id="choosemenu">Выбор пунктов меню</h2>
+
+<p>Мы научились создавать меню. Но пока оно бесполезно, так как пункты меню никак не реагируют на наши нажатия. Для обработки нажатий пунктов меню служит метод <b>onOptionsItemSelected()</b>. Метод распознает пункт, выбранный пользователем, через <b>MenuItem</b>. Мы можем теперь определить выбранный пункт через вызов <b>getItemId()</b>, который возвращает идентификатор пункта меню. Далее через оператор <b>switch</b> нам остается определить нужные команды:</p>
+
+<pre><code class="java">
+@Override
+public boolean onOptionsItemSelected(MenuItem item) 
+{
+    // Операции для выбранного пункта меню
+    switch (item.getItemId()) 
+	{
+    case R.id.new_game:
+        newGame();
+        return true;
+    case R.id.help:
+        showHelp();
+        return true;
+    default:
+        return super.onOptionsItemSelected(item);
+    }
+}
+
+public void newGame()
+{
+	edtext.setText("Выбран пункт Новая игра");
+}
+
+public void showHelp()
+{
+	edtext.setText("Выбран пункт Справка");
+}
+</code></pre>
+
+<p>Запустите приложение, вызовите меню и выберите первый или второй пункт меню. В текстовом поле должно появиться сообщение.</p>
+
+<p><img src="../../../img-fotki.yandex.ru/get/4512/netsources.b/0_507eb_4a1fb6f8_XL.png" width="800" height="743" title="" alt="" border="0"/></p>
+
+<p>В приведенном примере <b>getItemId()</b> запрашивает ID для выбранного пункта меню и начинает сравнивать через оператор выбора switch с идентификаторами, которые мы задали в XML-ресурсах. При обнаружении нужного идентификатора выполняется обработчик для заданного пункта меню. Если программа ничего не обнаружит, то выполняется оператор <b>default</b>, который возвращает super class.</p>
+
+<p>В Android 3.0 можно добавить атрибут <b>android:onClick</b> в ресурсах меню, и вам уже не нужно использовать <b>onOptionsItemSelected()</b>. При помощи <b>android:onClick</b> вы можете указать нужный метод при выборе пункта меню.</p>
+
+<pre><code class="java">
+// у атрибута пункта меню установлено значение android:onClick="onMenuClick"
+
+public void onMenuClick(MenuItem item){
+	edtext.setText("Выбран пункт Накормить кота");
+}
+</code></pre>
+
+<h2 class="text-warning" id="code">Программное создание меню</h2>
+
+<p>Расссмотрим программное создание меню для полноты картины. Нам понадобится определить несколько констант для пунктов меню:</p>
+
+<pre><code class="java">
+// идентификаторы для пунктов меню
+private static final int IDM_OPEN = 101;
+private static final int IDM_SAVE = 102;
+
+public boolean onCreateOptionsMenu(Menu menu)
+{
+    // добавляем пункты меню
+	menu.add(Menu.NONE, IDM_OPEN, Menu.NONE, "Открыть");
+	menu.add(Menu.NONE, IDM_SAVE, Menu.NONE, "Сохранить");
+}
+</code></pre>
+
+<p>У метода <b>add()</b> есть четыре параметра:</p>
+<ul>
+<li>идентификатор группы - позволяет связывать пункт меню с группой других пунктов этого меню</li>
+<li>идентификатор пункта для обработчика события выбора пункта меню</li>
+<li>порядок расположения пункта в меню - позволяет определять позицию в меню. По умолчанию (Menu.NONE или 0) пункты идут в том порядке, как задано в коде</li>
+<li>заголовок - текст, который выводится в пункте меню. Можно использовать строковый ресурс</li>
+</ul>
+
+<p>Метод возвращает объект <b>MenuItem</b>, который можно использовать для установки дополнительных свойств, например, для установить значок, горячую клавишу и т.д.</p>
+
+<p>Если вы хотите создать меню со значками, то воспользуйтесь методом <b>setIcon()</b> при создании меню.</p>
+
+<pre><code class="java">
+menu.add(Menu.NONE), IDM_OPEN, Menu.NONE, "Открыть")
+    .setIcon(R.drawable.icon_menu_open);
+</code></pre>
+
+<p>Напомним еще раз, что значки можно добавить только к шести пунктам меню (или к пяти, если пунктов больше шести).</p>
+
+<p>Метод <b>onCreateOptionsMenu</b> вызывается системой только один раз при создании меню. Если вам требуется обновить меню во время работы программы, то используйте метод обратного вызова <b>onPrepareOptionsMenu()</b>.</p>
+
+<p>При выборе пункта меню вызывается метод <b>onOptionsItemSelected</b>, который передает объект <b>MenuItem</b> - пункт меню, выбранный пользователем. При помощи метода <b>getItemId</b> можно получить идентификатор выбранного пункта меню. После идентфикации пункта меню можно написать код для обработки события выбора меню:</p>
+
+<pre><code class="java">
+public boolean onOptionsItemSelected(MenuItem item)
+{
+    switсh (item.getItemId())
+	case IDM_OPEN:
+	    return true;
+	case IDM_SAVE:
+	    return true;
+		
+	return false;	
+}
+</code></pre>
+
+<h2 class="text-warning">Горячие клавиши</h2>
+
+<p>Также можно задавать горячие клавиши для быстрого доступа, используя символы клавиатуры, при помощи нескольких методов:</p>
+
+<ul>
+<li>setAlphabeticShortcut(char) - добавляет символ</li>
+<li>setNumericShortcut(int) - добавляет число</li>
+<li>setShortcut(char, int) - добавляет комбинацию символа и числа</li>
+</ul>
+
+<p>Например, если задать горячую клавишу <var>setAlphabeticShortcut('q');</b>, то при открытии меню (или при удерживании клавиши MENU) нажатие клавиши <b>Q</b> выберет данный пункт меню. Эта горячая клавиша (или сочетание клавиш) будет показана как подсказка, отображающая ниже имени пункта меню.</p>
+
+<h2 class="text-warning" id="submenu">Создание подменю</h2>
+
+<p>Подменю можно добавить в любое меню, кроме другого подменю. Подменю создается в методе обратного вызова <b>onCreateOptionsMenu()</b> с помощью метода <b>addSubMenu()</b>, который возвращает объект <b>SubMenu</b>. В объект <b>SubMenu</b> можно добавить дополнительные пункты к этому меню, используя метод <b>add()</b>. Например:</p>
+
+<pre><code class="java">
+public static final int IDM_HELP = 101; 
+public static final int IDM_NEW = 201; 
+public static final int IDM_OPEN = 202; 
+public static final int IDM_SAVE = 203; 
+public static final int IDM_CUT = 301; 
+public static final int IDM_COPY = 302; 
+public static final int IDM_PASTE = 303; 
+
+@Override 
+public boolean onCreateOptionsMenu(Menu menu) 
+{
+	SubMenu subMenuFile = menu.addSubMenu("Файл");
+	subMenuFile.add(Menu.NONE, IDM_NEW, Menu.NONE, "Новый");
+	subMenuFile.add(Menu.NONE, IDM_OPEN, Menu.NONE, "Открыть");
+	subMenuFile.add(Menu.NONE, IDM_SAVE, Menu.NONE, "Сохранить");
+	SubMenu subMenuEdit = menu.addSubMenu("Правка");
+	subMenuEdit.add(Menu.NONE, IDM_CUT, Menu.NONE, "Вырезать");
+	subMenuEdit.add(Menu.NONE, IDM_COPY, Menu.NONE, "Копировать");
+	subMenuEdit.add(Menu.NONE, IDM_PASTE, Menu.NONE, "Вставить");
+	menu.add(Menu.NONE, IDM_HELP, Menu.NONE, "Справка");
+	return super.onCreateOptionsMenu(menu); 
+}
+
+@Override 
+public boolean onOptionsItemSelected(MenuItem item) 
+{
+	CharSequence message;
+
+	switch (item.getItemId()) {
+	case IDM_NEW:
+		message = "Выбран пункт Новый";
+		break;
+	case IDM_OPEN:
+		message = "Выбран пункт Открыть";
+		break;
+	case IDM_SAVE:
+		message = "Выбран пункт Сохранить";
+		break;
+	case IDM_CUT:
+		message = "Выбран пункт Вырезать";
+		break;
+	case IDM_COPY:
+		message = "Выбран пункт Копировать";
+		break;
+	case IDM_PASTE:
+		message = "Выбран пункт Вставить";
+		break;
+	case IDM_HELP:
+		message = "Выбран пункт Справка";
+		break;
+	default:
+		return false;
+	}
+	// выводим уведомление о выбранном пункте меню
+	Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
+
+	toast.setGravity(Gravity.CENTER, 0, 0);
+	toast.show();
+	return true;
+}
+</code></pre>
+
+<p>Теперь при выборе пункта меню появится еще одно окно с подменю. Попробуйте сами.</p>
+
+<h2 class="text-warning">Добавление флажков и переключателей</h2>
+
+<p>В пункты меню возможно добавление флажков или переключателей. Чтобы добавить флажок или переключатель для отдельного элемента меню, необходимо  
+использовать метод <b>setCheckable()</b>:</p>
+<pre><code class="java">
+MenuItem item = menu.add(0, IDM_FORMAT_BOLD, 0, "Bold");
+item.setCheckable(true); 
+</code></pre>
+
+<p>Если есть необходимость добавить несколько пунктов меню с флажками или переключателями, то можно объединить их в группы меню, создав отдельный идентификатор. Пункт меню добавляется в группу через метод <b>add()</b>, передав ему в качестве первого параметра идентификатор группы меню. Допустим, мы объявили идентификаторы для группы меню Цвет и элементов меню для установки цвета:</p>
+
+<pre><code class="java">
+public static final int IDM_COLOR_GROUP = 400; 
+public static final int IDM_COLOR_RED = 401; 
+public static final int IDM_COLOR_GREEN = 402; 
+public static final int IDM_COLOR_BLUE = 403; 
+</code></pre>
+
+<p>Теперь для создания группы меню с флажками нужно назначить идентификатор группы на каждый пункт меню и вызвать метод <b>setGroupCheckable()</b> для всей группы (этом случае нет необходимости вызывать метод <b>setCheckable()</b> для каждого пункта меню):</p>
+
+<pre><code class="java">
+SubMenu subMenuColor = menu.addSubMenu("Цвет"); 
+subMenuColor.add(IDM_COLOR_GROUP, IDM_COLOR_RED, Menu.NONE, "Красный"); 
+subMenuColor.add(IDM_COLOR_GROUP, IDM_COLOR_GREEN, Menu.NONE,"Зеленый"); 
+subMenuColor.add(IDM_COLOR_GROUP, IDM_COLOR_BLUE, Menu.NONE, "Синий"); 
+subMenuColor.setGroupCheckable(IDM_COLOR_GROUP, true, false); 
+</code></pre>
+
+<p>У метода <b>setGroupCheckable()</b> три параметра:</p>
+<ul>
+<li>первый параметр — идентификатор группы меню;</li>
+<li>второй параметр — true, если в группе разрешены переключатели или флажки;</li>
+<li>третий параметр — устанавливает единственный (true) или множественный (false) выбор пунктов меню. Этот параметр фактически определяет внешний вид 
+меню — это будет меню с переключателями или флажками.</p>
+
+<p>Для управления состоянием флажков и переключателей в обработчике события выбора пункта меню нужно написать следующее:</p>
+
+<pre><code class="java">
+@Override 
+public boolean onOptionsItemSelected(MenuItem item) 
+{
+	CharSequence message;
+
+	switch (item.getItemId()) {
+    ...
+	case IDM_COLOR_RED: 
+		// инвертируем состояние флажка 
+		item.setChecked(!item.isChecked()); 
+		message = "Красный цвет";
+		break;
+
+	default:
+		return false;
+}
+</code></pre>
+
+<p>Запустите проект, вызовите меню и выберите пункт меню <b>Цвет</b>. У вас появится подменю с тремя пунктами (Красный, Зеленый, Синий) в виде флажков. Состояние флажков и переключателей обрабатывается в коде программы и сохраняется при повторных вызовах меню.</p>
+
+
+<p>Можно сразу назначить намерение выбранному пункту меню через метод setIntent(), которое сработает при нажатии этого пункта, если данное событие не было перехвачено обработчиками onMenuItemClickListener (устар.) или onOptionsItemSelected. Сработав, намерение передается в метод startActivity.</p>
+
+<pre><code class="java">
+menuItem.setIntent(new Intent(this, MyOtherActivity.class));
+</code></pre>
+
+<h2 class="text-warning" id="openclose">Программное открытие или закрытие меню</h2>
+
+<p>Если вам по каким-то причинам нужно программно открыть меню (например, в демонстрационных целях), то используйте метод <b>openOptionsMenu()</b>:</p>
+
+<pre><code class="java">
+openOptionsMenu();
+</code></pre>
+
+<p>Для программного закрытия меню используйте метод <b>closeOptionsMenu()</b>, впрочем у меня повторный вызов метода <b>openOptionsMenu()</b> также закрывает меню.</p>
+
+<h2 class="text-warning" id="removemenu">Программное удаление пункта меню</h2>
+
+<p>Допустим, мы определили пункт меню в xml-файле:</p>
+
+<pre><code class="xml">
+&lt;item
+    android:id=&quot;@+id/action_dog&quot;
+    android:orderInCategory=&quot;100&quot;
+    android:showAsAction=&quot;never&quot;
+    android:title=&quot;Пёсик&quot;/&gt;
+</code></pre>
+
+<p>Чтобы удалить явно лишний пункт меню из нашей программы о котах, нужно получить доступ к пункту меню через метод <b>findItem()</b> и сделать его невидимым. Ссылку на объект Menu нужно передать в метод <b>onCreateOptionsMenu</b>, чтобы программа узнала об изменении состава меню.</p> 
+
+<pre><code class="java">
+// переменная класса
+Menu menu;
+
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+	super.onCreateOptionsMenu(menu);
+	// передаём ссылку на наш объект
+	this.menu = menu;
+	getMenuInflater().inflate(R.menu.test, menu);
+	return true;
+}
+
+// щелчок кнопки
+public void onClick(View v) {
+	if (menu != null) {
+	    // находим нужный элемент
+		MenuItem item_dog = menu.findItem(R.id.action_dog);
+		// делаем его невидимым
+		item_dog.setVisible(false);
+	}
+}
+</code></pre>
+
+<p>Но у данного решения есть недостаток, если мы повернём экран, то активность пересоздатся и удалённое меню снова появится. Как же нам избавиться от сранного пёсика?</p>
+
+<p>Надо запомнить состояние пункта меню и сохранить его в объекте типа Bundle в методе <b>onSaveInstanceState</b>, а в методе <b>onCreate()</b> извлечь сохранённое состояние и передать методу <b>onPrepareOptionsMenu</b>, который вызывается перед показом меню на экране:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+public class TestActivity extends Activity {
+	Menu menu;
+	Boolean savedMenuDogIsVisible;
+	final static String KEY_MENU_DOG = "KEY_MENU_DOG";
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_test);
+
+		// извлекаем данные о видимости пункта меню
+		if (savedInstanceState != null) {
+			savedMenuDogIsVisible = savedInstanceState.getBoolean(KEY_MENU_DOG,
+					true);
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+		this.menu = menu;
+		getMenuInflater().inflate(R.menu.test, menu);
+		return true;
+	}
+
+	public void onClick(View v) {
+
+		if (menu != null) {
+			MenuItem item_dog = menu.findItem(R.id.action_dog);
+			// прячем пункт меню
+			item_dog.setVisible(false);
+		}
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		// TODO Auto-generated method stub
+		super.onSaveInstanceState(outState);
+
+		if (menu != null) {
+			MenuItem item_dog = menu.findItem(R.id.action_dog);
+			// сохраняем текущее состояние пункта меню - true или false
+			outState.putBoolean(KEY_MENU_DOG, item_dog.isVisible());
+		}
+	}
+
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+
+		if (savedMenuDogIsVisible != null) {
+			MenuItem item_dog = menu.findItem(R.id.action_dog);
+			// перед выводом на экран узнаём нужное состоятние пункта меню
+			item_dog.setVisible(savedMenuDogIsVisible);
+		}
+		return super.onPrepareOptionsMenu(menu);
+	}
+}
+</code></pre>
+
+<h2 class="text-warning" id="hardmenu">Определить наличие кнопки Menu</h2>
+
+<p>На старых устройствах использовалась реальная кнопка Menu. В новых версиях Android меню убрали в ActionBar и её наличие в виде отдельной кнопки стало необязательным. Но многие производители по-прежнему выпускают телефоны с кнопкой для меню. Чтобы определить, есть ли такая кнопка, в Android 14 добавили новый метод, который позволит определить наличие этой кнопки.</p>
+
+<pre><code class="java">
+if (Build.VERSION.SDK_INT &lt;= 10
+		|| (Build.VERSION.SDK_INT >= 14 && ViewConfiguration.get(this)
+				.hasPermanentMenuKey())) {
+	// menu key is present
+	Toast.makeText(this, "Кнопка Menu есть", Toast.LENGTH_LONG).show();
+} else {
+	// No menu key
+	Toast.makeText(this, "Кнопки Menu нет", Toast.LENGTH_LONG).show();
+}
+</code></pre>
+
+<h2 class="text-warning" id="layout">Разметка для меню</h2>
+
+<p>В современных устройствах меню является частью ActionBar. И вы можете настроить разметку меню через XML.</p>
+
+<p>Допустим, вы выбрали такой вариант:</p>
+
+<pre><code class="xml">
+&lt;item
+    android:id=&quot;@+id/action_new&quot;
+    android:actionLayout=&quot;@layout/action_layout&quot;
+    android:orderInCategory=&quot;100&quot;
+    android:showAsAction=&quot;always|withText&quot;
+    android:title=&quot;Новый&quot;/&gt;
+</code></pre>
+
+<p>В атрибуте <b>showAsAction</b> не используйте значение <b>never</b>, иначе разметку не увидите. Сама разметка задана через атрибут <b>actionLayout</b>. Код для разметки:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;horizontal&quot; &gt;
+
+    &lt;ImageButton
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:contentDescription=&quot;Custom button!&quot;
+        android:scaleType=&quot;fitCenter&quot;
+        android:src=&quot;@drawable/blue&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/menu.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:12 GMT -->
+</html>

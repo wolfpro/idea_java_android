@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/for.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:11:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Экспресс-курс: Цикл for</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Цикл for</h1>
+
+<p>Конструкция <b>for</b> управляет циклами. Команда выполняется до тех пор, пока управляющее логическое выражение не станет ложным.</p>
+
+<p>Блок-схема.</p>
+
+<p><img src="for_schema.png" alt="for"></p>
+
+<p>Цикл <b>for</b> является наиболее распространённым циклом в программировании, поэтому его следует изучить. Цикл <b>for</b> проводит инициализацию перед первым шагом цикла. Затем выполняется проверка условия цикла, и в конце каждой итерации происходит изменение управляющей переменной. Выглядит следующим образом:</p>
+
+<pre><code class="java">
+for(инициализация; логическое выражение; шаг)
+    команда
+</code></pre>
+
+<p>Любое из трёх выражений цикла (инициализация, логическое выражение или шаг) можно пропустить. Перед выполнением каждого шага цикла проверяется условие цикла. Если условие окажется ложным, то выполнение продолжится с инструкции, следующей за конструкцией <b>for</b>.</p>
+
+<p>Помните, что выражение инициализации выполняется один раз, затем вычисляется условие, которое должно быть булевым выражением.</p>
+
+<p>Как правило, цикл <b>for</b> используют для перебора. В качестве имени первой переменной часто используют <b>i</b> (сокр. от init), но вы можете использовать любое имя.</p>
+
+<p>Простейший пример:</p>
+
+<pre><code class="java">
+for (int x = 0; x &lt; 9; x = x + 1)
+		textViewInfo.append("\nЗначение x: " + x);
+</code></pre>
+
+<p><img src="for1.png" alt="For" width="180" height="300"></p>
+
+<p>В этом примере переменной x присваивается начальное значение, равное нулю. Затем выполняется проверка условия в логическом выражении (x &lt; 9), если результат проверки истинен, то выполняется оператор после выражения цикла. После чего процесс повторяется. Процесс продолжается до тех пор, пока результат проверки условия не станет ложным.</p>
+
+<p>Третье выражение в цикле - шаг, то есть, на какое значение нужно изменить переменную. Строго говоря, в таком виде (x = x + 1) современные программисты не пишут, так как есть укороченная форма записи (x++). Поэтому, предыдущий пример можно переписать так:</p>
+
+<pre><code class="java">
+for (int x = 0; x &lt; 9; x++)
+</code></pre>
+
+<p>Увеличение значения переменной на единицу - весьма распространённый случай. Но это не является обязательным условием цикла, вы можете установить шаг и с помощью умножения, вычитания и других действий. Например, мы хотим вывести процесс уменьшения жизней у очень любопытной кошки:</p>
+
+<p><img src="for2.png" alt="For" width="180" height="300"></p>
+
+<p>Если нужно выполнить несколько операторов в цикле, то используют фигурные скобки.</p>
+
+<pre><code class="java">
+for (int kitten = 1; kitten &lt; 10; kitten++) {
+	textViewInfo.append("\nСчитаем котят: " + kitten);
+	editResult.setText("Ура! Нас подсчитали");
+}
+</code></pre>
+
+<p>В этом примере выполняется цикл с выводом числа подсчитанных котят, а также выводится текст в текстовом поле. Кстати, это один из примеров неправильного кода, когда в текстовом поле девять раз подряд выводится одна и таже строка. Мы этого не замечаем, но в реальности процессор выполняет лишнюю работу и второй оператор безусловно нужно вынести за пределы блока кода, который относится к циклу. Подобные ошибки очень часто встречаются у начинающих программистов, которые забывают, как работает цикл.</p>
+
+<p>Когда мы объявляем переменную в первой части оператора <b>for(int i = 0; ...)</b>, то область видимости переменной ограничена телом цикла и эта переменная не доступна на другом участке кода. Это подходящий вариант, если переменная больше нигде не используется. При этом переменная имеет область видимости и продолжительность существования, совпадающие с видимостью и продолжительностью жизни самого цикла. Вне цикла переменная прекратит своё существование.</p>
+
+<p>Если управляющую переменную цикла нужно использовать в других частях приложения, то её не следует объявлять внутри цикла.</p>
+
+<pre><code class="java">
+int i; // эта переменная нам понадобится не только в цикле
+for(i = 0; i &lt; 10; i++){
+    // что-то делаем
+}
+
+// можем использовать переменную где-то ещё
+x = i +10;
+</code></pre>
+
+<p>С другой стороны, если видимость переменной ограничена в пределах цикла, то не будет никакого конфликта, если вы будете использовать одинаковые имена переменных в разных циклах <b>for</b>, так как они не будут друг другу мешать.</p>
+
+<h2 class="text-warning">Использование нескольких переменных</h2>
+
+<p>Иногда требуется указать несколько переменных в инициализационной части цикла. Для начала посмотрим на стандартный пример:</p>
+
+<pre><code class="java">
+int a, b;
+b = 4;
+
+for(a = 1: a &lt; b; a++) {
+    textViewInfo.append("a = " + a + "\n");
+    textViewInfo.append("b = " + b + "\n");
+    b--;
+}
+</code></pre>
+
+<p>В данном цикле используются две переменные. Можно включить обе переменные в оператор <b>for</b>, чтобы не выполнять обработку второй переменной вручную:</p>
+
+<pre><code class="java">
+int a, b;
+
+for(a = 1, b = 4; a &lt; b; a++, b--) {
+    textViewInfo.append("a = " + a + "\n");
+    textViewInfo.append("b = " + b + "\n");
+}
+</code></pre>
+
+<p>Как видно из кода, запятая служит разделителем для двух переменных. Теперь оба разделённых запятой оператора в итерационной части цикла выполняются при каждом выполнении цикла. Данный код считается более эффективным, хотя на практике встречается редко.</p>
+
+<p>Части цикла могут быть пустыми. Например, в следующем примере нет инициализационного и итерационного выражения:</p>
+
+<pre><code class="java">
+int i;
+boolean kind = false;
+
+i = 0;
+for( ; !kind; ) {
+    textViewInfo.append("i равно " + i + "\n");
+    if(i == 10) done = true;
+    i++;
+}
+</code></pre>
+
+<p>А можно вообще все три части оператора оставить пустыми:</p>
+
+<pre><code class="java">
+for( ; ;) {
+    //...
+}
+</code></pre>
+
+<p>В этом случае создаётся бесконечный цикл, который никогда не завершится. Практического смысла данный код не имеет.</p>
+
+<h2 class="text-warning">Аналог foreach</h2>
+
+<p>Во многих языках существует более компактная форма <b>for</b> для перебора элементов массивов - <b>foreach</b>. Конструкция <b>foreach</b> не требует ручного изменения переменной-шага для перебора - цикл автоматически выполняет эту работу.</p>
+
+<p>В Java решили не добавлять новое ключевое слово, а просто сделали усовершенствованный вид цикла <b>for</b>, который имеет вид:</p>
+
+<pre>
+for(тип итер_пер : коллекция) блок_операторов
+</pre>
+
+<p>Для сравнения напишем цикл для вычисления суммы значений элементов массива традиционным способом:</p>
+
+<pre><code>
+int[] nums = { 1, 2, 3, 4, 5 };
+int sum = 0;
+
+for(int i = 0; i &lt; 5; i++) sum += nums[i];
+</code></pre>
+
+<p>Этот код можно переписать следующим образом:</p>
+
+<pre><code>
+int[] nums = { 1, 2, 3, 4, 5 };
+int sum = 0;
+
+for(int i : nums) sum += i;
+</code></pre>
+
+<p>При прохождении цикла переменной <i>i</i> автоматически присваивается значение, равное значению следующего элемента массива <i>nums</i>. Таким образом, при первом прохождении переменная <i>i</i> содержит значение 1, при втором - 2 и т.д. Кроме того при таком способе исключается возможность ошибок выхода за пределы массива.</p>
+
+<p>Для этого способа можно использовать массив или любой класс с интерфейсом <b>Iterable</b>.</p> 
+
+<p>Можно прервать выполнение цикла с помощью оператора <b>break</b>:</p>
+
+<pre><code>
+int[] nums = { 1, 2, 3, 4, 5 };
+int sum = 0;
+
+for(int i : nums) {
+    sum += i;
+	if(i == 3) break; // останавливаем цикл, если значение равно 3
+}
+</code></pre>
+
+<p>Учтите, что в цикле в стиле <b>foreach</b> итерационная переменная доступна только для чтения, так как она связана только с исходным массивом. Даже если вы измените её значение, то это не повлияет на работу с массивом.</p>
+
+<p>Также можно использовать данный способ для многомерных массивов.</p>
+
+<p>Поскольку каждый оператор <b>for</b> в стиле <b>foreach</b> перебирает элементы массива последовательно, начиная с первого и заканчивая последним, то данный способ удобен для многих операций. Например, для поиска значения в неупорядоченном массиве. Поиск прекращается после обнаружения нужного значения.</p>
+
+<pre><code class="java">
+int[] nums = { 3, 1, 6, 4, 9, 5, 8, 2 };
+
+int val = 5;
+boolean found = false;
+
+// ищем значение 5 в массиве
+for (int x : nums) {
+	if (x == val) {
+		found = true;
+		break;
+	}
+}
+
+if (found) {
+	textInfo.setText("Значение найдено");
+}
+</code></pre>
+
+<p>Так как у нас неупорядоченный список, то нам нужно последовательно пройтись по всем элементам. Если нам повезёт и нужное значение встретится при переборе, то выходим из цикла и <del>идём спать</del>.</p>
+
+<h2 class="text-warning">Вложенные циклы</h2>
+
+<p>Также допустимо использование вложенных циклов, когда один цикл выполняется внутри другого:</p>
+
+<pre><code class="java">
+int i, j;
+
+for (i = 0; i &lt; 10; i++) {
+	for (j = i; j &lt; 10; j++) {
+		textInfo.append("*");
+	}
+	textInfo.append("\n");
+}
+</code></pre>
+
+<p>В результате получим:</p>
+
+<pre>
+**********
+*********
+********
+*******
+******
+*****
+****
+***
+**
+*
+</pre>
+
+<p>При вложенных циклах количество повторений перемножается. В предыдущем примере было 100 повторений. Например, можно написать таблицу умножения.</p>
+
+<pre><code class="java">
+int i, j, a = 0;
+
+for (i = 1; i &lt; 10; i++) {
+	for (j = 1; j &lt; 10; j++) {
+		a = i * j;
+		System.out.print(a + " | ");
+	}
+	System.out.println();
+}
+</code></pre>
+
+<p>Результат смотрите в вкладке <b>LogCat</b>.</p>
+
+<p>Цикл <b>for</b> является более удобным вариантом цикла <a href="while.html">while</a>.</p>
+
+<pre><code class="java">
+for(int i = 10; i > 10; i--){
+    System.out.println("Отсчёт пошёл... " + i);
+}
+</code></pre>
+
+<p>Этот же вариант с <b>while</b>:</p>
+
+<pre><code class="java">
+int i = 10;
+while(i > 0){
+    System.out.println("Отсчёт пошёл... " + i);
+    i--;
+}
+</code></pre>
+
+<p>С помощью цикла можно рисовать красивые узоры, меняя координаты одной фигуры.</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+	
+		    </div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/for.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:00 GMT -->
+</html>

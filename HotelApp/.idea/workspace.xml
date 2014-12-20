@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidConfiguredLogFilters">
+    <filters>
+      <filter>
+        <option name="name" value="app: com.wolfpro.HotelApp" />
+        <option name="packageNamePattern" value="com.wolfpro.HotelApp" />
+      </filter>
+    </filters>
+  </component>
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.wolfpro.HotelApp" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f7e03507-55b5-4893-bfba-39b8abc5d76c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/ConnectForm.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/gen/ru/wolfpro/ConnectForm/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/gen/ru/wolfpro/ConnectForm/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/gen/ru/wolfpro/ConnectForm/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/out/production/ConnectForm/ConnectForm.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/out/production/ConnectForm/ConnectForm.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/out/production/ConnectForm/ru/wolfpro/ConnectForm/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/out/production/ConnectForm/ru/wolfpro/ConnectForm/PassingDataDemoActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/out/production/ConnectForm/ru/wolfpro/ConnectForm/Privet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/out/production/ConnectForm/ru/wolfpro/ConnectForm/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/out/production/ConnectForm/ru/wolfpro/ConnectForm/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/out/production/ConnectForm/ru/wolfpro/ConnectForm/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/out/production/ConnectForm/ru/wolfpro/ConnectForm/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/out/production/ConnectForm/ru/wolfpro/ConnectForm/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/res/layout/privet.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/src/ru/wolfpro/ConnectForm/PassingDataDemoActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ConnectForm/src/ru/wolfpro/ConnectForm/Privet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/Converter38Parrots.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/gen/ru/wolfpro/Converter38Parrots/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/gen/ru/wolfpro/Converter38Parrots/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/gen/ru/wolfpro/Converter38Parrots/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/out/production/Converter38Parrots/Converter38Parrots.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/out/production/Converter38Parrots/Converter38Parrots.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/out/production/Converter38Parrots/ru/wolfpro/Converter38Parrots/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/out/production/Converter38Parrots/ru/wolfpro/Converter38Parrots/MyActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/out/production/Converter38Parrots/ru/wolfpro/Converter38Parrots/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/out/production/Converter38Parrots/ru/wolfpro/Converter38Parrots/R$color.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/out/production/Converter38Parrots/ru/wolfpro/Converter38Parrots/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/out/production/Converter38Parrots/ru/wolfpro/Converter38Parrots/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/out/production/Converter38Parrots/ru/wolfpro/Converter38Parrots/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/out/production/Converter38Parrots/ru/wolfpro/Converter38Parrots/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Converter38Parrots/src/ru/wolfpro/Converter38Parrots/MyActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/.idea/description.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/.idea/project-template.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/DeadSad.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/out/production/DeadSad/ru/codapp/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DeadSad/src/ru/codapp/Main.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/Games_One_Jamp.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/gen/com/example/Games_One_Jamp/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/gen/com/example/Games_One_Jamp/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/gen/com/example/Games_One_Jamp/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/out/production/Games_One_Jamp/Games_One_Jamp.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/out/production/Games_One_Jamp/Games_One_Jamp.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/out/production/Games_One_Jamp/com/example/Games_One_Jamp/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/out/production/Games_One_Jamp/com/example/Games_One_Jamp/MyActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/out/production/Games_One_Jamp/com/example/Games_One_Jamp/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/out/production/Games_One_Jamp/com/example/Games_One_Jamp/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/out/production/Games_One_Jamp/com/example/Games_One_Jamp/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/out/production/Games_One_Jamp/com/example/Games_One_Jamp/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/out/production/Games_One_Jamp/com/example/Games_One_Jamp/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/out/production/Games_One_Jamp/com/example/Games_One_Jamp/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/res/drawable-hdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/res/drawable-ldpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/res/drawable-mdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/res/drawable/background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/res/drawable/ground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Games_One_Jamp/src/com/example/Games_One_Jamp/MyActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/MenuSetting.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/gen/com/example/MenuSetting/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/gen/com/example/MenuSetting/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/gen/com/example/MenuSetting/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/out/production/MenuSetting/MenuSetting.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/out/production/MenuSetting/MenuSetting.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/out/production/MenuSetting/com/example/MenuSetting/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/out/production/MenuSetting/com/example/MenuSetting/MyStartActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/out/production/MenuSetting/com/example/MenuSetting/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/out/production/MenuSetting/com/example/MenuSetting/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/out/production/MenuSetting/com/example/MenuSetting/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/out/production/MenuSetting/com/example/MenuSetting/R$menu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/out/production/MenuSetting/com/example/MenuSetting/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/out/production/MenuSetting/com/example/MenuSetting/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/res/menu/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/res/menu/popupmenu.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/res/values/styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MenuSetting/src/com/example/MenuSetting/MyStartActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/dictionaries/wolfpro.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/MotoApp.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/gen/ru/wolfpro/MotoApp/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/gen/ru/wolfpro/MotoApp/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/gen/ru/wolfpro/MotoApp/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/MotoApp.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/MotoApp.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/ru/wolfpro/MotoApp/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/ru/wolfpro/MotoApp/MyActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/ru/wolfpro/MotoApp/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/ru/wolfpro/MotoApp/R$color.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/ru/wolfpro/MotoApp/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/ru/wolfpro/MotoApp/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/ru/wolfpro/MotoApp/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/ru/wolfpro/MotoApp/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/out/production/MotoApp/ru/wolfpro/MotoApp/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/res/drawable/pinkhellokitty.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MotoApp/src/ru/wolfpro/MotoApp/MyActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/Popupmenu.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/gen/ru/wolfpro/Popupmenu/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/gen/ru/wolfpro/Popupmenu/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/gen/ru/wolfpro/Popupmenu/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/Popupmenu.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/Popupmenu.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/MyStartActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/MyStartActivity$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/MyStartActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/R$menu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/out/production/Popupmenu/ru/wolfpro/Popupmenu/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/res/drawable-hdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/res/drawable-ldpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/res/drawable-mdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/res/menu/popupmenu.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Popupmenu/src/ru/wolfpro/Popupmenu/MyStartActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/Sherlock.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/gen/ru/wolfpro/Sherlock/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/gen/ru/wolfpro/Sherlock/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/gen/ru/wolfpro/Sherlock/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/Sherlock.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/Sherlock.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/ru/wolfpro/Sherlock/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/ru/wolfpro/Sherlock/Chose.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/ru/wolfpro/Sherlock/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/ru/wolfpro/Sherlock/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/ru/wolfpro/Sherlock/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/ru/wolfpro/Sherlock/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/ru/wolfpro/Sherlock/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/ru/wolfpro/Sherlock/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/out/production/Sherlock/ru/wolfpro/Sherlock/StartActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/res/drawable/sherlock.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/res/layout/chose.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/src/ru/wolfpro/Sherlock/Chose.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Sherlock/src/ru/wolfpro/Sherlock/StartActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/codeStyleSettings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/Test.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/out/production/Test/Man.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Test/src/Man.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/Toast.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/gen/com/example/Toast/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/gen/com/example/Toast/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/gen/com/example/Toast/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/Toast.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/Toast.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/com/example/Toast/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/com/example/Toast/MyActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/com/example/Toast/MyActivity$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/com/example/Toast/MyActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/com/example/Toast/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/com/example/Toast/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/com/example/Toast/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/com/example/Toast/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/com/example/Toast/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/out/production/Toast/com/example/Toast/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/res/drawable-hdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/res/drawable-ldpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/res/drawable-mdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/res/drawable/photo.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/res/layout/custom_layout.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Toast/src/com/example/Toast/MyActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/Help/Help.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/gen/ru/wolfpro/lights/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/gen/ru/wolfpro/lights/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/gen/ru/wolfpro/lights/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/lights.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/lights.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/lights.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/ru/wolfpro/lights/AboutActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/ru/wolfpro/lights/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/ru/wolfpro/lights/MyActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/ru/wolfpro/lights/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/ru/wolfpro/lights/R$color.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/ru/wolfpro/lights/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/ru/wolfpro/lights/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/ru/wolfpro/lights/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/ru/wolfpro/lights/R$style.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/out/production/lights/ru/wolfpro/lights/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/res/layout/about.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/res/values/colors.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/res/values/styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/src/ru/wolfpro/lights/AboutActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../lights/src/ru/wolfpro/lights/MyActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/myapp.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/res/drawable-hdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/res/drawable-ldpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/res/drawable-mdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../myapp/src/com/example/myapp/MyActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/gen/ru/wolfpro/sixButton/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/gen/ru/wolfpro/sixButton/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/gen/ru/wolfpro/sixButton/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/local.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/out/production/sixButton/ru/wolfpro/sixButton/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/out/production/sixButton/ru/wolfpro/sixButton/MyActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/out/production/sixButton/ru/wolfpro/sixButton/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/out/production/sixButton/ru/wolfpro/sixButton/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/out/production/sixButton/ru/wolfpro/sixButton/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/out/production/sixButton/ru/wolfpro/sixButton/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/out/production/sixButton/ru/wolfpro/sixButton/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/out/production/sixButton/sixButton.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/out/production/sixButton/sixButton.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/res/layout-land/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/res/layout/main.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/res/values/strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/sixButton.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../sixButton/src/ru/wolfpro/sixButton/MyActivity.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/MyAndroidLessonBrowser.apk" afterPath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/MyAndroidLessonBrowser.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/MyAndroidLessonBrowser.unaligned.apk" afterPath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/MyAndroidLessonBrowser.unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/com/example/MyAndroidLessonBrowser/R$string.class" afterPath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/com/example/MyAndroidLessonBrowser/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/com/example/MyAndroidLessonBrowser/browser$MyWebViewClient.class" afterPath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/com/example/MyAndroidLessonBrowser/browser$MyWebViewClient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/com/example/MyAndroidLessonBrowser/browser.class" afterPath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/com/example/MyAndroidLessonBrowser/browser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/com/example/MyAndroidLessonBrowser/main.class" afterPath="$PROJECT_DIR$/../MyAndroidLessonBrowser/out/production/MyAndroidLessonBrowser/com/example/MyAndroidLessonBrowser/main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MyAndroidLessonBrowser/res/values/strings.xml" afterPath="$PROJECT_DIR$/../MyAndroidLessonBrowser/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MyAndroidLessonBrowser/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../MyAndroidLessonBrowser/.idea/workspace.xml" />
+    </list>
+    <ignored path="HotelApp.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="HotelApp" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="StartActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/StartActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.45517242" vertical-offset="0" max-vertical-offset="435">
+              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="774">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/ProjectActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_project.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/main_project.xml">
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1062">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
+              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/res/layout/main_project.xml" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/com/wolfpro/HotelApp/ProjectActivity.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="-1" />
+    <option name="width" value="1280" />
+    <option name="height" value="801" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android Lint</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HotelApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HotelApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HotelApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HotelApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HotelApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HotelApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="Errors" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="restartRequiresConfirmation" value="true" />
+  </component>
+  <component name="RunManager" selected="Android Application.HotelApp">
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="HotelApp" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="HotelApp" />
+      <option name="ACTIVITY_CLASS" value="com.wolfpro.HotelApp.StartActivity" />
+      <option name="MODE" value="specific_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="4.4.2.phone" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="-force-32bit" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Android Application.HotelApp" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f7e03507-55b5-4893-bfba-39b8abc5d76c" name="Default" comment="" />
+      <created>1418407565089</created>
+      <option name="number" value="Default" />
+      <updated>1418407565089</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-1" width="1280" height="801" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280116" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32656023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946298" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33306322" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="774">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/ProjectActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main_project.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1062">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="774">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/ProjectActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main_project.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1062">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="774">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/ProjectActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main_project.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1062">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="774">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/ProjectActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main_project.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1062">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="360">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main_project.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1062">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="360">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="360">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="360">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main_project.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1062">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/ProjectActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wolfpro/HotelApp/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45517242" vertical-offset="0" max-vertical-offset="435">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

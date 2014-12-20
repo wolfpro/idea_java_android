@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/views/button.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:52:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Button (Кнопка)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class="active"><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Button (Кнопка)</h1>
+
+<p>
+<a href="#common">Общая информация</a><br>
+<a href="#click">Три способа обработки событий нажатий на кнопку</a><br>
+<a href="#more">Плодитесь и размножайтесь - это про кошек, а не про кнопки</a><br>
+<a href="#disabled">Сделать кнопку недоступной</a><br>
+<a href="#noborder">Сделать кнопку плоской</a><br>
+<a href="#touch">Коснись меня нежно</a><br>
+<a href="#add">Дополнительное чтение</a><br>
+</p>
+
+<h2 class="text-warning" id="common">Общая информация</h2>
+<p>Кнопка - один из самых распространенных элементов управления в программировании. Наследуется от <b>Textview</b> и является базовым классом для класса <b>СompoundButton</b>. От класса <b>CompoundButton</b> в свою очередь наследуются такие элементы как <b>CheckBox</b>, <b>ToggleButton</b> и <b>RadioButton</b>. В Android для кнопки используется класс <b>android.widget.Button</b>. На кнопке располагается текст и на кнопку нужно нажать, чтобы получить результат. Альтернативой ему может служить элемент <a href="imagebutton.html">ImageButton</a> (<b>android.widget.ImageButton</b>), у которого вместо текста используется изображение.</p>
+
+<p>Компонент <b>Button</b> находится в папке <b>Form Widgets</b>:</p>
+
+<p><img src="button-tool.png" alt="Button"></p>
+
+<p>Если вы растягиваете кнопку по всей ширине экрана (<b>android:layout_width="match_parent"</b>), то дополнительно рекомендую использовать атрибут <b>android:layout_margin</b> (или родственные ему <b>layout_marginRight</b> и <b>layout_marginLeft</b>) для создания отступов от краев экрана (веб-мастера знакомы с этими терминами).</p>
+
+<p>Так как кнопка является наследником <b>Textview</b>, то использует многие знакомые нам атрибуты: <b>textColor</b>, <b>textSize</b> и др.</p>
+
+<h2 class="text-warning" id="click">Три способа обработки событий нажатий на кнопку</h2>
+
+<p>Если вы разместили на экране кнопку и будете нажимать на неё, то ничего не произойдёт. Необходимо написать код, который будет выполняться при нажатии. Существует несколько способов обработки нажатий на кнопку.</p>
+
+<h3 class="text-warning">Первый способ - атрибут onClick</h3>
+
+<p>Относительно новый способ, специально разработанный для Android - использовать атрибут <b>onClick</b> (на панели свойств отображается как <b>On Click</b>):</p>
+
+<pre>
+android:onClick="onMyButtonClick"
+</pre>
+
+<p>Имя для события можно выбрать произвольное, но лучше не выпендриваться. Далее нужно прописать в классе активности придуманное вами имя метода, который будет обрабатывать нажатие. Метод должен быть открытым (public) и с одним параметром, использующим объект <b>View</b>. Вам нужно выучить пять слов для создания метода, а сам метод поместить в класс (если вы ещё путаетесь в структуре Java-кода, то вставьте метод перед последней фигурной скобкой):</p> 
+
+<pre><code class="java">
+public void onMyButtonClick(View view)  
+{  
+    // выводим сообщение
+    Toast.makeText(this, "Зачем вы нажали?", Toast.LENGTH_SHORT).show();  
+}  
+</code></pre>
+
+<p>Когда пользователь нажимает на кнопку, то вызывается метод <b>onMyButtonClick()</b>, который в свою очередь генерирует всплывающее сообщение.</p>
+
+<p>Обратите внимание, что при подобном подходе вам не придётся даже объявлять кнопку через конструкцию <b>(Button)findViewById(R.id.button1)</b>, так как Android сама поймёт, что к чему. Данный способ применим не только к кнопке, но и к другим элементам и позволяет сократить количество строк кода.</p>
+
+<div class="alert">
+Недавно прочитал, что данный способ не будет работать в фрагментах. Позже, когда вы узнаете, что это такое, то вспомните это предупреждение.
+</div>
+
+<h3 class="text-warning">Второй способ - метод setOnClickListener()</h3>
+
+<p>Более традиционный способ в Java - через метод <b>setOnClickListener()</b>, который прослушивает нажатия на кнопку. Так как для начинающего программиста код может показаться сложным, то рекомендуется использовать подсказки Eclipse. Вот как это будет выглядеть. Предположим, у вас на экране уже есть кнопка Button1. В коде вы объявляете её обычным способом:</p>
+
+<pre><code class="java">
+Button button1 = (Button)findViewById(R.id.button1);
+</code></pre>
+
+<p>Следующий шаг - написание метода для нажатия. Напечатайте имя элемента и поставьте точку <i>button1.</i> - среда разработки покажет вам список доступных выражений для продолжения кода. Вы можете вручную просмотреть и выбрать нужный вариант, а можно продолжать набирать символы, чтобы ускорить процесс. Так как с нажатиями кнопок вам часто придётся работать, то запомните название его метода (хотя бы первые несколько символов) - набрав шесть символов (<i>setonc</i>), вы увидите один оставшийся вариант, дальше можно сразу нажать клавишу Enter, не набирая оставшиеся символы. У вас появится строка такого вида:</p>
+
+<pre><code class="java">
+button1.setOnClickListener(l)
+</code></pre>
+
+<p>Символ <b>l</b> будет выделен, а также будет видна подсказка <b>OnClickListener l</b>. Пока символ выделен, начинайте набирать <i>new OnClickListener</i>. Здесь также не обязательно набирать имя полностью. Наберите слово <i>oncl</i> и нажмите комбинацию клавиш Ctrl+Space для вывода вариантов продолжения. Eclipse предложит вам единственный вариант, поэтому сразу нажимайте Enter и вы получите готовую заготовку для обработки нажатия кнопки:</p>
+
+<pre><code class="java">
+button1.setOnClickListener(new OnClickListener() {
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
+})
+</code></pre>
+
+<p>Вас могут испугать три красные метки об ошибках. Не пугайтесь, поставьте в самом конце заготовки символ точки с запятой <b>;</b> после последней круглой скобки, и первая ошибка исчезнет. Далее подведите курсор мыши к слову <b>OnClickListener</b>, которая подчёркнута волнистой красной чертой. Появятся несколько вариантов для исправления ошибки. Выберите вариант <b>Import 'OnClickListener' (android.view.View)</b> и исчезнут оставшиеся две метки. Теперь у вас есть рабочая заготовка и сразу после строки с комментарием <b>TODO Auto-generated method stub</b> вы можете писать свой код. Рекомендую потренироваться и набить руку в создании заготовки. Это не так сложно и с практикой навык закрепится автоматически.</p>
+
+<p>Как вариант, можно вынести код для <b>OnClickListener</b> в отдельное место, это удобно, когда кнопок на экране несколько и такой подход позволит упорядочить код. Удалите предыдущий пример и начните писать код заново. Принцип такой же, немного меняется порядок. В предыдущем примере мы сразу прописали в методе <b>setOnClickListener</b> слушателя <b>new OnClickListener...</b> с методом <b>onClick()</b>. Можно сначала отдельно объявить отдельную переменную:</p>
+
+<pre><code class="java">
+OnClickListener MyButtonClick = new OnClickListener() {
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
+};
+</code></pre>
+
+<p>Во время набора активно используйте подсказки через Ctrl+Space. Набрали несколько символов у первого слова и нажимайте эту комбинацию, набрали после слова new несколько символов и снова нажимайте указанную комбинацию - заготовка будет создана за несколько секунд, а вы избежите возможных опечаток.</p>
+
+<p>У нас есть готовая переменная, и теперь, когда вы будете набирать код <b>button1.setOnClickListener</b>, то опять появится выделенный символ <b>l</b>, но уже с подсказкой, что можно выбрать готовую переменную - выделите её и нажмите Enter или вручную пишите самостоятельно.</p>
+
+<p>Для новичка описание может показаться сумбурным и не понятным, но лучше самостоятельно проделать эти операции и понять механизм.</p>
+
+<h3 class="text-warning">Третий способ - интерфейс OnClickListener</h2>
+
+<p>Третий способ является родственным второму способу и также является традиционным для Java. Кнопка присваивает себе обработчика с помощью метода <b>setOnClickListener (View.OnClickListener l)</b>, т.е. подойдет любой объект с интерфейсом <b>View.OnClickListener</b>. Мы можем указать, что наш класс <b>Activity</b> будет использовать интерфейс <b>View.OnClickListener</b>.</p>
+
+<p>Опять стираем код от предыдущего примера. Далее после слов <b>extends Activity</b> дописываем слова <b>implements OnClickListener</b>. Если вы написали код через подсказку, то строка <b>import android.view.View.OnClickListener;</b> вставится в секцию импорта автоматически, в противном случае пропишите самостоятельно.</p>
+
+<p>Название вашего класса будет подчёркнуто волнистой красной чертой, подведите курсор мыши к слову и выберите вариант <b>Add unimplemented methods</b>. В коде появится заготовка для нажатия кнопки.</p>
+
+<pre><code class="java">
+@Override
+public void onClick(View v) {
+	// TODO Auto-generated method stub
+	
+}
+</code></pre>
+
+<p>Метод будет реализован не в отдельном объекте-обработчике, а в Activity, который и будет выступать обработчиком. В методе <b>onCreate()</b> присвоим обработчик кнопке. Это будет объект <b>this</b>, т.е. текущий объект нашей активности.</p>
+
+<pre><code class="java">
+button1.setOnClickListener(this);
+</code></pre>
+
+<p>На первых порах такой способ покажется вам сложным и непонятным. Со временем и опытом понимание обязательно придёт.</p>
+
+<p>Лично я рекомендую вам использовать первый способ, как самый простой и понятный. Использование второго и третьего способа дадут вам представление, как писать обработчики для других событий, так как кнопка может иметь и другие события. Например, кроме обычного нажатия существует долгое нажатие на кнопку (long click). Один из таких примеров с методом касания я привёл в конце этой статьи.</p>
+
+<p>О том, как обрабатывать щелчки кнопки я написал отдельную статью <a href="../android3.html" >Щелчок кнопки/Счетчик ворон</a>. Также кнопки будут встречаться практически в каждом примере на этом сайте. Про обработку длительный нажатий можно прочитать в статье, посвященной <a href="imagebutton.html#longclick">ImageButton</a>.</p>
+
+<h2 class="text-warning" id="more">Плодитесь и размножайтесь - это про кошек, а не про кнопки</h2>
+
+<p>Когда у вас одна кнопка в окне, то у вас будет один метод, две кнопки - два метода и так далее. Если у вас несколько кнопок, то не обязательно для каждой прописывать свой метод, можно обойтись и одним, а уже в самом методе разделять код по идентификатору кнопки. Если вы посмотрите на код в предыдущих примерах, то увидите, что в методе присутствует параметр <b>View</b>, который и позволяет определить, для какой кнопки предназначен кусок кода:</p>
+
+<pre><code class="java">
+public void onMyButtonClick(View view)  
+{  
+    switch(view.getId())  { 
+    case  R.id.btn1: // идентификатор "@+id/btn1"
+		 ShowAlertDialog();
+		 break;
+	...
+}  
+</code></pre>
+
+<p>Предположим, у вас есть три кнопки:</p>
+
+<pre><code class="java">
+import android.view.View.OnClickListener;
+
+public class ButtonDemoActivity extends Activity implements OnClickListener...
+
+final Button button1 = (Button)findViewById(R.id.button1);
+final Button button2 = (Button)findViewById(R.id.button2);
+final Button button3 = (Button)findViewById(R.id.button3);
+
+// устанавливаем один обработчик для всех кнопок
+button1.setOnClickListener(this);
+button2.setOnClickListener(this);
+button3.setOnClickListener(this);
+
+// анализируем, какая кнопка была нажата. Всего один метод для всех кнопок
+@Override
+public void onClick(View v){
+    switch (v.getId()) {
+	    case R.id.button1: editText.setText("Нажата кнопка Button1"); break;
+		case R.id.button2: editText.setText("Нажата кнопка Button2"); break;
+		case R.id.button3: editText.setText("Нажата кнопка Button3"); break;
+    }
+}
+</code></pre>
+
+<p>Как видите, мы сократили количество кода. Теперь у нас один обработчик <b>onClick()</b>, в котором прописаны действия для трёх кнопок.</p>
+
+<h2 class="text-warning" id="disabled">Сделать кнопку недоступной</h2>
+
+<p>Иногда нужно сделать кнопку недоступной и активировать её при определённых условиях. Через XML нельзя сделать кнопку недоступной (нет подходящего атрибута). Это можно сделать программно через метод <b>setEnabled()</b>:</p>
+
+<pre><code class="java">
+myButton.setEnabled(false);
+</code></pre>
+
+<p>Как альтернативу можете рассмотреть атрибут <b>android:clickable</b>, который позволит кнопке не реагировать на касания, но при этом вид кнопки останется обычным.</p>
+
+<h2 class="text-warning" id="noborder">Сделать кнопку плоской</h2>
+
+<p>Стандартная кнопка на экране выглядит выпуклой. Но в некоторых случаях желательно использовать плоский интерфейс. Раньше для этих целей можно было использовать <b>TextView</b> с обработкой щелчка. Но теперь рекомендуют использовать специальный стиль <b>borderlessButtonStyle</b>:</p>
+
+<pre><code class="xml">
+&lt;Button
+    android:id=&quot;@+id/button1&quot;
+    style=&quot;?android:attr/borderlessButtonStyle&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:onClick=&quot;onClick&quot;
+    android:text=&quot;Button&quot; /&gt;
+</code></pre>
+
+<p>Кнопка сохранит своё привычное поведение, будет менять свой цвет при нажатии и т.д.</p>
+
+<h2 class="text-warning" id="touch">Коснись меня нежно</h2>
+
+<p>Если вы внимательно понаблюдаете за поведением кнопки, то увидите, что код срабатывает в тот момент, когда вы отпускаете свою лапу, извините, палец с кнопки. Для обычных приложений это вполне нормально, а для игр на скорость такой подход может оказаться слишком медленным. В подобных случаях лучше обрабатывать ситуацию не с нажатием кнопки, а с его касанием. В Android есть соответствующий слушатель <b>OnTouchListener()</b>:</p>
+
+<pre><code class="java">
+Button button = (Button) findViewById(R.id.button1);
+button.setOnTouchListener(new OnTouchListener() {
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		// TODO Auto-generated method stub
+		if (event.getAction() == MotionEvent.ACTION_DOWN) {
+			Toast.makeText(getApplicationContext(),
+					"Молодой человек, не прикасайтесь ко мне!",
+					Toast.LENGTH_SHORT).show();
+		}
+		return false;
+	}
+});
+</code></pre>
+
+<p>У метода <b>onTouch()</b> есть параметр <b>MotionEvent</b>, позволяющий более тонко определять касания экрана. Если произойдет событие, когда пользователь коснулся экрана, то ему будет соответствовать константа <b>ACTION_DOWN</b>. Соответственно, если пользователь уберёт палец, то нужно использовать константу <b>ACTION_UP</b>. Таким образом, можете расценивать щелчок кнопки как комбинацию двух событий - касания и отпускания.</p>
+
+<p><img src="../../../img-fotki.yandex.ru/get/9505/27875755.10/0_8b4cc_3017152e_L.gif"></p>
+
+<div class="alert alert-info">К сожалению, на сегодняшний день в Android нет метода <b>Погладить</b>. Коты недовольны.</div>
+
+<h2 class="text-warning" id="add">Дополнительное чтение</h2>
+
+<p><a href="button-advanced.html">Продвинутые примеры для кнопок</a> (закрытая зона/второй месяц)</p>
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/views/button.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:52:23 GMT -->
+</html>

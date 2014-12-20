@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/texteditor.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:47:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<title>Android: Создаём простой текстовый редактор</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class="active"><a href="index-2.html">Главная</a></li>
+<li class=""><a href="theory/index.html">Теория</a></li>
+<li class=""><a href="views.html">Palette</a></li>
+<li class=""><a href="listview/index.html">ListView</a></li>
+<li class=""><a href="catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="animation.html">Анимация</a></li>
+<li class=""><a href="sqlite/index.html">SQLite</a></li>
+<li class=""><a href="opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="library/index.html">Библиотеки</a></li>
+<li class=""><a href="games/index.html">Игры</a></li>
+<li class=""><a href="emulator.html">Эмулятор</a></li>
+<li class=""><a href="tips-android.html">Советы</a></li>
+<li class=""><a href="articles-android.html">Статьи</a></li>
+<li class=""><a href="books.html">Книги</a></li>
+<li class=""><a href="java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="design/index.html">Дизайн</a></li>
+<li class=""><a href="opensource.html">Open Source</a></li>
+<li class=""><a href="links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+            
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Создаём простой текстовый редактор</h1>
+
+<p><img src="images/texteditorcat.jpg" alt="Текстовый редактор" width="500"></p>
+
+<p>
+<a href="#io">Операции с файлами</a><br>
+<a href="#checkboxpreference">Сохранение настроек - Флажки</a><br>
+<a href="edittextpreference.html">Сохранение текстовых настроек</a><br>
+<a href="#listpreference">Сохранение настроек - Списки</a><br>
+</p>
+
+<h2 class="text-warning" id="io">Операции с файлами</h2>
+
+<p>Рассмотрим вопросы ввода/вывода, которые являются распространёнными операциями в программировании. В Android можно сохранять файлы непосредственно на самом устройстве или на внешней карте памяти. По умолчанию другие приложения не могут обращаться к этим файлам. Android использует стандартные операции ввода/вывода, принятые в Java. Например, Android реализует потоки с помощью классов из пакета <b>java.io</b>.</p>
+
+<p>Чтобы записать данные в файл, необходимо вызвать метод <b>Context.openFileInput()</b> и передать в качестве параметра имя файла. Метод возвращает стандартный Java-объект <b>FileOutputStream</b>. Вызов метода для данного файла из другого приложения не будет работать, обратиться вы можете только к своим файлам. Например, чтобы создать файл и записать данные, пишем следующий код:</p>
+
+<pre><code class="java">
+String FILENAME = "hello_file";
+String mystring = "hello world!";
+
+FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+fos.write(mystring.getBytes());
+fos.close();
+</code></pre>
+
+<p>Если имеется статический файл, который надо упаковать с вашим приложением во время компиляции проекта, можно сохранить его в каталоге <b>res/raw/</b>, а затем открыть его при помощи метода Resources.openRawResource(). Он возвращает объект <b>InputStream</b>, который можно использовать для чтения файла. После окончания работы с потоком не забудьте его закрыть, вызвав метод <b>close()</b>.</p> 
+
+<p>Создадим простейший аналог Блокнота, позволяющий записывать и читать данные из файла.</p>
+
+<p>На главной форме приложения разместим виджет <b>EditText</b> и растянем его на весь экран приложения:</p>
+
+<h3 class="text-success">activity_main.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;EditText
+        android:id=&quot;@+id/editText&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;fill_parent&quot;
+        android:gravity=&quot;top|left&quot;
+        android:inputType=&quot;textMultiLine&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Создадим пункты меню <b>Открыть</b> и <b>Сохранить</b> в ресурсах:</p>
+
+<h3 class="text-success">res/menu/main.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+
+    &lt;item
+        android:id=&quot;@+id/action_open&quot;
+        android:icon=&quot;@android:drawable/ic_menu_day&quot;
+        android:orderInCategory=&quot;100&quot;
+        android:showAsAction=&quot;ifRoom|withText&quot;
+        android:title=&quot;@string/action_open&quot;/&gt;
+    &lt;item
+        android:id=&quot;@+id/action_save&quot;
+        android:icon=&quot;@android:drawable/ic_menu_save&quot;
+        android:orderInCategory=&quot;100&quot;
+        android:showAsAction=&quot;ifRoom|withText&quot;
+        android:title=&quot;@string/action_save&quot;/&gt;
+
+&lt;/menu&gt;
+</code></pre>
+
+<div class="alert alert-info">Обратите внимание, что для пунктов меню я использовал системные значки <b>@android:drawable/ic_menu_save</b> и <b>@android:drawable/ic_menu_day</b>, зашитые в систему. На самом деле Google не рекомендует использовать подобный подход. Лучшим решением будет скопировать нужный значок из папки SDK и разместить его в папке ресурсов.</div>
+
+<p>В методах <b>openFile()</b> и <b>saveFile()</b> реализуем операции по открытию и сохранению файла.</p>
+
+<h3 class="text-success">MainActivity.java</h3>
+
+<pre><code class="java">
+package ru.alexanderklimov.notepad;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+
+	// имя файла
+	private final static String FILENAME = "sample.txt";
+	private EditText mEdit; // текстовое поле
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		mEdit = (EditText) findViewById(R.id.editText);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		switch (item.getItemId()) {
+		case R.id.action_open:
+			openFile(FILENAME);
+			return true;
+		case R.id.action_save:
+			saveFile(FILENAME);
+			return true;
+		default:
+			return true;
+		}
+	}
+
+	// Метод для открытия файла
+	private void openFile(String fileName) {
+		try {
+			InputStream inputstream = openFileInput(FILENAME);
+
+			if (inputstream != null) {
+				InputStreamReader isr = new InputStreamReader(inputstream);
+				BufferedReader reader = new BufferedReader(isr);
+				String str;
+				StringBuffer buffer = new StringBuffer();
+
+				while ((str = reader.readLine()) != null) {
+					buffer.append(str + "\n");
+				}
+
+				inputstream.close();
+				mEdit.setText(buffer.toString());
+			}
+		} catch (Throwable t) {
+			Toast.makeText(getApplicationContext(),
+					"Exception: " + t.toString(), Toast.LENGTH_LONG).show();
+		}
+	}
+
+	// Метод для сохранения файла
+	private void saveFile(String FileName) {
+		try {
+			OutputStream outputstream = openFileOutput(FILENAME, 0);
+			OutputStreamWriter osw = new OutputStreamWriter(outputstream);
+			osw.write(mEdit.getText().toString());
+			osw.close();
+		} catch (Throwable t) {
+			Toast.makeText(getApplicationContext(),
+					"Exception: " + t.toString(), Toast.LENGTH_LONG).show();
+		}
+	}
+}
+</code></pre>
+
+<p>В результате мы получили простой блокнотик, позволяющий сохранять записи в заданном файле. При желании вы можете усовершенствовать приложение, добавив возможность создания новых файлов и их удаления.</p>
+
+<p><img src="images/texteditor1.png"></p>
+
+<h2 class="text-warning" id="checkboxpreference">Сохранение настроек - Флажки</h2>
+
+<p>Расширим функциональность блокнота, добавив в него возможность сохранения различных настроек.</p>
+
+<p>Подготовим различные настройки, которые будем хранить в файле строковых ресурсов <b>strings.xml</b>:</p>
+
+<h3 class="text-success">res/values/strings.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+
+    &lt;string name=&quot;app_name&quot;&gt;Notepad&lt;/string&gt;
+    &lt;string name=&quot;action_open&quot;&gt;Открыть&lt;/string&gt;
+    &lt;string name=&quot;action_save&quot;&gt;Сохранить&lt;/string&gt;
+	&lt;string name=&quot;action_settings&quot;&gt;Настройки&lt;/string&gt;
+    &lt;string name=&quot;pref_openmode&quot;&gt;Режим открытия&lt;/string&gt;
+    &lt;string name=&quot;pref_color&quot;&gt;Цвет&lt;/string&gt;
+    &lt;string name=&quot;pref_color_black&quot;&gt;Черный цвет&lt;/string&gt;
+    &lt;string name=&quot;pref_color_red&quot;&gt;Красный цвет&lt;/string&gt;
+    &lt;string name=&quot;pref_color_green&quot;&gt;Зеленый цвет&lt;/string&gt;
+    &lt;string name=&quot;pref_color_blue&quot;&gt;Синий цвет&lt;/string&gt;
+    &lt;string name=&quot;pref_size&quot;&gt;Размер&lt;/string&gt;
+    &lt;string name=&quot;pref_style&quot;&gt;Стиль&lt;/string&gt;
+    &lt;string name=&quot;pref_style_regular&quot;&gt;Нормальный&lt;/string&gt;
+    &lt;string name=&quot;pref_style_bold&quot;&gt;Полужирный&lt;/string&gt;
+    &lt;string name=&quot;pref_style_italic&quot;&gt;Курсив&lt;/string&gt;
+
+&lt;/resources&gt;
+</code></pre>
+
+<p>Теперь создадим файл настроек <b>preferences.xml</b> (если забыли, то перечитайте статью <a href="preference.html">Сохранение настроек</a>):</p>
+
+<h3 class="text-success">res/xml/preferences.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;PreferenceScreen xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+
+    &lt;CheckBoxPreference
+        android:key=&quot;@string/pref_openmode&quot;
+        android:summary=&quot;Открывать файл при запуске приложения&quot;
+        android:title=&quot;Открыть&quot; /&gt;
+
+&lt;/PreferenceScreen&gt;
+</code></pre>
+
+<p>Итак, мы определили первую настройку под именем <b>pref_openmode</b>, которая будет или сразу загружать файл в поле редактирования, если установлен флажок, или открывать пустое поле, если флажок не установлен.</p>
+
+<p>Создадим новую активность, которая наследует от класса <b>PreferenceActivity</b>. В классе активности для предпочтений внутри метода обратного вызова <b>onCreate()</b> нужно только вызвать метод <b>addPreferencesFromResource()</b> и загрузить XML-файл <b>preferences.xml</b>, содержащий наши настройки (пока одну):</p>
+
+<h3 class="text-success">SettingsActivity.java</h3>
+
+<pre><code class="java">
+package ru.alexanderklimov.notepad;
+
+import android.os.Bundle;
+import android.preference.PreferenceActivity;
+
+public class SettingsActivity extends PreferenceActivity {
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		// загружаем предпочтения из ресурсов
+		addPreferencesFromResource(R.xml.preferences);
+	}
+}
+</code></pre>
+
+<p>Не забываем добавить объявление активности <b>SettingsActivity</b> в файл манифеста AndroidManifest.xml:</p>
+
+<pre><code class="xml">
+&lt;activity
+    android:name=&quot;.SettingsActivity&quot;
+    android:label=&quot;@string/app_name&quot;&gt;
+&lt;/activity&gt;
+</code></pre>
+
+<div class="alert">
+Статья писалась ещё для Android 2.3. Сейчас метод <b>addPreferencesFromResource()</b> считается устаревшим и для Android 4.0 и выше следует использовать другой код.
+</div>
+
+<p>Добавим новый пункт меню <b>Настройки</b> в меню (файл res/menu/main.xml), чтобы открывать подготовленное окно настроек.</p>
+
+<pre><code class="xml">
+&lt;item
+    android:id=&quot;@+id/action_settings&quot;
+    android:orderInCategory=&quot;100&quot;
+    android:showAsAction=&quot;never&quot;
+    android:title=&quot;@string/action_settings&quot;/&gt;
+</code></pre>
+
+<p>В методе обратного вызова <b>onOptionsItemSelected()</b> добавим новый блок <b>case</b> для оператора <b>switch</b>:</p>
+
+<pre><code class="java">
+case R.id.action_settings:
+	Intent intent = new Intent(); 
+	intent.setClass(this, SettingsActivity.class); 
+	startActivity(intent); 
+	return true;
+</code></pre>
+
+<p>Запустите приложение и убедитесь, что в меню появился новый пункт, который открывает окно настроек.</p>
+
+<p>Чтение установок предпочтений нужно проводить в методе <b>onResume()</b>, который вызывается системой как во время запуска приложения, так и после закрытия окна настроек и возврата главной активности на передний план:</p>
+
+<pre><code class="java"> 
+@Override
+public void onResume() {
+	super.onResume();
+	SharedPreferences prefs = PreferenceManager
+			.getDefaultSharedPreferences(this);
+	// читаем установленное значение из CheckBoxPreference
+	if (prefs.getBoolean(getString(R.string.pref_openmode), false)) {
+		openFile(FILENAME);
+	}
+}
+</code></pre>
+
+<p>В методе <b>getBoolean()</b> второй параметр <i>false</i> означает значение по умолчанию для возвращаемого значения предпочтения, если запрос на чтение установленного значения закончится неудачей.</p>
+
+<p>Мы создали первую настройку, позволяющую сразу открывать нужный файл для редактирования, если отметить галочкой нужный пункт.</p>
+
+<p><img src="images/texteditor2.png" alt="Настройки"></p>
+
+<h2 class="text-warning" id="edittextpreference">Сохранение текстовых настроек</h2>
+
+<p>Добавим возможность устанавливать размер шрифта для текста. Откроем снова файл <b>preferences.xml</b> и добавим новый элемент <b>EditTextPreference</b>:</p>
+
+<pre><code class="xml">
+&lt;EditTextPreference
+    android:defaultValue=&quot;14&quot;
+    android:dialogTitle=&quot;Введите размер шрифта (от 10 до 32)&quot;
+    android:key=&quot;@string/pref_size&quot;
+    android:summary=&quot;Устанавливает новый размер шрифта&quot;
+    android:title=&quot;Размер шрифта&quot; /&gt;
+</code></pre>
+
+<p>В метод <b>onResume()</b> добавим новый код для чтения установленного значения размера шрифта:</p>
+
+<pre><code class="java">
+// читаем размер шрифта из EditTextPreference
+float fSize = Float.parseFloat(prefs.getString(
+		getString(R.string.pref_size), "20"));
+// применяем настройки в текстовом поле
+mEdit.setTextSize(fSize);
+</code></pre> 
+
+<p>Запустите проект и вызовите окно настроек. Теперь у нас появилась опция установки размера шрифта. Если щёлкнуть на новом пункте, то откроется диалоговое окно с текстовым полем ввода.</p>
+
+<p><img src="images/texteditor3.png" alt="Настройки">
+
+<img src="../../rusproject.narod.ru/android/texteditor4.png" alt="Настройки"></p>
+
+<p>Обращаю ваше внимание, что в нашем примере не проверяется пользовательский ввод, что может привести к ошибкам, если вместо числового значения для размера шрифта пользователь введет слово <b>Кот</b> или любое другое слово из трёх букв. Никогда не доверяйте пользователю!</p>
+
+<h2 class="text-warning" id="listpreference">Сохранение настроек - Списки</h2>
+
+<p>Продолжим работу с текстовым редактором и добавим в него список для выбора стиля текста. В списке будет четыре опции: Обычный, Полужирный, Курсив, Полужирный+Курсив.</p>
+
+<p>Подготовим массив строк и сохраним его в файле <b>arrays.xml</b>, который необходимо поместить в каталог <b>res/values/</b>.</p>
+
+<h3 class="text-success">res/values/arrays.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+
+    &lt;string-array name=&quot;text_style&quot;&gt;
+        &lt;item&gt;Обычный&lt;/item&gt;
+        &lt;item&gt;Полужирный&lt;/item&gt;
+        &lt;item&gt;Курсив&lt;/item&gt;
+        &lt;item&gt;Полужирный+Курсив&lt;/item&gt;
+    &lt;/string-array&gt;
+
+&lt;/resources&gt;
+</code></pre>
+
+<p>В файл <b>preferences.xml</b> добавим дополнительный элемент &lt;ListPreference&gt;, в котором определим атрибуты заголовка окна, привязку к массиву значений и значение по умолчанию:</p>
+
+<pre><code class="xml">
+&lt;ListPreference
+	android:key=&quot;@string/pref_style&quot;
+	android:title=&quot;Стиль для шрифта&quot;
+	android:summary=&quot;Устанавливает стиль для шрифта&quot;
+	android:defaultValue=&quot;1&quot;
+	android:entries=&quot;@array/text_style&quot;
+	android:entryValues=&quot;@array/text_style&quot;
+	android:dialogTitle=&quot;Выберите стиль для шрифта&quot; /&gt;
+</code></pre>
+
+<p>Для чтения настроек из списка добавляем код в метод <b>onResume()</b>:</p>
+
+<pre><code class="java">
+// читаем стили текста из ListPreference 
+String regular = prefs.getString(getString(R.string.pref_style), "");
+int typeface = Typeface.NORMAL; 
+
+if (regular.contains("Полужирный")) 
+    typeface += Typeface.BOLD; 
+
+if (regular.contains("Курсив")) 
+    typeface += Typeface.ITALIC; 
+
+// меняем настройки в EditText 
+mEdit.setTypeface(null, typeface);
+</code></pre>
+
+<p>Запустив проект, вы теперь увидите новую настройку <b>Стиль для шрифта</b>, которая открывает диалоговое окно для выбора стиля из списка. Обратите внимание, что в диалоговом окне нет кнопки сохранения, только <b>Отмена</b>. Изменения сохраняются сразу при выборе опции списка.</p>
+
+<p><img src="images/texteditor5.png" alt="Настройки">
+
+<img src="images/texteditor6.png" alt="Настройки"></p>
+
+<p>В статье <a href="preference.html#preferencecategory">Сохранение настроек</a> можно прочитать дополнительные материалы по улучшению окна настроек. Например, можно добавить новую настройку, связанную с выбором цвета для текста.</p>
+
+<p><img src="../../rusproject.narod.ru/android/preference3.png" alt=""></p>
+
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/texteditor.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:47:41 GMT -->
+</html>

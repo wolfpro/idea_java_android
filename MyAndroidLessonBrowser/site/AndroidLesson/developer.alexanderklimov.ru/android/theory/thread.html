@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/thread.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Потоки</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+                        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Потоки</h1>
+
+<p>
+<a href="#backgroundthread">Использование фоновых потоков</a><br>
+</p>
+
+<p>Потоки позволяют выполнять несколько задач одновременно, не мешая друг другу, что даёт возможность эффективно использовать системные ресурсы. Потоки используются в тех случаях, когда одно долгоиграющее действие не должно мешать другим действиям. Например, у нас есть музыкальный проигрыватель с кнопками воспроизведения и паузы. Если вы нажимаете кнопку воспроизведения и у вас запускается музыкальный файл в отдельном потоке, то вы не можете нажать на кнопку паузы, пока файл не воспроизведётся полностью. С помощью потоков вы можете обойти данное ограничение.</p>
+
+<h2 class="text-warning" id="backgroundthread">Использование фоновых потоков</h2>
+
+<p>Чтобы быть уверенным, что ваше приложение не теряет отзывчивости, хорошим решением станет перемещение всех медленных, трудоёмких операций из главного потока приложения в дочерний.</p>
+
+<div class="alert alert-info">
+Все компоненты приложения в Android, включая активности, сервисы и приёмники широковещательных намерений, начинают работу в главном потоке приложения. В результате трудоёмкие операции в любом из этих компонентов блокируют все остальные части приложения, включая сервисы и активности на переднем плане.
+</div>
+
+<p>Применение фоновых потоков — необходимое условие, если вы хотите избежать появления диалогового окна для принудительного закрытия приложения. Когда активность в Android на протяжении 5 секунд не отвечает на события пользовательского ввода (например, нажатие кнопки) или приёмник широковещательных намерений не завершает работу обработчика <b>onReceive()</b> в течение 10 секунд, считается, что приложение зависло. Подобные ситуации следует избегать любой ценой. Используйте фоновые потоки для всех трудоёмких операций, включая работу с файлами, сетевые запросы, транзакции в базах данных и сложные вычисления.</p>
+
+<p>Android предоставляет несколько механизмов перемещения функциональности в фоновый режим.</p>
+
+<ul>
+<li>Activity.runOnUiThread(Runnable)</li>
+<li>View.post(Runnable)</li>
+<li>View.postDelayed(Runnable, long)</li>
+<li>Handlers</li>
+<li>AsyncTask</li>
+</ul>
+
+<p>Класс <b>AsyncTask</b> позволяет определить операции, которые будут выполняться в фоне, вы также будете иметь доступ к обработчику событий, что позволит отслеживать прогресс выполнения задач и выводить результаты в контексте главного графического потока. Подробнее об этом классе в <a href="asynctask.html">отдельной статье</a>.</p>
+
+<p>Хотя использование AsyncTask — хорошее решение, случается, что для работы в фоновом режиме приходится создавать собственные потоки и управлять ими.</p>
+
+<p>В Java есть стандартный класс <a href="../java/thread.html">Thread</a>, который вы можете использовать следующим образом:</p>
+
+<pre><code class="java">
+new Thread(new Runnable() {
+    public void run() {
+      //do time consuming operations
+      });
+    } 
+}).start();
+</code></pre>
+
+<p>Данный способ подходит только для операций, связанных с временем. Но вы не сможете обновлять графический интерфейс программы.</p>
+
+<p>Если вам нужно обновлять интерфейс программы, то нужно использовать <b>AsyncTask</b>, о котором говорилось выше, или вы можете реализовать ваш собственный класс, наследованный от <b>Thread</b>, используя объект <b>Handler</b> из пакета <b>android.os</b> для синхронизации с потоком GUI перед обновлением пользовательского интерфейса.</p>
+
+<p>Вы можете создавать дочерние потоки и управлять ими с помощью класса <b>Handler</b>, а также классов, доступных в пространстве имён <b>java.lang.Thread</b>. Ниже показан простой каркас для переноса операций в дочерний поток.</p>
+
+<pre><code class="java">
+// Этот метод вызывается из главного потока GUI.
+private void mainProcessing() {
+    // Здесь трудоемкие задачи переносятся в дочерний поток.
+    Thread thread = new Thread(null, doBackgroundThreadProcessing,
+            "Background");
+    thread.start();
+}
+// Объект Runnable, который запускает метод для выполнения задач 
+// в фоновом режиме.
+private Runnable doBackgroundThreadProcessing = new Runnable() {
+    public void run() {
+        backgroundThreadProcessing();
+    }
+};
+// Метод, который выполняет какие-то действия в фоновом режиме.
+private void backgroundThreadProcessing() {
+    [ ... Трудоемкие операции ... ]
+}
+</code></pre>
+
+<h2 class="text-warning">Запуск потока</h2>
+
+<p>Предположим, мы разрабатываем собственный проигрыватель. У нас есть кнопка Play, которая вызывает метод play() для воспроизведения музыки:</p>
+
+<pre><code class="java">
+Button playButton = (Button) findViewById(R.id.play);
+playButton.setOnClickListener(new View.OnClickListener()) {
+    public void onClick(View v) {
+	    play(); // вызываем воспроизведение
+    }
+}
+</code></pre>
+
+<p>Теперь запустим метод в другом потоке. Сначала создаётся новый поток. Далее описывается объект Runnable в конструкторе потока. А внутри созданного потока вызываем наш метод play(). И, наконец, запускаем поток.</p>
+
+<pre><code class="java">
+Thread myThread = new Thread( // создаём новый поток
+    new Runnable() { // описываем объект Runnable в конструкторе
+	    public void run() {
+		    play(); // вызываем метод воспроизведения
+	    }
+    }
+);
+</code></pre>
+
+<h2 class="text-warning">Усыпить поток</h2>
+
+<p>Иногда требуется временно приостановить поток ("усыпить"):</p>
+
+<pre><code class="java">
+// засыпаем на 2 секунды (в миллисекундах)
+myThread.sleep(2000);
+</code></pre>
+
+<h2 class="text-warning">Приоритет потоков</h2>
+
+<p>Для установки приоритета процесса используется метод <b>setPriority()</b>, который вызывается до запуска потока. Значение приоритета может варьироваться от Thread.MIN_PRIORITY (1) до Thread.MAX_PRIORITY (10):</p>
+
+<pre><code class="java">
+myThread.setPriority(10);
+myThread.start();
+</code></pre>
+
+<h2 class="text-warning">Отмена выполнения потока</h2>
+
+<p>У потока есть метод <b>stop()</b>, но использовать его не рекомендуется, поскольку он оставляет приложение в неопределённом состоянии. Обычно используют такой подход:</p>
+
+<pre><code class="java">
+if (myThread != null) {
+    Thread dummy = myThread;
+	myThread = null;
+	dummy.interrupt();
+}
+</code></pre>
+
+<p>Существует и другой способ, когда все запускаемые потоки объявляются демонами. В этом случае все запущенные потоки будут автоматически завершены при завершении основного потока приложения:</p>
+
+<pre><code class="java">
+myThread.setDaemon(true);
+myThread.start();
+</code></pre>
+
+<h2 class="text-warning">Класс Handler</h2>
+
+<p>При сложных вычислениях может понадобиться очередь Runnable-объектов. Помещая объект в очередь, вы можете задать время его запуска. Для демонстрации использования обработчика потока напишем приложение, запускающую фоновый процесс, который будет каждые 200 мс получать текущее время и обновлять текст. Нам понадобится кнопка Пуск, которая будет отображать количество нажатий и две текстовые метки, в которых будет отображаться время и количество нажатий кнопки:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
+import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+	// считаем нажатия кнопки
+	private int buttonPressed = 0;
+
+	// счетчик времени
+	private long sTime = 0L;
+
+	private TextView tvCounter;
+	private TextView tvTime;
+
+	// обработчик потока - обновляет сведения о времени
+	private Handler mHandler = new Handler();
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		if (sTime == 0L) {
+			sTime = SystemClock.uptimeMillis();
+			mHandler.removeCallbacks(TimeUpdater);
+			// Добавляем Runnable-объект TimeUpdater в очередь
+			// сообщений, объект должен быть запущен после задержки в 100 мс
+			mHandler.postDelayed(TimeUpdater, 100);
+		}
+		tvTime = (TextView) findViewById(R.id.textViewTime);
+		tvCounter = (TextView) findViewById(R.id.textViewCounter);
+
+	}
+
+	// Описание Runnable-объекта
+	private Runnable TimeUpdater = new Runnable() {
+		public void run() {
+			// вычисляем время
+			final long start = sTime;
+			long millis = SystemClock.uptimeMillis() - start;
+			int second = (int) (millis / 1000);
+			int min = second / 60;
+			second = second % 60;
+			// выводим время
+			tvTime.setText("" + min + ":" + String.format("%02d", second));
+			// задержка в 200 мс
+			mHandler.postDelayed(this, 200);
+		}
+	};
+
+	@Override
+	protected void onPause() {
+		// Удаляем Runnable-объект
+		mHandler.removeCallbacks(TimeUpdater);
+		super.onPause();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		// Добавляем Runnable-объект
+		mHandler.postDelayed(TimeUpdater, 100);
+	}
+
+	public void onClick(View v) {
+		tvCounter.setText("" + ++buttonPressed);
+	}
+}
+</code></pre>
+
+<p>На экране будет отображаться время и одновременно мы можем нажимать на кнопку. Эти действия не мешают друг другу, так как работают в разных потоках.</p>
+
+<p><img src="thread1.png" alt="Handler and Runnable"></p>
+
+<p>Кроме метода <b>postDelayed()</b> вы можете использовать метод <b>postAtTime()</b>:</p>
+
+<pre><code class="java">
+postAtTime(Runnable r, long uptimeMillis)
+</code></pre>
+
+<p>В этом случае объект r добавляется в очередь сообщений, запуск объекта производится во время, заданное вторым параметром.</p>
+
+<p>Самый простой способ помещения объекта в очередь - метод <b>post()</b>, когда указывается только помещаемый объект без указания времени выполнения объекта:</p>
+
+<pre><code class="java">
+post(Runnable r)
+</code></pre>
+				
+				
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+				
+				
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/thread.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:50 GMT -->
+</html>

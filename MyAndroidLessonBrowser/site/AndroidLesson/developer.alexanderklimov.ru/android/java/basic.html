@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/basic.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:11:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Экспресс-курс: Основы</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+            
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Основы</h1>
+
+<h2 class="text-warning">Ключевые слова</h2>
+
+<p>Как и в любом языке программирования, в языке Java резервируются определенные слова, которые компилятор распознает как особые. Их нельзя использовать для именования конструкций Java: переменных, методов и т.д. Список ключевых слов не слишком велик:</p>
+
+<table class="table">
+<tr>
+<td><a href="abstract.html">abstract</a></td><td><a href="assert.html">assert</a></td><td>boolean</td><td>break</td><td>byte</td>
+</tr>
+<tr>
+<td>case</td><td><a href="exception.html">catch</a></td><td>char</td><td><a href="class.html">class</a></td><td>const</td>
+</tr>
+<tr>
+<td>continue</td><td>default</td><td>do</td><td>double</td><td>else</td>
+</tr>
+<tr>
+<td><a href="enum.html">enum</a></td><td><a href="extends.html">extends</a></td><td><a href="class.html#final">final</a></td><td>finally</td><td>float</td>
+</tr>
+<tr>
+<td>for</td><td>goto</td><td>if</td><td>implements</td><td><a href="package.html#import">import</a></td>
+</tr>
+<tr>
+<td><a href="class.html#instanceof">instanceof</a></td><td>int</td><td><a href="interface.html">interface</a></td><td>long</td><td><a href="native.html">native</a></td>
+</tr>
+<tr>
+<td>new</td><td><a href="package.html">package</a></td><td>private</td><td>protected</td><td>public</td>
+</tr>
+<tr>
+<td>return</td><td>short</td><td>static</td><td><a href="strictfp.html">strictfp</a></td><td>super</td>
+</tr>
+<tr>
+<td>switch</td><td><a href="thread.html#synchronized">synchronized</a></td><td>this</td><td><a href="exception.html">throw</a></td><td><a href="exception.html">throws</a></td>
+</tr>
+<tr>
+<td>transient</td><td><a href="exception.html">try</a></td><td>void</td><td>volatile</td><td><a href="while.html">while</a></td>
+</tr>
+</table>
+
+<p>Формально слова <b>true</b>, <b>false</b> и <b>null</b> не входят в число ключевых слов, но их тоже нельзя использовать в качестве имён переменных. Обратите внимание, что Eclipse выделяет ключевые слова в редакторе кода особым цветом (синтаксическая подсветка).</p>
+
+<h2 class="text-warning">Переменные</h2>
+
+<p>Переменные используются для хранения данных. Переменные сначала должны быть объявлены, и только после этого ими можно пользоваться.</p>
+
+<pre>
+int x; // объявлена переменная под именем x
+int y; // объявлена переменная под именем y
+</pre>
+
+<p>Как следует из названия, переменные могут меняться (точнее их значения). Проведём аналогию с кошачьим приютом. Котов привозят в приют, потом добрые люди забирают котов из него. Получается, что коты постоянно меняются, а приют остаётся.</p>
+
+<p>Переменные могут быть двух видов</p>
+<ul>
+<li>примитивные типы: int, float, double, char и другие, которые представляют собой числа, символы</li>
+<li>объекты, которые представляют классы</li>
+</ul>
+
+<p>Список переменных примитивных типов рассматривается в <a href="types.html">следующей статье</a>.</p>
+
+<p>Переменной можно присвоить начальное значение (инициализировать) через знак равенства и указанием значения. Указываемое значение должно подходить типу, который вы указали для переменной. Для объявления нескольких переменных одного типа можно использовать запятые:</p>
+
+<pre><code class="java">
+int c, a, t; // объявлены три переменные типа int
+int p = 2, u, s = 7; // также объявлены три переменные, первая и третья при этом инициализированы
+</code></pre>
+
+<p>Также возможна динамическая инициализация. Вам нужно только проследить, чтобы вычисляемое выражение соответствовало переменной.</p>
+
+<pre><code class="java">
+double a = 4, b = 5;
+double c  = a + b; // переменная вычисляется динамически
+</code></pre>
+
+<p>В некоторых случаях нужно, чтобы переменная не менялась, в этом случае переменная называется константой и имеет ключевое слово <b>final</b>.</p>
+
+<p>Переменные имеют свою область видимости. Она может быть доступна только внутри метода, цикла, класса. Подобная защита уменьшает риск ошибок от несанкционированного доступа или изменений от чужого кода. Также следует помнить, что внутри блока переменные можно объявить в любом месте, но они становятся допустимыми только после объявления. Если ситуация будет обратной, то конструкция будет бессмысленной и вам не разрешат так делать:</p>
+
+<pre><code class="java">
+counter = 3; // вы используете переменную до его объявления. вы лох
+int counter;
+</code></pre>
+
+<p>Переменные создаются при входе в их область видимости и уничтожаются при выходе из неё. Иными словами, переменная утратит своё значение сразу после выхода из области видимости. Поэтому, переменные, которые объявлены внутри метода, не будут хранить свои значения между обращениями к этому методу.</p>
+
+<p>Если объявление переменной содержит инициализацию, то инициализация будет повторяться при каждом вхождении в блок, в котором она объявлена. Допустим, у нас есть блок:</p>
+
+<pre><code class="java">
+int x;
+for(x = 0; x &lt; 5; x++) {
+    int y = 42; // переменной y присваивается значение при каждом вхождении в блок
+	y = 54;
+}
+</code></pre>
+
+<p>При каждом вхождении в цикл переменной присваивается снова и снова значение 42. И хотя потом переменной присваивается значение 54, оно теряется при повторном вхождении в блок.</p>
+
+<p>Блоки бывают вложенными, но тем не менее во внутреннем блоке нельзя объявлять переменные с тем же именем, что и во внешней области:</p>
+
+<pre><code class="java">
+String cat = "Барсик";
+{
+    String cat = "Мурзик"; // переменная cat уже существует, так нельзя
+}
+</code></pre>
+
+<h2 class="text-warning">Оператор присваивания</h2>
+
+<p>Оператором присваивания является одиночный знак равенства (=):</p>
+
+<pre><code class="java">
+переменная = выражение;
+</code></pre>
+
+<p>Тип <i>переменная</i> должен соответствовать типу <i>выражение</i>. Оператор присваивания можно использовать в виде цепочки присваивания:</p>
+
+<pre><code class="java">
+int x, y, z;
+x = y = z = 9; // всем переменным присвоены значения 9
+</code></pre>
+
+<p>Оператор присваивания берёт значене правого выражения. Поэтому выражение <b>z = 9</b> будет равно 9, после чего оно присваивается переменной <b>y</b>, а затем - переменной <b>x</b>.</p>
+
+<p>Помните, что в сравнении используется другой оператор ==, а не оператор присваивания.</p>
+
+<h2 class="text-warning">Комментарии</h2>
+
+<p>В Java используются три вида комментариев. Многострочные комментарии начинаются с символов </b>/*</b> и заканчиваются символами <b>*/</b>. Однострочные комментарии начинаются с комбинации символов <b>//</b>. Причем, однострочный комментарий можно использовать не только на отдельной строке, но и после оператора.</p>
+
+<pre><class="java">
+/* Пример многострочного комментария
+Вы здесь можете писать что угодно.
+Например, мяу-мяу. И вам за это ничего не будет */
+
+// однострочный комментарий на отдельной строке
+
+Button butGetResult; // это кнопка. Комментарий идет сразу после оператора в этой же строке
+</code></pre>
+
+<p>Начинающим программистам необходимо писать комментариев как можно больше, так как, вернувшись к своему коду через месяц-другой, вы с трудом вспомните, что вы тут <del>нашкодили</del> накодили.</p>
+
+<p>Существует ещё третий тип комментариев для создания самодокументирующего кода (комментарий документации). Но это отдельная тема для разговора.</p>
+
+<p>В Eclipse создание и управление комментариями можно упростить через меню Source. Там вы найдете такие команды как <b>Toggle Comment</b>, <b>Add Block Comment</b>, <b>Remove Block Comment</b>, <b>Generate Element Comment</b>. Попробуйте самостоятельно разобраться с ними.</p>
+
+<h2 class="text-warning">Стиль оформления кода</h2>
+
+<p>Существует негласные правила оформления стиля при написании кода. Старайтесь их придерживаться. Также запоминайте оформление кода в документации и справочниках. Например, принято записывать имена классов с большой буквы (class JavaQuickCourseActivity). Если имя состоит из нескольких слов, то каждое слово в имени также начинается с большой буквы. Использовать символы подчеркивания или тире нежелательно (Java_Quick_Course_Activity или Java-Quick-Course-Activity).</p>
+
+<p>Для методов и переменных используется такой же формат, только первый символ записывается с маленькой буквы, например, buttonGetResult.</p>
+
+<p>Константы принято писать только большими буквами (IDD_LIST_NAMES). В этом случае одного взгляда достаточно, чтобы сразу определить, что перед вами константа.</p>
+
+<p>На первых порах вам этого достаточно.</p>
+
+<h2 class="text-warning">Операторы</h2>
+
+<p>Как и везде, в Java есть операторы сложения (+), вычитания (-), умножения (*), деления (/), которые применимы к числам.</p>
+
+<table class="table">
+<tr>
+<th>Оператор</th><th>Пример использования</th><th>Описание</th></tr>
+<tr>
+<td>+</td><td>a + b</td><td>Сложение а и b (также унарный плюс)</td></tr>
+<tr>
+<td>+</td><td>+a</td><td>Преобразование a в переменную типа int, если это переменная типа byte, short или char</td></tr>
+<tr>
+<td>-</td><td>a – b</td><td>Вычитание b из а (также унарный минус)</td></tr>
+<tr>
+<td>-</td><td>-a</td><td>Арифметическая инверсия а</td></tr>
+<tr>
+<td>*</td><td>a * b</td><td>Умножение а на b</td></tr>
+<tr>
+<td>/</td><td>a / b</td><td>Деление a на b</td></tr>
+<tr>
+<td>%</td><td>a % b</td><td>Вычисление остатка от деления а на b (деление по модулю)</td></tr>
+<tr>
+<td>++</td><td>a++</td><td>Приращение а на 1 с предварительным вычислением значения а (инкремент)</td></tr>
+<tr>
+<td>++</td><td>++a</td><td>Приращение а на 1 с последующим вычислением значения а</td></tr>
+<tr>
+<td>--</td><td>a--</td><td>Уменьшение а на 1 с предварительным вычислением значения а (декремент)</td></tr>
+<tr>
+<td>--</td><td>--a</td><td>Уменьшение а на 1 с последующим вычислением значения а</td></tr>
+<tr>
+<td>+=</td><td>a += b</td><td>Краткая форма записи a = a + b (сложение с присваиванием)</td></tr>
+<tr>
+<td>-=</td><td>a -= b</td><td>Краткая форма записи a = a – b (вычитание с присваиванием)</td></tr>
+<tr>
+<td>*=</td><td>a *= b</td><td>Краткая форма записи a = a * b (умножение с присваиванием)</td></tr>
+<tr>
+<td>/=</td><td>a /= b</td><td>Краткая форма записи a = a / b (деление с присваиванием)</td></tr>
+<tr>
+<td>%=</td><td>a %= b</td><td>Краткая форма записи a = a % b (деление по модулю с присваиванием)</td></tr>
+</table>
+
+<p>Операнды арифметических операторов должны иметь числовой тип. Нельзя использовать их к логическим типам. Можно применять к типам <b>char</b>, который по сути можно представлять как тип <b>int</b>.</p>
+
+<p>Для строк можно использовать только операции + и +=. Умножать, вычитать и делить слова нельзя. Обратите внимание, что при сложении слов "мышь"+"мышь" получается не "мыши", как предположил мой кот Рыжик, а "мышьмышь". На самом деле символ + при работе со строками называется не сложением, а конкатенацией.</p>
+
+<h3 class="text-warning" id="modul">Оператор деления по модулю</h3>
+
+<p>Существует оператор, вычисляющий остаток от деления нацело (%). Чтобы запомнить данный знак, обратите внимание на наклонную черту, как в обычном делении, которую окружают два нолика. Деление нацело обрезает, а не округляет результат.</p>
+
+<p>Если 42 разделить по модулю на 10, то получим значение 2, а если 42.56 разделить по модулю на 10, то получим  2.5600000000000023:</p>
+
+<pre><code class="java">
+int x = 42;
+double y = 42.56;
+
+textViewInfo.append("x mod 10 = " + x % 10 + "\n");
+textViewInfo.append("y mod 10 = " + y % 10 + "\n");
+</code></pre>
+
+<p>Деление по модулю очень удобно использовать для разбивки числа на части. Предположим вам надо получить последние две цифры 2013 года. Вот как можно это сделать:</p>
+
+<pre><code class="java">
+int iYear, twoDigit;
+iYear = 2013;
+twoDigit = iYear % 100;
+
+textViewInfo.setText(String.valueOf(twoDigit));
+</code></pre>
+
+<p>Вот и другой пример. Предположим, у вас есть фильм "Кот в сапогах", продолжительность которого равна 135 минутам. Чтобы разбить это число на часы и минуты, нужно применить такой код:</p>
+
+<pre><code class="java">
+int filmTime = 135;
+int hours = filmTime / 60;
+int minutes = filmTime % 60;
+
+textViewInfo.setText("Кот в сапогах идёт " + hours + " часа " + minutes + " минут");
+</code></pre>
+
+<p>В результате получим ответ: <i>Кот в сапогах идёт 2 часа 15 минут</i>.</p>
+
+<p>Обратите внимание, что переменная <i>minutes</i> всегда будет содержать числа в диапазоне от 0 до 59.</p>
+
+<p>Стоит запомнить одну особенность. При делении большого числа на меньшее, например (5 % 4), понятно, что остаток будет 1. При делении по модулю  меньших чисел 0, 1, 2, 3 на число 4 получатся те же значения 0, 1, 2, 3.</p>
+
+<p>Напоследок, остаётся сказать, что делить на 0 нельзя. У вас будет выводиться сообщение об ошибке либо на этапе компиляции, либо во время работы программы.</p>
+
+<h2 class="text-warning">Приоритет</h2>
+
+<p>Если вы не прогуливали уроки математики, то знаете, что в сложных выражениях скобки позволяют определить порядок вычислений. Например, в выражении <b>2 + 3 * 4</b> сначала идет умножение, а потом сложение. Расставив скобки, мы можем сначала сложить два числа, а потом умножить:</p>
+<pre>
+(2 + 3) * 4  // сначала складываем, потом умножаем
+</pre>
+
+<p>Кстати, использование скобок не влияет на производительность программы. Поэтому можете не стесняться и расставлять их побольше.</p>
+
+<h2 class="text-warning">Укороченная форма записи</h2>
+
+<p>В Java также можно использовать укороченную форму записи, чтобы одновременно произвести операцию и присвоение. Для укороченной записи используется оператор с последующим знаком равенства. Например, чтобы прибавить число 7 к переменной x и присвоить результат этой же переменной, используйте команду <b>x += 7</b>. Это справедливо и для других операторов:</p>
+
+<pre><code class="java">
+x += 7;
+y -= 3;
+cats *= 3;
+numbersOfMouse /= 2;
+</code></pre>
+
+<p>Укороченная форма записи не только сокращает объём и время написания кода, но и работает более эффективно (хотя доказательств не знаю).</p>
+
+<h2 class="text-warning">Автоувеличение и автоуменьшение на единицу</h2>
+
+<p>Очень часто вам придется увеличивать или уменьшать значение переменной на единицу. Поэтому существует специальные операторы увеличения (инкремента) и уменьшения (декремента). Для инкремента используются два плюса (++), а для декремента два минуса (--).</p>
+
+<p>Данные операторы существуют в двух версиях - префиксной и постфиксной. Префиксный инкремент или декремент значит, что ++ или -- записываются перед переменной или выражением.</p>
+
+<pre><code class="java">
+++i;
+--i;
+</code></pre>
+
+<p>В этом случае сначала выполняется операция, а затем выдается результат.</p>
+
+<p>При постфиксном инкременте или декременте оператор записывается после переменной или выражения:</p>
+
+<pre><code class="java">
+i++;
+i--;
+</code></pre>
+
+<p>Здесь сначала выдается значение, и лишь затем выполняется операция.</p>
+
+<p>Например, мы хотим ежегодно увеличивать возраст кота в анкете:</p>
+
+<pre><code class="java">
+int age = 3; // сейчас котёнку три года
+age++; // увеличили на год
+</code></pre>
+
+<p>Данный код аналогичен более длинному варианту:</p>
+
+<pre><code class="java">
+age = age + 1;
+</code></pre>
+
+<p>В простых выражениях особой разницы в постфиксной и префиксной формами нет, но в сложных выражениях может играть существенную роль.</p>
+
+<p>Инкремент и декремент применяется только к значениям переменных, к числу применять этот способ нельзя.</p>
+
+<pre><code class="java">
+5++ // понимаю, мечтаешь о такой оценке в школе, но нельзя
+</code></pre>
+
+<h2 class="text-warning">По ссылке или по значению</h2>
+
+<p>У нас есть класс Cat</p>
+
+<pre><code class="java">
+public class Cat {
+    private String mCatName;
+
+    Cat(String name) {
+        mCatName=name;
+    }
+
+    public String getName() {
+        return mCatName;
+    };
+
+    public void setName(String strName) {
+        mCatName = strName;
+    };
+}
+</code></pre>
+
+<p>Попробуем, используя этот класс, передать объект Cat в функции и посмотреть, что получится:</p>
+
+<pre><code class="java">
+void messWithCat(Cat kitty) {
+        kitty = new Cat("Han");
+    }
+
+void changeKitty(Cat kitty) {
+    kitty.setName("Wookie");
+}
+
+Cat haveKitten()
+{
+    Cat kitten = new Cat("Luke");
+    return kitten;
+}
+</code></pre>
+
+<p>Вызовем созданные методы и увидим, как работают объекты:</p>
+
+<pre><code class="java">
+Cat cat1 = new Cat("Jabba");
+Cat cat2 = new Cat("Leia");
+
+cat1.getName();    // Returns Jabba
+cat2.getName();    // Returns Leia
+messWithCat(cat1);
+changeKitty(cat2);
+Cat cat3 = haveKitten();
+cat1.getName();    // Returns Jabba – Note that object remains unchanged!
+cat2.getName();    // Returns Wookie
+cat3.getName();    // Returns Luke
+</code></pre>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/basic.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:11:57 GMT -->
+</html>

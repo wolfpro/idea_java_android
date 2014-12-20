@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/bitwise.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:11:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Экспресс-курс: Побитовые операторы</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+            
+                        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Побитовые операторы</h1>
+
+<p>Существует несколько побитовых операторов, применимых к целочисленными типам <b>long</b>, <b>int</b>, <b>short</b>, <b>char</b>, <b>byte</b>.</p>
+
+<table class="table">
+<tr>
+<td>~</td><td>Побитовый унарный оператор NOT</td></tr>
+<tr>
+<td>&amp;</td><td>Побитовый AND</td></tr>
+<tr>
+<td>&=</td><td>Побитовый AND с присваиванием</td></tr>
+<tr>
+<td>|</td><td>Побитовый OR</td></tr>
+<tr>
+<td>|=</td><td>Побитовый OR с присваиванием</td></tr>
+<tr>
+<td>^</td><td>Побитовый исключающее OR</td></tr>
+<tr>
+<td>^=</td><td>Побитовый исключающее OR с присваиванием</td></tr>
+<tr>
+<td>>></td><td>Сдвиг вправо</td></tr>
+<tr>
+<td>>>=</td><td>Сдвиг вправо с присваиванием</td></tr>
+<tr>
+<td>>>></td><td>Сдвиг вправо с заполнением нулями</td></tr>
+<tr>
+<td><<</td><td>Сдвиг влево</td></tr>
+<tr>
+<td><<=</td><td>Сдвиг влево с присваиванием</td></tr>
+<tr>
+<td>>>>=</td><td>Сдвиг вправо с заполнением нулями с присваиванием</td></tr>
+</table>
+
+<p>Все целочисленные типы представляются двоичными числами различной длины. Например, значение типа <i>byte</i>, равное 42, в двоичном представлении имеет вид 00101010, в котором каждая позиция представляет степень числа два.</p>
+
+<p>Все целочисленные типа, за исключением <i>char</i> - типы со знаком, т.е. могут быть положительными или отрицательными. В Java применяется двоичное дополнение, при котором отрицательные числа представляются в результате инвертирования всех битов значения (изменения 1 на 0 и наоборот) и последующего добавления 1 к результату. Например, -42 представляется в результате инвертирования всех битов в двоичном представлении числа 42, что даёт значение 11010101, и добавления 1, что приводит к значению 110140110, или -42. Чтобы декодировать отрицательное число, необходимо вначале инвертировать все биты, а затем добавить 1 к результату. Например, инвертирование значения -42, или 11010110, приводит к значению 00101001, или 41, после добавления 1 к которому мы получим 42.</p>
+
+<p>Двоичное дополнение используется в большинстве компьютерных языков. Опустим теорию, нужно только помнить, что старший бит определяет знак целого числа.</p>
+
+<h2 class="text-warning" id="bytelogic">Побитовые логические операторы</h2>
+
+<p>Побитовые логические операторы - это &, |, ^, ~. Побитовые операторы применяются к каждому отдельному биту каждого операнда.</p>
+
+<h3 class="text-warning">Результаты выполнения побитовых логических операторов</h3>
+
+<table class="table">
+<tr>
+<th>A</th><th>B</th><th>A | B</th><th>A & B</th><th>A ^ B</th><th>~A</th></tr>
+<tr>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr>
+<td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr>
+<td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr>
+<td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+
+<h3 class="text-warning">Побитовое OR (|)</h3>
+
+<p>Результирующий бит, полученный в результате выполнения оператора OR, |, равен 1, если соответствующий бит в любом из операндов равен 1.</p>
+
+<pre>
+  00101010  42
+| 00001111  15
+--------------
+  00101111  47 
+</pre>
+
+<h3 class="text-warning">Побитовое AND (&)</h3>
+
+<p>Значение бита, полученное в результате выполнения побитового оператора AND, &, равно 1, если соответствующие биты в операндах также равны 1. Во всех остальных случаях значение результирующего бита равно 0.</p>
+
+<pre>
+  00101010  42
+& 00001111  15
+--------------
+  00001010  10
+</pre>
+
+<h3 class="text-warning">Побитовое XOR (^)</h3>
+
+<p>Результирующий бит, полученный в результате выполнения оператора XOR, ^, равен 1, если соответствующий бит только в одном из операндов равен 1. Во всех других случаях результирующий бит равен 0.</p>
+
+<pre>
+  00101010  42
+^ 00001111  15
+--------------
+  00100101  37  
+</pre>
+
+<p>Данный оператор обладает полезной особенностью, часто используемый в программировании. Например, можно обменять значения переменных без использования дополнительной переменной</p>
+
+<pre><code class="java">
+int x = 5, y = 7;
+
+x = x ^ y; // стало 2
+System.out.println(x);
+y = x ^ y; // стало 5
+System.out.println(y);
+x = x ^ y; //стало 7
+System.out.println(x);
+</code></pre>
+
+<p>Но увлекаться такой записью не стоит, это работает медленнее и код менее читаем.</p>
+
+<p>Гораздо шире используется <b>XOR</b> для шифрования. В простейшем виде это выглядит так. Есть текст, к которому применяется ключ с оператором <b>XOR</b>. Зашифрованное сообщение передаётся человеку, который знает ключ. Всё, что ему нужно сделать - это применить к зашифрованному тексту тот же ключ, используемый для шифровки и текст снова станет читаемым.</p>
+
+<p>Ниже приводится приблизительный пример работы шифровки/дешифровки текста. С русским текстом пример не будет работать, так как используются разные кодировки и требуется писать дополнительный код. Итак, у нас есть некий текст, который мы зашифровали с помощью ключа (meow) и передали полученный набор байтов другому человеку. Если кто-то перехватит ваше сообщение, то увидит просто набор символов. А ваш сообщник сможет прочитать сообщение, так как вы заранее условились, каким будем ключ для расшифровки.</p>
+
+<pre><code class="java">
+public void onClick(View v) {
+
+	String message = "OK, i love you"; // секретное сообщение
+	String catkey = "meow"; // ключ
+
+	// зашифруем послание
+	byte[] important = encode(message, catkey);
+	// посмотрим на результат
+	textViewInfo.setText(new String(important));
+
+	// теперь расшифруем текст
+	editResult.setText(decode(textViewInfo.getText().toString().getBytes(),
+			catkey));
+	
+}
+
+// метод для шифровки текста с помощью XOR
+public static byte[] encode(String secret, String key) {
+	byte[] btxt = null;
+	byte[] bkey = null;
+
+	btxt = secret.getBytes();
+	bkey = key.getBytes();
+
+	byte[] result = new byte[secret.length()];
+
+	for (int i = 0; i &lt; btxt.length; i++) {
+		result[i] = (byte) (btxt[i] ^ bkey[i % bkey.length]);
+	}
+	return result;
+}
+
+// метод для расшифровки текста
+public static String decode(byte[] secret, String key) {
+	byte[] result = new byte[secret.length];
+	byte[] bkey = key.getBytes();
+
+	for (int i = 0; i &lt; secret.length; i++) {
+		result[i] = (byte) (secret[i] ^ bkey[i % bkey.length]);
+	}
+	return new String(result);
+}
+</code></pre>
+
+<h3 class="text-warning">Побитовое NOT (~)</h3>
+
+<p>Унарный оператор NOT (Не), ~, называемый также побитовым дополнением, инвертирует все биты операнда. Например, число 42 в битовом представлении имеет вид:</p>
+
+<pre>00101010</pre>
+
+<p>В результате применения оператора NOT преобразуется в значение:</p>
+
+<pre>11010101</pre>
+
+<h2 class="text-warning">Сдвиг влево</h2>
+
+<p>Оператор сдвига влево, &lt;&lt;, смещает все биты влево на указанное количество позиций:</p>
+
+<pre>
+значение &lt;&lt; количество
+</pre>
+
+<p>Параметр <i>количество</i> указывает, на сколько нужно сдвинуть влево биты в параметре <i>значение</i>. При каждом сдвиге влево самый старший бит смещается за пределы допустимого значения и теряется, а справа дописывается нуль. Это означает, что при применении оператора сдвига влево к операнду типа <i>int</i> биты теряются, как только они сдвигаются за пределы 31 позиции. Если операнд имеет тип <i>long</i>, биты теряются после сдвига за пределы 63 позиции.</p>
+
+<p>Автоматическое повышение типа, используемое в Java, может привести к странным результатам при выполнении сдвига в значениях типа <i>byte</i>, <i>short</i>. При вычислении выражений тип значений <b>byte</b> и <b>short</b> повышается до типа <b>int</b>. Это означает, что результатом выполнения сдвига влево значения типа <b>byte</b> или <b>short</b> будет значение <b>int</b>, и сдвинутые влево позиции не будут отброшены до тех пор, пока они не будут сдвинуты за пределы 31 позиции. Более того, при повышении до типа <b>int</b> отрицательное значение типа <b>byte</b> или <b>short</b> получит дополнительный знаковый разряд. Следовательно, старшие биты будут заполнены единицами. Поэтому выполнение оператора сдвига влево предполагает необходимость отбрасывания старших байтов результата типа <b>int</b>. Иными словами, при выполнении сдвига влево в значении типа byte сначала будет повышение до типа int и лишь затем сдвиг. Это означает, что для получения требуемого сдвинутого значения типа byte необходимо отбросить три старших байта результата. Простейший способ достижения этого - обратное приведение результата к типу byte.</p>
+
+<pre><code class="java">
+byte x = 64;
+byte y;
+int i;
+
+i = x &lt;&lt; 2; // сдвиг влево
+y = (byte) (x &lt;&lt; 2); // сдвиг влево с приведением
+
+
+textViewInfo.append("i равно: " + i + "\n");
+textViewInfo.append("y равно: " + y);
+</code></pre>
+
+<p>Результат будет следующим:</p>
+
+<pre>
+i равно: 256
+y равно: 0
+</pre>
+
+<p>Поскольку для выполнения вычислений тип переменной повышается до int, сдвиг влево на две позиции значение 64 (0100 0000) приводит к значению 256 (1 0000 0000). Однако, переменная y содержит значение не 256, а 0, поскольку после сдвига крайний единичный бит оказывается сдвинутым за пределы допустимого диапазона.</p>
+
+<p>Приёмом сдвига влево часто пользуются в программах, где происходит много сложных вычислений. По сути, это замена операции умножения на 2, которая в силу особенностей процессора гораздо эффективнее. При этом следует соблюдать осторожность, так как при сдвиге единичного бита в старшую позицию (бит 31 или 63) значение становится отрицательным.</p>
+
+<h2 class="text-warning">Сдвиг вправо</h2>
+
+<p>Оператор сдвига вправо, >>, смещает все биты значения вправо на указанное количество позиций:</p>
+
+<pre>значение >> количество</pre>
+
+<p>Вы указываете количество позиций, на которое нужно сдвинуть вправо биты в <b>значении</b>. Следующий код выполняет сдвиг право на две позиции в значении 32, в результате чего значение переменной станет равным 8.</p>
+
+<pre><code class="java">
+int a = 32;
+a = a >> 2 // стало равным 8
+</code></pre>
+
+<p>Крайние биты при сдвиге просто теряются. Например, значение 35 при сдвиге вправо на две позиции также приводит к значению 8, так как теряются два младщих бита.</p>
+
+<pre>
+  00100011  35
+>>2
+----------
+  00001000  8
+</pre>
+
+<p>При каждом сдвиге вправо выполняется деление на два с отбрасыванием любого остатка. Данная операция намного эффективнее, чем обычное деление на два, поэтому часто используется в сложных вычислениях. При этом нужно быть уверенным, что никакие биты не будут сдвинуты за пределы правой границы.</p>
+
+<p>При выполнении сдвига вправо старшие (расположенные в крайних левых позициях) биты, освобожденные в результате сдвига, заполняются предыдущим содержимым старшего бита. Этот эффект называется дополнительных знаковым разрядом и служит для сохранения знака отрицательных чисел при их сдвиге.</p>
+
+<p>Обратите внимание, что результат сдвига вправо значения -1 всегда равен -1, поскольку дополнительные знаковые разряды добавляют новые единицы к старшим битам.</p>
+
+<p>Иногда при выполнении сдвига вправо появление дополнительных знаковых разрядов нежелательно. В этом случае используется маскировка за счёт объединения значения со значением 0x0f оператором AND, что приводит к отбрасыванию любых битов дополнительных знаковых разрядов.</p>
+
+<h2 class="text-warning">Сдвиг вправо без учёта знака</h2>
+
+<p>Как было показано выше, при каждом выполнении оператор >> автоматически заполняет старший бит его предыдущим содержимым. В результате знак значения сохраняется. Однако иногда это нежелательно. Например, при работе со значениями пикселей и графическими изображениями. Как правило, в этих случаях требуется сдвиг нуля в позицию старшего бита независимо от его первоначального значения. Такое действие называют сдвигом вправо без учета знака, когда всегда вставляется нуль в позицию старшего бита.</p>
+
+<p>Допустим, мы хотим сдвинуть вправо на 24 бит значение -1 (в двоичном представлении 11111111 11111111 11111111 11111111):</p>
+
+<pre>
+    11111111 11111111 11111111 11111111
+>>> 24
+---------------------------------------
+    00000000 00000000 00000000 11111111 255 в двоичном виде типа int
+</pre>
+
+<p>Оператор >>> не столь полезен, поскольку имеет смысл только для 32- и 64-разрядных значений.</p>
+
+<h3 class="text-warning">Побитовые составные операторы с присваиванием</h3>
+
+<p>Двоичные побитовые операторы имеют составную форму, которая объединяет побитовый оператор с оператором присваивания.</p>
+
+<pre><code class="java">
+a = a >> 4;
+a >>= 4;
+
+a = a | b;
+a |= b;
+</code></pre>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/bitwise.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:11:57 GMT -->
+</html>

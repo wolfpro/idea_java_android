@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/views/radiobutton.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:52:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: RadioButton и RadioGroup</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class="active"><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+            
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">RadioButton и RadioGroup</h1>
+
+<p>Познакомимся с компонентом <b>RadioButton</b>. Главная особенность элемента состоит в том, что он не используется в одиночестве. Всегда должно быть два и более переключателя и только один из них может быть выбранным. Это похоже на кнопки на старых радиоприёмниках, когда нажимая на одну из кнопок, вы заставляете отключиться другую нажатую кнопку.</p>
+
+<p>Находится в папке <b>Form Widgets</b>.</p>
+
+<p><img src="formwidgets.png" alt="Form Widgets"></p>
+
+<p>Компоненты <b>RadioButton</b> (переключатель) используются в составе контейнера <b>RadioGroup</b>. Обратите внимание на два момента. Первое - в контейнер <b>RadioGroup</b> можно включать не только <b>RadioButton</b>, но и другие элементы, например, <b>TextView</b>. Второе - переключатели работают в своем контейнере, т.е. если у вас два контейнера <b>RadioGroup</b>, то переключатели из одного контейнера не влияют на поведение переключателей второго контейнера.</p>
+
+<h2 class="text-warning">Методы</h2>
+
+<p>Основным методом для переключателя является <b>toggle()</b>, который инвертирует состояние переключателя. Также представляют интерес методы <b>isChecked()</b>, который возвращает состояние кнопки, и <b>setChecked()</b>, изменяющий состояние кнопки в зависимости от параметра.</p>
+
+<pre><code class="java">
+radio1.setChecked(true); // программно устанавливаем статус у переключателя radio1
+</code></pre>
+
+<p>Для уведомления о переходе положения переключателя в активное или неактивное состояние в результате определенных событий, нужно вызывать метод <b>setOnCheckedChangeListener()</b> с применением интерфейса OnCheckedChangeListener.</p>
+
+<h2 class="text-warning">Программное добавление переключателя</h2>
+
+<p>Получив ссылку на группу переключателей, можно добавить в неё еще один переключатель (или другой элемент управления) через метод <b>addView()</b>:</p>
+
+<pre><code class="java">
+RadioGroup  radiogroup = (RadioGroup )findViewByld(R.id.radioGroup); 
+RadioButton newRadioButton = new RadioButton(this); 
+newRadioButton.setText("Рыжий"); 
+radiogroup.addView(newRadioButton); 
+</code></pre> 
+
+<h2 class="text-warning">Добавление картинок к переключателю</h2>
+
+<p>Вы можете добавить изображение в левой, правой, верхней и нижней части переключателя, используя либо определённые атрибуты XML или программно.</p>
+
+<p>Через атрибут <b>drawableRight</b> (свойство Drawable Right) и ему подобных:</p>
+
+<pre><code class="java">
+&lt;RadioButton
+    android:id=&quot;@+id/radio0&quot;
+    ...
+    android:drawableRight=&quot;@drawable/ic_launcher&quot;
+    android:text=&quot;RadioButton&quot; /&gt;
+</code></pre>
+
+<p>Программно через метод <b>setCompoundDrawables(left, top, right, bottom)</b>:</p>
+
+<pre><code class="java">
+radiobutton.setCompoundDrawables(null, null, getResources().getDrawable(R.drawable.rightpic), null);
+</code></pre>
+
+<p>В этом примере мы указали только одно значение для правого края, остальным присвоили значение null. Можно одновременно задействовать все стороны переключателя.</p>
+
+<h2 class="text-warning">Пример</h2>
+
+<p>Создадим новую форму с четырьмя кнопками-переключателями, с помощью которых будем заливать фон приложения выбранным цветом. Сначала подготовим строковые ресурсы.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;string name=&quot;app_name&quot;&gt;Пример с переключателями (RadioButton)&lt;/string&gt;
+    &lt;string name=&quot;current_pick&quot;&gt;Текущий выбор&lt;/string&gt;
+    &lt;string name=&quot;color_red&quot;&gt;Красный&lt;/string&gt;
+    &lt;string name=&quot;color_green&quot;&gt;Зеленый&lt;/string&gt;
+    &lt;string name=&quot;color_blue&quot;&gt;Синий&lt;/string&gt;
+    &lt;string name=&quot;color_gray&quot;&gt;Серый&lt;/string&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>Создадим простейшую разметку на основе LinearLayout. Заполним форму текстовым блоком определенного цвета и присвоим ему текст "Текущий цвет". В нижней части формы расположим четыре цветных текстовых блоока, а под ними четыре переключателя, с помощью которых мы будем менять цвет основного текстового блока.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/current_pick&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;fill_parent&quot;
+        android:layout_weight=&quot;1&quot;
+        android:background=&quot;#666666&quot;
+        android:gravity=&quot;center&quot;
+        android:text=&quot;@string/current_pick&quot;
+        android:textColor=&quot;#ffffff&quot; /&gt;
+
+    &lt;LinearLayout
+        android:id=&quot;@+id/linearLayout1&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:orientation=&quot;horizontal&quot; &gt;
+
+        &lt;TextView
+            android:id=&quot;@+id/textViewRed&quot;
+            android:layout_width=&quot;fill_parent&quot;
+            android:layout_height=&quot;20dp&quot;
+            android:layout_gravity=&quot;center&quot;
+            android:layout_weight=&quot;1&quot;
+            android:background=&quot;#ff0000&quot;
+            android:text=&quot;@string/color_red&quot;
+            android:textColor=&quot;#660000&quot; /&gt;
+
+        &lt;TextView
+            android:id=&quot;@+id/textViewGreen&quot;
+            android:layout_width=&quot;fill_parent&quot;
+            android:layout_height=&quot;20dp&quot;
+            android:layout_gravity=&quot;center&quot;
+            android:layout_weight=&quot;1&quot;
+            android:background=&quot;#00ff00&quot;
+            android:text=&quot;@string/color_green&quot;
+            android:textColor=&quot;#006600&quot; /&gt;
+
+        &lt;TextView
+            android:id=&quot;@+id/textViewBlue&quot;
+            android:layout_width=&quot;fill_parent&quot;
+            android:layout_height=&quot;20dp&quot;
+            android:layout_gravity=&quot;center&quot;
+            android:layout_weight=&quot;1&quot;
+            android:background=&quot;#0000ff&quot;
+            android:text=&quot;@string/color_blue&quot;
+            android:textColor=&quot;#000066&quot; /&gt;
+
+        &lt;TextView
+            android:id=&quot;@+id/textViewGray&quot;
+            android:layout_width=&quot;fill_parent&quot;
+            android:layout_height=&quot;20dp&quot;
+            android:layout_gravity=&quot;center&quot;
+            android:layout_weight=&quot;1&quot;
+            android:text=&quot;@string/color_gray&quot; /&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;RadioGroup
+        android:id=&quot;@+id/radioGroup1&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:background=&quot;#333333&quot;
+        android:orientation=&quot;horizontal&quot; &gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radio_red&quot;
+            android:layout_width=&quot;fill_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_marginLeft=&quot;24dp&quot;
+            android:layout_weight=&quot;1&quot; /&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radio_blue&quot;
+            android:layout_width=&quot;fill_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_marginLeft=&quot;24dp&quot;
+            android:layout_weight=&quot;1&quot; /&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radio_green&quot;
+            android:layout_width=&quot;fill_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_marginLeft=&quot;24dp&quot;
+            android:layout_weight=&quot;1&quot; /&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radio_gray&quot;
+            android:layout_width=&quot;fill_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_marginLeft=&quot;24dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:checked=&quot;true&quot; /&gt;
+    &lt;/RadioGroup&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Обратите внимание, что элементы <b>RadioButton</b> помещаются в контейнер <b>RadioGroup</b>. Если теперь посмотреть на форму, то увидим одно большое серое поле. А снизу расположились в ряд четыре метки, а еще ниже также в ряд расположились четыре переключателя. Причем последний серый переключатель имеет выбранный статус (android:checked=&quot;true&quot;).</p>
+
+<p>Переходим к программной части. Добавляем переменную класса для обработки щелчков на кнопках-переключателях.</p>
+
+<pre><code class="java">
+OnClickListener radioListener;
+// а также переменную для TextView
+TextView tvPick;
+</code></pre>
+
+<p>Теперь можно писать код для обработки щелчков у переключателей:</p>
+
+<pre><code class="java">
+radioListener = new OnClickListener() {
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		RadioButton rb = (RadioButton)v;
+		switch (rb.getId()) {
+		case R.id.radio_red: tvPick.setBackgroundColor(Color.parseColor("#ff0000"));
+		    break;
+		case R.id.radio_green: tvPick.setBackgroundColor(Color.parseColor("#0000ff"));
+		    break;
+		case R.id.radio_blue: tvPick.setBackgroundColor(Color.parseColor("#00ff00"));
+		    break;
+		case R.id.radio_gray: tvPick.setBackgroundColor(Color.parseColor("#666666"));
+		    break;
+
+		default:
+			break;
+		}
+	}
+};
+
+tvPick = (TextView)findViewById(R.id.current_pick);
+
+RadioButton rb_red = (RadioButton)findViewById(R.id.radio_red);
+rb_red.setOnClickListener(radioListener);
+
+RadioButton rb_green = (RadioButton)findViewById(R.id.radio_green);
+rb_green.setOnClickListener(radioListener);
+
+RadioButton rb_blue = (RadioButton)findViewById(R.id.radio_blue);
+rb_blue.setOnClickListener(radioListener);
+
+RadioButton rb_gray = (RadioButton)findViewById(R.id.radio_gray);
+rb_gray.setOnClickListener(radioListener);
+</code></pre>
+
+<p>Запустим приложение и посмотрим, что у нас получилось. Пощёлкаем по переключателям и убеждаемся, что всё работает.</p>
+
+<p><img src="radiobutton.png" alt="Переключатели RadioButton" width="240" height="400"></p>
+
+<h2 class="text-warning">Другой способ</h2>
+
+<p>Показанный выше способ использует щелчок, так как переключатели можно рассматривать как кнопки. Но на самом деле у переключателей есть свой слушатель <b>setOnCheckedChangeListener()</b>. Я расположил в новом проекте RadioGroup с тремя RadioButton и написал простенький пример. Ваша задача - переписать предыдущий пример на основе этого шаблона.</p>
+
+<pre><code class="java">
+@Override
+public void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_main);
+
+	RadioGroup radiogroup = (RadioGroup) findViewById(R.id.radioGroup1);
+	
+	radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+		
+		@Override
+		public void onCheckedChanged(RadioGroup group, int checkedId) {
+			// TODO Auto-generated method stub
+			switch (checkedId) {
+			case -1:
+				Toast.makeText(getApplicationContext(), "No choice", Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.radio0:
+				Toast.makeText(getApplicationContext(), "Radio0", Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.radio1:
+				Toast.makeText(getApplicationContext(), "Radio1", Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.radio2:
+				Toast.makeText(getApplicationContext(), "Radio2", Toast.LENGTH_SHORT).show();
+				break;
+
+			default:
+				break;
+			}
+		}
+	});
+}
+</code></pre>
+
+<p>Этот способ намного удобней. Вам даже не нужно объявлять ссылки на переключатели и назначать им слушатели. Код получается более компактным.</p>
+
+<p>Обратите внимание, что метод <b>onCheckedChanged()</b> принимает параметр <b>RadioGroup</b>, что позволяет применять один и тот же слушатель <b>OnCheckedChangeListener()</b> для нескольких групп переключателей. Вариант -1 сработает, когда группа переключателей будет сброшена в коде с помощью метода <b>clearCheck()</b>.</p>
+
+<h2 class="text-warning">Метод clearCheck()</h2>
+
+<p>Когда пользователь выберет любой из переключателей, то он уже не сможет снять с него отметку. Какой-нибудь из переключателей обязательно будет выбран в одном контейнере с ним. Единственный способ очистить все переключатели - программно вызвать метод <b>clearCheck()</b>, который относится к классу <b>RadioGroup</b>.</p>
+
+<pre><code class="java">
+RadioGroup radiogroup;
+
+// щелчок кнопки
+public void onClick(View view) {
+    // очистить все переключатели
+	radiogroup.clearCheck();
+}
+</code></pre>
+
+<h2 class="text-warning">Метод getCheckedRadioButtonId()</h2>
+
+<p>У RadioGroup есть также метод <b>getCheckedRadioButtonId()</b>, который позволяет узнать идентификатор выбранного переключателя.</p>
+
+<pre><code class="java">
+public void onClick(View view) {
+	int checkedRadioButtonId = radiogroup.getCheckedRadioButtonId();
+	
+	// Найдём переключатель по его id
+    RadioButton myradiobutton = (RadioButton) findViewById(checkedRadioButtonId);
+
+    Toast.makeText(getApplicationContext(),
+	myradiobutton.getText(), Toast.LENGTH_SHORT).show();
+}
+</code></pre>
+
+<p>Также можно узнать индекс выбранного переключателя через метод <b>indexOfChild()</b>:</p>
+
+<pre><code class="java">
+OnCheckedChangeListener radioGroupOnCheckedChangeListener =
+        new OnCheckedChangeListener(){
+
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+        RadioButton checkedRadioButton = (RadioButton)radioGroup.findViewById(checkedId);
+        int checkedIndex = radioGroup.indexOfChild(checkedRadioButton);
+     
+        textCheckedIndex.setText("checkedIndex = " + checkedIndex);
+    }};
+</code></pre>
+
+<h2 class="text-warning">Кот или муж?</h2>
+
+<p>Теперь, когда вы познакомились с новым элементом, то вам не составит труда написать программу для нелёгкого выбора.</p>
+
+<p><img src="switchcat.jpg" alt="Выбираем кота" widht="500" height="276"></p>
+
+<p>Разметка:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/linearLayout&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    android:padding=&quot;10dip&quot; &gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/textView1&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+         android:text=&quot;&quot; /&gt;
+
+    &lt;RadioGroup
+        android:id=&quot;@+id/radioGroup1&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginTop=&quot;24dp&quot; &gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radioHusband&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:checked=&quot;true&quot;
+            android:text=&quot;Муж&quot; /&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radioKitten&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;Котёнок&quot; /&gt;
+    &lt;/RadioGroup&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>И код:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import ...
+
+public class MainActivity extends Activity {
+	TextView tvInfo;
+	OnClickListener radioListener;
+
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.activity_main);
+		tvInfo = (TextView)findViewById(R.id.textView1);
+		
+		
+		RadioGroup radiogroup = (RadioGroup) findViewById(R.id.radioGroup1);
+		radiogroup.clearCheck();
+		
+		radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch (checkedId) {
+				case -1:
+					tvInfo.setText("");
+					break;
+				case R.id.radioHusband:
+					tvInfo.setText("Подумайте ещё раз");
+					break;
+				case R.id.radioKitten:
+					tvInfo.setText("Отличный выбор!");
+					break;
+				}
+			}
+		});
+	}
+}
+</code></pre>
+
+<p><img src="radiobutton3.png" alt="Переключатели RadioButton" width="240" height="126"></p>
+
+<p>Девушки, нужен ли вам такой муж? Если он не любит котиков, то будет ли любить вас? Возьмите лучше котёнка. Он клёвый.</p>
+
+<h2 class="text-warning">Дополнительное чтение</h2>
+
+<p><a href="radiobutton-advanced.html">Продвинутые приёмы работы с RadioButton</a> (Закрытая зона/2-й месяц)</p>
+<p><a href="../theory/sharedpreferences.html#radiobutton">Запомнить состояние переключателей</a></p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/views/radiobutton.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:52:51 GMT -->
+</html>

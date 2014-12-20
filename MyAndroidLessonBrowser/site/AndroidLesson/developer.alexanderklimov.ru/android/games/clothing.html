@@ -1,0 +1,927 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/games/clothing.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:08:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Игры на Android: Наряди робота</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class="active"><a href="index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Наряди робота</h1>
+
+<p>Даже не обладая большим опытом в программировании под Android, вполне можно написать простую игру, которая может повеселить окружающих. В этой статье мы рассмотрим, как можно нарядить зелёного робота, чтобы пригласить его на вечеринку.</p>
+
+<p>Возьмём изображение робота.</p>
+
+<p><img src="../../../www.helloandroid.com/files/mobileplugin/180x180/8b466f063039a4277b0054428a6df594.png" alt="Android"></p>
+
+<p>В фотошопе или другом подходящем графическом редакторе разрежем картинку на части (инструемент Slice):</p>
+
+<p><a href="../../../www.helloandroid.com/files/robot_clothing/slice.png" target="_blank">
+<img src="../../../www.helloandroid.com/files/mobileplugin/180x180/01449b1ff92de96f941de94347613659.png"></a></p>
+
+<p>В результате получим отдельные фрагменты изображения.</p>
+
+<p>Создадим новый проект и скопируем все полученные картинки в папку <b>res/drawable</b>.</p>
+
+<p>Создадим разметку для основного экрана. Наша задача - собрать мозаику из частей робота в одно целое, как это было на исходном изображении.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/LinearLayout01&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;LinearLayout
+        android:id=&quot;@+id/LinearLayout02&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot; &gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/csap&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:src=&quot;@drawable/csap&quot; &gt;
+        &lt;/ImageView&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;LinearLayout
+        android:id=&quot;@+id/LinearLayout03&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot; &gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/fej&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:src=&quot;@drawable/fej&quot; &gt;
+        &lt;/ImageView&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;LinearLayout
+        android:id=&quot;@+id/LinearLayout04&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:orientation=&quot;horizontal&quot; &gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/balkar&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:src=&quot;@drawable/balkar&quot; &gt;
+        &lt;/ImageView&gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/test&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:src=&quot;@drawable/test&quot; &gt;
+        &lt;/ImageView&gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/jobbkar&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:src=&quot;@drawable/jobbkar&quot; &gt;
+        &lt;/ImageView&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;LinearLayout
+        android:id=&quot;@+id/LinearLayout05&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:orientation=&quot;horizontal&quot; &gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/balalso&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:src=&quot;@drawable/balalso&quot; &gt;
+        &lt;/ImageView&gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/lab&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:src=&quot;@drawable/lab&quot; &gt;
+        &lt;/ImageView&gt;
+
+        &lt;ImageView
+            android:id=&quot;@+id/jobbalso&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:src=&quot;@drawable/jobbalso&quot; &gt;
+        &lt;/ImageView&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;LinearLayout
+        android:id=&quot;@+id/LinearLayout06&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot; &gt;
+    &lt;/LinearLayout&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p><img src="../../../www.helloandroid.com/files/mobileplugin/180x180/fb8eafc2061270dd4abfca3fff654e2e.png" alt="Android"></p>
+
+<p>Теперь надо отдельные фрагменты робота отредактировать - создать их копии и внести изменения, чтобы у пользователя появился выбор. Например, на голову можно нацепить модные очки, на руку нанести татуировку или вложить кружку пива. Фантазируйте.</p>
+
+<p><img src="../../../www.helloandroid.com/files/mobileplugin/180x180/336d55a4ffc03c262c69cc213f965487.png" alt="Android"></p>
+
+<p>Создадим новый класс <b>DataStorage.java</b>, который будет запоминать выбранный вариант приодетого робота, чтобы не повторять процедуру наряжения заново при новом запуске игры.</p>
+
+<pre><code class="java">
+package com.helloandroid.game;
+
+import java.util.ArrayList;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+
+public class DataStorage {
+	private SharedPreferences mPrefs;
+
+	public DataStorage(Context context) {
+		mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+	}
+
+	public void setHead(int id) {
+		SharedPreferences.Editor edit = mPrefs.edit();
+		edit.putInt("fej", id);
+		edit.commit();
+
+	}
+
+	public int getHead() {
+		return mPrefs.getInt("fej", 0);
+	}
+
+	public void setHorn(int id) {
+		SharedPreferences.Editor edit = mPrefs.edit();
+		edit.putInt("horn", id);
+		Log.d("savehorn:", "" + id);
+		edit.commit();
+	}
+
+	public int getHorn() {
+		return mPrefs.getInt("horn", 0);
+	}
+
+	public void setLeftHand(int id) {
+		SharedPreferences.Editor edit = mPrefs.edit();
+		edit.putInt("lefthand", id);
+		edit.commit();
+	}
+
+	public int getLeftHand() {
+		return mPrefs.getInt("lefthand", 0);
+	}
+
+	public void setRightHand(int id) {
+		SharedPreferences.Editor edit = mPrefs.edit();
+		edit.putInt("righthand", id);
+		edit.commit();
+	}
+
+	public int getRightHand() {
+		return mPrefs.getInt("righthand", 0);
+	}
+
+	public void setLegs(int id) {
+		SharedPreferences.Editor edit = mPrefs.edit();
+		edit.putInt("legs", id);
+		edit.commit();
+	}
+
+	public int getLegs() {
+		return mPrefs.getInt("legs", 0);
+	}
+
+	public void setBody(int id) {
+		SharedPreferences.Editor edit = mPrefs.edit();
+		edit.putInt("body", id);
+		edit.commit();
+	}
+
+	public int getBody() {
+		return mPrefs.getInt("body", 0);
+	}
+
+	public void ClickListener(ArrayList&lt;ImageView&gt; im, final int i,
+			final int testresz, final DataStorage ds, final Context context) {
+		im.get(i).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// ds.setHorn((ImageView)v.);
+				switch (testresz) {
+				case 1:
+					ds.setHorn(i);
+					break;
+				case 2:
+					ds.setHead(i);
+					break;
+				case 3:
+					ds.setBody(i);
+					break;
+				case 4:
+					ds.setLeftHand(i);
+					break;
+				case 5:
+					ds.setRightHand(i);
+					break;
+				case 6:
+					ds.setLegs(i);
+					break;
+				}
+				Intent i = new Intent(context.getApplicationContext(),
+						Game.class);
+				context.startActivity(i);
+			}
+		});
+	}
+
+}
+</code></pre>
+
+<p>Возвращаемся к основному классу и пишем следующий код:</p>
+
+<pre><code class="java">
+package com.helloandroid.game;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class Game extends Activity {
+	Context context = this;
+	ImageView csap, fej, balkar, test, jobbkar, balalso, lab, jobbalso;
+	Button exit;
+	private DataStorage ds;
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+
+		ds = new DataStorage(this);
+
+		ArrayList&lt;Integer&gt; csaplist = new ArrayList&lt;Integer&gt;();
+		csaplist.add(R.drawable.csap);
+		csaplist.add(R.drawable.csap1);
+		csaplist.add(R.drawable.csap2);
+		ArrayList&lt;Integer&gt; fejlist = new ArrayList&lt;Integer&gt;();
+		fejlist.add(R.drawable.fej);
+		fejlist.add(R.drawable.fej2);
+		fejlist.add(R.drawable.fej3);
+		csap = (ImageView) findViewById(R.id.csap);
+		csap.setImageResource(csaplist.get(ds.getHorn()));
+		Log.d("gethorn", "" + ds.getHorn());
+		fej = (ImageView) findViewById(R.id.fej);
+		fej.setImageResource(fejlist.get(ds.getHead()));
+
+		test = (ImageView) findViewById(R.id.test);
+		test.setImageResource(R.drawable.test);
+
+		balkar = (ImageView) findViewById(R.id.balkar);
+		balkar.setImageResource(R.drawable.balkar);
+
+		test = (ImageView) findViewById(R.id.test);
+		test.setImageResource(R.drawable.test);
+
+		jobbkar = (ImageView) findViewById(R.id.jobbkar);
+		jobbkar.setImageResource(R.drawable.jobbkar);
+
+		balalso = (ImageView) findViewById(R.id.balalso);
+		balalso.setImageResource(R.drawable.balalso);
+
+		lab = (ImageView) findViewById(R.id.lab);
+		lab.setImageResource(R.drawable.lab);
+
+		jobbalso = (ImageView) findViewById(R.id.jobbalso);
+		jobbalso.setImageResource(R.drawable.jobbalso);
+
+		csap.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(context.getApplicationContext(),
+						ItemSelect.class);
+				i.putExtra("testresz", 1);
+				startActivity(i);
+			}
+		});
+
+		fej.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(context.getApplicationContext(),
+						ItemSelect.class);
+				i.putExtra("testresz", 2);
+				startActivity(i);
+			}
+		});
+
+		test.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(context.getApplicationContext(),
+						ItemSelect.class);
+				i.putExtra("testresz", 3);
+
+				startActivity(i);
+
+			}
+		});
+		balkar.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(context.getApplicationContext(),
+						ItemSelect.class);
+				i.putExtra("testresz", 4);
+				startActivity(i);
+			}
+		});
+
+		jobbkar.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(context.getApplicationContext(),
+						ItemSelect.class);
+				i.putExtra("testresz", 5);
+				startActivity(i);
+			}
+		});
+
+		lab.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(context.getApplicationContext(),
+						ItemSelect.class);
+				i.putExtra("testresz", 6);
+				startActivity(i);
+			}
+		});
+	}
+
+	public void onResume() {
+		super.onResume();
+		ds = new DataStorage(this);
+		ArrayList&lt;Integer&gt; csaplist = new ArrayList&lt;Integer&gt;();
+		csaplist.add(R.drawable.csap);
+		csaplist.add(R.drawable.csap1);
+		csaplist.add(R.drawable.csap2);
+		csap = (ImageView) findViewById(R.id.csap);
+		csap.setImageResource(csaplist.get(ds.getHorn()));
+		ArrayList&lt;Integer&gt; fejlist = new ArrayList&lt;Integer&gt;();
+		fejlist.add(R.drawable.fej);
+		fejlist.add(R.drawable.fej2);
+		fejlist.add(R.drawable.fej3);
+		fej = (ImageView) findViewById(R.id.fej);
+		fej.setImageResource(fejlist.get(ds.getHead()));
+
+		balkar = (ImageView) findViewById(R.id.balkar);
+
+		ArrayList&lt;Integer&gt; balkarlist = new ArrayList&lt;Integer&gt;();
+		balkarlist.add(R.drawable.balkar);
+		balkarlist.add(R.drawable.balkar2);
+		balkarlist.add(R.drawable.balkar3);
+		balkar.setImageResource(balkarlist.get(ds.getLeftHand()));
+
+		test = (ImageView) findViewById(R.id.test);
+		ArrayList&lt;Integer&gt; testlist = new ArrayList&lt;Integer&gt;();
+		testlist.add(R.drawable.test);
+		testlist.add(R.drawable.test2);
+		testlist.add(R.drawable.test3);
+		test.setImageResource(testlist.get(ds.getBody()));
+
+		jobbkar = (ImageView) findViewById(R.id.jobbkar);
+
+		ArrayList&lt;Integer&gt; jobbkarlist = new ArrayList&lt;Integer&gt;();
+		jobbkarlist.add(R.drawable.jobbkar);
+		jobbkarlist.add(R.drawable.jobbkar2);
+		jobbkarlist.add(R.drawable.jobbkar3);
+		jobbkar.setImageResource(jobbkarlist.get(ds.getRightHand()));
+
+		lab = (ImageView) findViewById(R.id.lab);
+		ArrayList&lt;Integer&gt; lablist = new ArrayList&lt;Integer&gt;();
+		lablist.add(R.drawable.lab);
+		lablist.add(R.drawable.lab2);
+		lablist.add(R.drawable.lab3);
+		lab.setImageResource(lablist.get(ds.getLegs()));
+		Toast.makeText(context, "onresume", 3).show();
+	}
+}
+</code></pre>
+
+<p>В классе происходит подготовительная работа. Объявляются ImageView, создаётся массив частей тела и назначаются обработчики нажатий на частях тела.</p>
+
+<p>Когда пользователь нажимает на определённую часть тела, то запускается новый экран выбора части тела из предложенных вариантов (класс ItemSelect):</p>
+
+<pre><code class="java">
+package com.helloandroid.game;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class ItemSelect extends Activity {
+	private int j;
+	Context context = this;
+	private DataStorage ds;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.itemselect);
+		Intent i = getIntent();
+		ds = new DataStorage(this);
+		ArrayList&lt;ImageView&gt; im = new ArrayList&lt;ImageView&gt;();
+		im.add((ImageView) findViewById(R.id.first));
+		im.add((ImageView) findViewById(R.id.second));
+		im.add((ImageView) findViewById(R.id.third));
+
+		int testresz = (int) i.getIntExtra("testresz", -1);
+
+		ArrayList&lt;Integer&gt; csaplist = new ArrayList&lt;Integer&gt;();
+		ArrayList&lt;Integer&gt; fejlist = new ArrayList&lt;Integer&gt;();
+		ArrayList&lt;Integer&gt; balkarlist = new ArrayList&lt;Integer&gt;();
+		ArrayList&lt;Integer&gt; jobbkarlist = new ArrayList&lt;Integer&gt;();
+		ArrayList&lt;Integer&gt; lablist = new ArrayList&lt;Integer&gt;();
+		ArrayList&lt;Integer&gt; testlist = new ArrayList&lt;Integer&gt;();
+		csaplist.add(R.drawable.csap);
+		csaplist.add(R.drawable.csap1);
+		csaplist.add(R.drawable.csap2);
+		fejlist.add(R.drawable.fej);
+		fejlist.add(R.drawable.fej2);
+		fejlist.add(R.drawable.fej3);
+
+		balkarlist.add(R.drawable.balkar);
+		balkarlist.add(R.drawable.balkar2);
+		balkarlist.add(R.drawable.balkar3);
+		jobbkarlist.add(R.drawable.jobbkar);
+		jobbkarlist.add(R.drawable.jobbkar2);
+		jobbkarlist.add(R.drawable.jobbkar3);
+		lablist.add(R.drawable.lab);
+		lablist.add(R.drawable.lab2);
+		lablist.add(R.drawable.lab3);
+		testlist.add(R.drawable.test);
+		testlist.add(R.drawable.test2);
+		testlist.add(R.drawable.test3);
+
+		switch (testresz) {
+		case 1: // csap
+			for (j = 0; j &lt; csaplist.size(); j++) {
+				im.get(j).setImageResource(csaplist.get(j));
+				if (j == 0) {
+					ds.ClickListener(im, 0, testresz, ds, context);
+
+				} else if (j == 1) {
+					ds.ClickListener(im, 1, testresz, ds, context);
+
+				} else if (j == 2) {
+					ds.ClickListener(im, 2, testresz, ds, context);
+
+				} else if (j == 3) {
+					ds.ClickListener(im, 3, testresz, ds, context);
+
+				}
+
+			}
+			Toast.makeText(context, "Click the back button to show your robot",
+					3).show();
+			break;
+		case 2:
+			for (int j = 0; j &lt; fejlist.size(); j++) {
+				im.get(j).setImageResource(fejlist.get(j));
+				if (j == 0) {
+					ds.ClickListener(im, 0, testresz, ds, context);
+
+				} else if (j == 1) {
+					ds.ClickListener(im, 1, testresz, ds, context);
+
+				} else if (j == 2) {
+					ds.ClickListener(im, 2, testresz, ds, context);
+				} else if (j == 3) {
+					ds.ClickListener(im, 3, testresz, ds, context);
+				}
+			}
+			Toast.makeText(context, "Click the back button to show your robot",
+					3).show();
+			break;
+		case 3:
+			for (int j = 0; j &lt; testlist.size(); j++) {
+				im.get(j).setImageResource(testlist.get(j));
+				if (j == 0) {
+					ds.ClickListener(im, 0, testresz, ds, context);
+
+				} else if (j == 1) {
+					ds.ClickListener(im, 1, testresz, ds, context);
+
+				} else if (j == 2) {
+					ds.ClickListener(im, 2, testresz, ds, context);
+				} else if (j == 3) {
+					ds.ClickListener(im, 3, testresz, ds, context);
+				}
+			}
+			Toast.makeText(context, "Click the back button to show your robot",
+					3).show();
+			break;
+		case 4:
+			for (int j = 0; j &lt; balkarlist.size(); j++) {
+				im.get(j).setImageResource(balkarlist.get(j));
+				if (j == 0) {
+					ds.ClickListener(im, 0, testresz, ds, context);
+
+				} else if (j == 1) {
+					ds.ClickListener(im, 1, testresz, ds, context);
+
+				} else if (j == 2) {
+					ds.ClickListener(im, 2, testresz, ds, context);
+				} else if (j == 3) {
+					ds.ClickListener(im, 3, testresz, ds, context);
+				}
+			}
+			Toast.makeText(context, "Click the back button to show your robot",
+					3).show();
+			break;
+		case 5:
+			for (int j = 0; j &lt; jobbkarlist.size(); j++) {
+				im.get(j).setImageResource(jobbkarlist.get(j));
+				if (j == 0) {
+					ds.ClickListener(im, 0, testresz, ds, context);
+
+				} else if (j == 1) {
+					ds.ClickListener(im, 1, testresz, ds, context);
+
+				} else if (j == 2) {
+					ds.ClickListener(im, 2, testresz, ds, context);
+				} else if (j == 3) {
+					ds.ClickListener(im, 3, testresz, ds, context);
+				}
+			}
+			Toast.makeText(context, "Click the back button to show your robot",
+					3).show();
+			break;
+		case 6:
+			for (int j = 0; j &lt; lablist.size(); j++) {
+				im.get(j).setImageResource(lablist.get(j));
+				if (j == 0) {
+					ds.ClickListener(im, 0, testresz, ds, context);
+
+				} else if (j == 1) {
+					ds.ClickListener(im, 1, testresz, ds, context);
+
+				} else if (j == 2) {
+					ds.ClickListener(im, 2, testresz, ds, context);
+				} else if (j == 3) {
+					ds.ClickListener(im, 3, testresz, ds, context);
+				}
+
+			}
+			Toast.makeText(context, "Click the back button to show your robot",
+					3).show();
+			break;
+		}
+	}
+}
+</code></pre>
+
+<p>Разметка <b>res/layout/itemselect.xml</b> для класса, в которой пользователь будет выбирать элемент из предложенных вариантов. Разметка состоит из трёх ImageView:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/LinearLayout01&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/first&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot; &gt;
+    &lt;/ImageView&gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/second&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot; &gt;
+    &lt;/ImageView&gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/third&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot; &gt;
+    &lt;/ImageView&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Запустим проект и посмотрим, что у нас получилось. Вот голый робот.</p>
+
+<p> <img src="clothing1.png" alt="Clothing" width="210" height="350"></p>
+
+<p>Выбираем варианты для левой руки (рука-крюк, рука с пивом):</p>
+
+<p> <img src="clothing2.png" alt="Clothing" width="210" height="350"></p>
+
+<p>Продолжаем наряжать робота. Пусть это будет женщина на коньках. Вся такая загадочная и непредсказуемая.</p>
+
+<p> <img src="clothing3.png" alt="Clothing" width="210" height="350"></p>
+
+<p>Написано по мотивам статьи <a href="http://www.helloandroid.com/tutorials/developing-clothing-game-android" >Developing a clothing game for Android | Hello Android</a>. Там же можно скачать исходник приложения. Хочу сразу предупредить, что код не слишком оптимален и его нужно перерабатывать, что останется вам в качестве домашнего задания. Я выложил статью здесь, как пример идеи, который можно реализовать без слишком глубоких знаний. Было бы желание.</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/games/clothing.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:08:29 GMT -->
+</html>

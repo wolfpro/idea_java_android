@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/mememe.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Экспресс-курс: Пишем красивый код</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Пишем красивый код</h1>
+
+<p>Код, который вы пишете, должен быть красивым, как кот. Когда мы смотрим на красивого кота, мы умиляемся и говорим: мимими. При чтении вашего кода должно возникать такое же чувство. В противном случае, у вас не код, а, извините, говнокод.</p.
+
+<p>Я часто получаю письма от пользователей, которые делятся своими листингами. И порой волосы дыбом встают. Некоторые программисты наивно полагают, что свой код они прекрасно понимают и им не нужно писать красиво - мол и так понятно. В своё время я тоже так думал, а потом мучительно вспоминал, что делает та или иная функция в программе, которую писал несколько лет назад. Кроме того, правильная система написания кода помогает разработке, как это ни странно звучит.</p>
+
+<p>Сравните код для запуска второй активности через нажатие кнопки (<a href="../activity.html">из урока 5</a>):</p>
+
+<pre><code class="java">
+public void onClick(View v) {
+	Intent intent = new Intent(PassingDataDemoActivity.this, Privet.class);
+	
+	intent.putExtra("username", edUserName.getText().toString()); // в ключ username пихаем текст из текстового поля
+	intent.putExtra("gift", edDescription.getText().toString());  // в ключ gift пихаем текст из текстового поля
+    startActivity(intent);
+}
+</code></pre>
+
+<p>А вот реальный пример из письма пользователя, который на основе того урока, писал своё приложение:</p>
+
+<pre><code class="java">
+public void oc(View v) {
+	Intent i = new Intent(P1.this, P2.class);
+	
+	i.putExtra("m1", t1.getText().toString());
+	i.putExtra("bla", t2.getText().toString());
+    startActivity(i);
+}
+</code></pre>
+
+<p>В обоих случаях код делает одну и ту же работу. Но сколько же лишних усилий мне пришлось потратить, чтобы уяснить код даже в таком простом примере. При чтении такого кода нужно помнить, что <b>oc</b> - это метод обработки нажатия кнопки, t1 и t2 - это текстовые метки и т.д. и т.п.</p>
+
+<p>Вот почему я беру плату за чтение чужих программ - разбор листингов отнимает много времени и сил.</p>
+
+<p>А ведь писать красивый код не так уж и сложно. Не надо экономить на лишних символах в названиях классов и методов, а также не стоит избегать комментариев. Впрочем, и в другую крайность впадать тоже не стоит.</p>
+
+<p>Понимание к такому подходу приходит не сразу. Когда я только начинал учиться программированию, то не обращал внимания на подобные "мелочи". Потом стал приглядыватья не только к коду, но и как он написан. Стиль написания кода также многое говорит о программисте. А недавно на прилавках появилась очень интересная книга <a href="http://www.ozon.ru/context/detail/id/8466390/?partner=visual">Читаемый код, или Программирование как искусство</a>, который рекомендую к прочтению. Часть материала из этой книги я буду использовать в этой статье в своей интерпретации. Вот одна иллюстрация из этой книги.</p>
+
+<p><img src="cleancode.png" alt="Температура у кота"></p>
+
+<h2 class="text-warning">Используйте говорящие имена</h2>
+
+<p>Код намного проще читать, если в нём будут использоваться говорящие имена, хорошо написанные комментарии, а также будет использоваться форматирование кода.</p>
+
+<p>Когда вы придумываете имя для переменной, метода, класса и т.д., то подойдите к данному действию ответственно. Не стоит давать имена из непонятного набора символов типа m1, wl, KU, o, p, r, s, t. Представьте себе, что вы даёте имя коту. Вряд ли ему понравится имя m1 или t. Конечно, он сделает вид, что его это не касается, но карма у вас вряд ли повысится. А если вам такое имя дадут родители?</p>
+
+<p>Итак, договорились - давайте нормальные имена. Даже если это временный тестовый пример на пять минут, который вы удалите. Выбрав хорошее имя, вы сообщаете гораздо больше информации, чем кажется на первый взгляд. По сути правильное имя уже содержит комментарий. Сравним:</p>
+
+<pre>
+// в этой переменной будем хранить имена котов
+String c;
+
+String catname;
+</pre>
+
+<p>Во втором случае даже не обязательно писать комментарий, уже понятно по названию переменной для чего она создана.</p>
+
+<p>С другой стороны даже целые слова типа <i>size</i>, <i>put</i> тоже не всегда оправданны, так как не дают ясности. Избегайте пустых и неинформативных слов и выражений.</p>
+
+<p>Допустим, мы создали метод <b>getPage(url)</b>, который получает какую-то страницу. А откуда получает: из интернета, базы данных, диска? Если из интернета, то может стоит назвать метод <b>downloadPage(url)</b>? Кстати, мы пока не рассматриваем приёмы, связанные со стилем кодирования. Например, для Android имена методов должны начинаться с маленькой буквы, а второе слово с большой. В других языках могут использоваться другие стили, например, в Visual Basic совсем по другому.</p>
+
+<p>Ещё пример:</p>
+
+<pre>
+class Cat {
+    int size();
+}
+</pre>
+
+<p>Что возвращает метод <b>size()</b>? Метод <b>tailSize()</b> даёт основание предполагать, что речь идёт о размере хвоста.</p>
+
+<p>Или метод <b>stop()</b> - мы понимаем, что метод что-то останавливает. Но может есть более подходящие имена, например, <b>kill()</b> или <b>pause()</b> с родственным ему методом <b>resume()</b>. Ищите яркие запоминающие имена-синонимы.</p>
+
+<p>Примеры синонимов:</p>
+
+<ul>
+<li>send (посылать) - deliver (доставлять), announce (извещать), route (направлять)</li>
+<li>find (искать) - search (искать), locate (обнаруживать)</li>
+<li>start (начинать) - launch (запускать), create (создавать), begin (начинать)</li>
+<li>make (создавать) - create (создавать), setup (устанавливать), build (строить), generate (генерировать)</li>
+</ul>
+
+<h2 class="text-warning">Избегайте общих имён</h2>
+
+<p>Часто разработчики используют имена вроде <i>tmp, retval, foo</i> и т.д. В учебных примерах этот приём вполне допустим, чтобы показать, что это именно учебный пример. В своих программах следует избегать подобной практики. Иначе получается, что автор признаётся, что никак не может придумать имя. Придумайте такое имя, которое описывает назначение или содержание объекта. Тот же <b>retval</b> - совершенно неинформативное имя, которое сообщает, что это возвращаемое значение, что и так очевидно.</p>
+
+<p>В некоторых случаях общие имена допустимы. Например, у нас есть код, где две переменные обмениваются своими значениями:</p>
+
+<pre>
+if(right &lt; left){
+    tmp = right;
+	right = left;
+	left = tmp;
+}
+</pre>
+
+<p>Здесь <b>tmp</b> хорошо подходит, так как служит для временного хранилища значения. Больше он нигде не используется и чтение кода не вызовет затруднений.</p>
+
+<p>В более сложных примерах использование слова <b>tmp</b> неоправданно и свидетельствует о лени программиста.</p>
+
+<pre>
+String tmp = user.name();
+tmp += " " + user.phone_number();
+text.setText("Пользователь: " + tmp);
+</pre>
+
+<p>Если речь идёт о временном файле, то используйте, например, вариант <b>tmp_file</b>. Одного взгляда на код будет достаточно, чтобы понять, что в выражении используется объект файла:</p>
+
+<pre>
+saveData(tmp_file, ...);
+</pre>
+
+<p>Сравните с вариантом:</p>
+
+<pre>
+saveData(tmp, ...);
+</pre>
+
+<p>Для итераторов в цикле обычно используют имена <b>i</b>, <b>j</b>, <b>k</b>. Поэтому не стоит использовать подобные имена в других местах вашего кода. С другой стороны и циклах тоже лучше использовать говорящие имена. Иногда это помогает избежать ошибок, особенно во вложенных циклах, когда можно перепутать имена переменных и использовать неправильные индексы для массивов.</p>
+
+<p>Имя переменной можно использовать как маленький комментарий. Любая информация, добавленная в имя переменной, будем напоминать вам о сущности переменной. Например, если у вас есть переменная, которая содержит строчку в шестнадцатеричном формате, то почему бы не использовать данный факт в имени:</p>
+
+<pre>
+string hex_id; // содержит "AF45CD98"
+string id; // плохой вариант
+</pre>
+
+<h2 class="text-warning">Переменные, связанные с измерениями</h2>
+
+<p>Удобно записывать единицы времени или другие данные в имя переменны. Например, если речь идёт о миллисекундах, то можно создать переменные таким образом:</p>
+
+<pre>
+int start_ms;
+int elapsed_ms; // и т.д.
+</pre>
+
+<p>Подобный стиль напомнит, что результат возвращается в миллисекундах и нужно проделать дополнительные операции, если результат нужно вывести в секундах, минутах и т.д.</p>
+
+<p>Аналогично можно поступать и с другими мерами измерений:</p>
+
+<pre>
+start(int delya_secs);
+createCache(int size_mb);
+downloadFile(float max_kbps);
+rotate(float degrees_cw);
+</pre>
+
+<p>Взглянув на подобный код, вы уже можете приблизительно предположить, что делает метод.</p>
+
+
+<h2 class="text-warning">Стиль кодирования для Android</h2>
+
+<p>На официальном сайте для разработчиков есть отдельная страница <a href="http://source.android.com/source/code-style.html" >Code Style Guidelines for Contributors</a>, посвящённая правилам оформления кода для проектов, написанных под Android.</p>
+
+<p>Продолжение следует</p>
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+	
+		    </div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/mememe.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:16 GMT -->
+</html>

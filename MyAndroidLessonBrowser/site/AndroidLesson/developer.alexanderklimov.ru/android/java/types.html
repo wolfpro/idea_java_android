@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/types.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:19:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Экспресс-курс: Типы</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+            
+                        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Типы</h1>
+
+<p>
+<a href="#integer">Целочисленные типы</a><br>
+<a href="#float">Типы с плавающей точкой</a><br>
+<a href="#char">Символы (тип char)</a><br>
+<a href="#boolean">Булевы значения</a><br>
+<a href="#cast">Приведение типов</a><br>
+</p>
+
+<p>Вселенная Java состоит из трёх субстанций: объекты, примитивы и коты. Про последних в документации ничего не говорится, поэтому их рассматривать не будем, но они существуют!</p>
+
+<p>Примитивные типы Java не являются объектами. К ним относятся:</p>
+
+<ul>
+<li>boolean - булев тип, может иметь значения true или false</li>
+<li>byte - 8-разрядное целое число</li>
+<li>short - 16-разрядное целое число</li>
+<li>int - 32-разрядное целое число</li>
+<li>long - 64-разрядное целое число</li>
+<li>char - 16-разрядное беззнаковое целое, представляющее собой символ UTF-16 (буквы и цифры)</li>
+<li>float - 32-разрядное число в формате IEEE 754 с плавающей точкой</li>
+<li>double - 64-разрядное число в формате IEEE 754 с плавающей точкой</li>
+</ul>
+
+<h2 class="text-warning">Простые числовые типы</h2>
+
+<table class="table table-striped">
+<tr>
+<th>Тип</th><th>Разрядность</th><th>MIN</th><th>MAX</th></tr>
+<tr>
+<td>byte</td><td>8 бит</td><td>-128</td><td>127</td></tr>
+<tr>
+<td>short</td><td>16 бит</td><td>-32768</td><td>32767</td></tr>
+<tr>
+<td>int</td><td>32 бит</td><td>-2147483648</td><td>2147483647</td></tr>
+<tr>
+<td>long</td><td>64 бит</td><td>-9233372036854775808</td><td>9233372036854775807</td></tr>
+<tr>
+<td>float</td><td>32 бит</td><td>-3.4E+38</td><td>3.4E+38</td></tr>
+<tr>
+<td>double</td><td>64 бит</td><td>-1.7E+308</td><td>1.7E+308</td></tr>
+</table>
+
+<h2 class="text-warning" id="integer">Целочисленные типы</h2>
+
+<p>Java определяет четыре целочисленных типа: <b>byte</b>, <b>short</b>, <b>int</b>, <b>long</b>. Они могут быть положительными и отрицательными (Java не поддерживает только положительные значения без знака, как некоторые языки программирования).</p>
+
+<h3 class="text-warning">Тип byte</h3>
+
+<p>Наименьший по размеру целочисленный тип - <b>byte</b>. Это 8-битовый тип с диапазоном допустимых значений от -128 до 127. Переменные типа <b>byte</b> часто используются при работе с потоком данных из сети или файла, а также при работе с необработанными двоичными данными или в массивах для экономии памяти.</p>
+
+<p>Объявить переменную типа <b>byte</b> можно следующим образом:</p>
+
+<pre><code class="java">
+byte c, a, t; // объявили сразу три переменные
+</code></pre>
+
+<p>Класс <b>Byte</b> является оболочкой для данного типа. Без необходимости не используйте в Android класс <b>Byte</b>.</p>
+
+<h3 class="text-warning">Тип short</h3>
+
+<p>Тип <b>short</b> - 16-битовый тип в диапазоне от -32768 до 32767. Используется очень редко.</p>
+
+<pre><code class="java">
+short m;
+</code></pre>
+
+<p>Класс <b>Short</b> является оболочкой для данного типа. Без необходимости не используйте в Android класс <b>Short</b>.</p>
+
+<h3 class="text-warning">Тип int</h3>
+
+<p>Целые числа, представленные типом <b>int</b>, являются самым распространенным типом в программе, с которым вы будете работать. Поэтому нужно хорошенько изучить его и узнать его достоинства и ограничения. Это 32-битовый тип, имеющий диапазон допустимых значений от -2147483648 до 2147483647 (около двух миллиардов). Этого числа вполне достаточно, чтобы посчитать всех котов на свете. Часто используется в циклах, индексировании массивов, хотя может показаться, что для небольших операций в цикле и массивах проще использовать <b>short</b> или <b>byte</b>. Нужно запомнить, что тип <b>int</b>эффективен в этих случаях из-за особенностей структуры вычислительных процессоров. Просто примите на веру.</p>
+
+<h4 class="text-warning">Сказка про тип int</h4>
+
+<p>Зададим себе вопрос, насколько большим может быть целое число типа <b>int</b>?</p>
+
+<p>Напишем простую программу, где будем умножать переменную саму на себя. Для начала присвоим ей значение 2, а дальше строчка за строчкой будем выводить результат. Результаты будем отдавать коту учёному <b>LogCat</b>. Весь код поместим в обработчик события щелчка на кнопке нашей учебной программы, а первую строчку поместим выше её.</p>
+
+<pre><code class="java">
+final String TAG = "Java-course";
+
+butGetResult.setOnClickListener(new OnClickListener() {		
+	@Override
+	public void onClick(View v) {
+		int x = 3;
+		Log.i(TAG, Integer.toString(x));
+		x *= x;
+		Log.i(TAG, Integer.toString(x));
+		x *= x;
+		Log.i(TAG, Integer.toString(x));
+		x *= x;
+		Log.i(TAG, Integer.toString(x));
+		x *= x;
+		Log.i(TAG, Integer.toString(x));
+		x *= x;
+		Log.i(TAG, Integer.toString(x));
+		x *= x;
+		Log.i(TAG, Integer.toString(x));
+		x *= x;
+		Log.i(TAG, Integer.toString(x));
+		x *= x;
+		Log.i(TAG, Integer.toString(x));				
+	}
+});
+</code></pre>
+
+<p>Запустите программу и нажмите на кнопку. Видимых изменений в программе вы не увидите. Переключитесь на Eclipse и откройте окно LogCat. Настройте его фильтр, чтобы отображались только наши сообщения. В результате мы получим такую картину:</p>
+
+<pre>
+2
+4
+16
+256
+65536
+0
+0
+0
+0
+</pre>
+
+<p><img src="int.png" alt="Странные результаты типа Integer"></p>
+
+<p>Что за бред, скажете вы. Когда мы умножаем 65536 на себя, то получаем 0 (Только не говорите об этом учительнице по математике). А потом, естественно, программа умножает 0 на 0 и продолжает выводить результаты.</p>
+
+<p>Вы еще больше удивитесь, если в качестве начального значения возьмете число 3. На этот раз вы сможете получить даже отрицательные значения.</p>
+
+<pre>
+3
+9
+81
+6561
+43046721
+-501334399
+2038349057
+-1970898431
+120648705
+</pre>
+
+<p>Проверьте самостоятельно. Если вы и это попытаетесь доказать учительнице, то исключение из учебного заведения вам гарантировано.</p>
+
+<p>Класс <b>Integer</b> является оболочкой для данного типа. Без необходимости не используйте в Android класс <b>Integer</b>. Для сравнения: тип <b>int</b> занимает 4 кб памяти, а <b>Integer</b> - 16 кб. </p>
+
+<p>В Java 7 можно использовать знак подчёркивания для удобства. Например, так:</p>
+
+<pre><code class="java">
+int myInt = 1_000_000; // миллион
+</code></pre>
+
+<p>Компилятор не обращает внимания на эти знаки, а человеку проще понять, что ему предлагают миллион или миллиард. В Android относительно недавно появилась полноценная поддержка Java 7 и вам в настройках нужно указать новую версию компилятора.</p>
+
+<p>Этот приём относится не только к <b>int</b>, но и к другим типам чисел.</p>
+
+<h4 class="text-warning" id="parseint">Как сконвертировать строку или CharSequence в int?</h4>
+
+<pre><code class="java">
+String mString = "42"; // строка
+int mInt = Integer.parseInt(mString);
+</code></pre>
+
+<p>Если у вас тип <b>CharSequence</b>, то его можно сконвертировать сначала в строку при помощи метода <b>toString()</b>, а потом в <b>int</b>.<p>
+
+<h3 class="text-warning">Тип long</h3>
+
+<p>Тип <b>long</b> - это 64-битный тип со знаком, используемый в тех случаях, когда используется очень большое значение, которое не способен хранить тип <b>int</b>. Например, чтобы вычислить расстояние, которое прошёл солнечный луч от солнца до зеркала, превратившись в солнечного зайчика, за которым безуспешно охотится котёнок, вам понадобится именно этот тип.</p>
+
+<p>Можно использовать символы <b>l</b> или <b>L</b> для обозначения числа типа <b>long</b>. Рекомендую использовать заглавную букву, чтобы избежать возможной путаницы. Например, напишем пример:</p>
+
+<pre><code class="java">
+// сколько ночей в арабских сказках?
+long night = 101l;
+System.out.println(night);
+</code></pre>
+
+<p>Запустив пример, вы увидите ответ <b>101</b>. Почему так получилось? А потому что последний символ - это не единица, а символ <b>l</b>. Присмотритесь внимательнее. Если бы мы написали <b>long night = 101L</b>, то не ломали бы голову себе.</p>
+
+<p>Класс <b>Long</b> является оболочкой для данного типа. Без необходимости не используйте в Android класс <b>Long</b>.</p>
+
+<h2 class="text-warning" id="float">Типы с плавающей точкой</h2>
+
+<p>Числа с плавающей точкой (иногда их называют действительными числами) применяются при вычислении выражений, в которых требуется точность до десятичного знака. Например, это может быть вычисление квадратного корня, значений синуса, косинуса и т.п. Существует два типа с плавающей точкой: <b>float</b> и <b>double</b>, которые представляют числа одинарной и двойной точности.</p>
+
+<h3 class="text-warning">Тип float</h3>
+
+<p>Тип <b>float</b> определяет значение одинарной точности, которое занимает 32 бит. Переменные данного типа удобны, когда требуется дробная часть без особой точности, например, для денежных сумм.</p>
+
+<pre><code class="java">
+float tugrik;
+</code></pre>
+
+<p>Класс <b>Float</b> является оболочкой для данного типа. Без необходимости не используйте в Android класс <b>Float</b>.</p>
+
+<h3 class="text-warning">Тип double</h3>
+
+<p>Тип <b>double</b> обеспечивает двойную точность, что видно из его названия (double - двойная). Занимает 64 бит для хранения значений. Многие математические функции возвращают значения типа <b>double</b>. Кстати, современные процессоры оптимизированы под вычисления значений двойной точности, поэтому они предпочтительнее, чем тип <b>float</b>.</p>
+
+<pre><code class="java">
+double pi, r, a;
+pi = 3.1416; // приблизительное значение числа &pi;
+r = 5.5; // радиус окружности
+a = pi * r * r; // вычисляем площадь окружности
+</code></pre>
+
+<p>Класс <b>Double</b> является оболочкой для данного типа. Без необходимости не используйте в Android класс <b>Double</b>.</p>
+
+<h2 class="text-warning" id="char">Символы (тип char)</h2>
+
+<p>Для хранения символов Java использует специальный тип <b>char</b>. Он отличается от типа <i>char</i> в языках C/C++, где представляет собой целочисленный тип с размером 8 бит. В Java для <b>char</b> используется кодировка Unicode и для хранения Unicode-символов используется 16 бит. Диапазон допустимых значений - от 0 до 65536 (отрицательных значений не существует).</p>
+
+<pre><code class="java">
+char ch1, ch2, ch3;
+
+ch1 = 67; // код переменной
+ch2 = 'a'; // сам символ
+ch3 = 116; // код переменной
+textViewInfo.setText("Слово из трёх букв: " + ch1 + ch2 + ch3);
+</code></pre>
+
+<p>Из примера выше видно, что переменной можно присвоить код символа или непосредственно сам символ, который следует окружить одинарными кавычками. Попробуйте запустить пример и посмотреть, какое слово получится из трёх указанных символов.</p>
+
+<p>Не следует путать символ 'a' со строкой "a", состоящей из одного символа. На экране монитора они выглядяет одинаково, но в программах ведут себя по разному.</p>
+
+<p>Хотя  тип <b>char</b> используется для хранения Unicode-символов, его можно использовать как целочисленный тип, используя сложение или вычитание.</p>
+
+<pre><code class="java">
+char ch1;
+ch1 = 'x';
+textViewInfo.append("ch1 содержит " + ch1);
+ch1++; // увеличим на единицу
+textViewInfo.append("ch1 содержит " + ch1);
+</code></pre>
+
+<p>В результате получим:</p>
+
+<pre><code class="java">
+ch1 содержит x
+ch1 содержит y
+</code></pre>
+
+<p>Если вы думаете, что увеличив значение переменной ch1 ещё на одну единицу, вы получите символ "й", то глубоко заблуждаетесь.</p>
+
+<p>Чтобы узнать, какой символ содержится в значении переменной, заданной как <b>int</b>, можно воспользоваться двумя специальными методами из класса <b>EncodingUtils</b>:</p>
+
+<p>Для стандартных символов ASCII:</p>
+
+<pre><code class="java">
+int i = 67;
+byte[] data = { (byte) i };
+CharSequence strSymbol = EncodingUtils.getAsciiString(data);
+textViewInfo.setText(strSymbol);
+</code></pre>
+
+<p>Для расширенной таблицы символов:</p>
+
+<pre><code class="java">
+int i = 379;
+byte[] data = { (byte) i };
+CharSequence strSymbol = EncodingUtils.getString(data, "windows-1251");
+textViewInfo.setText(strSymbol);
+</code></pre>
+
+<p>Методы работают со строками, но если мы используем строку из одного символа, то получим то, что нам нужно.</p>
+
+<h3 class="text-warning">Класс Character</h3>
+
+<p>Класс <b>Character</b> является оболочкой вокруг типа <b>char</b>. Чтобы получить значение типа <b>char</b>, содержащее в объекте класса <b>Character</b>, вызовите метод <b>charValue()</b>.</p>
+
+<h2 class="text-warning" id="boolean">Булевы значения</h2>
+
+<p>Тип <b>boolean</b> предназначен для хранения логических значений и может принимать только одно из двух возможных значений: <i>true</i> или <i>false</i>. Данный тип всегда возвращается при использовании операторов сравнения (больше, меньше, равно, больше или равно, меньше или равно, не равно). Также он используется в управляющих операторах <b>if</b> и <b>for</b>.</p>
+
+<pre><code class="java">
+boolean check;
+check = true;
+</code></pre>
+
+<p>В отличие от реальной жизни, где вполне может состояться диалог:</p>
+
+<pre>
+- Кать, чай будешь?
+- Да нет наверное
+</pre>
+
+<p>В компьютерной программе нужно чётко определиться - истина или ложь.</p>
+
+<p>В операторах <b>if</b> используется укороченная запись при значении <i>true</i>:</p>
+
+<pre><code class="java">
+if (check == true) ... // необязательный вариант
+if (check) ... // укороченная запись
+</code></pre>
+
+<p>Java сам поймёт, что переменную <b>check</b> нужно сравнить с <i>true</i>.</p>
+
+<h3 class="text-warning">Класс Boolean</h3>
+
+<p>Класс <b>Boolean</b> является оболочкой вокруг значений типа <b>boolean</b>. Чтобы получить значение типа <b>boolean</b> из объекта класса <b>Boolean</b>, используйте метод <b>booleanValue()</b>. Тип <b>boolean</b> использует 4 кб памяти, а <b>Boolean</b> - 16 кб. Вывод понятен?</p>
+
+<p>Ещё один совет, применимый ко всем типам. Допустим, нам нужно объявить 32 переменных типа <b>boolean</b>:</p>
+
+<pre><code class="java">
+boolean mProperty1;
+boolean mProperty2;
+...
+boolean mProperty32;
+</code></pre>
+
+<p>Умножаем 4 байта на 32 переменных и получаем 128 кб занятой памяти. А если объявим массив:</p>
+
+<pre><code class="java">
+boolean[] mProperty = new boolean[32]
+</code></pre>
+
+<p>Считаем: 4 + 8 + 8 + 32 * 1 = 52. С учётом выравнивания памяти по 8 кб, получаем не 52, а 56. Всё равно меньше, чем в первом примере.</p>
+
+<h2 class="text-warning" id="cast">Приведение типов</h2>
+
+<p>Когда мы производим какие-то действия с переменными, то нужно следить за типами. Нельзя умножать котов на футбольные мячи, это противоречит здравому смыслу. Также и с переменными. Если вы присваиваете переменной одного типа значение другого типа, то вспоминайте теорию. Например, вы без проблем можете присвоить значение типа <b>int</b> переменной типа <b>long</b>, так как все числа из диапазона типа <b>int</b> гарантировано помещаются в диапазон чисел <b>long</b>. В этом случае Java выполнит преобразование автоматически, вы даже ничего не заметите.</p>
+
+<p>Представим обратную картину - мы хотим присвоить переменной типа <b>byte</b> значение типа <b>double</b>. Java не сможет автоматически выполнить ваше желание. Не все числа типа <b>double</b> могут стать числом типа <b>byte</b>. Но часть чисел может, например, число 9. В таком случае используется так называемое <i>приведение</i> типов, чтобы подсказать Java о допустимости операции.</p>
+
+<p>Итак, автоматическое преобразование типов осуществляется, если оба типа совместимы и длина целевого типа больше длины исходного типа. В этом случае происходит <i>преобразование с расширением</i>. Вы всегда можете преобразовать любое число типа <b>byte</b> в число типа <b>int</b>. Такая операция произойдёт без вашего участия автоматически.</p>
+
+<p>Таблица выглядит следующим образом.</p>
+
+<p><img src="cast.png" alt="Приведение типов"></p>
+
+<p>Сплошные линии обозначают преобразования, выполняемые без потери данных. Штриховые линии говорят о том, что при преобразовании может произойти потеря точности.</p>
+
+<p>Типы целых чисел и чисел с плавающей точкой совместимы частично. Например, число 5 вполне может быть числом с плавающей точкой (5.0).</p>
+
+<p>Совсем не совместимы, например, <b>char</b> и <b>boolean</b>.</p>
+
+<p>С автоматическим приведением мы разобрались. Рассмотрим вариант, когда нужно преобразовать число типа <b>int</b> в число типа <b>byte</b>. Преобразование автоматически невозможно, поскольку <b>byte</b> меньше <b>int</b>. Но, например, число 99 вполне можно использовать и как <b>int</b> и как <b>byte</b>. В этом случае используется явное приведение типов, то есть преобразование из одного типа в другой (преобразование с сужением).</p>
+
+<p>Выглядит это следующим образом:</p>
+
+<pre><code class="java">
+int a;
+byte b;
+// какие-то операции с переменной 
+b = (byte) a;
+</code></pre>
+
+<p>Как видите, вы в скобках указываете тип, к которому нужно явно привести переменную.</p>
+
+<p>Существует ещё вариант приведения с усечением. Это когда число с плавающей точкой приводится к целочисленному типу. В этом случае отбрасывается дробная часть (хвост). Например, число 3.14 будет усечено до числа 3:</p>
+
+<pre><code class="java">
+double a = 3.14;
+byte b = (byte) a;
+</code></pre>
+
+<p>Если размер целочисленной части слишком велик для целочисленного типа, то значение будет уменьшено до результата деления по модулю на диапазон целевого типа.</p>
+
+<p>Например, попробуйте преобразовать число 454.874 в тип <b>byte</b>:</p>
+
+<pre><code class="java">
+byte b;
+double d = 454.874;
+b = (byte) d;
+textViewInfo.append("b равно " + b);
+</code></pre>
+
+<p>У меня вывелся удивительный результат: b равно -58.</p>
+
+<p>Рассмотрим такой пример. Допустим у нас есть выражение, где промежуточное значение может выходить за пределы допустимого диапазона:</p>
+
+<pre><code class="java">
+byte a = 44;
+byte b = 55;
+byte c = 101;
+int d = a * b - c;
+</code></pre>
+
+<p>При умножении переменных a * b промежуточный результат вышел за пределы диапазона допустимых значений для типов <b>byte</b>. Java во время вычисления промежуточных результатов автоматически повышает тип каждого операнда до <b>int</b> и ошибки не происходит.</p>
+
+<p>Это удобно, но может поставить в тупик в следующем примере:</p>
+
+<pre><code class="java">
+byte b = 50;
+b = b * 2;
+</code></pre>
+
+<p>С виду всё правильно. Если не слишком больше число типа <b>byte</b>, а итоговый результат тоже не выходит за диапазон допустимых значений. Но Java не позволит вам написать подобный код. Происходит следующее. Во время вычисления выражения тип операндов был автоматически повышен до <b>int</b>, как об этом говорилось выше. При этом тип результата тоже был повышен до <b>int</b>. Получается, что результат вычисления равен типу <b>int</b>, а мы пытаемся его присвоить переменной <b>b</b>, которая у нас объявлена как <b>byte</b>. И это несмотря на то, что итоговый результат может быть типом <b>byte</b>. Как же выйти из этого положения? Следует использовать явное приведение типов:</p>
+
+<pre><code class="java">
+byte b = 50;
+b = (byte) (b * 2);
+</code></pre>
+
+<p>Мы рассмотрели единичные примеры. Пора обобщить и запомнить несколько правил.</p>
+
+<p>Типы всех значений <b>byte</b>, <b>short</b>, <b>char</b> повышаются до типа <b>int</b>, как это было рассмотрено выше.</p>
+
+<p>Если один операнд имеет тип <b>long</b>, то тип всего выражения повышается до <b>long</b>.</p>
+
+<p>Если один операнд имеет тип <b>float</b>, то тип всего выражения повышается до <b>float</b>.</p>
+
+<p>Если один операнд имеет тип <b>double</b>, то тип всего выражения повышается до <b>double</b>.</p>
+
+<p>Рассмотрим выражение:</p>
+
+<pre><code class="java">
+byte b = 45;
+char c = 'c';
+short s = 1005;
+int i = 700000;
+float f = 4.55f;
+double d = 1.456;
+double result = (f * b) + (i / c) - (d * s);
+textViewInfo.append("d равно " + d);
+</code></pre>
+
+<p>В первом промежуточном выражении (f * b) тип переменной <b>b</b> повышается до <b>float</b> и промежуточный результат также становится <b>float</b>. В следующем выражении (i / c) тип у переменной <b>c</b> повышается до <b>int</b> и промежуточный результат также становится типом <b>int</b>. В выражении (d * s) тип переменной <b>s</b> повышается до <b>double</b> и промежуточное выражение также становится <b>double</b>. В результате у нас появились три промежуточные значения типов: float, int, double. При сложении <b>float</b> и <b>int</b> мы получаем <b>float</b>, затем при вычитании с использованием <b>float</b> и <b>double</b> тип повышается до <b>double</b>, который и становится окончательным типом результата выражения.</p>
+
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/types.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:19:00 GMT -->
+</html>

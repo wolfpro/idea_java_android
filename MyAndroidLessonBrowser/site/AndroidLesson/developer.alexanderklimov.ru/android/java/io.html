@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/io.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Система ввода/вывода</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+         <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Система ввода/вывода</h1>
+
+<p>
+<a href="#classfiled">Класс File</a><br>
+<a href="#stream">Поток</a><br>
+<a href="#inputstream">Класс InputStream</a><br>
+<a href="#outputstream">Класс OutputStream</a><br>
+<a href="#exception">Исключения ввода/вывода</a><br>
+</p>
+
+<p>Java имеет в своём составе множество классов, связанных с вводом/выводом данных. Рассмотрим некоторые из них.</p>
+
+<h2 class="text-warning" id="classfiled">Класс File</h2>
+
+<p>В отличие от большинства классов ввода/вывода, класс <b>File</b> работает не с потоками, а непосредственно с файлами. Данный класс позволяет получить информацию о файле: права доступа, время и дата создания, путь к каталогу. А также осуществлять навигацию по иерархиям подкаталогов.</p>
+
+<p>Подробнее о классе <a href="file.html">java.io.File</a></p>
+
+<h2 class="text-warning" id="stream">Поток</h2>
+
+<p>При работе с данными ввода/вывода вам будет часто попадаться термин <b>Поток</b> (Stream). Поток - это абстрактное значение источника или приёмника данных, которые способны обрабатывать информацию. Вы в реальности не видите, как действительно идёт обработка данных в устройствах ввода/вывода, так как это сложно и вам это не нужно. Это как с телевизором - вы не знаете, как сигнал из кабеля превращается в картинку на экране, но вполне можете переключаться между каналами через пульт.</p>
+
+<p>Есть два типа потоков: байтовые и символьные. В некоторых ситуациях символьные потоки более эффективны, чем байтовые.</p> 
+
+<p>За ввод и вывод отвечают разные классы Java. Классы, производные от базовых классов <b>InputStream</b> или <b>Reader</b>, имеют методы с именами <b>read()</b> для чтения отдельных байтов или массива байтов (отвечают за ввод данных). Классы, производные от классов <b>OutputStream</b> или <b>Write</b>, имеют методы с именами <b>write()</b> для записи одиночных байтов или массива байтов (отвечают за вывод данных).</p>
+
+<h2 class="text-warning" id="inputstream">Класс InputStream</h2>
+
+<p>Базовый класс <b>InputStream</b> представляет классы, которые получают данные из различных источников:</p>
+<ul>
+<li>массив байтов</li>
+<li>строка (String)</li>
+<li>файл</li>
+<li>канал (pipe): данные помещаются с одного конца и извлекаются с другого</li>
+<li>последовательность различных потоков, которые можно объединить в одном потоке</li>
+<li>другие источники (например, подключение к интернету)</li>
+</ul>
+
+<p>Для работы с указанными источниками используются подклассы базового класса <b>InputStream</b>:</p>
+
+<dl>
+<dt>BufferedInputStream</dt><dd>Буферизированный входной поток</dd>
+<dt>ByteArrayInputStream</dt><dd>Позволяет использовать буфер в памяти (массив байтов) в качестве источника данных для входного потока.</dd>
+<dt>DataInputStream</dt><dd>Входной поток, включающий методы для чтения стандартных типов данных Java</dd>
+<dt>FileInputStream</dt><dd>Для чтения информации из файла</dd>
+<dt>FilterInputStream</dt><dd>Абстрактный класс, предоставляющий интерфейс для классов-надстроек, которые добавляют к существующим потокам полезные свойства.</dd>
+<dt>InputStream</dt><dd>Абстрактный класс, описывающий поток ввода</dd>
+<dt>ObjectInputStream</dt><dd>Входной поток для объектов</dd>
+<dt>StringBufferInputStream</dt><dd>Превращает строку (String) во входной поток данных InputStream</dd>
+<dt>PipedInputStream</dt><dd>Реализует понятие входного канала.</dd>
+<dt>PrintStream</dt><dd>Выходной поток, включающий методы print() и println()</dd>
+<dt>PushbackInputStream</dt><dd>Входной поток, поддерживающий однобайтовый возврат во входной поток</dd>
+<dt>SequenceInputStream</dt><dd>Сливает два или более потока InputStream в единый поток</dd>
+</dl>
+
+<p>Методы класса:</p>
+
+<ul>
+<li>int available() - возвращает количество байтов ввода, доступные в данный момент для чтения</li>
+<li>close() - закрывает источник ввода. Следующие попытки чтения передадут исключение IOException</li>
+<li>void mark(int readlimit) - помещает метку в текущую точку входного потока, которая остаётся корректной до тех пор, пока не будет прочитано <b>readlimint</b> байт</li>
+<li>boolean markSupported() - возвращает <i>true</i>, если методы <b>mark()</b> и <b>reset()</b> поддерживаются потоком</li>
+<li>int read() - возвращает целочисленное представление следующего доступного байта в потоке. При достижении конца файла возвращается значение -1</li>
+<li>int	 read(byte[] buffer) - пытается читать байты в буфер, возвращая количество прочитанных байтов. По достижении конца файла возвращает значение -1</li>
+<li>int	 read(byte[] buffer, int byteOffset, int byteCount) - пытается читать до <i>byteCount</i> байт в <i>buffer</i>, начиная с смещения <i>byteOffset</i>. По достижении конца файла возвращает -1</li>
+<li>reset() - сбрасывает входной указатель в ранее установленную метку</li>
+<li>long skip(long byteCount) - пропускает <i>byteCount</i> байт ввода, возвращая количество проигнорированных байтов</li>
+</ul>
+
+<h3 class="text-warning">BufferedInputStream</h3>
+
+<p>Буферизация ввода-вывода является удобным способом оптимизации производительности, позволяя заключить в оболочку любой поток класса <b>InputStream</b>.</p>
+
+<p>У класса есть конструктор, где размер буфера устанавливается по умолчанию. Также можно использовать конструктор, где размер буфера устанавливается вручную. Рекомендуется использовать размеры буфера, кратные размеру страницы памяти, дисковому блоку и т.п. и может зависеть от принимающей операционной системы, объёма доступной памяти и конфигурации машины.</p>
+
+<h3 class="text-warning">ByteArrayInputStream</h3>
+
+<p>Класс <b>ByteArrayInputStream</b> использует байтовый массив в качестве источника данных. У данного класса можно не вызывать метод <b>close()</b>.</p>
+
+<h3 class="text-warning">DataInputStream - Форматированное чтение из памяти</h3>
+
+<p>Для чтения байтовых данных (не строк) применяется класс <b>DataInputStream</b>. В этом случае необходимо использовать классы из группы <b>InputStream</b>.</p>
+
+<p>Для преобразования строки в массив байтов, пригодный для помещения в поток <b>ByteArrayInputStream</b>, в классе <b>String</b> предусмотрен метод <b>getBytes()</b>. Полученный <b>ByteArrayInputStream</b> представляет собой поток <b>InputStream</b>, подходящий для передачи <b>DataInputStream</b>.</p>
+
+<p>При побайтовом чтении символов из форматированного потока <b>DataInputStream</b> методом <b>readByte()</b> любое полученное значение будет считаться действительным, поэтому возвращаемое значение неприменимо для идентификации конца потока. Вместо этого можно использовать метод <b>available()</b>, который сообщает, сколько еще осталось символов.</p>
+
+<p>Класс <b>DataInputStream</b> позволяет читать элементарные данные из потока через интерфейс <b>DataInput</b>, который определяет методы, преобразующие элементарные значения в форму последовательности байтов. Такие потоки облегчают сохранение в файле двоичных данных.</p>
+
+<p>Конструктор:</p>
+
+<pre><code class="java">
+DataInputStream(InputStream stream)
+</code></pre>
+
+<p>Методы:</p>
+
+<ul>
+<li>readDouble()</li>
+<li>readBoolean()</li>
+<li>readInt()</li>
+</ul>
+
+<h3 class="text-warning">FileInputStream</h3>
+
+<p>Класс <b>FileInputStream</b> создаёт объект класса <b>InputStream</b>, который можно использовать для чтения байтов из файла.</p>
+
+<p>Конструкторы</p>
+
+<ul>
+<li>FileInputStream (File file) - указывается объекта типа <b>File</b></li>
+<li>FileInputStream (FileDescriptor fd)</li>
+<li>FileInputStream (String path) - указывается полное имя файла</li>
+</ul>
+
+<p>При создании объект открывается для чтения. Класс переопределяет методы класса <b>InputStream</b>, кроме методов <b>mark()</b> и <b>reset()</b>.</p>
+
+<p>Для чтения байтов входного потока из файла используется конструкция:</p>
+
+<pre><code class="java">
+File file = ...
+InputStream in = null;
+    try {
+        in = new BufferedInputStream(new FileInputStream(file));
+        ...
+    finally {
+        if (in != null) {
+            in.close();
+        }
+    }
+ }
+</code></pre>
+
+<h3 class="text-warning">PrintStream</h3>
+
+<p>Класс <b>PrintStream</b> предоставляет все возможности, которые знакомы по <b>System.out</b>. Поддерживает методы <b>print()</b>, <b>println()</b> и <b>printf()</b>.</p>
+
+<h3 class="text-warning">PushbackInputStream</h3>
+
+<p>Разновидность буферизации, обеспечивающая чтение байта с последующим его возвратом в поток. Класс <b>PushbackInputStream</b> представляет механизм "заглянуть" во входной поток и увидеть, что оттуда поступит в следующий раз, не извлекая информации.</p>
+
+<p>У класса есть дополнительный метод <b>unread()</b>.</p>
+
+<h3 class="text-warning">SequenceInputStream</h3>
+
+<p>Класс <b>SequenceInputStream</b> позволяет соединять вместе несколько экземпляров класса <b>InputStream</b>. Конструктор принимает в качестве аргумента либо пару объектов класса <b>InputStream</b>, либо интерфейс <b>Enumeration</b>.</p>
+
+<p>Во время работы класс выполняет запросы на чтение из первого объекта класса <b>InputStream</b> и до конца, а затем переключается на второй. При использовании интерфейса работа продолжится по всем объектам класса <b>InputStream</b>. По достижении конца каждого файла, связанный с ним поток закрывается. Закрытие потока, созданного объектом класса <b>SequenceInputStream</b>, приводит к закрытию всех открытых потоков.</p>
+
+<h2 class="text-warning" id="outputstream">Класс OutputStream</h2>
+
+<p>Класс <b>OutputStream</b> - это абстрактный класс, определяющий потоковый байтовый вывод.</p>
+
+<p>В этой категории находятся классы, определяющие, куда направляются ваши данные: в массив байтов (но не напрямую в String; предполагается что вы сможете создать их из массива байтов), в файл или канал.</p>
+
+<dl>
+<dt>BufferedOutputStream</dt><dd>Буферизированный выходной поток</dd>
+<dt>ByteArrayOutputStream</dt><dd>Создает буфер в памяти. Все данные, посылаемые в этот поток, размещаются в созданном буфере</dd>
+<dt>DataOutputStream</dt><dd>Выходной поток, включающий методы для записи стандартных типов данных Java</dd>
+<dt>FileOutputStream</dt><dd>Отправка данных в файл на диске. Реализация класса OutputStream</dd>
+<dt>ObjectOutputStream</dt><d>Выходной поток для объектов</dd>
+<dt>PipedOutputStream</dt><dd>Реализует понятие выходного канала.</dd>
+<dt>FilterOutputStream</dt><dd>Абстрактный класс, предоставляющий интерфейс для классов-надстроек, которые добавляют к существующим потокам полезные свойства.</dd>
+</dl>
+
+<p>Методы класса:</p>
+
+<ul>
+<li>int close() - закрывает выходной поток. Следующие попытки записи передадут исключение IOException</li>
+<li>void flush() - финализирует выходное состояние, очищая все буферы вывода</li>
+<li>abstract void write (int oneByte) - записывает единственный байт в выходной поток</li>
+<li>void write (byte[] buffer) - записывает полный массив байтов в выходной поток</li>
+<li>void write (byte[] buffer, int offset, int count) - записывает диапазон из <i>count</i> байт из массива, начиная с смещения <i>offset</i></li>
+</ul>
+
+<h3 class="text-warning">BufferedOutputStream</h3>
+
+<p>Класс <b>BufferedOutputStream</b> не сильно отличается от класса <b>OutputStream</b>, за исключением дополнительного метода <b>flush()</b>, используемого для обеспечения записи данных в буферизируемый поток. Буферы вывода нужно для повышения производительности.</p>
+
+<h3 class="text-warning">ByteArrayOutputStream</h3>
+
+<p>Класс <b>ByteArrayOutputStream</b> использует байтовый массив в выходном потоке. Метод <b>close()</b> можно не вызывать.</p>
+
+<h3 class="text-warning">DataOutputStream</h3>
+
+<p>Класс <b>DataOutputStream</b> позволяет писать элементарные данные в поток через интерфейс <b>DataOutput</b>, который определяет методы, преобразующие элементарные значения в форму последовательности байтов. Такие потоки облегчают сохранение в файле двоичных данных.</p>
+
+<p>Класс <b>DataOutputStream</b> расширяет класс <b>FilterOutputStream</b>, который в свою очередь, расширяет класс <b>OutputStream</b>.</p>
+
+<p>Методы интерфейса <b>DataOutput</b>:</p>
+
+<ul>
+<li>writeDouble(double value)</li>
+<li>writeBoolean(boolean value)</li>
+<li>writeInt(int value)</li>
+</ul>
+
+<h3 class="text-warning">FileOutputStream</h3>
+
+<p>Класс <b>FileOutputStream</b> создаёт объект класса <b>OutputStream</b>, который можно использовать для записи байтов в файл. Создание нового объекта не зависит от того, существует ли заданный файл, так как он создаёт его перед открытием. В случае попытки открытия файла, доступного только для чтения, будет передано исключение.</p>
+
+<h2 class="text-warning">Классы символьных потоков</h2>
+
+<p>Символьные потоки имеют два основных абстрактных класса <b>Reader</b> и <b>Writer</b>, управляющие потоками символов Unicode.</p>
+
+<h3 class="text-warning">Reader</h3>
+
+<p>Методы класса <b>Reader</b>:</p>
+
+<ul>
+<li>abstract void close() - закрывает входной поток. Последующие попытки чтения передадут исключение IOException</li>
+<li>void mark(int readLimit) - помещает метку в текущую позицию во входном потоке</li>
+<li>boolean markSupported() - возвращает <i>true</i>, если поток поддерживает методы <b>mark()</b> и <b>reset()</li>
+<li>int read() - возвращает целочисленное представление следующего доступного символа вызывающего входного потока. При достижении конца файла возвращает значение -1. Есть и другие перегруженные версии метода</li>
+<li>boolean ready() - возвращает значение <i>true</i>, если следующий запрос не будет ожидать.</li>
+<li>void reset() - сбрасывает указатель ввода в ранее установленную позицию метки</li>
+<li>logn skip(long charCount) - пропускает указанное число символов ввода, возвращая количество действительно пропущенных символов</li>
+</ul>
+
+<dl>
+<dt>BufferedReader</dt><dd>Буферизированный входной символьный поток</dd>
+<dt>CharArrayReader</dt><dd>Входной поток, который читает из символьного массива</dd>
+<dt>FileReader</dt><dd>Входной поток, читающий файл</dd>
+<dt>FilterReader</dt><dd>Фильтрующий читатель</dd>
+<dt>InputStreamReader</dt><dd>Входной поток, транслирующий байты в символы</dd>
+<dt>LineNumberReader</dt><dd>Входной поток, подсчитывающий строки</dd>
+<dt>PipedReader</dt><dd>Входной канал</dd>
+<dt>PushbackReader</dt><dd>Входной поток, позволяющий возвращать символы обратно в поток</dd>
+<dt>Reader</dt><dd>Абстрактный класс, описывающий символьный ввод</dd>
+<dt>StringReader</dt><dd>Входной поток, читающий из строки</dd>
+</dl>
+
+<h3 class="text-warning">Класс BufferedReader</h3>
+
+<p>Класс <b>BufferedReader</b> увеличивает производительность за счёт буферизации ввода.</p>
+
+<h3 class="text-warning">Класс CharArrayReader</h3>
+
+<p>Класс <b>CharArrayReader</b> использует символьный массив в качестве источника.</p>
+
+<h3 class="text-warning">Класс FileReader</h3>
+
+<p>Класс <b>FileReader</b>, производный от класса <b>Reader</b>, можно использовать для чтения содержимого файла. В конструкторе класса нужно указать либо путь к файлу, либо объект типа <b>File</b>.</p>
+
+<h3 class="text-warning">Writer</h3>
+
+<p>Класс <b>Writer</b> - абстрактный класс, определяющий символьный потоковый вывод. В случае ошибок все методы класса передают исключение <b>IOException</b>.</p>
+
+<p>Методы класса:</p>
+
+<ul>
+<li>Writer append(char c) - добавляет символ в конец вызывающего выходного потока. Возвращает ссылку на вызывающий поток</li>
+<li>Writer append(CharSequence csq) - добавляет символы в конец вызывающего выходного потока. Возвращает ссылку на вызывающий поток</li>
+<li>Writer	 append(CharSequence csq, int start, int end) - добавляет диапазон символов в конец вызывающего выходного потока. Возвращает ссылку на вызывающий поток</li>
+<li>abstract void close() - закрывает вызывающий поток</li>
+<li>abstract void flush() - финализирует выходное состояние так, что все буферы очищаются</li>
+<li>void write(int oneChar) - записывает единственный символ в вызывающий выходной поток. Есть и другие перегруженные версии метода</li>
+</ul>
+
+<dl>
+<dt>BufferedWriter</dt><dd>Буферизированный выходной символьный поток</dd>
+<dt>CharArrayWriter</dt><dd>Выходной поток, который пишет в символьный массив</dd>
+<dt>FileWriter</dt><dd>Выходной поток, пишущий в файл</dd>
+<dt>FilterWriter</dt><dd>Фильтрующий писатель</dd>
+<dt>OutputStreamWriter</dt><dd>Выходной поток, транслирующий байты в символы</dd>
+<dt>PipedWriter</dt><dd>Выходной канал</dd>
+<dt>PrintWriter</dt><dd>Выходной поток, включающий методы print() и println()</dd>
+<dt>StringWriter</dt><dd>Выходной поток, пишущий в строку</dd>
+<dt>Writer</dt><dd>Абстрактный класс, описывающий символьный вывод</dd>
+</dl>
+
+<h3 class="text-warning">Класс BufferedWriter</h3>
+
+<p>Класс <b>BufferedWriter</b> - это класс, производный от класса <b>Writer</b>,который буферизует вывод. С его помощью можно повысить производительность за счёт снижения количества операций физической записи в выходное устройство.</p>
+
+<h3 class="text-warning">Класс CharArrayWriter</h3>
+
+<p>Класс <b>CharArrayWriter</b> использует массив для выходного потока.</p>
+
+<h3 class="text-warning">Класс FileWriter</h3>
+
+<p>Класс <b>FileWriter</b> создаёт объект класса, производного от класса <b>Writer</b>, который вы можете применять для записи файла. Есть конструкторы, которые позволяют добавить вывод в конец файла. Создание объекта не зависит от наличия файла, он будет создан в случае необходимости. Если файл существует и он доступен только для чтения, то передаётся исключение <b>IOException</b>.</p>
+
+
+
+<h2 class="text-warning">Чтение и запись файлов</h2>
+
+<p>Существует множество классов и методов для чтения и записи файлов. Наиболее распространённые из них - классы <b>FileInputStream</b> и <b>FileOutputStream</b>, которые создают байтовые потоки, связанные с файлами. Чтобы открыть файл, нужно создать объект одного из этих файлов, указав имя файла в качестве аргумента конструктора.</p>
+
+<pre><code class="java">
+FileInputStream(String filename) throws FileNotFoundException
+FileOutputStream(String filename) throws FileNotFoundException
+</code></pre>
+
+<p>В <b>filename</b> нужно указать имя файла, который вы хотите открыть. Если при создании входного потока файл не существует, передаётся исключение <b>FileNotFoundException</b>. Аналогично для выходных потоков, если файл не может быть открыт или создан, также передаётся исключение. Сам класс исключения происходит от класса <b>IOException</b>. Когда выходной файл открыт, любой ранее существовавший файл с тем же именем уничтожается.</p>
+
+<p>После завершения работы с файлом, его необходимо закрыть с помощью метода <b>close()</b> для освобождения системных ресурсов. Незакрытый файл приводит к утечке памяти.</p>
+
+<p>В JDK 7 метод <b>close()</b> определяется интерфейсом <b>AutoCloseable</b> и можно явно не закрывать файл, а использовать новый оператор <b>try-с-ресурсами</b>, что для Android пока не слишком актуально.</p>
+
+<p>Чтобы читать файл, нужно вызвать метод <b>read()</b>. Когда вызывается этот метод, он читает единственный байт из файла и возвращает его как целое число. Когда будет достигнут конец файла, то метод вернёт значение -1. Примеры использования методов есть в различных статьях на сайте.</p>
+
+<p>Иногда используют вариант, когда метод <b>close()</b> помещается в блок <b>finally</b>. При таком подходе все методы, которые получают доступ к файлу, содержатся в пределах блока <b>try</b>, а блок <b>finally</b> используется для закрытия файла. Таким образом, независимо от того, как закончится блок <b>try</b>, файл будет закрыт.</p>
+
+<p>Так как исключение <b>FileNotFoundException</b> является подклассом <b>IOException</b>, то не обязательно обрабатывать два исключения отдельно, а оставить только <b>IOException</b>, если вам не нужно отдельно обрабатывать разные причины неудачного открытия файла. Например, если пользователь вводит вручную имя файла, то более конкретное исключение будет к месту.</p>
+
+<p>Для записи в файл используется метод <b>write()</b>.</p>
+
+<pre><code class="java">
+void write(int value) throws IOException
+</code></pre>
+
+<p>Метод пишет в файл байт, переданный параметром <b>value</b>. Хотя параметр объявлена как целочисленный, в файл записываются только младшие восемь бит. При ошибке записи передаётся исключение.</p>
+
+<p>В JDK 7 есть способ автоматического управления ресурсами:</p>
+
+<pre><code class="java">
+try (спецификация_ресурса) {
+    // использование ресурса
+}
+</code></pre>
+
+<p>Когда в Android будет полноценная поддержка JDK 7, то дополним материал.</p>
+
+<h2 class="text-warning">Буферизированное чтение из файла - BufferedReader</h2>
+
+<p>Чтобы открыть файл для посимвольного чтения, используется класс <b>FileInputReader</b>; имя файла задаётся в виде строки (String) или объекта <b>File</b>. Ускорить процесс чтения помогает буферизация ввода, для этого полученная ссылка передаётся в конструктор класса <b>BufferedReader</b>. Так как в интерфейсе класса имеется метод <b>readLine()</b>, все необходимое для чтения имеется в вашем распоряжении. При достижении конца файла метод <b>readLine()</b> возвращает ссылку <b>null</b>.</p>
+
+<h2 class="text-warning">Вывод в файл - FileWriter</h2>
+
+<p>Объект <b>FileWriter</b> записывает данные в файл. При вводе/выводе практически всегда применяется буферизация, поэтому используется <b>BufferedWriter</b>.</p>
+
+<p>Когда данные входного потока исчерпываются, метод <b>readLine()</b> возвращает <b>null</b>. Для потока явно вызывается метод <b>close()</b>; если не вызвать его для всех выходных файловых потоков, в буферах могут остаться данные, и файл получится неполным.</p>
+
+<h2 class="text-warning">Сохранение и восстановление данных - PrintWriter</h2>
+
+<p><b>PrintWriter</b> форматирует данные так, чтобы их мог прочитать человек. Однако для вывода информации, предназначенной для другого потока, следует использовать классы <b>DataOutputStream</b> для записи данных и <b>DataInputStream</b> для чтения данных.</p>
+
+<p>Единственным надежным способом записать в поток <b>DataOutputStream</b> строку так, чтобы ее можно было потом правильно считать потоком <b>DataInputStream</b>, является кодирование UTF-8, реализуемое методами <b>readUTF()</b> и <b>writeUTF()</b>. Эти методы позволяют смешивать строки и другие типы данных, записываемые потоком <b>DataOutputStream</b>, так как вы знаете, что строки будут правильно сохранены в Юникоде и их будет просто воспроизвести потоком <b>DataInputStream</b>.</p>
+
+<p>Метод <b>writeDouble()</b> записывает число <b>double</b> в поток, а соответствующий ему метод <b>readDouble()</b> затем восстанавливает его (для других типов также существуют подобные методы).</p>
+
+<h2 class="text-warning">RandomAccessFile - Чтение/запись файлов с произвольным доступом</h2>
+
+<p>Работа с классом <b>RandomAccessFile</b> напоминает использование совмещенных в одном классе потоков <b>DataInputStream</b> и <b>DataOutputStream</b> (они реализуют те же интерфейсы <b>DataInput</b> и <b>DataOutput</b>). Кроме того, метод <b>seek()</b> позволяет переместиться к определенной позиции и изменить хранящееся там значение.</p>
+
+<p>При использовании <b>RandomAccessFile</b> необходимо знать структуру файла. Класс <b>RandomAccessFile</b> содержит методы для чтения и записи примитивов и строк UTF-8.</p>
+
+<p><b>RandomAccessFile</b> может открываться в режиме чтения ("r") или чтения/записи ("rw"). Также есть режим "rws", когда файл открывается для операций чтения-записи и каждое изменение данных файла немедленно записывается на физическое устройство.</p>
+
+<h2 class="text-warning" id="exception">Исключения ввода/вывода</h2>
+
+<p>В большинстве случаев у классов ввода/вывода используется исключение <b>IOException</b>. Второе исключение <b>FileNotFoundException</b> передаётся в тех случаях, когад файл не может быть открыт. Данное исключение происходит от <b>IOException</b>, поэтому оба исключения можно обрабатывать в одном блоке <b>catch</b>, если у вас нет нужды обрабатывать их по отдельности.</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+				
+				
+		    </div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/io.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:15 GMT -->
+</html>

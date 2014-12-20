@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/exception.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Java. Экспресс-курс: Исключения</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class="active"><a href="java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+            
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Исключения</h1>
+
+<p>Исключение - это нештатная ситуация, ошибка во время выполнения программы. Самый простой пример - деление на ноль. Можно вручную отслеживать возникновение подобных ошибок, а можно воспользоваться специальным механизмом исключений, который упрощает создание больших надёжных программ, уменьшает объём необходимого кода и повышает уверенность в том, что в приложении не будет необработанной ошибки.</p>
+
+<p>В методе, в котором происходит ошибка,  создаётся и передаётся специальный объект. Метод может либо обработать исключение самостоятельно, либо пропустить его. В любом случае исключение ловится и обрабатывается. Исключение может появиться благодаря самой системе, либо вы сами можете создать его вручную. Системные исключения возникают при неправильном использовании языка Java или запрещённых приёмов доступа к системе. Ваши собственные исключения обрабатывают специфические ошибки вашей программы.</p>
+
+<p>Вернёмся к примеру с делением. Деление на нуль может предотвратить проверкой соответствующего условия. Но что делать, если знаменатель оказался нулём? Возможно, в контексте вашей задачи известно, как следует поступить в такой ситуации. Но, если нулевой знаменатель возник неожиданно, деление в принципе невозможно, и тогда необходимо возбудить исключение, а не продолжать исполнение программы.</p>
+
+<p>Существует пять ключевых слов, используемых в исключениях: <b>try</b>, <b>catch</b>, <b>throw</b>, <b>throws</b>, <b>finally</b>. Порядок обработки исключений следующий.</p>
+
+<p>Операторы программы, которые вы хотите отслеживать, помещаются в блок <b>try</b>. Если исключение произошло, то оно создаётся и передаётся дальше. Ваш код может перехватить исключение при помощи блока <b>catch</b> и обработать его. Системные исключения автоматически передаются самой системой. Чтобы передать исключение вручную, используется <b>throw</b>. Любое исключение, созданное и передаваемое внутри метода, должно быть указано в его интерфейсе ключевым словом <b>throws</b>. Любой код, который следует выполнить обязательно после завершения блока <b>try</b>, помещается в блок <b>finally</b></p>
+
+<p>Схематически код выглядит так:</p>
+
+<pre><code class="java">
+try {
+    // блок кода, где отслеживаются ошибки
+}
+catch (тип_исключения_1 exceptionObject) {
+    // обрабатываем ошибку
+}
+catch (тип_исключения_2 exceptionObject) {
+    // обрабатываем ошибку
+}
+finally {
+    // код, который нужно выполнить после завершения блока try
+}
+</code></pre>
+
+<p>Существует специальный класс для исключений <b>Trowable</b>. В него входят два класса <b>Exception</b> и <b>Error</b>.</p>
+
+<p>Класс <b>Exception</b> используется для обработки исключений вашей программой. Вы можете наследоваться от него для создания собственных типов исключений. Для распространённых ошибок уже существует класс <b>RuntimeException</b>, который может обрабатывать деление на ноль или определять ошибочную индексацию массива.</p>
+
+<p>Класс <b>Error</b> служит для обработки ошибок в самом языке <b>Java</b> и на практике вам не придётся иметь с ним дело.</p>
+
+<p>Прежде чем научиться обрабатывать исключения, нам (как и нормальному любопытному коту) хочется посмотреть, а что происходит, если ошибку не обработать. Давайте разделим число котов в вашей квартире на ноль, хотя мы и знаем, что котов на ноль делить нельзя!</p>
+
+<pre><code class="java">
+int catNumber;
+int zero;
+catNumber = 1; // у меня один кот
+zero = 0; // ноль, он и в Африке ноль
+int result = catNumber / zero;
+</code></pre>
+
+<p>Я поместил код в обработчик щелчка кнопки. Когда система времени выполнения Java обнаруживает попытку деления на ноль, она создаёт объект исключения и передаёт его. Да вот незадача, никто не перехватывает его, хотя это должны были сделать вы. Видя вашу бездеятельность, объект перехватывает стандартный системный обработчик Java, который отличается вредных характером. Он останавливает вашу программу и выводит сообщение об ошибке, которое можно увидеть в журнале LogCat:</p>
+
+<pre>
+Caused by: java.lang.ArithmeticException: divide by zero at ru.alexanderklimov.test.MainActivity.onClick(MainActivity.java:79)
+</pre>
+
+<p>Как видно, созданный объект исключения принадлежит к классу <b>ArithmeticException</b>, далее системный обработчик любезно вывел краткое описание ошибки и место возникновения.</p>
+
+<p>Вряд ли пользователи вашей программы будут довольны, если вы так и оставите обработку ошибки системе. Если программа будет завершаться с такой ошибкой, то скорее всего вашу программу просто удалят. Посмотрим, как мы можем исправить ситуацию.</p>
+
+<p>Поместим проблемный код в блок <b>try</b>, а в блоке <b>catch</b> обработаем исключение.</p>
+
+<pre><code class="java">
+int catNumber;
+int zero;
+
+try { // мониторим код
+    catNumber = 1; // у меня один кот
+    zero = 0; // ноль, он и в Африке ноль
+    int result = catNumber / zero;
+    Toast.makeText(this, "Не увидите это сообщение!", Toast.LENGTH_LONG).show();
+} catch (ArithmeticException e) {
+    Toast.makeText(this, "Нельзя котов делить на ноль!", Toast.LENGTH_LONG).show();
+}
+Toast.makeText(this, "Жизнь продолжается", Toast.LENGTH_LONG).show();
+</code></pre>
+
+<p>Теперь программа аварийно не закрывается, так как мы обрабатываем ситуацию с делением на ноль.</p>
+
+<p>В данном случае мы уже знали, к какому классу принадлежит получаемая ошибка, поэтому в блоке <b>catch</b> сразу указали конкретный тип. Обратите внимание, что последний оператор в блоке <b>try</b> не срабатывает, так как ошибка происходит раньше строчкой выше. Далее выполнение передаётся в блок <b>catch</b>, далее выполняются следующие операторы в обычном порядке.</p>
+
+<p>Операторы <b>try</b> и <b>catch</b> работают совместно в паре. Хотя возможны ситуации, когда <b>catch</b> может обрабатывать несколько вложенных операторов <b>try</b>.</p>
+
+<p>Если вы хотите увидеть описание ошибки, то параметр <b>e</b> и поможет увидеть ёго.</p>
+
+<pre><code class="java">
+catch (ArithmeticException e) {
+	Toast.makeText(this, e + ": Нельзя котов делить на ноль!", Toast.LENGTH_LONG).show();
+}
+</code></pre>
+
+<p>По умолчанию, класс <b>Trowable</b>, к которому относится <b>ArithmeticException</b> возвращает строку, содержащую описание исключения. Но вы можете и явно указать метод <b>e.toString</b>.</p>
+
+<h2 class="text-warning">Несколько исключений</h2>
+
+<p>Фрагмент кода может содержать несколько проблемных мест. Например, кроме деления на ноль, возможна ошибка индексации массива. В таком случае вам нужно создать два или более операторов <b>catch</b> для каждого типа исключения. Причём они проверяются по порядку. Если исключение будет обнаружено у первого блока обработки, то он будет выполнен, а остальные проверки пропускаются и выполнение программы продолжается с места, который следует за блоком <b>try/catch</b>.</p>
+
+
+<pre><code class="java">
+int catNumber;
+int zero;
+
+try { // мониторим код
+    catNumber = 1; // у меня один кот
+    zero = 1; // ноль, он и в Африке ноль
+    int result = catNumber / zero;
+    // Создадим массив из трёх котов
+    String[] catNames = {"Васька", "Барсик", "Мурзик"};
+    catNames[3] = "Рыжик";
+    Toast.makeText(this, "Не увидите это сообщение!", Toast.LENGTH_LONG).show();
+} catch (ArithmeticException e) {
+    Toast.makeText(this, e.toString() + ": Нельзя котов делить на ноль!", Toast.LENGTH_LONG).show();
+}
+catch (ArrayIndexOutOfBoundsException e) {
+	Toast.makeText(this, "Ошибка: " + e.toString(), Toast.LENGTH_LONG).show();
+}
+Toast.makeText(this, "Жизнь продолжается", Toast.LENGTH_LONG).show();
+</code></pre>
+
+<p>В примере мы добавили массив с тремя элементами, но обращаемся к четвёртому элементу, так как забыли, что отсчёт у массива начинается с нуля. Если оставить значение переменной <b>zero</b> равным нулю, то сработает обработка первого исключения деления на ноль, и мы даже не узнаем о существовании второй ошибки. Но допустим, что в результате каких-то вычислений значение переменной стало равно единице. Тогда наше исключение <b>ArithmeticException</b> не сработает. Но сработает новое добавленное исключение <b>ArrayIndexOutOfBoundsException</b>. А дальше всё пойдёт как раньше.</p>
+
+<p>Тут всегда нужно помнить одну особенность. При использовании множественных операторов <b>catch</b> обработчики подклассов исключений должные находиться выше, чем обработчики их суперклассов. Иначе, суперкласс будет перехватывать все исключения, имея большую область перехвата. Иными словами, <b>Exception</b> не должен находиться выше <b>ArithmeticException</b> и <b>ArrayIndexOutOfBoundsException</b>. К счастью, среда разработки сама замечает непорядок и предупреждает вас, что такой порядок не годится. Увидев такую ошибку, попробуйте перенести блок обработки исключений ниже.</p>
+
+<h2 class="text-warning">Вложенные операторы try</h2>
+
+<p>Операторы <b>try</b> могут быть вложенными. Если вложенный оператор <b>try</b> не имеет своего обработчика <b>catch</b> для определения исключения, то идёт поиск обработчика <b>catch</b> у внешнего блока <b>try</b> и т.д. Если подходящий <b>catch</b> не будет найден, то исключение обработает сама система (что никуда не годится).</p>
+
+<h2 class="text-warning">Оператор throw</h2>
+
+<p>Часть исключений может обрабатывать сама система. Но можно создать собственные исключения при помощи оператора <b>throw</b>. Код выглядит так:</p>
+
+<pre><code>
+throw экземпляр_Throwable
+</code></pre>
+
+<p>Вам нужно создать экземпляр класса <b>Throwable</b> или его наследников. Получить объект класса <b>Throwable</b> можно в операторе <b>catch</b> или стандартным способом через оператор <b>new</b>.</p>
+
+<p>Поток выполнения останавливается непосредственно после оператора <b>throw</b>  и другие операторы не выполняются. При этом ищется ближайший блок <b>try/catch</b> соответствующего исключению типа.</p>
+
+<pre><code class="java">
+try {
+	throw new NullPointerException("Кота не существует");
+} catch (NullPointerException e) {
+	Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+}
+</code></pre>
+
+<p>Мы создали новый объект класса <b>NullPointerException</b>. Многие классы исключений кроме стандартного конструктора по умолчанию с пустыми скобками имеют второй конструктор с строковым параметром, в котором можно разместить подходящую информацию об исключении. Получить текст из него можно через метод <b>getMessage()</b>, что мы и сделали в блоке <b>catch</b>.</p>
+
+<h2 class="text-warning">Оператор throws</h2>
+
+<p>Если метод может породить исключение, которое он сам не обрабатывает, он должен задать это поведение так, чтобы вызывающий его код мог позаботиться об этом исключении. Для этого к объявлению метода добавляется конструкция <b>throws</b>, которая перечисляет типы исключений (кроме исключений Error и RuntimeException и их подклассов).</p>
+
+<p>Общая форма объявления метода с оператором <b>throws</b>:</p>
+
+<pre><code class="java">
+тип имя_метода(список_параметров) throws список_исключений {
+    // код внутри метода
+}
+</code></pre>
+
+<p>В фрагменте <i>список_исключений</i> можно указать список исключений через запятую.</p>
+
+<p>Создадим метод, который может породить исключение, но не обрабатывает его. А в щелчке кнопки вызовем его.</p>
+
+<pre><code class="java">
+// Метод без обработки исключения
+public void createCat(){
+	Toast.makeText(this, "Вы создали котёнка", Toast.LENGTH_LONG).show();
+	throw new NullPointerException("Кота не существует");
+}
+
+// Щелчок кнопки
+public void onClick(View v) {
+	createCat();
+}
+</code></pre>
+
+<p>Если вы запустите пример, то получите ошибку. Исправим код.</p>
+
+<pre><code class="java">
+// Без изменений
+public void createCat() throws NullPointerException {
+	Toast.makeText(this, "Вы создали котёнка", Toast.LENGTH_LONG).show();
+	throw new NullPointerException("Кота не существует");
+}
+
+// Щелчок кнопки
+public void onClick(View v) {
+	try {
+		createCat();
+	} catch (NullPointerException e) {
+		// TODO: handle exception
+		Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+	}
+}
+</code></pre>
+
+<p>Мы поместили вызов метода в блок <b>try</b> и вызвали блок <b>catch</b> с нужным типом исключения. Теперь ошибки не будет.</p>
+
+<h2 class="text-warning">Оператор finally</h2>
+
+<p>Когда исключение передано, выполнение метода направляется по нелинейному пути. Это может стать источником проблем. Например, при входе метод открывает файл и закрывает при выходе. Чтобы закрытие файла не было пропущено из-за обработки исключения, был предложен механизм <b>finally</b>.</p>
+
+<p>Ключевое слово <b>finally</b> создаёт блок кода, который будет выполнен после завершения блока <b>try/catch</b>, но перед кодом, следующим за ним. Блок будет выполнен, независимо от того, передано исключение или нет. Оператор <b>finally</b> не обязателен, однако каждый оператор <b>try</b> требует наличия либо <b>catch</b>, либо <b>finally</b>.</p>
+
+<h2 class="text-warning">Встроенные исключения Java</h2>
+
+<p>Существуют несколько готовых системных исключений. Большинство из них являются подклассами типа <b>RuntimeException</b> и их не нужно включать в список <b>throws</b>. Вот небольшой список непроверяемых исключений.</p>
+
+<ul>
+<li>ClassNotFoundException - класс не найден</li>
+<li>CloneNotSupportedException - попытка клонировать объект, который не реализует интерфейс <b>Cloneable</b></li>
+<li>IllegalAccessException - запрещен доступ к классу</li>
+<li>InstantiationException - попытка создать объект абстрактного класса или интерфейса</li>
+<li>InterruptedException - поток прерван другим потоком</li>
+<li>NoSuchFieldException - запрашиваемое поле не существует</li>
+<li>NoSuchMethodException - запрашиваемый метод не существует</li>
+<li>ReflectiveOperationException - исключение, связанное с рефлексией</li>
+</ul>
+
+<p>Список проверяемых системных исключений, которые можно включать в список <b>throws</b>.</p>
+
+<ul>
+<li>ArithmeticException - арифметическая ошибка, например, деление на нуль</li>
+<li>ArrayIndexOutOfBoundsException - выход индекса за границу массива</li>
+<li>ArrayStoreException - присваивание элементу массива объекта несовместимого типа</li>
+<li>ClassCastException - неверное приведение</li>
+<li>EnumConstantNotPresentException - попытка использования неопределённого значения перечисления</li>
+<li>IllegalArgumentException - неверный аргумент при вызове метода</li>
+<li>IllegalMonitorStateException - неверная операция мониторинга</li>
+<li>IllegalStateException - некорректное состояние приложения</li>
+<li>IllegalThreadStateException - запрашиваемая операция несовместима с текущим потоком</li>
+<li>IndexOutofBoundsException - тип индекса вышел за допустимые пределы</li>
+<li>NegativeArraySizeException - создан массив отрицательного размера</li>
+<li>NullPointerException - неверное использование пустой ссылки</li>
+<li>NumberFormatException - неверное преобразование строки в числовой формат</li>
+<li>SecurityException - попытка нарушения безопасности</li>
+<li>StringIndexOutOfBounds - попытка использования индекса за пределами строки</li>
+<li>TypeNotPresentException - тип не найден</li>
+<li>UnsupportedOperationException - обнаружена неподдерживаемая операция</li>
+</ul>
+
+<h2 class="text-warning">Создание собственных подклассов исключений</h2>
+
+<p>Система не может предусмотреть все исключения, иногда вам придётся создать собственный тип исключения для вашего приложения. Вам нужно наследоваться от <b>Exception</b> (напомню, что этот класс наследуется от <b>Trowable</b>) и переопределить нужные методы класса <b>Throwable</b>.</p>
+
+<ul>
+<li>final void addSuppressed(Throwable exception) - добавляет исключение в список подавляемых исключений (JDK 7)</li>
+<li>Throwable fillInStackTrace() - возвращает объект класса <b>Throwable</b>, содержащий полную трассировку стека.</li>
+<li>Throwable getCause() - возвращает исключение, лежащее под текущим исключение или null</li>
+<li>String getLocalizedMessage() - возвращает локализованное описание исключения</li>
+<li>String getMessage() - возвращает описание исключения</li>
+<li>StackTraceElement[] getStackTrace() - возвращает массив, содержащий трассировку стека и состояний из элементов класса <b>StackTraceElement</b></li>
+<li>final Throwable[] getSuppressed() - получает подавленные исключения (JDK 7)</li>
+<li>Throwable initCause(Throwable exception) - ассоциирует исключение с вызывающим исключением. Возвращает ссылку на исключение.</li>
+<li>void printStackTrace() - отображает трассировку стека</li>
+<li>void printStackTrace(PrintStream stream) - посылает трассировку стека в заданный поток</li>
+<li>void printStackTrace(PrintWriter stream) - посылает трассировку стека в заданный поток</li>
+<li>void setStackTrace(StackTraceElement elements[]) - устанавливает трассировку стека для элементов (для специализированных приложений)</li>
+<li>String toString() - возвращает объект класса <b>String</b>, содержащий описание исключения.</li>
+</ul>
+
+<h2 class="text-warning">Перехват произвольных исключений</h2>
+
+<p>Можно создать универсальный обработчик, перехватывающий любые типы исключения.  Осуществляется это перехватом базового класса всех исключений <b>Exception</b>:</p>
+
+<pre>
+cacth(Exception e) {
+    Log.w("Log", "Перехвачено исключение");
+}
+</pre>
+
+<p>Подобная конструкция не упустит ни одного исключения, поэтому ее следует размещать в самом конце списка обработчиков, во избежание блокировки следующих за ней обработчиков исключений.</p>
+
+<h2 class="text-warning">Основные правила обработки исключений</h2>
+
+<p>Используйте исключения для того, чтобы:</p>
+
+<ul>
+<li>обработать ошибку на текущем уровне (избегайте перехватывать исключения, если не знаете, как с ними поступить)</li>
+<li>исправить проблему и снова вызвать метод, возбудивший исключение</li>
+<li>предпринять все необходимые действия и продолжить выполнение без повторного вызова действия</li>
+<li>попытаться найти альтернативный результат вместо того, который должен был бы произвести вызванный метод</li>
+<li>сделать все возможное в текущем контексте и заново возбудить это же исключение, перенаправив его на более высокий уровень</li>
+<li>сделать все, что можно в текущем контексте, и возбудить новое исключение, перенаправив его на более высокий уровень</li>
+<li>завершить работу программы</li>
+<li>упростить программу (если используемая схема обработки исключений делает все только сложнее, значит, она никуда не годится)</li>
+<li>добавить вашей библиотеке и программе безопасности</li>
+</ul>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/java/exception.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:12:02 GMT -->
+</html>

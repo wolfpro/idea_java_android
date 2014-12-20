@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/adb.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:13:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: ADB</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>			
+<h1 class="text-warning">ADB (Android Debug Bridge)</h1>
+
+<p>Клиент-серверное приложение, которое предоставляет доступ к работающему эмулятору или устройству. С его помощью можно копировать файлы, устанавливать скомпилированные программные пакеты и запускать консольные команды. Используя консоль, вы можете изменять настройки журнала и взаимодействовать с базами данных SQLite, которые хранятся на устройстве. В старых версиях SDK программа находилась в папке <b>tools</b>, теперь находится в папке <b>platform-tools</b>.</p>
+
+<p>Состоит из трех компонентов: фоновой службы (демона), работающей в эмуляторе, сервиса, запущенного на компьютере разработчика, и клиентской программы (наподобие DDMS), которая связывается со службой через Сервис.</p>
+
+<p>Что  бы увидеть весь список параметров и команд, которые можно запустить при помощи <b>adb</b>, введите в командной строке следующее:</p>
+
+<pre> 
+adb  help
+</pre>
+
+<p>Если у вас есть файл приложения APK и вы хотите его установить на эмуляторе, то используйте команду:</p>
+
+<pre>
+adb.exe install d:\program.apk
+</pre>
+
+<p><i>d:\program.apk</i> - это путь к файлу, который хотите установить в эмулятор. После этого установленное приложение появится в эмуляторе. Если приложение слишком большое (несколько мегабайт), то придётся немного подождать, пока установится. Во время установки в консоли курсор будет мигать, а потом появится надпись Success, что означает успешную установку программы.</p>
+
+<p><img src="../../../tuts-authors.s3.amazonaws.com/mobile.tutsplus.com/Shane%20Conder%20and%20Lauren%20Darcey/2012/09/15/Android-Debug-Bridge-adb_install-apk.png" alt="Install"></p>
+
+<p>Также можно удалить ненужную программу по имени его пакета:</p>
+
+<pre>
+adb uninstall &lt;package name&gt;
+</pre>
+
+<p>Чтобы получить список запущенных эмуляторов и их серийные номера, используйте команду:</p>
+
+<pre>
+adb devices
+</pre>
+
+<p>Вы увидите приблизительно такую картину:</p>
+
+<p><img src="../../../tuts-authors.s3.amazonaws.com/mobile.tutsplus.com/Shane%20Conder%20and%20Lauren%20Darcey/2012/09/15/Android-Debug-Bridge-adb_devices.png"></p>
+
+<p>Зная имя устройства, вы можете запустить на нужном устройстве требуемую команду:</p>
+
+<pre>
+adb devices
+List of devices attached 
+0070015947d30e4b device
+015d2856b8300a10 device
+$ adb –s 015d2856b8300a10 logcat
+</pre>
+
+<p>Чтобы перезапустить сервер:</p>
+
+<pre>
+adb stop-server
+adb start-server
+</pre>
+
+<p><img src="../../../tuts-authors.s3.amazonaws.com/mobile.tutsplus.com/Shane%20Conder%20and%20Lauren%20Darcey/2012/09/15/Android-Debug-Bridge-adb_server-kill-start.png"></p>
+
+<p>Сделать бэкап и восстановить из бэкапа можно так:</p>
+
+<pre>
+adb backup
+adb restore &lt;archive name&gt;
+</pre>
+
+<p>Для копирования файлов с устойства на компьютер и обратно используются команды <b>pull</b> и <b>push</b>.</p>
+
+<pre>
+adb push &lt;local source file path&gt; &lt;device destination file path&gt;
+adb pull &lt;device source file path&gt; &lt;local destination file path&gt;
+</pre>
+
+<p>Чтобы запустить оболочку (shell) на подключенном устройстве, выполните следующую команду:</p>
+
+<pre>
+adb  shell
+</pre>
+
+<p>Символ # обозначает приглашение оболочки (shell prompt).</p>
+
+<p>Вы можете просмотреть список команд, доступных при работе в оболочке, введя следующую информацию по приглашению оболочки:</p>
+
+<pre>
+# ls  /system/bin
+</pre>
+
+<h3 class="text-warning">Список доступных команд (часть)</h3>
+
+<p><img src="../images/adbshell.png" alt="ADB shell"></p>
+
+<p>Чтобы  просмотреть список каталогов и файлов, находящихся на корневом уровне (root-level), введите в командной строке оболочки следующую команду:</p>
+
+<pre>
+ls  -l
+</pre>
+
+<p>Для просмотра списка баз данных используйте команду:</p>
+
+<pre> 
+ls /data/data
+</pre>
+
+<p>В  этом каталоге содержится  список пакетов, установленных на устройстве. Для примера исследуем пакет <b>com.android.providers.contacts</b>:</p>
+
+<pre>
+ls /data/data/com.android.providers.contacts/databases
+</pre> 
+
+<p>Эта команда отобразит файл <b>contacts.db</b> и др., представляющие собой базу данных SQLite.</p>
+
+<h4 class="text-warning">Logcat</h4>
+
+<pre>
+adb shell
+logcat --help
+logcat -t 5
+</pre>
+
+<p><img src="../../../tuts-authors.s3.amazonaws.com/mobile.tutsplus.com/Shane%20Conder%20and%20Lauren%20Darcey/2012/09/15/Android-Debug-Bridge-adb_logcat.png" alt="Logcat"></p>
+
+<h4 class="text-warning">Backup Manager</h4>
+
+<p><img src="../../../tuts-authors.s3.amazonaws.com/mobile.tutsplus.com/Shane%20Conder%20and%20Lauren%20Darcey/2012/09/15/Android-Debug-Bridge-adb_backup-manager.png" alt="Backup"></p>
+
+<h4 class="text-warning">Monkey Stress Tester - Обезьяна с гранатой</h4>
+
+<p><b>Monkey</b> ([android-sdk-path]**/platform-tools) - утилита для генерации случайных жестов на эмуляторе или устройстве, что напоминает движения глупой мартышки. Запустите в командной строке команду:</p>
+
+<pre><code class="java">
+adb shell monkey &lt;options&gt;
+</code></pre> 
+
+<p>Например, если имя пакета вашего приложения <b>com.myapp</b> и вы хотите сгенерировать 1000 жестов с интервалом 500 миллисекунд, то используйте команду:</p>
+
+<pre><code class="java">
+adb shell monkey -p com.myapp --throttle 500 -v 1000
+</code></pre>
+
+<p>Список доступных команд (также смотрите <a href="http://developer.android.com/intl/ru/tools/help/monkey.html">документацию</a>):</p>
+
+<p><img src="../../../tuts-authors.s3.amazonaws.com/mobile.tutsplus.com/Shane%20Conder%20and%20Lauren%20Darcey/2012/09/15/Android-Debug-Bridge-adb_monkey-stress-tool.png" alt="Monkey"></p>
+
+<p>Для просмотра всех файлов базы данных *.db используйте команду:</p>
+
+<pre>
+ls  -R  /data/data/*/databases
+</pre>
+
+<p>Вы увидите,  что  в Android имеются следующие базы данных (зависимости от версии Android набор может варьироваться):</p>
+
+<p>
+alarms.db<br>
+contacts.db<br>
+downloads.db<br>
+internal.db<br>
+settings.db<br>
+mmssms.db<br>
+telephony.db
+</p>
+
+<p>Можно активировать команду sqlitе3 для одной из перечисленных баз данных, введя следующую информацию:</p>
+
+<pre> 
+#sqlite3  /data/data/com.android.providers.contacts/databases/contacts.db
+</pre>
+
+<p>Для завершения работы с sqlite3 напишите:</p>
+
+<pre>
+sqlite> .exit
+</pre>
+
+<p>Обратите внимание: приглашение для adb - это #, а приглашение для sqlitе3 - это sqlite&gt;.</p>
+
+<h4 class="text-warning" id="screenrecord">Запись видео с экрана</h4>
+
+<p>Вы можете записать видео с экрана вашего устройства (на эмуляторе не работает):</p>
+
+<pre>adb shell screenrecord /sdcard/my_app.mp4</pre>
+
+<p>Затем можно сбросить на компьютер.</p>
+
+<pre>adb pull /sdcard/my_app.mp4</pre>
+
+<p>где /sdcard/my_app.mp4 – путь к файлу с видео (sdcard) и его имя (my_app.mp4).</p>
+
+<p>Максимальное время записи равно трём минутам. Можно прервать запись (Ctrl+C).</p>
+
+<p>Также вы можете управлять качеством записи, разрешением и другими параметрами с помощью следующих команд:</p>
+
+<p><b>--size &lt;ШИРИНАxВЫСОТА&gt;</b>  Задает разрешение, например: 1280x720. По умолчанию этот параметр установлен в соответствии с разрешением главного экрана устройства (если поддерживается), или 1280x720 – если нет.</p>
+<p><b>--bit-rate &lt;СкоростьПотока&gt;</b>  Задает скорость потока видео (мегабиты в секунду). По умолчанию – 4 Мб/сек. Например, для записи со скоростью 6 Мб/сек, вам нужно будет ввести следующую команду:</p>
+<pre>
+screenrecord --bit-rate 6000000 /sdcard/demo.mp4
+</pre>
+
+<p><b>--time-limit &lt;Время&gt;</b>  Задает максимальную длительность видео в секундах. По умолчанию установлено максимальное значение – 180 сек (3 минуты).</p>
+<p><b>--rotate</b>  Поворот видео на 90 градусов. Экспериментальная опция.</p>
+<p><b>--verbose</b>  Отображать информацию о процессе записи в окне командной строки.</p>
+
+<p>В Android Studio вы можете начать запись через кнопку записи в панели Android DDMS (Alt-6).</p>
+
+<p>Если вы хотите, чтобы на видео отображались «отпечатки» касаний к экрану, включите в настройках устройства в разделе для разработчиков опцию «Показывать нажатия» или «отображать касания».</p>
+
+<h2 class="text-warning">Соединение через Wi-Fi</h2>
+
+<p>Обычно для тестирования программы на реальном устройстве использует USB-соединение. Но можно попробовать использовать Wi-Fi. Описанный ниже способ не гарантирует работоспособность на всех устройствах. Пробуйте.</p>
+
+<p>Сначала соединитесь обычным способом через USB. Включите Wi-Fi на компьютере и на устройстве. Узнайте ip-адрес вашего устройства (Настройки-Wi-Fi-Advanced). Далее запускайте в командной строке.</p>
+
+<pre>
+adb devices 
+List of devices attached 
+0070015947d30e4b device
+adb tcpip 5555
+adb connect 192.168.1.104
+adb devices
+List of devices attached 
+192.168.1.104:5555 device
+</pre>
+
+<p>Первая команда проверяет, что устройство присоединилось. Две следующие строчки - это ответ от поступившей команды. Следующая команда запускает службу-демон adb в режиме TCP/IP с прослушкой порта 5555 (порт по умолчанию для adb). Затем пробуемся соединиться к ip-адресом. Последняя команда снова проверяет наличие соединения. Если соединение прошло успешно, то можете отключить USB-кабель и работать дальше через Wi-Fi. Вы можете переключиться обратно на USB через команду:</p>
+
+<pre>
+adb usb
+</pre>
+
+<p>Учтите, что передача данных будет идти медленно и для больших приложений будет не слишком удобно использовать данный способ.</p>
+
+<h2 class="text-warning">Shell</h2>
+
+<p>Выше уже упоминались команды с параметром <b>shell</b>. С ним часто используют команды <b>am</b> и <b>pm</b>. Это не время, а сокращение от Application manager и Package Manager. Например, можно запустить сервис через намерение:</p>
+
+<pre>
+adb shell am startservice –a &lt;intent action&gt;
+</pre>
+
+<p>Для просмотра всех установленных приложений (пакетов):</p>
+
+<pre>
+adb shell pm list packages
+</pre>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+				
+				
+		    </div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/adb.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:14:20 GMT -->
+</html>

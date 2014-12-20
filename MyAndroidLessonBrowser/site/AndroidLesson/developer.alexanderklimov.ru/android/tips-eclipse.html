@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/tips-eclipse.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:09:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Советы для Eclipse</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="index-2.html">Главная</a></li>
+<li class=""><a href="theory/index.html">Теория</a></li>
+<li class=""><a href="views.html">Palette</a></li>
+<li class=""><a href="listview/index.html">ListView</a></li>
+<li class=""><a href="catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="animation.html">Анимация</a></li>
+<li class=""><a href="sqlite/index.html">SQLite</a></li>
+<li class=""><a href="opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="library/index.html">Библиотеки</a></li>
+<li class=""><a href="games/index.html">Игры</a></li>
+<li class=""><a href="emulator.html">Эмулятор</a></li>
+<li class="active"><a href="tips-android.html">Советы</a></li>
+<li class=""><a href="articles-android.html">Статьи</a></li>
+<li class=""><a href="books.html">Книги</a></li>
+<li class=""><a href="java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="design/index.html">Дизайн</a></li>
+<li class=""><a href="opensource.html">Open Source</a></li>
+<li class=""><a href="links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+            
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Советы для Eclipse</h1>
+
+<p><img src="images/cat-tips.jpg" alt="Кот учёный"></p>
+
+<p>
+<a href="#getset">Генерирование get/set-методов с использованием стилей Android</a><br>
+<a href="#androidsource">Подключаем исходники Android</a><br>
+<a href="#rightmethod">Проверка имени метода</a><br>
+<a href="#fullwindows">Открываем окно редактора кода на всё окно</a><br>
+<a href="#sidebyside">Одновременный просмотр кода из двух файлов</a><br>
+<a href="#twofragments">Одновременный просмотр двух разных фрагментов кода из одного файла</a><br>
+<a href="#tabs">Управляем вкладками</a><br>
+<a href="#autocomplit">Используем функцию автозаполнения</a><br>
+<a href="#extractstring">Заменяем строки в коде строковыми ресурсами</a><br>
+<a href="#extractlocalvar">Извлечь локальную переменную</a><br>
+<a href="#hotkey">Быстрые клавиши</a><br>
+</p>
+
+
+<p>Не получается установить Android ADT 21.1 на Eclipse Juno (Windows 7) после обновления SDK 21.1? Я сам столкнулся с этой проблемой на другой машине. Решение есть <a href="http://stackoverflow.com/questions/14866656/can-not-install-android-adt-21-1-on-eclipse-juno-windows-7-after-upadate-to-sd">здесь</a>. Вкратце - снимите флажок с пункта <b>Contact all update sites during install to find required software</b></p>
+
+<h2 class="text-warning" id="getset">Генерирование get/set-методов с использованием стилей Android</h2>
+
+<p>Eclipse позволяет быстро сгенерировать get/set-методы через <b>Source | Generate Getters and Setters...</b>. Можно доработать данную настройку. В Android принято закрытым переменным класса (полям) давать префикс <b>m</b>, а статическим полям - префикс <b>s</b>. Идём в меню <b>Windows | Preferences</b> и в левой панели выбираем <b>Java | Code Style</b>. В таблице <b>Conventions for variable names</b> выбираем строчку <b>Fields</b> и нажимаем кнопку <b>Edit...</b>. В диалоговом окне у поля <b>Prefix list</b> добавляем префик <b>m</b>. По аналогии добавляем префикс <b>s</b> для строчки <b>Static Fields</b>.</p>
+
+<p><img src="images/prefix.png" alt="Prefix list"></p>
+
+<p>Теперь, если вы создадите новый класс с закрытыми и статическими переменными и сгенерируете get/set-методы, то у вас сразу появятся нужные заготовки. А префикс в настройках нужен был для того, чтобы, к примеру, у нас не получилось некрасивых имён:</p>
+
+<pre><code class="java">
+class Cat {
+
+    private int mCatSize;
+
+    public Cat() {
+        mCatSize = 3;
+    }
+
+    public int getCatSize{
+        // а не getMCatSize()
+    }
+
+    public void setCatSize(int catSize) {
+        // а не setMCatSize
+        mCatSize = catSize;
+    }
+}
+</code></pre>
+
+<h2 class="text-warning" id="androidsource">Подключаем исходники Android</h2>
+
+<p>Скачайте исходные коды Android через Android SDK Manager, выбрав <b>Sources for Android SDK</b>.</p>
+
+<p><img src="../../www.vogella.com/tutorials/AndroidInstallation/images/androidsources10.png"></p>
+
+<p>Исходники хранятся по адресу <b>path_to_android_sdk/sources/android-xx</b>, где xx версия API, например 17 для Android 4.2.</p>
+
+<p>Подключите исходники к вашему файлу <b>android.jar</b> из вашего проекта, щелкнув правой кнопкой на данном файле в Package Explorer и выбрав пункт <b>Properties → Java Source Attachment</b>. Выберите <b>External location</b> и нажмите кнопку <b>External Folder</b>. Перейдите в папку <b>path_to_android_sdk/sources/android-xx</b> и нажмите кнопку <b>OK</b>.</p>
+
+<p><img src="../../www.vogella.com/tutorials/AndroidInstallation/images/androidsources20.png"></p>
+
+<p>Теперь вы можете просматривать исходники Android (<a href="http://www.vogella.com/articles/AndroidInstallation/article.html#android_sourcecode">источник</a>).</p>
+
+<h2 class="text-warning" id="rightmethod">Проверка имени метода</h2>
+
+<p>Когда вы набираете в коде имя метода, то обращайте внимание на знаки, которые появляются слева от него. Если имя метода набрано правильно, то появится треугольник (закрашенный, если в базовом классе есть его реализация, не закрашенный - если он абстрактный или принадлежит интерфейсу). Таким образом вы можете быстро обнаружить ошибку, если вместо <b>onCreate</b> напишите <b>OnCreate</b>.</p>
+
+<h2 class="text-warning" id="fullwindows">Открываем окно редактора кода на всё окно</h2>
+
+<p>В Eclipse очень много различных панелей и вкладок, которые уменьшают полезную площадь редактора кода. Не беда. Дважды щёлкните по вкладке исходного файла, который вы редактируете. Редактор развернётся на всё окно! Чтобы вернуться в прежний режим - снова сделайте двойной щелчок на вкладке.</p>
+
+<h2 class="text-warning" id="sidebyside">Одновременный просмотр кода из двух файлов</h2>
+
+<p>Иногда хочется одновременно видеть две открытые вкладки с кодом. Щелкните на вкладке с исходным кодом и, удерживая кнопку мыши, перетащите вкладку к любому краю редактора. Вы увидите тёмный контур будущего расположения вкладки - либо бок о бок с другим файлов, либо выше или ниже другого файла. Когда вы отпустите кнопку мыши, будет создано новое окно редактора, в которое можно перетаскивать другие вкладки файлов.</p>
+
+<h2 class="text-warning" id="twofragments">Одновременный просмотр двух разных фрагментов кода из одного файла</h2>
+
+<p>Если код очень длинный, то возникает желание просматривать разные фрагменты кода из одного файла, не гоняя прокрутку туда-сюда. Щелкните правой кнопкой мыши по вкладке нужного файла и в контекстном меню выберите команду <b>New Editor</b>. У вас появится вторая вкладка для этого же файла. Теперь вы можете разместить эти вкладки рядом (смотри предыдущий пример).</p>
+
+<h2 class="text-warning" id="tabs">Управляем вкладками</h2>
+
+<p>Иногда, кажется, что в Eclipse открыто слишком много вкладок, которые совсем не нужны сейчас. Закрывать их по одному слишком утомительно. Щёлкните правой кнопкой мыши по вкладке и выберите команду <b>Close Others</b>, чтобы закрыть все вкладки, кроме выбранного файла. Кстати, отдельные вкладки можно закрывать не только через крестик, но и с помощью щелчка средней кнопки мыши (как в браузерах, а что, вы не знали?). Еще можно покопаться в настройках Eclipse и задать количество открытых вкладок.</p>
+
+<h2 class="text-warning" id="autocomplit">Используем функцию автозаполнения</h2>
+
+<p>Автозаполнение помогает экономить время в процессе ввода текста, а также не держать в голове названия сотен методов и свойств. Наберите первые символы кода, а затем нажмите комбинацию <b>Ctrl+Пробел</b>. Если есть переменные, класс, метод и другие операторы, начинающие с этих символов, то Eclipse сразу подставит нужный вариант. Если вариантов несколько, то вы сможете выбрать нужный самостоятельно.</p>
+
+<h2 class="text-warning" id="extractstring">Заменяем строки в коде строковыми ресурсами</h2>
+
+<p>Как известно, при разработке приложений в коде рекомендуются использовать не строки, а строковые ресурсы. В Eclipse существует быстрый и удобный способ извлечения строк из Java-кода и размещения его в ресурсах. Предположим у нас есть следующий код (взято из моего учебного примера):</p>
+
+<pre>
+textVersion.setText("Номер версии: " + getVersionCode());
+</pre>
+
+<p>Выделяем строку <b>Номер версии: </b> (без кавычек), далее в меню выбираем <b>Refactor | Android | Extract Android String…</b>. Появляется диалоговое окно.</p>
+
+<p><img src="images/extractstring.png" alt="Строковые ресурсы"></p>
+
+<p>В первом текстовом поле будет находиться ваша выделенная строка, а ниже нужно прописать имя для строкового ресурса, например, versionnumber. Когда вы нажмете OK, то произодет автоматическая замена строк. Даже сохранять ничего не придется. Таким образом вы может быстро пройтись по вашему коду и исправить все строки.</p>
+
+<h2 class="text-warning" id="extractlocalvar">Извлечь локальную переменную</h2>
+
+<p>Когда проект будет готов, возникает желание причесать его код. Например, в коде могут постоянно встречаться одинаковые фрагменты:</p>
+
+<pre><code class="java">
+TextView nameCat = new TextView(this);
+nameCat.setTextColor(getResources().getColor(R.color.cat));
+</code></pre>
+
+<p>Выделите выражение <b>getResources().getColor(R.color.cat)</b>, щёлкните правой кнопкой мыши и в контекстном меню выберите команду <b>Refactor | Extract Local Variable</b>. В открывшемся окне введите имя переменной и нажмите OK (не сбрасывая флажок Replace All Occurences). Это уменьшит одинаковые участки кода. Также можно извлекать методы, константы и др.</p>
+
+<h2 class="text-warning" id="hotkey">Быстрые клавиши</h2>
+
+<h3 class="text-warning">CTRL + SHIFT + L - список всех горячих клавиш</h3>
+
+<p>Список всех горячих клавиш в Eclipse вы всегда можете посмотреть через комбинацию CTRL + SHIFT + L. Ниже приведены только часть из них.</p>
+
+<h3 class="text-warning">Ctrl+D - удаляет строку</h2>
+
+<p>Можно быстро удалить лишнюю строчку кода при помощи комбинации клавиш Ctrl+D. Это гораздо быстрее, чем выделять всю строку и нажимать Delete.</p>
+
+<h3 class="text-warning">ALT + Up/Down Arrow - перенос строк</h3>
+
+<p>Переместить строку или выделенный участок текста можно через Alt+Стрелка Вверх/Вниз. Причём строки будут иметь правильные отступы во время перемещения.</p>
+
+<h3 class="text-warning">ALT + SHIFT + Up/Down Arrow - выделение блоков</h3>
+
+<p>Комбинация ALT + SHIFT + Стрелка Вверх позволяет выделять логические блоки кода. Например, блок цикла, далее блок метода, класса и т.д. Удобно, когда надо быстро скопировать нужный блок или просто его увидеть. Стрелка Вниз делает в обратном порядке.</p>
+
+<h3 class="text-warning">Ctrl + ALT + Стрелка Вверх/Вниз - скопировать и вставить строку</h3>
+
+<p>Комбинация клавиш Ctrl + ALT + Стрелка Вниз позволяет скопировать строку и вставить её ниже (стрелка Вверх копирует выше). Быстрее, чем обычный вариант Копировать+Вставить.</p>
+
+<h3 class="text-warning">CTRL+E - открыть список всех открытых редакторов</h3>
+
+<p>Если у вас открыто слишком много вкладок с кодом, то с помощью комбинации CTRL+E можно быстро открыть список всех вкладок и выбрать нужный редактор.</p>
+
+<h3 class="text-warning">CTRL+F6</h3>
+
+<p>Переключается между вкладками. По сути это медленный аналог Ctrl + E (см. выше). Способ удобен при переменной переключении между двумя вкладками.</p>
+
+<h3 class="text-warning">CTRL + J - поиск при наборе текста</h3>
+
+<p>Подобный поиск знаком пользователям Firefox. Выводит результат во время набора текста. Когда нажмёте указанную комбинацию, то вроде ничего не произойдёт. Не обращайте внимания, начинайте набирать текст и подходящий текст будет показан. Поиск идёт после текущей позиции курсора.</p>
+
+<h3 class="text-warning">F3 - определение переменной</h3>
+
+<p>Установите курсор на названии переменной и нажмите F3, чтобы переместиться на место, где эта переменная была объявлена. Аналогично, можно нажать клавишу Ctrl и щелкнуть мышкой по имени переменной.</p>
+
+<h3 class="text-warning">Ctrl + Q</h3>
+
+<p>Возвращает на последнюю редактируемую строчку. Полезно, когда вас отвлёк босс, телефонный звонок, мяукающий кот.</p>
+
+<h3 class="text-warning">Ctrl + 2</h3>
+
+<p>Позволяет быстро написать строчку с объявлением класса. Например, наберите <i>new TextView()</i> и нажмите Ctrl + 2, а затем L. Получится:</p>
+
+<p>TextView textView = new TextView();</p>
+
+<p>У меня почему-то клавиша L не всегда срабатывает, поэтому я выбираю вариант мышкой из всплывающего окна. Удобнее, чем использовать Ctrl + Пробел. Также есть варианты с F и R.</p>
+
+<h2 class="text-warning">Дополнительное чтение</h2>
+
+<p><a href="http://habrahabr.ru/post/183502/" >Несколько полезных шаблонов для Android-разработки под Eclipse</a></p>
+				
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/tips-eclipse.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:09:22 GMT -->
+</html>

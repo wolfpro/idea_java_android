@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/views/surfaceview.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:55:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: SurfaceView</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="" href="#" class="navbar-link"></a>
+          </p>
+		  
+		  
+          
+		  <ul class="nav pull-right">
+                    <li id="fat-menu" class="dropdown">
+                      <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Вход <b class="caret"></b></a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                        
+                        <li><form action="http://developer.alexanderklimov.ru/blocks/testreg.php" method="post">
+						    	<fieldset id="inputs">
+		                        <input class="span2" id="username" type="email" name="login" placeholder="Ваш email адрес" required>   
+		                        <input class="span1" id="password" type="password" name="password" placeholder="Пароль" required>
+	                            </fieldset>
+	                            <fieldset id="actions">
+		                        <input type="submit" class="btn" id="submit" name="submit" value="Войти">
+		                        
+	                            </fieldset>
+                            </form></li>
+                      </ul>
+                    </li>
+                  </ul>
+
+
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->
+	
+<div class="clearfix"></div><noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+    <div class="row-fluid">
+        <!--левое меню -->
+        <div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class="active"><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+        <div class="row-fluid">
+            <div class="span12">
+            
+                        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">SurfaceView</h1>
+
+<p>
+<a href="#touch">SurfaceView с поддержкой касаний</a><br>
+<a href="#epilectic">Гроза эпилептиков</a><br>
+<a href="#catchme">Поймай меня</a><br>
+<a href="#touchbounce">Отскакивающие значки</a><br>
+
+</p>
+
+<p>Класс SurfaceView предоставляет объект Surface, который поддерживает рисование в фоновом потоке и дает возможность использовать OpenGL для 
+трехмерной графики. Это отличный вариант для насыщенных графикой элементов, которые нуждаются в частых обновлениях или должны отображать 
+сложную графическую информацию, как в случае с играми и трехмерной визуализацией.</p>
+
+<div class="alert alert-info">
+SurfaceView — обертка вокруг класса SurfaceHolder, который в свою очередь служит оберткой класса Surface, используемого для обновления 
+изображения из фоновых потоков.
+</div>
+
+<p>Найти данный элемент можно в папке <b>Advanced</b>.</p>
+
+<p>В основе SurfaceView объект Surface, а не Canvas. Это важно, потому как Surface поддерживает рисование из фоновых потоков. Данное отличие 
+особенно полезно для ресурсоемких операций или быстрых обновлений, а также когда необходимо обеспечить высокую частоту изменения кадров (использование трехмерной графики, создание игр или предпросмотр видеопотока с камеры в режиме реального времени.</p>
+
+<p>Возможность рисовать вне зависимости от графического потока ведет к повышенному потреблению памяти. Таким образом, хоть это и полезный (а иногда просто необходимый) способ создания нестандартных представлений, будьте осторожны, используя его.</p>
+
+<p>SurfaceView используется точно таким же образом, как любые производные от View классы. Вы можете применять анимацию и размещать их внутри разметки так же, как и другие представления.</p>
+
+<p>Применяя OpenGL, вы можете рисовать на Surface любые поддерживаемые двумерные или трехмерные объекты, получая при этом все выгоды от аппаратного ускорения (если таковое имеется). Таким образом, вы значительно повышаете производительность, если сравнивать с теми же операциями, выполненными на двумерном Canvas.</p>
+
+<p>Объекты SurfaceView особенно пригодятся для отображения динамических трехмерных изображений, к примеру, в интерактивных играх, их можно назвать лучшим выбором для отображения предварительного просмотра видеопотоков с камеры в режиме реального времени.</p>
+
+<h2 class="text-warning">Создание нового объекта SurfaceView</h2>
+
+<p>Чтобы создать данный тип, наследуйте класс SurfaceView и реализуйте интерфейс SurfaceHolder.Callback, описывающий функцию обратного вызова. Он уведомляет представление о том, что исходный объект Surface был создан/уничтожен/модифицирован и передает в объект SurfaceHolder ссылку, содержащую допустимый экземпляр Surface.</p>
+
+<p>Типичный шаблон проектирования SurfaceView предусматривает классы, производные от Thread, которые принимают ссылку на текущий объект SurfaceHolder и немедленно его обновляют.</p>
+
+<h2 class="text-warning" id="touch">SurfaceView с поддержкой касаний</h2>
+
+<p>Напишем простой пример использования SurfaceView, на котором можно рисовать линии.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.surfacedemo;
+
+import java.util.Random;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.Window;
+
+public class TestActivity extends Activity {
+
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(new MySurfaceView(this));
+    }
+
+    class MySurfaceView extends SurfaceView {
+
+        Path path;
+
+        Thread thread = null;
+        SurfaceHolder surfaceHolder;
+        volatile boolean running = false;
+
+        private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        Random random;
+
+        public MySurfaceView(Context context) {
+            super(context);
+            surfaceHolder = getHolder();
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(3);
+            paint.setColor(Color.WHITE);
+        }
+
+        @Override
+        public boolean onTouchEvent(MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                path = new Path();
+                path.moveTo(event.getX(), event.getY());
+            } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
+                path.lineTo(event.getX(), event.getY());
+            } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                path.lineTo(event.getX(), event.getY());
+            }
+
+            if (path != null) {
+                Canvas canvas = surfaceHolder.lockCanvas();
+                canvas.drawPath(path, paint);
+                surfaceHolder.unlockCanvasAndPost(canvas);
+            }
+
+            return true;
+        }
+    }
+}
+</code></pre>
+
+<p>Запустив проект, вы можете рисовать пальцем по экрану.</p>
+
+<h2 class="text-warning" id="epilectic">Гроза эпилептиков</h2>
+
+<p>Попробовал <a href="http://android-er.blogspot.ru/2010/05/android-surfaceview.html">данный пример</a>. При рисовании рисуются окружности, которые постоянно мигают. Жуткое зрелище.</p>
+
+<p>В примере реализовано:</p>
+
+<ul>
+<li>новый класс MySurfaceView, наследующий от SurfaceView и реализующий интерфейс SurfaceHolder.Callback</li>
+<li>используются методы surfaceCreated(), surfaceDestroyed(), surfaceChanged() для SurfaceHolder.Callback</li>
+<li>используется класс Thread для SurfaceView</li>
+</ul>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.Window;
+
+public class TestActivity extends Activity {
+
+    private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+    private float initX, initY, radius;
+    private boolean drawing = false;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(new MySurfaceView(this));
+
+    }
+
+    public class MySurfaceThread extends Thread {
+
+        private SurfaceHolder myThreadSurfaceHolder;
+        private MySurfaceView myThreadSurfaceView;
+        private boolean myThreadRun = false;
+
+        public MySurfaceThread(SurfaceHolder surfaceHolder,
+                MySurfaceView surfaceView) {
+            myThreadSurfaceHolder = surfaceHolder;
+            myThreadSurfaceView = surfaceView;
+        }
+
+        public void setRunning(boolean b) {
+            myThreadRun = b;
+        }
+
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
+            // super.run();
+            while (myThreadRun) {
+                Canvas c = null;
+                try {
+                    c = myThreadSurfaceHolder.lockCanvas(null);
+                    synchronized (myThreadSurfaceHolder) {
+                        myThreadSurfaceView.onDraw(c);
+                    }
+                } finally {
+                    // do this in a finally so that if an exception is thrown
+                    // during the above, we don't leave the Surface in an
+                    // inconsistent state
+                    if (c != null) {
+                        myThreadSurfaceHolder.unlockCanvasAndPost(c);
+                    }
+                }
+            }
+        }
+    }
+
+    public class MySurfaceView extends SurfaceView implements
+            SurfaceHolder.Callback {
+
+        private MySurfaceThread thread;
+
+        @Override
+        protected void onDraw(Canvas canvas) {
+            // TODO Auto-generated method stub
+            // super.onDraw(canvas);
+            if (drawing) {
+                canvas.drawCircle(initX, initY, radius, paint);
+            }
+        }
+
+        @Override
+        public boolean onTouchEvent(MotionEvent event) {
+            // TODO Auto-generated method stub
+            // return super.onTouchEvent(event);
+            int action = event.getAction();
+            if (action == MotionEvent.ACTION_MOVE) {
+                float x = event.getX();
+                float y = event.getY();
+                radius = (float) Math.sqrt(Math.pow(x - initX, 2)
+                        + Math.pow(y - initY, 2));
+            } else if (action == MotionEvent.ACTION_DOWN) {
+                initX = event.getX();
+                initY = event.getY();
+                radius = 1;
+                drawing = true;
+            } else if (action == MotionEvent.ACTION_UP) {
+                drawing = false;
+            }
+
+            return true;
+        }
+
+        public MySurfaceView(Context context) {
+            super(context);
+            // TODO Auto-generated constructor stub
+            init();
+        }
+
+        public MySurfaceView(Context context, AttributeSet attrs) {
+            super(context, attrs);
+            // TODO Auto-generated constructor stub
+            init();
+        }
+
+        public MySurfaceView(Context context, AttributeSet attrs, int defStyle) {
+            super(context, attrs, defStyle);
+            // TODO Auto-generated constructor stub
+            init();
+        }
+
+        private void init() {
+            getHolder().addCallback(this);
+
+            setFocusable(true); // make sure we get key events
+
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(3);
+            paint.setColor(Color.WHITE);
+        }
+
+        @Override
+        public void surfaceChanged(SurfaceHolder arg0, int arg1, int arg2,
+                int arg3) {
+            // TODO Auto-generated method stub
+        }
+
+        @Override
+        public void surfaceCreated(SurfaceHolder holder) {
+            // TODO Auto-generated method stub
+            thread = new MySurfaceThread(getHolder(), this);
+            thread.setRunning(true);
+            thread.start();
+        }
+
+        @Override
+        public void surfaceDestroyed(SurfaceHolder holder) {
+            // TODO Auto-generated method stub
+            boolean retry = true;
+            thread.setRunning(false);
+            while (retry) {
+                try {
+                    thread.join();
+                    retry = false;
+                } catch (InterruptedException e) {
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+<h2 class="text-warning" id="catchme">Поймай меня</h2>
+
+<p>Тот автор на основе предыдущего примера сделал <a href="http://android-er.blogspot.ru/2010/05/android-surfaceview-run-in-thread-with.html">новый пример</a>. На экране рисуется белая точка, которая начинает двигаться в место касания экрана пальцем пользователя.<p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import ...
+
+public class TestActivity extends Activity {
+
+    private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+    private float initX, initY;
+    private float targetX, targetY;
+    private boolean drawing = true;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(new MySurfaceView(this));
+    }
+
+    public class MySurfaceThread extends Thread {
+
+        private SurfaceHolder myThreadSurfaceHolder;
+        private MySurfaceView myThreadSurfaceView;
+        private boolean myThreadRun = false;
+
+        public MySurfaceThread(SurfaceHolder surfaceHolder,
+                MySurfaceView surfaceView) {
+            myThreadSurfaceHolder = surfaceHolder;
+            myThreadSurfaceView = surfaceView;
+        }
+
+        public void setRunning(boolean b) {
+            myThreadRun = b;
+        }
+
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
+            // super.run();
+            while (myThreadRun) {
+                Canvas c = null;
+                try {
+                    c = myThreadSurfaceHolder.lockCanvas(null);
+                    synchronized (myThreadSurfaceHolder) {
+                        myThreadSurfaceView.onDraw(c);
+                    }
+
+                    sleep(500);
+
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } finally {
+                    // do this in a finally so that if an exception is thrown
+                    // during the above, we don't leave the Surface in an
+                    // inconsistent state
+                    if (c != null) {
+                        myThreadSurfaceHolder.unlockCanvasAndPost(c);
+                    }
+                }
+            }
+        }
+    }
+
+    public class MySurfaceView extends SurfaceView implements
+            SurfaceHolder.Callback {
+
+        private MySurfaceThread thread;
+
+        @Override
+        protected void onDraw(Canvas canvas) {
+            // TODO Auto-generated method stub
+            // super.onDraw(canvas);
+            if (drawing) {
+                canvas.drawRGB(0, 0, 0);
+                canvas.drawCircle(initX, initY, 3, paint);
+                if ((initX == targetX) && (initY == targetY)) {
+                    drawing = false;
+                } else {
+                    initX = (initX + targetX) / 2;
+                    initY = (initY + targetY) / 2;
+                }
+            }
+        }
+
+        @Override
+        public boolean onTouchEvent(MotionEvent event) {
+            // TODO Auto-generated method stub
+            // return super.onTouchEvent(event);
+            int action = event.getAction();
+
+            if (action == MotionEvent.ACTION_DOWN) {
+                targetX = event.getX();
+                targetY = event.getY();
+                drawing = true;
+            }
+
+            return true;
+        }
+
+        public MySurfaceView(Context context) {
+            super(context);
+            // TODO Auto-generated constructor stub
+            init();
+        }
+
+        public MySurfaceView(Context context, AttributeSet attrs) {
+            super(context, attrs);
+            // TODO Auto-generated constructor stub
+            init();
+        }
+
+        public MySurfaceView(Context context, AttributeSet attrs, int defStyle) {
+            super(context, attrs, defStyle);
+            // TODO Auto-generated constructor stub
+            init();
+        }
+
+        private void init() {
+            getHolder().addCallback(this);
+            thread = new MySurfaceThread(getHolder(), this);
+
+            setFocusable(true); // make sure we get key events
+
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(3);
+            paint.setColor(Color.WHITE);
+
+            initX = targetX = 0;
+            initY = targetY = 0;
+
+        }
+
+        @Override
+        public void surfaceChanged(SurfaceHolder arg0, int arg1, int arg2,
+                int arg3) {
+            // TODO Auto-generated method stub
+        }
+
+        @Override
+        public void surfaceCreated(SurfaceHolder holder) {
+            // TODO Auto-generated method stub
+            thread.setRunning(true);
+            thread.start();
+        }
+
+        @Override
+        public void surfaceDestroyed(SurfaceHolder holder) {
+            // TODO Auto-generated method stub
+            boolean retry = true;
+            thread.setRunning(false);
+            while (retry) {
+                try {
+                    thread.join();
+                    retry = false;
+                } catch (InterruptedException e) {
+                }
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>Этот же пример, но с использованием разметки FrameLayout, внутри которой находится SurfaceView, находится <a href="http://android-er.blogspot.ru/2010/05/another-exercise-of-surfaceview-in.html" >здесь</a>. Не буду приводить код.</p>
+<p>Продолжение серии примеров - <a href="http://android-er.blogspot.ru/2010/06/exercise-of-surfaceview-surfaceview.html" >Exercise of SurfaceView: SurfaceView overlap with a LinearLayout</a>. Здесь появляется возможность выбрать цвет точки.</p>
+
+<h2 class="text-warning" id="touchbounce">Отскакивающие значки</h2>
+
+<p>Ещё один пример - при касании экрана в области SurfaceView будет появляться новая картинка, которая будет двигаться внутри контейнера, отскакивая от стенок.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/LinearLayout1&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;Button
+        android:id=&quot;@+id/button_erase&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_gravity=&quot;center_horizontal&quot;
+        android:onClick=&quot;onClick&quot;
+        android:text=&quot;Очистить&quot; /&gt;
+
+    &lt;SurfaceView
+        android:id=&quot;@+id/surface&quot;
+        android:layout_width=&quot;350dp&quot;
+        android:layout_height=&quot;250dp&quot;
+        android:layout_gravity=&quot;center&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Код:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import ...
+
+public class TestActivity extends Activity implements View.OnTouchListener,
+        SurfaceHolder.Callback {
+
+    private SurfaceView mSurface;
+    private DrawingThread mThread;
+
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+
+        mSurface = (SurfaceView) findViewById(R.id.surface);
+        mSurface.setOnTouchListener(this);
+        mSurface.getHolder().addCallback(this);
+
+    }
+
+    public void onClick(View v) {
+        mThread.clearItems();
+    }
+
+    public boolean onTouch(View v, MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            mThread.addItem((int) event.getX(), (int) event.getY());
+        }
+        return true;
+    }
+
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+        mThread = new DrawingThread(holder, BitmapFactory.decodeResource(
+                getResources(), R.drawable.ic_launcher));
+        mThread.start();
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width,
+            int height) {
+        mThread.updateSize(width, height);
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+        mThread.quit();
+        mThread = null;
+    }
+
+    private static class DrawingThread extends HandlerThread implements
+            Handler.Callback {
+        private static final int MSG_ADD = 100;
+        private static final int MSG_MOVE = 101;
+        private static final int MSG_CLEAR = 102;
+        private int mDrawingWidth, mDrawingHeight;
+        private SurfaceHolder mDrawingSurface;
+        private Paint mPaint;
+        private Handler mReceiver;
+        private Bitmap mIcon;
+        private ArrayList&lt;DrawingItem&gt; mLocations;
+
+        private class DrawingItem {
+            // Current location marker
+            int x, y;
+            // Direction markers for motion
+            boolean horizontal, vertical;
+
+            public DrawingItem(int x, int y, boolean horizontal,
+                    boolean vertical) {
+                this.x = x;
+                this.y = y;
+                this.horizontal = horizontal;
+                this.vertical = vertical;
+            }
+        }
+
+        public DrawingThread(SurfaceHolder holder, Bitmap icon) {
+            super("DrawingThread");
+            mDrawingSurface = holder;
+            mLocations = new ArrayList&lt;DrawingItem&gt;();
+            mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            mIcon = icon;
+        }
+
+        @Override
+        protected void onLooperPrepared() {
+            mReceiver = new Handler(getLooper(), this);
+            // Start the rendering
+            mReceiver.sendEmptyMessage(MSG_MOVE);
+        }
+
+        @Override
+        public boolean quit() {
+            // Clear all messages before dying
+            mReceiver.removeCallbacksAndMessages(null);
+            return super.quit();
+        }
+
+        @Override
+        public boolean handleMessage(Message msg) {
+            switch (msg.what) {
+            case MSG_ADD:
+                // Create a new item at the touch location,
+                // with a randomized start direction
+                DrawingItem newItem = new DrawingItem(msg.arg1, msg.arg2,
+                        Math.round(Math.random()) == 0, Math.round(Math
+                                .random()) == 0);
+                mLocations.add(newItem);
+                break;
+            case MSG_CLEAR:
+                // Remove all objects
+                mLocations.clear();
+                break;
+            case MSG_MOVE:
+                // Render a frame
+                Canvas c = mDrawingSurface.lockCanvas();
+                if (c == null) {
+                    break;
+                }
+                // Clear Canvas first
+                c.drawColor(Color.BLACK);
+                // Draw each item
+                for (DrawingItem item : mLocations) {
+                    // Update location
+                    item.x += (item.horizontal ? 5 : -5);
+                    if (item.x >= (mDrawingWidth - mIcon.getWidth())) {
+                        item.horizontal = false;
+                    } else if (item.x &lt;= 0) {
+                        item.horizontal = true;
+                    }
+                    item.y += (item.vertical ? 5 : -5);
+                    if (item.y >= (mDrawingHeight - mIcon.getHeight())) {
+                        item.vertical = false;
+                    } else if (item.y &lt;= 0) {
+                        item.vertical = true;
+                    }
+                    // Draw to the Canvas
+                    c.drawBitmap(mIcon, item.x, item.y, mPaint);
+                }
+                // Release to be rendered to the screen
+                mDrawingSurface.unlockCanvasAndPost(c);
+                break;
+            }
+            // Post the next frame
+            mReceiver.sendEmptyMessage(MSG_MOVE);
+            return true;
+        }
+
+        public void updateSize(int width, int height) {
+            mDrawingWidth = width;
+            mDrawingHeight = height;
+        }
+
+        public void addItem(int x, int y) {
+            // Pass the location into the Handler using Message arguments
+            Message msg = Message.obtain(mReceiver, MSG_ADD, x, y);
+            mReceiver.sendMessage(msg);
+        }
+
+        public void clearItems() {
+            mReceiver.sendEmptyMessage(MSG_CLEAR);
+        }
+    }
+}
+</code></pre>
+
+<p><img src="surfaceview1.png" alt="SurfaceView"></p>
+
+
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+<h2 class="text-warning">Примеры</h2>
+
+<p><a href="../video.html#mediaplayer">Класс MediaPlayer - воспроизведение видео</a>.</p>
+
+<p><a href="../videorecorder.html#previewrecord">Предварительный просмотр записываемого видео</a>.</p>
+
+
+</div><!--/span-->
+        </div><!--/row-->    
+          
+        </div><!--/span-->
+        
+        <div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+        
+      </div><!--/row-->
+      
+    
+      <hr>
+      
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/views/surfaceview.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:55:38 GMT -->
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/debug.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Отладка</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Отладка</h1>
+
+<p><img src="../images/logcat.png" alt="LogCat"></p>
+
+<p>В Android SDK входит набор инструментов, предназначенных для отладки. Они интегрированы в Eclipse IDE. Самый важный инструмент при отладке - это <b>LogCat</b> (очень красивое название, которое можно перевести как Логичный Кот). Он отображает сообщения логов (журнал логов), рассылаемые при помощи различных методов.</p>
+
+<p>Рассмотрим на примере. Очень часто программисту нужно вывести куда-то промежуточные результаты, чтобы понять, почему программа не работает. Особо хитрые временно размещают на экране текстовое поле и выводят туда при помощи метода editText.setText("Здесь был Васька"). Но есть способ лучше. В Android есть специальный класс <b>android.util.Log</b> для подобных случаев.</p>
+
+<p>Класс Log позволяет разбивать сообщения по категориям в зависимости от важности. Для разбивки по категориям используются специальные методы, которые легко запомнить по первым буквам, указывающие на категорию:</p>
+
+<ul>
+<li>Log.e() - ошибки (error)</li>
+<li>Log.w() - предупреждения (warning)</li>
+<li>Log.i() - информация (info)</li>
+<li>Log.d() - отладка (degub)</li>
+<li>Log.v() - подробности (verbose)</li>
+<li>Log.wtf() - очень серьезная ошибка! (What a Terrible Failure!, работает начиная с Android 2.2)</li>
+<li>Log.meow() - когда жрать дадут? (MEOW!) Недокументированный метод, используйте на свой страх и риск. Работает не на всех устройствах</li>
+</ul>
+
+<p>В первом параметре метода используется строка, называемая тегом. Обычно принято объявлять глобальную статическую строковую переменную TAG в начале кода:<p>
+
+<pre><code class="java">
+private static final String TAG = "MyApp";
+</code></pre>
+
+<p>Далее уже в любом месте вашей программы вы вызываете нужный метод журналирования с этим тегом:</p>
+
+<pre><code class="java">
+Log.i(TAG, "Это мое сообщение для записи в журнале");
+</code></pre>
+
+<p>Также используется в исключениях:</p>
+
+<pre><code class="java">
+try {
+// ...
+} catch (Exception exception) {
+    Log.e(TAG, "Получено исключение", exception);
+}
+
+</code></pre>
+
+<p>Пользователи не видят этот журнал. Но, вы, как разработчик, можете увидеть его через программу <b>LogCat</b>. В Eclipse его можно открыть через <b>Window | Show View | Other... | Android | LogCat</b>.</p>
+
+<p>В LogCat вы можете отфильтровать сообщение по этому тегу, чтобы видеть на экране только свои сообщения.</p>
+
+<p>Напрямую скопировать текст из журнала в буфер обмена нельзя. Чтобы обойти это ограничение, щёлкните правой кнопкой мыши на сообщении и выберите пункт <b>Filter similar messages...</b>. Откроется новое окно и из него можно спокойно скопировать нужный текст.</p>
+
+<p>LogCat также можно запустить его из командной строки:</p>
+
+<pre>
+adb logcat
+</pre>
+
+<p>Серьезные разработчики держат окно LogCat всегда открытым во время работы с эмулятором.</p>
+
+<p>Также в SDK есть файловый менеджер (File Exptorer) для просмотра файлов в устройстве или эмуляторе. Чтобы просмотреть эти инструменты, в  Eclipse нужно выбрать режим  Debug. Можно также запустить каждый инструмент через меню Window&rarr;Show View&rarr;Other&rarr;Android.</p>
+
+<p>Вы можете просмотреть подробные сведения о трассировке приложения Android, воспользовавшись классом android.os.Debug, в котором содержится метод для начала (Debug.startMethodTracing()) и для завершения трассировки (Debug.stopMethodTracing()).</p>
+
+<p>Android создаст в устройстве (или в эмуляторе) файл трассировки. Затем вы сможете  скопировать файл трассировки на рабочую станцию и  просмотреть  вывод 
+трассировщика при помощи специального инструмента, имеющегося в Android SDK.</p>
+
+<h2 class="text-warning">Отладка с помощью отладчика</h2>
+
+<p>Также можно использовать отладчик Eclipse для установки точки останова, пошагово исполнять программу или просматривать ее состояние. Для этого в файле AndroidManifest.xml нужно добавить команду <b>android:debuggable="true"</b>.</p>
+
+<pre><code class="xml">
+&lt;application android:icon=&quot;@drawable/icon&quot;
+    android:label=&quot;@string/app_name&quot;
+	android:debuggable=&quot;true&quot;&gt;
+	...
+</code></pre>
+
+<p>Сохраните изменения в файле, щелкните правой кнопкой мыши на проекте и выберите команду <b>Debug As | Android Application</b>.</p>
+
+<h2 class="text-warning">Создаём конфигурацию для отладки</h2>
+
+<p>Для создания конфигурации по отладке приложения выберите в Eclipse меню <b>Run | Debug Configurations…</b>.</p>
+
+<p>В открывшемся диалоговом окне <b>Debug Configurations</b> выберите нужный проект из левой части окна. Если в списке приложения нет, то выберите через кнопку <b>Browse...</b>.</p>
+
+<p>Поле <b>Name</b> в верхней части окна оставляют без изменений, чтобы оно совпадало с именем приложения, но если вы большой оригинал и любите путаться в проектах, то можете задать другое имя.</p>
+
+<p>Щёлкните кнопку <b>Debug</b>.</p>
+
+<p>Если эмулятор ещё не запущен, то он запустится, как обычно это происходит при обычном режиме Run. Единственное отличие - при запуске вашей программы появится диалоговое окно <b>Waiting for Debugger</b>, которое закроется через несколько секунд.</p>
+
+<p><img src="debug1.png" alt="Debug" width="240" height="400"></p>
+
+<p>Теперь можно приступать к отладке.</p>
+
+<p>У вам может автоматически открыться новая перспектива <b>Debug</b>. Если этого не произошло, то выберите в меню <b>Window | Open Perspective | Debug</b>.</p>
+
+<p>Перспектива содержит несколько панелей. Например, в левой верхней части находится панель <b>Debug</b>, на которой можно наблюдать за потоками вашей программы.</p>
+
+<p>Справа от этой панели находятся панели <b>Variables</b> и <b>Breakpoints</b>, позволяющие следить за значениями переменных и управлять точками останова.</p>
+
+<p>В нижней части перспективы можно увидеть панели <b>Console</b> и <b>LogCat</b>.</p>
+
+<p>Попробуем установить точку останова. Выберите нужную строчку кода и слева от её номера строки щелкните правой кнопкой мыши. Выберите пункт <b>Toggle Breakpoint</b> (либо сделать двойной щелчок в этой области). Если прицеливаться вам неохота, то просто установить курсор на нужной строке и нажмите комбинацию клавиш <b>Ctrl-Shift-B</b>.</p>
+
+<p>В качестве эксперимента установите точку останова на следующей строке после <b>setContentView(R.layout.activity_test)</b>. Например, это может быть строка:</p>
+
+<pre>
+textOut = (EditText) findViewById(R.id.textout);
+</pre>
+
+<p>Запустите отладку. Это можно сделать через значок жучка на панели инструментов, клавишу F11 или через меню, как было описано в начале данного раздела.</p>
+
+<p>В эмуляторе запустится ваше приложение и затем остановится, когда дойдет до строчки кода, на которую вы поставили точку останова. Строка будет подсвечена зелёным цветом, а само текстовое поле не загрузится на экран (как и остальные элементы, которые идут после этой строки кода).</p>
+
+<p>На панели <b>Debug</b> вы увидите различные значки для управления отладкой.</p>
+
+<p>Например, чтобы перейти на следующую строку кода, нажмите на значок <b>Step Over</b> или нажмите клавишу F6.</p>
+
+<p>Это базовое описание работы по отладке. Вам следует самостоятельно изучить эти приёмы.</p>
+
+<h2 class="text-warning">Быстрое отключение журналирования</h2>
+
+<p>Настоятельно рекомендуется удалять все вызовы LogCat в готовых приложениях. Если проект очень большой и вызовы журналирования разбросаны по всем местам кода, то ручное удаление (или комментирование) становится утомительным занятием. Многие разработчики используют следующую хитрость - создают обёртку вокруг вызова методов LogCat.</p>
+
+<pre><code class="java">
+public static final boolean isDebug = false;
+public final String TAG = "MyLogger";
+
+public void MyLogger(String statement){
+	if (isDebug) {
+		  Log.v(TAG, statement);
+	}
+}
+</code></pre>
+
+<p>Теперь остаётся только присвоить нужное значение переменной <b>isDebug</b> перед созданием готового apk-файла для распространения.</p>
+
+<p>Программисты, работающие в Goggle, используют похожий приём. Подробнее можно почитать <a href="http://gmariotti.blogspot.ru/2013/01/android-logging.html">здесь</a>.</p>
+
+<h2 class="text-warning">LogCat на устройстве</h2>
+
+<p>Попался в сети пример для просмотра сообщений LogCat на устройстве. С примером не разбирался, оставлю здесь на память.</p>
+
+<p>Разметка</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;ListView
+        android:id=&quot;@android:id/list&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Разметка для элемента списка:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;TextView xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/txtLogString&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;wrap_content&quot; /&gt;
+</code></pre>
+
+<p>Добавляем разрешение в манифест:</p>
+
+<pre><code class="xml">
+&lt;uses-permission android:name=&quot;android.permission.READ_LOGS&quot; /&gt;
+</code></pre>
+
+<p>Код для класса:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.AlertDialog;
+import android.app.ListActivity;
+import android.content.Context;
+import android.graphics.Color;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+public class TestActivity extends ListActivity {
+
+	private LogStringAdaptor adaptor = null;
+	private ArrayList&lt;String&gt; logarray = null;
+	private LogReaderTask logReaderTask = null;
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_test);
+
+		logarray = new ArrayList&lt;String&gt;();
+		adaptor = new LogStringAdaptor(this, R.id.txtLogString, logarray);
+
+		setListAdapter(adaptor);
+
+		logReaderTask = new LogReaderTask();
+
+		logReaderTask.execute();
+
+	}
+
+	@Override
+	protected void onDestroy() {
+		logReaderTask.stopTask();
+
+		super.onDestroy();
+	}
+
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+
+		final AlertDialog.Builder builder = new AlertDialog.Builder(
+				TestActivity.this);
+		String text = ((String) ((TextView) v).getText());
+
+		builder.setMessage(text);
+
+		builder.show();
+	}
+
+	private int getLogColor(String type) {
+		int color = Color.BLUE;
+
+		if (type.equals("D")) {
+			color = Color.rgb(0, 0, 200);
+		} else if (type.equals("W")) {
+			color = Color.rgb(128, 0, 0);
+		} else if (type.equals("E")) {
+			color = Color.rgb(255, 0, 0);
+			;
+		} else if (type.equals("I")) {
+			color = Color.rgb(0, 128, 0);
+			;
+		}
+
+		return color;
+	}
+
+	private class LogStringAdaptor extends ArrayAdapter&lt;String&gt; {
+		private List&lt;String&gt; objects = null;
+
+		public LogStringAdaptor(Context context, int textviewid,
+				List&lt;String&gt; objects) {
+			super(context, textviewid, objects);
+
+			this.objects = objects;
+		}
+
+		@Override
+		public int getCount() {
+			return ((null != objects) ? objects.size() : 0);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
+
+		@Override
+		public String getItem(int position) {
+			return ((null != objects) ? objects.get(position) : null);
+		}
+
+		public View getView(int position, View convertView, ViewGroup parent) {
+			View view = convertView;
+
+			if (null == view) {
+				LayoutInflater vi = (LayoutInflater) TestActivity.this
+						.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+				view = vi.inflate(R.layout.logitem, null);
+			}
+
+			String data = objects.get(position);
+
+			if (null != data) {
+				TextView textview = (TextView) view
+						.findViewById(R.id.txtLogString);
+				String type = data.substring(0, 1);
+				String line = data.substring(2);
+
+				textview.setText(line);
+				textview.setTextColor(getLogColor(type));
+			}
+
+			return view;
+		}
+	}
+
+	private class LogReaderTask extends AsyncTask&lt;Void, String, Void&gt; {
+		private final String[] LOGCAT_CMD = new String[] { "logcat" };
+		private final int BUFFER_SIZE = 1024;
+
+		private boolean isRunning = true;
+		private Process logprocess = null;
+		private BufferedReader reader = null;
+		private String[] line = null;
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			try {
+				logprocess = Runtime.getRuntime().exec(LOGCAT_CMD);
+			} catch (IOException e) {
+				e.printStackTrace();
+
+				isRunning = false;
+			}
+
+			try {
+				reader = new BufferedReader(new InputStreamReader(
+						logprocess.getInputStream()), BUFFER_SIZE);
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+
+				isRunning = false;
+			}
+
+			line = new String[1];
+
+			try {
+				while (isRunning) {
+					line[0] = reader.readLine();
+
+					publishProgress(line);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+
+				isRunning = false;
+			}
+
+			return null;
+		}
+
+		@Override
+		protected void onCancelled() {
+			super.onCancelled();
+		}
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			super.onPostExecute(result);
+		}
+
+		@Override
+		protected void onProgressUpdate(String... values) {
+			super.onProgressUpdate(values);
+
+			adaptor.add(values[0]);
+		}
+
+		public void stopTask() {
+			isRunning = false;
+			logprocess.destroy();
+		}
+	}
+}
+</code></pre>
+
+<p><img src="logcatdevice.png" alt="LogCat на устройстве" width="225" height="400"></p>
+
+<h2  class="text-warning">Запрет на отключение экрана во время тестирования</h2>
+
+<p>Попался ещё один пример, когда нужно тестировать приложение на устройстве в течение длительного времени. В настройках телефона можно установить два часа как максимум для включенного экрана. Поэтому нужен другой способ (<a href="http://blog.softteco.com/2011/03/android-testing-avoiding-screen-lock.html">нашел здесь</a>):</p>
+
+<pre><code class="java">
+package com.your.testpackage;
+
+import android.os.PowerManager;
+import android.test.ActivityInstrumentationTestCase2;
+
+
+public class YourCoolTestClass extends
+ActivityInstrumentationTestCase2 {
+
+    protected static String TAG = "#########" + YourCoolTestClass.class.getName();
+    private PowerManager mPowerManager = null;
+    private PowerManager.WakeLock mWakeLock = null;
+
+    public YourCoolTestClass() throws Exception{
+        super("com.your.application.package.root", YourCoolActivity.class);
+    }
+
+    public void setUp() throws Exception {
+        // Get power manager
+        mPowerManager = (PowerManager) getActivity().getApplicationContext().getSystemService(Context.POWER_SERVICE);
+        mWakeLock = this.mPowerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, TAG);
+        // Acquire the lock
+        mWakeLock.acquire();
+    }
+
+
+    public void testAllBatteryLifeLong() {
+        // TEST 
+    } 
+    
+    @Override
+    public void tearDown() throws Exception {
+        try {
+            // Wake lock MUST be released to avoid lock leaks
+            if(mWakeLock != null && !mWakeLock.isHeld) {
+                mWakeLock.release();
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+        getActivity().finish();
+        super.tearDown();
+    }
+}
+</code></pre>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/debug.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:56 GMT -->
+</html>

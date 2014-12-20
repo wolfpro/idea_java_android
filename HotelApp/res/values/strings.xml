@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HotelApp</string>
+    <string name="first_but">New Project</string>
+    <string name="second_but">Project</string>
+    <string name="third_but">Setting</string>
+    <string name="fourth_but">Help</string>
+    <string name="name_payday">Payday</string>
+    <string name="name_management">Management</string>
+    <string name="name_personnel">Personnel</string>
+    <string name="name_capital">Capital</string>
+    <string name="name_rooms">Rooms</string>
+
+</resources>

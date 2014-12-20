@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/catshop/android.graphics.drawable.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:56:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Класс android.graphics.Drawable</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class="active"><a href="catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>      
+<h1 class="text-warning">android.graphics.Drawable</h1>
+
+<p>
+<a href="#drawable">Класс Drawable</a><br>
+<a href="#bitmapdrawable">Класс BitmapDrawable</a><br>
+<a href="#colordrawable">Класс ColorDrawable</a><br>
+<a href="#gradientdrawable">Класс GradientDrawable</a><br>
+<a href="#transitiondrawable">Класс TransitionDrawable</a><br>
+<a href="#shapedrawable">Класс ShapeDrawable</a><br>
+&nbsp;&nbsp;<a href="#rectshape">Класс RectShape</a><br>
+&nbsp;&nbsp;<a href="#ovalshape">Класс OvalShape</a><br>
+&nbsp;&nbsp;<a href="#roundrect">Класс RoundRect</a><br>
+&nbsp;&nbsp;<a href="#path">Класс Path</a><br>
+&nbsp;&nbsp;<a href="#arcshape">Класс ArcShape</a><br>
+<a href="#scaledrawable">ScaleDrawable</a><br>
+<a href="#rotatedrawable">RotateDrawable</a><br>
+<a href="#layerdrawable">LayerDrawable</a><br>
+<a href="#statelistdrawable">StateListDrawable</a><br>
+<a href="#levellistdrawable">LevelListDrawable</a><br>
+</p>
+
+<h2 class="text-warning" id="drawable">Класс Drawable</h2>
+
+<p>Android предлагает двумерную графическую библиотеку рисования <b>android.graphics.Drawable</b>. Класс <b>Drawable</b> является базовым классом для всех классов работы с графикой. Это общая абстракция для рисуемого объекта. Класс <b>Drawable</b> определяет разнообразные виды графики, включая:</p>
+<ul>
+<li>BitmapDrawable - создание, растягивание, выравнивание растра</li>
+<li>ColorDrawable - заполнение цветом</li>
+<li>GradientDrawable - создание градиентов</li>
+<li>AnimationDrawable - покадровая анимация</li>
+<li>ShapeDrawable - фигуры</li>
+<li>LayerDrawable - многослойные картинки</li>
+<li>PictureDrawabie</li>
+<li>TransitionDrawable - плавные переходы и др.</li>
+</ul>
+
+<p>Для графики можно использовать объекты:</p>
+
+<ul>
+<li>Bitmap - изображение PNG и JPG</li>
+<li>NinePath - масштабируемое PNG-изображения. Используется в качестве фонового изображения для кнопок с изменяемыми размерами</li>
+<li>Shape - команды рисования векторных объектов, основанные на Path</li>
+<li>Layers - контейнеры для дочерних элементов визуализации</li>
+<li>States - специальный контейнер. Используют для создания различных вариантов выделения кнопок и установки фокуса на них</li>
+<li>Levels - контейнер для одного объекта-потомка. Основана на целом числе, например, индикатор заряда или уровень силы сигнала</li>
+<li>Scale - контейнер для одного объекта-потомка. Изменяет размер на основе текущего заданного значения. Используется для создания вьювера картинок с возможностью увеличения</li>
+</ul>
+
+<p>Есть два способа определить и инициализировать объект Drawable:</p>
+<ul>
+<li>использовать готовые изображения, сохраненные в каталоге res/drawable/</li>
+<li>использовать ХМL-файл, в котором будут определены свойства объекта Drawable</li>
+</ul>
+
+<p>Самый простой способ добавить графику в приложение — это использование готовых изображений из ресурсов. Наиболее предпочтительный тип PNG, также можно использовать JPG (приемлемо) и GIF (нежелательно). Обычно таким способом загружают значки и картинки.</p>
+
+<p>Ресурсы изображений, помещенные в каталог <b>res/drawable/</b> во время компиляции проекта, могут быть автоматически оптимизированы со сжатием изображения утилитой <b>aapt</b>. Если требуется загружать растровые изображения  BMP, которые утилита <b>aapt</b> обязательно оптимизирует, без сжатия, поместите их в каталог <b>res/raw/</b>, где они не будут оптимизироваться. Однако потребуется загрузка с использованием методов потокового ввода-вывода и последующая конвертация графики в растровый рисунок.</p>
+
+<h2 class="text-warning">Создание объектов Drawable в коде программы</h2>
+
+<p>В других случаях вы можете захотеть обработать ваш ресурс изображения как объект <b>Drawable</b>. Чтобы это сделать, создайте <b>Drawable</b>, загрузив изображение из ресурсов примерно так:</p>
+
+<pre> 
+Resources res = mContext.getResources();
+Drawable myImage = res.getDrawable(R.drawable.my_image);
+</pre>
+
+<p>Каждый уникальный ресурс в вашем проекте может поддерживать только одно состояние независимо от того, сколько различных объектов вы можете инициализировать в программном коде для этого ресурса. Например, если вы инициализируете два объекта <b>Drawable</b> от одного ресурса изображения, а затем измените свойство, например <b>alpha</b> (прозрачность), для одного из  объектов <b>Drawable</b>, другой объект также изменит это свойство.</p>
+
+<h2 class="text-warning" id="convertbitmap">Конвертируем Drawable в Bitmap и выводим в ImageView</h2>
+
+<p>Предположим, у нас в ресурсах есть картинка (Drawable). Нам нужно конвертировать её в объект <b>Bitmap</b> и вывести в <b>ImageView</b>:</p>
+
+<pre><code class="java">
+ImageView targetImage;
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    targetImage = (ImageView)findViewById(R.id.target);
+    
+    // Загружаем растр из ресурсов
+    Bitmap srcBitmapLocal = BitmapFactory.decodeResource(
+            getApplicationContext().getResources(),
+            R.drawable.ic_launcher);
+    targetImage.setImageBitmap(srcBitmapLocal);
+}
+</code></pre>
+
+<h2 class="text-warning" id="bitmapdrawable">Класс BitmapDrawable</h2>
+
+<p>Аналогично, можно сконвертировать <b>Bitmap</b> в <b>Drawable</b> с помощью <b>BitmapDrawable</b>.</p>
+
+<pre><code class="java">
+Drawable drawable = new BitmapDrawable(getResources(), tempBitmap);
+</code></pre>
+
+<p>Допустим, мы загружаем картинку (Bitmap) из Галереи и выводим его в <b>ImageView</b></p>
+
+<p>Возьмём <a href="http://android-er.blogspot.ru/2013/09/convert-bitmap-to-drawable-with.html">готовый пример</a>. Подготовим разметку.</p>
+
+<pre><code class="xml">
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    android:paddingBottom=&quot;@dimen/activity_vertical_margin&quot;
+    android:paddingLeft=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingRight=&quot;@dimen/activity_horizontal_margin&quot;
+    android:paddingTop=&quot;@dimen/activity_vertical_margin&quot;
+    tools:context=&quot;.MainActivity&quot; &gt;
+
+     &lt;Button
+        android:id=&quot;@+id/loadimage&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Load Image 1&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/sourceuri&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot; /&gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/result&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:adjustViewBounds=&quot;true&quot;
+        android:background=&quot;@android:color/background_dark&quot;
+        android:scaleType=&quot;centerInside&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>И код.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import java.io.FileNotFoundException;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+	Button btnLoadImage;
+	TextView textSource;
+	ImageView imageResult;
+
+	final int RQS_IMAGE1 = 1;
+
+	Uri source;
+	Bitmap bitmapMaster;
+	Canvas canvasMaster;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		btnLoadImage = (Button) findViewById(R.id.loadimage);
+		textSource = (TextView) findViewById(R.id.sourceuri);
+		imageResult = (ImageView) findViewById(R.id.result);
+
+		btnLoadImage.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(
+						Intent.ACTION_PICK,
+						android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+				startActivityForResult(intent, RQS_IMAGE1);
+			}
+		});
+
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+
+		Bitmap tempBitmap;
+
+		if (resultCode == RESULT_OK) {
+			switch (requestCode) {
+			case RQS_IMAGE1:
+				source = data.getData();
+
+				try {
+					tempBitmap = BitmapFactory
+							.decodeStream(getContentResolver().openInputStream(
+									source));
+
+					// Convert bitmap to drawable
+					Drawable drawable = new BitmapDrawable(getResources(),
+							tempBitmap);
+
+					imageResult.setImageDrawable(drawable);
+
+					textSource.setText(drawable.getClass().toString());
+
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				break;
+			}
+		}
+	}
+}
+</code></pre>
+
+<h2 class="text-warning" id="colordrawable">Класс ColorDrawable</h2>
+
+<p>Класс <b>ColorDrawable</b> позволят указывать свойство изображения, основанное на единственном сплошном цвете. В качестве альтернативы можно использовать тег <b>&lt;color&gt;</b> в каталоге <b>res/drawable</b>:</p>
+
+<pre><code class="java">
+&lt;color xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:color=&quot;#FF0000&quot; /&gt;
+</code></pre>
+
+<h2 class="text-warning" id="gradientdrawable">Класс GradientDrawable</h2>
+
+<p><p>Класс <b>GradientDrawable</b> позволяет закрашивать градиентом кнопки, фон и так далее. Каждый градиент описывает плавный переход между двумя или тремя цветами с помощью линейного или радиального алгоритма, а также с помощью метода развёртки. В ресурсах <b>GradientDrawable</b> описывается в виде тега <a href="../theory/shape.html#gradient">&lt;gradient&gt;</a>, находясь внутри определения ресурса ShapeDrawable (<b>&lt;shape&gt;</b>).</p>
+
+<p><a href="gradient.html#gradientdrawable">Пример</a></p>
+
+<h2 class="text-warning" id="transitiondrawable">Класс TransitionDrawable</h2>
+
+<p>Одна из возможностей использования объектов Drawable — загрузка картинок с плавными переходами. Создание переходов между изображениями с 
+помощью класса TransitionDrawable лучше рассмотреть на примере. Добавим на форму элемент ImageView, в которую будут загружаться картинки:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:orientation=&quot;vertical&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:gravity=&quot;center&quot;&gt;
+    
+	&lt;ImageView 
+		android:id=&quot;@+id/image&quot; 
+		android:layout_width=&quot;wrap_content&quot; 
+		android:layout_height=&quot;wrap_content&quot; 
+		android:src=&quot;@drawable/photo1&quot;/&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+ 
+<p>В каталоге res/drawable/ проекта поместим два графических файла photol.jpg и photo2.jpg. В том же каталоге res/drawable/ создадим файл transition.xml, в  
+котором определим переход.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;transition xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+  &lt;item android:drawable=&quot;@drawable/photo1&quot;&gt;&lt;/item&gt;
+  &lt;item android:drawable=&quot;@drawable/photo2&quot;&gt;&lt;/item&gt;
+&lt;/transition&gt;
+</code></pre>
+
+<p>В классе активности создадим объект TransitionDrawable и установим его как содержание ImageView:</p>
+
+<pre> 
+Resources res = this.getResources();	
+mTransition = (TransitionDrawable)res.getDrawable(R.drawable.transition);
+</pre>
+
+<p>Также создадим обработчик onCiick(), при вызове которого будет происходить смена картинок с плавным переходом в течение 1 секунды:</p>
+
+<pre>
+mTransition.startTransition(1000);
+</pre>
+
+<p>Полный код примера:</p> 
+
+<pre><code class="java">
+public class TransitionActivity extends Activity 
+        implements OnClickListener {
+	
+    private ImageView image; 
+	private TransitionDrawable mTransition;
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+		image = (ImageView)findViewById(R.id.image);
+		image.setOnClickListener(this);
+		
+		Resources res = this.getResources();	
+	    mTransition = (TransitionDrawable)res.getDrawable(R.drawable.transition);
+    }
+    
+	@Override
+	public void onClick(View v) {
+		image.setImageDrawable(mTransition);	
+		mTransition.startTransition(1000);
+	}
+}
+</code></pre>
+
+<p>Запустите проект. При касании экрана будет происходить плавное переключение от первого изображения к второму.</p>
+
+<p>У примера есть один недостаток - при повторном касании произойдет резкая смена на первую картинку, которая снова будет плавно переключаться на вторую. Для обратной анимации от второй картинки к первой нужно задействовать метод <b>reverseTransition()</b>:</p>
+
+<pre><code class="java">
+int count = 2;
+
+@Override
+public void onClick(View v) {
+	image.setImageDrawable(mTransition);	
+			
+	if(count%2 == 0){
+		mTransition.startTransition(1000);
+		count++;
+		}
+		else{
+		mTransition.reverseTransition(1000);
+		count++;
+		}
+}
+</code></pre>
+
+<h2 class="text-warning" id="shapedrawable">Класс ShapeDrawable</h2>
+
+<p>Класс <b>ShapeDrawable</b>, входящий в пакет <b>android.graphics.drawable</b>, позволяет определять различные свойства рисунка с помощью различных методов, например <b>setAlpha()</b> — для установки прозрачности, <b>setColorFilter()</b> и т.д.</p>
+
+<p>С объектами <b>ShapeDrawable</b> вы можете программно создавать любые примитивные формы и их стили. Для работы через XML используется тег <a href="../theory/shape.html#shape">&lt;shape&gt;</a>. В библиотеке Android есть несколько классов, производных от базового класса <b>Shape</b>:</p>
+<ul>
+<li>PathShape;</li>
+<li>RectShape;</li>
+<li>ArcShape;</li>
+<li>OvalShape;</li>
+<li>RoundRectShape</li>
+</ul>
+
+<h3 class="text-warning" id="rectshape">Класс RectShape</h3>
+
+<p>Для рисования прямоугольника используется класс <b>RectShape</b>. Также необходимо установить цвет и границы фигуры. Если вы не установите границы, то прямоугольник не будет рисоваться. Если вы не установите цвет, фигура будет черной (значение по умолчанию).</p>
+
+<p>Если задать высоту или ширину в 1-2 пиксела, то можно получить не прямоугольник, а вертикальную или горизонтальную линию:</p>
+
+<pre><code class="java"> 
+ShapeDrawable line = new ShapeDrawable(new RectShape()); 
+line.setIntrinsicHeight(2); 
+line.setIntrinsicWidth(150); 
+line.getPaint().setColor(Color.MAGENTA); 
+</code></pre>
+
+<h3 class="text-warning" id="ovalshape">Класс OvalShape</h3>
+
+<p>Для рисования эллипсов используется класс <b>OvalShape</b>:</p>
+
+<pre><code class="java"> 
+ShapeDrawable oval = new ShapeDrawable(new OvalShape()); 
+oval.setIntrinsicHeight(100); 
+oval.setIntrinsicWidth(150); 
+oval.getPaint().setColor(Color.RED);
+</code></pre>
+
+<h3 class="text-warning" id="roundrect">Класс RoundRect</h3>
+
+<p>Прорисовка прямоугольника с закругленными сторонами (RoundRect) несколько сложнее. Конструктор класса <b>RoundRect</b> для рисования  
+прямоугольника с закругленными сторонами принимает несколько параметров:</p>
+
+<pre>
+RoundRectShape(float[] outerRadii, RectF inset, float[] innerRadii) 
+</pre>
+
+<ul>
+<li>outerRadii — массив из восьми значений радиуса закругленных сторон внешнего прямоугольника. Первые два значения для верхнего левого угла, 
+остальные пары отсчитываются по часовой стрелке от первой пары. Если на внешнем прямоугольнике закруглений не будет, передается null;</li>
+<li>inset — объект класса RectF, который определяет расстояние от внутреннего прямоугольника до каждой стороны внешнего прямоугольника. Конструктор RectF принимает четыре параметра: пары X и Y координат левого верхнего и правого нижнего углов внутреннего прямоугольника. Если внутреннего прямоугольника нет, передается null;</li>
+<li>innerRadii — массив из восьми значений радиуса закруглений углов для внутреннего прямоугольника. Первые два значения — координаты верхнего левого угла, остальные пары отсчитываются по часовой стрелке от первой пары. Если на внутреннем прямоугольнике закруглений не будет, передается null.</li>
+</ul>
+
+<pre><code class="java">
+float[] outR = new float[] {6, 6, 6, 6, 6, 6, 6, 6 };
+RectF rectF = newRectF(8, 8, 8, 8); 
+float[] inR new float[] { 6, 6, 6, 6, 6, 6, 6, 6 };
+
+ShapeDrawable shape = new ShapeDrawable( 
+    new RoundRectShape(outR, rectF, inR)); 
+shape.setIntrinsicHeight(120); 
+shape.setIntrinsicWidth(150); 
+shape.getPaint().setColor(Color.BLUE); 
+</code></pre>
+
+<h3 class="text-warning" id="path">Класс Path</h3>
+
+<p>Класс <b>Path</b> формирует множественный контур геометрических путей, состоящих из прямых линейных сегментов, квадратичных и кубических  
+кривых. Для установки точек и перемещения линий (или кривых) используются методы moveTo() и lineTo(). Например, с помощью класса Path 
+можно нарисовать пятиконечную звезду:</p>
+
+<pre><code class="java">
+Path p = new Path(); 
+p.moveTo(50, 0); 
+p.lineTo(25, 100); 
+p.lineTo(100,50); 
+p.lineTo(0,50); 
+p.lineTo(75,100); 
+p.lineTo(50,0); 
+
+ShapeDrawable d = new ShapeDrawable(new PathShape(p, 100, 100)); 
+d.setIntrinsicHeight(100); 
+d.setIntrinsicWidth(100); 
+d.getPaint().setColor(Color.YELLOW); 
+d.getPaint().setStyle(Paint.Style.STROKE); 
+</code></pre>
+
+<h3 class="text-warning" id="arcshape">Класс ArcShape</h3>
+
+<p>Класс <b>ArcShape</b> создает фигуру в форме дуги. Принимает два параметра:угол начала прорисовки дуги в градусах и угловой размер дуги в градусах</p>
+
+<pre>
+ArcShape(float startAngle, float sweepAngle)
+</pre>
+
+<h2 class="text-warning" id="scaledrawable">ScaleDrawable</h2>
+
+<p>Класс <b>ScaleDrawable</b> используется для масштабирования.</p>
+
+<h2 class="text-warning" id="rotatedrawable">RotateDrawable</h2>
+
+<p>Класс <b>RotateDrawable</b> используется для поворотов.</p>
+
+<h2 class="text-warning" id="layerdrawable">LayerDrawable</h2>
+
+<p><b>LayerDrawable</b> позволяет накладывать объекты <b>Drawable</b> друг на друга. Создав массив из полупрозрачных картинок, вы можете наложить их один поверх другого. Подготовьте три полупрозрачных изображения круга (red.png, blue.png, green.png) и поместите их в ресурсы <b>res/drawable</b>. Создадим фон для макета при помощи наложения этих элементов.</p>
+
+<pre><code class="java">
+// В onCreate()
+LinearLayout linear = (LinearLayout)findViewById(R.id.linear);
+linear.setBackground(createLayerDrawable());
+
+private LayerDrawable createLayerDrawable() {
+	BitmapDrawable drawable0 = (BitmapDrawable) getResources().getDrawable(
+			R.drawable.blue);
+	drawable0.setGravity(Gravity.CENTER_VERTICAL);
+	BitmapDrawable drawable1 = (BitmapDrawable) getResources().getDrawable(
+			R.drawable.red);
+	drawable1.setGravity(Gravity.LEFT);
+	BitmapDrawable drawable2 = (BitmapDrawable) getResources().getDrawable(
+			R.drawable.green);
+	drawable2.setGravity(Gravity.RIGHT);
+	Drawable drawableArray[] = new Drawable[] { drawable0, drawable1, drawable2 };
+	LayerDrawable layerDraw = new LayerDrawable(drawableArray);
+	layerDraw.setLayerInset(1, -20, 300, 0, 0); // смещаем второй слой
+	layerDraw.setLayerInset(2, 100, 300, 0, 0); // смещаем третий слой
+	return layerDraw;
+}
+</code></pre>
+
+<p><img src="layerdrawable.png" alt="LayerDrawable"></p>
+
+<p>Также можно создать объекты <b>LayerDrawable</b> через XML с помощью тега <a href="../theory/shape.html#layer-list">layer-list</a>.</p>
+
+<h2 class="text-warning" id="statelistdrawable">StateListDrawable</h2>
+
+<p>У некоторых элементов управления есть некоторые состояния: нажато, выбрано и т.д.. В Android есть возможность задавать изображения для любого из таких состояний при помощи класса <b>StateListDrawable</b>. Но удобнее это делать через <a href="../theory/shape.html#state-list">XML-ресурсы</a>.</p>
+
+<h2 class="text-warning" id="levellistdrawable">LevelListDrawable</h2>
+
+<p>Используя <b>LevelListDrawable</b>, вы можете эффективно размещать ресурсы <b>Drawable</b> один поверх другого, указывая целочисленный индекс для каждого слоя. <a href="../theory/shape.html#levellistdrawable">Пример с использованием XML</a>.</p>
+
+<h2 class="text-warning">Дополнительное чтение</h2>
+
+<p><a href="starbitmapdrawable.html">Звёзды из котов - создаём собственный Drawable</a></p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/catshop/android.graphics.drawable.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:56:07 GMT -->
+</html>

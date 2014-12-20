@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/simpleadapter.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:19:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: SimpleAdapter</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->    
+<div class="clearfix"></div>
+    
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+    <div class="row-fluid">
+        <!--левое меню -->
+        <div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+        <div class="row-fluid">
+            <div class="span12">
+                
+                        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">SimpleAdapter</h1>
+
+<p>
+<a href="#systemlayout">Используем системную разметку</a><br>
+<a href="#customlayout">Используем собственную разметку</a><br>
+<a href="#listadapter">ListAdapter</a><br>
+<a href="#customlayout2">Сложная разметка</a><br>
+<a href="#listfragment">SimpleAdapter для фрагмента ListFragment</a><br>
+</p>
+
+<p>Конструктор класса <b>SimpleAdapter</b> имеет следующий вид:</p>
+
+<pre><code class="java">
+SimpleAdapter(Context context, List&lt;? extends Map&lt;String, ?&gt;&gt; data, int resource, String[] from, int[] to)
+</code></pre>
+
+<p>Для данных в параметре <b>data</b> используется коллекция Map-объектов или его наследников, например, <b>HashMap</b>. Каждый <b>Map</b> содержит данные для отдельного элемента списка. Чтобы адаптер понимал, какие данные нужно вставлять в View-компоненты каждого пункта списка, мы указываем два массива <b>from</b> и <b>to</b>. В массиве <b>from</b> используем ключи из <b>Map</b>, а в массиве <b>to</b> – идентификаторы компонентов. Адаптер последовательно перебирает все компоненты из массива <b>to</b> и сопоставляет им соответствующие значения из <b>from</b>. Следите, чтобы в массиве <b>to</b> было не больше элементов, чем в <b>from</b>, иначе программа вызовет ошибку.</p>
+
+<h2 class="text-warning" id="systemlayout">Используем системную разметку</h2>
+
+<p>При работе с адаптером <a href="arrayadapter.html">ArrayAdapter</a> для <b>ListView</b> мы использовали готовую разметку <b>android.R.layout.simple_list_item_1</b>, которая состоит из одного <b>TextView</b>. Существует ещё другая системная разметка <b>android.R.layout.simple_list_item_2</b>, состоящая из двух текстовых меток с идентификаторами <b>android.R.id.text1</b> и <b>android.R.id.text2</b>. В первой метке выводится текст большим шрифтом, а во втором - маленьким.</p>
+
+<p>При желании можно было наследоваться от <b>ArrayAdapter</b> и реализовать работу с такой разметкой. Но <b>SimpleAdapter</b> уже оптимизирован для работы с таким случаем, поэтому мы можем сразу использовать его.</p>
+<p>Напишем пример, где у каждого кота будет  его имя и телефон.</p>
+
+<pre><code class="java">
+ListView lvCats = (ListView)findViewById(R.id.listView1);
+
+ArrayList&lt;HashMap&lt;String, String&gt;&gt; myArrList = new ArrayList&lt;HashMap&lt;String, String&gt;&gt;();
+HashMap&lt;String, String&gt; map;
+
+// Досье на первого кота
+map = new HashMap&lt;String, String&gt;();
+map.put("Name", "Мурзик");
+map.put("Tel", "495 501-3545");
+myArrList.add(map);
+
+// Досье на второго кота
+map = new HashMap&lt;String, String&gt;();
+map.put("Name", "Барсик");
+map.put("Tel", "495 241-6845");
+myArrList.add(map);
+
+// Досье на третьего кота
+map = new HashMap&lt;String, String&gt;();
+map.put("Name", "Васька");
+map.put("Tel", "495 431-5468");
+myArrList.add(map);
+
+SimpleAdapter adapter = new SimpleAdapter(this, myArrList, android.R.layout.simple_list_item_2, 
+        new String[] {"Name", "Tel"}, 
+        new int[] {android.R.id.text1, android.R.id.text2});
+lvCats.setAdapter(adapter);
+</code></pre>
+
+<p>Результат ниже:</p>
+
+<p><img src="simpleadapter2.png" alt="SimpleAdapter" width="240" height="400"></p>
+
+<p>Мы создали два ключа <b>Name</b> и <b>Tel</b> и программно заполняем их именами котов и их телефонами. Все телефоны вымышлены, не надо звонить по ним! Коты не дают свои номера кому попало.</p>
+
+<h2 class="text-warning" id="customlayout">Используем собственную разметку</h2>
+
+<p>Допустим, мы хотим вывести список котов в три колонки: номер, имя кота и его телефон (Ух, ты).</p>
+
+<p>Создадим отдельную разметку для каждого элемента списка в файле <b>res/layout/row.xml</b>:</p>
+
+<pre><code class="xml">
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/linearLayout1&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot; &gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/ColMemberID&quot;
+        android:layout_width=&quot;0dp&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_weight=&quot;1&quot;
+        android:text=&quot;MemberID&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/ColName&quot;
+        android:layout_width=&quot;0dp&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_weight=&quot;2&quot;
+        android:text=&quot;Name&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/ColTel&quot;
+        android:layout_width=&quot;0dp&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_weight=&quot;2&quot;
+        android:text=&quot;Tel&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Код для связывания адаптера со списком:</p>
+
+<pre><code class="java">
+		ListView lvCats = (ListView) findViewById(R.id.listView1);
+
+		ArrayList&lt;HashMap&lt;String, String&gt;&gt; myArrList = new ArrayList&lt;HashMap&lt;String, String&gt;&gt;();
+		HashMap&lt;String, String&gt; map;
+
+		// Досье на первого кота
+		map = new HashMap&lt;String, String&gt;();
+		map.put("MemberID", "1");
+		map.put("Name", "Мурзик");
+		map.put("Tel", "495 501-3545");
+		myArrList.add(map);
+
+		// Досье на второго кота
+		map = new HashMap&lt;String, String&gt;();
+		map.put("MemberID", "2");
+		map.put("Name", "Барсик");
+		map.put("Tel", "495 241-6845");
+		myArrList.add(map);
+
+		// Досье на третьего кота
+		map = new HashMap&lt;String, String&gt;();
+		map.put("MemberID", "3");
+		map.put("Name", "Васька");
+		map.put("Tel", "495 431-5468");
+		myArrList.add(map);
+
+		SimpleAdapter adapter = new SimpleAdapter(this, myArrList,
+	            R.layout.row, new String[] { "MemberID", "Name",
+	                    "Tel" }, new int[] { R.id.ColMemberID, R.id.ColName,
+	                    R.id.ColTel });
+		lvCats.setAdapter(adapter);
+</code></pre>
+
+<p>Результат будет следующим:</p>
+
+<p><img src="simpleadapter1.png" alt="SimpleAdapter" width="240" height="400"></p>
+
+<p>Изменения минимальны. Мы для каждого кота добавили порядковый номер <b>MemberID</b>, а в адаптере указали не системную, а собственную разметку <b>R.layout.row</b>. А также используем массив из трёх элементов.</p>
+
+<h2 class="text-warning" id="listadapter">ListAdapter</h2>
+
+<p>В приведённых примерах вы можете безбоязненно заменить <b>SimpleAdapter</b> на <b>ListAdapter</b>:</p>
+
+<pre><code class="java">
+ListAdapter adapter = new SimpleAdapter(this, ... и так далее
+</code></pre>
+
+<p>Это на тот случай, чтобы вы не пугались, если встретите такой код.</p>
+
+<h2 class="text-warning" id="customlayout2">Сложная разметка</h2>
+
+<p>Разметка может быть любой и включать в себя не только текстовые метки, но и другие компоненты, такие как <b>ImageView</b> и <b>CheckBox</b>. Принцип остаётся такой же. Создаём новую разметку и связываем данные с каждым компонентом.</p>
+
+<p>Создадим новую разметку (или отредактируем файл <b>row.xml</b> из предыдущего примера)</p>
+
+<pre><code class="xml">
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/linearLayout1&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;horizontal&quot; &gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/imageCat&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:src=&quot;@drawable/ic_android_cat&quot; &gt;
+    &lt;/ImageView&gt;
+
+    &lt;CheckBox
+        android:id=&quot;@+id/checkFeed&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Накормлен?&quot; &gt;
+    &lt;/CheckBox&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/tvCatName&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginLeft=&quot;15dp&quot;
+        android:text=&quot;TextView&quot; &gt;
+
+    &lt;/TextView&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Напишем код:</p>
+
+<pre class="code java">
+ListView lvCats = (ListView) findViewById(R.id.listView1);
+
+// Создадим массивы имён котов
+String[] catnames = { "Васька", "Барсик", "Мурзик", "Рыжик", "Кузя" };
+// Состояние флажка - Накормлен ли кот
+boolean[] checked = { true, false, false, false, false };
+// Значок
+int imgCat = R.drawable.ic_android_cat;
+
+// Упаковываем данные
+ArrayList&lt;HashMap&lt;String, Object&gt;&gt; data = new ArrayList&lt;HashMap&lt;String, Object&gt;&gt;(
+		catnames.length);
+HashMap&lt;String, Object&gt; map;
+for (int i = 0; i &lt; catnames.length; i++) {
+	map = new HashMap&lt;String, Object&gt;();
+	map.put("CatName", catnames[i]);
+	map.put("IsHungry", checked[i]);
+	map.put("Icon", imgCat);
+	data.add(map);
+}
+
+// Массив имен атрибутов, из которых будут читаться данные
+String[] from = { "CatName", "IsHungry", "Icon" };
+
+// Массив идентификаторов компонентов, в которые будем вставлять данные
+int[] to = { R.id.tvCatName, R.id.checkFeed, R.id.imageCat };
+
+// создаем адаптер
+SimpleAdapter adapter = new SimpleAdapter(this, data, R.layout.row,
+		from, to);
+
+// Устанавливаем адаптер для списка
+lvCats.setAdapter(adapter);
+</pre>
+
+<p>Смотрим, какие тут отличия. Теперь мы используем не только строки для имён котов, но и булево значение для флажка и целое число для значка. Поэтому, выражение <b>HashMap&lt;String, String&gt;</b> заменим на более универсальный <b>HashMap&lt;String, Object&gt;</b>
+
+<p>Смотрим на результат. Я знаю только одного кота, который слушает да ест. Поэтому пометим его как накормленного по умолчанию.</p>
+
+<p><img src="simpleadapter3.png" alt="Своя разметка"></p>
+
+<p>Мы создали два массива, которые будут использованы для сопоставления данных и компонентов. Массив <b>from</b> содержит имена Map-ключей, а массив <b>to</b> – идентификаторы компонентов. Таким образом, в первый <b>TextView</b> с идентификатором <b>R.id.tvCatName</b> будет вставлено первое значение ключа <b>CatName</b> и так далее. Аналогично происходит и с другими компонентами <b>CheckBox</b> и <b>ImageView</b>.</p>
+
+<p>Адаптер перебирает все компоненты из массива <b>to</b> для каждого элемента списка и сопоставляет им значения из массива <b>from</b>. Получается такая таблица:</p>
+
+<p>
+R.id.R.id.tvCatName – Map.get("CatName")<br>
+R.id.checkFeed - Map.get("IsHungry")<br>
+R.id.imageCat - Map.get("Icon")
+</p>
+
+<p>Тут возникает интересный вопрос, а как адаптер понимает, какой именно метод нужно вызвать для компонента, чтобы передать ему значение. К примеру, для компонента <b>CheckBox</b> нам нужно установить установить флажок или снять его, а не выводить текст, как для <b>TextView</b>.</p>
+
+<p>Тут о нас уже позаботились. Адаптер смотрит, с чем имеет дело и в зависимости от типа компонента принимает решение. Вариантов немного, всего три.
+
+<p>Первый вариант - если компонент является <b>TextView</b> или его наследником, то вставляется текст. Иными словами, вызывается метод <b>SimpleAdapter.setViewText()</b>, который вызывает <b>TextView.setText()</b> и передает туда нужное значение из <b>Map</b>.</p>
+
+<p>Второй вариант - если компонент, наследует интерфейс <b>Checkable</b>, то адаптер проверяет, является ли соответствующее значение из <b>Map</b> типа <b>boolean</b>. Если это действительно так, то вызывается метод <b>Checkable.setChecked</b>. Если значение не является типом <b>boolean</b>, то проверяется, является ли компонент наследником <b>TextView</b>. Если ответ положительный, то тогда вставляется текстовое значение из <b>Map</b>. В других случаях мы получим ошибку. К компонентам с интерфейсом <b>Checkable</b> относятся <b>CheckBox, CheckedTextView, CompoundButton, RadioButton, Switch, ToggleButton</b>. Вы можете сами в этом убедиться. Заменим блок <b>CheckBox</b> на <b>TextView</b> в разметке <b>row.xml</b>:</p>
+
+<pre><code class="xml">
+&lt;TextView
+    android:id=&quot;@+id/checkFeed&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Накормлен?&quot; &gt;
+&lt;/TextView&gt;
+</code></pre>
+
+<p>Запустим проект и увидим следующее:</p>
+
+<p><img src="simpleadapter4.png" alt="SimpleAdapter"></p>
+
+<p>К счастью, приложение не завершается с ошибкой, а просто выводит значения булевой переменной.</p>
+
+<p>Третий вариант - если компонент является <b>ImageView</b> или его наследником, то проверяется тип данных. Если тип можно привести к типу <b>Integer</b>, то вызывается метод <b>SimpleAdapter.setViewImage(ImageView v, int value)</b>, который вызывает метод <b>ImageView.setImageResource()</b>, т.е. подставляется идентификатор ресурса из папки <b>drawable</b>. Если тип другой, то вызывается метод <b>SimpleAdapter.setViewImage (ImageView v, String value)</b>, который пытается привести значение к <b>int</b> и вызвать метод <b>ImageView.setImageResource()</b>. Если такой вариант не проходит, то преобразует строку в объект <b>Uri</b> и вызывает метод <b>ImageView.setImageURI(Uri)</b>.</p>
+
+<p>Если компонент не подходит ни под один из трёх вышеперечисленных типов, то мы получим ошибку.</p>
+
+<p>Продолжим опыты. Допустим, мы хотим не только установить флажок у <b>CheckBox</b>, но и новый текст. Так как мы уже знаем, что наследники <b>TextView</b> могут выводить текст, то поступим следующим образом. В наши массивы <b>from</b> и <b>to</b> добавим новые элементы:</p>
+
+<pre><code class="java">
+String[] from = { "CatName", "IsHungry", "Icon", <b>"CatName"</b> };
+int[] to = { R.id.tvCatName, R.id.checkFeed, R.id.imageCat, <b>R.id.checkFeed</b> };
+</code></pre>
+
+<p>Во втором массиве дважды встречается идентификатор ресурса <b>R.id.checkFeed</b>. В первом случае он использует ключ <b>IsHungry</b>, связанный с булевой переменной, а во втором случае используется ключ <b>CatName</b>, который мы приготовили для текстовой метки. В результате получим:</p>
+
+<p><img src="simpleadapter5.png" alt="SimpleAdapter"></p>
+
+<h2 class="text-warning" id="listfragment">SimpleAdapter для фрагмента ListFragment</h2>
+
+<p>Никакой разницы в использовании рассматриваемого адаптера в фрагменте типа <b>ListFragment</b> нет. Здесь также можно применить системную разметку <b>android.R.layout.simple_list_item_2</b>, о которой говорилось в начале статьи. Вот код класса фрагмента.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.test;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import android.app.ListFragment;
+import android.os.Bundle;
+import android.widget.ListAdapter;
+import android.widget.SimpleAdapter;
+
+public class SimpleAdapterListFragment extends ListFragment {
+	private static final List&lt;Map&lt;String, String&gt;&gt; items = new ArrayList&lt;Map&lt;String, String&gt;&gt;();
+	private static final String[] keys = { "line1", "line2" };
+	private static final int[] controlIds = { android.R.id.text1,
+			android.R.id.text2 };
+
+	static {
+		Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
+		map.put("line1", "Мурзик");
+		map.put("line2", "Агент 003");
+		items.add(map);
+		map = new HashMap&lt;String, String&gt;();
+		map.put("line1", "Барсик");
+		map.put("line2", "Агент 004");
+		items.add(map);
+		map = new HashMap&lt;String, String&gt;();
+		map.put("line1", "Васька");
+		map.put("line2", "Агент 005");
+		items.add(map);
+		map = new HashMap&lt;String, String&gt;();
+		map.put("line1", "Рыжик");
+		map.put("line2", "Агент 006");
+		items.add(map);
+		map = new HashMap&lt;String, String&gt;();
+		map.put("line1", "Кузя");
+		map.put("line2", "Агент 007");
+		items.add(map);
+	}
+
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		ListAdapter adapter = new SimpleAdapter(getActivity(), items,
+				android.R.layout.simple_list_item_2, keys, controlIds);
+		setListAdapter(adapter);
+	}
+}
+</code></pre>
+
+<p>Добавим фрагмент в разметку активности:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:id=&quot;@+id/linearlayout1&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;fragment
+        android:id=&quot;@+id/titles&quot;
+        android:name=&quot;ru.alexanderklimov.test.SimpleAdapterListFragment&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        tools:layout=&quot;@android:layout/simple_list_item_2&quot; &gt;
+    &lt;/fragment&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Смотрим на результат:</p>
+
+<p><img src="simpleadapter6.png" alt="SimpleAdapter"></p>
+
+<p>Также вы можете использовать схожую системную разметку <b>android.R.layout.simple_list_item_activated_2</b>, позволяющуую подсвечивать выбранный элемент списка. Не забудьте установить у списка фрагмента нужный вид через <b>getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);</b></p>
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->    
+          
+        </div><!--/span-->
+        
+        <div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+        
+      </div><!--/row-->
+      
+    
+      <hr>
+      
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/simpleadapter.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:19:49 GMT -->
+</html>

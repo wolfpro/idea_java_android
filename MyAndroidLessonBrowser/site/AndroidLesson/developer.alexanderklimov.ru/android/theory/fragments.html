@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/fragments.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Фрагменты</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Фрагменты</h1>
+
+<p><img src="fragment_cat.jpg" alt="Кот из фрагментов"></p>
+
+<p>Существует два основных подхода в использовании фрагментов.</p>
+
+<p>Первый способ основан на замещении родительского контейнера. Создаётся стандартная разметка и в том месте, где будут использоваться фрагменты, размещается контейнер, например, <b>LinearLayout</b>. В коде контейнер замещается фрагментом. При использовании подобного сценария в разметке не используется тег <b>fragment</b>, так как его нельзя менять динамически. Также вам придётся обновлять ActionBar, если он зависит от фрагмента. Здесь показан <a href="fragment-add.html">такой пример</a>.</p>
+
+<p>Второй вариант - используются отдельные разметки для телефонов и планшетов, которые можно разместить в разных папках ресурсов. Например, если в планшете используется двухпанельная разметка с двумя фрагментами на одной активности, мы используем эту же активность для телефона, но подключаем другую разметку, которая содержит один фрагмент. Когда нам нужно переключиться на второй фрагмент, то запускаем вторую активность.</li>
+</u>
+
+<p>Второй подход является наиболее гибким и в целом предпочтительным способом использования фрагментов. Активность проверяет в каком режиме (свои размеры) он запущен и использует разную разметку из ресурсов. Графически это выглядит следующим образом.</p>
+
+<p><img src="../../../www.vogella.com/tutorials/AndroidFragments/images/fragmentsusage20.png" alt="Fragment"></p>
+
+<p><img src="../../../www.vogella.com/tutorials/AndroidFragments/images/fragmentsusage10.png" alt="Fragment"></p>
+
+<h2 class="text-warning">Основные классы</h2>
+
+<p>Сами фрагменты наследуются от <b>android.app.Fragment</b>. Существует подклассы фрагментов: <b>ListFragment</b>, <b>DialogFragment</b>, <b>PreferenceFragment</b>, <b>WebViewFragment</b> и др. Не исключено, что число классов будет увеличиваться, например, появился ещё один класс <b>MapFragment</b>.</p>
+
+<p>Для взаимодействия между фрагментами используется класс <b>android.app.FragmentManager</b>.</p>
+
+<p>Для транзакций (добавление, удаление, замена) используется класс <b>android.app.FragmentTransaction</b>.</p>
+
+<p>Для сравнения приведу названия классов из библиотеки совместимости:</p>
+
+<ul>
+<li>android.support.v4.app.FragmentActivity</li>
+<li>android.support.v4.app.Fragment</li>
+<li>android.support.v4.app.FragmentManager</li>
+<li>android.support.v4.app.FragmentTransaction</li>
+</ul>
+
+<p>Как видите, разница в одном классе, который я привёл первым. Он используется вместо стандартного <b>Activity</b>, чтобы система поняла, что придётся работать с фрагментами.</p>
+
+<p>В одном приложении нельзя использовать новые фрагменты и фрагменты из библиотеки совместимости.</p>
+
+<p>Общий алгоритм работы с фрагментами будет следующим:</p>
+
+<p>У каждого фрагмента должен быть свой класс. Класс наследуется от класса <b>Fragment</b> или схожих классов, о которых говорилось выше. Это похоже на создание новой активности или нового компонента.</p>
+
+<p>Также, как в активности, вы создаёте различные методы типа <b>onCreate()</b> и т.д. Если фрагмент имеет разметку, то используется метод <b>onCreateView()</b> - считайте его аналогом метода <b>setContentView()</b>, в котором вы подключали разметку активности. При этом метод <b>onCreateView()</b> возвращает объект <b>View</b>, который является корневым элементом разметки фрагмента.</p>
+
+<p>Разметку для фрагмента можно создать программно или декларативно через XML.</p>
+
+<p>Создание разметки для фрагмента ничем не отличается от создания разметки для активности. Вот отрывок кода из метода <b>onCreateView()</b>:</p>
+
+<pre><code class="java">
+public class FirstFragment extends Fragment implements OnClickListener {
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.first_fragment,
+                container, false);
+
+        Button nextButton = (Button) view.findViewById(R.id.button_first);
+        nextButton.setOnClickListener(this);
+
+        return view;
+    }
+
+    // ...
+}
+</code></pre>
+
+<p>Глядя на этот код, вы должные понять, что фрагмент использует разметку из файла <b>res/layout/first_fragment.xml</b>, которая содержит кнопку с идентификатором <b>android:id="@+id/button_first"</b>. Здесь также прослеживается сходство с подключением компонентов в активности. Обратите внимание, что перед методом <b>findViewById()</b> используется <b>view</b>, так как этот метод относится к компоненту, а не к активности, как мы обычно делали в программах, когда просто опускали имя активности. Т.е. в нашем случае мы ищем ссылку на кнопку не среди разметки активности, а внутри разметки самого фрагмента.</p>
+
+<p>Нужно помнить, что в методе <b>inflate()</b> последний параметр должен иметь значение <b>false</b> в большинстве случаев.</p>
+
+<h2 class="text-warning">FragmentManager</h2>
+
+<p>Класс <b>FragmentManager</b> имеет два метода, позволяющих найти фрагмент, который связан с активностью:</p>
+
+<dl>
+<dt>findFragmentById(int id)</dt>
+<dd>Находит фрагмент по идентификатору</dd>
+<dt>findFragmentByTag(String tag)</dt>
+<dd>Находит фрагмент по заданному тегу</dd>
+</dl>
+
+<h2 class="text-warning">Методы транзакции</h2>
+
+<p>Мы уже использовали некоторые методы класса <b>FragmentTransaction</b>. Познакомимся с ними поближе</p>
+
+<dl>
+<dt>add()</dt>
+<dd>Добавляет фрагмент к активности</dd>
+
+<dt>remove()</dt>
+<dd>Удаляет фрагмент из активности</dd>
+
+<dt>replace()</dt>
+<dd>Заменяет один фрагмент на другой</dd>
+
+<dt>hide()</dt>
+<dd>Прячет фрагмент (делает невидимым на экране)</dd>
+
+<dt>show()</dt>
+<dd>Выводит скрытый фрагмент на экран</dd>
+
+<dt>detach() (API 13)</dt>
+<dd>Отсоединяет фрагмент от графического интерфейса, но экземпляр класса сохраняется</dd>
+
+<dt>attach() (API 13)</dt>
+<dd>Присоединяет фрагмент, который был отсоединён методом <b>detach()</b></dd>
+</dl>
+
+<p>Методы <b>remove()</b>, <b>replace()</b>, <b>detach()</b>, <b>attach()</b> не применимы к статичным фрагментам.</p>
+
+<p>Перед началом транзакции нужно получить экземпляр <b>FragmentTransaction</b> через метод <b>FragmentManager.beginTransaction()</b>. Далее вызываются различные методы для управления фрагментами.</p>
+
+<p>В конце любой транзакции, которая может состоять из цепочки вышеперечисленных методов, следует вызвать метод <b>commit()</b>.</p>
+
+<pre><code class="java">
+FragmentManager fragmentManager = getFragmentManager()
+fragmentManager.beginTransaction()
+    .remove(fragment1)
+    .add(R.id.fragment_container, fragment2)
+    .show(fragment3)
+    .hide(fragment4)
+    .commit();
+</code></pre>
+
+<h2 class="text-warning">Управление стеком фрагментов</h2>
+
+<p>Фрагменты, как и активности, могут управляться кнопкой <b>Back</b>. Вы можете добавить несколько фрагментов, а потом через кнопку <b>Back</b> вернуться к первому фрагменту. Если в стеке не останется ни одного фрагмента, то следующее нажатие кнопки закроет активность.</p>
+
+<p>Чтобы добавить транзакцию в стек, вызовите метод <b>FragmentTransaction.addToBackStack(String)</b> перед завершением транзакции (commit). Строковый аргумент - опциональное имя для идентификации стека или <b>null</b>. Класс <b>FragmentManager</b> имеет метод <b>popBackStack()</b>, возвращающий предыдущее состояние стека по этому имени.</p>
+
+<p>Если вы вызовете метод <b>addToBackStack()</b> при удалении или замещении фрагмента, то будут вызваны методы фрагмента <b>onPause(), onStop(), onDestroyView()</b>.</p>
+
+<p>Когда пользователь нажимает на кнопку возврата, то вызываются методы фрагмента <b>onCreateView()</b>, <b>onActivityCreated()</b>, <b>onStart()</b> и <b>onResume()</b>.</p>
+
+<p>Рассмотрим пример реагирования на кнопку <b>Back</b> в фрагменте без использования стека. Активность имеет метод <b>onBackPressed()</b>, который реагирует на нажатие кнопки. Мы можем в этом методе сослаться на нужный фрагмент и вызвать метод фрагмента.</p>
+
+<pre><code class="java">
+@Override
+public void onBackPressed() {
+    super.onBackPressed();
+    // где-то ранее мы объявили фрагмент
+    fragment1.backButtonWasPressed();
+}
+</code></pre>
+
+<p>Теперь в классе фрагмента прописываем метод с нужным кодом.</p>
+
+<pre><code class="java">
+public void backButtonWasPressed() {
+	// TODO Auto-generated method stub
+	Toast.makeText(getActivity(), "Back button pressed", Toast.LENGTH_LONG)
+			.show();
+}
+</code></pre>
+
+<p>Более желательным вариантом является использование интерфейсов. В некоторых примерах с фрагментами такой приём используется.</p>
+
+<h2 class="text-warning">Интеграция Action Bar/Options Menu</h2>
+
+<p>Фрагменты могут добавлять свои элементы в панель действий или меню активности. Сначала вы должны вызвать метод <b>Fragment.setHasOptionsMenu()</b> в методе фрагмента <b>onCreate()</b>. Затем нужно задать настройки для методов фрагмента <b>onCreateOptionsMenu()</b> и <b>onOptionsItemSelected()</b>, а также при необходимости для методов <b>onPrepareOptionsMenu()</b>, <b>onOptionsMenuClosed()</b>, <b>onDestroyOptionsMenu()</b>. Работа методов фрагмента ничем не отличается от аналогичных методов для активности.</p>
+
+<p>В активности, которая содержит фрагмент, данные методы автоматически сработают.</p>
+
+<p>Если активность содержит собственные элементы панели действий или меню, то следует позаботиться, чтобы они не мешали вызовам методам фрагментов.</p>
+
+<p>Код для активности:</p>
+
+<pre><code class="java">
+public class MyActivity extends Activity {
+    // ...
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.activity_options, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.menu_activity_info:
+            // Handle activity menu item
+            return true;
+        default:
+            // Handle fragment menu items
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    // ...
+}
+</code></pre>
+
+<p>Код для фрагмента:</p>
+
+<pre><code class="java">
+public class MyFragment extends Fragment {
+    // ...
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.myfragment_options, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.menu_first_info:
+            // Handle fragment menu item
+            return true;
+        default:
+            // Not one of ours. Perform default menu processing
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    // ...
+}
+</code></pre>
+
+<h2 class="text-warning">Связь между фрагментом и активностью</h2>
+
+<p>Экземпляр фрагмента связан с активностью. Активность может вызывать методы фрагмента через ссылку на объект фрагмента. Доступ к фрагменту можно получить через методы <b>findFragmentById()</b> или <b>findFragmentByTag()</b>.</p>
+
+<p>Фрагмент в свою очередь может получить доступ к своей активности через метод <b>Fragment.getActivity()</b>.</p>
+
+<pre><code class="java">
+View listView = getActivity().findViewById(R.id.list);
+</code></pre>
+
+<h2 class="text-warning" id="retainInstance">Сохранение фрагментов при поворотах</h2>
+
+<p>По умолчанию свойство <b>retainInstance</b> фрагмента содержит <i>false</i>. Это означает, что при поворотах фрагмент не сохраняется, а уничтожается и создается заново вместе с активностью-хостом. Вызов <b>setRetainInstance(true)</b> сохраняет фрагмент, 
+который не уничтожается вместе с активностью, а передается новой активности в неизменном виде.</p>
+
+<p>Представление фрагмента может уничтожаться и создаваться заново без необходимости уничтожать сам фрагмент. При изменении конфигурации (повороте) <b>FragmentManager</b> сначала уничтожает макет фрагмента в своем списке. Макеты фрагментов всегда уничтожаются 
+и создаются заново по тем же причинам, по которым уничтожаются и создаются заново разметки активности: в новой конфигурации могут потребоваться новые ресурсы. Затем <b>FragmentManager</b> проверяет свойство <b>retainInstance</b> каждого фрагмента. Если оно равно <i>false</i> (по умолчанию), <b>FragmentManager</b> уничтожает экземпляр фрагмента. Фрагмент и его макет будут созданы заново новым экземпляром <b>FragmentManager</b> новой активности.</p>
+
+<p>Если значение <b>retainInstance</b> равно <i>true</i>, макет фрагмента уничтожается, но сам фрагмент остаётся. При создании новой активности новый экземпляр <b>FragmentManager</b> находит сохранённый фрагмент и воссоздаёт его макет.</p>
+
+<p>Сохранённый фрагмент не уничтожается, а отсоединяется (detached) от «умирающей» активности. В сохранённом состоянии фрагмент всё ещё существует, но не имеет активности-хоста.</p>
+
+<p>Переход в сохранённое состояние происходит только при выполнении двух условий:</p>
+<ul>
+<li>для фрагмента был вызван метод <b>setRetainInstance(true)</b></li>
+<li>активность-хост уничтожается для изменения конфигурации (обычно поворот). Фрагмент находится в сохранённом состоянии очень недолго — от момента отсоединения от старой активности до повторного присоединения к новой, немедленно создаваемой активности.</li>
+</ul>
+
+<p>Сохранённые фрагменты продолжают существовать только при уничтожении активности при изменения конфигурации. Если активность уничтожается 
+из-за того, что системе потребовалось освободить память, то все сохранённые фрагменты также будут уничтожены.</p>
+
+<h2 class="text-warning">Дополнительное чтение</h2>
+
+<p><a href="../views/fragment.html">Fragment (базовый пример)</a></p>
+<p><a href="fragment-lifecycle.html">Жизненный цикл фрагментов</a></p>
+<p><a href="fragment-add.html">Программное добавление фрагментов</a></p>
+<p><a href="fragment-replace.html">Замещение фрагментов</a></p>
+<p><a href="fragment-view.html">Доступ к View внутри динамического фрагмента из активности</a></p>
+<p><a href="../animation/fragmentsanimation.html">Анимация фрагментов</a></p>
+<p><a href="fragment_contextmenu.html">Создание контекстного меню внутри фрагмента</a></p>
+<p><a href="../webview-advanced.html#webfragment" >Помещаем WebView в фрагмент</a></p>
+<p><a href="masterdetailflow.html">Шаблон MasterDetailFlow</a></p>
+<p><a href="../studio/fragment-as.html">Создание фрагментов в Android Studio</a></p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+ </div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/fragments.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:32 GMT -->
+</html>

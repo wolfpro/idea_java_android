@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/tools.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:50:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Средства разработки для Android</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>			
+<h1 class="text-warning">Средства разработки для Android</h1>
+
+<p>
+<a href="#ddms">DDMS</a><br>
+<a href="#aapt">AAPT</a><br>
+<a href="#adb">ADB</a><br>
+<a href="#draw9patch">Draw 9-patch</a><br>
+<a href="#hierarchyviewer">Hierarchy Viewer</a><br>
+<a href="#lint">Lint</a><br>
+<a href="#sqllite3">SQLite3</a><br>
+<a href="#traceview">TraceView</a><br>
+<a href="#mksdcard">MkSDCard</a><br>
+<a href="#dx">Dx</a><br>
+<a href="#activitycreator">activityCreator</a><br>
+<a href="#layoutopt">layoutOpt</a><br>
+<a href="#uiautomatorviewer">uiautomatorviewer</a><br>
+<a href="#uiautomator">uiautomator</a><br>
+<a href="#vendors">Средства разработки от производителей</a><br>
+</p>
+
+<h2 class="text-warning">Android Development Tools (ADT)</h2>
+
+<p>Android Development Tools - плагин для Eclipse IDE, позволяющий создавать приложения под Android с комфортом.</p>
+
+<p><a href="http://developer.android.com/sdk/eclipse-adt.html">Главная страница плагина</a>, на которой можно узнать все последние новости об изменениях, новых версиях и т.п. Также есть отдельный сайт <a href="http://tools.android.com/">http://tools.android.com/</a>, где можно узнать о бета-версиях (для продвинутых).</p>
+
+<p>Android SDK содержит множество инструментов и утилит для создания и тестирования приложений. Большинство из них доступно прямо внутри среды разработки Eclipse из панели DDMS.</p>
+
+<h2 class="text-warning">Менеджеры виртуальных устройств и SDK</h2>
+
+<p>Менеджеры виртуальных устройств - инструменты для создания и управления виртуальными устройствами в Android (AVD) и управления ими в виде отдельных экземпляров эмулятора. AVD содержит эмулятор, внутри которого работает соответствующая версия Android. C его помощью можно указать версию SDK, разрешение экрана, емкость SD-карты, аппаратные возможности (сенсорный экран, GPS).</p>
+
+<p>Каждое виртуальное устройство должно иметь название, целевую сборку Android, емкость SD-карты и разрешение экрана. Кроме того, виртуальные устройства поддерживают разные аппаратные настройки и ограничения:</p>
+<ul>
+<li>максимальный размер кучи в виртуальной машине</li>
+<li>плотность пикселов на экране</li>
+<li>поддержка SD-карт</li>
+<li>наличие D-pad, сенсорного экрана, клавиатуры и трекбола</li>
+<li>поддержка акселерометра и GPS</li>
+<li>доступная память</li>
+<li>аппаратная камера и ее разрешение</li>
+<li>поддержка звукозаписи</li>
+</ul>
+
+<h2 class="text-warning">Менеджер SDK</h2>
+
+<p>Для управления версиями SDK можно использовать менеджер SDK через панель, доступную в меню Window &rarr; Android SDK and AVD Manager. Вы можете просматривать установленные версии SDK, а также обновлять их по мере надобности. При выборе пункта <b>Availiable Packages</b> вы можете проверять репозиторий на наличие доступных, но еще не не установленных пакетов и архивов. Пометьте флажком необходимые файлы для загрузки и скачайте нужные пакеты.</p>
+
+<h2 class="text-warning">Эмулятор</h2>
+
+<p>Виртуальная машина Android для тестирования и отладки ваших приложений прямо на компьютере, не имея реального устройства. Является реализацией виртуальной машины Dalvik, что делает его совместимым с любым Android-телефоном. Чтобы запустить эмулятор, сначала необходимо создать виртуальное устройство (см. выше).</p>
+
+<p>С помощью эмулятора вы можете иметь полноценный доступ к интернету, настраивать скорость и латентность соединения. Также можно имитировать входящие и исходящие телефонные звонки и SMS-сообщения.</p>
+
+<p>В то же время эмулятор не поддерживает виброзвонок, светодиоды, камеру, акселерометр, соединений по USB, захват аудиоданных, уровень заряда батареи.</p>
+
+<p>Дополнение ADT интегрирует эмулятор в Eclipse, поэтому при запуске и отладке проектов он автоматически стартует внутри выбранного экземпляра AVD. Продвинутые программисты могут запускать эмулятор через telnet, минуя Eclipse.</p>
+
+<h2 class="text-warning" id="ddms">DDMS (Dalvik Debug Monitoring Service)</h2>
+
+<p>Используйте панель DDMS (Служба для отслеживания процесса отладки в Dalvik) для отслеживания и контроля за виртуальными машинами Dalvik. Это мощный отладочный инструмент, позволяющий изучать активные процессы, просматривать стек и кучу, мониторить и останавливать рабочие потоки, исследовать файловую систему подключенного устройства.</p>
+
+<p>Возможности</p>
+
+<ul>
+<li>Управление задачами</li>
+<li>Управление файлами</li>
+<li>Взаимодействие с эмулятором</li>
+<li>Журналирование (журнальные записи LogCat)</li>
+<li>Создание скриншотов (захват изображения с экрана эмулятора)</li>
+</ul>
+
+<p>При использовании ADT утилита DDMS интегрируется в Eclipse и доступна из соответствующей панели (Window&rarr;Open Perspective&rarr;DDMS). В противном случае вы можете запускать DDMS из командной строки - ее исполняемый файл находится в папке Android SDK <b>/tools</b>.</p>
+
+<h3 class="text-warning">Управление задачами</h3>
+
+<p>На панели <b>Devices</b> перспективы DDMS можно увидеть список эмуляторов и телефонов, подключенных в текущий момент. Можно выбрать отдельные экземпляры, просмотреть текущие процессы и потоки. Чтобы просмотреть поток, щелкните мышью по нужному процессу устройства, затем на кнопке обновления потока.</p>
+
+<h3 class="text-warning">Обзор файловой системы</h3>
+
+<p>Для просмотра файлов и папок в эмуляторе или на устройстве вы можете использовать панель <b>File Explorer</b>. Вы можете копировать файлы между системой Android и вашим компьютером с помощью кнопок перемещения. Также можно удалять файлы. При этом на экран не выводится сообщение о подверждении операции и отмены операции, поэтому будьте осторожны.</p>
+
+<h3 class="text-warning">Взаимодействие с эмулятором</h3>
+
+<p>Панель <b>Emulator Control</b> позволяет выполнять голосовые вызовы, отправку и прием SMS, запрос геолокационных координат.</p>
+
+<p>Входящие голосовых вызовов являются имитацией. Это не настоящий звонок, никакие данные не передаются.</p>
+
+<h2 class="text-warning" id="aapt">AAPT (Android Asset Packaging Tool)</h2>
+
+<p>AAPT (Инструмент для создания пакетов) создает файлы пакетов для Android (.apk), готовые к распространению.</p>
+
+<h2 class="text-warning" id="adb">ADB (Android Debug Bridge)</h2>
+
+<p>Клиент-серверное приложение, которое предоставляет доступ к работающему эмулятору или устройству. С его помощью можно копировать файлы, устанавливать скомпилированные программные пакеты и запускать консольные команды. Используя консоль, вы можете изменять настройки журнала и взаимодействовать с базами данных SQLite, которые хранятся на устройстве. В старых версиях SDK программа находилась в папке /tools. Теперь находится в папке /platform-tools. <a href="adb.html">Подробнее о ADB...</a></p>
+
+<h2 class="text-warning" id="draw9patch">Draw 9-patch</h2>
+
+<p>Утилита <b>Draw 9-patch</b> находится в папке /tools (файл draw9patch.bat).</p>
+
+<p>Утилита работает с png-файлами и сохраняет в формате <b>.9.png</b></p>
+
+<p><a href="draw9patch.html">Подробнее о Draw-9-patch</a></p>
+
+<h2 class="text-warning" id="hierarchyviewer">Hierarchy Viewer</h2>
+
+<p>В папке <b>tools</b> есть файл hierarchyviewer.bat, который запускает программу для отладки и оптимизации пользовательского интерфейса.</p>
+
+<p>Программа отображает иерархию видов в форме древовидной структуры. Вы загружаете шаблон и проверяете на возможнжные недоработки или возможность оптимизации, сведя к минимуму количество содержащихся в нём видов.</p>
+
+<p><a href="hierachyviewer.html">Подробнее о Hierarchy Viewer</a></p>
+
+<h2 class="text-warning" id="lint">Lint</h2>
+
+<p>Наверняка, в процессе разработки вы уже видели подсказки от утилиты <b>Lint</b>, которая встроена в Eclipse (ищите значок с галочкой на панели инструментов). Также её можно запустить отдельно через командную строку при помощи файла <b>lint.bat</b>. Утилита позволяет генерировать HTML-отчёт.</p>
+
+<p>Некоторые возможности Lint:</p>
+
+<ul>
+<li>Анализ быстродействия Layouts (предотвращение множественных наложений)</li>
+<li>Проблемы с значками (отсутствие значков, дублированные значков и т.д.)
+<li>Поиск различных дубликатов</li>
+<li>Автоматическое исправление большинства ошибок и предупреждений</li>
+<li>Проблемы пользовательского интерфейса</li>
+<li>Ошибки в манифесте</li>
+</ul>
+
+<h3 class="text-warning">Отключить сообщения об ошибках</h3>
+
+<p>Иногда, сообщения об ошибках от Lint, мешают создать файл apk. Чтобы отключить Lint, откройте <b>Window | Preferences</b>. Выберите <b>Android</b> | <b>Lint Error Checking</b> и уберите флажок у элемента <b>Run full error check when exporting app and abort if errors are found</b>.</p>
+
+<h2 class="text-warning" id="sqllite3">SQLite3</h2>
+
+<p>Утилита позволяет получить доступ к файлам базы данных SQLite, которые используются в Android.</p>
+
+<h2 class="text-warning" id="traceview">TraceView</h2>
+
+<p>Инструмент для графического анализа. С его помощью можно просматривать трассировочные записи, принадлежащие вашему приложению.</p>
+
+<h2 class="text-warning" id="mksdcard">MkSDCard</h2>
+
+<p>Утилита командной строки создает образ диска для SD-карты (FAT32). Может использоваться эмулятором для имитации флеш-накопителя.</p>
+
+<p>После создания образа карточки ее нужно указать в настройках эмулятора, чтобы у вас была возможность работать с ней.</p>
+
+<h3 class="text-warning">Синтаксис</h3>
+
+<pre>mksdcard -l &lt;label&gt; &lt;size&gt; &lt;file&gt;</pre>
+
+<h3 class="text-warning">Параметры</h3>
+
+<dl>
+<dt>-l</dt><dd>Метка тома для создаваемого образа диска</dd>
+<dt>size</dt><dd>Целое число, определяющее размер диска в байтах. Также можно указывать размеры в килобайтах или мегабайтах, добавляя буквы "K" или "M"  &lt;size&gt;. Например, 1048576K, 1024M</dd>
+<dt>file</dt><dd>Путь к файлу образа диска</dd>
+</dl>
+
+<h3 class="text-warning">Пример</h3>
+
+<pre>mksdcard -l mySdCard 1024M mySdCardFile.img</pre>
+
+<p>В настройках эмулятора подключение к карточке происходит следующим образом</p>
+
+<pre>emulator -sdcard &lt;file&gt;</pre>
+
+<h2 class="text-warning" id="dx">Dx</h2>
+
+<p>Преобразует байт-код из формата Java (.class) в формат Android (.dex).</p>
+
+<h2 class="text-warning" id="activitycreator">activityCreator</h2>
+
+<p>Сценарий, создающий сборочные файлы для утилиты Ant, которые можно применять для компилирования приложений без участия ADT.</p>
+
+<h2 class="text-warning" id="layoutopt">layoutOpt</h2>
+
+<p>Инструмент, анализирующий ваши ресурсы с разметкой и предлагающий различные улучшения и оптимизации.</p>
+
+<p>Вызывается командой:</p>
+
+<pre><code>
+&lt;AndroidSDK\tools&gt;layoutopt [directories|files]
+</code></pre>
+
+<p>Получите следующую картинку:</p>
+
+<p><img src="../../../img-developer.samsung.com/contents/sd2/images/develop/android/sep8_tips_and_tricks02.jpg"></p>
+
+<p>Программа покажете бесполезные (useless) разметки и даст советы по замене на другие варианты.</p>
+
+<h2 class="text-warning" id="uiautomatorviewer">uiautomatorviewer</h2>
+
+<p>Новая утилита, которая появилась совсем недавно (Android 4.2 SDK). Находится в папке  &lt;android-sdk&gt;/tools. Утилита сканирует и анализирует GUI-компоненты вашего приложения.</p>
+
+<p><img src="uiautomatorviewer.png" alt="uiautomatorviewer"></p>
+
+<h2 class="text-warning" id="uiautomator">uiautomator</h2>
+
+<p>Ещё одно средство тестирования</p>
+
+<p>Страница документации - <a href="http://developer.android.com/tools/help/uiautomator/index.html" >uiautomator | Android Developers</a></p>
+
+<p>Пример работы - <a href="http://developer.android.com/tools/testing/testing_ui.html" >UI Testing</a></p>
+
+<p>Статья в блоге с описанием и комментариями - <a href="http://softteco.blogspot.ru/2012/11/google-uiautomator-3_8755.html" >SoftTeco Blog: Google UIAutomator убил все наши наработки за почти 3 года, но ему это можно простить!</a></p>
+
+<p>Еще - <a href="http://everybodytests.blogspot.co.uk/2012/11/uiautomatorjar-what-happened-when.html" >Everybody Tests: UiAutomator.jar: What happened when Android's JUnit and MonkeyRunner got drunk and hooked up</a></p>
+
+<p>Еще - <a href="http://everybodytests.blogspot.co.uk/2012/11/uiautomator-and-watchers-adding-async.html" >Everybody Tests: UiAutomator and Watchers: Adding Async Robustness to UI Automation</a></p>
+
+<h2 class="text-warning" id="vendors">Средства разработки от производителей</h2>
+
+<p>Производители устройств предлагают собственные наработки для работы с телефонами и планшетами. Вы можете использовать какие-то приёмы для конкретной марки телефона</p>
+
+<h3 class="text-warning">HTCDev</h3>
+
+<p>Компания HTC представляет свой центр для разработчиков - <a href="http://www.htcdev.com/">HTCDev</a>, на котором можно найти информацию о загрузчиках, примеры, OpenSense SDK.</p>
+
+<h3 class="text-warning">LG</h3>
+
+<p>Компания LG подготовила для разработчиков свой сайт - <a href="http://developer.lgmobile.com/lge.mdn.mai.RetrieveMainPage.dev" >LG Mobile Developer Network</a></p>
+
+<h3 class="text-warning">Samsung</h3>
+
+<p>Не отстаёт и Samsung, который имеет свой центр для разработчиков - <a href="http://developer.samsung.com/home.do">Samsung Developers</a></p>
+
+<h3 class="text-warning">Sony</h3>
+
+<p>Sony также завела себе сайт для разработчиков - <a href="http://developer.sonymobile.com/" >Developer World</a></p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+				
+				
+		    </div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/tools.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:50:17 GMT -->
+</html>

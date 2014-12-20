@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/activity.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:44:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Переключение между экранами</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class="active"><a href="index-2.html">Главная</a></li>
+<li class=""><a href="theory/index.html">Теория</a></li>
+<li class=""><a href="views.html">Palette</a></li>
+<li class=""><a href="listview/index.html">ListView</a></li>
+<li class=""><a href="catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="animation.html">Анимация</a></li>
+<li class=""><a href="sqlite/index.html">SQLite</a></li>
+<li class=""><a href="opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="library/index.html">Библиотеки</a></li>
+<li class=""><a href="games/index.html">Игры</a></li>
+<li class=""><a href="emulator.html">Эмулятор</a></li>
+<li class=""><a href="tips-android.html">Советы</a></li>
+<li class=""><a href="articles-android.html">Статьи</a></li>
+<li class=""><a href="books.html">Книги</a></li>
+<li class=""><a href="java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="design/index.html">Дизайн</a></li>
+<li class=""><a href="opensource.html">Open Source</a></li>
+<li class=""><a href="links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+            
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Переключение между экранами</h1>
+
+<p>
+<a href="#switch">Простое переключение на другой экран</a><br>
+<a href="#passdata">Передача данных между активностями</a><br>
+<a href="#result">Получить результат обратно</a><br>
+</p>
+
+<h2 class="text-warning" id="switch">Простое переключение на другой экран</h2>
+
+<p>Приложение не всегда состоит из одного экрана. Например, мы создали очень полезную программу и пользователю хочется узнать, кто же её автор. Он нажимает на кнопку «О программе» и попадает на новый экран, где находится полезная информация о версии программы, авторе, веб-адресе сайта, сколько у него котов и т.д. Воспринимайте Activity как веб-страницу с ссылкой на другую страницу. Если вы посмотрите на код в файле <b>HelloWorld.java</b> из прошлых уроков, то увидите, что наш класс <b>HelloWorld</b> тоже относится к <b>Activity</b> или, если говорить точнее, наследуется от него.</p>
+
+<pre><code class="java">
+public class HelloWorld extends Activity
+</code></pre>
+
+<p>Как нетрудно догадаться, нам нужно создать новый класс, который может быть похож на <b>HelloWorld.java</b> и как-то переключиться на него при нажатии кнопки.</p>
+
+<p>Для эксперимента мы возьмем программу из предыдущего урока и будем использовать для опытов кнопку. А пока создадим новую форму для отображения полезной информации. Например, покажем пользователю, что делает кот, когда идёт налево и направо. Согласитесь, это очень важная информация, дающая ключ к разгадке Вселенной.</p>
+
+<p>Создадим новый XML-файл разметки <b>about.xml</b> в папке <b>res/layout</b>. Выделите папку <b>layout</b> в правой части панели Eclipse, и щелкните на значок создания нового XML-файла на панели инструментов. На значке изображён символ A с плюсиком (<img src="images/newxml.png">) На этот раз мы откажемся от контейнера <b>RelativeLayout</b> и воспользуемся контейнером <b>ScrollView</b>:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;ScrollView
+xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:padding=&quot;10dip&quot;&gt;
+&lt;TextView
+    android:id=&quot;@+id/about_content&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;@string/about_text&quot; /&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+
+<p>Информация будет извлекаться из ресурсов, а именно из строкового ресурса <b>about_text</b>. Открываем файл <b>res/values/strings.xml</b> и вводим следующий текст:</p>
+
+<pre><code class="xml">
+&lt;string name=&quot;about_text&quot;&gt;
+    У лукоморья дуб зелёный;\n
+    Златая цепь на дубе том:\n
+    И днём и ночью &lt;b&gt;кот учёный&lt;/b&gt;\n
+    Всё ходит по цепи кругом;\n
+    Идёт &lt;b&gt;направо&lt;/b&gt; - песнь заводит,\n
+    &lt;b&gt;Налево&lt;/b&gt; - сказку говорит.&lt;/string&gt;
+</code></pre>
+
+<p>Обратите внимание, что мы можем использовать простейшие HTML-теги форматирования текста типа &lt;b&gt;, &lt;i&gt;, &lt;u&gt;. Для нашего примера достаточно выделить жирным слова, которые относятся к коту и направлению движения. Для перевода текста на новую строку используйте символы <b>\n</b>. Давайте добавим ещё один строковый ресурс для заголовка нового экрана:</p>
+
+<pre><code class="xml">
+&lt;string name=&quot;about_title&quot;&gt;О программе&lt;/string&gt;
+</code></pre>
+
+<p>С разметкой разобрались. Далее необходимо создать класс для окна <b>AboutActivity.java</b>. Создаем новый класс в Eclipse: <b>File | New | Class</b> и заполняем нужные поля. Также можно нажать на специальный значок с символом C (Class) на панели инструментов.</p>
+
+<p>Source folder: FirstAndroidApp/src<br>
+Package: ru.alexanderklimov.helloworld<br>
+Name: AboutActivity (расширение указывать не надо!)</p>
+
+<p>Сейчас класс практически пустой. Добавим код вручную:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.helloworld;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class AboutActivity extends Activity 
+{
+    @Override
+    protected void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.about);
+    }
+}
+</code></pre>
+
+<p>Главное в этом классе - наличие методов <b>onCreate()</b> и <b>setContentView()</b>.</p>
+
+<p>Теперь начинается самое главное. Наша задача - перейти на новую форму при щелчке на кнопке. Переходим обратно к файлу <b>HelloWorld.java</b> и импортируем пространство имен <b>Intent</b>.</p>
+
+<pre><code class="java">
+import android.content.Intent;
+</code></pre>
+
+<p>Теперь можем написать обработчик события <b>Click</b> для кнопки:</p>
+
+<pre><code class="java">
+public void onClick(View v)
+{
+    Intent intent = new Intent(HelloWorld.this, AboutActivity.class);
+    startActivity(intent);
+}
+</code></pre>
+
+<p>Здесь я использовал способ обработки нажатия кнопки, о котором рассказывалось в занятии <a href="android3.html" >Щелчок кнопки/Счётчик ворон</a>.</p>
+
+<p>Для запуска нового экрана необходимо создать экземпляр класса <b>Intent</b> и указать свой класс <b>AboutActivity</b>. После этого вызывается метод <b>startActivity()</b>, который и запускает новый экран. Но, если вы сейчас попытаетесь проверить работу приложения в эмуляторе, то получите сообщение об ошибке. Что мы сделали неправильно? Мы пропустили один важный шаг. Необходимо зарегистрировать новый Activity в манифесте <b>AndroidManifest.xml</b>. Найдите этот файл в своем проекте и дважды щёлкните на нём. Откроется окно редактирования файла. Переключитесь в режим редактора кода (вкладка AndroidManifest.xml), и добавьте новый тег &lt;activity&gt; после первого тега activity для <b>HelloWorld</b>.</p>
+
+<pre><code class="xml">
+&lt;activity android:name=&quot;.AboutActivity&quot;
+    android:label=&quot;@string/about_title&quot;&gt;
+&lt;/activity&gt;
+</code></pre>
+
+<div class="alert alert-info">Это можно сделать и визуальными средствами. Со временем сами поймёте, как это сделать. Более того, можно сразу создать активность, которая автоматически пропишется в манифесте (об этом ниже). Но во время учёбы всё следует делать вручную, чтобы понимать полностью весь процесс создания активности.</div>
+
+<p>Вот и пригодился строковый ресурс <b>about_title</b>. Запускаем приложение, щёлкаем на кнопке и получаем окно <b>О программе</b>. Таким образом мы научились создавать новое окно и вызывать его по щелчку кнопки. А в нашем распоряжении появилась мегаудобная  программа - у вас всегда под рукой будет подсказка, что делает кот, когда идет налево.</p>
+
+<p><img src="images/activity1.png" alt=""></p>
+
+<p>Ещё раз обращаю внимание, что второй создаваемый класс активности должен наследоваться от класса <b>Activity</b> или ему похожих (ListActivity и др.), иметь XML-файл разметки и быть прописан в манифесте.</p>
+
+<p>После вызова метода <b>startActivity()</b> запустится новая активность (в данном случае AboutActivity), она станет видимой и переместится на вершину стека, содержащего работающие компоненты. При вызове метода <b>finish()</b> из новой активности (или при нажатии аппаратной клавиши возврата) она будет закрыта и удалена из стека. Разработчик также может перемещаться к предыдущей (или к любой другой) активности, используя всё тот же метод <b>startActivity()</b>.</p>
+
+<h2 class="text-warning">Создаём третий экран - способ для ленивых</h2>
+
+<p>Программисты, как и коты, существа ленивые. Постоянно помнить, что для активности нужно создать разметку и класс, который наследуется от Activity, а затем не забыть прописать класс в манифесте - да ну нафиг.</p>
+
+<p>В этом случае нажмите комбинацию клавиш <b>Ctrl+N</b>. Откроется диалоговое окно для выбора мастера. В поле <b>Wizards:</b> будет текст <i>type filter text</i>, предлагающий ввести текст для быстрого поиска нужного мастера. Начинайте вводить слово <b>Activity</b>, чтобы быстро найти мастер для создания новой активности <b>Android Activity</b>:</p>
+
+<p><img src="../../rusproject.narod.ru/android/activity2.png" alt="Android Activity"></p>
+
+<p>Нажимаем на кнопку <b>Next</b>, чтобы перейти к знакомому окну выбора шаблона для экрана. Пусть будет шаблон <b>BlankActivity</b>.</p>
+
+<p><img src="../../rusproject.narod.ru/android/activity3.png" alt="BlankActivity"></p>
+
+<p>В следующем окне можно настроить параметры для активности: выбрать проект, имя для активности и другие настройки.</p>
+
+<p><img src="../../rusproject.narod.ru/android/activity4.png" alt="New Activity"></p>
+
+<p>В последнем шаге мастера настроек вы можете видеть, какие изменения произойдут в проекте. Eclipse самостоятельно добавит записи о новой активности в манифест, добавит необходимые строковые ресурсы в файл <b>strings.xml</b>, создаст класс и т.д. Осталось нажать на кнопку <b>Finish</b> и продолжить работу над проектом.</p>
+
+<p><img src="../../rusproject.narod.ru/android/activity5.png" alt="New Activity Preview"></p>
+
+<p>На первых порах я бы посоветовал вам вручную создавать все необходимые компоненты для новой активности, чтобы понимать взаимосвязь между классом, разметкой и манифестом. А когда набьёте руку, то можете использовать мастер создания активности для ускорения работы.</p>
+
+<h2 class="text-warning" id="passdata">Передача данных между активностями</h2>
+
+<p>Мы использовали простейший пример для вызова другого окна. Но, иногда требуется не только вызвать новое окно, но и передать в него данные. Например, имя пользователя. В этом случае нужно задействовать специальную область <b>extraData</b>, который имеется у класса <b>Intent</b>.</p>
+
+<p>Область <b>extraData</b> - это список пар <i>ключ/значение</i>, который передается вместе с намерением. В качестве ключей используются строки, а для значений можно использовать любые примитивные типы данных, массивы примитивов, объекты класса <b>Bundle</b> и др.</p>
+
+<p>Для передачи данных в другую активность используется метод <b>putExtra()</b>:</p>
+
+<pre>
+intent.putExtra("Ключ", "Значение");
+</pre>
+
+<p>Принимающая активность должна вызвать какой-нибудь подходящий метод: <b>getIntExtra()</b>, <b>getStringExtra()</b> и т.д.:</p>
+
+<pre>
+int count = getIntent().getIntExtra("name", 0);
+</pre>
+
+<p>Напишем следующий пример. Создадим две активности как обычно (классы PassingDataDemoActivity.java и Privet.java). На первой форме разместим два текстовых поля и кнопку.</p>
+
+<p><img src="images/passingdata1.png" alt=""></p>
+
+<p>У второй активности установим элемент TextView, в котором будем выводить какой-нибудь текст. Код для него будет следующим.</p>
+
+<pre><code class="java">
+public class Privet extends Activity {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) 
+	{
+	    super.onCreate(savedInstanceState);
+	    setContentView(R.layout.privet);
+	    
+	    TextView txtInfo = (TextView)findViewById(R.id.textView1);
+	    
+	    String user = "ЖЫвотное";
+	    String gift = "дырку от бублика";
+	    
+	    txtInfo.setText(user + " , вам передали " + gift);
+	}
+}
+</code></pre>
+
+<p>Если сейчас запустить программу и просто вызвать второе окно, как это было описано в первой части статьи, то мы увидим надпись по умолчанию <b>ЖЫвотное, вам передали дырку от бублика</b>. Согласитесь, довольно обидно получать такие сообщения.</p>
+
+<p>Исправляем ситуацию. Добавляем код у первой активности:</p>
+
+<pre><code class="java">
+@Override
+public void onClick(View v) {
+    EditText edUserName = (EditText) findViewById(R.id.edUserName);
+    EditText edDescription = (EditText) findViewById(R.id.edDescription);
+
+	Intent intent = new Intent(PassingDataDemoActivity.this, Privet.class);
+	
+	intent.putExtra("username", edUserName.getText().toString()); // в ключ username пихаем текст из первого текстового поля
+	intent.putExtra("gift", edDescription.getText().toString());  // в ключ gift пихаем текст из второго текстового поля
+    startActivity(intent);
+}
+</code></pre>
+
+<p>Итак, мы поместили в специальный контейнер у объекта <b>Intent</b> два ключа со значениями, которые берутся из текстового поля. Когда пользователь введет данные в текстовые поля, они попадут в этот контейнер и будут переданы второй активности.</p>
+
+<p><img src="images/passingdata3.png" alt=""></p>
+
+<p>Вторая активность должна быть готова к тёплому приёму сообщений следующим образом (выделено жирным).</p>
+
+<pre><code class="java">
+TextView txtInfo = (TextView)findViewById(R.id.textView1);
+
+String user = "ЖЫвотное";
+String gift = "дырку от бублика";
+
+<b>user = getIntent().getExtras().getString("username");
+gift = getIntent().getExtras().getString("gift");</b>
+
+txtInfo.setText(user + " , вам передали " + gift);
+</code></pre>
+
+<p>Теперь сообщение выглядит не столь обидным, а даже приятным для кое-кого.</p>
+
+<p><img src="images/passingdata2.png" alt=""></p>
+
+<p>В нашем случае мы знаем, что ждём строковое значение, поэтому код можно переписать так:</p>
+
+<pre><code class="java">
+Intent i = getIntent();
+user = i.getStringExtra("username");
+</code></pre>
+
+<p>Или так:</p>
+
+<pre><code class="java">
+user = getIntent().getStringExtra("username");
+</code></pre>
+
+<p>У программы есть недостаток - не понятно, от кого мы получаем приветы. Любая хорошо воспитанная мартышка не возьмет подарка от анонимного источника. Поэтому в качестве домашнего задания добавьте еще одно текстовое поле для ввода имени пользователя, который отправляет сообщение.</p>
+
+<p><img src="images/privet.jpg" alt=""></p>
+
+<p>На будущее - Google рекомендует для ключей использовать следующий формат: имя вашего пакета в качестве префикса, а затем сам ключ. В этом случае можно быть уверенным в уникальности ключа при взаимодействии с другими приложениями. Приблизительно так:</p>
+
+<pre><code class="java">
+public final static String USER = "ru.alexanderklimov.myapp.USER";
+</code></pre>
+
+<h2 class="text-warning" id="result">Кто подставил кота Ваську - получаем результат обратно</h2>
+
+<p>Не всегда бывает достаточно просто передать данные другой активности. Иногда требуется получить информацию от другой активности при её закрытии. Если раньше мы использовали метод <b>startActivity(Intent intent)</b>, то существует еще родственный ему метод <b>startActivityForResult(Intent intent, int RequestCode)</b>. Разница между методами заключается в дополнительном параметре <b>RequestCode</b>. По сути это просто целое число, которое вы можете сами придумать. Оно нужно для того, чтобы различать от кого пришёл результат. Допустим у вас есть пять дополнительных экранов и вы присваиваете им значения от 1 до 5, и по этому коду вы сможете определить, чей результат вам нужно обрабатывать.</p>
+
+<p>Если вы используете метод <b>startActivityForResult()</b>, то вам необходимо переопределить в коде метод для приёма результата <b>onActivityResult()</b> и обработать полученный результат. Запутались? Давайте разберём пример.</p>
+
+<p>Предположим, вы сыщик. Поступила информация, что в ресторане со стола влиятельного человека украли два кусочка колбасы и другие продукты. Подозрение пало на трёх подозреваемых - это ворона, сраный пёсик и кот Васька.</p>
+
+<p>Один из посетителей предоставил серию фотографий со своего понтового айфона:</p>
+
+<p><img src="images/activity7.jpg" alt="Кот ворует колбаску"> 
+
+<img src="images/activity2.jpg" alt="Кот ворует колбаску"></p>
+
+<p>Также имеются показания другого свидетеля: <i>А Васька слушает, да ест</i>.</p>
+
+<p>Создаём новый проект Sherlock с двумя активностями. На первом экране будет кнопка для переключения на второй экран и текстовая метка, в которой будет отображено имя воришки.</p>
+
+<pre><code class="java">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/LinearLayout1&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    android:padding=&quot;5dp&quot; &gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/icon&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:adjustViewBounds=&quot;true&quot;
+        android:background=&quot;#fa2255&quot;
+        android:scaleType=&quot;centerCrop&quot;
+        android:src=&quot;@drawable/sherlock&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/tvLabel&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;@string/who&quot;
+        android:textAppearance=&quot;?android:attr/textAppearanceMedium&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/tvInfo&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:textAppearance=&quot;?android:attr/textAppearanceLarge&quot; /&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/button1&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:onClick=&quot;onClick&quot;
+        android:text=&quot;Сделать выбор&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>На втором экране будет группа переключателей:</p>
+
+<pre><code class="java">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/LinearLayout1&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    android:padding=&quot;10dip&quot; &gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/textView1&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;Выберите правильный ответ&quot;
+        android:textAppearance=&quot;?android:attr/textAppearanceMedium&quot; /&gt;
+
+    &lt;RadioGroup
+        android:id=&quot;@+id/radioGroup1&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot; &gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radioCrow&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:checked=&quot;false&quot;
+            android:onClick=&quot;onRadioClick&quot;
+            android:text=&quot;Ворона&quot; /&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radioDog&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:onClick=&quot;onRadioClick&quot;
+            android:text=&quot;Сраный пёсик&quot; /&gt;
+
+        &lt;RadioButton
+            android:id=&quot;@+id/radioCat&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:onClick=&quot;onRadioClick&quot;
+            android:text=&quot;Кот Васька&quot; /&gt;
+
+    &lt;/RadioGroup&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Так как мы будем ожидать ответ из второго экрана, то нам необходимо задействовать метод <b>startActivityForResult()</b> на первом экране, в котором мы передадим переменную <b>CHOOSE_THIEF</b> в качестве параметра <b>RequestCode</b>.</p>
+
+<pre><code class="java">
+static final private int CHOOSE_THIEF = 0;
+
+public void onClick(View v) {
+	Intent questionIntent = new Intent(MainActivity.this,
+			ChooseActivity.class);
+	startActivityForResult(questionIntent, CHOOSE_THIEF);
+}
+</code></pre>
+
+<p>Посмотрите на код. При щелчке на кнопке мы собираемся работать со вторым экраном <b>ChooseActivity</b> и запускаем второй экран с ожиданием результата.</p>
+
+<p>Переходим на второй экран и будем писать код для второй активности.</p>
+
+<pre><code class="java">
+public final static String THIEF = "ru.alexanderklimov.sherlock.THIEF";
+
+public void onRadioClick(View v) {
+	Intent answerInent = new Intent();
+
+	switch (v.getId()) {
+	case R.id.radioDog:
+		answerInent.putExtra(THIEF, "Сраный пёсик");
+		break;
+	case R.id.radioCrow:
+		answerInent.putExtra(THIEF, "Ворона");
+		break;
+	case R.id.radioCat:
+		answerInent.putExtra(THIEF, "Лошадь Пржевальского");
+		break;
+		
+	default:
+		break;
+	}
+
+	setResult(RESULT_OK, answerInent);
+	finish();
+}
+</code></pre>
+
+<p>Здесь всё просто, когда сыщик выбирает имя преступника, то через метод <b>putExtra()</b> мы передаём имя ключа и его значение.</p>
+
+<p>Для удобства, после выбора мы сразу закрываем второе окно и перед закрытием передаём значение <b>RESULT_OK</b>, чтобы было понятно, что выбор сделан. Если пользователь закроет экран через кнопку Back, то будет передано значение <b>RESULT_CANCELED</b>.</p>
+
+<p>Метод <b>setResult()</b> принимает два параметра: результирующий код и сам результат, представленный в виде намерения. Результирующий код говорит о том, с каким результатом завершилась работа активности, как правило, это либо <b>Activity.RESULT_OK</b>, либо <b>Activity.RESULT_CANCELED</b>. В некоторых случаях нужно использовать собственный код возврата для обработки специфических для вашего приложения вариантов. Метод <b>setResult()</b> поддерживает любое целочисленное значение.</p>
+
+<p>Если вы будете передавать данные явно через кнопку, то неплохо бы добавить метод <b>finish()</b>, чтобы закрыть вторую активность за ненадобностью. Если переход происходит через кнопку Назад, то это делать не обязательно.</p>
+
+<p>Если активность была закрыта пользователем при нажатии аппаратной кнопки возврата или если метод <b>finish()</b> был вызван раньше, чем метод <b>setResult()</b>, результирующий код установится в <b>RESULT_CANCELED</b>, а возвращенное намерение покажет значение <b>null</b>.</p>
+
+<p>Возвращаемся на первый экран. Первый экран ожидает ответа от второго экрана, поэтому нужно добавить в код метод <b>onActivityResult()</b>.</p>
+
+<pre><code class="java">
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	// TODO Auto-generated method stub
+	super.onActivityResult(requestCode, resultCode, data);
+
+	if (requestCode == CHOOSE_THIEF) {
+		if (resultCode == RESULT_OK) {
+			String thiefname = data.getStringExtra(ChooseActivity.THIEF);
+			tvInfo.setText(thiefname);
+		}else {
+			tvInfo.setText(""); // стираем текст
+		}
+	}
+}
+</code></pre>
+
+<p>Метод ожидает входящие данные с кодом <b>CHOOSE_THIEF</b>, и если такие данные поступят, то извлекает значение из ключа <b>ChooseActivity.THIEF</b> с помощью метода <b>getStringExtra</b>. Полученное значение мы выводим в TextView (переменная tvInfo). Если мы вернулись на экран через кнопку Back, то просто стираем текст.</p>
+
+<p>При закрытии дочерней активности внутри родительского компонента срабатывает обработчик <b>onActivityResult()</b>. 
+Обработчик <b>onActivityResult()</b> принимает несколько параметров.</p>
+
+<ul>
+<li>Код запроса. Код, который использовался для запуска активности, возвращающей результат</li>
+<li>Результирующий код. Код результата, устанавливаемый дочерней активностью и указывающий, как завершилась её работа. Это может быть любое целочисленное значение, но, как правило, либо Activity.RESULT_OK, либо Activity.RESULT_CANCELED</li>
+<li>Данные. Намерение, используемое для упаковки возвращаемых данных. В зависимости от назначения дочерней Активности оно может включать путь URI, представляющий выбранную часть содержимого. В качестве альтернативы (или дополнения) дочерняя активность может возвращать информацию в виде простых значений, упакованных в параметр намерения extras</li>
+</ul>
+
+<div class="alert">
+Если работа дочерней активности завершилась непредвиденно или если перед её закрытием не был указан код результата, этот параметр станет равен Activity.RESULT_CANCELED.
+</div>
+
+<p>Запускаем проект, нажимаем на кнопку и переходим на второй экран. Там выбираем один из вариантов. Если выбрать ворону, то экран закроется и имя преступника отобразится на первом экране. Если выбрать пёсика, то отобразится его имя.</p>
+
+<p><img src="images/activity3.png" alt="Кот ворует колбаску"> <img src="images/activity4.png" alt="Кот ворует колбаску"> <img src="images/activity5.png" alt="Кот ворует колбаску"></p> 
+
+<p>Между прочим, если выбрать котика, то его имя не отобразится! Проверьте и убедитесь сами. Вы спросите почему? Элементарно, Ватсон! Преступник не учёл одной важной детали. В ресторане велось наблюдение с видеокамер, и запись показала, кто на самом деле украл колбаску и подставил кота. Васька, держись!</p>
+
+<p><img src="../../rusproject.narod.ru/android/podstava.gif" alt="Подставили кота"></p>
+
+<p>P.S. Если поначалу что-то показалось непонятным, то с практикой многое прояснится. Передача данных между экранами часто встречается в приложениях и вы ещё не раз изучите пример.</p>
+
+<p>P.P.S. Лучшая рыба - колбаса. Зная эту слабость, нетрудно было подставить кота.</p>
+
+<p><img src="images/activity8.jpg" alt="Кот на рыбалке"></p>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+<p>
+ <a href="http://vanmore.ru/" target="_blank">маленькая ванная в хрущевке душевая кабина</a> ; <a href="http://err.agava.ru/vh/508.html" target="_blank">отличие психиатра от психотерапевта</a> ; <a href="http://stroyi-sz.ru/montajnye_pena/prof_pena/" target="_blank">Автор: профессиональный пистолет для пены</a> .; <a href="http://svadbabanket.spb.ru/publ/info/203" target="_blank">бц петровский форт санкт петербург, la</a> .; <a href="http://aleksandria-petergof.ru/ru/pricen/singln" target="_blank">одноместный номер джемете</a> ; <a href="http://cartrade.ru/" target="_blank">вилочные погрузчики hangcha</a> ; <a href="http://sovety.useron.ru/" target="_blank">укладка камня дикаря фото скачать</a> .; <a href="http://6403638.ru/otdyh-na-more.html" target="_blank">отдых в черногории в мае, акция</a> .; <a href="http://www.carmelmc.com/docs/gepatolog-cukerman.html" target="_blank">диагностика цукермана</a> , haifa.
+</p>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/activity.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:44:52 GMT -->
+</html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/layout/drawerlayout.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:53:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: DrawerLayout</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class="active"><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">DrawerLayout</h1>
+
+<p><img src="drawercat.jpg"></span></p>
+
+<p>На конференции Google I/O 2013 был представлен новый способ навигации при помощи новой разметки <b>android.support.v4.widget.DrawerLayout</b>, который сразу вызвал повышенный интерес у разработчиков. Давайте изучим его и мы.</p>
+
+<p>По английски <b>drawer</b> обозначает выдвижной ящик и данная разметка ведёт себя схожим образом. Пользователь может лёгким движением руки с края экрана выдвинуть панель навигации для быстрого переключения на другое содержимое, например, фрагмент с новым рисунком.</p>
+
+<p><b>DrawerLayout</b> входит в состав библиотеки Support Library v4  (release 13), который вышел в мае 2013 года и используется по умолчанию в проектах, созданных в ADT 22.0.</p>
+
+<p>Создадим новый проект с минимальной версией API 14. Можно использовать и более старые версии, но тогда придётся отказаться от некоторых новых методов, а также использовать некоторые методы из другого пакета совместимости.</p>
+
+<p>Начнём с разметки. Берётся стандартная разметка, состоящая из FrameLayout и ListView, и оборачивается дополнительно новым родительским элементом <b>android.support.v4.widget.DrawerLayout</b>. На панели инструментов данного компонента нет, поэтому придётся писать код вручную.</p>
+
+<pre><code class="xml">
+&lt;android.support.v4.widget.DrawerLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/drawer_layout&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot; &gt;
+
+    &lt;!-- The main content view --&gt;
+
+    &lt;FrameLayout
+        android:id=&quot;@+id/content_frame&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot; /&gt;
+    &lt;!-- The navigation drawer --&gt;
+
+    &lt;ListView
+        android:id=&quot;@+id/left_drawer&quot;
+        android:layout_width=&quot;240dp&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:layout_gravity=&quot;start&quot;
+        android:background=&quot;#111&quot;
+        android:choiceMode=&quot;singleChoice&quot;
+        android:divider=&quot;@android:color/transparent&quot;
+        android:dividerHeight=&quot;0dp&quot; /&gt;
+
+&lt;/android.support.v4.widget.DrawerLayout&gt;
+</code></pre>
+
+<p>В нашем примере <b>DrawerLayout</b> является корневым элементом разметки. Внутри него используется разметка, которая служит контейнером для фрагментов. Второй компонент <b>ListView</b> служит содержимым для навигации.</p>
+
+<p>Необходимо запомнить несколько важных деталей:</p>
+
+<p>Основной элемент для вывода информации (у нас это <b>FrameLayout</b>) должен быть первым дочерним элементом <b>DrawerLayout</b>. Это связано расположением элементов в Z-порядке.</p>
+
+<p>Высота и ширина основного элемента должна соответствовать высоте и ширине родительского элемента.</p>
+
+<p>Элемент навигации (у нас это <b>ListView</b>) должен использовать атрибут <b>android:layout_gravity</b>. Рекомендуется использовать для него значение <b>start</b>. В этом случае панель навигации будет находиться слева или справа в зависимости от языка (европейский или арабский).</p>
+
+<p>Ширина панели навигации должна быть задана в <b>dp</b>, а высота соответствовать родительскому элементу. Ширина не должна быть больше чем 320dp, чтобы пользователь всегда мог видеть часть основного содержимого экрана. Для минимальной ширины рекомендуют использовать 240dp.</p>
+
+<h2 class="text-warning">Инициализация навигационного списка</h2>
+
+<p>Обычно в <b>DrawerLayout</b> для навигации используют список элементов <b>ListView</b>, который необходимо заполнить через адаптер, например, <b>ArrayAdapter</b> или <b>SimpleCursorAdapter</b>.</p>
+
+<p>Допустим, мы подготовили строковый массив:</p>
+
+<pre><code class="xml">
+&lt;string-array name=&quot;cats_array_ru&quot;&gt;
+    &lt;item&gt;Васька&lt;/item&gt;
+    &lt;item&gt;Барсик&lt;/item&gt;
+    &lt;item&gt;Мурзик&lt;/item&gt;
+    &lt;item&gt;Рыжик&lt;/item&gt;
+    &lt;item&gt;Кот Бегемот&lt;/item&gt;
+    &lt;item&gt;Кот Матроскин&lt;/item&gt;
+    &lt;item&gt;Бублик (у Экслера)&lt;/item&gt;
+    &lt;item&gt;Дорофей (у Димона)&lt;/item&gt;
+&lt;/string-array&gt;
+</code></pre>
+
+<p>Заполним список именами котов:</p>
+
+<pre><code class="java">
+public class MainActivity extends Activity {
+    private String[] mCatTitles;
+    private ListView mDrawerList;
+    ...
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mCatTitles = getResources().getStringArray(R.array.cats_array_ru);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        // Set the adapter for the list view
+        mDrawerList.setAdapter(new ArrayAdapter&lt;String&gt;(this,
+                R.layout.drawer_list_item, mCatTitles));
+        // Set the list's click listener
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+        ...
+    }
+}
+</code></pre>
+
+<p>После заполнения списка именами вызываем обработчик нажатий на элементах списка (<b>setOnItemClickListener()</b>) для изменения содержимого основного экрана в зависимости от выбранного элемента.</p>
+
+<h2 class="text-warning">Обработка нажатий в списке</h2>
+
+<p>Когда пользователь щелкает на элементе списка, то система вызывает метод <b>onItemClick()</b> из интерфейса <b>ListView.OnItemClickListener</b>, переданного в <b>setOnItemClickListener()</b>.</p>
+
+<p>Код, который будет здесь выполняться, зависит от логики вашей программы. Например, мы можем вставлять различные фрагменты в контейнер <b>FrameLayout</b> через его идентификатор <b>R.id.content_frame ID</b>:</p>
+
+<pre><code class="java">
+/* The click listner for ListView in the navigation drawer */
+private class DrawerItemClickListener implements ListView.OnItemClickListener {
+    @Override
+    public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) {
+        selectItem(position);
+    }
+}
+
+private void selectItem(int position) {
+    // update the main content by replacing fragments
+    Fragment fragment = new CatFragment();
+    Bundle args = new Bundle();
+    args.putInt(CatFragment.ARG_CAT_NUMBER, position);
+    fragment.setArguments(args);
+
+    FragmentManager fragmentManager = getFragmentManager();
+    fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+
+    // update selected item and title, then close the drawer
+    mDrawerList.setItemChecked(position, true);
+    setTitle(mCatTitles[position]);
+    mDrawerLayout.closeDrawer(mDrawerList);
+}
+
+@Override
+public void setTitle(CharSequence title) {
+    mTitle = title;
+    getActionBar().setTitle(mTitle);
+}
+</code></pre>
+
+<h2 class="text-warning">Выдвигаем и задвигаем</h2>
+
+<p>Для прослушки событий выдвигания и задвигания панели используется метод <b>setDrawerListener()</b> вашего компонента <b>DrawerLayout</b>, которому нужно передать <b>DrawerLayout.DrawerListener</b>. У данного интерфейса имеются такие события как <b>onDrawerOpened()</b> и <b>onDrawerClosed()</b>.</p>
+
+<p>Кроме стандартного способа выдвижения панели движением пальца от края экрана к середине, можно выдвинуть панель путём нажатия на значок программы в панели действий <b>ActionBar</b>. В этом случае вы можете использовать класс <b>ActionBarDrawerToggle</b>, который сохраняет возможности <b>DrawerLayout.DrawerListener</b> для обработки движения пальцем по экрану и добавляет свой способ управления через значок.</p>
+
+<p>При выдвижении и задвигании панели навигации следует следить за заголовком активности, чтобы он соответствовал текущему состоянию экрана.</p>
+
+<h2 class="text-warning">Используем значок</h2>
+
+<p>У пользователя должна быть возможность открыть панель навигации не только жестом <b>Свайп</b> - движением от левого края экрана, но и с помощью касания значка в заголовке активности. При этом у значка должен быть специальный индикатор, подсказывающий о наличии панели навигации. Всё это реализуется с помощью описанного выше класса <b>ActionBarDrawerToggle</b>.</p>
+
+<p>Вам нужно создать экземпляр данного класса с конструктором со следующими аргументами:</p>
+
+<p>Активность, которая является хостом для панели<br>
+класс <b>DrawerLayout</b><br>
+растровый ресурс, который будет использоваться в качестве индикатора (можно <a href="../../../commondatastorage.googleapis.com/androiddevelopers/design/Android_Navigation_Drawer_Icon_20130516.zip">скачать стандартные значки</a> для темной и светлой темы)<br>.
+строковый ресурс, описывающий действие выдвижения (accessibility)<br>
+строковый ресурс, описывающий действие закрытия (accessibility).</p>
+
+<p>Далее следует вызвать <b>ActionBarDrawerToggle</b> в нескольких местах жизненного цикла активности, а именно в <b>onPostCreate()</b> и <b>onConfigurationChanged()</b>.</p>
+
+<p>Полный код приложения:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.drawerlatyoutdemo;
+
+import java.util.Locale;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.SearchManager;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+
+public class MainActivity extends Activity {
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    private ActionBarDrawerToggle mDrawerToggle;
+
+    private CharSequence mDrawerTitle;
+    private CharSequence mTitle;
+    private String[] mCatTitles;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mTitle = mDrawerTitle = getTitle();
+        mCatTitles = getResources().getStringArray(R.array.cats_array_ru);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        // set a custom shadow that overlays the main content when the drawer opens
+        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+        // set up the drawer's list view with items and click listener
+        mDrawerList.setAdapter(new ArrayAdapter&lt;String&gt;(this,
+                R.layout.drawer_list_item, mCatTitles));
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+        // enable ActionBar app icon to behave as action to toggle nav drawer
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
+
+        // ActionBarDrawerToggle ties together the the proper interactions
+        // between the sliding drawer and the action bar app icon
+        mDrawerToggle = new ActionBarDrawerToggle(
+                this,                  /* host Activity */
+                mDrawerLayout,         /* DrawerLayout object */
+                R.drawable.ic_drawer,  /* nav drawer image to replace 'Up' caret */
+                R.string.drawer_open,  /* "open drawer" description for accessibility */
+                R.string.drawer_close  /* "close drawer" description for accessibility */
+                ) {
+            public void onDrawerClosed(View view) {
+                getActionBar().setTitle(mTitle);
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+
+            public void onDrawerOpened(View drawerView) {
+                getActionBar().setTitle(mDrawerTitle);
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+        };
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+        if (savedInstanceState == null) {
+            selectItem(0);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    /* Called whenever we call invalidateOptionsMenu() */
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // If the nav drawer is open, hide action items related to the content view
+        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+        menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+         // The action bar home/up action should open or close the drawer.
+         // ActionBarDrawerToggle will take care of this.
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        // Handle action buttons
+        switch(item.getItemId()) {
+        case R.id.action_websearch:
+            // create intent to perform web search for this cat
+            Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+            intent.putExtra(SearchManager.QUERY, getActionBar().getTitle());
+            // catch event that there's no activity to handle intent
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, R.string.app_not_available, Toast.LENGTH_LONG).show();
+            }
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    /* The click listner for ListView in the navigation drawer */
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) {
+            selectItem(position);
+        }
+    }
+
+    private void selectItem(int position) {
+        // update the main content by replacing fragments
+        Fragment fragment = new CatFragment();
+        Bundle args = new Bundle();
+        args.putInt(CatFragment.ARG_CAT_NUMBER, position);
+        fragment.setArguments(args);
+
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+
+        // update selected item and title, then close the drawer
+        mDrawerList.setItemChecked(position, true);
+        setTitle(mCatTitles[position]);
+        mDrawerLayout.closeDrawer(mDrawerList);
+    }
+
+    @Override
+    public void setTitle(CharSequence title) {
+        mTitle = title;
+        getActionBar().setTitle(mTitle);
+    }
+
+    /**
+     * When using the ActionBarDrawerToggle, you must call it during
+     * onPostCreate() and onConfigurationChanged()...
+     */
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        // Pass any configuration change to the drawer toggls
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    /**
+     * Fragment that appears in the "content_frame", shows a cat
+     */
+    public static class CatFragment extends Fragment {
+        public static final String ARG_CAT_NUMBER = "cat_number";
+
+        public CatFragment() {
+            // Empty constructor required for fragment subclasses
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_cat, container, false);
+            int i = getArguments().getInt(ARG_CAT_NUMBER);
+            // имена котов на англ. для нахождения имен файлов
+            String catname = getResources().getStringArray(R.array.cats_array)[i];
+            
+            String catnameTitle = getResources().getStringArray(R.array.cats_array_ru)[i];
+
+            int imageId = getResources().getIdentifier(catname.toLowerCase(Locale.ROOT),
+                            "drawable", getActivity().getPackageName());
+            ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);
+            getActivity().setTitle(catnameTitle);
+            return rootView;
+        }
+    }
+}
+</code></pre>
+
+<h2 class="text-warning">Дополнительное чтение</h2>
+
+<p><a href="http://developer.android.com/intl/ru/training/implementing-navigation/nav-drawer.html#Init" >Creating a Navigation Drawer</a> - пример из документации. Там же можно скачать исходник, послужившей основой для статьи.</p>
+<p><a href="http://developer.android.com/intl/ru/design/patterns/navigation-drawer.html" >Navigation Drawer</a> - еще одна статья из документации.</p>
+
+<p><img src="drawerlayout1.png" alt="DrawerLayout" width="225" height="400"> <img src="drawerlayout2.png" alt="DrawerLayout" width="225" height="400"></p>
+
+<p><img src="../../../nibler.ru/uploads/users/2012-05-08/gifki-gifki-smeshnye-gifki-gifki-kote_94171364.gif"></p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/layout/drawerlayout.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:53:41 GMT -->
+</html>

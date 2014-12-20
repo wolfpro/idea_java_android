@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/games/sudoku.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:05:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Игры на Android: Судоку</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class="active"><a href="index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Судоку</h1>
+
+<h2 class="text-warning">Вступление</h2>
+
+<p>Строго говоря, описанный пример нельзя использовать в качестве тренировочного, так как автор книги явно запретил использовать код в учебных целях. Но автор перевода выложил свою работу на <noindex><a href="http://habrahabr.ru/blogs/android/99323/">Хабре</a></noindex>. Надеюсь, автор оригинала простит его и меня за перепечатку.</p>
+
+<p>В статье описано создание игры Sudoku из книги <noindex><a href="http://www.pragprog.com/titles/eband2/hello-android">Hello, Android – Ed Burnette</a></noindex></p>
+
+<p>Будем рассматривать готовый проект игры Судоку (<noindex><a href="../../../media.pragprog.com/titles/eband2/code/eband2-code.zip">полный код в папке Sudokuv4</a></noindex>).</p>
+
+<p>Для загрузки проекта в Eclipse ножно выполнить такую последовательность действий:</p>
+<ul>
+<li>Разархивировать проект в отдельную папку в рабочем пространстве Eclipse.</li>
+<li>Выбрать пункт меню <b>File&rarr;New&rarr;Android Project</b>.</li>
+<li>В диалоговом окне <b>New Android Project</b> выбрать опцию <b>Create project from existing source</b>.</li>
+<li>В поле <b>Location</b> указать путь к папке с проектом. Нажать <b>Next</b>.</li>
+</ul>
+
+<h2 class="text-warning">Меню программы</h2>
+
+<p>Игровое меню описано в файле res/layout/main.xml. Все элементы находятся в виде одной колонки в контейнере LinearLayout.</p>
+
+<img src="../../../beta.hstor.org/storage/habraeffect/37/eb/37eb4b5c0a0e42827414d782989a4568.png" alt="">
+
+<img src="../../../beta.hstor.org/storage/habraeffect/15/92/1592936f63c8e27be04cd40ae4702296.png" alt="">
+
+<h2 class="text-warning">Ресурсы</h2>
+
+<p>Обратите внимание, что все текстовые надписи (android:text) берут данные из ресурсов. Например, запись android:text="@string/main_title" указывает, что текст нужно искать в файле res/values/string.xml в узле с именем main_title. Цвет фона также содержится в ресурсах (android:background="@color/background"), но в файле color.xml (#3500ffff).</p>
+
+<img src="../../../beta.hstor.org/storage/habraeffect/20/3b/203b96647b1619c7d9ac8fcf83280ea5.png" alt="Ресурсы">
+
+<p>Элементы управления, к которым нужно получить доступ из кода, должны иметь id. У кнопок есть id (android:id="@+id/continue_button") для того что бы было можно присоединить к кнопке обработчик нажатия. Знак плюс указывает, что для кнопки нужно создать идентификатор в файле /gen/org.example.sudoku/R.java (public static final int continue_button=0x7f0b000b;). Этот файл генерируется автоматически и не рекомендуется его изменять. Файл содержит класс R через него можно обратиться к любому элементу интерфейса и другим ресурсам.</p>
+
+<h2 class="text-warning">Создание окон</h2>
+
+<p>Рассмотрим создание окна с информацией о программе. Разметка этого окна находится в файле /res/layout/about.xml. Код класса описан в файле /src/org.example.sudoku/About.java. Activity связана с разметкой в файле AndroidManifest.xml. Этот файл можно просматривать или через редактор или в виде XML. На разных вкладках редактора можно выбрать различные разделы файла. В разделе Application находятся параметры Activity. Обратите внимание, что параметр Theme имеет значение @android:style/Theme.Dialog. Благодаря этому стиль окна больше похож на модальный диалог.</p>
+
+<img src="../../../beta.hstor.org/storage/habraeffect/08/9d/089d1300fa1bc0f4987244a09d291d6e.png" alt="">
+
+<p>Вызов окна с информацией о программе осуществляется из класса Sudoku по нажатию кнопки About. Класс Sudoku написан так, что сам обрабатывает событие Click (public class Sudoku extends Activity implements OnClickListener). В методе public void onClick(View v) определяется какая кнопка вызвала событие и выполняется соответствующий код. Для показа окна About вызывается соответствующий Intent.</p>
+
+<pre><code class="java">
+case R.id.about_button:
+Intent i = new Intent(this, About.class);
+startActivity(i);
+break;
+</code></pre>
+
+<p>Обработчики событий также могут устанавливаться на конкретные элементы управления. Например в классе Keypad при создании класса в методе setListeners() устанавливаются обработчики для отдельных кнопок.</p>
+
+<img src="../../../beta.hstor.org/storage/habraeffect/59/2b/592bb841717743524165d1f94b3db46a.png" alt="">
+
+<h2 class="text-warning">Простой диалог</h2>
+
+<p>Пользователю нужно дать возможность выбрать уровень сложности. Это маленький диалог, в котором нужно выбрать один из нескольких вариантов. Воспользуемся классом AlertDialog. Пользователь нажимает на кнопку New Game. Обработчик нажатия это метод класса Sudoku – onClick. Далее вызывается метод openNewGameDialog, который показывает диалог выбора сложности и стартует игру с выбранным уровнем сложности. Это диалог строится с помощью класса AlertDialog.</p>
+
+<pre><code class="java">
+private void openNewGameDialog() 
+{
+    new AlertDialog.Builder(this)
+        .setTitle(R.string.new_game_title)
+        .setItems(R.array.difficulty,
+         new DialogInterface.OnClickListener() 
+		{
+            public void onClick(DialogInterface dialoginterface, int i) 
+			{
+               startGame(i);
+            }
+        })
+        .show();
+}
+</code></pre>
+
+<p>Обратите внимание, что содержимое диалога (набор кнопок) строится из массива строк R.array.difficulty. Тут же назначается обработчик нажатия на кнопки диалога, который по номеру нажатой кнопки запускает новую игру с заданным уровнем сложности, вызывая метод startGame.</p>
+
+<h2 class="text-warning">Графика</h2>
+
+<p>За игровую логику отвечает класс Game. Тут загружаются задания, проверяются условия выигрыша. Класс Game описан не в XML, а создается кодом. В методе onCreate создается View:</p>
+
+<pre><code class="java">
+puzzleView = new PuzzleView(this);
+setContentView(puzzleView);
+puzzleView.requestFocus();
+</code></pre>
+
+<p>PuzzleView - это класс производный от View, в нем рисуется игровое поле и происходит обработка событий касания экрана (метод onTouchEvent) и нажатия клавиш (метод onKeyDown).</p>
+
+<p>Разберем процесс рисования в Android. Для рисования нужно перегрузить метод onDraw. Метод получает объект Canvas, через который осуществляется рисование. Для задания цветов создаются обьекты класса Paint. Цвет задается в формате ARGB. Цвет лучше хранить в виде ресурсов (файл colors.xml). Paint это не только класс для хранения информации о цвете. Например при рисовании текста он содержит информацию о способе закрашивания, шрифте и выравнивании текста.</p>
+
+<p>Canvas содержит набор методов для рисования графики (drawRect, drawLine, drawPath, drawText и другие).</p>
+
+<p>Для оптимизации графики, лучше воздержаться от создания объектов и лишних вычислений внутри метода onDraw (рассматриваемый пример реализации графики не оптимален).</p>
+
+<img src="../../../beta.hstor.org/storage/habraeffect/5f/76/5f760d0879843bfffb599e3d204c4ac3.png" alt="Игра Судоку">
+
+<h2 class="text-warning">Музыка</h2>
+
+<p>Для воспроизведения музыки используется класс MediaPlayer. Музыка для игры добавлена в ресурсы. Нужно просто скопировать нужные файлы в папку /res/raw (форматы WAV, AAC, MP3, WMA, AMR, OGG, MIDI).</p>
+
+<p>Для начала нужно создать экземпляр класса MediaPlayer:</p>
+
+<pre><code class="java">
+mp = MediaPlayer.create(context, resource);
+</code></pre>
+
+<p>тут context это обычно класс, который инициирует запуск музыки, resource – идентификатор ресурса с музыкой. Для управления воспроизведением используют методы start, stop и release.</p>
+
+<p>В игре музыка воспроизводится в главном меню (запуск из класса Sudoku) и в игровом процессе (запуск из класса Game). Для управления воспроизведением создан класс Music. Класс содержит статический экземпляр MediaPlayer, что позволяет не создавать отдельный проект для каждого запуска звукового ресурса.</p>
+
+<p>В классах Sudoku и Game переопределены методы onResume и onPause, в которых запускается музыка при старте Activity и останавливается при деактивации.</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/games/sudoku.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:07:39 GMT -->
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/loader.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Loader, LoaderManager</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="" href="#" class="navbar-link"></a>
+          </p>
+		  
+		  
+          
+		  <ul class="nav pull-right">
+                    <li id="fat-menu" class="dropdown">
+                      <a href="../secret/enter.html" id="drop3" role="button" >Вход <b class="caret"></b></a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                        
+                        <li><form action="http://developer.alexanderklimov.ru/blocks/testreg.php" method="post">
+						    	<fieldset id="inputs">
+		                        <input class="span2" id="username" type="email" name="login" placeholder="Ваш email адрес" required>   
+		                        <input class="span1" id="password" type="password" name="password" placeholder="Пароль" required>
+	                            </fieldset>
+	                            <fieldset id="actions">
+		                        <input type="submit" class="btn" id="submit" name="submit" value="Войти">
+		                        
+	                            </fieldset>
+                            </form></li>
+                      </ul>
+                    </li>
+                  </ul>
+
+
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->
+	
+<div class="clearfix"></div><noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+    <div class="row-fluid">
+        <!--левое меню -->
+        <div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class="active"><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+        <div class="row-fluid">
+            <div class="span12">
+            
+                        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Loader, LoaderManager</h1>
+
+<p>В старых версиях Android при работе с курсором использовались методы, которые теперь считаются устаревшими.</p>
+
+<ul>
+<li>startManagingCursor(Cursor)<li>
+<li>managedQuery(Uri, String, String, String, String)</li>
+</ul>
+
+<p>Первый метод работал в жизненном цикле активности. Курсор автоматически деактивировался или закрывался, когда активность останавливалась или закрывалась. При рестарте активности, курсор также активировался, создавая повторный запрос к данным.</p>
+
+<p>Второй метод осуществлял сам запрос. Проблема с методами заключалась в том, что они работали в одном потоке с интерфейсом приложения и выполняли лишние запросы при изменении состояния активности, тормозя всё приложение, если база данных была слишком большая.</p>
+
+<p>Например, загрузим данные в список старым способом, используя контент-провайдер. Результат обрабатывается адаптером <b>SimpleCursorAdapter</b> и выводится на экран.</p>
+
+<pre><code class="java">
+public class SampleListActivity extends ListActivity {
+
+  private static final String[] PROJECTION = new String[] {"_id", "text_column"};
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    Cursor cursor = managedQuery(
+        CONTENT_URI,  // The Uri constant in your ContentProvider class
+        PROJECTION,   // The columns to return for each data row
+        null,         // No where clause
+        null,         // No where clause
+        null);        // No sort order
+
+    String[] dataColumns = { "text_column" };
+    int[] viewIDs = { R.id.text_view };
+ 
+    SimpleCursorAdapter adapter = new SimpleCursorAdapter(
+        this,                // The Activity context
+        R.layout.list_item,  // Points to the XML for a list item
+        cursor,              // Cursor that contains the data to display
+        dataColumns,         // Bind the data in column "text_column"...
+        viewIDs);            // ...to the TextView with id "R.id.text_view"
+
+    setListAdapter(adapter);
+  }
+}
+</code></pre>
+
+<p>От этого кода следует отказаться по описанным выше причинам, чтобы не иметь проблем с производительностью.</p>
+
+<p>Начиная с Android 3.0, появился другой механизм работы с курсором - загрузчик <b>Loader</b> и менеджер <b>LoaderManager</b>, которые также доступны в библиотеке совместимости для старых устройств.</p>
+
+<p>Теперь все операции с курсорами происходят в асинхронном режиме. А данные кэшируются и при необходимости информация обновляется, если данные изменились.</p>
+
+<h2 class="text-warning">LoaderManager</h2>
+
+<p><b>LoaderManager</b> позволяет грамотно управлять загрузчиками, связанными с активностью или фрагментом. Каждая активность и каждый фрагмент имеет один экземпляр менеджера <b>LoaderManager</b>, который работает с загрузчиками через методы <b>initLoader()</b>, <b>restartLoader()</b>, <b>destroyLoader()</b>. Активность через данного менеджера может предупредить о своём уничтожении, чтобы <b>LoaderManager</b> в свою очередь закрыл загрузчики для экономии ресурсов.</p>
+
+<p>Сам <b>LoaderManager</b> не знает, как данные загружаются в приложение. Он просто даёт указания загрузчику начать, остановить, обновить загрузку данных и другие команды.</p>
+
+<p><b>LoaderManager</b> работает с объектами <b>Loader&lt;D&gt;</b>, где <b>D</b> является контейнером для загружаемых данных. При этом данные не обязательно должны быть курсором. Это могут быть и <b>List</b>, <b>JSONArray</b> и т.д.</p>
+
+<p>Работа с <b>LoaderManager</b> происходит через три метода обратного вызова интерфейса <b>LoaderManager.LoaderCallbacks&lt;D&gt;</b>.</p>
+
+<h2 class="text-warning">Интерфейс LoaderManager.LoaderCallbacks&lt;D&gt;</h2>
+
+<p>Интерфейс <b>LoaderManager.LoaderCallbacks&lt;D&gt;</b> определяет порядок взаимодействия с загрузчиком через методы:</p>
+
+<pre><code class="java">
+public class MainActivity extends Activity implements LoaderManager.LoaderCallbacks&lt;D&gt; {
+
+    public Loader&lt;D&gt; onCreateLoader(int id, Bundle args) { ... }
+
+    public void onLoadFinished(Loader&lt;D&gt; loader, D data) { ... }
+
+    public void onLoaderReset(Loader&lt;D&gt; loader) { ... }
+}
+</code></pre>
+
+<p>Метод <b>onCreateLoader()</b> возвращает новый загрузчик. <b>LoaderManager</b> вызывает метод при создании <b>Loader</b>.</p>
+
+<p>Метод <b>onLoadFinished</b> вызывается автоматически, когда <b>Loader</b> завершает загрузку данных. Загрузик следит за поступающими данными, а менеджер получает уведомление о завершении загрузки и передаёт результат данному методу.</p>
+
+<p>Метод <b>onLoadReset()</b> перезагружает данные в загрузчике.</p>
+
+<p>Перепишем старый код в начале статьи, который использовал устаревшие методы, на новый лад. Класс <b>CursorLoader</b> является наследником класса <b>Loader</b> и работает с курсорами в асинхронном режиме.</p>
+
+<pre><code class="java">
+public class SampleListActivity extends ListActivity implements
+    LoaderManager.LoaderCallbacks&lt;Cursor&gt; {
+
+    private static final String[] PROJECTION = new String[] { "_id", "text_column" };
+
+    // Уникальный идентификатор загрузчика
+    private static final int LOADER_ID = 1;
+
+    // The callbacks through which we will interact with the LoaderManager.
+    private LoaderManager.LoaderCallbacks&lt;Cursor&gt; mCallbacks;
+
+    // Адаптер для связывания данных со списком
+    private SimpleCursorAdapter mAdapter;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        String[] dataColumns = { "text_column" };
+        int[] viewIDs = { R.id.text_view };
+
+        // Инициализируем адаптер.
+        // В третьем аргументе передаём null для курсора
+        // В последнем аргументе передаём 0, чтобы адаптер не следил за данными
+        // CursorLoader сделает это сам
+        mAdapter = new SimpleCursorAdapter(this, R.layout.list_item,
+            null, dataColumns, viewIDs, 0);
+        
+        // Связываем (пока пустой) адаптер с ListView.
+        setListAdapter(mAdapter);
+        
+        mCallbacks = this;
+        
+        // Инициализируем загрузчик с идентификатором '1' и 'mCallbacks'.
+        // Если загрузчик не существует, то он будет создан,
+        // иначе он будет перезапущен.
+        LoaderManager lm = getLoaderManager();
+        lm.initLoader(LOADER_ID, null, mCallbacks);
+    }
+
+    @Override
+    public Loader&lt;Cursor&gt; onCreateLoader(int id, Bundle args) {
+        // Создаем новый CursorLoader с нужными параметрами.
+        return new CursorLoader(SampleListActivity.this, CONTENT_URI,
+                PROJECTION, null, null, null);
+    }
+    
+    @Override
+    public void onLoadFinished(Loader&lt;Cursor&gt; loader, Cursor cursor) {
+        // Если используется несколько загрузчиков, то удобнее через оператор switch-case
+        switch (loader.getId()) {
+            case LOADER_ID:
+                // Данные загружены и готовы к использованию
+                 mAdapter.swapCursor(cursor);
+                break;
+        }
+        // список теперь содержит данные на экране
+    }
+    
+    @Override
+    public void onLoaderReset(Loader&lt;Cursor&gt; loader) {
+        // Если по какой-то причине данные не доступны, то удаляем ссылки на старые данные,
+        // заменяя их пустым курсором
+        mAdapter.swapCursor(null);
+    }
+}
+</code></pre>
+
+<h2 class="text-warning">Загрузик (Loader)</h2>
+
+<p>Менеджер загрузчиков управляет загрузчиками. Давайте познакомимся с ними поближе.</p>
+
+<p>Загрузчик загружает данные в отдельном потоке, следя за изменениями данных и информирует о всех важных изменениях менеджеру через специальные слушатели.</p>
+
+<p>Таким образом, активность или фрагмент не интересуются, как загружаются данные. Они доверили эту работу загрузчику.</p>
+
+<p>Для задач асинхронной загрузки данных в отдельном потоке используется класс, наследующий <b>AsyncTaskLoader&lt;D&gt;</b> вместо <b>Loader&lt;D&gt;</b>. Класс <b>AsyncTaskLoader&lt;D&gt;</b> является абстрактным и работает как <b>AsyncTask</b>. На основе этого класса вы можете реализовать абстрактный метод <b>loadInBackground()</b>.</p>
+
+<p>Слушатель получает информацию от загрузчика. Для этого менеджер регистрирует слушатель <b>OnLoadCompleteListener&lt;D&gt;</b>, который прослушивает события. Когда загрузка закончилась, то вызывается метод <b>onLoadFinished(Loader&lt;D&gt; loader, D result)</b>.</p>
+
+<p>Чтобы загрузчик начал работать, его надо запустить. Запущенный загрузчик следит за данными, пока его не перезапустят или остановят.</p>
+
+<p>Остановленный загрузчик продолжает мониторить изменения в данных, но не сообщает о них. При необходимости вы можете заново запустить или перезапустить остановленный загрузчик.</p>
+
+<p>При перезапуске загрузчик не должен запускать новую загрузку данных и мониторить изменения. Его задача - освободить лишние данные. Это состояние редко используется, но в некоторых случаях оно нужно.</p>
+
+<p>Ваша задача сводится к созданию собственного загрузчика, реализации метода <b>loadInBackground()</b> и переопределении методов <b>onStartLoading()</b>, <b>onStopLoading()</b>, <b>onReset()</b>, <b>onCanceled()</b>, <b>deliverResult(D results)</b>.</p>
+
+<p>Небольшой пример для демонстрации.</p>
+
+<pre><code class="java">
+public class SampleLoader extends AsyncTaskLoader&lt;List&lt;SampleItem&gt;&gt; {
+
+  // We hold a reference to the Loader’s data here.
+  private List&lt;SampleItem&gt; mData;
+
+  public SampleLoader(Context ctx) {
+    // Loaders may be used across multiple Activitys (assuming they aren't
+    // bound to the LoaderManager), so NEVER hold a reference to the context
+    // directly. Doing so will cause you to leak an entire Activity's context.
+    // The superclass constructor will store a reference to the Application
+    // Context instead, and can be retrieved with a call to getContext().
+    super(ctx);
+  }
+
+  /****************************************************/
+  /** (1) A task that performs the asynchronous load **/
+  /****************************************************/
+
+  @Override
+  public List&lt;SampleItem&gt; loadInBackground() {
+    // This method is called on a background thread and should generate a
+    // new set of data to be delivered back to the client.
+    List&lt;SampleItem&gt; data = new ArrayList&lt;SampleItem&gt;();
+
+    // TODO: Perform the query here and add the results to 'data'.
+
+    return data;
+  }
+
+  /********************************************************/
+  /** (2) Deliver the results to the registered listener **/
+  /********************************************************/
+
+  @Override
+  public void deliverResult(List&lt;SampleItem&gt; data) {
+    if (isReset()) {
+      // The Loader has been reset; ignore the result and invalidate the data.
+      releaseResources(data);
+      return;
+    }
+
+    // Hold a reference to the old data so it doesn't get garbage collected.
+    // We must protect it until the new data has been delivered.
+    List&lt;SampleItem&gt; oldData = mData;
+    mData = data;
+
+    if (isStarted()) {
+      // If the Loader is in a started state, deliver the results to the
+      // client. The superclass method does this for us.
+      super.deliverResult(data);
+    }
+
+    // Invalidate the old data as we don't need it any more.
+    if (oldData != null && oldData != data) {
+      releaseResources(oldData);
+    }
+  }
+
+  /*********************************************************/
+  /** (3) Implement the Loader’s state-dependent behavior **/
+  /*********************************************************/
+
+  @Override
+  protected void onStartLoading() {
+    if (mData != null) {
+      // Deliver any previously loaded data immediately.
+      deliverResult(mData);
+    }
+
+    // Begin monitoring the underlying data source.
+    if (mObserver == null) {
+      mObserver = new SampleObserver();
+      // TODO: register the observer
+    }
+
+    if (takeContentChanged() || mData == null) {
+      // When the observer detects a change, it should call onContentChanged()
+      // on the Loader, which will cause the next call to takeContentChanged()
+      // to return true. If this is ever the case (or if the current data is
+      // null), we force a new load.
+      forceLoad();
+    }
+  }
+
+  @Override
+  protected void onStopLoading() {
+    // The Loader is in a stopped state, so we should attempt to cancel the 
+    // current load (if there is one).
+    cancelLoad();
+
+    // Note that we leave the observer as is. Loaders in a stopped state
+    // should still monitor the data source for changes so that the Loader
+    // will know to force a new load if it is ever started again.
+  }
+
+  @Override
+  protected void onReset() {
+    // Ensure the loader has been stopped.
+    onStopLoading();
+
+    // At this point we can release the resources associated with 'mData'.
+    if (mData != null) {
+      releaseResources(mData);
+      mData = null;
+    }
+
+    // The Loader is being reset, so we should stop monitoring for changes.
+    if (mObserver != null) {
+      // TODO: unregister the observer
+      mObserver = null;
+    }
+  }
+
+  @Override
+  public void onCanceled(List&lt;SampleItem&gt; data) {
+    // Attempt to cancel the current asynchronous load.
+    super.onCanceled(data);
+
+    // The load has been canceled, so we should release the resources
+    // associated with 'data'.
+    releaseResources(data);
+  }
+
+  private void releaseResources(List&lt;SampleItem&gt; data) {
+    // For a simple List, there is nothing to do. For something like a Cursor, we 
+    // would close it in this method. All resources associated with the Loader
+    // should be released here.
+  }
+
+  /*********************************************************************/
+  /** (4) Observer which receives notifications when the data changes **/
+  /*********************************************************************/
+ 
+  // NOTE: Implementing an observer is outside the scope of this post (this example
+  // uses a made-up "SampleObserver" to illustrate when/where the observer should 
+  // be initialized). 
+  
+  // The observer could be anything so long as it is able to detect content changes
+  // and report them to the loader with a call to onContentChanged(). For example,
+  // if you were writing a Loader which loads a list of all installed applications
+  // on the device, the observer could be a BroadcastReceiver that listens for the
+  // ACTION_PACKAGE_ADDED intent, and calls onContentChanged() on the particular 
+  // Loader whenever the receiver detects that a new application has been installed.
+  // Please don’t hesitate to leave a comment if you still find this confusing! :)
+  private SampleObserver mObserver;
+}
+</code></pre>
+
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+
+</div><!--/span-->
+        </div><!--/row-->    
+          
+        </div><!--/span-->
+        
+        <div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+        
+      </div><!--/row-->
+      
+    
+      <hr>
+      
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/loader.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:51:32 GMT -->
+</html>

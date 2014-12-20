@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:31:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Освой Android играючи</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /><link rel="stylesheet" type="text/css" href="../msagent/clippy.css" media="all">
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class="active"><a href="index-2.html">Главная</a></li>
+<li class=""><a href="theory/index.html">Теория</a></li>
+<li class=""><a href="views.html">Palette</a></li>
+<li class=""><a href="listview/index.html">ListView</a></li>
+<li class=""><a href="catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="animation.html">Анимация</a></li>
+<li class=""><a href="sqlite/index.html">SQLite</a></li>
+<li class=""><a href="opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="library/index.html">Библиотеки</a></li>
+<li class=""><a href="games/index.html">Игры</a></li>
+<li class=""><a href="emulator.html">Эмулятор</a></li>
+<li class=""><a href="tips-android.html">Советы</a></li>
+<li class=""><a href="articles-android.html">Статьи</a></li>
+<li class=""><a href="books.html">Книги</a></li>
+<li class=""><a href="java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="design/index.html">Дизайн</a></li>
+<li class=""><a href="opensource.html">Open Source</a></li>
+<li class=""><a href="links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Разработка под Android</h1>
+
+<img src="images/android_cat.jpg" alt="Android" width="200" height="241">
+
+<p>Спасибо всем, кто поддержал сайт в прошлом месяце своими пожертвованиями.</p>
+<!--
+ <div class="span11" style="border:solid 1px; font-size: 150%; text-align: center; height: 150px; background: url('http://developer.alexanderklimov.ru/css/donate.jpg') no-repeat; margin: 5px;"> <br><a href="http://developer.alexanderklimov.ru/donate.php">Если каждый читающий пожертвовал бы 1 руб.,<br>
+ то наша кампания по сбору средств закончилась бы сегодня.</a></div>
+ -->
+
+<h2 class="text-warning">Отзывы</h2>
+ 
+<p>Большое спасибо Вам и вашего кота! Я уверен, что много людей благодарят Вам и, наверное это надоело. Я начинающий в Андроид и мне ваш кот очень помог. Никола, Болгария (орфография сохранена)
+</p>
+
+<p><a href="super.html">Почитать другие отзывы</a></p>
+
+<h2 class="text-error">Новости</h2>
+
+<p><b>Перезагрузка!</b> Начиная с июля 2014 года старые уроки будут переделываться под Android Studio.</p>
+
+<p>Рекомендую подписаться на меня в G+ (ссылка есть в нижнем левом углу). Вы всегда будете в курсе обо всех изменениях в статьях.</p>
+
+<h2 class="text-warning">Практика. Изучаем Android за месяц (30 дней)</h2>
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="text-success">День 1. Подготовка</h3>
+    <p>Инструменты для разработки под Android. Среда разработки - Android Studio</p>
+    <p><a class="btn" href="android1.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 2. Hello Kitty!</h3>
+    <p>Пишем первое приложение для Android <b>Hello Kitty!</b> Поздоровайся с котом</p>
+    <p><a class="btn" href="android2.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 3. Щелчок</h3>
+    <p>Щёлчкаем кнопки и пишем полезную программу для подсчёта ворон</p>
+    <p><a class="btn" href="android3.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+</div><!--/row-->
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="text-success">День 4. Светофор</h3>
+    <p>Напишем программу, которая будет управлять фоновым цветом - назовём ее <b>Светофор</b></p>
+    <p><a class="btn" href="trafficlights.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+        <h3 class="text-success">День 5. На другой экран</h3>
+    <p>Часто приложение состоит из нескольких экранов. Как переключаться между ними?</p>
+    <p><a class="btn" href="activity.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 6. Ориентация</h3>
+    <p>Телефоны и планшеты можно вращать - узнаем, как писать программы для подобных случаев</p>
+    <p><a class="btn" href="orientation.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+</div><!--/row-->
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="text-success">День 7. Темы и стили</h3>
+    <p>Чтобы приложение было стильным, можно применить специальные приёмы</p>
+    <p><a class="btn" href="theme.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 8. Меню</h3>
+    <p>Мы научимся создавать меню для вызова различных команд</p>
+    <p><a class="btn" href="menu.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 9. PopupMenu</h3>
+    <p>Продолжим работу с меню и познакомимся с всплывающим меню</p>
+    <p><a class="btn" href="popupmenu.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+</div><!--/row-->
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="text-success">День 10. Toast</h3>
+    <p>Выводим всплывающие сообщения для привлечения внимания пользователя</p>
+    <p><a class="btn" href="toast.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 11. AlertDialog</h3>
+    <p>Выводим диалоговые окна, чтобы узнать реакцию пользователя</p>
+    <p><a class="btn" href="alertdialog.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 12. ListActivity</h3>
+    <p>Прокручиваемый список - распространённый тип программ на устройствах</p>
+    <p><a class="btn" href="listactivity.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+</div><!--/row-->
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="text-success">День 13. Уведомления</h3>
+    <p>Выводим уведомления, которые не исчезнут, пока сам пользователь не закроет их</p>
+    <p><a class="btn" href="notification.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 14. Конвертер</h3>
+    <p>Напишем универсальную программу перевода одних единиц в другие - Конвертер «38 попугаев»</p>
+    <p><a class="btn" href="longcat.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 15. Кто сказал Мяу?</h3>
+    <p>Используем звуковые эффекты</p>
+    <p><a class="btn" href="whosaidmeow.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+</div><!--/row-->
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="text-success">День 16. Графика</h3>
+    <p>Рассмотрим приёмы работы с графикой. У нас есть отдельная категория для уроков с графикой</p>
+    <p><a class="btn" href="simplepaint.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 17. Анимация</h3>
+    <p>Android имеет богатые возможности работы с анимацией</p>
+    <p><a class="btn" href="sunrise.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 18. Браузер</h3>
+    <p>Создадим свой браузер внутри своего приложения</p>
+    <p><a class="btn" href="mybrowser.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+</div><!--/row-->
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="text-success">День 19. Клавиатура</h3>
+    <p>Изучаем возможности клавиатуры и аппаратных кнопок</p>
+    <p><a class="btn" href="keyboard.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+
+  <div class="span4">
+    <h3 class="text-success">День 20. Справочник</h3>
+    <p>Напишем справочник, который всегда будет под рукой. Полезная информация всегда в цене</p>
+    <p><a class="btn" href="crib.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+  
+  <div class="span4">
+    <h3 class="text-success">День 21. Камера</h3>
+    <p>Чтобы сфотографировать котика, нужно уметь обращаться с камерой</p>
+    <p><a class="btn" href="photocamera.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+  
+</div><!--/row-->
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="text-success">День 22. Локализация</h3>
+    <p>Можно сразу написать одну программу на нескольких языках мира. Это очень просто</p>
+    <p><a class="btn" href="locale.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 23. Настройки</h3>
+    <p>Иногда необходимо сохранять настройки - имена, рекорды, результаты игры и т.п.</p>
+    <p><a class="btn" href="preference.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 24. Экран настроек</h3>
+    <p>Создаём экраны настроек, используя готовые шаблоны</p>
+    <p><a class="btn" href="preferences_framework.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+</div><!--/row-->
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="text-success">День 25. Блокнот</h3>
+    <p>Мы создадим текстовый редактор, в котором можно записывать умные мысли</p>
+    <p><a class="btn" href="texteditor.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 26. Карты и StreetView</h3>
+    <p>Используем Карты Google и Просмотр улиц для поиска котов</p>
+    <p><a class="btn" href="mapintent.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 27. Шар судьбы</h3>
+    <p>Развлекательное приложение <b>Шар судьбы (Magic 8 ball)</b> по мотивам фильма <b>Трасса 66</b></p>
+    <p><a class="btn" href="magic8ball.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+</div><!--/row-->
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="text-success">День 28. Фрагменты</h3>
+    <p>Создаём модульные компоненты для разных типов экранов</p>
+    <p><a class="btn" href="fragment.php">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 29. База данных</h3>
+    <p>Современное программирование не может обойтись без базы данных</p>
+    <p><a class="btn" href="database.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+
+  <div class="span4">
+    <h3 class="text-success">День 30. Публикация</h3>
+    <p>Публикуем программу в Google Play, чтобы заработать свой первый миллион</p>
+    <p><a class="btn" href="publish.html">Перейти &raquo;</a></p>
+  </div><!--/span-->
+</div><!--/row-->
+
+<h2 class="text-warning">Практика. Второй месяц обучения</h2>
+
+<div class="alert">
+Люди, не пишите в письме "<del>Доброго времени суток</del>". Пишите просто - "Здравствуйте" или "Добрый день (утро, вечер)". Обещаю, что не обижусь, если утром прочитаю ваше письмо со словами "Добрый вечер!". Уважайте русский язык.
+</div>
+
+<p>Полный текст статьи и исходники программы доступны только зарегистрированным участникам сайта.</p>
+
+<p>Стоимость регистрации - символические 210 рублей.</p>
+
+<p>Для регистрации сначала необходимо пополнить Яндекс.Кошелек - 410011383280263 на указанную сумму (или Webmoney-кошелек R390884954122 или QIWI - 9055113963 (кошелек, не на счёт телефона!)), а затем прислать письмо на адрес rusproject@mail.ru или alexander.klimoff@gmail.com с указанием, на какой кошелек вы делали оплату и реквизиты, по которым можно вас определить.</p>
+
+<p>Не присылайте в письме мои номера кошельков - поверьте, я их знаю и без вас.</p>
+
+<p>В ответном письме вы получите учётные данные для чтения статей из закрытой зоны за второй месяц.</p>
+
+<p>Доступ к третьему месяцу обучения доступен только после оплаты второго месяца и составляет 210 руб.</p>
+
+<p>Доступ к чётвертому месяцу обучения доступен после оплаты третьего месяца и составляет 210 руб. и т.д.</p>
+
+<p>При оплате сразу четырех месяцев (2-5) - стоимость 800 руб, пяти месяцев (2-6) - 1000 руб.</p>
+
+<p>Также возможен приём на PayPal. Обратите внимание, что в этом случае стоимость одного месяца составляет 8$.</p>
+
+<p>Доступ даётся как минимум на один год. Для тех, кто оплатил третий и другие месяцы, сроки доступа увеличиваются.</p>
+
+<p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="VRED2NRVE927N">
+<input type="image" src="../../www.paypalobjects.com/ru_RU/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal — более безопасный и легкий способ оплаты через Интернет!">
+<img alt="" border="0" src="../../www.paypalobjects.com/ru_RU/i/scr/pixel.html" width="1" height="1">
+</form>
+</p><ol class="rounded-list">
+<li><a href="graphics-circletext.html">Текст вдоль окружности на градиентном фоне</a></li>
+<li><a href="screen.html">Экран</a></li>
+<li><a href="listview-icons.html">Списки со значками</a></li>
+<li><a href="customtitlebar.html">Настраиваем свой заголовок у приложения</a></li>
+<li><a href="filesystem.html">Файловая система для приложения</a></li>
+<li><a href="fileexplorer.html">Файловый менеджер</a></li>
+<li><a href="sdcard.html">SD-карта</a></li>
+<li><a href="gps.html">GPS</a></li>
+<li><a href="geolocation.html">Геолокация</a></li>
+<li><a href="widget.html">Виджет на главный экран</a></li>
+<li><a href="network.html">Сетевая поддержка</a></li>
+<li><a href="googlemapsv2-basic.html">Google Maps Android API v2. Знакомство</a></li>
+<li><a href="music.html">Музыка нас связала</a></li>
+<li><a href="video.html">Видео</a></li>
+<li><a href="battery.html">Если я заменю батарейки</a></li>
+<li><a href="bluetooth.html">Работаем с Bluetooth</a></li>
+<li><a href="times.html">Сказка о потерянном времени - работаем с датами и временем</a></li>
+<li><a href="webview-advanced.html">Продвинутый WebView</a></li>
+<li><a href="sensors.html">Собираем показания датчиков (Общая информация)</a>
+<li><a href="sensor-light.html">Датчик освещения</a></li>
+<li><a href="sensor-proximity.html">Датчик расстояния</a></li>
+<li><a href="sensor-temperature.html">Температурный датчик</a></li>
+<li><a href="customview.html">Создаём собственный элемент View</a></li>
+<li><a href="camera.html">У нас есть фотик и котик - работаем с камерой</a></li>
+<li><a href="locale2.html">Работаем с локалью</a></li>
+<li><a href="wifi.html">Работаем с Wi-Fi</a></li>
+<li><a href="facedetector.html">Эти наглые рыжие морды - Распознавание лиц</a></li>
+<li><a href="dictophone.html">Диктофон - делаем запись с микрофона</a></li>
+<li><a href="sms.html">SMS</a></li>
+<li><a href="alarmmanager.html">Alarm Service - сигнализация</a></li>
+</ol>
+<h2 class="text-warning">Практика. Третий месяц обучения (закрытая зона)</h2>
+<ol>
+<li><a href="wallpaper.html">Обои главного экрана (Wallpaper)</a></li>
+<li><a href="tts.html">Кто сказал Мяу? - используем технологии преобразования текста в речь</a></li>
+<li><a href="apps.html">Всё, что вы хотели знать о приложениях, но боялись спросить</a></li>
+<li><a href="barcode.html">Считываем штрих-код</a></li>
+<li><a href="thumbnails.html">Миниатюры</a></li>
+<li><a href="json.html">Работаем с данными JSON</a></li>
+<li><a href="xmlresourceparser.html">XmlResourceParser: разбор XML-документа из ресурсов</a></li>
+<li><a href="sensor-accelerometer.html">Акселерометр</a></li>
+<li><a href="gallery.html">Работаем с системным приложением Галерея</a></li>
+<li><a href="listfragment.html">ListFragment</a></li>
+<li><a href="actionbar.html">ActionBar</a></li>
+<li><a href="actionbarsearchview.html">Поиск в ActionBar</a></li>
+<li><a href="searchable.html">Пропал котёнок? Найдется всё!</a></li>
+<li><a href="io.html">Чтение и запись файлов</a></li>
+<li><a href="torch.html">Карманный фонарик</a></li>
+<li><a href="eggtimer.html">Обратный отсчёт - варим яйца</a></li>
+<li><a href="googlemapsv2.html">Google Maps Android API v2. Продвинутые приёмы</a></li>
+<li><a href="parrot.html">Проект "Попугай" - слушаем и повторяем. Распознавание речи</a></li>
+<li><a href="action_send.html">Intent.ACTION_SEND. Пришли фотку</a></li>
+<li><a href="popupwindow.html">Всплывающее окно PopupWindow</a></li>
+<li><a href="contact.html">Контакт? Есть контакт!</a></li>
+<li><a href="contactcontract.html">ContactsContract. Обращение к базе данных контактов</a></li>
+<li><a href="downloadmanager.html">DownloadManager - менеджер загрузок</a></li>
+<li><a href="calendar_add_event.html">Добавляем события в Календарь</a></li>
+<li><a href="dialogfragment.html">DialogFragment</a></li>
+<li><a href="secretcode.html">Секретный код</a></li>
+<li><a href="application.php">Класс Application</a></li>
+<li><a href="listview-advanced.html">Продвинутое приложение с использованием ListView</a></li>
+<li><a href="compass.html">Компас</a></li>
+<li><a href="clipboardmanager.html">Работаем с буфером обмена</a></li>
+</ol>
+
+<h2 class="text-warning">Практика. Четвёртый месяц обучения (закрытая зона)</h2>
+<ol>
+<li><a href="ringtone.html">Рингтоны</a></li>
+<li><a href="asynctask-imageinet.html">Используем AsyncTask для загрузки изображений из сети</a></li>
+<li><a href="asynctask-readfile.html">Используем AsyncTask для загрузки текстового файла из сети</a></li>
+<li><a href="zip.html">Архивация файлов</a></li>
+<li><a href="videorecorder.html">Запись видео</a></li>
+<li><a href="telephone.html">Алло! Алло! - Используем телефонию</a></li>
+<li><a href="smsresponder.html">Создаём SMS-автоответчик</a></li>
+<li><a href="sensor-orientation.html">Датчик ориентации</a></li>
+<li><a href="autohorizont.html">Горизонт завален</a></li>
+<li><a href="touch.html">Касания сенсорного экрана</a></li>
+<li><a href="contentreceiver.html">Получение данных от других приложений</a></li>
+<li><a href="osmdroid.html">Библиотека osmdroid - Используем карты OpenStreetMap</a></li>
+<li><a href="viewpager.html">ViewPager</a></li>
+<li><a href="mediastore.html">MediaStore</a></li>
+<li><a href="asciiarteditor.php">ASCII Art Editor</a></li>
+<li><a href="gesturedetector.html">Распознаём жесты</a></li>
+<li><a href="parseobject.html">Облака стали ближе - облачный хостинг</a></li>
+<li><a href="pdf.html">Работаем с PDF</a></li>
+<li><a href="httpurlconnection.html">HttpURLConnection: загрузка страницы</a></li>
+<li><a href="sax-parser.html">SAX Parser</a></li>
+<li><a href="xpath.html">XPath - парсер XML-документов. Рекомендован W3C</a></li>
+<li><a href="twitterservices.html">Используем веб-сервисы на примере Twitter</a></li>
+<li><a href="geonames.html">Сервисы GeoNames: Погода, почтовые индексы и часовой пояс</a></li>
+<li><a href="paypal.html">Внедряем PayPal</a></li>
+<li><a href="facebook.html">Работаем с Книгой Морд - FaceBook</a></li>
+<li><a href="addressbook.html">Адресная книга</a></li>
+<li><a href="googlesearchapi.html">Google Search API</a></li>
+<li><a href="youtubeandroidplayerapi.php">YouTube Android Player API</a></li>
+<li><a href="googleanalytics.html">Внедряем Google Analytics</a></li>
+<li><a href="daydream.html">DayDream (Заставка)</a></li>
+</ol>
+
+<h2 class="text-warning">Практика. Пятый месяц обучения (закрытая зона)</h2>
+
+<p><a href="5.html">Смотреть уроки</a></p>
+
+<h2 class="text-warning">Литература. Новинки</h2>
+<noindex>
+
+<p><a href="http://www.ozon.ru/context/detail/id/27960228/?partner=visual">Разработка игр под Android</a> (Заказать на Ozon.ru) <b style="color:red">Новинка!</b></p>
+
+<p><a href="http://www.ozon.ru/context/detail/id/27256517/?partner=visual">Google Android. Создание приложений для смартфонов и планшетных ПК</a> 2-e издание. (Заказать на Ozon.ru) <b style="color:red">Новинка!</b></p>
+
+<p><a href="http://www.ozon.ru/context/detail/id/24301926/?partner=visual">Программирование под Android</a> 2014 год</p>
+
+
+
+</noindex>
+
+<p>Остальные книги смотрите в отдельной рубрике <a href="books.html">Книги</a></p>
+
+<h2 class="text-warning">Помоги котам!</h2>
+
+<p><a href="http://developer.alexanderklimov.ru/donate.php">Поддержка сайта</a></p>
+
+<h5 class="text-success">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+<p>
+<a href="http://www.centerakpp.ru/remont-akpp-daihatsu-mira-v-moskve.html" target="_blank">ремонт акпп дайхатсу мира</a>;В продаже имеется <a href="http://brigo.ru/ibp-apc-syh4k6rmi-symmetra-rm-2-8kw-4kva-expandable-to-4-3kw-6kva-14239.html" target="_blank">SYH4K6RMI</a>. Выгодное предложение.;<a href="http://pmkupit.com/" target="_blank">как купить боевой пистолет</a>
+</p>
+
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../code.jquery.com/jquery-1.7.min.js"></script>
+<!-- Clippy.js -->
+<script src="../msagent/clippy.min.js"></script>
+
+<!-- Init script -->
+<script type="text/javascript">
+    clippy.load('Links', function(agent){
+        // do anything with the loaded agent
+        agent.show();
+        
+        // play a random animation
+        agent.animate();
+        
+        // move to the given point, use animation if available
+        agent.moveTo(100,160);
+
+        // gesture at a given point (if gesture animation is available)
+        //agent.gestureAt(200,200);
+        agent.play('Greeting');
+        agent.speak('Котаны! Программировать для Android просто');
+        agent.play('Explain');
+        agent.speak('Удачи!');
+        agent.play('GoodBye');
+        agent.moveTo(10,760);
+        
+        
+    });
+</script>
+
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:33:37 GMT -->
+</html>

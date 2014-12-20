@@ -1,0 +1,627 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/games/memoria2.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:07:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Игры на Android: Memoria</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class="active"><a href="index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Memoria - игра для тренировки памяти. Часть 2</h1>
+
+<p>В <a href="memoria.html">первой части</a> мы начали делать игру для тренировки памяти. Собственно игра уже готова, осталось добавить к ней красоты. В этом уроке добавим таймер, который будет отсчитывать время с начала до окончания игры, учет ходов, то есть количество открытых карточек и добавим начальный экран.</p>
+
+<h2 class="text-warning">Учёт ходов</h2>
+
+<p>С количеством ходов всё понятно - будем считать количество открытых картинок и выводить это число в TextView. Для таймера есть класс <a href="../views/chronometer.html">Chronometer</a>, который делает как раз то что нам нужно — отсчитывает время.</p>
+
+<p>Добавим в main.xml элементы TextView и Chronometer</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;LinearLayout
+        xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:orientation=&quot;horizontal&quot; &gt;
+
+        &lt;TextView
+            xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+            android:id=&quot;@+id/stepview&quot;
+            android:layout_width=&quot;0dip&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_marginLeft=&quot;10dip&quot;
+            android:layout_weight=&quot;1&quot;
+            android:textSize=&quot;30dp&quot; /&gt;
+
+        &lt;Chronometer
+            xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+            android:id=&quot;@+id/timeview&quot;
+            android:layout_width=&quot;100dip&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:textSize=&quot;30dp&quot; /&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;GridView
+        xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:id=&quot;@+id/field&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:gravity=&quot;center&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>В классе MemoriaActivity напишем их обработку:</p>
+
+<pre><code class="java">
+...
+private TextView mStepScreen;
+private Chronometer mTimeScreen;
+
+private Integer StepCount; // кол-во ходов
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+
+  ...
+
+  mTimeScreen = (Chronometer) findViewById(R.id.timeview);
+  mStepScreen = (TextView)findViewById(R.id.stepview);
+
+  // шрифт
+  Typeface type = Typeface.createFromAsset(getAssets(),"my-font.ttf"); 
+  mTimeScreen.setTypeface(type);
+  mStepScreen.setTypeface(type);
+
+  StepCount = 0;
+  mStepScreen.setText (StepCount.toString());
+
+  mTimeScreen.start();
+
+  ...
+
+  mGrid.setOnItemClickListener(new OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView&lt;?&gt; parent, View v,int position, long id) {
+
+      mAdapter.checkOpenCells ();
+      mAdapter.openCell (position);
+
+      StepCount ++;
+      mStepScreen.setText (StepCount.toString());
+      if (mAdapter.checkGameOver())
+      {
+        mTimeScreen.stop();
+        String time = mTimeScreen.getText().toString();
+        String TextToast = "Игра закончена nХодов: " + StepCount.toString() + "nВремя: " + time;
+        Toast.makeText (getApplicationContext(), TextToast, Toast.LENGTH_SHORT).show();
+        }
+      }
+    });
+  }
+}
+</code></pre>
+
+<p>Запускаем:</p>
+
+<img src="memoria3.png" alt="Memoria">
+
+<p>Тут, кстати, обнаружилась небольшая ошибка в игре: нажатие на уже удаленную картинку считается ходом, что неправильно. Переделаем метод openCell() в классе GridAdapter - он должен проверять, является ли карточка закрытой и только тогда ее открывать.</p>
+
+<pre><code class="java">
+public boolean openCell(int position) {
+	if (arrStatus.get(position) == Status.CELL_DELETE
+			|| arrStatus.get(position) == Status.CELL_OPEN)
+		return false;
+
+	if (arrStatus.get(position) != Status.CELL_DELETE)
+		arrStatus.set(position, Status.CELL_OPEN);
+
+	notifyDataSetChanged();
+	return true;
+}
+</code></pre>
+
+<p>А в классе MemoriaActivity будем правильно считать ходы </p>
+
+<pre><code class="java">
+mGrid.setOnItemClickListener(new OnItemClickListener() {
+  @Override
+  public void onItemClick(AdapterView&lt;?&gt; parent, View v,int position, long id) {
+ 
+    mAdapter.checkOpenCells ();
+    if (mAdapter.openCell (position)) {
+      StepCount ++;
+      mStepScreen.setText (StepCount.toString());
+    }
+    ...
+  }
+});
+</code></pre>
+
+<h3 class="text-warning">Использование собственных шрифтов</h3>
+
+<p>Обратите внимание, что в этом коде мы используем свой шрифт (у меня это 'my-font.ttf'), предварительно добавленный в папку assets.</p>
+
+<p>В xml и у TextView и у Chronometer также описаны параметры шрифта<p>
+
+<pre>
+android:textSize="30dp"
+android:textColor="#FFFFFF"
+</pre>
+
+<p>Две строчки, конечно, можно и скопировать в два места, но если или строчек или мест будет много, то это неудобно, да и места много занимает. Создадим стиль шрифта. Добавим файл style.xml в директорию /res/values/. Напишем туда:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+
+    &lt;style name=&quot;MyText&quot;&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;#FFFFFF&lt;/item&gt;
+        &lt;item name=&quot;android:textSize&quot;&gt;30dp&lt;/item&gt;
+        &lt;item name=&quot;android:shadowColor&quot;&gt;#782144&lt;/item&gt;
+        &lt;item name=&quot;android:shadowDx&quot;&gt;2&lt;/item&gt;
+        &lt;item name=&quot;android:shadowDy&quot;&gt;2&lt;/item&gt;
+        &lt;item name=&quot;android:shadowRadius&quot;&gt;3&lt;/item&gt;
+    &lt;/style&gt;
+
+    &lt;style name=&quot;ButtonText&quot;&gt;
+        &lt;item name=&quot;android:layout_width&quot;&gt;fill_parent&lt;/item&gt;
+        &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;#ffffff&lt;/item&gt;
+        &lt;item name=&quot;android:gravity&quot;&gt;center&lt;/item&gt;
+        &lt;item name=&quot;android:layout_margin&quot;&gt;1dp&lt;/item&gt;
+        &lt;item name=&quot;android:textSize&quot;&gt;16dp&lt;/item&gt;
+        &lt;item name=&quot;android:textStyle&quot;&gt;bold&lt;/item&gt;
+        &lt;item name=&quot;android:shadowColor&quot;&gt;#000000&lt;/item&gt;
+        &lt;item name=&quot;android:shadowDx&quot;&gt;2&lt;/item&gt;
+        &lt;item name=&quot;android:shadowDy&quot;&gt;2&lt;/item&gt;
+        &lt;item name=&quot;android:shadowRadius&quot;&gt;3&lt;/item&gt;
+    &lt;/style&gt;
+
+&lt;/resources&gt;
+</code></pre>
+
+<p>А в main.xml заменим эти строчки у TextView и Chronometer на:</p>
+<pre>
+style="@style/MyText"
+</pre>
+
+<p>Теперь, чтобы изменить стиль шрифта и в TextView и в Chronometer, надо изменить только файл style.xml, например можно добавить тень к тексту:</p>
+
+<h3>Поворот экрана</h3>
+
+<p>Попробуем повернуть экран горизонтально (на эмуляторе это можно сделать нажав Ctrl + F11) - выглядит теперь не очень хорошо. Здесь есть три решения.</p>
+
+<p>Первое - запретить поворот зкрана. Сам телефон крутить, конечно, можно, но изображение от этого меняться не будет. Для этого добавим строку <b>android:screenOrientation="portrait"</b> в файл AndroidManifest.xml.</p>
+
+<pre><code class="xml">
+&lt;activity
+  android:name=&quot;.MemoriaActivity&quot;
+  android:label=&quot;@string/app_name&quot; 
+  android:screenOrientation=&quot;portrait&quot;&gt;
+</code></pre>
+
+<p>Второй вариант - написать другую разметку xml для горизонтальной ориентации экрана. Создадим директорию /res/layout-land, а в ней файл main.xml с новой разметкой.</p>
+
+<p>Третий способ - отловить поворот экрана программно, для этого добавим в AndroidManifest.xml за каким изменением конфигурации мы хотим следить:</p>
+
+<pre><code class="xml">
+&lt;activity
+  android:name=&quot;.MemoriaActivity&quot;
+  android:label=&quot;@string/app_name&quot; 
+  android:configChanges=&quot;orientation&quot;&gt;
+</code></pre>
+
+<p>А в класс MemoriaActivity добавим метод <b>onConfigurationChanged(Configuration newConfig)</b>, который вызывается каждый раз, когда конфигурация аппарата меняется.</p>
+
+<pre><code class="java">
+@Override
+public void onConfigurationChanged(Configuration newConfig) {
+	super.onConfigurationChanged(newConfig);
+	if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE)
+		mGrid.setNumColumns(9);
+	if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT)
+		mGrid.setNumColumns(6);
+}
+</code></pre>
+
+<p>В вертикальном расположении экрана у нас поле 6х6, а в горизонтальном - 9х4.</p>
+
+<h3 class="text-warning">Начальный экран</h3>
+
+<p>Теперь сделаем начальный экран, на котором будут четыре кнопки (Старт, Настройки, Рекорды, Выход) на каком-нибудь фоне. Создаем файл MemoriaStart.java с классом MemoriaStart (унаследованным от Activity) и разметку start.xml. Сделаем две разметки для вертикальной и горизонтальной ориентации.</p>
+
+<img src="memoria4.png" alt=""><br>
+
+<img src="memoria5.png" alt="">
+
+<p>Если после этого запустить программу, то откроется окно MemoriaActivity, для того чтобы первым открывалось MemoriaStart изменим AndroidManifest.xml:</p>
+
+<pre><code class="xml">
+&lt;application
+  android:icon=&quot;@drawable/ic_launcher&quot;
+  android:label=&quot;@string/app_name&quot; &gt;
+  &lt;activity
+    android:name=&quot;.MemoriaStart&quot;
+    android:label=&quot;@string/app_name&quot;&gt;
+    &lt;intent-filter&gt;
+      &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+      &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+    &lt;/intent-filter&gt;
+  &lt;/activity&gt;
+  &lt;activity android:name=&quot;.MemoriaActivity&quot; 
+    android:label=&quot;@string/app_name&quot;
+    android:configChanges=&quot;orientation&quot;&gt;
+  &lt;/activity&gt;
+&lt;/application&gt;
+</code></pre>
+
+<p>На нажатие кнопок «Настройка» и «Рекорды» пока никак реагировать не будем, а «Старт» и «Выход» сделаем:</p>
+
+<pre><code class="java">
+public class MemoriaStart extends Activity   {
+ 
+  Button mStart;
+  Button mExit;
+ 
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.start);
+ 
+    mStart = (Button)findViewById(R.id.butStart);
+    mExit = (Button)findViewById(R.id.butExit);
+ 
+    mStart.setOnClickListener (new OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startGame();
+      }
+    });
+ 
+    mExit.setOnClickListener (new OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        finish();
+      }
+    });
+  }
+ 
+  private void startGame () {
+    Intent i = new Intent(this, MemoriaActivity.class);
+    startActivity (i);
+  }
+}
+</code></pre>
+
+<p>Для того чтобы открыть другое окно программы используется метод void startActivity (Intent intent), которому передается экземпляр класса Intent.</p>
+
+<p>Запускаем проект - теперь при запуске программы, вначале показывается окно с кнопками, при нажатии на «Старт» запускается игра, а кнопка «Выход» закрывает приложение. Чтобы из игры вернуться на начальный экран можно нажать кнопку «Назад» на телефоне, но для наглядности после завершения игры будем показывать не просто всплывающее сообщение, а диалоговое окно с кнопкой, по нажатию на которое будем возвращаться назад.</p>
+
+<p>В классе MemoriaActivity при завершении игры вызовем функцию ShowGameOver()</p>
+
+<pre><code class="java">
+public class MemoriaActivity extends Activity {
+...       
+  mGrid.setOnItemClickListener(new OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView&lt;?&gt; parent, View v,int position, long id) {
+ 
+      ...
+      if (mAdapter.checkGameOver())
+      {
+        mTimeScreen.stop();
+        ShowGameOver();
+      }
+    }
+  });
+}
+</code></pre>
+
+<p>И напишем саму функцию <b>ShowGameOver()</b></p>
+
+<pre><code class="java">
+public class MemoriaActivity extends Activity {
+  ...
+ 
+  private void ShowGameOver () {
+ 
+    // Диалоговое окно
+    AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
+ 
+    // Заголовок и текст
+    alertbox.setTitle("Поздравляем!");
+    String time = mTimeScreen.getText().toString();
+    String TextToast = "Игра закончена nХодов: " + StepCount.toString() + "nВремя: " + time;
+    alertbox.setMessage(TextToast);
+ 
+    // Добавляем кнопку 
+    alertbox.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+      public void onClick(DialogInterface arg0, int arg1) {
+        // закрываем текущюю Activity
+        finish();
+      }
+    });
+    // показываем окно
+    alertbox.show();
+  }
+}
+</code></pre>
+
+<img src="memoria6.png" alt="Game over">
+
+<h3 class="text-warning">Заключение</h3>
+
+<p>Запускаем и проверяем. Всё работает. Мы сделали счётчики и начальный экран. Попутно посмотрели, как установить свой шрифт, как сделать общий стиль для нескольких элементов приложения, как реагировать на изменения ориентации экрана и научились выводить диалоговое окошко.</p> 
+
+
+<p>Источник: <a href="http://ru-code-android.livejournal.com/2842.html" >Программирование для android - Игра для тренировки памяти (часть два)</a></p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/games/memoria2.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:08:10 GMT -->
+</html>

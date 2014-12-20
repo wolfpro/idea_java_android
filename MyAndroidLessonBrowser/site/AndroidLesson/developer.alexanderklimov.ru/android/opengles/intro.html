@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/opengles/intro.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:02:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Знакомьтесь: OpenGL ES</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class="active"><a href="index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+                
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">OpenGL ES</h1>
+
+<p>Термин <b>OpenGL ES</b> часто попадается мне на глаза. О том, что это такое, можно почитать в Википедии и других местах. Для общего развития мне захотелось узнать, что это за зверь такой. Это статья <b>неспециалиста</b> по данной теме. Написал, чтобы оставить статью на память. Может потом буду возвращаться к статье и дополнять её.</p>
+
+<p>Кстати, пример не заработал на эмуляторе, хотя вроде на форумах говорят, что последние сборки ADT для Eclipse поддерживают OpenGL ES на эмуляторе. Я проверял на своём устройстве. Примеры будут расчитаны только на OpenGL ES 2.0, который занимает 99.8% на устройствах. Говорят, что версия 2.0 сильно отличается от версии 1.1 и изучать платформу по старым примерам смысла нет.</p>
+
+<div class="info">Позже я разобрался, как запускать примеры на эмуляторе</div>
+
+<p>Для первого примера я взял образец из статьи <a href="http://www.learnopengles.com/android-lesson-one-getting-started/" >Android Lesson One: Getting Started | Learn OpenGL ES</a>.</p>
+
+<p>Создаём стандартный проект. В коде главной активности пишем код:</p>
+
+<details>
+    <summary>Показать код (щелкните мышкой)</summary>
+	
+<pre><code class="java">
+package ru.alexanderklimov.opengles_0;
+
+import android.opengl.GLSurfaceView;
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.pm.ConfigurationInfo;
+import android.view.Menu;
+
+public class MainActivity extends Activity {
+
+	/** Hold a reference to our GLSurfaceView */
+	private GLSurfaceView mGLSurfaceView;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		mGLSurfaceView = new GLSurfaceView(this);
+		 
+	    // Check if the system supports OpenGL ES 2.0.
+	    final ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+	    final ConfigurationInfo configurationInfo = activityManager.getDeviceConfigurationInfo();
+	    final boolean supportsEs2 = configurationInfo.reqGlEsVersion >= 0x20000;
+	 
+	    if (supportsEs2)
+	    {
+	        // Request an OpenGL ES 2.0 compatible context.
+	        mGLSurfaceView.setEGLContextClientVersion(2);
+	 
+	        // Set the renderer to our demo renderer, defined below.
+	        mGLSurfaceView.setRenderer(new LessonOneRenderer());
+	    }
+	    else
+	    {
+	        // This is where you could create an OpenGL ES 1.x compatible
+	        // renderer if you wanted to support both ES 1 and ES 2.
+	        return;
+	    }
+	 
+	    setContentView(mGLSurfaceView);
+	}
+	
+	@Override
+	protected void onResume()
+	{
+	    // The activity must call the GL surface view's onResume() on activity onResume().
+	    super.onResume();
+	    mGLSurfaceView.onResume();
+	}
+	 
+	@Override
+	protected void onPause()
+	{
+	    // The activity must call the GL surface view's onPause() on activity onPause().
+	    super.onPause();
+	    mGLSurfaceView.onPause();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+}
+</code></pre>
+
+</details>
+
+<p>В коде идёт обращение к классу <b>LessonOneRenderer</b>. Создадим его:</p>
+
+<details>
+    <summary>Показать код (щелкните мышкой)</summary>
+
+<pre><code class="java">
+package ru.alexanderklimov.opengles_1;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
+
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL10;
+
+import android.opengl.GLES20;
+import android.opengl.GLSurfaceView;
+import android.opengl.Matrix;
+import android.os.SystemClock;
+
+/**
+ * This class implements our custom renderer. Note that the GL10 parameter passed in is unused for OpenGL ES 2.0
+ * renderers -- the static class GLES20 is used instead.
+ */
+public class LessonOneRenderer implements GLSurfaceView.Renderer 
+{
+	/**
+	 * Store the model matrix. This matrix is used to move models from object space (where each model can be thought
+	 * of being located at the center of the universe) to world space.
+	 */
+	private float[] mModelMatrix = new float[16];
+
+	/**
+	 * Store the view matrix. This can be thought of as our camera. This matrix transforms world space to eye space;
+	 * it positions things relative to our eye.
+	 */
+	private float[] mViewMatrix = new float[16];
+
+	/** Store the projection matrix. This is used to project the scene onto a 2D viewport. */
+	private float[] mProjectionMatrix = new float[16];
+
+	/** Allocate storage for the final combined matrix. This will be passed into the shader program. */
+	private float[] mMVPMatrix = new float[16];
+
+	/** Store our model data in a float buffer. */
+	private final FloatBuffer mTriangle1Vertices;
+	private final FloatBuffer mTriangle2Vertices;
+	private final FloatBuffer mTriangle3Vertices;
+
+	/** This will be used to pass in the transformation matrix. */
+	private int mMVPMatrixHandle;
+
+	/** This will be used to pass in model position information. */
+	private int mPositionHandle;
+
+	/** This will be used to pass in model color information. */
+	private int mColorHandle;
+
+	/** How many bytes per float. */
+	private final int mBytesPerFloat = 4;
+
+	/** How many elements per vertex. */
+	private final int mStrideBytes = 7 * mBytesPerFloat;	
+
+	/** Offset of the position data. */
+	private final int mPositionOffset = 0;
+
+	/** Size of the position data in elements. */
+	private final int mPositionDataSize = 3;
+
+	/** Offset of the color data. */
+	private final int mColorOffset = 3;
+
+	/** Size of the color data in elements. */
+	private final int mColorDataSize = 4;		
+
+	/**
+	 * Initialize the model data.
+	 */
+	public LessonOneRenderer()
+	{	
+		// Define points for equilateral triangles.
+
+		// This triangle is red, green, and blue.
+		final float[] triangle1VerticesData = {
+				// X, Y, Z, 
+				// R, G, B, A
+	            -0.5f, -0.25f, 0.0f, 
+	            1.0f, 0.0f, 0.0f, 1.0f,
+
+	            0.5f, -0.25f, 0.0f,
+	            0.0f, 0.0f, 1.0f, 1.0f,
+
+	            0.0f, 0.559016994f, 0.0f, 
+	            0.0f, 1.0f, 0.0f, 1.0f};
+
+		// This triangle is yellow, cyan, and magenta.
+		final float[] triangle2VerticesData = {
+				// X, Y, Z, 
+				// R, G, B, A
+	            -0.5f, -0.25f, 0.0f, 
+	            1.0f, 1.0f, 0.0f, 1.0f,
+
+	            0.5f, -0.25f, 0.0f, 
+	            0.0f, 1.0f, 1.0f, 1.0f,
+
+	            0.0f, 0.559016994f, 0.0f, 
+	            1.0f, 0.0f, 1.0f, 1.0f};
+
+		// This triangle is white, gray, and black.
+		final float[] triangle3VerticesData = {
+				// X, Y, Z, 
+				// R, G, B, A
+	            -0.5f, -0.25f, 0.0f, 
+	            1.0f, 1.0f, 1.0f, 1.0f,
+
+	            0.5f, -0.25f, 0.0f, 
+	            0.5f, 0.5f, 0.5f, 1.0f,
+
+	            0.0f, 0.559016994f, 0.0f, 
+	            0.0f, 0.0f, 0.0f, 1.0f};
+
+		// Initialize the buffers.
+		mTriangle1Vertices = ByteBuffer.allocateDirect(triangle1VerticesData.length * mBytesPerFloat)
+        .order(ByteOrder.nativeOrder()).asFloatBuffer();
+		mTriangle2Vertices = ByteBuffer.allocateDirect(triangle2VerticesData.length * mBytesPerFloat)
+        .order(ByteOrder.nativeOrder()).asFloatBuffer();
+		mTriangle3Vertices = ByteBuffer.allocateDirect(triangle3VerticesData.length * mBytesPerFloat)
+        .order(ByteOrder.nativeOrder()).asFloatBuffer();
+
+		mTriangle1Vertices.put(triangle1VerticesData).position(0);
+		mTriangle2Vertices.put(triangle2VerticesData).position(0);
+		mTriangle3Vertices.put(triangle3VerticesData).position(0);
+	}
+
+	@Override
+	public void onSurfaceCreated(GL10 glUnused, EGLConfig config) 
+	{
+		// Set the background clear color to gray.
+		GLES20.glClearColor(0.5f, 0.5f, 0.5f, 0.5f);
+
+		// Position the eye behind the origin.
+		final float eyeX = 0.0f;
+		final float eyeY = 0.0f;
+		final float eyeZ = 1.5f;
+
+		// We are looking toward the distance
+		final float lookX = 0.0f;
+		final float lookY = 0.0f;
+		final float lookZ = -5.0f;
+
+		// Set our up vector. This is where our head would be pointing were we holding the camera.
+		final float upX = 0.0f;
+		final float upY = 1.0f;
+		final float upZ = 0.0f;
+
+		// Set the view matrix. This matrix can be said to represent the camera position.
+		// NOTE: In OpenGL 1, a ModelView matrix is used, which is a combination of a model and
+		// view matrix. In OpenGL 2, we can keep track of these matrices separately if we choose.
+		Matrix.setLookAtM(mViewMatrix, 0, eyeX, eyeY, eyeZ, lookX, lookY, lookZ, upX, upY, upZ);
+
+		final String vertexShader =
+			"uniform mat4 u_MVPMatrix;      \n"		// A constant representing the combined model/view/projection matrix.
+
+		  + "attribute vec4 a_Position;     \n"		// Per-vertex position information we will pass in.
+		  + "attribute vec4 a_Color;        \n"		// Per-vertex color information we will pass in.			  
+
+		  + "varying vec4 v_Color;          \n"		// This will be passed into the fragment shader.
+
+		  + "void main()                    \n"		// The entry point for our vertex shader.
+		  + "{                              \n"
+		  + "   v_Color = a_Color;          \n"		// Pass the color through to the fragment shader. 
+		  											// It will be interpolated across the triangle.
+		  + "   gl_Position = u_MVPMatrix   \n" 	// gl_Position is a special variable used to store the final position.
+		  + "               * a_Position;   \n"     // Multiply the vertex by the matrix to get the final point in 			                                            			 
+		  + "}                              \n";    // normalized screen coordinates.
+
+		final String fragmentShader =
+			"precision mediump float;       \n"		// Set the default precision to medium. We don't need as high of a 
+													// precision in the fragment shader.				
+		  + "varying vec4 v_Color;          \n"		// This is the color from the vertex shader interpolated across the 
+		  											// triangle per fragment.			  
+		  + "void main()                    \n"		// The entry point for our fragment shader.
+		  + "{                              \n"
+		  + "   gl_FragColor = v_Color;     \n"		// Pass the color directly through the pipeline.		  
+		  + "}                              \n";												
+
+		// Load in the vertex shader.
+		int vertexShaderHandle = GLES20.glCreateShader(GLES20.GL_VERTEX_SHADER);
+
+		if (vertexShaderHandle != 0) 
+		{
+			// Pass in the shader source.
+			GLES20.glShaderSource(vertexShaderHandle, vertexShader);
+
+			// Compile the shader.
+			GLES20.glCompileShader(vertexShaderHandle);
+
+			// Get the compilation status.
+			final int[] compileStatus = new int[1];
+			GLES20.glGetShaderiv(vertexShaderHandle, GLES20.GL_COMPILE_STATUS, compileStatus, 0);
+
+			// If the compilation failed, delete the shader.
+			if (compileStatus[0] == 0) 
+			{				
+				GLES20.glDeleteShader(vertexShaderHandle);
+				vertexShaderHandle = 0;
+			}
+		}
+
+		if (vertexShaderHandle == 0)
+		{
+			throw new RuntimeException("Error creating vertex shader.");
+		}
+
+		// Load in the fragment shader shader.
+		int fragmentShaderHandle = GLES20.glCreateShader(GLES20.GL_FRAGMENT_SHADER);
+
+		if (fragmentShaderHandle != 0) 
+		{
+			// Pass in the shader source.
+			GLES20.glShaderSource(fragmentShaderHandle, fragmentShader);
+
+			// Compile the shader.
+			GLES20.glCompileShader(fragmentShaderHandle);
+
+			// Get the compilation status.
+			final int[] compileStatus = new int[1];
+			GLES20.glGetShaderiv(fragmentShaderHandle, GLES20.GL_COMPILE_STATUS, compileStatus, 0);
+
+			// If the compilation failed, delete the shader.
+			if (compileStatus[0] == 0) 
+			{				
+				GLES20.glDeleteShader(fragmentShaderHandle);
+				fragmentShaderHandle = 0;
+			}
+		}
+
+		if (fragmentShaderHandle == 0)
+		{
+			throw new RuntimeException("Error creating fragment shader.");
+		}
+
+		// Create a program object and store the handle to it.
+		int programHandle = GLES20.glCreateProgram();
+
+		if (programHandle != 0) 
+		{
+			// Bind the vertex shader to the program.
+			GLES20.glAttachShader(programHandle, vertexShaderHandle);			
+
+			// Bind the fragment shader to the program.
+			GLES20.glAttachShader(programHandle, fragmentShaderHandle);
+
+			// Bind attributes
+			GLES20.glBindAttribLocation(programHandle, 0, "a_Position");
+			GLES20.glBindAttribLocation(programHandle, 1, "a_Color");
+
+			// Link the two shaders together into a program.
+			GLES20.glLinkProgram(programHandle);
+
+			// Get the link status.
+			final int[] linkStatus = new int[1];
+			GLES20.glGetProgramiv(programHandle, GLES20.GL_LINK_STATUS, linkStatus, 0);
+
+			// If the link failed, delete the program.
+			if (linkStatus[0] == 0) 
+			{				
+				GLES20.glDeleteProgram(programHandle);
+				programHandle = 0;
+			}
+		}
+
+		if (programHandle == 0)
+		{
+			throw new RuntimeException("Error creating program.");
+		}
+        
+        // Set program handles. These will later be used to pass in values to the program.
+        mMVPMatrixHandle = GLES20.glGetUniformLocation(programHandle, "u_MVPMatrix");        
+        mPositionHandle = GLES20.glGetAttribLocation(programHandle, "a_Position");
+        mColorHandle = GLES20.glGetAttribLocation(programHandle, "a_Color");        
+        
+        // Tell OpenGL to use this program when rendering.
+        GLES20.glUseProgram(programHandle);        
+	}	
+
+	@Override
+	public void onSurfaceChanged(GL10 glUnused, int width, int height) 
+	{
+		// Set the OpenGL viewport to the same size as the surface.
+		GLES20.glViewport(0, 0, width, height);
+
+		// Create a new perspective projection matrix. The height will stay the same
+		// while the width will vary as per aspect ratio.
+		final float ratio = (float) width / height;
+		final float left = -ratio;
+		final float right = ratio;
+		final float bottom = -1.0f;
+		final float top = 1.0f;
+		final float near = 1.0f;
+		final float far = 10.0f;
+
+		Matrix.frustumM(mProjectionMatrix, 0, left, right, bottom, top, near, far);
+	}	
+
+	@Override
+	public void onDrawFrame(GL10 glUnused) 
+	{
+		GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);			        
+                
+        // Do a complete rotation every 10 seconds.
+        long time = SystemClock.uptimeMillis() % 10000L;
+        float angleInDegrees = (360.0f / 10000.0f) * ((int) time);
+        
+        // Draw the triangle facing straight on.
+        Matrix.setIdentityM(mModelMatrix, 0);
+        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);        
+        drawTriangle(mTriangle1Vertices);
+        
+        // Draw one translated a bit down and rotated to be flat on the ground.
+        Matrix.setIdentityM(mModelMatrix, 0);
+        Matrix.translateM(mModelMatrix, 0, 0.0f, -1.0f, 0.0f);
+        Matrix.rotateM(mModelMatrix, 0, 90.0f, 1.0f, 0.0f, 0.0f);
+        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);        
+        drawTriangle(mTriangle2Vertices);
+        
+        // Draw one translated a bit to the right and rotated to be facing to the left.
+        Matrix.setIdentityM(mModelMatrix, 0);
+        Matrix.translateM(mModelMatrix, 0, 1.0f, 0.0f, 0.0f);
+        Matrix.rotateM(mModelMatrix, 0, 90.0f, 0.0f, 1.0f, 0.0f);
+        Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 0.0f, 0.0f, 1.0f);
+        drawTriangle(mTriangle3Vertices);
+	}	
+
+	/**
+	 * Draws a triangle from the given vertex data.
+	 * 
+	 * @param aTriangleBuffer The buffer containing the vertex data.
+	 */
+	private void drawTriangle(final FloatBuffer aTriangleBuffer)
+	{		
+		// Pass in the position information
+		aTriangleBuffer.position(mPositionOffset);
+        GLES20.glVertexAttribPointer(mPositionHandle, mPositionDataSize, GLES20.GL_FLOAT, false,
+        		mStrideBytes, aTriangleBuffer);        
+                
+        GLES20.glEnableVertexAttribArray(mPositionHandle);        
+        
+        // Pass in the color information
+        aTriangleBuffer.position(mColorOffset);
+        GLES20.glVertexAttribPointer(mColorHandle, mColorDataSize, GLES20.GL_FLOAT, false,
+        		mStrideBytes, aTriangleBuffer);        
+        
+        GLES20.glEnableVertexAttribArray(mColorHandle);
+        
+		// This multiplies the view matrix by the model matrix, and stores the result in the MVP matrix
+        // (which currently contains model * view).
+        Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mModelMatrix, 0);
+        
+        // This multiplies the modelview matrix by the projection matrix, and stores the result in the MVP matrix
+        // (which now contains model * view * projection).
+        Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);
+
+        GLES20.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mMVPMatrix, 0);
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, 3);                               
+	}
+}
+</code></pre>
+
+</details>
+
+<p>В манифесте сообщим системе, что собираемся использовать OpenGL ES версии 2.0:</p>
+
+<pre><code class="xml">
+&lt;uses-feature
+    android:glEsVersion=&quot;0x00020000&quot;
+    android:required=&quot;true&quot; /&gt;
+</code></pre>
+
+<p>Из того, что понял из статьи - В проектах используется компонент <b>GLSurfaceView</b>, на котором происходит рисование графики.</p>
+
+<p>В методе <b>onCreate()</b> происходит проверка на поддержку второй версии OpenGL и подключается свой класс, в котором содержится логика отрисовки графики.</p>
+
+<p>Также следует прописать одноимённые методы в методах активности <b>onResume()</b> и <b>onPause()</b>.</p>
+
+<p>В классе <b>LessonOneRenderer</b> идёт тарабарщина, которая мне пока не понятна. Я с трудом понимаю, как это можно запомнить и пользоваться. Поэтому я просто скопировал код, скомпилировал проект и запустил на телефоне. Получил работающую программу с цветными треугольниками и доволен как слон. А вы по-прежнему хотите изучать OpenGL ES?</p>
+
+<p><img src="../../../www.learnopengles.com/wordpress/wp-content/uploads/2011/05/lessonone.png"></p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/opengles/intro.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:02:43 GMT -->
+</html>

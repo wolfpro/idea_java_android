@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/resources.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:50:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Ресурсы</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>			
+<h1 class="text-warning">Ресурсы</h1>
+
+<p>
+<a href="#basic">Основы</a><br>
+<a href="#id">Идентификаторы</a><br>
+<a href="#string">Строковые ресурсы</a><br>
+<a href="#bool">Булевы ресурсы</a><br>
+<a href="#integer">Числовые ресурсы</a><br>
+<a href="#menu">Ресурсы меню</a><br>
+<a href="#layout">Ресурсы разметки</a><br>
+<a href="#color">Цветовые ресурсы</a><br>
+<a href="#dimen">Ресурсы размеров</a><br>
+<a href="#styles">Ресурсы визуальных стилей и тем</a><br>
+<a href="#drawable">Ресурсы изображений</a><br>
+<a href="#color-drawable">Ресурсы отрисовываемых цветов</a><br>
+<a href="#anim">Ресурсы анимации (anim)</a><br>
+<a href="#array">Ресурсы массивов</a><br>
+<a href="#other">Другие ресурсы</a><br>
+<a href="#xml">XML-документы</a><br>
+<a href="#raw">Использование необработанных ресурсов RAW</a><br>
+<a href="#code">Использование ресурсов в коде программы</a><br>
+<a href="#locale">Создание ресурсов для локализации и аппаратных конфигураций</a><br>
+<a href="#alias">Псевдонимы (alias)</a><br>
+</p>
+
+<h2 class="text-warning" id="basic">Основы</h2>
+
+<p>Ресурсы - один из основных компонентов, с которыми вам придется работать очень часто. В Android принято держать объекты, как изображения, строковые константы, цвета, анимацию, стили и т.п. за пределами исходного кода. Система поддерживает хранение ресурсов во внешних файлах. Внешние ресурсы легче поддерживать, обновлять, редактировать.</p>
+
+<p>Каждое приложение на Android содержит каталог для ресурсов <b>res/</b> и каталог для активов <b>assets/</b>. Реальное различие между ресурсами и активами заключается в следующем:</p>
+<ul>
+<li>информация в каталоге ресурсов будет доступна в приложении через класс R, который автоматически генерируется средой разработки. То есть  
+хранение файлов и данных в ресурсах (в каталоге res/) делает их легкодоступными для использования в коде программы;</li>
+<li>для чтения информации, помещенной в каталог активов assets/ (необработанный формат файла), необходимо использовать AssetManager для чтения 
+файла как потока байтов.</li>
+</ul>
+
+<p>Позже, вы увидите, как Android умеет динамически выбирать данные из дерева ресурсов, содержащие разные значения для разных конфигураций, языков и регионов. При запуске Android автоматически загрузит нужный ресурс, не требуя ни одной строчки кода.</p>
+
+<p>Ресурсы в Android являются декларативными. В основном ресурсы хранятся в виде XML-файлов в каталоге <b>res</b> с подкаталогами <b>values</b>, <b>drawable-ldpi</b>, <b>drawable-mdpi</b>, <b>drawable-hdpi</b>, <b>layout</b>, но также бывают еще два типа ресурсов: raw и assets.</p>
+
+<p>Для удобства система создает идентификаторы ресурсов и использует их в файле R.java (класс R, который содержит ссылки на все ресурсы проекта), что позволяет ссылаться на ресурсы внутри кода программы. Статический класс R генерируется на основе ваших заданных ресурсов и создается во время компиляции проекта. При создании класс содержит статические подклассы для всех типов ресурсов, для которых был описан хотя бы один экземпляр. Подробнее о классе R <a href="#using">рассказано ниже</a>.</p>
+
+<p>Так как файл R генерируется автоматически, то не смысла его редактировать вручную, потому что все изменения будут утеряны при повторной генерации.</p>
+
+<p>В общем виде ресурсы представляют собой файл (например, изображение) или значение (например, заголовок программы), связанные с создаваемым приложением. Удобств использования ресурсов заключается в том, что их можно изменять без повторной компиляции или новой разработки приложения. Имена файлов для ресурсов должны состоять исключительно из букв в нижнем регистре, чисел и символов подчеркивания.</p>
+
+<p>Самыми распространенными ресурсами являются, пожалуй, строки (string), цвета (color) и графические рисунки (bitmap). В приложении не рекомендуется применять жестко написанные строки кода - вместо них следует использовать соответствующие идентификаторы, что позволяет изменять текст строкового ресурса, не изменяя исходного кода.</p>
+
+<p>Начинающие программисты не всегда до конца правильно понимают процесс создания ресурсов. В Android используются два подхода - первый подход заключается в том, что ресурсы задаются в файле, при этом имя файла значения не имеет. Второй подход - ресурс задается в виде самого файла, и тогда имя файла уже имеет значение (при этом нужно учитывать определенные нюансы).</p>
+
+<p>Общая структура каталогов, содержащих ресурсы выглядит следующим образом:</p>
+<pre>
+/res/values/strings.xml
+           /colors.xml
+		   /dimens.xml
+		   /attrs.xml
+		   /styles.xml
+	/drawable/*.png
+             /*.jpg
+             /*.gif
+             /*.9.png
+    /anim/*.xml
+    /layout/*.xml
+    /raw/*.*
+    /xml/*.xml
+/assets/*.*/*.*
+</pre>
+
+<p>Только в <b>assets</b> может располагаться любой набор подкаталогов разной вложенности. Файлы, находящиеся  в любом другом каталоге, размещаются  именно на уровне этого каталога и не глубже.</p>
+
+<h2 class="text-warning">Перечисление основных ресурсов Android</h2>
+
+<table border="1">
+<tr>
+<th>Тип ресурса</th><th>Размещение</th><th>Описание</th></tr>
+<tr>
+<td>Цвета</td><td>/res/values/имя_файла</td><td>Идентификатор цвета, указывающий на цветовой код. ID таких ресурсов выражаются в R.java как R.color.*. XML-узел: /resources/color</td></tr>
+<tr>
+<td>Строки</td><td>/res/values/имя_файла</td><td>Строковые ресурсы. В их число также входят строки в формате java и html. ID таких ресурсов выражаются в R.java как R.string.*. XML-узел: resources/string. Можно использовать дополнительное форматирование при помощи стандартных html-тегов &lt;b&gt;, &lt;i&gt; и &lt;u&gt;. Методы, которые будут обрабатывать строковые ресурсы с HTML-форматированием, должны уметь обрабатывать эти теги.</td></tr>
+<tr>
+<tr>
+<td>Меню</td><td>/res/values/имя_файла</td><td>Меню в приложении можно задать как XML-ресурсы.</td></tr>
+<td>Параметры</td><td>/res/values/имя_файла</td><td>Представляет собой параметры или размеры различных элементов. Поддерживает пикселы, дюймы, миллиметры, не зависящие от плотности экрана пикселы (dip) и пикселы, не зависящие от масштаба. ID таких ресурсов выражаются в R.java как R.dimen.*. XML-узел: resources/dimen</td></tr>
+<tr>
+<td>Изображения</td><td>/res/drawable/ваши_файлы</td><td>Ресурсы-изображения. Поддерживает форматы JPG, GIF, PNG (самый предпочтительный) и др. Каждое изображение является отдельным файлом и получает собственный идентификатор, который формируется по имени файла без расширения. Такие ID ресурсов представлены в файле R.java как R.drawable.*. Система также поддерживает так называемые растягиваемые изображения (stretchable image), в которых можно менять масштаб отдельных элементов, а другие элементы оставлять без изменений.</td></tr>
+<tr>
+<td>Отрисовываемые цвета</td><td>/res/values/ваш_файл или /res/drawable/ваши_файлы</td><td>Представляет цветные прямоугольники, которые используются  в качетве фона основных отрисовываемых объектов, например точечных рисунков. Поддержка такой функции обеспечивается тегом  значения 
+drawable, находящимся в подкаталоге значений. Такие  id ресурсов  выражаются  в файле R.java  как R.drawable.*. ХМL-узел для такого файла: /resources/drawable. В Android при помощи специальных ХМL-файлов, расположенных в /res/drawable, также подерживаются  скругленные и  градиентные прямоугольники. Корневым ХМL-тегом для   drawable является &lt;shape&gt;. Идентификаторы таких ресурсов выражаются в файле R.java как R.drawable.*. В таком случае, каждое имя файла преобразуется в уникальный id отрисовываемого объекта</td></tr>
+<tr>
+<td>Анимация</td><td>/res/anim/ваш_файл</td><td>Android может выполнить простую анимацию на графике или на серии графических изображений. Анимация включает вращения, постепенное изменение, перемещение и протяжение.</td></tr>
+<tr>
+<td>Произвольные XML-файлы</td><td>/res/xml/*.xml</td><td>В Android в качестве ресурсов могут использоваться произвольные XML-файлы. Они компилируются в aapt. Идентификаторы таких ресурсов также выражаются в файле R.java как R.xml.*</td></tr>
+<tr>
+<td>Произвольные необработанные ресурсы</td><td>/res/raw/*.*</td><td>Любые нескомпилированные двоичные или текстовые файлы, например, видео. Каждый файл получает уникальный id ресурса. Идентификаторы таких ресурсов выражаются в файле R.java как R.raw.*</td></tr>
+<tr>
+<td>Произвольные необработанные активы</td><td>/assets/*.*/*.*</td><td>Можно использовать произвольные файлы в произвольно названных каталогах, которые находятся в подкаталоге /assets. Это не ресурсы, а просто необработанные файлы. В этом каталоге, в отличие от /res, подкаталоги могут располагаться на любой глубине. Для таких файлов не создаются идентификаторы ресурсов. При работе с ними нужно использовать относительное имя пути, начиная с /assets, но не указываея этого каталгоа в имени пути</td></tr>
+</table>
+
+<h2 class="text-warning" id="id">Идентификаторы</h2>
+
+<p>Этот тип ресурсов формируется, как правило, автоматически, и программисты даже не обращают на него внимания. Когда вы размещаете новый элемент на форме, с которым будете взаимодействовать в программе, то ему нужно присвоить идентификатор. Как правило, это происходит в виде <b>@+id/editText1</b> (часто это происходит автоматически). Знак плюса обозначает, что если идентификатора не существует, то его нужно создать в классе R. В программе вы можете обращаться к элементу R.id.editText1.</p>
+
+<p>Но можно заранее создать ресурс типа <b>item</b> для задания  id, не связанного ни с каким конкретным ресурсом:</p>
+
+<pre><code class="xml"> 
+&lt;resources&gt; 
+    &lt;item type=&quot;id&quot; name=&quot;text&quot;/&gt; 
+&lt;/resources&gt;
+</code></pre>
+ 
+<p>Здесь type описывает тип ресурса, в данном случае id. Когда id будет установлен, будет работать и следующее определение View:</p>
+
+<pre><code class="xml">
+&lt;TextView android:id=&quot;@id/text&quot;&gt; 
+    &lt;/TextView&gt; 
+</code></pre>
+
+<p>Обычно идентификаторы размещают в отдельном файле <b>res/values/ids.xml</b>.</p>
+
+<h2 class="text-warning" id="string">Строковые ресурсы</h2>
+
+<p>Строковые ресурсы помогают упростить процесс создания локализованных версий. Строковые ресурсы обозначаются тегом <b>&lt;string&gt;.</b>, 
+
+<p>При <a href="../android2.html">разработке первого приложения</a> вы видели, что система создала <b>файл strings.xml</b>, в котором хранились строки для заголовка приложения и выводимого сообщения. Вы можете редактировать данный файл, добавляя новые строковые ресурсы. А также вы можете создать новые файлы, которые будут содержать строковые ресурсы, например, strings2.xml, catnames.xml и т.д. Все эти файлы должны находиться в подкаталоге <b>/res/values</b>. Запомните, имена файлов и их число не важно. Но в большинстве случаев программисты используют для строковых ресурсов стандартное имя <b>strings.xml</b>. Типичный файл выглядит следующим образом.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;string name=&quot;hello&quot;&gt;Здравствуй, Мир!&lt;/string&gt;
+    &lt;string name=&quot;app_name&quot;&gt;Hello, World&lt;/string&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>При создании или обновлении файла со строковыми ресурсами плагин Eclipse ADT автоматически создает или обновляет класс R.java в базовом корневом пакете вашего приложения (папка gen), сообщая уникальные ID для определенных в файле строковых ресурсов (Независимо от количества файлов ресурсов, в проекте  содержится только один файл R.java). Если открыть данный файл, то можно найти там наши ресурсы в следующем виде:</p>
+
+<pre>
+public static final int hello = 0x7f040000; 
+public static final int app_name = 0x7f040001;
+</pre>
+
+<p>В принципе достаточно запомнить, что R.java создает внутренний статический класс как пространство имен, в котором содержатся ID строковых ресурсов. Два static final int, которые используются в переменных hello и app_name, являются идентификаторами ресурсов и соответствуют соответствующим строковым ресурсам. Вы можете использовать данные идентификаторы в своем исходном коде, используя следующий формат - R.string.hello.</p>
+
+<p>Обратите внимание, что сгенерированные  ID указывают на  int, а не на string. Android при необходимости самостоятельно подставляет вместо int нужные строки.</p>
+
+<p>Напомню, что обычно принято хранить строковые ресурсы в файле strings.xml, но вы можете использовать несколько файлов. Главное, чтобы XML-файл имел необходимую структуру и находился в подкаталоге res/values.</p>
+
+<p>Структура файла для строковых ресурсов довольно проста. Имеется корневой узел &lt;resources&gt;, за которым следуют один или несколько дочерних  элементов &lt;string&gt;. Каждый  элемент &lt;string&gt; в свою очередь имеет свойство <b>name</b>, которое в файле R.java  представляет собой атрибут id.</p>
+
+<p>Если вы создаете несколько файлов с ресурсами, то следите за уникальностью создаваемых имен. Вы понимаете, что не выйдет ничего хорошего, если в двух файлах будет одна и та же переменная <b>app_name</b>.</p>
+
+<h3 class="text-warning">Продвинутые приемы работы со строковыми ресурсами</h3>
+
+<p>Кроме стандартного использования строковых ресурсов, можно использовать более сложные приёмы. Посмотрим, как определять и использовать строки, написанные на HTML, а также узнаем, как происходит подстановка переменных в строковых ресурсах.</p>
+
+<p>Начнем с того, как определять в ХМL-файлах ресурсов следующие виды строк:</p>
+<ul>
+<li>обычные  строки</li>
+<li>строки  в кавычках</li>
+<li>НТМL-строки</li>
+<li>заменяемые строки</li>
+</ul>
+
+<pre><code class="xml">
+&lt;resources&gt;
+&lt;string  name=&quot;simple_string&quot;&gt;Простая строка&lt;/string&gt;
+&lt;string  name=&quot;quoted_ string&quot;&gt;&quot;Строка в кавычках&quot;&lt;/string&gt; 
+&lt;string  name=&quot;double_quoted_string&quot;&gt;\&quot;Строка в двойных кавычках\&quot;&lt;/string&gt; 
+&lt;string  name=&quot;java_format_string&quot;&gt;Привет %2$s. Здравствуй %1$s&lt;/string&gt; 
+&lt;string  name=&quot;tagged_string&quot;&gt;&lt;b&gt;Рыжик&lt;/b&gt; - &lt;i&gt;мой любимый кот&lt;/i&gt;&lt;/string&gt; 
+&lt;/resources&gt;
+</code></pre>
+
+<p>Этот ХМL-файл строковых ресурсов должен  находиться в подкаталоге <b>res/values</b>. Имя файла выбирается произвольно.</p>
+
+<p>Обратите внимание - строки, находящиеся в кавычках, необходимо либо пропускать, либо помещать еще в одни кавычки. При определении строк также можно использовать стандартные последовательности Jаvа, предназначенные для форматирования строк.</p>
+
+<p>Нельзя использовать символы '&amp', '&lt;'. Задать эти символы можно используя специальную последовательность &lt; — &amp;lt; или &amp; — &amp;amp;. Если текст содержит html-теги и в нем встречается неразрывный пробел &amp;nbsp;, то его надо заменить на &amp;#160;.</p>
+
+<p>Также можно использовать простые элементы HTML, предназначенные для форматирования, используя теги &lt;b&gt; (полужирный шрифт), &lt;i&gt; (наклонный шрифт), &lt;u&gt; (подчеркнутый шрифт). Вы можете использовать такую  НТМL-строку для оформления текста, перед тем как выводить текст на экран.</p>
+
+<p>Каждый вариант использования проиллюстрирован в листинге на примере кода Jаvа.</p>
+
+<pre><code class="java">
+// Считывание  обычной  строки  и  помещение  ее  в  текстовый  вид 
+String simpleString  =  activity.getString (R.string.simple_string); 
+textView.setText(simpleString);
+
+// Считывание  строки в кавычках и помещение ее в текстовый вид
+String quotedString  =  activity.getString(R.string.quotedstring);
+textView.setText(quotedString);
+
+// Считывание строки в двойных кавычках и помещение ее в текстовый  вид
+String  doubleQuotedString  =  activity.getString(R.string.double_quoted_string); 
+textView.setText(doubleQuotedString);
+
+//  Считывание строки форматирования Java
+String javaFormatString  =  activity.getString(R.string.java_format_string);
+// Преобразование отформатированной строки при  помощи  данных 
+// передаваемых в аргументах
+String  substitutedString  =  String.format(javaFormatString, 
+"Рыжик",  "Барсик" ); 
+// помещение вывода в текстовый  вид 
+textView.setText(substitutedString);
+
+//  Считывание  строки  html_string из ресурса и помещение ее в текстовый  вид
+String htmlTaggedString  =  activity.getString(R.string.tagged_string);
+// Преобразование строки во фрагмент текста,
+// который  может  быть  помещен  в  текстовом  виде
+// Класс  android.text.Html допускает  рисование строк "html" (не все теги)
+Spanned textSpan  =  android.text.Html.fromHtml(htmlTaggedString);
+// Поместить  информацию  в  текстовый  вид 
+textView.setText(textSpan);
+</code></pre>
+
+<p>После того, как вы определите строки в виде ресурсов, вы можете вставить их прямо в вид. Например, воспользуемся строкой на HTML в элементе TextView:</p>
+
+<pre><code class="xml">
+&lt;TextView  
+    android:layout_width=&quot;fill_ parent&quot;
+    ...
+	android:text=&quot;@string/tagged string&quot; /&gt; 
+</code></pre>
+
+<p>TextView автоматически определяет, что эта строка написана на HTML, и соответствующим образом обрабатывает форматирование этой строки. Данный пример использовался в статье о <a href="../activity.html">создании нового окна</a>.</p>
+
+<div class="alert alert-info">
+Можно использовать строковые ресурсы в качестве входящих параметров для метода <b>String.format</b>. Однако данный метод не поддерживает стилизацию текста через теги &lt;b&gt;, &lt;i&gt;, &lt;u&gt;. Что выйти из этого положения, экранируйте HTML-теги следующим образом:<br>
+<pre>
+&lt;string name=&quot;my_message&quot;&gt;&amp;lt;b&gt;Жирный кот&amp;lt;/b&gt;&lt;/string&gt;
+</pre>
+<p>А в коде используйте метод Html.fromHtml для преобразования строки в нужном виде:</p>
+<pre>
+String rString = getString(R.string.my_message);
+String fString = String.format(rString, "Bla-bla-bla");
+CharSequence styledString = Html.fromHtml(fString);
+</pre>
+</div>
+
+<p>Также существует особый вид ресурсов для строк - <a href="#array">Строковые массивы</a></p>
+
+<p>Есть еще один вид ресурсов, который редко используется, но может пригодиться - <b>plurals</b>, позволяющий задавать строки для разных ситуаций. Например, в английском языке мужчина в единственном числе - man, а во множественном - men.</p>
+
+<pre><code class="xml">
+&lt;plurals name=&quot;NumberOfMan&quot;&gt;
+    &lt;item quantity=&quot;one&quot;&gt;man&lt;/item&gt;
+    &lt;item quantity=&quot;other&quot;&gt;men&lt;/item&gt;
+&lt;/plurals&gt;
+</code></pre>
+
+<p>Два варианта представлены в виде двух отдельных строк одного числительного. Теперь можно использовать Java-код для применения этого множественного числа при выводе строки с указанием количества.</p>
+
+<pre><code class="java">
+Resources res = getResources();
+String s1 = res.getQuantityString(R.plurals.NumberOfMan, 0, 0);
+</code></pre>
+
+<p>Первый параметр в методе <b>getQuantityString()</b> - это идентификатор ресурса множественного числа, второй указывает на нужную строку, если значение равно 1, то строка берётся без изменений. Третий параметр - строка, которая подставляется, если второй параметр не равен 1.</p>
+
+<p>В английском языке можно использовать только два значения: <b>one</b> и  <b>other</b>. В русском возможны три варианта: one (для 1), few (для 2-4), other (в остальных случаях).</p>
+
+<p>Более подробно об этом типе ресурсов читайте в <a href="http://developer.android.com/guide/topics/resources/string-resource.html#Plurals">документации</a>.</p>
+
+<h3 class="text-warning">Системные строковые ресурсы</h3>
+
+<p>Во многих случаях можно задействовать системные строковые ресурсы - это строки типа OK, Cancel и др. В таких ситуациях используется схожий формат (добавляется слово android):</p>
+
+<pre><code class="xml">
+android:text=&quot;@android:string/cancel&quot;
+</code></pre>
+
+<h3 class="text-warning" id="bool">Булевы ресурсы</h3>
+
+<p>Можно также хранить в ресурсах булевы значения <b>true</b> или <b>false</b> в файле с произвольным именем в папке <b>res/values</b>.</p>
+
+<p>В файле с корневым элементом &lt;resources&gt; вы определяете элемент <bool> с нужным значением. У элемента есть атрибута <b>name</b> - строка, определяющая имя булевого ресурса.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;bool name=&quot;autostart&quot;&gt;true&lt;/bool&gt;
+    &lt;bool name=&quot;sound&quot;&gt;no&lt;/bool&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>Получить значение через код:</p>
+
+<pre><code class="java">
+Resources res = getResources();
+boolean autostartSetting = res.getBoolean(R.bool.autostart);
+</code></pre>
+
+<p>В макете для булевых атрибутов</p>
+
+<pre><code class="xml">
+&lt;ImageView
+    android:layout_height=&quot;fill_parent&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:adjustViewBounds=&quot;@bool/adjust_view_bounds&quot; /&gt;
+</code></pre>
+
+<h2 class="text-warning" id="integer">Числовые ресурсы</h2>
+
+<p>В ресурсах можно хранить числа типа Integer. Хранить можно в произвольном имени XML-файла в папке <b>res/values/</b> в корневом элементе &lt;resources&gt;</p>
+
+<p>У элемента &lt;integer&gt; есть атрибут <b>name</b>, определяющий имя числового значения.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;integer name=&quot;max_speed&quot;&gt;75&lt;/integer&gt;
+    &lt;integer name=&quot;min_speed&quot;&gt;5&lt;/integer&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>Для работы в коде:</p>
+
+<pre><code class="java">
+Resources res = getResources();
+int maxSpeed = res.getInteger(R.integer.max_speed);
+</code></pre>
+
+<p>Таким образом, для работы с типами boolean и int следует применять код (в общем виде):</p>
+
+<pre><code class="java">
+Resources resources = context.getResources();
+boolean myBooleanResource = resources.getBoolean(R.bool.my_boolean_resource);
+int myIntegerResource = resources.getInteger(R.integer.my_integer_resource);
+</code></pre>
+
+<p>Нет необходимости писать избыточный код (хотя он и будет работать) типа такого:</p>
+
+<pre><code class="java">
+boolean myBooleanResource = Boolean.parseBoolean(context.getString(R.string.my_boolean_resource));
+int myIntegerResource = Integer.parseInt(context.getString(R.string.my_integer_resource));
+
+// или так (совсем никуда не годится)
+if ("false".equals(context.getString(R.string.my_boolean_resource))){
+    // ...
+}
+</code></pre>
+
+<h2  class="text-warning" id="menu">Ресурсы меню</h2>
+
+<p>Не создавайте меню в коде приложения, а используйте отдельные ресурсы для меню в формате XML. Можно использовать как для описания обычного и контекстного меню. Меню, описанное в формате XML, загружается в виде программного объекта с помощью метода <b>inflate</b>, принадлежащего сервису <b>MenuInflater</b>. Как правило, это происходит внутри обработчика <b>onCreateOptionsMenu</b> (смотри урок <a href="../menu.html">Меню</a>).</p>
+
+<p>Описание меню хранится в отдельном файле в каталоге <b>res/menu</b>. Имена файлов без расширения автоматически становятся идентификаторами ресурсов.</p>
+
+<p>В ХМL-файле меню есть три элемента:</p>
+<ul>
+<li>&lt;menu&gt; — корневой элемент файла меню;</li>
+<li>&lt;group&gt; — контейнерный элемент, определяющий группу меню;</li>
+<li>&lt;item&gt; — элемент, определяющий пункт меню</li>
+</ul>
+
+<p>Элементы &lt;item&gt; и &lt;group&gt; могут быть дочерними элементами &lt;group&gt;.</p>
+
+<p>Элемент <b>item</b> может иметь несколько атрибутов:</p>
+<dl>
+<dt>id</dt><dd>Идентификатор пункта меню, по которому приложение может распознать при выделении пункта меню пользователем</dd>
+<dt>title</dt><dd>Текст, который будет выводиться в меню</dd>
+<dt>icon</dt><dd>Значок для пункта меню. Можно использовать графический ресурс</dd>
+</dl>
+
+<h2 class="text-warning" id="layout">Ресурсы разметки</h2>
+
+<p>Еще один из важных видов ресурсов - ресурсы разметки, которые отвечают за внешний вид приложения. Данные ресурсы представлены в формате XML. Ресурс разметки формы (layout resource) - это ключевой тип ресурсов, применяемый при программировании пользовательских интерфейсов в Android. Каждый ресурс, описывающий разметку, хранится в отдельном файле каталога <b>res/layout</b>. Имя файла без расширения выступает как идентификатор ресурса.</p>
+
+<p>Ниже представлен фрагмент исходного кода для разметки:</p>
+
+<pre><code class="java">
+setContentView(R.layout.main);
+</code></pre>
+
+<p>Строка <b>setContentView(R.layout.main);</b> указывает на то,  что у нас имеется статический класс, называемый <b>R.layout</b>, в котором есть константа <b>main</b> (некое число), указывающая на <b>View</b>, определяемый в ХМL-файле ресурса разметки формы. ХМL-файл будет иметь имя main.xml, и он должен быть размещен 
+в подкаталоге ресурсов  res/layout и содержать необходимое определение разметки формы.</p>
+
+<p>Содержимое самого файла <b>main.xml</b> может быть таким:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:orientation=&quot;vertical&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    &gt;
+&lt;TextView  
+    android:layout_width=&quot;fill_parent&quot; 
+    android:layout_height=&quot;wrap_content&quot; 
+    android:text=&quot;@string/hello&quot;
+    /&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>В данном файле разметки формы имеется корневой узел &lt;LinearLayout&gt;, в котором содержится дочерний элемент &lt;TextView&gt;.</p>
+
+<p>Для  каждого варианта разметки требуется  специальный файл. Если вы рисуете два экрана, вам понадобится два файла разметки, например 
+<b>res/layout/screenl_layout.xml</b>  и <b>res/layout/screen2_layout.xml</b>. Каждый файл в подкаталоге <b>res/layout</b> генерирует уникальную константу на основе имени файла (без расширения). При работе с ресурсами разметки здесь важно количество файлов, а при работе со строковыми ресурсами важно количество отдельных строковых ресурсов внутри файлов. Например, если в подкаталоге  <b>res/layout</b> у нас есть два файла <b>filel.xml</b> и <b>filе2.xml</b>, то в файле R.java будут содержаться следующие записи:<p>
+<pre>
+public static final int file1=0x7f030000;
+public static final int file2=0x7f030001;
+</pre>
+
+<p>Элементы управления, которые используются в данных файла компоновки, например, <b>TextView</b>, будут доступны в коде через ID, генерируемым в R.java:</p>
+
+<pre><code class="java">
+TextView  tvInfo  =  (TextView)this.findViewByld(R.id.text1); 
+</code></pre>
+
+<p>В данном примере мы находим класс <b>TextView</b> при помощи метода <b>findViewByid()</b> класса <b>Activity</b>. Константа <b>R.id.text1</b> соответствует ID, заданному в TextView.  ID  для TextView в файле разметки выглядит следующим образом:</p>
+
+<pre><code class="xml"> 
+&lt;TextView  android:id=&quot;@+id/textl&quot; /&gt;
+</code></pre>
+
+<p>Значение атрибута <b>id</b> указывает, что константа <b>text1</b> будет использоваться для идентификации этого вида среди других, используемых данным окном. Знак <b>+</b> в <b>@+id/text1</b> означает, что будет создан  ID  с именем text1, если он еще не существует.</p>
+
+<h2 class="text-warning">Синтаксис ссылок на ресурсы</h2>
+
+<p>Все ресурсы Android идентифицируются по их id, содержащемуся в исходном коде Jаvа. Синтаксис, используемый при связывания  id с ресурсом в файле XML, называется синтаксис ссылок на ресурс (resource-reference syntax). Синтаксис атрибута id в предыдущем примере @+id/textl имеет следующую структуру:</p>
+<pre> 
+@[package:]type/name
+</pre>
+
+<p>Параметр <b>tуре</b> соответствует одному из пространств имен:</p>
+<ul>
+<li>R.drawable</li>
+<li>R.id</li>
+<li>R.layout</li>
+<li>R.string</li>
+<li>R.attr</li>
+<li>и др.</li>
+</ul>
+
+<p>Параметр <b>name</b> - это имя ресурса. Она также представлена в виде константы int в файле R.java.</p>
+
+<p>Если не указывать пакет  (package), то разрешение пары type/name будет производиться на основе локальных ресурсов и локального пакета R.java. Если указать android:type/name, то связывание ID ссылки будет производиться с применением пакета Android, в частности с использованием файла  android.R.java. Вы можете использовать имя любого пакета jаvа вместо подстановочного слова package, чтобы использовать файл R.java, подходящий для связывания ссылки.</p>
+
+<p>Рассмотрим несколько примеров</p>
+
+<p>TextView  android:id="text" - Ошибка компиляции, так как id не принимает необработанные текстовые строки.</p>
+
+<p>TextView android:id="@text" - Неправильный синтаксис. Не хватает названия типа. Вы получите сообщение об ошибке "No Resource type specified"</p>
+
+<p>TextView android:id="@id/text - Ошибка: не найдено ни одного ресурса, соответствующего id "text". Возможно, вы не задали "text" как один из видов ID</p>
+
+<p>TextView android:id="@android:id/text" - Ошибка: Ресурс не является  общедоступным". Означает, что такой id отсутствует в android.R.id. Чтобы такая запись была действительной, необходимо в файле Android.R.java задать id с таким именем</p>
+
+<p>TextView android:id=="@+id/text - Успешно: создает id с названием "text" в файле R.java  локального  пакета.</p>
+
+<h3>Определение собственных идентификационных номеров ресурсов для последующего использования</h3>
+
+<p>Общий принцип присвоения <b>id</b> предполагает либо создание нового id для ресурса, либо использование одного из id, созданных в пакете Android. Однако <b>id</b> можно создавать и заранее, а потом использовать их в собственных пакетах.</p>
+
+<p>Строка &lt;TextView  android:id=&quot;@+id/text&quot;&gt; в предыдущем фрагменте кода указывает, что  id с названием text, будет использоваться в том случае, если этот  id уже создан. Если id еще не существует, нужно создать новый идентификатор. В связи с этим возникает вопрос: может ли  id, например, text уже существовать в файле R.java, чтобы такой идентификатор можно было использовать многократно?</p>
+
+<p>Можно предположить, что такую  задачу могла бы выполнять константа, например <b>R.id.text</b>, находящаяся в файле R.java, но R.java не поддается редактированию. Даже, если бы было возможно внести такие изменения, файл приходилось бы заново генерировать после добавления, изменения или удаления любой информации из подкаталога /res /*.</p>
+
+<p>Решение проблемы заключается в использовании тега ресурса под названием item для задания  id, не связанного ни с каким конкретным ресурсом. Ниже приведен соответствующий пример:</p>
+
+<pre><code class="xml">
+&lt;resources&gt; 
+&lt;item  type=&quot;id&quot;  name=&quot;text &quot;/&gt; 
+&lt;/ resources&gt; 
+</code></pre>
+
+<p>Здесь type описывает тип ресурса, в данном случае id. Когда id будет установлен, будет работать и следующее определение View:</p>
+
+<pre> 
+&lt;TextView  android:id=&quot;@id/text&quot;/&gt;
+</pre>
+
+<h2 class="text-warning" id="color">Цветовые ресурсы</h2>
+
+<p>Для работы со цветом используется тег <b>&lt;color&gt;</b>, а цвет указывается в специальных значениях.</p>
+<ul>
+<li>#RGB;</li>
+<li>#RRGGBB;</li>
+<li>#ARGB;</li>
+<li>#AARRGGBB;</li>
+</ul>
+
+<p>Также существуют предопределенные названия цветов. Такие ID доступны в пространстве имен <b>android.R.соlor</b>. Посмотреть цветовые значения цветов можно в документации <noindex><a href="http://developer.android.com/reference/android/R.color.html">http://developer.android.com/reference/android/R.color.html</a>.</noindex></p>
+
+<p>Например, там есть оранжевый цвет <b>holo_orange_dark</b>, а также оранжевый-светлый, синий-темный, синий-светлый и т.д.</p>
+
+<p>Обычно для цветовых ресурсов используют файл <b>colors.xml</b> в подкаталоге <b>res/values</b>. Но можно использовать любое произвольное имя файла, или даже вставить их в файл вместе со строковыми ресурсами <b>strings.xml</b>. Android прочтет все файлы, а затем обработает их, присвоив им нужные ID.</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;color name=&quot;red&quot;&gt;#f00&lt;/color&gt;
+    &lt;color name=&quot;yellow&quot;&gt;#FFFF00&lt;/color&gt;
+    &lt;color name=&quot;green&quot;&gt;#FF00FF00&lt;/color&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>Для программного использования цветовых ресурсов можно использовать следующий код:</p>
+
+<pre><code class="java">
+int myRedColor = activity.getResourses.getColor(R.color.red); // получаем значение красного цвета
+
+linearLayout.setBackgroundResource(R.color.yellow); // устанавливаем фон в желтый цвет
+
+linearLayout.setBackgroundResource(android.R.color.holo_orange_dark); // устанавливаем фон в оранжевый цвет
+</code></pre>
+
+<p>Более длинный вариант без склейки методов.</p>
+
+<pre><code class="java">
+Resources res = getResources(); // получим объект для работы с ресурсами
+int title_color = res.getColor(R.color.title_red); // получим значение цвета, заданного в ресурсах
+</code></pre>
+
+
+<p>При использовании в xml-файлах (например, файл разметки) используется следующий формат:</p>
+
+<pre><code class="xml">
+&lt;TextView  
+    android:layout_width=&quot;fill_parent&quot; 
+    android:layout_height=&quot;wrap_content&quot; 
+    android:text=&quot;@string/anytext&quot;
+	android:color=&quot;@color/red&quot; /&gt;
+</code></pre>
+
+<p>Обратите внимание на использование префикса <b>@</b> для того, чтобы  ввести ссылку ресурса — текст после этого префикса — имя ресурса. В этом случае мы не должны были указывать пакет, потому что мы ссылаемся на ресурс в нашем собственном пакете. Для ссылки на системный ресурс мы должны записать: <b>android:textColor="@android:color/black"</b> (чёрный цвет).</p>
+
+<h2 class="text-warning" id="dimen">Ресурсы размеров</h2>
+
+<p>В Android используются следующие единицы измерения: пикселы, дюймы, точки. Все они могут входит в состав ХМL-шаблонов и кода Jаvа. Данные единицы измерения также можно использовать в качестве ресурсов при помощи тега &lt;dimen&gt; (обычно используют файл dimens.xml):</p>
+
+<pre><code class="xml">
+&lt;resources&gt; 
+&lt;dimen name=&quot;in_pixels&quot;&gt;1px&lt;/dimen&gt; 
+&lt;dimen name=&quot;in_dp&quot;&gt;5dp&lt;/dimen&gt; 
+&lt;dimen name=&quot;in_sp&quot;&gt;100sp&lt;/dimen&gt;
+&lt;/resources&gt; 
+</code></pre>
+
+<p>Список разрешенных единиц измерения можно прочитать в отдельной статье <a href="scales.php" >Android:: Единицы измерения</a></p>
+
+<div class="alert">
+Метод Java использует в названии целое слово Dimension, а в коде и в XML используется сокращенная версия <b>dimen</b>
+</div>
+
+<p>Вы должны иметь доступ к каждому экземпляру объекта <b>Resources</b>, чтобы найти значения его параметров. Это можно сделать, применив метод <b>getResources()</b> к объекту <b>Activity</b>. Когда у вас будет объект <b>Resources</b>, его можно запросить по <b>id</b>,  чтобы узнать значение этого  параметра.</p>
+
+<pre><code class="java">
+float dimen = activity.getResources().getDimension(R.dimen.in_pixels);
+</code></pre>
+
+<p>В XML-файлах используется следующий синтаксис</p>
+
+<pre><code class="xml">
+&lt;TextView  
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+	android:textSize=&quot;@dimen/in_dp&quot;/&gt;
+</code></pre>
+
+
+<h2 class="text-warning" id="styles">Ресурсы визуальных стилей и тем</h2>
+
+<p>Ресурсы со стилями позволяют поддерживать единство внешнего вида приложения. Чаше всего визуальные стили и темы используются для хранения цветовых значений и шрифтов. Обычно используют <b>файл styles.xml</b>.</p>
+
+<p>Чтобы создать стиль, используйте тег &lt;style&gt;, включающий атрибут name, а также один или несколько вложенных узлов item. Каждый тег <b>item</b> в свою очередь также должен иметь атрибут <b>name</b>, содержащий тип описываемого значения (например, размер шрифта или цвет). Внутри тега должно находиться само значение.</p>
+
+<pre><code class="xml">
+&lt;style name=&quot;StyleName&quot;&gt;
+    &lt;item name=&quot;attributeName&quot;&gt;value&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+
+<p>Тег &lt;style&gt; поддерживает наследование с помощью атрибута parent, поэтому вы можете свободно варьировать стили.</p>
+
+<p>Программно доступ к ресурсам стилей осуществляется следующим образом:</p>
+
+<pre><code class="java">
+// текстовое поле с атрибутами, загружаемыми из ресурсов стиля
+final TextView textStyle = (TextView)findViewById(R.id.text_style);
+</code></pre>
+
+<h2 class="text-warning" id="drawable">res/drawable</h2>
+
+<p>В папке res/drawable могут содержаться ресурсы изображений, фигур, градиентов.</p>
+
+<p>Примеры с <a href="shape.html">с ресурсами подобного типа приведены в отдельной статье</a>.</p>
+
+<h2 class="text-warning" id="color-drawable">Ресурсы отрисовываемых цветов</h2>
+
+<p>Кроме обычных изображений в Android поддерживается и другой тип отрисовываемых ресурсов, которые называются отрисовываемыми цветами (color-drawable). По сути, это просто цветные прямоугольники.</p>
+
+<p>Чтобы задать цветной прямоугольник, нужно указать тег &lt;drawable&gt; в имени узла XML-файла, находящегося в подкаталоге /res/values/.</p>
+
+<pre><code class="xml">
+&lt;resources&gt;
+    &lt;drawable name=&quot;black_rectangle&quot;&gt;#000000&lt;/drawable&gt;
+	&lt;drawable name=&quot;white_rectangle&quot;&gt;#ffffff&lt;/drawable&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>В XML-шаблонах ресурсы используются следующим образом</p>
+
+<pre><code class="xml">
+&lt;TextView
+    android:layout_width=&quot;fill_parent&quot;
+	...
+	android:background=&quot;@drawable/white_rectangle&quot; /&gt;
+</code></pre>
+
+<p>Программным способом:</p>
+
+<pre><code class="java">
+// Получение отрисовываемого объекта
+ColorDrawable whiteDrawable =
+    (ColorDrawable)activity.getResources().getDrawable(R.drawable.white_rectangle);
+	
+// установление его в качестве фона для текстового вида
+textView.setBackground(whiteDrawable);
+</code></pre>
+
+<h2 class="text-warning" id="anim">Ресурсы анимации</h2>
+
+<p>Android поддерживает два типа анимации. Первый тип основан на расчете промежуточных кадров и может использоваться для поворота, перемещения, растягивания, затемнения элементов. Второй тип - пошаговая анимация, т.е. последовательный вывод заранее подготовленных изображений.</p>
+
+<p>При использовании анимации промежуточных кадров каждый экземпляр анимации хранится в отдельном XML-файле внутри каталога <b>res/anim</b>. Имена файлов без расширения являются идентификаторами для ресурсов.</p>
+
+<p>Анимацию можно задать в виде изменений параметров alpha (затемнение), scale (масштабирование), translate (перемещение) или rotate (вращение).</p>
+
+<p>Вы можете комбинировать различные экземпляры анимации, используя тег <b>set</b> с атрибутами:</p>
+
+<ul>
+<li>duration - продолжительность анимации в секундах</li>
+<li>startOffset - миллисекундная задержка перед началом анимации</li>
+<li>fillBefore - при значении true преобразование происходит перед началом анимации</li>
+<li>fillAfter - при значении true преобразование происходит после завершения анимации</li>
+<li>interpolator - описывает изменения в скорости эффекта</li>
+</ul>
+
+<p>Если не использовать атрибут <b>startOffset</b>, все анимационные эффекты внутри набора происходят одновременно.</p>
+
+<p>Пошаговая анимация подразумевает создание последовательности объектов Drawable? каждый из которых будет отображаться в качестве фона на протяжении указанного промежутка времени. Пошаговая анимация хранится в виде ресурсов Drawable в каталоге <b>res/drawable</b> (см. выше). Имена файлов без расширения используются в качестве идентификаторов.</p>
+
+<h3 class="text-warning" id="array">Ресурсы массивов</h2>
+
+<p>Существует еще один тип ресурсов для хранения значений массивов. Принято хранить данные ресурсы в файле arrays.xml папки /res/values. Вот как может выглядеть файл:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+
+    &lt;array name=&quot;choose&quot;&gt;
+        &lt;item&gt;@string/red_pill_label&lt;/item&gt;
+        &lt;item&gt;@string/blue_pill_label&lt;/item&gt;
+    &lt;/array&gt;
+
+    &lt;string-array name=&quot;catnames&quot;&gt;
+        &lt;item&gt;Рыжик&lt;/item&gt;
+        &lt;item&gt;Барсик&lt;/item&gt;
+        &lt;item&gt;Мурзик&lt;/item&gt;
+    &lt;/string-array&gt;
+
+    &lt;integer-array name=&quot;years&quot;&gt;
+        &lt;item&gt;2009&lt;/item&gt;
+        &lt;item&gt;2010&lt;/item&gt;
+        &lt;item&gt;2011&lt;/item&gt;
+    &lt;/integer-array&gt;
+
+&lt;/resources&gt;
+</code></pre>
+
+<p>Как видите, есть типы ресурсов <b>array</b>, <b>string-array</b>, <b>integer-array</b>.</p>
+
+<p>Программно получить доступ к ресурсам массива можно так:</p>
+
+<pre><code class="java">
+// загрузка массива строк из res/values/arrays.xml в текстовое поле textStrings
+String[] names = getResources().getStringArray(R.array.names);
+for(int i = 0; i &lt; names.length; i++) {
+    textStrings.append("Name[" + i + "]: "+ names[i] + "\n");
+} 
+
+// загрузка массива целых чисел из res/values/arrays.xml в текстовое поле textDigits
+int[] digits = getResources().getIntArray(R.array.digits);
+for(int i = 0; i &lt; digits.length; i++) {
+    textDigits.append("Digit[" + i + "]: "+ digits[i] + "\n");
+} 
+</code></pre>
+
+<h2 class="text-warning" id="other">Скомпилированные и нескомпилированные ресурсы Android</h2>
+
+<p>Большинство ресурсов компилируются в двоичные файлы, но некоторые используются без дополнительной обработки. В Android поддержка ресурсов осуществляется преимущественно при помощи файлов двух типов - XML и RAW-файлов (к последним относятся изображения, аудио и  видео). При работе с ХМL-файлами мы видели, что в большинстве случаев ресурсы определяются как значения внутри файла XML (это касается, например,  строк), а иногда весь ХМL-файл является ресурсом  (например, файл ресурса разметки).</p>
+
+<p>Файлы, созданные в XML, также подразделяются на два типа: первые компилируются  в двоичный формат,  а вторые копируются на устройство без изменений. Например, XML-файлы строковых ресурсов и ресурсов разметки компилируются в двоичный формат. Эти ХМL-файлы имеют заданный формат, в котором узлы XML преобразуются в ID.</p>
+
+<h2 class="text-warning" id="xml">XML-документы</h2>
+
+<p>Вы также можете специально выбрать некоторые ХМL-файлы и задать для них структуру формата, отличающуюся  от  принятой по умолчанию, - чтобы эти 
+файлы не интерпретировались и для  них не  генерировались идентификаторы ресурсов. Однако в данном случае нам как раз нужно, чтобы они компилировались 
+в двоичный формат и чтобы их было удобно локализовывать. Для достижения этой цели файлы XML можно поместить в подкаталог <b>/res/xml</b> - тогда они будуr 
+скомпилированы в двоичный формат. В таком случае вы можете воспользоваться поставляемыми вместе с Android инструментами для считывания XML, которые 
+могут считывать ХМL-узлы.</p>
+
+<p>Ниже приведен пример ХМL-файла в подкаталоге /res/xml/test.xml:</p>
+
+<pre><code class="xml">
+&lt;rootelement&gt; 
+    &lt;subelement&gt; 
+        Коты - наше всё!
+    &lt;/subelement&gt; 
+&lt;/rootelement&gt;
+</code></pre>
+
+<p>Как и при работе с другими ХМL-файлами ресурсов, ААРТ компилирует такой ХМL-файл, перед тем как поместить его в пакет прикладных программ. Для синтаксического разбора подобных файлов используйте  экземпляр  XmlPullParser:</p>
+
+<pre><code class="java"> 
+Resources  res  =  activity.getResources();
+XmlResourceParser хрр  =  res.getXml(R.xml.test);
+</code></pre>
+
+<p>Возвращенный XmlResourceParser является экземпляром XmlPullParser, а также реализует java.util.AttributeSet.</p>
+
+<p>Пример работы с XML-документами описан в статье <a href="xmldoc.html">Работаем с XML-документами</a></p>
+
+<h2 class="text-warning" id="raw">Использование необработанных ресурсов RAW</h2>
+
+<p>Если разместить файлы, в том числе написанные на XML, в каталоге <b>res/raw</b>, они  не будут скомпилированы в двоичном формате, а попадают в пакет прикладных программ как есть. Для считывания таких фалов нужно использовать явные API с поддержкой  потоков. К категории  <b>raw</b> относятся аудио- и видеофайлы.</p>
+
+<p>Каждый такой файл, помещенный в папку <b>res/raw</b>, имеет свой идентификатор, генерируемый в <b>R.java</b>. Чтобы получить доступ к ресурсам, предназначенным только для чтения, вызовите метод <b>openRawResource()</b>, принадлежащий объекту <b>Resource</b> приложения. Таким образом, вы получите объект <b>InputStream</b>, основанный на указанном файле. В качестве имени переменной, принадлежащей <b>R.raw</b>, задайте имя файла (без расширения). Если бы вы поместили текстовый файл в <b>res/raw/test.txt</b>, то его можно было бы прочитать при помощи следующего кода, используя идентификатор <b>test</b>:</p>
+
+<pre><code class="java">
+String  getStringFromRawFile(Activity  activity) 
+{ 
+    Resources r = activity.getResources();
+    InputStream is = r.openRawResource(R.raw.test);
+    String myText = convertStreamToString(is); 
+    is.close();
+    return  myText;
+}
+
+String  convertStreamToString(InputStream is);
+{ 
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    int i = is.read();
+    while( i != -1) 
+    { 
+        baos.write(i); 
+        i = baos.read(); 
+    } 
+    return  baos.toString();
+}
+</code></pre>
+
+<p>Мы уже рассматривали <a href="structure_app.html">структуру папок</a> в каталоге <b>res</b>. Компилятор ресурсов, входящий в состав инструмента Android Asset Packaging Tool (ААРТ), собирает все ресурсы, кроме <b>raw</b>, и помещает все их в итоговый файл АРК. Этот файл, содержащий код  и ресурсы приложения Android, аналогичен файлу JAR, который применяется в Java (АРК означает Android package - пакет Android). Именно файл АРК устанавливается на устройство.</p>
+
+<div class="alert">
+Хотя инструмент синтаксического разбора (parser) ресурсов XML допускает такие имена ресурсов, как hello-string, в файле R.java  во время компиляции такое название вызовет ошибку. Для ее устранения можно переименовать ресурс в hello_string, заменив дефис нижним подчеркиванием.
+</div>
+
+<div class="alert">
+Имена  файлов, в которых дублируются базовые имена, вызывают в плагине Eclipse·ADT ошибку компиляции (build error). Так происходит со всеми  идентификаторами ресурсов,  которые сгенерированы для ресурсов, созданных на основе файлов.
+</div>
+
+<h2 class="text-warning" id="code">Использование ресурсов в коде программы</h2>
+
+<p>Подведем воедино информацию об использовании ресурсов в коде программы.</p>
+
+<p>Во время компиляции генерируется  статический класс <b>R</b> на основе ваших ресурсов и содержит идентификаторы всех ресурсов в программе. Класс <b>R</b> имеет несколько вложенных классов, один для каждого типа ресурса, поддерживаемого системой Android, и для которого в проекте существует файл ресурса. Класс <b>R</b> может содержать следующие вложенные классы:</p>
+
+<ul>
+<li>R.anim — идентификаторы для файлов из каталога res/anim/ (анимация);</li>
+<li>R.array — идентификаторы для файлов из каталога res/values/ (массивы);</li>
+<li>R.bool — идентификаторы для битовых массивов в файлах arrays.xml из каталога res/values/;</li>
+<li>R.integer — идентификаторы для целочисленных массивов в файлах arrays.xml из каталога res/values/;</li>
+<li>R.color — идентификаторы для файлов colors.xml из каталога res/values/ (цвета);</li>
+<li>R.dimen — идентификаторы для файлов dimens.xml из каталога res/values/ (размеры);</li>
+<li>R.drawable — идентификаторы для файлов из каталога res/drawable/ (изображения); </li>
+<li>R.id — идентификаторы представлений и групп представлений для файлов ХМL-разметки из каталога res/layout/;</li>
+<li>R.layout — идентификаторы для файлов разметки из каталога res/layout/;</li>
+<li>R.raw — идентификаторы для файлов из каталога res/raw/;</li> 
+<li>R.string — идентификаторы для файлов strings.xml из каталога res/values/ (строки);</li>
+<li>R.style — идентификаторы для файлов styles.xml из каталога res/values/ (стили);</li>
+<li>R.xml — идентификаторы для файлов из каталога res/xml/.</li>
+</ul>
+
+<p>Синтаксис для обращения к ресурсу:</p>
+
+<pre>
+R.resource_type.resource_name 
+</pre>
+
+<p>При использовании системных ресурсов используется класс <b>android.R</b>.</p>
+
+<pre><code class="java"> 
+android.R.drawable.sym_def_app_icon; // стандартный значок приложения
+android.R.style.Theme_Black;  // загрузить стандартный стиль: 
+</code></pre>
+
+<p>Если в коде вам понадобится идентификатор ресурса для конструктора или метода, то можете использовать данные свойства:</p>
+
+<pre><code class="java">
+setContentView(R.layout.activity_main); // загрузка ресурса разметки
+
+// Строковый ресурс используется при выводе Toast-сообщения
+Toast.makeText(this, R.string.mytext, Toast.LENGTH_LONG).show();
+</code></pre>
+
+<p>Если вам нужен не идентификатор, а сам экземпляр ресурса, то используйте метод <b>getResources</b> для доступа к экземпляру класса <b>Resources</b>:</p>
+
+<pre><code class="java">
+Resources myResources = getResources();
+</code></pre>
+
+<p>Принцип работы класса <b>Resources</b> заключается в передаче идентификатора ресурса, чей экземпляр вам нужен для работы. Вот несколько примеров получения экземпляров ресурсов:</p>
+
+<pre><code class="java">
+Resources myResources = getResources();
+
+CharSequence myText = myResources.getText(R.string.hello_app); // получим строку
+Drawable myIcon = myResources.getDrawable(R.drawable.app_icon); // получим значок
+int myColor = myResources.getColor(R.color.color_blue); // получим значение цвета
+float myWidth = myResources.getDimension(R.dimen.width_border); // получим размер
+
+// Получим массив строк
+String[] stringArray;
+stringArray = myResources.getStringArray(R.array.string_array);
+
+// Ресурс, содержащий пошаговую анимацию, возвращается в виде объекта AnimationResources
+// Также можно вернуть значение с помощью метода getDrawable и привести к нужному типу
+AnimationDrawable cat;
+cat = (AnimationDrawable)myResources.getDrawable(R.drawable.frame_cat);
+</code></pre>
+
+<h2 class="text-warning">Вложенные ресурсы</h2>
+
+<p>Можно использовать ссылки на ресурсы в качестве значений для атрибутов внутри других ресурсов (разметка, стили), что позволяет создавать специальные варианты визуальных тем, локализованных строк и графических объектов. Чтобы сослаться на один ресурс внутри другого, используйте символ @ в следующем виде:</p>
+
+<pre><code class="java">
+attribute = "@[packagename:]resourcetype/resourceID"
+</code></pre>
+
+<p>Полное имя <b>packagename</b> нужно указывать только при использовании сторонних пакетов, при использовании собственных ресурсов данный параметр можно опустить, так как Android предполагает, что вы используете ресурсы пакета  со своим приложением.</p>
+
+<pre><code class="xml">
+...
+android:text="@string/hello_app"
+android:textColor="@color/color_blue"
+...
+</code></pre>
+
+<h2 class="text-warning">Использование системных ресурсов</h2>
+
+<p>Сама система имеет собственные ресурсы (строки, изображения, анимация, разметки, стили), которые используются стандартными приложениями, входящими в состав Android. Вы также можете использовать данные системные ресурсы в своих приложениях, добиваясь единообразного стиля и дизайна.</p>
+
+<p>Получение доступа к системным ресурсам внутри кода программы ничем не отличается от приведенных выше примеров. Единственно, в чем состоит отличие, это использование не вашего класса R, а системного класса <b>android.R</b>. Например, для получения строки, которая хранит сообщение об ошибке, используется следующий код:</p>
+
+<pre><code class="java">
+CharSequence errorMessage = getString(android.R.string.httpErrorBadUrl);
+</code></pre>
+
+<p>Чтобы получить доступ к системным ресурсам внутри XML-файла, используйте значение <b>android</b> следующим образом:</p>
+
+<pre><code class="xml">
+...
+android:text="@android:string/httpErrorBadUrl"
+android:textColor="@android:color/darker_gray"
+...
+</code></pre>
+
+<h2 class="text-warning">Использование ссылок на визуальные стили в текущей теме</h2>
+
+<p>Использование визуальных тем позволяет обеспечить целостность пользовательского интерфейса приложения. Вместо описания каждого стиля, вы можете использовать ссылки, предоставляемые Android, с помощью которых вы можете использовать стили из текущей темы.</p>
+
+<p>Чтобы задать ссылку на ресурс, который нужно применить, вместо символа @ укажите префикс <b>?android:</b>. Например, предыдущий пример можно переделать следующим образом:</p>
+
+<pre><code class="xml">
+android:textColor="?android:textColor"
+</code></pre>
+
+<p>Такой подход позволяет создавать визуальные стили, которые смогут меняться по мере преобразований в текущей теме, и избавляет от необходимости редактировать каждый отдельный ресурс.</p>
+
+<a name="locale"></a>
+<h2 class="text-warning" id="locale">Создание ресурсов для локализации и аппаратных конфигураций</h2>
+
+<p>Применение ресурсов позволяет использовать механизм динамического выбора нужного ресурса в программе. Можно задать определенную структуру каталогов в проекте, чтобы создавать ресурсы для конкретных языков, регионов и аппаратных конфигураций. Во время выполнения программы Android выберет нужные значения для конкретного телефона пользователя.</p>
+
+<p>Вы можете указывать альтернативные значения, создавая собственные структуры каталогов внутри каталога <b>res</b> при помощи дефиса (-). Например, мы хотим создать дополнительные строковые ресурсы для французского языка, франкоканадского региона и для русского языка. Тогда структура каталогов в проекте будет выглядять следующим образом:</p>
+
+<pre>
+Project/
+    res/
+	    values/
+		    strings.xml
+		values-fr/
+		    strings.xml
+		values-fr-rCA
+		    strings.xml
+		values-ru/
+		    strings.xml
+</pre>
+
+<p>Как видите, мы создали несколько файлов strings.xml, которые содержат текст на французском и русском языках и раскидали их по нужным каталогам. Далее приводится список возможных идентификаторов, которые можно использовать для создания альтернативных значений в ресурсах.</p>
+
+<p>Регионы и язык можно указывать без всякой связи друг с другом. Так в папке values-ru-rJP будут храниться русские тексты для жителей Японии.</p>
+
+<ul>
+<li><b>Мобильный код страны и код мобильного оператора (MCC/MNC)</b> - содержит информацию о стране и опционально о мобильной сети, которая привязана к SIM-карте. MCC (Mobile Country Code) состоит из символов mcc, за которыми следует трехзначный код страны. Также можно добавить MNC (Mobile Network Code), используя символы mnc и двухзначный код мобильной сети, например, <b>mcc250-mnc99</b> (Россия-Билайн). Список кодов MCC/MNC можно посмотреть в Википедии.</li>
+<li><b>Язык и регион</b> - указывает на язык при помощи языкового кода в формате ISO 639-1. Состоит из двух символов в нижнем регистре. В случае необходимости можно добавить обозначение региона в виде символа <b>r</b> и двухсимвольного кода в формате ISO 3166-1-alpha-2, записанного в верхнем регистре, например, en-rUS, en-rGB, fr-rCA.</li>
+<li><b>Размер экрана</b> - может иметь одно из следующих значений:
+    <ul>
+    <li>small - меньше, чем HVGA, 3.2 дюйма</li>
+    <li>medium - HVGA или меньше, чем HVGA, типичный размер</li>
+	<li>large - VGA или больше, планшет или нетбук</li>
+	</ul>
+</li>
+<li><b>Высота и ширина экрана</b> - можно использовать значения
+    <ul>
+    <li>long — для экранов, которые в альбомном режиме значительно шире, чем на стандартных смартфонах (таких как G1);</li>
+	<li>notlong — для экранов с обычным соотношением сторон</li>
+	</ul>
+<li><b>Ориентация экрана</b> - возможны значения port (Портретный), land (Альбомный), square (Квадратные экраны).</li>
+<li><b>Плотность пикселов на экране</b> - возможны значения:
+    <ul>
+    <li>ldpi — предназначен для хранения ресурсов, рассчитанных на экраны с низкой плотностью пикселей (100–140 dpi);</li>
+	<li>mdpi — для экранов со средней плотностью пикселей (140–180 dpi);</li>
+	<li>hdpi — для экранов с высокой плотностью пикселей (190–250 dpi);</li>
+	<li>xdpi - новый тип для очень высокой плотности для планшетов</li>
+	<li>nodpi - Вы можете использовать значение nodpi для растровых ресурсов, которые не должны масштабироваться. В этом случае система не требует точного совпадения.</li>
+    </ul>
+	<p>Подбирая подходящий каталог, Android выберет тот спецификатор, который наиболее точно описывает плотность пикселей экрана устройства и откорректирует масштаб объекта Drawable. По умолчанию, в новом проекте создаются папки drawable-ldpi, drawable-mdpi, drawable-hdpi, drawable-xhdpi, в которых содержатся значки для приложения.</p></li>
+<li><b>Тип сенсорного экрана</b> - возможны варианты: notouch, stylus, finger.</li>
+<li><b>Наличие клавиатуры</b> - возможны варианты: keysexposed, keyshidden, keysoft.</li>
+<li><b>Тип ввода</b> - возможны варианты: nokeys, qwerty, 12key.</li>
+<li><b>Способ навигации</b> - возможны варианты: nonav, dpad, trackball, wheel.</li>
+</ul>
+
+<p>Вы можете комбинировать указанные спецификаторы, разделяя их дефисами. Поддерживаются любые сочетания, однако они должны идти в том порядке, как указано в списке, т.е. язык всегда указывается раньше ориентации экрана и т.п. В одном спецификаторе может применяться не более одного значения.</p>
+
+<h3 class="text-warning">Корректные варианты</h3>
+
+<pre>
+drawable-en-rUS
+drawable-en-keyshidden
+drawable-long-land-notouch-nokeys
+</pre>
+
+<h3 class="text-warning">Некорректные варианты</h3>
+
+<pre>
+drawable-rUS-en (нарушен порядок)
+drawable-nonav-dpad (несколько значениф для одного спецификатора)
+</pre>
+
+<div class="alert">
+Если на устройстве не будет обнаружено соответствующих ресурсов, при попытке получения доступа к ним ваша программа сгенерирует исключение. Чтобы избежать подобной ситуации, необходимо всегда добавлять значения по умолчанию для всех типов ресурсов в каталог без спецификаторов.
+</div>
+
+<p>Пример с локализацией программы можно посмотреть в статье <a href="../locale.html" >Локализация приложений</a>.</p>
+
+<h2 class="text-warning" id="alias">Псевдонимы (alias)</h2>
+
+<p>Чтобы избежать дублирования ресурсов, можно использовать псевдонимы, которые будут ссылаться на один и тот же ресурс. Предположим вы создали два файла <b>res/layout-land/activity_main.xml</b> и <b>res/layout-large/activity_main.xml</b> с одинаковым содержанием для разметки с альбомной ориентацией для смартфонов и планшетов. Создайте  теперь ещё один файл с таким же содержанием, например под именем <b>res/layout/activity_main_horizontal.xml</b>. Теперь два одинаковых файла можете удалить. Вместо них создайте два файла <b>res/values-land/refs.xml</b> и <b>res/values-large/refs.xml</b>.</p>
+
+<pre><code class="xml">
+&lt;resources&gt;
+    &lt;item type=&quot;layout&quot; name=&quot;activity_main&quot;&gt;@layout/activity_main_horizontal&lt;/item&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p>Такой приём часто применяется при использовании фрагментов.</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+<p>
+
+</p>
+				
+				
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/resources.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:50:22 GMT -->
+</html>

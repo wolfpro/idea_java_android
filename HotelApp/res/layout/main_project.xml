@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:id="@+id/linearLayoutMain">
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:weightSum="1" android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" android:id="@+id/linearLayout">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/name_payday"
+                    android:id="@+id/textView" android:layout_weight="1"
+                    android:autoText="false" android:textAlignment="gravity" android:typeface="serif"
+                    android:padding="10dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="0"
+                    android:id="@+id/textView2" android:layout_weight="1"
+                    android:textAlignment="center" android:typeface="serif" android:padding="10dp"
+                    android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name_rooms"
+                android:id="@+id/button5"
+                android:layout_below="@+id/textView3" android:layout_alignParentStart="true"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name_capital"
+                android:id="@+id/button6" android:layout_below="@+id/button5" android:layout_centerHorizontal="true"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name_personnel"
+                android:id="@+id/button7" android:layout_below="@+id/button6" android:layout_centerHorizontal="true"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/name_management"
+                android:id="@+id/textView3" android:layout_below="@+id/linearLayout"
+                android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</LinearLayout>

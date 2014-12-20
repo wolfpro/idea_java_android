@@ -5,6 +5,7 @@
     <string name="les1">1 подготовка</string>
     <string name="appId">com.example.MyAndroidLessonBrowser</string>
     <string-array name="lesson_label">
+        <item>0. all lesson</item>
         <item>1. Подготовка</item>
         <item>2. Hello Kitty!</item>
         <item>3. Щелчок</item>

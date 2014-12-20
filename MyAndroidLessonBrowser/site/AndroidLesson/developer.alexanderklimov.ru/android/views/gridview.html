@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/views/gridview.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:53:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: GridView</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class="active"><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+            
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">GridView</h1>
+
+<p>
+<a href="#intro">Знакомьтесь - GridView</a><br>
+<a href="#base">Базовый пример</a><br>
+<a href="#images">GridView с картинками</a><br>
+<a href="#imagetext">GridView с картинками и пояснительным текстом</a><br>
+<a href="#scroll">Убрать вертикальную прокрутку</a><br>
+</p>
+
+<h2 class="text-warning" id="intro">Знакомьтесь - GridView</h2>
+
+<p>Виджет <b>GridView</b> представляет собой плоскую таблицу. Для GridView можно использовать собственные поля для отображения элементов данных, создав класс, производный от класса ArrayAdapter или BaseAdapter и т.п, и переопределив его метод <b>getView()</b>.</p>
+</p>
+
+<p>Находится в папке <b>Composite</b>.</p>
+
+<p><img src="composite.png" alt="ListView"></p>
+
+<p>Число столбцов для GridView чаще задается статически. Число строк в элементе определяется динамически на основании числа элементов, которые предоставляет адаптер.</p>
+
+<h3 class="text-warning">Свойства</h3>
+
+<ul>
+<li><b>android:numColumns</b> — определяет количество столбцов. Если поставлено значение <i>auto_fit</i>, то система вычислит количество столбцов, основанное на доступном пространстве</li>
+<li><b>android:verticalspacing</b> — устанавливает размер пустого пространства между ячейками таблицы</li>
+<li><b>android:columnWidth</b> — устанавливает ширину столбцов</li>
+<li><b>android:stretchMode</b> — указывает, куда распределяется остаток свободного пространства для таблицы с установленным значением <b>android:numColumns="auto_fit"</b>. Принимает значения <i>columnWidth</i> для paспределения остатка свободного пространства между ячейками столбцов для их увеличения или <i>spacingWidth</i> — для увеличения пространства между ячейками</li>
+</ul>
+
+<h2 class="text-warning" id="base">Базовый пример</h2>
+
+<p>Если поместить GridView на форму, то увидим следующую картину.</p>
+
+<p><img src="gridview1.png" alt="GridView"></p>
+
+<p>Внесём небольшие правки</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/info&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;@string/hello&quot; /&gt;
+
+    &lt;GridView
+        android:id=&quot;@+id/gridView1&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:columnWidth=&quot;100dp&quot;
+        android:gravity=&quot;center&quot;
+        android:horizontalSpacing=&quot;5dp&quot;
+        android:numColumns=&quot;auto_fit&quot;
+        android:stretchMode=&quot;columnWidth&quot;
+        android:verticalSpacing=&quot;35dp&quot; &gt;
+    &lt;/GridView&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>В коде реализуем наполнение таблицы через адаптер. Создадим новый файл DataAdapter.java:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.gridview;
+
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
+public class DataAdapter extends ArrayAdapter&lt;String&gt; {
+
+	private static final String[] mContacts = { "Рыжик", "Барсик", "Мурзик",
+			"Мурка", "Васька", "Полосатик", "Матроскин", "Лизка", "Томосина",
+			"Бегемот", "Чеширский", "Дивуар", "Тигра", "Лаура" };
+
+	Context mContext;
+
+	// Конструктор
+	public DataAdapter(Context context, int textViewResourceId) {
+		super(context, textViewResourceId, mContacts);
+		// TODO Auto-generated constructor stub
+		this.mContext = context;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		// TODO Auto-generated method stub
+
+		TextView label = (TextView) convertView;
+
+		if (convertView == null) {
+			convertView = new TextView(mContext);
+			label = (TextView) convertView;
+		}
+		label.setText(mContacts[position]);
+		return (convertView);
+	}
+
+	// возвращает содержимое выделенного элемента списка
+	public String GetItem(int position) {
+		return mContacts[position];
+	}
+
+}
+</code></pre>
+
+<p>Теперь напишем код для основного окна приложения. Как и у ListView, нам нужно использовать метод <b>setAdapter()</b>, а также методы <b>setOnItemSelectedListener()</b>, <b>onItemSelected()</b>, <b>onNothingSelected()</b>.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.gridview;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.GridView;
+import android.widget.TextView;
+
+public class GridViewDemoActivity extends Activity implements
+		AdapterView.OnItemSelectedListener {
+
+	private TextView mSelectText;
+	private DataAdapter mAdapter;
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+
+		mSelectText = (TextView) findViewById(R.id.info);
+		final GridView g = (GridView) findViewById(R.id.gridView1);
+		mAdapter = new DataAdapter(getApplicationContext(),
+				android.R.layout.simple_list_item_1);
+		g.setAdapter(mAdapter);
+		g.setOnItemSelectedListener(this);
+		g.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView&lt;?&gt; parent, View v,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				mSelectText.setText("Выбранный элемент: "
+						+ mAdapter.GetItem(position));
+			}
+		});
+	}
+
+	@Override
+	public void onItemSelected(AdapterView&lt;?&gt; parent, View v, int position,
+			long id) {
+		// TODO Auto-generated method stub
+		mSelectText.setText("Выбранный элемент: " + mAdapter.GetItem(position));
+	}
+
+	@Override
+	public void onNothingSelected(AdapterView&lt;?&gt; parent) {
+		// TODO Auto-generated method stub
+		mSelectText.setText("Выбранный элемент: ничего");
+	}
+}
+</code></pre>
+
+<p>Запустите проект и начинайте выбирать любой элемент - его название отобразится в текстовой метке в верхней части экрана. Я обратил внимание, что в эмуляторе с помощью джойстика можно выбрать нужный элемент, но в современных телефонах джойстика нет, поэтому я позже добавил метод <b>setOnItemClickListener()</b>, чтобы можно было щелкать по элементам в GridView и выводить их названия в метке.</p>
+
+<p><img src="gridview2.png" atl="GridView"></p>
+
+<h2 class="text-warning" id="images">GridView с картинками</h2>
+
+<p>Вместо текста можно использовать и картинки. Немного модифицируем проект. В шаблоне разметки изменим GridView:</p>
+
+<pre><code class="xml">
+&lt;GridView
+    android:id=&quot;@+id/gridView1&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:columnWidth=&quot;90dp&quot;
+    android:gravity=&quot;center&quot;
+    android:horizontalSpacing=&quot;10dp&quot;
+    android:numColumns=&quot;auto_fit&quot;
+    android:stretchMode=&quot;columnWidth&quot;
+    android:verticalSpacing=&quot;10dp&quot; &gt;
+&lt;/GridView&gt;
+</code></pre>
+
+<p>Создадим новый адаптер ImageAdapter.java, в котором будет возможность подключать картинки</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.gridview;
+
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
+
+public class ImageAdapter extends BaseAdapter {
+	private Context mContext;
+
+	public ImageAdapter(Context c) {
+		mContext = c;
+	}
+
+	public int getCount() {
+		return mThumbIds.length;
+	}
+
+	public Object getItem(int position) {
+		return mThumbIds[position];
+	}
+
+	public long getItemId(int position) {
+		return position;
+	}
+
+	// create a new ImageView for each item referenced by the Adapter
+	public View getView(int position, View convertView, ViewGroup parent) {
+		ImageView imageView;
+		if (convertView == null) {
+			// if it's not recycled, initialize some attributes
+			imageView = new ImageView(mContext);
+			imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
+			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+			imageView.setPadding(8, 8, 8, 8);
+		} else {
+			imageView = (ImageView) convertView;
+		}
+
+		imageView.setImageResource(mThumbIds[position]);
+		return imageView;
+	}
+
+	// references to our images
+	public	Integer[] mThumbIds = { R.drawable.card1, R.drawable.card2,
+			R.drawable.card3, R.drawable.card4, R.drawable.card5,
+			R.drawable.card6, R.drawable.card7, R.drawable.card8,
+			R.drawable.card9, R.drawable.card10, R.drawable.card11,
+			R.drawable.card12, R.drawable.card13, R.drawable.card14,
+			R.drawable.card15, R.drawable.card16, R.drawable.card17,
+			R.drawable.card18, R.drawable.card19, R.drawable.card20,
+			R.drawable.card21 };
+}
+</code></pre>
+
+<p>Теперь код в основной активности:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.gridview;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.TextView;
+
+public class GridViewDemoActivity extends Activity {
+
+	private TextView mSelectText;
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+
+		mSelectText = (TextView) findViewById(R.id.info);
+		GridView gridview = (GridView) findViewById(R.id.gridView1);
+		gridview.setAdapter(new ImageAdapter(this));
+
+		gridview.setOnItemClickListener(gridviewOnItemClickListener);
+	}
+
+	private GridView.OnItemClickListener gridviewOnItemClickListener = new GridView.OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView&lt;?&gt; parent, View v, int position,
+				long id) {
+			// TODO Auto-generated method stub
+			// выводим номер позиции
+			mSelectText.setText(String.valueOf(position));
+		}
+	};
+}
+</code></pre>
+
+<p>Результат ниже</p>
+
+<p><img src="gridview3.png" alt="GridView" width="240" height="400"></p>
+
+<p>Зная номер позиции можно доработать программу, чтобы при щелчке на картинке, она открывалась на весь экран. Давайте так и сделаем. Создадим новый XML-файл разметки в папке res/layout под именем <b>full_image.xml</b>:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/full_image_view&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;fill_parent&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Создадим новую активность, в которой будет выводиться изображение на весь экран (файл <b>FullImageActivity.java</b>):</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.gridview;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class FullImageActivity extends Activity {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.full_image);
+
+		// get intent data
+		Intent i = getIntent();
+
+		// Selected image id
+		int position = i.getExtras().getInt("id");
+		ImageAdapter imageAdapter = new ImageAdapter(this);
+
+		ImageView imageView = (ImageView) findViewById(R.id.full_image_view);
+		imageView.setImageResource(imageAdapter.mThumbIds[position]);
+	}
+}
+</code></pre>
+
+<p>Класс получает от намерения номер позиции и выводит по этому номеру изображение из ресурсов.</p>
+
+<p>Теперь в основной активности модифицируем код для щелчка</p>
+
+<pre><code class="java">
+private GridView.OnItemClickListener gridviewOnItemClickListener = new GridView.OnItemClickListener() {
+	@Override
+	public void onItemClick(AdapterView&lt;?&gt; parent, View v, int position,
+			long id) {
+		// TODO Auto-generated method stub
+		
+		// Sending image id to FullScreenActivity
+		Intent i = new Intent(getApplicationContext(),
+				FullImageActivity.class);
+		// passing array index
+		i.putExtra("id", position);
+		startActivity(i);
+	}
+};
+</code></pre>
+
+<p>Осталось добавить в манифест новую активность:</p>
+
+<pre><code class="xml">
+&lt;activity android:name=&quot;.FullImageActivity&quot;&gt;&lt;/activity&gt;
+</code></pre>
+
+<p>У нас получилась галерея с просмотром отдельной картинки.</p>
+
+<h2 class="text-warning" id="imagetext">GridView с картинками и пояснительным текстом</h2>
+
+<p>Модифицируем предыдущий пример и создадим сетку, состоящую из картинок с сопроводительным текстом внизу.</p>
+
+<p>Можно было оставить предыдущую разметку для активности, но я решил чуть её изменить, убрав лишние элементы</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;GridView xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:id=&quot;@+id/gridview&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:columnWidth=&quot;90dp&quot;
+    android:gravity=&quot;center&quot;
+    android:horizontalSpacing=&quot;10dp&quot;
+    android:numColumns=&quot;auto_fit&quot;
+    android:stretchMode=&quot;columnWidth&quot;
+    android:verticalSpacing=&quot;10dp&quot; /&gt;
+</code></pre>
+
+<p>Теперь создадим разметку для отдельной ячейки сетки - нам нужны ImageView и TextView:</p>
+
+<h3 class="text-success">res/layout/cellgrid.xml</h3>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/imagepart&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/textpart&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot; /&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Создадим новый класс ImageTextAdapter. Он практически не отличается от класса ImageAdapter, поменялся только метод <b>getView()</b>, разницу в коде я закоментировал для сравнения</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.gridview;
+
+import ...
+
+public class ImageTextAdapter extends BaseAdapter {
+	private Context mContext;
+
+	public ImageTextAdapter(Context c) {
+		mContext = c;
+	}
+
+	public int getCount() {
+		return mThumbIds.length;
+	}
+
+	public Object getItem(int position) {
+		return mThumbIds[position];
+	}
+
+	public long getItemId(int position) {
+		return position;
+	}
+
+	// create a new ImageView for each item referenced by the Adapter
+	// public View getView(int position, View convertView, ViewGroup parent) {
+	// ImageView imageView;
+	// if (convertView == null) {
+	// // if it's not recycled, initialize some attributes
+	// imageView = new ImageView(mContext);
+	// imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
+	// imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+	// imageView.setPadding(8, 8, 8, 8);
+	// } else {
+	// imageView = (ImageView) convertView;
+	// }
+	//
+	// imageView.setImageResource(mThumbIds[position]);
+	// return imageView;
+	// }
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		// TODO Auto-generated method stub
+
+		View grid;
+
+		if (convertView == null) {
+			grid = new View(mContext);
+			//LayoutInflater inflater = getLayoutInflater();
+			LayoutInflater inflater = (LayoutInflater) mContext.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+			grid = inflater.inflate(R.layout.cellgrid, parent, false);
+		} else {
+			grid = (View) convertView;
+		}
+
+		ImageView imageView = (ImageView) grid.findViewById(R.id.imagepart);
+		TextView textView = (TextView) grid.findViewById(R.id.textpart);
+		imageView.setImageResource(mThumbIds[position]);
+		textView.setText("Картинка " + String.valueOf(position));
+
+		return grid;
+	}
+
+	// references to our images
+	public Integer[] mThumbIds = { R.drawable.card1, R.drawable.card2,
+			R.drawable.card3, R.drawable.card4, R.drawable.card5,
+			R.drawable.card6, R.drawable.card7, R.drawable.card8,
+			R.drawable.card9, R.drawable.card10, R.drawable.card11,
+			R.drawable.card12, R.drawable.card13, R.drawable.card14,
+			R.drawable.card15, R.drawable.card16, R.drawable.card17,
+			R.drawable.card18, R.drawable.card19, R.drawable.card20,
+			R.drawable.card21 };
+}
+</code></pre>
+
+<p>Осталось вызвать нужный адаптер в активности:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.gridview;
+
+import ...
+
+public class GridViewDemoActivity extends Activity {
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+
+		GridView gridview = (GridView) findViewById(R.id.gridview);
+		gridview.setAdapter(new ImageTextAdapter(this));
+
+		gridview.setOnItemClickListener(gridviewOnItemClickListener);
+	}
+
+	private GridView.OnItemClickListener gridviewOnItemClickListener = new GridView.OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView&lt;?&gt; parent, View v, int position,
+				long id) {
+			// TODO Auto-generated method stub
+			
+			// Sending image id to FullScreenActivity
+			Intent i = new Intent(getApplicationContext(),
+					FullImageActivity.class);
+			// passing array index
+			i.putExtra("id", position);
+			startActivity(i);
+		}
+	};
+}
+</code></pre>
+
+<p>Получим результат:</p>
+
+<p><img src="gridview4.png" alt="GridView" width="240" height="400"></p>
+
+<h2 class="text-warning" id="scroll">Убрать вертикальную прокрутку</h2>
+
+<p>Прочитал <a href="http://xjaphx.wordpress.com/2012/05/01/disable-vertical-scrolling-of-gridview/">заметку</a> про убирание вертикальной прокрутки, которая возникает при движении пальцем вверх. Может пригодится кому-то:</p>
+
+<pre><code class="java">
+gridview.setOnTouchListener(new OnTouchListener(){
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        if(event.getAction() == MotionEvent.ACTION_MOVE){
+            return true;
+        }
+        return false;
+    }
+});
+</code></pre>
+
+<h2 class="text-warning">Дополнительное чтение</h2>
+
+<p><a href="gridview_advanced.html">Продвинутые приёмы работы с GridView</a> (закрытая зона/2-й месяц)</p>
+<p><a href="../mediastore.html#mediastoreimagesthumbnails">Загружаем картинки из MediaStore через свой SimpleCursorAdapter</a></p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/views/gridview.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:54:00 GMT -->
+</html>

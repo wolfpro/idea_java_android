@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/shape.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:19:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Drawable. Изображения, фигуры и градиенты</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class="active"><a href="index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>            
+<h1 class="text-warning">Drawable. Изображения, фигуры и градиенты</h1>
+
+<p>
+<a href="#drawableimages">Ресурсы изображений</a><br>
+<a href="#shape">Ресурсы фигур</a><br>
+<a href="#gradient">Градиенты</a><br>
+<a href="#layer-list">Layer List</a><br>
+<a href="#state-list">State List</a><br>
+<a href="#levellistdrawable">LevelListDrawable</a><br>
+<a href="#getname">Получить имя ресурса</a><br>
+</p>
+
+<h2 class="text-warning" id="drawableimages">Ресурсы изображений</h2>
+
+<p>Android генерирует идентификаторы ресурсов для файлов изображений, расположенных в подкаталоге <b>/res/drawable</b>. Поддерживаются файлы PNG (самый предпочтительный), GIF, JPG. Для каждого файла изображения, который находится в этом каталоге, генерируется уникальный идентификатор на основе имени файла без расширения. Например, если у файла имя cat.jpg, то для него будет создан идентификатор ресурса <b>R.drawable.cat</b>. Нужно следить за уникальностью имен, так как если у вас будут два файла cat.jpg и cat.png, то возникнет ошибка. Кроме того, не нужно создавать дополнительных подкаталогов в папке /res/drawable, так как файлы оттуда не будут считываться.</p>
+
+<p>Можно адаптировать картинки для разных разрешений и размеров экранов. Для этого нужно создать специальные папки и складывать там нужные картинки. Например, для различных разрешений экрана используются папки <b>drawable-hdpi</b>, <b>drawable-mdpi</b>, <b>drawable-ldpi</b> и пр.. Существует аналогичное деление для размеров экрана: <b>drawable-normal</b>, <b>drawable-large</b> и т.д.. Можно совмещать эти способы и создавать папки типа <b>drawable-normal-hdpi</b>. Для изображений, которые должны оставаться неизменными вне зависимости от разрешения экрана, следует создать папку <b>drawable-nodpi</b>.</p>
+
+<p>Для памятки приведу используемые размеры изображений для значков и фона экрана:</p>
+
+<ul>
+<li>res/drawable-ldpi - (120 DPI) (QVGA):<br>
+ic_launcher.png (значок), 36 × 36
+background.png (фон), 320 × 240 pixels</li>
+<li>res/drawable-mdpi - (160 DPI) (HVGA):<br>
+background.png, 320 × 480</li>
+<li>res/drawable-hdpi - (240 DPI) (WVGA):<br>
+ic_launcher.png, 72 × 72<br>
+background.png, 800 × 480</li>
+<li>res/drawable-xhdpi (320 DPI) (WSVGA or HDTV):<br>
+ic_launcher.png, 96 × 96<br>
+background.png, 1024 × 600 или 1280 × 720 pixels</li>
+</ul>
+
+<p>Чтобы сослаться на изображение из <b>res/drawable</b> в XML-файлах разметки, используйте следующий синтаксис:</p>
+
+<pre><code class="xml">
+&lt;Button
+    android:id=&quot;@+id/button1&quot;
+	...
+	android:background=&quot;@drawable/cat&quot;
+&lt;/Button&gt;
+</code></pre>
+
+<p>Обратите внимание, что в любом случае мы обращаемся к ресурсу как <b>drawable</b>, а не <b>drawable-hdpi</b> или как-то еще.</p>
+
+<p>Программным способом можно достучаться до изображения следующим образом:</p>
+
+<pre><code class="java">
+// вызываем getDrawable для получения изображения
+BitmapDrawable bd = activity.getResources().getDrawable(R.drawable.cat);
+
+// Затем можно использовать полученый объект, чтобы установить фон
+button.setBackgroundDrawable(bd);
+
+// или можно установить фон непосредственно по идентификатору ресурса
+button.setBackgroundResource(R.drawable.icon);
+</code></pre>
+
+<p>Android включает простые ресурсы для рисования, которые можно полностью описать в формате XML. Это касается классов <b>ColorDrawable</b>, <b>ShapeDrawable</b> и <b>GradientDrawable</b>. Данные ресурсы хранятся в каталоге <b>res/drawable</b> и могут быть идентифицированы в коде приложения по именам файлов, записанным в нижнем регистре.</p>
+
+<p>Если описывать эти ресурсы в формате XML и указывать атрибуты для них с помощью аппаратно-независимых пикселей (density-independent pixels), система сможет их плавно масштабировать. Как и в случае с векторной графикой, эти ресурсы могут динамически масштабироваться, отображаясь корректно и без артефактов при любых размерах и разрешениях экрана, независимо от плотности пикселов. Исключение — ресурс <b>GradientDrawable</b>, радиус для которого должен быть указан в пикселях.</p>
+
+<h2 class="text-warning" id="shape">Ресурсы фигур</h2>
+
+<p>Данный вид ресурсов на основе класса ShapeDrawable позволяет описывать простые геометрические фигуры, указывая их размеры, фон и контур с помощью тега <b>&lt;shape&gt;</b>.</p>
+
+<p>Имя файла без расширения будет служить идентификатором (ID): R.drawable.filename в Java-коде и @[package:]drawable/filename в XML-файлах.</p>
+
+<p>Можно создавать ресурсы фигур на основе стандартных фигур вроде прямоугольника, эллипса, линии. Для использования ресурсов фигур нужно создать в подкаталоге <b>res/drawable</b> XML-файл, в котором будет присутствовать тег &lt;shape&gt;, который в свою очередь может содержать дочерние элементы &lt;corners&gt;, &lt;gradient&gt;, &lt;padding&gt;, &lt;size&gt;, &lt;solid&gt;, &lt;stroke&gt;.</p>
+
+<p>Имя файла без расширения будет служить идентификатором (ID): R.drawable.filename в Java-коде и @[package:]drawable/filename в XML-файлах.</p>
+
+<h3 class="text-warning">Элементы фигуры</h3>
+<dl>
+<dt>&lt;shape&gt;</dt><dd>Отрисовываемая фигура. Является корневым элементов в XML.<br>
+Атрибуты:
+<ul>
+<li>xmlns:android - обязательный атрибут со строкой &quot;http://schemas.android.com/apk/res/android&quot;</li>
+<li>android:shape - задает тип фигуры: rectangle (прямоугольник, заполняющий элемент. является фигурой по умолчанию), oval (овал), line (линия, требуется также наличие элемента &lt;stroke&gt; для задания ширины линии), ring (окружность, для данной фигуры можно использовать атрибуты android:innerRadius, android:innerRadiusRatio, android:thickness, android:thicknessRatio, android:useLevel)</li>
+<li>&lt;corners&gt; - создает закругленные углы для фигуры. Только для прямоугольника. Возможные атрибуты: android:radius, android:topLeftRadius, android:topRightRadius, android:bottomLeftRadius, android:bottomRightRadius</li>
+<li>&lt;gradient&gt; - задает градиентную заливку для фигуры. Возможные атрибуты: android:angle, android:centerX, android:centerY, android:centerColor, android:endColor, android:gradientRadius, android:startColor, android:type, android:useLevel</li>
+<li>&lt;padding&gt; - отступы. Возможные атрибуты: android:left, android:top, android:right, android:bottom</li>
+<li>&lt;size&gt; - задает размеры фигуры. Возможные атрибуты: android:height, android:width</li>
+<li>&lt;solid&gt; - сплошной цвет для фигуры. Возможные атрибуты: android:color</li>
+<li>&lt;stroke&gt; - обводка для фигуры. Возможные атрибуты: android:width, android:color, android:dashGap, android:dashWidth</li>
+</ul>
+
+<h4 class="text-warning">rectangle (Прямоугольник)</h4>
+
+<p><img src="../images/shape_rect.png" alt="rectangle"></p>
+
+<p>shape_rect.xml - Атрибут android:shape здесь необязателен: rectangle — это значение по умолчанию.</p>
+
+<pre><code class="xml">
+&lt;selector
+  xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item&gt;
+        &lt;shape android:shape=&quot;rectangle&quot;&gt;
+            &lt;solid android:color=&quot;#0377BE&quot;/&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<p>Пример с градиентным прямоугольником в качестве разделителя</p>
+
+<p>Создадим файл <b>separator.xml</b>:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shape=&quot;rectangle&quot; &gt;
+
+    &lt;gradient
+        android:angle=&quot;0&quot;
+        android:centerColor=&quot;#47CF4F&quot;
+        android:endColor=&quot;#000000&quot;
+        android:startColor=&quot;#000000&quot; /&gt;
+
+&lt;/shape&gt;
+</code></pre>
+
+<p>В разметке приложения добавим код:</p>
+
+<pre><code class="xml">
+&lt;TextView
+    android:id=&quot;@+id/tvSource&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;TextView&quot; /&gt;
+
+&lt;View
+    android:layout_width=&quot;wrap_content&quot;
+    android:background=&quot;@drawable/separator&quot;
+    android:layout_height=&quot;1dp&quot; /&gt;
+
+&lt;TextView
+    android:id=&quot;@+id/tvResult&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;TextView&quot; /&gt;
+
+&lt;View
+    android:layout_width=&quot;wrap_content&quot;
+    android:background=&quot;@drawable/separator&quot;
+    android:layout_height=&quot;3dp&quot; /&gt;
+
+&lt;Button
+    android:id=&quot;@+id/button1&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;Button&quot; /&gt;
+</code></pre>
+
+<p>У первого разделителя ширина 1dp, у второго - 3dp. Получили красивую полоску.</p>
+
+<p><img src="../images/shape-separator.png" alt=""></p>
+
+<p>У прямоугольников можно скруглить углы при помощи тега <b>corners</b></p>
+
+<p><img src="../images/shape_rect_rounded_all.png" alt="Rounded rectangle"></p>
+
+<p>rectangle_rounded_all.xml</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector
+  xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item&gt;
+        &lt;shape&gt;
+            &lt;solid android:color=&quot;#B902B0&quot;/&gt;
+            &lt;corners android:radius=&quot;10.0dip&quot; /&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<p>Можно закруглить углы по отдельности:</p>
+
+<p><img src="../images/shape_rect_rounded_some.png" alt="rectangles"></p>
+
+<p>rectangle_rounded_some.xml</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector
+  xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item&gt;
+        &lt;shape&gt;
+            &lt;solid android:color=&quot;#EC6118&quot;/&gt;
+            &lt;corners android:bottomRightRadius=&quot;0.1dp&quot;
+                 android:bottomLeftRadius=&quot;7dip&quot;
+                 android:topLeftRadius=&quot;7dip&quot;
+                 android:topRightRadius=&quot;0.1dp&quot;/&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<h4 class="text-warning">oval (Эллипс)</h4>
+
+<p><b>shape_oval.xml</b></p>
+
+<p><img src="../images/shape_oval.png" alt="oval"></p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector
+  xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item&gt;
+        &lt;shape android:shape=&quot;oval&quot;&gt;
+            &lt;solid android:color=&quot;#FCD366&quot;/&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<p>Другой вариант с пунктиром:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shape=&quot;oval&quot; &gt;
+
+    &lt;gradient
+        android:centerColor=&quot;#FFFF00&quot;
+        android:centerX=&quot;0.5&quot;
+        android:centerY=&quot;0.5&quot;
+        android:endColor=&quot;#00FF00&quot;
+        android:gradientRadius=&quot;100&quot;
+        android:startColor=&quot;#FF0000&quot;
+        android:type=&quot;radial&quot; /&gt;
+
+    &lt;stroke
+        android:dashGap=&quot;6dip&quot;
+        android:dashWidth=&quot;8dip&quot;
+        android:width=&quot;5dip&quot;
+        android:color=&quot;#000000&quot; /&gt;
+
+&lt;/shape&gt;
+</code></pre>
+
+<p><img src="oval2.png" alt="Oval"></p>
+
+<h4 class="text-warning">ring (Кольцо)</h4>
+
+<p><img src="../images/shape_ring.png" alt="ring"></p>
+
+<p><b>shape_ring.xml</b> - Для кольца имеются дополнительные атрибуты:</p>
+<dl>
+<dt>innerRadius</dt><dd>Внутренний радиус</dd>
+<dt>innerRadiusRatio</dt><dd>Отношение между внешним и внутренним радиусами</dd>
+<dt>thickness</dt><dd>Толщина кольца (т.е. разница между внешним и внутренним радиусами)</dd>
+<dt>thicknessRatio</dt><dd>Отношение ширины кольца к его толщине</dd>
+</dl>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector 
+  xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item&gt;
+      &lt;shape android:shape=&quot;ring&quot; android:innerRadiusRatio=&quot;3&quot;
+          android:thicknessRatio=&quot;5.333&quot;&gt;
+          &lt;solid android:color=&quot;#7DBE15&quot;/&gt;
+      &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<h4 class="text-warning">line (Горизонтальная линия)</h4>
+
+<p><img src="../images/shape_line.png" alt="line"></p>
+
+<p><b>shape_line.xml</b> - Линия может быть только горизонтальной</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item&gt;
+        &lt;shape android:shape=&quot;line&quot;&gt;
+            &lt;stroke android:width=&quot;1dip&quot; android:color=&quot;#F20107&quot; /&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<p>Рассмотрим пример быстрого создания фигуры в Eclipse визуальным способом. Выделите папку <b>res/drawable</b> (если её нет, то создайте заранее) в левой панели Eclipse. На панели инструментов нажмите на кнопку создания нового XML-файла (<img src="images/newxml.html" alt="New XML-файл">). В открывшемся диалоговом окне проследите, чтобы был установлен тип ресурсов <b>Drawable</b>, а в качестве root-элемента выберите пункт <b>shape</b>. Придумайте название для будущего файла, например, <b>colorbox.xml</b>.</p>
+
+<p><img src="../images/shape3.png" alt="Shape" width="" height=""></p>
+
+<p>У вас появится заготовка для будущей фигуры. Установите курсор внутри области тега <b>&lt;shape&gt;</b> и нажмите комбинацию клавиш Ctrl+Пробел. Вы увидите подсказку для параметров создаваемой фигуры.</p>
+
+<p><img src="../images/shape4.png" alt="Shape" width="" height=""></p>
+
+<p>Допустим вы выбрали элемент <b>&lt;corners /&gt;</b>. По такому же принципу внутри тега <b>&lt;corners /&gt;</b> нажимаем комбинацию Ctrl+Пробел, чтобы получить подсказку уже для параметров углов фигуры.</p>
+
+<p><img src="../images/shape5.png" alt="Shape" width="" height=""></p>
+
+<p>При необходимости можете переключаться между режимами визуального редактирования и непосредственного редактирования XML-файла. В итоге вы быстро получите необходимый результат для работы.</p>
+
+<p>Осталось присвоить созданную фигуру в качестве фона нужному компоненту:</p>
+
+<pre><code class="xml">
+&lt;TextView
+    ...
+    android:background=&quot;@drawable/colorbox&quot;
+    ... /&gt;
+</code></pre>
+
+<p><img src="../images/shape6.png" alt="Shape" width="" height=""></p>
+
+<h2 class="text-warning" id="gradient">Градиенты</h2>
+
+<p><b>GradientDrawable</b> позволяет создавать сложные градиентные заливки. Каждый градиент описывает плавный переход между двумя или тремя цветами с помощью линейного/радиального алгоритма или же используя метод развертки.</p>
+
+<p>Для задания градиентов используется тег <b>gradient</b> внутри определения ресурса <b>ShapeDrawable</b>. Основные атрибуты: type, startColor (обязателен),  endColor (обязателен) и  middleColor (необязателен). Также иногда оказывается полезным атрибут centerColor.</p>
+
+<p>Используя атрибут <b>type</b>, вы можете описать свой градиент:</p>
+
+<h3 class="text-warning">linear</h3>
+
+<p><img src="../images/gradient_linear.png" alt="Linear Gradient"></p>
+
+<p><b>gradient_linear.xml</b></p>
+<ul>
+<li>android:type="linear" можно опустить, он так и есть по умолчанию. Отображает прямой переход от цвета startColor к цвету endColor под углом, заданным в атрибуте angle.</li>
+<li>Атрибут android:angle используется только линейным градиентом. А еще он должен быть кратен 45.</li>
+</ul>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector
+  xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item&gt;
+        &lt;shape&gt;
+            &lt;gradient android:type=&quot;linear&quot; android:endColor=&quot;#3C0000&quot; android:startColor=&quot;#FF0202&quot; android:angle=&quot;45.0&quot; /&gt;
+            &lt;corners android:radius=&quot;10.0dip&quot; /&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<h3 class="text-warning">radial</h3>
+
+<img src="../images/gradient_radial.png" alt="Radial Gradient">
+
+<ul>
+<li>android:gradientRadius является обязательным для радиального градиента, а у остальных игнорируется. Рисует круговой градиент, начиная с цвета startColor и заканчивая startColor, от внешнего края фигуры до ее центра. Требует атрибут gradientRadius, который указывает радиус градиентного перехода в пикселях. Поддерживаются также необязательные атрибуты centerX и centerY, описывающие сдвиг центральной точки градиента. Поскольку радиус градиента указывается в пикселах, он не будет автоматически масштабироваться при разной плотности точек на экране. Чтобы минимизировать эффект ступенчатости, необходимо указывать 
+разные значения радиуса для дисплеев с разным разрешением.</li>
+<li>Имеются также атрибуты android:centerX и android:centerY, в которых можно задавать относительное (0.0 – 1.0) расположение центра градиента.</li>
+</ul>
+
+<p><b>gradient_radial.xml</b></p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector
+  xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item&gt;
+        &lt;shape&gt;
+            &lt;gradient android:type=&quot;radial&quot; android:endColor=&quot;#3C0000&quot; android:startColor=&quot;#FF0202&quot; android:gradientRadius=&quot;50&quot;/&gt;
+            &lt;corners android:radius=&quot;10.0dip&quot; /&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<h3 class="text-warning">sweep</h3>
+
+<p>Рисует развёрточный градиент с помощью перехода между цветами <b>startColor</b> и <b>endColor</b> вдоль внешнего края фигуры (как правило, кольца).</p>
+
+<p><img src="../images/gradient_sweep.png" alt="Sweep Gradient"></p>
+
+<p>Можно использовать атрибуты <b>android:centerX</b> и <b>android:centerY</b>.</p>
+
+<p><b>gradient_sweep.xml</b></p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector
+  xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item&gt;
+        &lt;shape&gt;
+            &lt;gradient android:type=&quot;sweep&quot; android:endColor=&quot;#3C0000&quot; android:startColor=&quot;#FF0202&quot; /&gt;
+            &lt;corners android:radius=&quot;10.0dip&quot; /&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<p><b>gradient_circle.xml</b></p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shape=&quot;oval&quot; &gt;
+
+    &lt;gradient
+        android:centerColor=&quot;#0f0&quot;
+        android:endColor=&quot;#f00&quot;
+        android:startColor=&quot;#f00&quot;
+        android:type=&quot;sweep&quot; /&gt;
+
+    &lt;size
+        android:height=&quot;400dp&quot;
+        android:width=&quot;400dp&quot; /&gt;
+
+&lt;/shape&gt;
+</code></pre>
+
+<p><img src="../images/gradient_sweep2.png" alt="Sweep Gradient"></p>
+
+<h3 class="text-warning" id="shapesampes">Примеры с shape</h3>
+
+<h4 class="text-warning">Закругляем уголки у компонентов</h4>
+
+<p>Создадим отдельный файл <b>res/drawable/roundrect.xml</b> и с его помощью скруглим уголки у LinearLayout, ImageView, TextView, EditText:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shape=&quot;rectangle&quot; &gt;
+
+    &lt;corners android:radius=&quot;15dp&quot; /&gt;
+
+    &lt;gradient
+        android:angle=&quot;90&quot;
+        android:endColor=&quot;#FFFFFFFF&quot;
+        android:startColor=&quot;#FF000000&quot;
+        android:type=&quot;linear&quot; /&gt;
+
+    &lt;stroke
+        android:width=&quot;1dp&quot;
+        android:color=&quot;#FF000000&quot; /&gt;
+
+    &lt;padding
+        android:bottom=&quot;15dp&quot;
+        android:left=&quot;15dp&quot;
+        android:right=&quot;15dp&quot;
+        android:top=&quot;15dp&quot; /&gt;
+
+&lt;/shape&gt;
+</code></pre>
+
+<p>В разметке активности пишем следующее:</p>
+
+<pre><code class="xml">
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:layout_margin=&quot;10dp&quot;
+    android:background=&quot;@drawable/roundrect&quot;
+    android:orientation=&quot;vertical&quot;
+    tools:context=&quot;.MainActivity&quot; &gt;
+
+        &lt;ImageView
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:background=&quot;@drawable/roundrect&quot;
+            android:src=&quot;@drawable/ic_launcher&quot;
+            android:contentDescription=&quot;Round Image View&quot;
+            tools:ignore=&quot;HardcodedText&quot; /&gt;
+
+        &lt;TextView
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_margin=&quot;2dp&quot;
+            android:background=&quot;@drawable/roundrect&quot;
+            android:text=&quot;Я - TextView&quot;
+            tools:ignore=&quot;HardcodedText&quot; /&gt;
+
+        &lt;EditText
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_margin=&quot;2dp&quot;
+            android:background=&quot;@drawable/roundrect&quot;
+            android:hint=&quot;EditText with roundrect&quot;
+            android:text=&quot;Я - EditText&quot;
+            tools:ignore=&quot;HardcodedText&quot; /&gt;
+ 
+
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<p>Результат:</p>
+
+<p><img src="../images/shape1.png" alt="Round Rect" width="240" height="400"></p>
+
+<h4 class="text-warning">Овальный кабинет</h4>
+
+<p>В Белом доме есть Овальный кабинет. Если вам придётся писать приложение для администрации президента США, то все элементы нужно сделать овальными. Создадим файл <b>res/drawable/oval.xml</b>:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shape=&quot;oval&quot; &gt;
+
+    &lt;gradient
+        android:angle=&quot;90&quot;
+        android:endColor=&quot;#FFFFFFFF&quot;
+        android:startColor=&quot;#FF000000&quot;
+        android:type=&quot;linear&quot; /&gt;
+
+    &lt;stroke
+        android:width=&quot;1dp&quot;
+        android:color=&quot;#FF000000&quot; /&gt;
+
+    &lt;padding
+        android:bottom=&quot;15dp&quot;
+        android:left=&quot;15dp&quot;
+        android:right=&quot;15dp&quot;
+        android:top=&quot;15dp&quot; /&gt;
+
+&lt;/shape&gt;
+</code></pre>
+
+<p>Заменим в предыдущем примере <b>android:background=&quot;@drawable/roundrect&quot;</b> на <b>android:background=&quot;@drawable/oval&quot;</b>.</p>
+
+<p>Получим овальный интерфейс:</p>
+
+<p><img src="../images/shape2.png" alt="Овал" width="240" height="400"></p>
+
+<h2 class="text-warning" id="layer-list">Layer List</h2>
+
+<p>Можно задавать не только простые формы, но и их комбинации. Для этого служит класс <b>LayerDrawable</b>, позволяющий накладывать несколько объектов <b>Drawable</b> один поверх другого. Описав массив полупрозрачных объектов <b>Drawable</b>, вы можете создать сложную комбинацию динамических фигур и преобразований.</p>
+
+<p><b>LayerDrawable</b> описывается с помощью тега &lt;layer-list&gt;, внутри которого для каждого дочернего узла &lt;item&gt; используется атрибут <b>drawable</b>, указывающий на ресурс для наложения.</p>
+
+<p>Каждый объект Drawable будет накладываться в соответствии со своим индексом — первый элемент массива размещается в самом низу.</p>
+
+<p>Переделаем <a href="../catshop/android.graphics.drawable.html#layerdrawable">пример программного использования LayerDrawable</a> на пример с использованием XML. Создадим в папке <b>res/drawable</b> файл <b>layerdrawable.xml</b>:</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+
+    &lt;item&gt;
+        &lt;bitmap
+            android:gravity=&quot;center_vertical&quot;
+            android:src=&quot;@drawable/blue&quot; /&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+        &lt;bitmap
+            android:gravity=&quot;left&quot;
+            android:src=&quot;@drawable/red&quot; /&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+        &lt;bitmap
+            android:gravity=&quot;right&quot;
+            android:src=&quot;@drawable/green&quot; /&gt;
+    &lt;/item&gt;
+
+&lt;/layer-list&gt;
+</code></pre>
+
+<p>Осталось применить к макету, при этом нам не нужен метод из примера по ссылке.</p>
+
+<pre><code class="java">
+LinearLayout linear = (LinearLayout)findViewById(R.id.linear);
+//linear.setBackground(createLayerDrawable());
+linear.setBackgroundResource(R.drawable.layerdrawable); // с помощью XML
+</code></pre>
+
+<p>Рассмотрим другие примеры. Например, можно создать такую кнопку с бликом.</p>
+
+<p><img src="../images/layers_button.png" alt="Layer List"></p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+  &lt;item&gt;
+    &lt;shape&gt;
+        &lt;gradient android:startColor=&quot;#339999&quot; android:endColor=&quot;#006666&quot;  android:angle=&quot;-90.0&quot;/&gt;
+        &lt;corners android:radius=&quot;10.0dip&quot; /&gt;
+    &lt;/shape&gt;
+  &lt;/item&gt;
+  &lt;item android:bottom=&quot;20dip&quot;&gt;
+    &lt;shape&gt;
+        &lt;solid android:color=&quot;#88339999&quot;/&gt;
+        &lt;corners android:bottomRightRadius=&quot;0.1dip&quot;
+             android:bottomLeftRadius=&quot;0.1dip&quot;
+             android:topLeftRadius=&quot;10dip&quot;
+             android:topRightRadius=&quot;10dip&quot;/&gt;
+     &lt;/shape&gt;
+  &lt;/item&gt;
+&lt;/layer-list&gt;
+</code></pre>
+
+<p>Можно даже создать изображение марки.</p>
+
+<img src="../images/layers_postmark.png" alt="Марка">
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+  &lt;item&gt;
+      &lt;shape&gt;
+          &lt;solid android:color=&quot;#ffffff&quot;/&gt;
+          &lt;stroke android:width=&quot;5dip&quot; android:color=&quot;#ffffff&quot; android:dashWidth=&quot;4dp&quot; android:dashGap=&quot;4dp&quot; /&gt;
+          &lt;corners android:radius=&quot;4dip&quot; /&gt;
+          &lt;padding android:left=&quot;5dip&quot; android:top=&quot;5dip&quot; android:right=&quot;5dip&quot; android:bottom=&quot;5dip&quot;/&gt;
+      &lt;/shape&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+      &lt;shape&gt;
+          &lt;solid android:color=&quot;#FFFFE1&quot;/&gt;
+          &lt;stroke android:width=&quot;1dip&quot; android:color=&quot;#4A3321&quot;/&gt;
+          &lt;padding android:left=&quot;10dip&quot; android:top=&quot;10dip&quot; android:right=&quot;10dip&quot; android:bottom=&quot;10dip&quot;/&gt;
+      &lt;/shape&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+      &lt;bitmap android:src=&quot;@drawable/image&quot;/&gt;
+  &lt;/item&gt;
+&lt;/layer-list&gt;
+</code></pre>
+
+<h2 class="text-warning" id="state-list">State List</h2>
+
+<p>У некоторых элементов управления есть различные состояния: нажато, выбрано и т.д.. Вы можете задавать изображения для любого из таких состояний.</p>
+
+<p>Чтобы описать <b>StateListDrawable</b>, создайте файл в формате XML, в котором указываются разные ресурсы <b>Drawable</b> для каждого состояния компонента. Каждый атрибут вида <b>android:state_*</b> может принимать одно из двух значений: <i>true</i> или <i>false</i>.</p>
+
+<p>Доступны следующие состояния:</p>
+<ul>
+<li>state_focused - в фокусе или нет</li>
+<li>state_window_focused - имеет ли фокус родительское окно</li>
+<li>state_enabled - доступен или нет</li>
+<li>state_checkable - может ли быть отмечен или нет</li>
+<li>state_checked - отмечен или нет</li>
+<li>state_selected - выделен или нет</li>
+<li>state_activated - активирован или нет</li>
+<li>state_pressed - нажат или не нажат</li>
+<li>state_hovered - находится ли курсор над компонентом или нет (API 11 и выше)</li>
+</ul>
+
+<p>Для списков есть также:</p>
+<ul>
+<li>state_single</li>
+<li>state_first</li>
+<li>state_middle</li>
+<li>state_last</li>
+</ul>
+
+<p>Рассмотрим примеры. Нас не устраивает внешний вид кнопки. Хочется, чтобы она выглядела так (Да еще и чтобы подсвечивалась при нажатии):</p>
+
+<img src="../images/state_button_custom.png" alt="Custom Button">
+
+<p>Сделать это просто. Добавляем в ресурсы изображения нормального (button_up.png) и нажатого (button_down.png) состояний кнопки. И создаем в папке drawables XML-файл со следующим содержанием (states_button.xml):</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item android:state_pressed=&quot;true&quot; android:drawable=&quot;@drawable/button_down&quot; /&gt;
+    &lt;item android:drawable=&quot;@drawable/button_up&quot; /&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<p>Важный момент: в списке состояний нужно сначала указывать специализированные состояния, а последним должно следовать состояние по умолчанию (без атрибутов state-* вообще).</p>
+
+<p>Ещё один момент. Кнопка может одновременно находиться в состоянии <i>pressed</i> и <i>focused</i>, поэтому сначала указывайте <b>state_pressed</b>, а затем <b>state_focused</b>. Иначе, если кнопка будет в состоянии <i>focused</i>, то состояние <i>pressed</i> не применится.</p>
+
+<p>Теперь осталось у атрибута <b>background</b> для кнопки прописать созданный ресурс.</p>
+
+<pre><code class="xml">
+&lt;Button android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot;
+        android:background=&quot;@drawable/states_button&quot;
+        android:text=&quot;Custom button&quot;
+        android:textSize=&quot;18dip&quot;
+    /&gt;
+</code></pre>
+
+<p>Можно обойтись без использования изображений для кнопки, а воспользоваться фигурами (states_shapes.xml).</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item android:state_pressed=&quot;true&quot;&gt;
+        &lt;shape&gt;
+            &lt;gradient android:type=&quot;linear&quot; android:endColor=&quot;#6699CC&quot; android:startColor=&quot;#99CCFF&quot; android:angle=&quot;90.0&quot; /&gt;
+            &lt;corners android:radius=&quot;5.0dip&quot; /&gt;
+            &lt;padding android:left=&quot;20dip&quot; android:right=&quot;20dip&quot; android:top=&quot;7dip&quot; android:bottom=&quot;7dip&quot;/&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+        &lt;shape&gt;
+            &lt;gradient android:type=&quot;linear&quot; android:endColor=&quot;#336699&quot; android:startColor=&quot;#99CCFF&quot; android:angle=&quot;90.0&quot; /&gt;
+            &lt;corners android:radius=&quot;5.0dip&quot; /&gt;
+            &lt;padding android:left=&quot;20dip&quot; android:right=&quot;20dip&quot; android:top=&quot;7dip&quot; android:bottom=&quot;7dip&quot;/&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<img src="../images/state_shapes.png" alt="Custom Button">
+
+<h3 class="text-warning">RadioBox, CheckBox и др.</h3>
+
+<p>Похожим образом можно задавать стили для RadioButtom, CheckBox и т.п.. Но тут мало того, что можно отдельным ресурсом задавать фон, так отдельным же ресурсом можно задавать саму пиктограмму через атрибут button (states_compound.xml).</p>
+
+<pre><code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item android:state_checked=&quot;true&quot;&gt;
+      &lt;shape android:shape=&quot;oval&quot;&gt;
+          &lt;gradient android:startColor=&quot;#00FF00&quot; android:endColor=&quot;#00000000&quot; android:type=&quot;radial&quot; android:gradientRadius=&quot;7&quot;/&gt;
+          &lt;size android:width=&quot;10dip&quot; android:height=&quot;10dip&quot; /&gt;
+      &lt;/shape&gt;
+    &lt;/item&gt;
+    
+    &lt;item&gt;
+      &lt;shape android:shape=&quot;oval&quot;&gt;
+          &lt;gradient android:startColor=&quot;#FF0000&quot; android:endColor=&quot;#00000000&quot; android:type=&quot;radial&quot; android:gradientRadius=&quot;7&quot;/&gt;
+          &lt;size android:width=&quot;10dip&quot; android:height=&quot;10dip&quot; /&gt;
+       &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre>
+
+<p>Разметка с созданными стилями</p>
+
+<pre><code class="xml">
+&lt;CheckBox android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot;
+    android:button=&quot;@drawable/states_compound&quot;
+    android:text=&quot;Item 1&quot;
+    android:paddingLeft=&quot;20dip&quot;
+/&gt;
+&lt;CheckBox android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot;
+    android:button=&quot;@drawable/states_compound&quot;
+    android:checked=&quot;true&quot;
+    android:text=&quot;Item 2&quot;
+    android:paddingLeft=&quot;20dip&quot;
+/&gt;
+&lt;CheckBox android:layout_width=&quot;wrap_content&quot; android:layout_height=&quot;wrap_content&quot;
+    android:button=&quot;@drawable/states_compound&quot;
+    android:text=&quot;Item 3&quot;
+    android:paddingLeft=&quot;20dip&quot;
+/&gt;
+</code></pre>
+
+<p><img src="../images/state_compound.png" alt="Custom CheckBox"></p>
+
+<h2 class="text-warning" id="levellistdrawable">LevelListDrawable</h2>
+
+<p>Используя <b>LevelListDrawable</b>, вы можете эффективно размещать ресурсы <b>Drawable</b> один поверх другого, указывая целочисленный индекс для каждого слоя.</p>
+
+<pre><code class="xml">
+&lt;level-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+  &lt;item android:maxLevel=&quot;0&quot; android:drawable=&quot;@drawable/cat_0&quot;/&gt;
+  &lt;item android:maxLevel=&quot;1&quot; android:drawable=&quot;@drawable/cat_1&quot;/&gt;
+  &lt;item android:maxLevel=&quot;2&quot; android:drawable=&quot;@drawable/cat_2&quot;/&gt;
+  &lt;item android:maxLevel=&quot;4&quot; android:drawable=&quot;@drawable/cat_4&quot;/&gt;
+  &lt;item android:maxLevel=&quot;6&quot; android:drawable=&quot;@drawable/cat_6&quot;/&gt;
+  &lt;item android:maxLevel=&quot;8&quot; android:drawable=&quot;@drawable/cat_8&quot;/&gt;
+  &lt;item android:maxLevel=&quot;10&quot; android:drawable=&quot;@drawable/cat_10&quot;/&gt;
+&lt;/level-list&gt;
+</code></pre>
+
+<p>Чтобы вывести на экран определенное изображение, вызовите метод <b>setImageLevel()</b> из представления, которому назначен ресурс <b>LevelListDrawable</b>, передавая в качестве параметра индекс объекта <b>Drawable</b>, который вы хотите отобразить.</p>
+
+<pre><code class="java">
+imageView.setImageLevel(5);
+</code></pre>
+
+<p>Представление отобразит ресурс с соответствующим (или большим) индексом. Ресурс <b>LevelListDrawable</b> нужен при компоновке виджетов.</p>
+
+<p>Программно к ресурсам можно обращаться так:</p>
+<pre><code class="java">
+Resources res = getResources();
+Drawable shape = res. getDrawable(R.drawable.gradient_box);
+
+TextView tv = (TextView)findViewByID(R.id.textview);
+tv.setBackground(shape);
+</code></pre>
+
+<h2 class="text-warning" id="getname">Получить имя ресурса</h2>
+
+<p>Иногда нужно получить не сам идентификатор, а его имя в виде <b>R.drawable.cat</b>, что сохранить его, скажем, в базе данных. Воспользуйтесь следующим приёмом:</p>
+
+<pre><code class="java">
+getResources().getIdentifier("image_name","drawable", getPackageName())
+
+getResources().getIdentifier("your.full.package.name:drawable/image_name", null, null);
+</code></pre>
+
+<p>Бывает и обратная задача - из имени ресурса получить идентификатор. Тот же принцип.</p>
+
+<pre><code class="java">
+String mDrawableName = "cat1"; // файл cat1.png в папке drawable
+int resID = getResources().getIdentifier(mDrawableName , "drawable", getPackageName());
+</code></pre>
+
+<p>Строго говоря это относится не только к типу <b>drawable</b>, но обычно приходится встречаться с проблемой именно для них.</p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/theory/shape.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:19:29 GMT -->
+</html>

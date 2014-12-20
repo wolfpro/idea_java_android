@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/catshop/android.graphics.canvas.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:56:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Android: Класс android.graphics.Canvas</title>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class="active"><a href="catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class=""><a href="../sqlite/index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>
+<h1 class="text-warning">Класс android.graphics.Canvas</h1>
+
+<p>
+
+</p>
+
+<p>Класс <b>Canvas</b> предоставляет методы для рисования, которые отображают графические примитивы на исходном растровом изображении. При этом надо сначала подготовить кисть (класс Paint), который позволяет указывать, как именно графические примитивы должны отображаться на растровом изображении (цвет, обводка, стиль, сглаживание шрифта и т.д.). А также нужно указать Bitmap — поверхность, на которой происходит рисование.</p>
+
+<p>Android поддерживает полупрозрачность, градиентные заливки, округленные прямоугольники и сглаживание. Из-за ограниченных ресурсов векторная графика пока что не поддерживается, вместо этого используется традиционная растровая перерисовка.</p>
+
+<p>Класс Canvas можно назвать обёрткой вокруг растрового изображения, которое вы будете использовать в качестве полотна для своих художественных опытов. Он предоставляет набор методов вида draw* для создания изображений котов и других объектов.</p>
+
+<h3 class="text-warning">Методы</h3>
+
+<p>Ниже представлены некоторые методы класса Canvas</p>
+
+<ul>
+<li>drawARGB()/drawRGB()/drawColor(). Заполняет Холст сплошным цветом.</li>
+<li><a href="#drawarc">drawArc()</a>. Рисует дугу между двумя углами внутри заданной прямоугольной области.</li>
+<li>drawBitmap(). Рисует растровое изображение на элементе Canvas. Вы можете изменять внешний вид целевой картинки, указывая итоговый размер или используя матрицу для преобразования.</li>
+<li>drawBitmapMesh(). Рисует изображение с использованием сетки, с помощью которой можно управлять отображением итоговой картинки, перемещая точки внутри неё.</li>
+<li><a href="#drawcircle">drawCircle()</a>. Рисует окружность с определенным радиусом вокруг заданной точки.</li>
+<li><a href="#drawline">drawLine(s)()</a>. Рисует линию (или последовательность линий) между двумя точками.</li>
+<li><a href="#drawoval">drawOval()</a>. Рисует овал на основе прямоугольной области.</li>
+<li>drawPaint(). Закрашивает весь Холст с помощью заданного объекта Paint.</li>
+<li><a href="#drawpath">drawPath()</a>. Рисует указанный контур, используется для хранения набора графических примитивов в виде единого объекта.</li>
+<li>drawPicture(). Рисует объект Picture внутри заданного прямоугольника.</li>
+<li>drawPosText(). Рисует текстовую строку, учитывая смещение для каждого символа.</li>
+<li><a href="#drawrect">drawRect()</a>. Рисует прямоугольник.</li>
+<li><a href="#drawroundrect">drawRoundRect()</a>. Рисует прямоугольник с закругленными углами.</li>
+<li><a href="#drawtext">drawText()</a>. Рисует текстовую строку на Холсте. Шрифт, размер, цвет и свойства отображения текста задаются в соответствующем объекте Paint.</li>
+<li>drawTextOnPath(). Рисует текст, который отображается вокруг определенного контура.</li>
+<li>drawVertices(). Рисует набор треугольников в виде совокупности вершинных (вертексных) точек.</li>
+</ul>
+
+<p>Мы уже изучали основы рисования в первом месяце обучения (<a href="../simplepaint.html" >Работаем с графикой. Основы</a>). Можно вернуться к этому проекту, закомментировать код вывода графики и продолжить изучение рисования при помощи методов класса <b>Canvas</b>.</p>
+
+<h2 class="text-warning" id="drawarc">Метод drawArc()</h2>
+
+<p>Метод <b>drawArc()</b> позволяет рисовать дуги и сектора. Ниже приводится код для трёх вариантов: сектор с заливкой (похож на PacMan), сектор без заливки (контур) и часть дуги:</p>
+
+<pre><code class="java">
+float width = 400f;
+float height = 240f;
+float radius = 100f;
+
+Path path = new Path();
+path.addCircle(width, height, radius, Path.Direction.CW);
+Paint paint = new Paint();
+paint.setColor(Color.WHITE); // установим белый цвет
+paint.setStrokeWidth(5);
+paint.setStyle(Paint.Style.FILL); // заливаем
+paint.setAntiAlias(true);
+
+float center_x, center_y;
+center_x = 240;
+center_y = 220;
+
+final RectF oval = new RectF();
+oval.set(center_x - radius, center_y - radius, center_x + radius,
+		center_y + radius);
+canvas.drawArc(oval, 45, 270, true, paint); // рисуем пакмана
+
+// рисуем большого пакмана без заливки
+paint.setStyle(Paint.Style.STROKE);
+oval.set(center_x - 200f, center_y - 200f, center_x + 200f,
+		center_y + 200f);
+canvas.drawArc(oval, 45, 270, true, paint);
+		
+paint.setStyle(Paint.Style.STROKE);
+
+// рисуем разорванное кольцо
+center_y = 540;
+oval.set(center_x - radius,
+center_y - radius,
+center_x + radius,
+center_y + radius);
+canvas.drawArc(oval, 135, 270, false, paint);
+</code></pre>
+
+<p><img src="canvas2.png" alt="drawArc"></p>
+
+<h2 class="text-warning" id="drawcircle">Метод drawCircle()</h2>
+
+<p>Нарисуем зелёный круг.</p>
+
+<pre><code class="java">
+float w, h, cx, cy, radius;
+w = getWidth();
+h = getHeight();
+cx = w / 2;
+cy = h / 2;
+
+if (w > h) {
+	radius = h / 4;
+} else {
+	radius = w / 4;
+}
+
+Paint paint = new Paint();
+paint.setColor(Color.GREEN); // установим зеленый цвет
+paint.setStyle(Paint.Style.FILL);
+
+canvas.drawCircle(cx, cy, radius, paint);
+</code></pre>
+
+<p><img src="maskfilters1.png" alt="No EmbossMaskFilter"></p>
+
+<h2 class="text-warning" id="drawline">drawLine(s)()</h2>
+
+<p>Пожалуй, самый простой метод - указываем начальные и конечные координаты отрезка.</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.simplepaint;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.view.View;
+
+public class Draw2D extends View {
+
+	float w, h, cx, cy, radius;
+	Paint paint;
+
+	public Draw2D(Context context) {
+		super(context);
+		init();
+	}
+
+	private void init() {
+		paint = new Paint();
+		paint.setColor(Color.BLUE);
+		paint.setStrokeWidth(10);
+	}
+
+	@Override
+	protected void onDraw(Canvas canvas) {
+		canvas.drawLine(0, 0, 480, 650, paint);
+		canvas.drawLine(480, 0, 0, 650, paint);
+	}
+}
+</code></pre>
+
+<p><img src="drawline.png" alt="drawLine" width="240" height="400"></p>
+
+<h2 class="text-warning" id="drawoval">Метод drawOval()</h2>
+
+<p>Метод <b>drawOval()</b> рисует овалы. Естественно, если вы зададите одинаковые размеры ширины и высоты, то получите круг/окружность.</p>
+
+<pre><code class="java">
+@Override
+protected void onDraw(Canvas canvas) {
+	Paint paint = new Paint();
+	paint.setStyle(Paint.Style.STROKE);
+	paint.setColor(Color.GRAY);
+	paint.setAntiAlias(true);
+	// овал по всему экрану
+	RectF oval1 = new RectF(0, 0, getWidth(), getHeight());
+	canvas.drawOval(oval1, paint);
+
+	// овал в виде круга (одинаковые размеры высоты и ширины)
+	paint.setStyle(Paint.Style.FILL);
+	paint.setColor(Color.RED);
+	RectF oval2 = new RectF(50, 50, 150, 150);
+	canvas.drawOval(oval2, paint);
+
+	// маленький синий овал
+	paint.setColor(Color.BLUE);
+	RectF oval3 = new RectF(250, 50, 350, 300);
+	canvas.drawOval(oval3, paint);
+}
+</code></pre>
+
+<p><img src="drawoval.png" alt="drawOval" width="240" height="400"></p>
+
+<p>Если вам нужно наклонить овал в ту или иную сторону, то поверните холст на требуемый угол с помощью метода <b>rotate()</b>. Не забудьте потом повернуть холст обратно, что следующие фигуры выводились нормально.</p>
+
+<p>Повернём синий овал из предыдущего примера:</p>
+
+<pre><code class="java">
+float rotate_center_x = 200;
+float rotate_center_y = 200;
+float rotate_angle = 45;
+
+// поворачиваем холст
+canvas.rotate(-rotate_angle, rotate_center_x, rotate_center_y);
+
+// маленький синий овал
+paint.setColor(Color.BLUE);
+RectF oval3 = new RectF(250, 50, 350, 300);
+canvas.drawOval(oval3, paint);
+
+// возвращаем холст на прежний угол
+canvas.rotate(rotate_angle, rotate_center_x, rotate_center_y);
+</code></pre>
+
+<p><img src="drawoval2.png" alt="drawOval" width="240" height="400"></p>
+
+<h2 class="text-warning" id="drawrect">Метод drawRect()</h2>
+
+<p>У метода существует три перегруженные версии для рисования прямоугольника. Рассмотрим один из них:</p>
+
+<pre><code class="java">
+@Override
+protected void onDraw(Canvas canvas) {
+	// TODO Auto-generated method stub
+	super.onDraw(canvas);
+	
+	// создаем пустой прямоугольник и задаем координаты верхней левой и нижней правой точек
+	Rect myRect = new Rect();
+	myRect.set(0, canvas.getHeight()/2, canvas.getWidth(), canvas.getHeight());
+	// кисть
+	Paint greenPaint = new Paint();
+	// цвет кисти - зеленый
+	greenPaint.setColor(Color.GREEN);
+	// тип - заливка
+	greenPaint.setStyle(Paint.Style.FILL);
+	// закрашиваем зелёным прямоугольником вторую половину экрана
+	canvas.drawRect(myRect, greenPaint);
+}
+</code></pre>
+
+<h2 class="text-warning" id="drawroundrect">Метод drawRoundRect()</h2>
+
+<p>Для рисования прямоугольников с закруглёнными углами используется метод <b>drawRoundRect (RectF rect, float rx, float ry, Paint paint)</b>.</p>
+
+<p>В параметрах указываются ограничивающий прямоугольник, радиусы овалов для скругления углов и кисть.</p>
+
+<p>Реализуем три разных способа:</p>
+
+<pre><code class="java">
+float width = (float) getWidth();
+float height = (float) getHeight();
+float radius;
+
+if (width &gt; height) {
+	radius = height / 4;
+} else {
+	radius = width / 4;
+}
+
+Paint paint = new Paint();
+paint.setAntiAlias(true);
+paint.setColor(Color.WHITE);
+paint.setStrokeWidth(5);
+paint.setStyle(Paint.Style.FILL);
+
+float center_x, center_y;
+center_x = width / 4;
+center_y = height / 4;
+
+final RectF rect = new RectF();
+rect.set(center_x - radius, center_y - radius, center_x + radius,
+		center_y + radius);
+canvas.drawRoundRect(rect, 50, 50, paint);
+
+paint.setStyle(Paint.Style.STROKE);
+center_x = width / 2;
+center_y = height / 2;
+rect.set(center_x - radius,
+
+center_y - radius, center_x + radius, center_y + radius);
+canvas.drawRoundRect(rect, 100, 50, paint);
+
+paint.setStyle(Paint.Style.STROKE);
+center_x = width * 3 / 4;
+center_y = height * 3 / 4;
+rect.set(center_x - radius, center_y - radius, center_x + radius,
+		center_y + radius);
+canvas.drawRoundRect(rect, 100, 100, paint);
+</code></pre>
+
+<p><img src="canvas3.png" alt="drawRoundRect"></p>
+
+<h2 class="text-warning" id="drawpath">Метод drawPath()</h2>
+
+<p>Для рисования соединённых отрезков можно использовать метод <b>drawPath()</b>, указав в параметрах настройки для рисования и массив координат точек. Для удобства добавим в класс <b>Draw2D</b> новый класс Pt, который позволит быстро создать массив точек с заданными координатами. Далее настраиваем объекты для рисования и формируем путь через созданный массив. В результате получим кошкин дом.</p>
+
+<pre><code class="java">
+// Класс для создания точки
+class Pt {
+	float x, y;
+
+	Pt(float _x, float _y) {
+		x = _x;
+		y = _y;
+	}
+}
+
+// создаем массив точек
+Pt[] myPath = { new Pt(300, 50), new Pt(200, 200), new Pt(200, 400),
+			new Pt(400, 400), new Pt(400, 200), new Pt(300, 50), };
+			
+@Override
+protected void onDraw(Canvas canvas) {
+	super.onDraw(canvas);
+	
+	Paint paint = new Paint();
+	paint.setColor(Color.WHITE);
+	paint.setStrokeWidth(3);
+	paint.setStyle(Paint.Style.STROKE);
+	Path path = new Path();
+
+	// переходим в первую точку рисования
+	path.moveTo(myPath[0].x, myPath[0].y);
+
+	// рисуем отрезки по заданным точкам
+	for (int i = 1; i &lt; myPath.length; i++){
+		path.lineTo(myPath[i].x, myPath[i].y);
+	}
+
+	// выводим результат
+	canvas.drawPath(path, paint);
+}
+</code></pre>
+
+<p><img src="canvas1.png" alt="drawPath"></p>
+
+<p>Путь можно составлять не только из точек, но и из фигур, например, дуг. Сначала формируем дугу, добавляем её в путь при помощи метода <b>Path.addArc()</b>, повторяем операцию снова несколько раз, а в конце выводим окончательынй вариант:</p>
+
+<pre><code class="java">
+float radius = 150;
+
+Paint paint = new Paint();
+paint.setAntiAlias(true);
+paint.setColor(Color.WHITE);
+paint.setStrokeWidth(5);
+paint.setStyle(Paint.Style.STROKE);
+Path path = new Path();
+
+float center_x, center_y;
+center_x = 0;
+center_y = 0;
+
+final RectF oval = new RectF();
+oval.set(center_x - radius, center_y - radius, center_x + radius,
+		center_y + radius);
+path.addArc(oval, 10, 70); // первая дуга
+
+oval.set(center_x - radius - 10, center_y - radius - 10, center_x + radius + 20,
+		center_y + radius + 20);
+path.addArc(oval, 5, 80); // вторая дуга
+
+oval.set(center_x - radius- 20, center_y - radius -20, center_x + radius + 40,
+		center_y + radius + 40);
+path.addArc(oval, 0, 90); // третья дуга
+
+canvas.drawPath(path, paint); // выводим всё вместе
+</code></pre>
+
+<p><img src="canvas4.png" alt="drawPath"></p>
+
+<p>Можно нарисовать символ парашюта:</p>
+
+<pre><code class="java">
+Paint paint = new Paint();
+paint.setAntiAlias(true);
+paint.setColor(Color.WHITE);
+paint.setStrokeWidth(5);
+paint.setStyle(Paint.Style.STROKE);
+Path path = new Path();
+
+
+path.moveTo(160.0f, 240.0f);
+path.lineTo(140.0f, 200.0f);
+path.addArc(new RectF(140, 180, 180, 220), -180, 180);
+path.lineTo(160.0f, 240.0f);
+path.close(); 
+
+canvas.drawPath(path, paint);
+</code></pre>
+
+<p><img src="canvas5.png" alt="addArc"></p>
+
+<h2 class="text-warning" id="drawtext">Метод drawText()</h2>
+
+<p>С помощью метода <b>drawText()</b> можно выводить текст в заданной позиции. Добавим сначала несколько эффектов, чтобы казалось, что текст парит над поверхностью:</p>
+
+<pre><code class="java">
+@Override
+protected void onDraw(Canvas canvas) {
+	super.onDraw(canvas);
+	
+	canvas.drawColor(Color.GRAY);
+
+    Paint shadowPaint = new Paint();
+    shadowPaint.setAntiAlias(true);
+    shadowPaint.setColor(Color.WHITE);
+    shadowPaint.setTextSize(35.0f);
+    shadowPaint.setStrokeWidth(2.0f);
+    shadowPaint.setStyle(Paint.Style.STROKE);
+    shadowPaint.setShadowLayer(5.0f, 10.0f, 10.0f, Color.BLACK);
+    
+    canvas.drawText("http://developer.alexanderklimov.ru/android", 20, 200, shadowPaint);
+}
+</code></pre>
+
+<p><img src="canvas6.png" alt="drawText()"></p>
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/catshop/android.graphics.canvas.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 14:56:12 GMT -->
+</html>

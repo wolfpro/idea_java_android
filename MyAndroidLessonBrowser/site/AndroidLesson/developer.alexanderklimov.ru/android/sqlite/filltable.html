@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/sqlite/filltable.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:02:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8>
+<title>Заполнить таблицу в SQLite</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../../assets/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+</style>
+	
+<link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />   
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+			<a data-toggle="modal" href="#myModal" class="navbar-link">Гость</a>
+          </p>
+          <ul class="nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <p>
+		<a href="http://developer.alexanderklimov.ru/"><img src="../../images/header.png" alt="Сайт разработчика Александр Климова" border="0"/></a>
+		</p>
+    
+    </div><!--/span-->
+    
+	<div class="span5">
+        <p style="color:green; font-style: italic; font-size: small;">
+		/* Моя кошка замечательно разбирается в программировании. Стоит мне объяснить проблему ей - и все становится ясно. */<br>John Robbins, Debugging Applications, Microsoft Press, 2000
+		</p>
+    </div><!--/span-->
+    
+	<div class="span2">
+        <p>
+		<a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../kot-2-rss-100.png" border="0"></a>
+		</p>
+    </div><!--/span-->
+</div><!--/row-->	
+<div class="clearfix"></div>
+	
+<noindex><!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://db.c7.b3.a0.top.mail.ru/counter'+
+'?id=228158;js='+js+a+';rand='+Math.random()+
+'" height="1" width="1" alt="top.mail.ru" border="0" />')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://top-fwz1.mail.ru/counter?js=na;id=228158"
+height="1" width="1" alt="top.mail.ru" border="0" /></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--></noindex><ul class="nav nav-pills">
+<li class=""><a href="http://rusnetframework.blogspot.com/">Блог</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/index.php">C#/Visual Basic</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/windowsphone/wp.php">Windows Phone</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/wpf/wpf.php">WPF</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/php">PHP</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/silverlight/silverlight.php">Silverlight</a></li>
+<li class="active"><a href="http://developer.alexanderklimov.ru/android">Android</a></li>
+<li class=""><a href="http://developer.alexanderklimov.ru/arduino">Arduino</a></li>
+</ul>
+<div class="container-fluid">
+    
+	<div class="row-fluid">
+        <!--левое меню -->
+		<div class="span2">
+            <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+<li class=""><a href="../index-2.html">Главная</a></li>
+<li class=""><a href="../theory/index.html">Теория</a></li>
+<li class=""><a href="../views.html">Palette</a></li>
+<li class=""><a href="../listview/index.html">ListView</a></li>
+<li class=""><a href="../catshop/catshop.html">Котошоп</a></li>
+<li class=""><a href="../animation.html">Анимация</a></li>
+<li class="active"><a href="index.html">SQLite</a></li>
+<li class=""><a href="../opengles/index.html">OpenGL ES</a></li>
+<li class=""><a href="../library/index.html">Библиотеки</a></li>
+<li class=""><a href="../games/index.html">Игры</a></li>
+<li class=""><a href="../emulator.html">Эмулятор</a></li>
+<li class=""><a href="../tips-android.html">Советы</a></li>
+<li class=""><a href="../articles-android.html">Статьи</a></li>
+<li class=""><a href="../books.html">Книги</a></li>
+<li class=""><a href="../java/java.html">Java. Экспресс-курс</a></li>
+<li class=""><a href="../design/index.html">Дизайн</a></li>
+<li class=""><a href="../opensource.html">Open Source</a></li>
+<li class=""><a href="../links.html">Полезные ресурсы</a></li>
+</ul>            </div><!--/.well -->
+        </div><!--/span-->
+
+
+        <div class="span8">
+
+		<div class="row-fluid">
+            <div class="span12">
+			
+			
+			            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Читайте на здоровье!</h3>
+            </div>
+            <div class="modal-body">
+            
+              <p>Статья проплачена кошками - всемирно известными производителями котят.</p>
+
+            <p>Если статья вам понравилась, то можете <a href="http://developer.alexanderklimov.ru/donate.php">поддержать проект</a>.</p>
+			
+			            
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">Закрыть</button>
+              
+            </div>
+          </div>                
+<h1 class="text-warning">Заполнить таблицу в SQLite</h1>
+
+<p>Иногда требуется сразу наполнить таблицу базы данных некоторыми данными. Если записей один-два и обчёлся, то добавить в коде несколько лишних переменных не сложно. Но если записей побольше, то проще автоматизировать процесс и заполнить таблицу через готовые ресурсы.</p>
+
+<h2 class="text-warning">Наполняем таблицы данными через массив строк</h2>
+
+<p>Рассмотрим пример наполнения таблицы через строковый массив из ресурсов. В файле <b>res/values/strings.xml</b> определим массив строк, которые будут содержать имена котов:</p>
+
+<pre><code class="xml">
+&lt;string-array name=&quot;catlist&quot;&gt;
+    &lt;item&gt;Барсик&lt;/item&gt;
+    &lt;item&gt;Мурзик&lt;/item&gt;
+    &lt;item&gt;Васька&lt;/item&gt;
+    &lt;item&gt;Рыжик&lt;/item&gt;
+&lt;/string-array&gt;
+</code></pre>
+
+<p>Теперь создадим класс-обёртку для создания базы:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.catbase;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.res.Resources;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+public class DatabaseHelper extends SQLiteOpenHelper {
+
+	private final Context fContext;
+	private static final String DATABASE_NAME = &quot;cat_database.db&quot;;
+	public static final String TABLE_NAME = &quot;cattable&quot;;
+
+	DatabaseHelper(Context context) {
+		super(context, DATABASE_NAME, null, 1);
+		fContext = context;
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		// TODO Auto-generated method stub
+		db.execSQL(&quot;CREATE TABLE &quot; + TABLE_NAME + &quot; (&quot;
+				+ &quot;_id INTEGER PRIMARY KEY,&quot; + &quot;title TEXT&quot; + &quot;);&quot;);
+
+		// Добавляем записи в таблицу
+		ContentValues values = new ContentValues();
+		// Получим массив строк из ресурсов
+		Resources res = fContext.getResources();
+		String[] cattable_records = res.getStringArray(R.array.catlist_v1);
+		// проходим через массив и вставляем записи в таблицу
+		int length = cattable_records.length;
+		for (int i = 0; i &amp;lt; length; i++) {
+			values.put(&quot;title&quot;, cattable_records[i]);
+			db.insert(TABLE_NAME, null, values);
+		}
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		// TODO Auto-generated method stub
+		Log.w(&quot;TestBase&quot;, &quot;Upgrading database from version &quot; + oldVersion
+				+ &quot; to &quot; + newVersion + &quot;, which will destroy all old data&quot;);
+		db.execSQL(&quot;DROP TABLE IF EXISTS &quot; + TABLE_NAME);
+		onCreate(db);
+	}
+}
+</code></pre>
+
+<p>В методе <b>onCreate()</b> мы создаём нужную таблицу и заполняем её данными из ресурсов. Осталось только подключить класс в основной активности:</p>
+
+<pre><code class="java">
+setContentView(R.layout.activity_test);
+
+// Инициализируем наш класс-обёртку
+DatabaseHelper dbh = new DatabaseHelper(this);
+
+// База нам нужна для записи и чтения
+SQLiteDatabase sqdb = dbh.getWritableDatabase();
+
+// закрываем соединения с базой данных
+sqdb.close();
+dbh.close();
+</code></pre>
+
+<p>Всё, теперь у нас в базе есть таблица с готовыми именами котов.</p>
+
+<h2 class="text-warning">Сложное наполнение таблицы данными через XML</h2>
+
+<p>Предыдущий пример был слишком прост и годится для простой таблицы. Для более сложной структуры можно создать специальный XML-файл, а затем распарсить его.</p>
+
+<p>Создадим в папке <b>res/xml/</b> новый файл <b>cats_records.xml</b> следующего содержания:</p>
+
+<pre><code class="java">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;cats&gt;
+    &lt;record title=&quot;Барсик&quot; color=&quot;чёрный&quot; /&gt;
+    &lt;record title=&quot;Мурзик&quot; color=&quot;белый&quot; /&gt;
+    &lt;record title=&quot;Рыжик&quot;  color=&quot;рыжий&quot; /&gt;
+    &lt;record title=&quot;Васька&quot; color=&quot;серый&quot; /&gt;
+&lt;/cats&gt;
+</code></pre>
+
+<p>В данном примере у каждого кота есть имя и цвет его шубки. При желании можно добавить дополнительные атрибуты.</p>
+
+<p>Модифицируем класс-обёртку из первого примера:</p>
+
+<pre><code class="java">
+package ru.alexanderklimov.catbase;
+
+import java.io.IOException;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+public class DatabaseHelper extends SQLiteOpenHelper {
+
+	private final Context fContext;
+	private static final String DATABASE_NAME = "colorcat_database.db";
+	public static final String TABLE_NAME = "cattable";
+
+	DatabaseHelper(Context context) {
+		super(context, DATABASE_NAME, null, 1);
+		fContext = context;
+	}
+
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		// TODO Auto-generated method stub
+		db.execSQL("CREATE TABLE " + TABLE_NAME + " ("
+				+ "_id INTEGER PRIMARY KEY, " + "title TEXT, " + "color TEXT"
+				+ ");");
+
+		// Добавляем записи в таблицу
+		ContentValues values = new ContentValues();
+
+		// Получим файл из ресурсов
+		Resources res = fContext.getResources();
+
+		// Открываем xml-файл
+		XmlResourceParser _xml = res.getXml(R.xml.cats_records);
+		try {
+			// Ищем конец документа
+			int eventType = _xml.getEventType();
+			while (eventType != XmlPullParser.END_DOCUMENT) {
+				// Ищем теги record
+				if ((eventType == XmlPullParser.START_TAG)
+						&& (_xml.getName().equals("record"))) {
+					// Тег Record найден, теперь получим его атрибуты и
+					// вставляем в таблицу
+					String title = _xml.getAttributeValue(0);
+					String color = _xml.getAttributeValue(1);
+					values.put("title", title);
+					values.put("color", color);
+					db.insert(TABLE_NAME, null, values);
+				}
+				eventType = _xml.next();
+			}
+		}
+		// Catch errors
+		catch (XmlPullParserException e) {
+			Log.e("Test", e.getMessage(), e);
+		} catch (IOException e) {
+			Log.e("Test", e.getMessage(), e);
+
+		} finally {
+			// Close the xml file
+			_xml.close();
+		}
+
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		// TODO Auto-generated method stub
+		Log.w("TestBase", "Upgrading database from version " + oldVersion
+				+ " to " + newVersion + ", which will destroy all old data");
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+		onCreate(db);
+	}
+}
+</code></pre>
+
+<p>Подключаем класс и при запуске приложения в базе будет готовая таблица в следующем виде:</p>
+
+<table class="table">
+<tr>
+	<th>_id</th>
+	<th>title</th>
+    <th>color</th>
+</tr>
+<tr>
+	<td>1</td>
+	<td>Барсик</td>
+	<td>чёрный</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Мурзик</td>
+	<td>белый</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>Рыжик</td>
+	<td>рыжий</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>Васька</td>
+	<td>серый</td>
+</tr>
+</table>
+
+
+
+<h5 class="text-error">Реклама</h5>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4224968932772057";
+/* Полноразмерный баннер 728х90 */
+google_ad_slot = "4077523505";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+
+
+</div><!--/span-->
+        </div><!--/row-->	
+		  
+        </div><!--/span-->
+		
+		<div class="span2">
+            <div class="well sidebar-nav">
+    <h4><span class="label label-info">Реклама</span></h4>
+    <script type="text/javascript"><!--
+    google_ad_client = "pub-4224968932772057";
+    /* 120x600AlexKlimov */
+    google_ad_slot = "0305552138";
+    google_ad_width = 120;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+    </script>
+</div><!--/.well -->        </div><!--/span-->
+		
+      </div><!--/row-->
+	  
+	
+      <hr>
+	  
+	  	  <div class="row-fluid">
+	  <div class="span12">
+	  <img src="../../images/cat_bottom.png" align="right" />
+</div><!--/span-->
+        </div><!--/row-->
+
+<footer>
+    <noindex>
+    <span style="float:left; margin:3px 1px 1px 2px;">
+	    © 2014 <a href="mailto:rusproject@mail.ru">А.Климов</a>
+		
+		<!-- Place this code where you want the badge to render. -->
+<a href="http://plus.google.com/109061106977829925124?prsrc=3" rel="publisher" style="text-decoration:none;">
+<img src="../../../ssl.gstatic.com/images/icons/gplus-16.png" alt="Google+" style="border:0;width:16px;height:16px;"/></a>
+
+    </span>
+	
+		<span style="float: right; margin:3px 5px 1px 1px; font-size:22px;">
+        <!--Rating@Mail.ru LOGO--><a target=_top
+        href="http://top.mail.ru/jump?from=228158"><img
+        SRC="http://top-fwz1.mail.ru/counter?id=228158;t=223;l=1"
+        border=0 height=31 width=88
+        alt="Рейтинг@Mail.ru"/></a><!--/LOGO-->
+	</span>
+    
+    <span style="float: right; margin:2px 70px 1px 1px; font-size:22px;">
+        <a href="http://feeds.feedburner.com/alexanderklimov/VJcl"><img src="../../../feeds.feedburner.com/_fc/alexanderklimov/VJcle080.gif?bg=0099CC&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a>
+	</span>
+	
+<div style="float: right; margin:2px 70px 1px 1px;">
+<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="small" data-annotation="inline" data-width="300" data-align="right" ></div>
+
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'ru'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '../../../apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	
+
+    </noindex>
+</footer>
+
+</div><!--/.fluid-container-->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap-transition.js"></script>
+    <script src="../../assets/js/bootstrap-alert.js"></script>
+    <script src="../../assets/js/bootstrap-modal.js"></script>
+    <script src="../../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../../assets/js/bootstrap-tab.js"></script>
+    <script src="../../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../../assets/js/bootstrap-popover.js"></script>
+    <script src="../../assets/js/bootstrap-button.js"></script>
+    <script src="../../assets/js/bootstrap-collapse.js"></script>
+    <script src="../../assets/js/bootstrap-carousel.js"></script>
+    <script src="../../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../../../code.jquery.com/jquery-1.7.min.js"></script>
+</body>
+
+<!-- Mirrored from developer.alexanderklimov.ru/android/sqlite/filltable.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Jul 2014 15:02:33 GMT -->
+</html>
