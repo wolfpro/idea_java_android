@@ -18,20 +18,23 @@
                 android:layout_height="wrap_content"
                 android:text="@string/second_but"
                 android:id="@+id/button3" android:layout_gravity="center_horizontal"
-                android:layout_above="@+id/button2" android:layout_alignStart="@+id/button2"/>
+                android:layout_above="@+id/button2" android:layout_alignStart="@+id/button2"
+                android:onClick="onClickProject"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/third_but"
                 android:id="@+id/button2" android:layout_gravity="center_horizontal" android:layout_above="@+id/button4"
-                android:layout_alignStart="@+id/button4"/>
+                android:layout_alignStart="@+id/button4"
+                android:onClick="onClickSetting"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/fourth_but"
                 android:id="@+id/button4" android:layout_gravity="center_horizontal"
                 android:layout_alignParentBottom="true" android:layout_alignParentStart="true"
-                android:layout_marginBottom="190dp"/>
+                android:layout_marginBottom="190dp"
+                android:onClick="onClickHelp"/>
     </RelativeLayout>
 </LinearLayout>
 

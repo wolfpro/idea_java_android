@@ -10,5 +10,31 @@
     <string name="name_personnel">Personnel</string>
     <string name="name_capital">Capital</string>
     <string name="name_rooms">Rooms</string>
-
+    <string name="help_name">HotelApp® 2014</string>
+    <string name="help_about">
+        \n
+        Состав приложения:\n
+        \n
+        <b>Административная часть</b>\n
+        Управления номерами гостиницы\n
+        Редактирование плана гостиницы\n
+        Бронирование номеров\n
+        Оформление номера\n
+        Заказы из номера\n
+        Управление уборкой в номерах\n
+        Финансовая статистика гостиницы (CRM)\n
+        Статистика работы каждого рабочего\n
+        \n
+        <b>Управление кадрами гостиницы:</b>\n
+        Рейтинг работников (KPI)\n
+        Наём и увольнение работников\n
+        Контроль часов работы персонала\n
+        \n
+        <b>Клиентская часть:</b>\n
+        Бронирование и заказ номеров\n
+        Промо-акции\n
+        Книга жалоб  и предложений\n
+    </string>
+    <string name="set_title">Setting</string>
+    <string name="set_language">Language</string>
 </resources>

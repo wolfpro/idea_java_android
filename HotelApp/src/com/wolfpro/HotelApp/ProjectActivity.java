@@ -11,7 +11,6 @@ public class ProjectActivity extends Activity {
     @Override
     protected void onPostCreate(Bundle sis){
         super.onPostCreate(sis);
-
         setContentView(R.layout.main_project);
     }
 
