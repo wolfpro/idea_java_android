@@ -12,21 +12,21 @@
                 android:layout_height="wrap_content"
                 android:text="Hello World, StartActivity"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="50dp" android:layout_above="@+id/button3"/>
+                android:layout_marginBottom="50dp" android:layout_above="@+id/button3" style="@style/CodeFont"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/second_but"
                 android:id="@+id/button3" android:layout_gravity="center_horizontal"
                 android:layout_above="@+id/button2" android:layout_alignStart="@+id/button2"
-                android:onClick="onClickProject"/>
+                android:onClick="onClickProject" style="@style/CodeFont"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/third_but"
                 android:id="@+id/button2" android:layout_gravity="center_horizontal" android:layout_above="@+id/button4"
                 android:layout_alignStart="@+id/button4"
-                android:onClick="onClickSetting"/>
+                android:onClick="onClickSetting" style="@style/CodeFont"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
                 android:id="@+id/button4" android:layout_gravity="center_horizontal"
                 android:layout_alignParentBottom="true" android:layout_alignParentStart="true"
                 android:layout_marginBottom="190dp"
-                android:onClick="onClickHelp"/>
+                android:onClick="onClickHelp" style="@style/CodeFont"/>
     </RelativeLayout>
 </LinearLayout>
 

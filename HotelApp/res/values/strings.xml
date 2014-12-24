@@ -33,8 +33,16 @@
         <b>Клиентская часть:</b>\n
         Бронирование и заказ номеров\n
         Промо-акции\n
-        Книга жалоб  и предложений\n
+        Книга жалоб и предложений\n
     </string>
     <string name="set_title">Setting</string>
     <string name="set_language">Language</string>
+
+    <string-array name="kind_personnel">
+        <item>Admins</item>
+        <item>Bookkeepers</item>
+        <item>Cleaners</item>
+        <item>Guards</item>
+        <item>Managers</item>
+    </string-array>
 </resources>
