@@ -81,13 +81,15 @@ public class Tower {
     void onDraw(Canvas canvas) {
 
         if (dst.right == 0) {
+            int w = canvas.getHeight() / 3 / towe_bitmap.getHeight() * towe_bitmap.getWidth();
+            int h = canvas.getHeight() * 2 / 3;
             if (id == 0)
-                dst.set(0, canvas.getHeight() / 3, canvas.getHeight() / 3 / towe_bitmap.getHeight() * towe_bitmap.getWidth(), canvas.getHeight() * 2 / 3);
+                dst.set(0, canvas.getHeight() / 3, w, h);
             if (id == 1) {
-                int w = canvas.getWidth(), h = canvas.getHeight();
-                dst.set(w - h / 3 / towe_bitmap.getHeight() * towe_bitmap.getWidth(), h / 3, w, h * 2 / 3);
+                dst.set(canvas.getWidth() - w, canvas.getHeight()/3, canvas.getWidth(), h);
             }
         }
         canvas.drawBitmap(towe_bitmap, src, dst, p);
     }
 }
+1

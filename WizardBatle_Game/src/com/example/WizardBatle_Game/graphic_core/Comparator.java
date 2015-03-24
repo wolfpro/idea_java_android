@@ -77,6 +77,15 @@ public class Comparator extends SurfaceView {
         }
 
 
+        void kill_monster(int id, int def) {
+            for (Monster i : monsters) {
+                if (i.getId() == id){
+                    i.attack((long) def);
+                    add_money(1-id, def);
+                }
+            }
+        }
+
         @Override
         public void run() {
 
@@ -158,6 +167,14 @@ public class Comparator extends SurfaceView {
                                     }
                         }
 
+                        if (lefPlayer.get_magic_one()) {
+                            kill_monster(1, lefPlayer.get_magic_one_def());
+                        }
+
+                        if (rigPlayer.get_magic_one()) {
+                            kill_monster(0, rigPlayer.get_magic_one_def());
+                        }
+
                         //update monsters position;
                         for (int i = 0; i < monsters.size(); ++i) {
                             if (!monsters.get(i).is_live())
@@ -213,11 +230,11 @@ public class Comparator extends SurfaceView {
         Bitmap tower_l, tower_r;
         tAl[0] = (BitmapFactory.decodeResource(getResources(), R.drawable.knight));
         tower_l = BitmapFactory.decodeResource(getResources(), R.drawable.tower);
-        lefPlayer = new Player(0, tAl, tower_l, getWidth(), new Date().getTime());
+        lefPlayer = new Player(0, tAl, tower_l, getWidth(), new Date().getTime(), (int) FPS);
 
         tAr[0] = (BitmapFactory.decodeResource(getResources(), R.drawable.knight2));
         tower_r = BitmapFactory.decodeResource(getResources(), R.drawable.tower);
-        rigPlayer = new Player(1, tAr, tower_r, getWidth(), new Date().getTime());
+        rigPlayer = new Player(1, tAr, tower_r, getWidth(), new Date().getTime(), (int) FPS);
 
 
         //lefPlayer.upgrade(new Date().getTime());
