@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba0ba852-271d-4f86-9e85-a903f72094be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WizardBatle_Game/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../WizardBatle_Game/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="ba0ba852-271d-4f86-9e85-a903f72094be" name="Default" comment="" />
     <ignored path="rcup2.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -130,6 +128,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/virthostel" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
