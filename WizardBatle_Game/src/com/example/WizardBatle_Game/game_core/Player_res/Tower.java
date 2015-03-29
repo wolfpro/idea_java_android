@@ -92,4 +92,3 @@ public class Tower {
         canvas.drawBitmap(towe_bitmap, src, dst, p);
     }
 }
-1
