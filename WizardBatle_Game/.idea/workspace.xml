@@ -17,9 +17,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.example.WizardBatle_Game" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="145c20e8-c5a3-484e-8dbe-7522ac7c1781" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/WizardBatle_Game/game_core/Player_res/Tower.java" afterPath="$PROJECT_DIR$/src/com/example/WizardBatle_Game/game_core/Player_res/Tower.java" />
-    </list>
+    <list default="true" id="145c20e8-c5a3-484e-8dbe-7522ac7c1781" name="Default" comment="" />
     <ignored path="WizardBatle_Game.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
