@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Player {
     private static String[] def_type = {"warrior", "hunter", "engineer"};
-    private static int[] def_war_cost = {40, 100, 250, 1000};
+    private static int[] def_war_cost = {20, 50, 100, 150, 300, 600, 1500, 3500, 9000, 20000, 500000};
     private Bitmap[] def_bitmap;
     private Tower tower;
     private Lider lider;
@@ -98,6 +98,7 @@ public class Player {
 
         paint.setColor(Color.BLACK);
         canvas.drawText("Up", K * id + src.right / 9, (3 * paint.getTextSize() + src.bottom) / 2, paint);
+        canvas.drawText(String.valueOf(def_war_cost[tower.getLev(0)]), K * id + src.right / 9, 4*(paint.getTextSize() + src.bottom)/5, paint);
         paint.setColor(Color.WHITE);
     }
 
