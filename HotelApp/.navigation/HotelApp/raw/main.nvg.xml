@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.wolfpro.HotelApp.HelpActivity"/>
+      <point      
+        x = "300"      
+        y = "248"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.wolfpro.HotelApp.SetActivity"/>
+      <point      
+        x = "8"      
+        y = "464"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.wolfpro.HotelApp.PersonnelActivity"/>
+      <point      
+        x = "1304"      
+        y = "68"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.wolfpro.HotelApp.ProjectActivity"/>
+      <point      
+        x = "260"      
+        y = "108"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "StartActivity"/>
+      <point      
+        x = "232"      
+        y = "-172"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>
