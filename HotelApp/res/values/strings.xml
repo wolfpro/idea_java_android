@@ -11,6 +11,9 @@
     <string name="name_capital">Capital</string>
     <string name="name_rooms">Rooms</string>
     <string name="help_name">HotelApp® 2014</string>
+
+
+
     <string name="help_about">
         \n
         Состав приложения:\n
@@ -84,5 +87,14 @@
         <item>Luci 1:20$</item>
         <item>Max 10:100$</item>
         <item>Zak 10:100$</item>
+    </string-array>
+
+    <string-array name="Hostel">
+        <item>hostel</item>
+        <item>Kirov #1 +100$</item>
+        <item>Kirov #2 +2300$</item>
+        <item>Kirov #3 -10$</item>
+        <item>Moscow #1 +12100$</item>
+        <item>Moscow #2 +33100$</item>
     </string-array>
 </resources>

@@ -16,13 +16,13 @@
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/name_payday"
                     android:id="@+id/textView" android:layout_weight="1"
-                    android:autoText="false" android:textAlignment="gravity" android:typeface="serif"
+                    android:textAlignment="gravity" android:typeface="serif"
                     android:padding="10dp"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="0"
+                    android:text="100$"
                     android:id="@+id/textView2" android:layout_weight="1"
                     android:textAlignment="center" android:typeface="serif" android:padding="10dp"
                     android:layout_gravity="center_horizontal"/>
@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/name_capital"
                 android:id="@+id/button6" android:layout_below="@+id/button5" android:layout_centerHorizontal="true"
+                android:onClick="onClickCapital"
                 style="@style/CodeFont"/>
         <Button
                 android:layout_width="match_parent"

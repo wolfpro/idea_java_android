@@ -15,8 +15,12 @@ public class ProjectActivity extends Activity {
         super.onPostCreate(sis);
         setContentView(R.layout.main_project);
     }
-    public  void onClickPersonnel(View view){
+    public void onClickPersonnel(View view){
         Intent intent = new Intent(ProjectActivity.this, PersonnelActivity.class);
+        startActivity(intent);
+    }
+    public void onClickCapital(View view){
+        Intent intent = new Intent(ProjectActivity.this, Capital.class);
         startActivity(intent);
     }
 

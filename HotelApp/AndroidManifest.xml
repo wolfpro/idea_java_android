@@ -21,5 +21,6 @@
         <activity android:name=".SetActivity"/>
         <activity android:name=".PersonnelActivity"/>
         <activity android:name=".MakePerson"/>
+        <activity android:name=".Capital"/>
     </application>
 </manifest>
