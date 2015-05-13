@@ -45,4 +45,44 @@
         <item>Guards</item>
         <item>Managers</item>
     </string-array>
+
+    <string-array name="Admins">
+        <item>Name:work:days:profit</item>
+        <item>Jordan 10:100$</item>
+        <item>Luci 1:20$</item>
+        <item>Max 10:100$</item>
+        <item>Zak 10:100$</item>
+    </string-array>
+
+    <string-array name="Bookkeepers">
+        <item>Name:work:days:profit</item>
+        <item>Jordan 10:100$</item>
+        <item>Luci 1:20$</item>
+        <item>Max 10:100$</item>
+        <item>Zak 10:100$</item>
+    </string-array>
+
+    <string-array name="Cleaners">
+        <item>Name:work:days:profit</item>
+        <item>Jordan 10:100$</item>
+        <item>Luci 1:20$</item>
+        <item>Max 10:100$</item>
+        <item>Zak 10:100$</item>
+    </string-array>
+
+    <string-array name="Guards">
+        <item>Name:work:days:profit</item>
+        <item>Jordan 10:100$</item>
+        <item>Luci 1:20$</item>
+        <item>Max 10:100$</item>
+        <item>Zak 10:100$</item>
+    </string-array>
+
+    <string-array name="Managers">
+        <item>Name:work:days:profit</item>
+        <item>Jordan 10:100$</item>
+        <item>Luci 1:20$</item>
+        <item>Max 10:100$</item>
+        <item>Zak 10:100$</item>
+    </string-array>
 </resources>

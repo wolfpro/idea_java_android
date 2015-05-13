@@ -20,5 +20,6 @@
                   android:theme="@android:style/Theme.Dialog"/>
         <activity android:name=".SetActivity"/>
         <activity android:name=".PersonnelActivity"/>
+        <activity android:name=".MakePerson"/>
     </application>
 </manifest>

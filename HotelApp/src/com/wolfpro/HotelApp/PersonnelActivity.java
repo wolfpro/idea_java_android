@@ -2,15 +2,10 @@ package com.wolfpro.HotelApp;
 
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 /**
  * Created by wolfpro on 12/21/14.
@@ -27,8 +22,10 @@ public class PersonnelActivity extends ListActivity {
         setListAdapter(adapter);
     }
 
-    protected void onListItemClick(android.widget.ListView l, View v, int position, long id){
-        Toast.makeText(getApplicationContext(), "You chose "+l.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
+    protected void onListItemClick(android.widget.ListView l, View v, int position, long id) {
+        //  Toast.makeText(getApplicationContext(), "You chose " + l.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(PersonnelActivity.this, MakePerson.class);
+        intent.putExtra("position", l.getItemAtPosition(position).toString());
+        startActivity(intent);
     }
-
 }
