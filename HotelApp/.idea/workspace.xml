@@ -20,30 +20,7 @@
     <bookmark url="file://$PROJECT_DIR$" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7e03507-55b5-4893-bfba-39b8abc5d76c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/wolfpro/HotelApp/Capital.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/capital.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/HelpActivity.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/HelpActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/HotelApp.apk" afterPath="$PROJECT_DIR$/out/production/HotelApp/HotelApp.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/HotelApp.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/HotelApp/HotelApp.unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/MakePerson.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/MakePerson.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/ProjectActivity.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/ProjectActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$array.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$array.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$attr.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$id.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$layout.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$string.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$style.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/SetActivity.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/SetActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/StartActivity.class" afterPath="$PROJECT_DIR$/out/production/HotelApp/com/wolfpro/HotelApp/StartActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/wolfpro/HotelApp/ProjectActivity.java" afterPath="$PROJECT_DIR$/src/com/wolfpro/HotelApp/ProjectActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main_project.xml" afterPath="$PROJECT_DIR$/res/layout/main_project.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="f7e03507-55b5-4893-bfba-39b8abc5d76c" name="Default" comment="" />
     <ignored path="HotelApp.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
